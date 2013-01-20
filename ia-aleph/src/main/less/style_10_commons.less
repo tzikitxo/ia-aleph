@@ -1,0 +1,75 @@
+
+.font1{
+    font-family: Ubuntu, arial, serif;
+    font-size: @fontSize1;
+}
+
+.button1{
+    .buttonx(@colorBg1,@colorBg2,@red);
+}
+.button4{
+    .buttonx(@colorBg2,@colorBg1,@red);
+}
+.buttonTab(@colorBg,@colorFg,@colorSel){
+    cursor:pointer;
+	.roundedCornersOfRow;
+    td{
+        border-bottom: 2px solid  @colorBg;
+        border-top: 2px solid  @colorBg;
+    }
+    &:hover td{
+        border-bottom: 2px solid @colorFg;
+        border-top: 2px solid @colorFg;
+    }
+    &.selected td{
+        border-bottom: 2px solid @colorSel;
+        border-top: 2px solid @colorSel;
+    }   
+}
+.button2{
+    .buttonTab(@colorBg2,@colorBg1,@red);
+}
+.button3{
+    .buttonTab(@colorBg1,@colorBg2,@red);
+}
+.button6{
+    cursor:pointer;
+    &:hover , &.selected{
+        .colors2;
+    }
+}
+.button6r{
+    .button6;
+    border-radius: 10px;	
+}
+.button5{
+    cursor:pointer;
+	.roundedCornersOfRow;
+//    td{
+//	padding-top: 3px;
+//	padding-bottom: 3px;
+//    }
+    &.selected td, &:hover td {
+        .colors2;
+    }
+}
+
+.enhanceRows{
+    &:nth-child(even) {
+        .enhancedRow1;
+    }
+}
+.enhanceRows2{
+    &:nth-child(4n+3), &:nth-child(4n+4) {
+        .enhancedRow1;
+    }
+}
+
+.button7r{
+    cursor:pointer;
+    border-radius: 10px;	
+    .darker1;
+    &:hover , &.selected{
+        .colors1;
+    }
+}
