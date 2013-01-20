@@ -112,7 +112,7 @@ echo -e "\t\"date\":\"$(echo 'print((new Date()).toString());' | js)\""
 rm $counter
 
 for file in *.html; do 
-	php ~/svn/ia-aleph/trunk/ia-aleph_v2/bin/clean_wiki_page.php "$file" || echo "error on $file"
+	php ~/svn/ia-aleph/ia-aleph/bin/clean_wiki_page.php "$file" || echo "error on $file"
 done
 
 exit 0
