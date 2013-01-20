@@ -1,0 +1,63 @@
+//*********************
+//COMMONS
+//*********************
+
+@colorBg0: #FEFEFE;
+@imageBg0: '../images/bg_1w.png';
+@colorBg1: #DDDDDD;
+//@imageBg1: '../images/bg_1w.png';
+@colorBg2: #CCCCCC;
+//@imageBg2: '../images/bg_4.png';
+@colorBg3: #BBBBBB;
+@colorBg4: #AAAAAA;
+
+@groupBarColor: black;
+
+@borderColor1: @black;
+
+@irregularColor: @darkOrange;
+@noOrderColor: @darkBlue;
+
+.colors0{
+    background-color: @colorBg0;
+    background-image:url(@imageBg0);
+}
+.colors1{
+    background-color: @colorBg1;
+//	background-image:url(@imageBg1);
+    color: black;
+}
+.colors2{
+//    background-image:url(@imageBg2);
+    background-color: @colorBg2;
+    color: black;
+}
+.border1 {
+    border: 1px solid @black;
+    border-radius: 10px;   
+}
+.shadow1{
+   // box-shadow: 0 0 10px 0 white;
+}
+.style1{
+    .colors1;
+    .border1;
+    .shadow1;
+}
+.style2{
+    background-color: @colorBg2;
+    .colors2;
+    border: 1px solid @black;
+    border-radius: 10px;
+    //.shadow1;	
+}
+.style3{
+    background-color: @colorBg4;
+   // color: black;
+    border: 2px solid @black;
+    border-radius: 10px;		
+}
+
+.enhancedRow1{
+    background-color: #EEEEEE;
+}

@@ -1,0 +1,179 @@
+/*@import "style_commons";*/
+
+@maxWidth : 1280px;
+
+@smallScreenWidth: 999px;
+@verySmallScreenWidth: 750px;
+@veryVerySmallScreenWidth: 500px;
+
+@media screen and (min-width: @maxWidth) {
+    #rootContainer{
+        border: solid white;
+        border-width: 0 1px 0 1px;
+        box-shadow: 0 0 20px white;
+    }
+	#rulesBrowser{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: @maxWidth;		
+	}
+}
+
+@media screen and (max-width: @smallScreenWidth) {
+
+        #rulesBrowser{
+            margin:0;
+            border:0;
+            border-radius:0;
+        }
+	.unitTypeButton{
+		padding:@padding6 @padding5;
+	}
+	#armyList {
+		margin: 5px 0 0 5px;
+		padding: 2px;
+		border-right: 0;
+		border-bottom-right-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	#typeMenu{
+		margin-top: 0;
+		border-top: 0;
+		border-radius: 0;
+		padding: 2px;
+	}
+	#topBar{
+		margin: 0 5px 0 0;
+		border-radius: 0;
+		border-top: 0;
+		border-bottom: 0;
+		padding: 5px;
+                .mainMenuButton{
+                    top: -5px;
+                    left: -5px;
+                }
+	}
+	#typeAndUnitMenuWrapper , #topBar {
+		border-left: 0;
+	}
+	#typeAndUnitMenuWrapper{
+		border-radius: 0 0 10px 0;
+		margin: 0 5px 5px 0;
+		padding: 0 0 2px 0;
+		border-top: 0;
+		#unitMenu , #typeMenu {
+			margin: 0;
+		}
+		#unitMenu {
+			margin-top:5px;
+			.unitButton{
+				padding: 2px 4px;
+			}
+			.unitButton img{
+				width: @imageSize1;
+				height: @imageSize1;
+			}
+		}
+	}
+
+        #mainContainer{
+            padding-bottom: 5px;
+        }
+	#modelChooserContainer {
+		margin-top: 5px;
+		margin-left: 0;
+		margin-right: 5px;
+		border-left: 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;		
+
+		.modelButtonList {
+			.bswModelAttr , .ccwModelAttr{
+		//		white-space: nowrap;
+			}
+			.noteModelAttr {
+				display: none;
+			}
+		}
+	}
+	#rootContainer.originalCostSwcPositioning .modelChooser .ccwModelAttr{
+		border-radius: 0 10px 10px 0;
+	}
+
+	#weaponsButton{
+		bottom: 0;
+		left: 0;
+		right: auto;
+		padding: 3px;
+		border-radius: 0 10px 0 0;
+		border-left: 0;
+		border-bottom: 0;
+		> div{
+			padding: 3px;
+		}
+	}
+	#weaponsInfo{
+		bottom: 0;
+		left: 0;
+		margin: 0;
+		border-bottom: 0;
+		border-left: 0;
+		border-right: 0;
+		border-radius: 0;
+		width:100%;
+		padding: 5px 0 0 0;
+	}
+	
+	#modelInfoContainer{
+		margin: 0 0 5px 5px;
+                padding: 5px;
+/*		padding-top: 0;
+		padding-right: 0;*/
+		border-top:0;
+		border-right:0;
+		border-radius: 0 0 0 10px;
+		.modelInfoIcon {
+				width: 100px !important;
+				height: 100px !important;
+			img {
+				width: 100px !important;
+				height: 100px !important;
+			}
+		}
+                .modelInfoHead{
+                    height: 100px;
+                }
+                .modelInfoNames , .modelInfoLeft{
+                    left: 100px;
+                }
+		.modelInfoAttrs , .modelInfoSpecs {
+			font-size: @fontSize5;
+		}
+	}
+
+	#mainMenu ,  #factionsMenu , #sectorialsMenu{
+		top: 0;
+		left: 10px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+                border-top: 0;
+	}
+        #sectorialsMenu{
+            left: 22px+150px;
+        }
+
+    .unitTypeButton , #listInfo{
+        font-size: @fontSize1;
+    }
+    img.flagIcon{
+        width: 16px;
+        height: 16px;
+    }
+	#weaponsButton , #typeAndUnitMenuWrapper , #modelChooserContainer , #topBar , #modelInfoContainer , #armyList {
+		box-shadow: 0 0 0 0;
+	}
+	.listExport textarea{
+		height: 120px;
+	}
+}
