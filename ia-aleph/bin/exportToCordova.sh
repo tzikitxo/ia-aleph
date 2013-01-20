@@ -9,6 +9,6 @@ cd ~/svn/ia-aleph/ia-aleph/target/ia-aleph/
 #popd
 
 #cd  target/ia-aleph/ || exit
-rm "${target}"/wiki*/*
-rsync -crv css *js data images wiki* "${target}"/
+#rm "${target}"/wiki*/*
+rsync -crv --delete --exclude cordova*js css js images wiki_* "${target}"/
 
