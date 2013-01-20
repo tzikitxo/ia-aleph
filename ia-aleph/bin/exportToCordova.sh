@@ -1,8 +1,8 @@
 #!/bin/bash
 
-target=~/svn/ia-aleph/trunk/ia-aleph_cordova/assets/www/
+target=~/svn/ia-aleph/ia-aleph_android/assets/www/
 
-cd ~/svn/ia-aleph/trunk/ia-aleph_v2/target/ia-aleph/
+cd ~/svn/ia-aleph/ia-aleph/target/ia-aleph/
 
 #pushd src/main/webapp/ || exit
 #rsync -crv data images "${target}"/
