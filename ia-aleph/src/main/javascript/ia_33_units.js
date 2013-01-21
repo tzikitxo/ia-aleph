@@ -256,7 +256,8 @@ var units=ia.units={};
             get:getLocalAttr,
             originalUnit:originalUnit
         });
-        if((unit.altp=originalUnit.altp||false)){
+        //        if((unit.altp=originalUnit.altp||false)){
+        if(unit.altp){
             $.each(unit.altp,function(i,alt){
                 $.extend(alt,commonMethods,{
                     altpParentUnit:unit,

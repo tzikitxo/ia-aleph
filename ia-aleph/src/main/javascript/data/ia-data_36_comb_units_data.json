@@ -2437,7 +2437,8 @@
                 ],
                 "bsw":[],
                 "ccw":[],
-                "ava":""
+                "ava":" ",
+                "type":" "
 	 }],
   "mov": "4-4",
   "army": "Combined Army",
@@ -3570,6 +3571,10 @@
  "wip": "13",
  "altp":[{
 	 "isc":"Seed-Embryo",
+		"wip": "0",
+		"bs": "0",
+		"ph": "0",
+		"cc": "0",
 		"arm": " 2",
 		"bts": " -3",
 		"mov": "0",
@@ -3581,7 +3586,7 @@
                 ],
                 "bsw":[],
                 "ccw":[],
-                "ava":""
+                "ava":" "
  }],
  "sharedAva":"Shasvastii Caliban"
 },
@@ -3690,6 +3695,9 @@
  "wip": "13",
  "altp":[{
 	 "isc":"Seed-Embryo",
+		"wip": "0",
+		"bs": "0",
+		"cc": "0",
 		"arm": " 2",
 		"bts": " -3",
 		"mov": "0",
@@ -3701,7 +3709,7 @@
                 ],
                 "bsw":[],
                 "ccw":[],
-                "ava":""
+                "ava":" "
  }],
  "sharedAva":"Shasvastii Caliban"
 },
