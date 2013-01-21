@@ -211,9 +211,9 @@ armyList.exportAndShowList=function(){
 		armylist.popupScroller.updateScroll();
 	//   }
 	}).appendTo(buttons);
-        $('<div class="exportButton" />').text(messages.get('armylist.export.sendMailButton')).bind('click',function(){
-		armylist.mailPrintList();
-	}).appendTo(buttons);
+//        $('<div class="exportButton" />').text(messages.get('armylist.export.sendMailButton')).bind('click',function(){
+//		armylist.mailPrintList();
+//	}).appendTo(buttons);
 	fillForUrl(listUrl);
 	$('#rootContainer').hide();
 	popup.show();
