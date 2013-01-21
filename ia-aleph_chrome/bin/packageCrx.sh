@@ -5,7 +5,7 @@
 #  echo "Usage: crxmake.sh <extension dir> <pem path>"
 #  exit 1
 #fi
-cd ~/svn/ia-aleph/trunk/ia-aleph_chrome/target/ || exit 1
+cd ~/svn/ia-aleph/ia-aleph_chrome/target/ || exit 1
 dir=../src/
 key=../extras/key.pem
 #name=IaChrome
