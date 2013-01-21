@@ -103,7 +103,7 @@
         'armylist.export.previewButton':'PREVIEW',
         'armylist.export.bbcodeButton':'BBCODE (FORUM CODE)',
         'armylist.export.qrcodeButton':'QRCODE',
-                
+        'armylist.export.sendMailButton':'E-MAIL',
                 
         'armylistsave.backButton':'BACK',
         'armylistsave.deleteListButton':'delete list',
@@ -181,7 +181,7 @@
         'print.buttonLabel.icons':'show extra icons',
         'print.buttonLabel.depletables':'show depletable weapon/equipment\'s checkboxes',
         'print.buttonLabel.colors':'show colors',
-//        'print.buttonLabel.hiddenList':'TOGGLE HIDDEN LIST',
+        //        'print.buttonLabel.hiddenList':'TOGGLE HIDDEN LIST',
         'print.buttonLabel.campaignspecs':'show campaign specs',
         'print.buttonLabel.metabooty':'show metachemistry/booty tables',
         
