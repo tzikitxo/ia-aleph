@@ -73,6 +73,29 @@ var campaign=ia.campaign={};
     //        }
     //    };
     plugins.registerPlugin('campaign',{
+        getUnitValue:function(attrName,originalValue,unit){
+            if(!militarySpecs.enabled){
+                return originalValue;
+            }else if(attrName=='w' 
+                && !isNaN(originalValue) 
+                && militarySpecs.support>=4 
+                && unit.getWoundType()==='str'){
+                return Math.min(3,Number(originalValue)+1);
+            }else if(attrName=='spec' && militarySpecs.psiops>=4 && !originalValue['Religious Troop'] && unit.get('type')!=' '){
+                var newSpec=$.extend([],originalValue);
+                newSpec['Religious Troop']='Religious Troop';
+                newSpec.push('Religious Troop');
+                return newSpec;
+            }else if(attrName=='ava' && militarySpecs.support>=1 && militarySpecs.extraAva && !isNaN(originalValue) && (
+                (unit.get('isc')==militarySpecs.extraAva[1])
+                ||(militarySpecs.support>=2 && unit.get('isc')==militarySpecs.extraAva[2])
+                ||(militarySpecs.support>=3 && unit.get('isc')==militarySpecs.extraAva[3])
+                )){
+                return Number(originalValue)+1;
+            }else{
+                return originalValue;
+            }
+        },
         getPointIncrement:function(){
             var map={
                 0:0,
@@ -109,27 +132,27 @@ var campaign=ia.campaign={};
     //            return Math.min(3,Number(strValue)+1);
     //        }
     //    }
-    campaign.getUnitValue=function(attrName,originalValue,unit){
-        if(attrName=='w' 
-            && !isNaN(originalValue) 
-            && militarySpecs.support>=4 
-            && unit.getWoundType()==='str'){
-            return Math.min(3,Number(originalValue)+1);
-        }else if(attrName=='spec' && militarySpecs.psiops>=4 && !originalValue['Religious Troop'] && unit.get('type')!=' '){
-            var newSpec=$.extend([],originalValue);
-            newSpec['Religious Troop']='Religious Troop';
-            newSpec.push('Religious Troop');
-            return newSpec;
-        }else if(attrName=='ava' && militarySpecs.support>=1 && militarySpecs.extraAva && !isNaN(originalValue) && (
-            (unit.get('isc')==militarySpecs.extraAva[1])
-            ||(militarySpecs.support>=2 && unit.get('isc')==militarySpecs.extraAva[2])
-            ||(militarySpecs.support>=3 && unit.get('isc')==militarySpecs.extraAva[3])
-            )){
-            return Number(originalValue)+1;
-        }else{
-            return originalValue;
-        }
-    };
+    //    campaign.getUnitValue=function(attrName,originalValue,unit){
+    //        if(attrName=='w' 
+    //            && !isNaN(originalValue) 
+    //            && militarySpecs.support>=4 
+    //            && unit.getWoundType()==='str'){
+    //            return Math.min(3,Number(originalValue)+1);
+    //        }else if(attrName=='spec' && militarySpecs.psiops>=4 && !originalValue['Religious Troop'] && unit.get('type')!=' '){
+    //            var newSpec=$.extend([],originalValue);
+    //            newSpec['Religious Troop']='Religious Troop';
+    //            newSpec.push('Religious Troop');
+    //            return newSpec;
+    //        }else if(attrName=='ava' && militarySpecs.support>=1 && militarySpecs.extraAva && !isNaN(originalValue) && (
+    //            (unit.get('isc')==militarySpecs.extraAva[1])
+    //            ||(militarySpecs.support>=2 && unit.get('isc')==militarySpecs.extraAva[2])
+    //            ||(militarySpecs.support>=3 && unit.get('isc')==militarySpecs.extraAva[3])
+    //            )){
+    //            return Number(originalValue)+1;
+    //        }else{
+    //            return originalValue;
+    //        }
+    //    };
 	
     var levelCosts=[2,5,9,14,20];
     function refreshCost(){

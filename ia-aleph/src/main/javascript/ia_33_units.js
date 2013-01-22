@@ -199,17 +199,17 @@ var units=ia.units={};
             return 'w';
         }
     };
-    var getLocalAttr=function(attrName){
-        if(campaign.isEnabled()){
-            return campaign.getUnitValue(attrName,this[attrName],this);
-        }else{
-            return this[attrName];
+    plugins.configureMethod('getUnitValue',{
+        chain:true,
+        chainIndex:1
+    });
+    plugins.registerPlugin('defaultGetUnit',{
+        getUnitValue:function(attrName,originalValue,unit){
+            return originalValue;
         }
-    //        if(attrName=='w'){
-    //            return campaign.getWoundForUnit(this);
-    //        }else{
-    //            return this[attrName];
-    //        }
+    });
+    var getLocalAttr=function(attrName){
+       return plugins.getUnitValue(attrName,this[attrName],this);
     };
     
     var commonMethods={
@@ -799,7 +799,7 @@ var units=ia.units={};
             $.each(unit.childsByCode,function(i,child){
                 clearCache(child);
             });
-            $.each(unit.altp,function(i,alt){
+            $.each(unit.altp||[],function(i,alt){
                 clearCache(alt);
             });
         });
