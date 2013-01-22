@@ -18,13 +18,14 @@ var plugins=ia.plugins={};
 (function(){
     
     var pluginsById=plugins.pluginsById={};
+    var methodConfigurations={};
     
     plugins.registerPlugin=function(id,plugin){
         pluginsById[id]=plugin;
         $.each(plugin,function(name,value){
-           if(typeof value == 'function'){
-               addMethod(name);
-           } 
+            if(typeof value == 'function'){
+                addMethod(name);
+            } 
         });
     };
     
@@ -32,30 +33,52 @@ var plugins=ia.plugins={};
         delete pluginsById[id];
     };
     
+    plugins.configureMethod=function(methodName,config){
+        methodConfigurations[methodName]=config;
+        delete plugins[methodName];
+        addMethod(methodName);
+    };
+    
     function addMethod(methodName){
         if(plugins.methodName){
             return;
         }
-        log('registering plugin method : ',methodName);
-        plugins[methodName]=function(){
-            var res=undefined,methodArgs=arguments;
-            $.each(pluginsById,function(id,plugin){
-               if(plugin[methodName]){
-                   var thisRes=plugin[methodName].apply(plugin,methodArgs);
-                   if(res===undefined){
-                       res=thisRes;
-                   }else if(!isNaN(res) && !isNaN(thisRes)){
-                       res=Number(res)+Number(thisRes);
-                   }else {
-                       if(!res.push){
-                           res=[res];
-                       }
-                       res.push(thisRes);
-                   }
-               }
-            });
-            return res;
-        };
+        var methodConfig=methodConfigurations[methodName]||{};
+        log('registering plugin method : ',methodName,' config : ',methodConfig);
+        if(methodConfig.chain){
+            var chainIndex=methodConfig.chainIndex||0;
+            plugins[methodName]=function(){
+                var res=undefined,methodArgs=arguments;
+                $.each(pluginsById,function(id,plugin){
+                     if(plugin[methodName]){
+                          var thisRes=plugin[methodName].apply(plugin,methodArgs);
+                          res=thisRes;
+                          methodArgs[chainIndex]=thisRes;
+                     }
+                });
+                return res;
+            };            
+        }else{
+            plugins[methodName]=function(){
+                var res=undefined,methodArgs=arguments;
+                $.each(pluginsById,function(id,plugin){
+                    if(plugin[methodName]){
+                        var thisRes=plugin[methodName].apply(plugin,methodArgs);
+                        if(res===undefined){
+                            res=thisRes;
+                        }else if(!isNaN(res) && !isNaN(thisRes)){
+                            res=Number(res)+Number(thisRes);
+                        }else {
+                            if(!res.push){
+                                res=[res];
+                            }
+                            res.push(thisRes);
+                        }
+                    }
+                });
+                return res;
+            };
+        }
     }
     
    
