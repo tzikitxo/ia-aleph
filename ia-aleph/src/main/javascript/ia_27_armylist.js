@@ -213,10 +213,10 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         return armyList.pointCap;
     }
     armyList.getEffectivePointCap=function(){
-        return armyList.pointCap+(campaign?campaign.getPointIncrement():0);
+        return armyList.pointCap+(plugins.getPointIncrement?plugins.getPointIncrement():0);
     }
     armyList.getEffectiveSwcCap=function(){
-        return armyList.swcCap+(campaign?campaign.getSwcIncrement():0);
+        return armyList.swcCap+(plugins.getSwcIncrement?plugins.getSwcIncrement():0);
     }
     
     var validateList=armyList.validateList=function(){

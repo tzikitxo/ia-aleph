@@ -5,6 +5,7 @@
             <fileName>ia.js</fileName>
             <includes>
                 <include>ia_10_head.js</include>
+                <include>ia_15_plugins.js</include>
                 <include>ia_21_lang.js</include>
                 <include>ia_21_lang_en.js</include>
                 <include>ia_21_lang_it.js</include>

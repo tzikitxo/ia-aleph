@@ -18,7 +18,7 @@
     armyList.printList=function(){
         var printList=armyList.buildHtmlPrintList();
         //        function openPrintPage(){
-//        var rawHtml='<html>'+'<head>'+printList.headHtml+'</head>'+printList.document.html()+'</html>',
+        //        var rawHtml='<html>'+'<head>'+printList.headHtml+'</head>'+printList.document.html()+'</html>',
         var base64Encoded=$.base64.encode(printList.documentHtml),
         //            urlEncodedHtml=escape(rawHtml),
         //            dataUrl='data:text/html;charset=UTF-8,'+urlEncodedHtml,
@@ -56,8 +56,13 @@
     
     armylist.mailPrintList=function(){
         var printList=armyList.buildHtmlPrintList();
-//        var mailtoUri='mailto:?body='+escape(printList.documentHtml);
-        var mailtoUri='mailto:?body=test';
+        //        var mailtoUri='mailto:?body='+escape(printList.documentHtml);
+        function encodeForEmail(s) {
+           // return encodeURIComponent(s.replace(/\r|\n/g, "").replace(/[\x00-\x08]|[\x0B-\x0C]|[\x0E-\x1F]/g, "").replace(/\r\n|\r|\n/g, "\r\n"));
+            return encodeURIComponent(s);
+        }
+        //var mailtoUri='mailto:?subject=text%20mail&body='+encodeForEmail(printList.documentHtml);
+        var mailtoUri='mailto:?subject=text%20mail&MIME-Version='+encodeURIComponent('1.0')+'&Content-Type=text/html&body='+encodeForEmail('<html><head></head><body>a <b>test</b></body></html>');
         window.open(mailtoUri,'_blank');
     };
         
