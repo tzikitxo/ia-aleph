@@ -15,6 +15,8 @@
 
 (function(){
     
+    log('loading 31: armylist load/save');
+    
     if(storage.isPersistent){
         
         var savedListsKey="savedLists",savedListPrefix="savedList.",lastSavedListKey="lastSavedList",lastSavedList;

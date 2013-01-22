@@ -675,9 +675,10 @@ var units=ia.units={};
             });
         }
         try{
-            armyList.postLoadProcessing();
+//            armyList.postLoadProcessing();
+            plugins.armylistPostLoadProcess();
         }catch(e){
-            log('error in armyList.postLoadProcessing() : ',e);
+            log('error in plugins.armylistPostLoadProcess() : ',e);
         }
         prepareButtons();
         log('loaded units ',unitsByIsc);
