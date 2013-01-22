@@ -266,7 +266,9 @@ var units=ia.units={};
                     }
                 });
             });
-        }
+        }else{
+			unit.altp=false;
+		}
         loadAttrs(unit);
         prepareCbImages(unit);
         unit.childsByCode={};

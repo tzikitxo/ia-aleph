@@ -1,6 +1,6 @@
 {
   "name": "Aleph Toolbox",
-  "version": "0.2.111",
+  "version": "0.2.113",
   "manifest_version": 2,
 
     "description": "__MSG_appDesc__",
@@ -173,8 +173,6 @@
 "images/combined_army_logo_big.png",
 "images/combined_army_logo_small.png",
 "images/config_icon.png",
-"images/control_screen_military_specialities_en.jpg",
-"images/control_screen_military_specialities_en.png",
 "images/corax_spec_ops_logo.png",
 "images/corax_spec_ops_logo_small.png",
 "images/corax_treitak_spec_ops_logo.png",
@@ -460,7 +458,6 @@
 "images/magister_knights_logo.png",
 "images/magister_knights_logo_small.png",
 "images/main_frame_icon.png",
-"images/main_title.png",
 "images/makaul_logo.png",
 "images/makaul_logo_small.png",
 "images/malignos_logo.png",
@@ -469,8 +466,6 @@
 "images/margot_berthnier_mirage_5_logo_small.png",
 "images/maruts_logo.png",
 "images/maruts_logo_small.png",
-"images/mcmurrough_dog_warrior_logo.png",
-"images/mcmurrough_dog_warrior_logo_small.png",
 "images/mcmurrough_logo.png",
 "images/mcmurrough_logo_small.png",
 "images/mech_engineer_logo.png",
