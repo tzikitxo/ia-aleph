@@ -34,7 +34,7 @@ var plugins=ia.plugins={};
     };
     
     plugins.configureMethod=function(methodName,config){
-        methodConfigurations[methodName]=config;
+        methodConfigurations[methodName]=config||{};
         delete plugins[methodName];
         addMethod(methodName);
     };

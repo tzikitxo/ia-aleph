@@ -12,7 +12,7 @@
                 <include>ia_22_storage.js</include>
                 <include>ia_26_main.js</include>
                 <include>ia_27_armylist.js</include>
-                <include>ia_28_armylistextras.js</include>
+                <include>ia_28_extravalidations.js</include>
                 <include>ia_29_armylistutils.js</include>
                 <include>ia_31_armylistsave.js</include>
                 <include>ia_32_armylistprint.js</include>
