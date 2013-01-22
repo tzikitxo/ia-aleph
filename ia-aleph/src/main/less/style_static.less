@@ -1,0 +1,66 @@
+
+@import "style_02_theme_commons";
+@import "style_03a_sizes_default";
+@import "style_05a_theme_default";
+@import "style_10_commons";
+
+@columnWidth : 600px;
+
+img.icon {
+    width: 16px;
+    height: 16px;
+}
+img.longIcon1 {
+    height: 16px;
+    width: 85px;
+}
+
+body { 
+    background-color: @colorBg0;
+    color: @white;
+    .font1;
+    text-align: center; 
+    position: absolute;
+    width: 100%;
+}
+
+div#titleContainer {
+    width: @columnWidth;
+    right: auto;
+    left: auto;
+    margin: 20px auto 30px auto;
+    padding: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    .style1
+}
+
+#supportContainer , .adsContainer {
+    div{
+        margin-bottom: 5px;
+    }
+    font-size: 16px;
+    width: @columnWidth;
+    right: auto;
+    left: auto;
+    margin: 20px auto 20px auto;
+    padding: 25px;
+    .style1
+}
+
+.adsContainer {
+    width: 750px;
+}
+
+div#centerColumn {
+    width: @columnWidth;
+    margin: 20px auto 20px auto;
+    padding: 25px;
+    font-size: 16px;
+    text-align: justify; 
+    .style2
+}
+
+ul{
+    list-style-type: none;
+}
