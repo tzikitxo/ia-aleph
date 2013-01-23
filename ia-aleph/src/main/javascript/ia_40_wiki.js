@@ -81,7 +81,7 @@ var wiki=ia.wiki={};
     }
     updateLangFlag();
     
-    $('<div class="rulesButton" />').text(messages.get('wiki.buttons.back')).appendTo('#rulesButtons').bind('click',function(){
+    $('<div class="rulesButton" />').text(messages.get('common.close')).appendTo('#rulesButtons').bind('click',function(){
         $('#rootContainer').show();
         $('#rulesBrowser').hide();
     });
