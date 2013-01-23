@@ -28,6 +28,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     $('#armyList .thirdRow .label').text(messages.get('armylist.listinfo.remaining')+": ");
     
     $('<div class="armylistNameField"/>').appendTo('#topBar .listInfo');
+    $('<div class="armylistNameField"/>').appendTo($('<div class="fourthRow" />').appendTo('#armyList .listInfo'));
     $('.armylistNameField').editable(function(value){
         armylist.setListName(value);
         return value;
@@ -40,7 +41,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         showListName();
     };
     function showListName(){
-        $('#topBar .armylistNameField').text(armylist.listName||messages.get('armylistsave.setName'));
+        $('#topBar .armylistNameField , #armyList .armylistNameField').text(armylist.listName||messages.get('armylistsave.setName'));
     }
     showListName();
     
