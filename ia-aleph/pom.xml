@@ -52,7 +52,6 @@
                         <goals>
                             <goal>war-package</goal>
                             <!--<goal>compress</goal>-->
-                            <!--manually compress (for deploy): 'mvn javascript:war-package javascript:compress  install' -->
                         </goals>
                         <configuration>
                             <scripts>/</scripts>
