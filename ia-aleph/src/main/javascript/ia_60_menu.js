@@ -46,14 +46,17 @@ var menu=ia.menu={};
     
     var isShowing=false;
     function showMenu(){
+        buildMenu();
         $('#mainMenu').slideDown('fast',function(){
             menuScroll.updateScroll();
             isShowing=true;
         });
     }
     function hideMenu(){
-        $('#mainMenu').slideUp('fast');
-        isShowing=false;
+        $('#mainMenu').slideUp('fast',function(){
+            $('#mainMenuScrollContent').empty();
+            isShowing=false;
+        });
     }
     function toggleMenu(){
         if(isShowing){
@@ -74,104 +77,115 @@ var menu=ia.menu={};
         });
     }
     
-    function addMenuButton(config){
-        var menuButton=$('<div class="menuButton" />').text(config.label).appendTo('#mainMenuScrollContent').bind('click',function(){
-            config.handler();
-            return false;
-        });
-        if(config.icon){
-            menuButton.prepend($('<img class="menuButtonIcon" />').attr('src','images/'+config.icon+'_icon.png'));
-        }
-    }
-    function addMenuButtons(configList){
-        $.each(configList,function(index,config){
-            addMenuButton(config);
-        });
-    }
-    function hideMain(){
-        $('#rootContainer').hide();
-    }
+    function buildMenu(){
+         $('#mainMenuScrollContent').empty();
     
-    addMenuButtons([{
-        label:messages.get('menu.close'),
-        handler:function(){
-            hideMenu();
-        },
-        icon:'close'
-    },{
-        label:messages.get('menu.exportList'),
-        handler:function(){
-            hideMenu();
-            armyList.exportAndShowList();
-        },
-        icon:'export'
-    }]);
-
-    if(!device.hasCordova()){
-        addMenuButton({
-            label:messages.get('menu.printList'),
+        function addMenuButton(config){
+            var menuButton=$('<div class="menuButton" />').text(config.label).appendTo('#mainMenuScrollContent').bind('click',function(){
+                config.handler();
+                return false;
+            });
+            if(config.icon){
+                menuButton.prepend($('<img class="menuButtonIcon" />').attr('src','images/'+config.icon+'_icon.png'));
+            }
+        }
+        function addMenuButtons(configList){
+            $.each(configList,function(index,config){
+                addMenuButton(config);
+            });
+        }
+        function hideMain(){
+            $('#rootContainer').hide();
+        }
+    
+        addMenuButtons([{
+            label:messages.get('menu.close'),
             handler:function(){
                 hideMenu();
-                armyList.printList();
             },
-            icon:'print'
-        });
-    }
+            icon:'close'
+        },{
+            label:messages.get('menu.exportList'),
+            handler:function(){
+                hideMenu();
+                armyList.exportAndShowList();
+            },
+            icon:'export'
+        }]);
+
+        if(!device.hasCordova()){
+            addMenuButton({
+                label:messages.get('menu.printList'),
+                handler:function(){
+                    hideMenu();
+                    armyList.printList();
+                },
+                icon:'print'
+            });
+        }
 	
-    addMenuButtons([{
-        label:messages.get('menu.newList'),
-        handler:function(){
-            hideMenu();
-            factions.showFactionMenu();
+        addMenuButton({
+            label:messages.get('menu.newList'),
+            handler:function(){
+                hideMenu();
+                factions.showFactionMenu();
+            },
+            icon:'new'
+        });
+        
+        if(!units.includeMercs && !(units.factionName=='Combined Army')){  
+            addMenuButton({ 
+                label:messages.get('menu.loadMercs'),
+                handler:function(){
+                    hideMenu();
+                    units.loadMercs();
+                },
+                icon:'mercs'
+            });
+        }
+        
+        addMenuButtons([{
+            label:messages.get('menu.loadList'),
+            handler:function(){
+                hideMenu();
+                armyList.showSavedListsWindow();
+            },
+            icon:'load'
         },
-        icon:'new'
-    },{
-        label:messages.get('menu.loadMercs'),
-        handler:function(){
-            hideMenu();
-            units.loadMercs();
+        {
+            label:messages.get('menu.campaignTools'),
+            handler:function(){
+                hideMenu();
+                campaign.showMilitarySpecialitiesControlScreen();
+            },
+            icon:'campaign'
         },
-        icon:'mercs'
-    },{
-        label:messages.get('menu.loadList'),
-        handler:function(){
-            hideMenu();
-            armyList.showSavedListsWindow();
-        },
-        icon:'load'
-    },
-    {
-        label:messages.get('menu.campaignTools'),
-        handler:function(){
-            hideMenu();
-            campaign.showMilitarySpecialitiesControlScreen();
-        },
-        icon:'campaign'
-    },
-    {
-        label:messages.get('menu.wiki'),
-        handler:function(){
-            hideMenu();
-            wiki.searchWiki();
-            hideMain();
-        },
-        icon:'wiki'
-    },{
-        label:messages.get('menu.openConfigWindow'),
-        handler:function(){
-            hideMenu();
-            configwindow.showConfigWindow();
-            hideMain();
-        },
-        icon:'config'
-    },{
-        label:messages.get('menu.donate'),
-        handler:function(){
-            hideMenu();
-            window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUCCGRC73TPGW",'_blank');
-        },
-        icon:'donate'
-    }]);
+        {
+            label:messages.get('menu.wiki'),
+            handler:function(){
+                hideMenu();
+                wiki.searchWiki();
+                hideMain();
+            },
+            icon:'wiki'
+        },{
+            label:messages.get('menu.openConfigWindow'),
+            handler:function(){
+                hideMenu();
+                configwindow.showConfigWindow();
+                hideMain();
+            },
+            icon:'config'
+        },{
+            label:messages.get('menu.donate'),
+            handler:function(){
+                hideMenu();
+                window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUCCGRC73TPGW",'_blank');
+            },
+            icon:'donate'
+        }]);
+    
+    };
 
     // SMALL SCREEN MENU
     
