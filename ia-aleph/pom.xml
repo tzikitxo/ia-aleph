@@ -51,7 +51,7 @@
                     <execution>
                         <goals>
                             <goal>war-package</goal>
-                            <goal>compress</goal>
+                            <!--<goal>compress</goal>-->
                         </goals>
                         <configuration>
                             <scripts>/</scripts>

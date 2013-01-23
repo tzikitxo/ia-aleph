@@ -122,7 +122,9 @@
             var savedListWindow=$('#savedLists');
             load();
             savedListWindow.empty();
-            $('<div id="savedListsBackButton" />').text(messages.get('armylistsave.backButton')).bind('click',function(){
+            $('<div id="savedListsBackButton" />').text(messages.get('common.close'))
+		.prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
+                .bind('click',function(){
                 backToMainView();
             }).appendTo(savedListWindow);
             var scrollWrapper=$('<div id="savedListsScrollWrapper" />').appendTo(savedListWindow);

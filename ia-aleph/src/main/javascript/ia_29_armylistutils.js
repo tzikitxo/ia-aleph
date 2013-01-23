@@ -107,6 +107,7 @@ armyList.exportAndShowList=function(){
     var modelRecords=armyList.getListRecordsAsList();
     var popup=$('#genericPopup'),popupContent=$('#genericPopupContent',popup).empty();
     var exportContainer=$('<div class="listExport"></div>').appendTo(popupContent);
+    var buttons=$('<div class="exportButtons" />').appendTo(popupContent);
     var forumCode='';
     var absoluteBasePath=utils.getAbsoluteBasePath(),
     armyText=' '+units.getFactionNameDisplay()+(units.sectorialName?(' - '+units.getSectorialNameDisplay()):'')+'  |  '+armyList.modelCount+' '+messages.get('armylist.listinfo.modelCount'),
@@ -195,7 +196,6 @@ armyList.exportAndShowList=function(){
     //            +'[url]'+tinyUrl+'[/url]\n');
     //  });
     
-    var buttons=$('<div class="exportButtons" />').appendTo(popupContent);
     $('<div class="exportButton" />').text(messages.get('armylist.export.closeButton')).bind('click',function(){
         $('#rootContainer').show();
         popup.hide();
