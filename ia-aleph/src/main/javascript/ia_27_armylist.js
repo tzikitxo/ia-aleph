@@ -26,7 +26,23 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     $('#armyList .modelCount').after(' '+messages.get('armylist.listinfo.modelCount')+", "+messages.get('armylist.listinfo.total')+": ");
     $('#armyList .secondRow .label').text(messages.get('armylist.listinfo.max')+": ");
     $('#armyList .thirdRow .label').text(messages.get('armylist.listinfo.remaining')+": ");
-    //    $('#warnings').before(messages.get('armylist.listinfo.warnings')+': ');
+    
+    $('<div class="armylistNameField"/>').appendTo('#topBar .listInfo');
+    $('.armylistNameField').editable(function(value){
+        armylist.setListName(value);
+        return value;
+    });
+    armylist.setListName=function(newName,skipSave){
+        armylist.listName=newName;
+        if(!skipSave){
+            armylist.saveList();
+        }
+        showListName();
+    };
+    function showListName(){
+        $('#topBar .armylistNameField').text(armylist.listName||messages.get('armylistsave.setName'));
+    }
+    showListName();
     
     var armyListControls=$('#armyListControls').hide();
     $('<div class="moveUpButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveUpButton')).bind('click',function(){
@@ -199,10 +215,10 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     }
     var clear=armyList.clear=function(){
         listRecordsById=armyList.listRecordsById={};
-        armyList.listName='';
+        armylist.setListName('',true);
         armyList.newListId();
         $('#armyList .armyListModelRow').remove();
-		$('#genericPopup').hide();
+        $('#genericPopup').hide();
         validateList();
     };
 	
@@ -317,9 +333,9 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
             warnings.push(messages.get('armylist.warning.ltMiscount'));
             armyList.addWarning(ltRecords);
         }
-//        $.each(armyList.validations||[],function(i,validation){
-//            validation.call(armyList);
-//        });
+        //        $.each(armyList.validations||[],function(i,validation){
+        //            validation.call(armyList);
+        //        });
         plugins.armylistValidate(armyList);
         $('#armyList .armyListSpacer').appendTo('#armyList tbody');
         checkGroupMarks();
@@ -366,7 +382,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     }
     function drawListSummary(){
         var effectivePointCap=armyList.getEffectivePointCap(),
-            effectiveSwcCap=armyList.getEffectiveSwcCap();
+        effectiveSwcCap=armyList.getEffectiveSwcCap();
         $('.pointsCount .count').text(armyList.pointCount);
         $('.pointsCount .max').text(effectivePointCap);
         $('.pointsCount .diff').text(effectivePointCap-armyList.pointCount);

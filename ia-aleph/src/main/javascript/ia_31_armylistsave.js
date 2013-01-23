@@ -160,8 +160,7 @@
                     var name=listInfo.listName;
                     var nameField=$('<td class="nameField"/>').text(name?name:messages.get('armylistsave.setName')).appendTo(savedListRow).editable(function(value){
                         if(isCurrentList){
-                            armyList.listName=value;
-                            armyList.saveList();
+                            armylist.setListName(value);
                         }else{
                             listInfo.listName=value;
                             saveList(listInfo);

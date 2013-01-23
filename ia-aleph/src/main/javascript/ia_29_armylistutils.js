@@ -41,7 +41,7 @@ var importList=armyList.importList=function(list){
         pushModelAndCompanions(modelRecord);
     });
     armyList.listId=list.listId||list.id; // legacy
-    armyList.listName=list.listName;
+    armylist.setListName(list.listName,true);
     if(!armyList.listId){
         armyList.newListId();
     }
