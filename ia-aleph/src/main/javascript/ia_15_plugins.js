@@ -33,7 +33,7 @@ var plugins=ia.plugins={};
         delete pluginsById[id];
     };
     
-    plugins.configureMethod=function(methodName,config){
+    plugins.configureMethod=plugins.registerMethod=function(methodName,config){
         methodConfigurations[methodName]=config||{};
         delete plugins[methodName];
         addMethod(methodName);
@@ -45,7 +45,16 @@ var plugins=ia.plugins={};
         }
         var methodConfig=methodConfigurations[methodName]||{};
         log('registering plugin method : ',methodName,' config : ',methodConfig);
-        if(methodConfig.chain){
+        if(methodConfig.discardResult){
+            plugins[methodName]=function(){
+                var methodArgs=arguments;
+                $.each(pluginsById,function(id,plugin){
+                    if(plugin[methodName]){
+                        plugin[methodName].apply(plugin,methodArgs);
+                    }                    
+                });
+            };
+        }if(methodConfig.chain){
             var chainIndex=methodConfig.chainIndex||0;
             plugins[methodName]=function(){
                 var res=undefined,methodArgs=arguments;

@@ -107,12 +107,20 @@ body{
         width: @imageSize2;
         height: @imageSize2;    
     }
-    #armyListControls {
+    #armyListControls , #armyListGameModeControls {
+        display:none;
         text-align: right;
-    }
-    #armyListControls .armyListControlButton{
-        display: inline-block;
-        padding: @padding4 @padding5;
+        .armyListControlButton{
+            display: inline-block;
+            padding: @padding4 @padding5;
+        }
+        .armyListControlButtonIcon{
+            width: 16px;
+            height: 16px;
+        }
+        .activeControlButton{
+            display: none;
+        }
     }
     .modelNames {
         padding-left: 8px;
@@ -122,6 +130,20 @@ body{
         .modelName {
             min-width: 50%;
         }
+    }
+}
+#rootContainer.armylistRecordSelected:not(.gameMode) #armyList  #armyListControls {
+        display: block;
+}
+#rootContainer.armylistRecordSelected.gameMode #armyList  #armyListGameModeControls {
+        display: block;
+}
+#armyListGameModeControls.inactiveModelSelected{
+    .activeControlButton{
+        display: inline-block;
+    }
+    .inactiveControlButton{
+        display: none;
     }
 }
 
