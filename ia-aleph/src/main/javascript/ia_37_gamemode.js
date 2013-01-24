@@ -74,14 +74,14 @@ var game=ia.game={};
         var remainingOrders=0,remainingPoints=0;
         $.each(modelList,function(x,listRecord){
             if(!currentGame.inactiveModelsByRecordId[listRecord.id]){
-                remainingPoints+=listRecord.model.get('cost'); //todo check for baggage, shasvastii, etc
+                remainingPoints+=Number(listRecord.model.get('cost'))||0; //todo check for baggage, shasvastii, etc
                 remainingOrders+=listRecord.model.parent.isPseudoUnit?0:1; //todo better check
             }
         });
         var pointLoss=armylist.pointCount-remainingPoints, lossPercentage=pointLoss/armylist.pointCount*100;
         $('.remainingOrders',gameModeContainer).text(remainingOrders);
         $('.remainingPoints',gameModeContainer).text(remainingPoints+'/'+armylist.pointCount);
-        $('.lossPercentage',gameModeContainer).text(lossPercentage);
+        $('.lossPercentage',gameModeContainer).text(lossPercentage+'%');
         if(lossPercentage>60){ //todo consider morat, religious
             $('<div class="warning"/>').text(messages.get('game.retreatWarning')).appendTo(warningsContainer);
         }
