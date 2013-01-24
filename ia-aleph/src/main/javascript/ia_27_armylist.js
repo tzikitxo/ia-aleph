@@ -175,6 +175,13 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
     });
     armylist.armylistScroller=armylistScroll;
+    plugins.registerPlugin('armylistScroller',{
+        onSizeOrLayoutChanged:function(){
+            //            if(armylistScroll){
+            armylistScroll.updateScroll();
+            //            }
+        }
+    });
     // END SCROLLABLE
     
     $('.pointsCount , .swcCount').bind('mousewheel',function(e,delta){
@@ -379,7 +386,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         //armyList.warnings=warnings;
         drawListSummary();
-        utils.updateAllScroll();
+        plugins.onSizeOrLayoutChanged();
     }
     function drawListSummary(){
         var effectivePointCap=armyList.getEffectivePointCap(),

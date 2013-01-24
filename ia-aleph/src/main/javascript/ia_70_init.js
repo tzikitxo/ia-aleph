@@ -150,7 +150,9 @@
 		window.navigator.splashscreen.hide();
 	}
 
-	ia.isReady=true;
-	utils.updateAllScroll();
+        
+        plugins.afterAppLoading();
 	
+	ia.isReady=true;
+	plugins.onSizeOrLayoutChanged();
 })();

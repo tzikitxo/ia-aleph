@@ -43,6 +43,12 @@ var menu=ia.menu={};
             vScrollbar:true
         }
     });
+    plugins.registerPlugin('menuScroll',{
+        onSizeOrLayoutChanged:function(){
+            menuScroll.updateScroll();
+        }
+    });
+    
     
     var isShowing=false;
     function showMenu(){
@@ -215,7 +221,7 @@ var menu=ia.menu={};
         currentMode=newMode;
         $('#rootContainer').removeClass('armylistMode').removeClass('unitDetailMode').removeClass('unitSelectionMode').addClass(newMode);
         config.set('smallScreen.lastView',newMode);
-        utils.updateAllScroll();
+        plugins.onSizeOrLayoutChanged();
     } 
     switchMode(config.get('smallScreen.lastView'));
     

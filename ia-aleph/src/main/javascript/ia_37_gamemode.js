@@ -36,26 +36,41 @@ var game=ia.game={};
     game.enableGameMode=function(){
         $('#rootContainer').addClass('gameMode');
         gameModeEnabled=true;
-        utils.updateAllScroll();
+        config.set('game.gameModeEnabled',true);
+        plugins.onSizeOrLayoutChanged();
         buildGameControlScreen();
     };
     game.disableGameMode=function(){
         $('#rootContainer').removeClass('gameMode');
         gameModeEnabled=false;
-        utils.updateAllScroll();
+        config.set('game.gameModeEnabled',false);
+        plugins.onSizeOrLayoutChanged();
         $('#gameModeContainer').empty();
     };
+    
+    plugins.registerPlugin('game',{
+        afterAppLoading:function(){
+            if(config.get('game.gameModeEnabled')){
+                game.enableGameMode();
+            }
+        }
+    });
+    
         
     var gameModeContainer=$('#gameModeContainer');
+    $('.remainingOrders',gameModeContainer).before(messages.get('game.remainingOrders'));
+    $('.remainingPoints',gameModeContainer).before(messages.get('game.remainingPoints'));
+    $('.lossPercentage',gameModeContainer).before(messages.get('game.lossPercentage'));
         
     function buildGameControlScreen(){
-        gameModeContainer.empty()
-        .append('<div class="listStatus" ><span class="remainingOrders" /><span class="remainingPoints" /><span class="lossPercentage" />%</div>');
+        //        gameModeContainer.empty()
+        //        .append('<div class="listStatus" ><span class="remainingOrders" /><span class="remainingPoints" /><span class="lossPercentage" />%</div>');
         
         updateGameControlScreen();
     }
     
     function updateGameControlScreen(){
+        var warningsContainer=$('.warnings',gameModeContainer).empty();
         var modelList=armylist.getListRecordsAsList();
         var remainingOrders=0,remainingPoints=0;
         $.each(modelList,function(x,listRecord){
@@ -66,8 +81,11 @@ var game=ia.game={};
         });
         var pointLoss=armylist.pointCount-remainingPoints, lossPercentage=pointLoss/armylist.pointCount*100;
         $('.remainingOrders',gameModeContainer).text(remainingOrders);
-        $('.remainingPoints',gameModeContainer).text(remainingPoints);
+        $('.remainingPoints',gameModeContainer).text(remainingPoints+'/'+armylist.pointCount);
         $('.lossPercentage',gameModeContainer).text(lossPercentage);
+        if(lossPercentage>60){ //todo consider morat, religious
+            $('<div class="warning"/>').text(messages.get('game.retreatWarning')).appendTo(warningsContainer);
+        }
     }
     
 })();

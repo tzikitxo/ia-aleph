@@ -137,7 +137,7 @@ var configwindow=ia.configwindow={};
         update:function(button){
             button.text(messages.get('config.mainTheme.'+config.get('main.theme')));
             utils.setTheme(config.get('main.theme'));
-            utils.updateAllScroll();          
+            plugins.onSizeOrLayoutChanged(); 
         }
     });
 	
@@ -185,6 +185,12 @@ var configwindow=ia.configwindow={};
         name:'configScroller',
         iScrollConfig:{
             vScrollbar:true
+        }
+    });
+    
+    plugins.registerPlugin('configScroller',{
+        onSizeOrLayoutChanged:function(){
+            configScroller.updateScroll();
         }
     });
     

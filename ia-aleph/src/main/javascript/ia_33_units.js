@@ -209,7 +209,7 @@ var units=ia.units={};
         }
     });
     var getLocalAttr=function(attrName){
-       return plugins.getUnitValue(attrName,this[attrName],this);
+        return plugins.getUnitValue(attrName,this[attrName],this);
     };
     
     var commonMethods={
@@ -267,8 +267,8 @@ var units=ia.units={};
                 });
             });
         }else{
-			unit.altp=false;
-		}
+            unit.altp=false;
+        }
         loadAttrs(unit);
         prepareCbImages(unit);
         unit.childsByCode={};
@@ -374,7 +374,7 @@ var units=ia.units={};
                     unitButton.appendTo(searchUBContainer);
                 });
                 sortUnitButtons(searchUBContainer);
-                utils.updateAllScroll();
+                plugins.onSizeOrLayoutChanged();
             }
         }else{
             log('search value too short : ',searchValue);
@@ -675,7 +675,7 @@ var units=ia.units={};
             });
         }
         try{
-//            armyList.postLoadProcessing();
+            //            armyList.postLoadProcessing();
             plugins.armylistPostLoadProcess();
         }catch(e){
             log('error in plugins.armylistPostLoadProcess() : ',e);
@@ -781,11 +781,18 @@ var units=ia.units={};
             $('#modelChooserContainer .modelButton').draggable('enable');
         }
     });
-    units.updateScroll=function(){
-        if(modelChooserScroll){
-            modelChooserScroll.updateScroll();
+//    units.updateScroll=function(){
+//        if(modelChooserScroll){
+//            modelChooserScroll.updateScroll();
+//        }
+//    }
+    plugins.registerPlugin('unitsScroller',{
+        onSizeOrLayoutChanged:function(){
+            if(modelChooserScroll){
+                modelChooserScroll.updateScroll();
+            }
         }
-    }
+    });
     // END SCROLLABLE
 
     function clearCache(item){
