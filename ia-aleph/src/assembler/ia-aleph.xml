@@ -19,6 +19,7 @@
                 <include>ia_33_units.js</include>
                 <include>ia_34_specops.js</include>
                 <include>ia_35_modelinfo.js</include>
+                <include>ia_37_gamemode.js</include>
                 <include>ia_40_wiki.js</include>
                 <include>ia_45_campaign.js</include>
                 <include>ia_50_weapons.js</include>
@@ -93,7 +94,7 @@
                 <include>lib/jquery.cycle.all.js</include>
                 <include>lib/jquery.jeditable.js</include>
                 <include>lib/iscroll.js</include>
-				<include>lib/ia-lib_utils.js</include>
+                <include>lib/ia-lib_utils.js</include>
             </includes>
         </script>
     </scripts>

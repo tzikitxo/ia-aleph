@@ -43,6 +43,8 @@
         'menu.donate':'DONATE',
         'menu.campaignTools':'CAMPAIGN',
         'menu.duplicateCurrentList':"DUPLICATE CURRENT LIST",
+        'menu.gameMode':'GAME',
+        'menu.listMode':'EDIT LIST',
 		
 		
         'config.selectRange.showCm':'range unit : cm',
