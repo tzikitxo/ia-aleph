@@ -45,7 +45,6 @@ var game=ia.game={};
         gameModeEnabled=false;
         config.set('game.gameModeEnabled',false);
         plugins.onSizeOrLayoutChanged();
-        $('#gameModeContainer').empty();
     };
     
     plugins.registerPlugin('game',{
