@@ -78,7 +78,7 @@ var menu=ia.menu={};
     }
     
     function buildMenu(){
-         $('#mainMenuScrollContent').empty();
+        $('#mainMenuScrollContent').empty();
     
         function addMenuButton(config){
             var menuButton=$('<div class="menuButton" />').text(config.label).appendTo('#mainMenuScrollContent').bind('click',function(){
@@ -168,7 +168,29 @@ var menu=ia.menu={};
                 hideMain();
             },
             icon:'wiki'
-        },{
+        }]);
+    
+        if(game.isEnabled()){
+            addMenuButton({
+                label:messages.get('menu.listMode'),
+                handler:function(){
+                    game.disableGameMode();
+                    hideMenu();
+                },
+                icon:'list'
+            });            
+        }else{
+            addMenuButton({
+                label:messages.get('menu.gameMode'),
+                handler:function(){
+                    game.enableGameMode();
+                    hideMenu();
+                },
+                icon:'dice'
+            });
+        }
+    
+        addMenuButtons([{
             label:messages.get('menu.openConfigWindow'),
             handler:function(){
                 hideMenu();
