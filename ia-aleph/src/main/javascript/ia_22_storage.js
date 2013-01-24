@@ -63,6 +63,10 @@ var session=ia.session=utils.wrapStorage(sessionStorage);
 			mode:'boolean',
 			defaultValue:false
 		},
+		'game.gameModeEnabled':{
+			mode:'boolean',
+			defaultValue:false
+		},
 		'main.theme':{
 			mode:'toggleList',
 			availableValues:['default_default','default_big','white_default','white_big'],

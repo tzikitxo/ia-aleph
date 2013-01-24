@@ -50,11 +50,11 @@ var plugins=ia.plugins={};
             plugins[methodName]=function(){
                 var res=undefined,methodArgs=arguments;
                 $.each(pluginsById,function(id,plugin){
-                     if(plugin[methodName]){
-                          var thisRes=plugin[methodName].apply(plugin,methodArgs);
-                          res=thisRes;
-                          methodArgs[chainIndex]=thisRes;
-                     }
+                    if(plugin[methodName]){
+                        var thisRes=plugin[methodName].apply(plugin,methodArgs);
+                        res=thisRes;
+                        methodArgs[chainIndex]=thisRes;
+                    }
                 });
                 return res;
             };            
@@ -84,3 +84,9 @@ var plugins=ia.plugins={};
    
 })();
 
+plugins.configureMethod('onSizeOrLayoutChanged');
+$(window).resize(function() {
+    if(ia.isReady){
+        plugins.onSizeOrLayoutChanged();
+    }
+})

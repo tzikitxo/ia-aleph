@@ -123,8 +123,8 @@
             load();
             savedListWindow.empty();
             $('<div id="savedListsBackButton" />').text(messages.get('common.close'))
-		.prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
-                .bind('click',function(){
+            .prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
+            .bind('click',function(){
                 backToMainView();
             }).appendTo(savedListWindow);
             var scrollWrapper=$('<div id="savedListsScrollWrapper" />').appendTo(savedListWindow);
@@ -218,6 +218,14 @@
             });
             //            setTimeout(function () {
             savedListScroller.updateScroll();
+            
+            plugins.registerPlugin('savedListScroller',{
+                onSizeOrLayoutChanged:function(){
+//                    if(savedListScroller){
+                        savedListScroller.updateScroll();
+//                    }
+                }
+            });
         //            },1000);
         //            units.updateScroll=savedListScroller.updateScroll;
         }

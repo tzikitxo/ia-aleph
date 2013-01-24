@@ -262,7 +262,12 @@
         'campaign.totalXpCost':"total XP spent : ",
         'campaign.enabled.label':"campaign mode enabled",
         'campaign.disabled.label':"campaign mode disabled",
-        'campaign.specsprint.title':"Military Specialities (Paradiso Campaign)"
+        'campaign.specsprint.title':"Military Specialities (Paradiso Campaign)",
+        
+       'game.remainingOrders':"orders: ",
+       'game.remainingPoints':"points alive: ",
+       'game.lossPercentage':"loss percentage: ",
+       'game.retreatWarning':"retreat!"
     };
     
     names['en']={

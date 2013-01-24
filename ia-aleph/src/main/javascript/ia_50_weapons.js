@@ -297,7 +297,7 @@ var weapons=ia.weapons={};
             weaponsButton.addClass('hidden').css('display','');
             weaponsInfo.hide().removeClass('hidden').show('fast',function(){
                 weaponsInfo.css('display','');
-                utils.updateAllScroll();
+                plugins.onSizeOrLayoutChanged();
             });
         });
         config.set('weapons.showWeapons',true);
@@ -307,7 +307,7 @@ var weapons=ia.weapons={};
             weaponsInfo.addClass('hidden').css('display','');
             weaponsButton.hide().removeClass('hidden').show('fast',function(){
                 weaponsButton.css('display','');
-                utils.updateAllScroll();
+                plugins.onSizeOrLayoutChanged();
             });
         });
         config.set('weapons.showWeapons',false);

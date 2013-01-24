@@ -211,10 +211,6 @@
 		$('#cssLinkReference').attr('href','css/style_theme_'+newTheme+'.css');
 	}
 
-	$(window).resize(function() {
-		utils.updateAllScroll();
-	})
-
 	utils.createScroll=function(config){
 		var thisScroll=null,timeout=0;
 		utils.log('created scroll ',config.name);
