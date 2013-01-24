@@ -45,7 +45,10 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     }
     showListName();
     
-    var armyListControls=$('#armyListControls').hide();
+    plugins.registerMethod('armylistRecordSelected');
+    plugins.registerMethod('armylistRecordDeselected');
+    
+    var armyListControls=$('#armyListControls');
     $('<div class="moveUpButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveUpButton')).bind('click',function(){
         if(armyList.modelCount<2){
             return;
@@ -59,7 +62,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         afterPositionChange();	   
     })
-    .append($('<img />').attr('src','images/up_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/up_icon.png'))
     .appendTo(armyListControls);
     $('<div class="moveDownButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveDownButton')).bind('click',function(){
         if(armyList.modelCount<2){
@@ -74,7 +77,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         afterPositionChange();	   
     })
-    .append($('<img />').attr('src','images/down_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/down_icon.png'))
     .appendTo(armyListControls);
     var swapGroupButton=$('<div class="swapGroupButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.swapGroupButton')).bind('click',function(){
         var record=getSelectedRecord();
@@ -84,18 +87,27 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
             afterPositionChange();	   
         }
     })
-    .append($('<img />').attr('src','images/swapgroup_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/swapgroup_icon.png'))
     .appendTo(armyListControls);
     var removeModelButton=$('<div class="removeModelButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.removeModelButton')).bind('click',function(){
         var record=getSelectedRecord();
         if(record){
             removeRecord(record);
-            armyListControls.hide();
+//            armyListControls.hide();
+            plugins.armylistRecordDeselected(record);
         }
     })
-    .append($('<img />').attr('src','images/trash_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/trash_icon.png'))
     .appendTo(armyListControls);
-           
+    plugins.registerPlugin('armylistRecordSelection',{
+        armylistRecordDeselected:function(){
+            $('#rootContainer').removeClass('armylistRecordSelected');
+        },
+        armylistRecordSelected:function(){
+            $('#rootContainer').addClass('armylistRecordSelected');
+        }
+    });
+               
     function afterPositionChange(){
         validateList();
         armyList.saveList();
@@ -137,8 +149,10 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
                 //                    var targetEle=$(e.srcElement).parents('.armyListModelRow').find('.recordId');
                 //                    var recordId=Number($('.recordId',targetEle).text());
                 //                    var record=listRecordsById[recordId];
-                //log('removing record : ',record);                    
-                removeRecord(listRecordsById[Number($(e.srcElement||e.originalTarget).parents('.armyListModelRow').andSelf().find('.recordId').first().text())]);
+                //log('removing record : ',record);    
+                if(!game.isGameModeEnabled()){
+                    removeRecord(listRecordsById[Number($(e.srcElement||e.originalTarget).parents('.armyListModelRow').andSelf().find('.recordId').first().text())]);
+                }
                 //                    isOut=false;
             }else{
                 afterPositionChange();	                    
@@ -222,6 +236,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         return record;
     }
     var clear=armyList.clear=function(){
+        plugins.armylistRecordDeselected();
         listRecordsById=armyList.listRecordsById={};
         armylist.setListName('',true);
         armyList.newListId();
@@ -447,7 +462,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         $.each(removeAlso,function(index,companionRecord){
             popRecord(companionRecord);
         });
-        armyListControls.hide();
+        plugins.armylistRecordDeselected(listRecord);
         validateList();
         armyList.saveList();
     }
@@ -495,7 +510,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
             if(config.get('armylist.touchAction')=='showInfoAndChooser'){
                 units.showModelChooser(model.get('isc'));
             }
-            armyListControls.show();
+            plugins.armylistRecordSelected(listRecord);
         }).bind('dblclick',function(){
             removeRecord(listRecord);
         });

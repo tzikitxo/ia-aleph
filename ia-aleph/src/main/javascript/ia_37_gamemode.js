@@ -18,18 +18,18 @@ var game=ia.game={};
 (function(){
     
     var gameModeEnabled=false;
-    var currentGame;
+    var currentGame=storage.unpack('game.gameModeStatus')||clearCurrentGame();
     
     function clearCurrentGame(){
-        currentGame={
+        return currentGame={
             inactiveModelsByRecordId:{
                 
-        }
+            }
         };
     }
-    clearCurrentGame();
+//    clearCurrentGame();
         
-    game.isEnabled=function(){
+    game.isEnabled=game.isGameModeEnabled=function(){
         return gameModeEnabled;
     };
         
@@ -81,10 +81,39 @@ var game=ia.game={};
         var pointLoss=armylist.pointCount-remainingPoints, lossPercentage=pointLoss/armylist.pointCount*100;
         $('.remainingOrders',gameModeContainer).text(remainingOrders);
         $('.remainingPoints',gameModeContainer).text(remainingPoints+'/'+armylist.pointCount);
-        $('.lossPercentage',gameModeContainer).text(lossPercentage+'%');
+        $('.lossPercentage',gameModeContainer).text(Math.round(lossPercentage)+'%');
         if(lossPercentage>60){ //todo consider morat, religious
             $('<div class="warning"/>').text(messages.get('game.retreatWarning')).appendTo(warningsContainer);
         }
+        storage.pack('game.gameModeStatus',currentGame);
     }
+    
+    var armyListControls=$('#armyListGameModeControls');
+    $('<div class="armyListControlButton activeControlButton" />').attr('title',messages.get('game.buttons.active')).bind('click',function(){
+        var record=armylist.getSelectedRecord();
+        record.row.removeClass('deadModel');
+        delete currentGame.inactiveModelsByRecordId[record.id];
+        updateGameControlScreen();
+    })
+    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/enabled_icon.png'))
+    .appendTo(armyListControls);
+    $('<div class="armyListControlButton inactiveControlButton" />').attr('title',messages.get('game.buttons.dead')).bind('click',function(){
+        var record=armylist.getSelectedRecord();
+        record.row.addClass('deadModel');
+        currentGame.inactiveModelsByRecordId[record.id]=record.model;
+        updateGameControlScreen();
+    })
+    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/disabled_icon.png'))
+    .appendTo(armyListControls);
+    
+    plugins.registerPlugin('armylistRecordSelection',{
+        armylistRecordSelected:function(record){
+            if(currentGame.inactiveModelsByRecordId[record.id]){
+                armyListControls.addClass('inactiveModelSelected');
+            }else{
+                armyListControls.removeClass('inactiveModelSelected');                
+            }
+        }
+    });
     
 })();
