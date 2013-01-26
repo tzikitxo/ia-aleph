@@ -45,8 +45,8 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     }
     showListName();
     
-    plugins.registerMethod('armylistRecordSelected');
-    plugins.registerMethod('armylistRecordDeselected');
+    plugins.registerMethod('armylistRecordSelected',{discardResult:true});
+    plugins.registerMethod('armylistRecordDeselected',{discardResult:true});
     
     var armyListControls=$('#armyListControls');
     $('<div class="moveUpButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveUpButton')).bind('click',function(){
