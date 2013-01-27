@@ -68,7 +68,7 @@ var game=ia.game={};
 	function buildGameControlScreen(){
 		//        gameModeContainer.empty()
 		//        .append('<div class="listStatus" ><span class="remainingOrders" /><span class="remainingPoints" /><span class="lossPercentage" />%</div>');
-        $('#gamePhoto').attr('src',currentGame.gamePhoto);
+		$('#gamePhoto').attr('src',currentGame.gamePhoto);
 		updateGameControlScreen();
 	}
     
@@ -93,6 +93,7 @@ var game=ia.game={};
 			$('<div class="warning"/>').text(messages.get('game.retreatWarning')).appendTo(warningsContainer);
 		}
 		storage.pack('game.gameModeStatus',currentGame);
+		gamePhotoScroll.updateScroll();
 	}
     
 	var armyListControls=$('#armyListGameModeControls');
@@ -124,34 +125,40 @@ var game=ia.game={};
 	});
 	
 	
-    var gamePhotoScroll=utils.createScroll({
-        getScrollWrapper:function(){
-            return   $('#gamePhotoScrollWrapper');
-        },
-        getAvailableHeight:function(){
-            //            return $(window).height()-$('#modelInfoContainer').outerHeight(true)-21;
-            return $(window).height()-$('#topBar').outerHeight(true)-$('#listStatus').height();
-            //                -($('#armyList .listInfo').css('display')=="none"?0:$('#armyList .listInfo').outerHeight(true)+$('#armyList .warningsBar').outerHeight(true));
-        },
-        getExpectedHeight:function(){
-            return $('#gamePhotoScrollContent img').height();
-        },
-        getAvailableWidth:function(){
-            //            return $(window).height()-$('#modelInfoContainer').outerHeight(true)-21;
-            return $(window).width()-25-$('#rightContainer').outerWidth(true);
-            //                -($('#armyList .listInfo').css('display')=="none"?0:$('#armyList .listInfo').outerHeight(true)+$('#armyList .warningsBar').outerHeight(true));
-        },
-        getExpectedWidth:function(){
-            return $('#gamePhotoScrollContent img').width();
-        },
-        name:'gamePhotoScroll'
-    });
-    plugins.registerPlugin('gamePhotoScroller',{
-        onSizeOrLayoutChanged:function(){
-            //            if(armylistScroll){
-            gamePhotoScroll.updateScroll();
-            //            }
-        }
-    });
+	var gamePhotoScroll=utils.createScroll({
+		getScrollWrapper:function(){
+			return   $('#gamePhotoScrollWrapper');
+		},
+		getAvailableHeight:function(){
+			//            return $(window).height()-$('#modelInfoContainer').outerHeight(true)-21;
+			return $(window).height()-$('#topBar').outerHeight(true)-$('#listStatus').height()-20;
+		//                -($('#armyList .listInfo').css('display')=="none"?0:$('#armyList .listInfo').outerHeight(true)+$('#armyList .warningsBar').outerHeight(true));
+		},
+		getExpectedHeight:function(){
+			return $('#gamePhotoScrollContent img').height();
+		},
+		getAvailableWidth:function(){
+			//            return $(window).height()-$('#modelInfoContainer').outerHeight(true)-21;
+			return $(window).width()-25-$('#rightContainer').outerWidth(true);
+		//                -($('#armyList .listInfo').css('display')=="none"?0:$('#armyList .listInfo').outerHeight(true)+$('#armyList .warningsBar').outerHeight(true));
+		},
+		getExpectedWidth:function(){
+			return $('#gamePhotoScrollContent img').width();
+		},
+		name:'gamePhotoScroll',
+		iScrollConfig:{
+			lockDirection:false,
+			hScroll:true,
+			vScrollbar:true,
+			hScrollbar:true
+		}
+	});
+	plugins.registerPlugin('gamePhotoScroller',{
+		onSizeOrLayoutChanged:function(){
+			//            if(armylistScroll){
+			gamePhotoScroll.updateScroll();
+		//            }
+		}
+	});
     
 })();
