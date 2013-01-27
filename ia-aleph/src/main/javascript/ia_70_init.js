@@ -151,7 +151,7 @@
 	}
 
         
-        plugins.afterAppLoading();
+	plugins.afterAppLoading();
 	
 	ia.isReady=true;
 	plugins.onSizeOrLayoutChanged();
