@@ -732,3 +732,21 @@ body{
 #gamePhotoContainer{
 	margin: @padding1;
 }
+#gamePhotoScrollContent{
+	position: relative;
+}
+#gamePhotoOverlay{
+	position: absolute;
+	z-index:5;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	.photoModelIcon{
+		position: absolute;
+	}
+}
+#gamePhotoScrollWrapper , #gamePhotoScrollContent{
+	margin-right: auto;
+	margin-left: auto;
+}

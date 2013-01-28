@@ -178,5 +178,33 @@ var game=ia.game={};
 		//            }
 		}
 	});
+	
+	$('#gamePhotoOverlay').bind('click mousedown touchstart',function(e){
+		//		if(!($(e.currentTarget).attr('id')=='gamePhotoOverlay')){
+		if(e.target!=this){
+			return false; //stop touch events started on items
+		}
+	});
+	
+	var photoIconsByRecordId={
+		
+	};
+	
+	$('#gamePhotoScrollContent').droppable({
+		drop:function(event,ui){
+			var item=ui.draggable,recordId=$('.recordId',item).text();
+			if(item.hasClass('photoModelIcon')){
+				return;
+			}else if(photoIconsByRecordId[recordId]){
+				photoIconsByRecordId[recordId].css(ui.offset);
+			}else{
+				var record=armylist.listRecordsById[recordId];
+				photoIconsByRecordId[recordId]=$('.modelIcon',item).clone()
+					.addClass('photoModelIcon').css(ui.offset).appendTo('#gamePhotoOverlay').draggable().bind('click',function(){
+						record.row.trigger('click');
+					}).attr('title',record.model.getDisplay('name')+' '+record.model.getDisplay('codename'));
+			}
+		}
+	});
     
 })();
