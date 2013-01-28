@@ -68,28 +68,45 @@ var game=ia.game={};
 	function buildGameControlScreen(){
 		//        gameModeContainer.empty()
 		//        .append('<div class="listStatus" ><span class="remainingOrders" /><span class="remainingPoints" /><span class="lossPercentage" />%</div>');
-		$('#gamePhoto').attr('src',currentGame.gamePhoto);
+		$('#gamePhoto').attr('src',currentGame.gamePhoto).bind('load',function(){
+			$('#gamePhotoScrollContent').css({
+				width:$(this).width(),
+				height:$(this).height()
+			});
+			gamePhotoScroll.updateScroll();
+		});
 		updateGameControlScreen();
 	}
     
 	function updateGameControlScreen(){
 		var warningsContainer=$('.warnings',gameModeContainer).empty();
 		var modelList=armylist.getListRecordsAsList();
-		var remainingOrders=0,remainingPoints=0;
+		var remainingOrders=0,remainingPoints=0,pointLoss=0,totalPoints,hasMorat=false,allReligious=true;
 		$.each(modelList,function(x,listRecord){
+			var isBaggage=listRecord.model.get('spec')['Baggage']?true:false;
+			var modelValue=(Number(listRecord.model.get('cost'))||0)+(isBaggage?20:0);
 			if(!currentGame.inactiveModelsByRecordId[listRecord.id]){
-				remainingPoints+=Number(listRecord.model.get('cost'))||0; //todo check for baggage, shasvastii, etc
+				remainingPoints+=modelValue; //todo check for baggage, shasvastii, etc
 				remainingOrders+=listRecord.model.parent.isPseudoUnit?0:1; //todo better check
 				listRecord.row.removeClass('deadModel');
 			}else{
 				listRecord.row.addClass('deadModel');
+				pointLoss+=modelValue;
+			}
+			if(!hasMorat && listRecord.model.get('spec')['Morat']){
+				hasMorat=true;
+			}
+			if(allReligious && !listRecord.model.get('spec')['Religious Troop']){
+				allReligious=false;
 			}
 		});
-		var pointLoss=armylist.pointCount-remainingPoints, lossPercentage=pointLoss/armylist.pointCount*100;
+		totalPoints=pointLoss+remainingPoints;
+		var lossPercentage=pointLoss/totalPoints*100;
 		$('.remainingOrders',gameModeContainer).text(remainingOrders);
-		$('.remainingPoints',gameModeContainer).text(remainingPoints+' / '+armylist.pointCount);
+		$('.remainingPoints',gameModeContainer).text(remainingPoints+' / '+totalPoints);
 		$('.lossPercentage',gameModeContainer).text(Math.round(lossPercentage)+' %');
-		if(lossPercentage>60){ //todo consider morat, religious
+		var retreatThreshold=hasMorat?75:60;
+		if(!allReligious && lossPercentage>retreatThreshold){
 			$('<div class="warning"/>').text(messages.get('game.retreatWarning')).appendTo(warningsContainer);
 		}
 		storage.pack('game.gameModeStatus',currentGame);
@@ -131,7 +148,7 @@ var game=ia.game={};
 		},
 		getAvailableHeight:function(){
 			//            return $(window).height()-$('#modelInfoContainer').outerHeight(true)-21;
-			return $(window).height()-$('#topBar').outerHeight(true)-$('#listStatus').height()-20;
+			return $(window).height()-$('#topBar').outerHeight(true)-$('#listStatus').height()-30;
 		//                -($('#armyList .listInfo').css('display')=="none"?0:$('#armyList .listInfo').outerHeight(true)+$('#armyList .warningsBar').outerHeight(true));
 		},
 		getExpectedHeight:function(){
@@ -149,6 +166,7 @@ var game=ia.game={};
 		iScrollConfig:{
 			lockDirection:false,
 			hScroll:true,
+			vScroll:true,
 			vScrollbar:true,
 			hScrollbar:true
 		}
