@@ -197,14 +197,15 @@ var game=ia.game={};
         function addPhotoIcon(recordId,position){
             function getPosition(element){
                 return {
-                                top:element.attr('top'),
-                                left:element.attr('left')
+                                top:element.css('top'),
+                                left:element.css('left')
                             };
             }
             function savePosition(recordId){
-                var photoIcon=photoIconsByRecordId[recordId];
+                var photoIcon=photoIconsByRecordId[recordId],position=getPosition(photoIcon);
+                //log('photoIcon update position ',recordId,' : ',position);
                 currentGame.photoIconsById[recordId]={
-                            position:getPosition(photoIcon)
+                            position:position
                         };
             }
 				var record=armylist.listRecordsById[recordId],item=record.row;
