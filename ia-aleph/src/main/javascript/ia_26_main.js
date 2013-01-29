@@ -14,6 +14,8 @@
  **/
 
 (function(){
+    
+    log('loading 26: main');
 	
     var bgDxUrl=utils.getBackgroundImageDx();
     $('#rootContainer #overly1').css({

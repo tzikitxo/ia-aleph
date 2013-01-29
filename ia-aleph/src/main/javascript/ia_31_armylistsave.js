@@ -15,6 +15,8 @@
 
 (function(){
     
+    log('loading 31: armylist load/save');
+    
     if(storage.isPersistent){
         
         var savedListsKey="savedLists",savedListPrefix="savedList.",lastSavedListKey="lastSavedList",lastSavedList;
@@ -120,7 +122,9 @@
             var savedListWindow=$('#savedLists');
             load();
             savedListWindow.empty();
-            $('<div id="savedListsBackButton" />').text(messages.get('armylistsave.backButton')).bind('click',function(){
+            $('<div id="savedListsBackButton" />').text(messages.get('common.close'))
+            .prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
+            .bind('click',function(){
                 backToMainView();
             }).appendTo(savedListWindow);
             var scrollWrapper=$('<div id="savedListsScrollWrapper" />').appendTo(savedListWindow);
@@ -156,8 +160,7 @@
                     var name=listInfo.listName;
                     var nameField=$('<td class="nameField"/>').text(name?name:messages.get('armylistsave.setName')).appendTo(savedListRow).editable(function(value){
                         if(isCurrentList){
-                            armyList.listName=value;
-                            armyList.saveList();
+                            armylist.setListName(value);
                         }else{
                             listInfo.listName=value;
                             saveList(listInfo);
@@ -215,6 +218,14 @@
             });
             //            setTimeout(function () {
             savedListScroller.updateScroll();
+            
+            plugins.registerPlugin('savedListScroller',{
+                onSizeOrLayoutChanged:function(){
+//                    if(savedListScroller){
+                        savedListScroller.updateScroll();
+//                    }
+                }
+            });
         //            },1000);
         //            units.updateScroll=savedListScroller.updateScroll;
         }

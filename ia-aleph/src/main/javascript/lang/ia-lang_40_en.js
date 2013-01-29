@@ -43,6 +43,8 @@
         'menu.donate':'DONATE',
         'menu.campaignTools':'CAMPAIGN',
         'menu.duplicateCurrentList':"DUPLICATE CURRENT LIST",
+        'menu.gameMode':'GAME',
+        'menu.listMode':'EDIT LIST',
 		
 		
         'config.selectRange.showCm':'range unit : cm',
@@ -103,7 +105,7 @@
         'armylist.export.previewButton':'PREVIEW',
         'armylist.export.bbcodeButton':'BBCODE (FORUM CODE)',
         'armylist.export.qrcodeButton':'QRCODE',
-                
+        'armylist.export.sendMailButton':'E-MAIL',
                 
         'armylistsave.backButton':'BACK',
         'armylistsave.deleteListButton':'delete list',
@@ -181,7 +183,7 @@
         'print.buttonLabel.icons':'show extra icons',
         'print.buttonLabel.depletables':'show depletable weapon/equipment\'s checkboxes',
         'print.buttonLabel.colors':'show colors',
-//        'print.buttonLabel.hiddenList':'TOGGLE HIDDEN LIST',
+        //        'print.buttonLabel.hiddenList':'TOGGLE HIDDEN LIST',
         'print.buttonLabel.campaignspecs':'show campaign specs',
         'print.buttonLabel.metabooty':'show metachemistry/booty tables',
         
@@ -260,7 +262,12 @@
         'campaign.totalXpCost':"total XP spent : ",
         'campaign.enabled.label':"campaign mode enabled",
         'campaign.disabled.label':"campaign mode disabled",
-        'campaign.specsprint.title':"Military Specialities (Paradiso Campaign)"
+        'campaign.specsprint.title':"Military Specialities (Paradiso Campaign)",
+        
+       'game.remainingOrders':"orders: ",
+       'game.remainingPoints':"points alive: ",
+       'game.lossPercentage':"loss percentage: ",
+       'game.retreatWarning':"retreat!"
     };
     
     names['en']={

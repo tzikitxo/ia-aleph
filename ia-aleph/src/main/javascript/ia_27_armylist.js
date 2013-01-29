@@ -17,6 +17,8 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
 
 (function(){
     
+    log('loading 27: armylist core');
+    
     $('#topBar .modelCount').before(messages.get('armylist.listinfo.modelCount')+': ');
     $('#topBar .pointsCount').before(messages.get('armylist.listinfo.pointsCount')+': ');
     $('#topBar .swcCount').before(messages.get('armylist.listinfo.swcCount')+': ');
@@ -24,9 +26,29 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     $('#armyList .modelCount').after(' '+messages.get('armylist.listinfo.modelCount')+", "+messages.get('armylist.listinfo.total')+": ");
     $('#armyList .secondRow .label').text(messages.get('armylist.listinfo.max')+": ");
     $('#armyList .thirdRow .label').text(messages.get('armylist.listinfo.remaining')+": ");
-    //    $('#warnings').before(messages.get('armylist.listinfo.warnings')+': ');
     
-    var armyListControls=$('#armyListControls').hide();
+    $('<div class="armylistNameField"/>').appendTo('#topBar .listInfo');
+    $('<div class="armylistNameField"/>').appendTo($('<div class="fourthRow" />').appendTo('#armyList .listInfo'));
+    $('.armylistNameField').editable(function(value){
+        armylist.setListName(value);
+        return value;
+    });
+    armylist.setListName=function(newName,skipSave){
+        armylist.listName=newName;
+        if(!skipSave){
+            armylist.saveList();
+        }
+        showListName();
+    };
+    function showListName(){
+        $('#topBar .armylistNameField , #armyList .armylistNameField').text(armylist.listName||messages.get('armylistsave.setName'));
+    }
+    showListName();
+    
+    plugins.registerMethod('armylistRecordSelected',{discardResult:true});
+    plugins.registerMethod('armylistRecordDeselected',{discardResult:true});
+    
+    var armyListControls=$('#armyListControls');
     $('<div class="moveUpButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveUpButton')).bind('click',function(){
         if(armyList.modelCount<2){
             return;
@@ -40,7 +62,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         afterPositionChange();	   
     })
-    .append($('<img />').attr('src','images/up_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/up_icon.png'))
     .appendTo(armyListControls);
     $('<div class="moveDownButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveDownButton')).bind('click',function(){
         if(armyList.modelCount<2){
@@ -55,7 +77,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         afterPositionChange();	   
     })
-    .append($('<img />').attr('src','images/down_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/down_icon.png'))
     .appendTo(armyListControls);
     var swapGroupButton=$('<div class="swapGroupButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.swapGroupButton')).bind('click',function(){
         var record=getSelectedRecord();
@@ -65,18 +87,27 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
             afterPositionChange();	   
         }
     })
-    .append($('<img />').attr('src','images/swapgroup_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/swapgroup_icon.png'))
     .appendTo(armyListControls);
     var removeModelButton=$('<div class="removeModelButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.removeModelButton')).bind('click',function(){
         var record=getSelectedRecord();
         if(record){
             removeRecord(record);
-            armyListControls.hide();
+//            armyListControls.hide();
+            plugins.armylistRecordDeselected(record);
         }
     })
-    .append($('<img />').attr('src','images/trash_icon.png'))
+    .append($('<img  class="armyListControlButtonIcon" />').attr('src','images/trash_icon.png'))
     .appendTo(armyListControls);
-           
+    plugins.registerPlugin('armylistRecordSelection',{
+        armylistRecordDeselected:function(){
+            $('#rootContainer').removeClass('armylistRecordSelected');
+        },
+        armylistRecordSelected:function(){
+            $('#rootContainer').addClass('armylistRecordSelected');
+        }
+    });
+               
     function afterPositionChange(){
         validateList();
         armyList.saveList();
@@ -118,8 +149,10 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
                 //                    var targetEle=$(e.srcElement).parents('.armyListModelRow').find('.recordId');
                 //                    var recordId=Number($('.recordId',targetEle).text());
                 //                    var record=listRecordsById[recordId];
-                //log('removing record : ',record);                    
-                removeRecord(listRecordsById[Number($(e.srcElement||e.originalTarget).parents('.armyListModelRow').andSelf().find('.recordId').first().text())]);
+                //log('removing record : ',record);    
+                if(!game.isGameModeEnabled()){
+                    removeRecord(listRecordsById[Number($(e.srcElement||e.originalTarget).parents('.armyListModelRow').andSelf().find('.recordId').first().text())]);
+                }
                 //                    isOut=false;
             }else{
                 afterPositionChange();	                    
@@ -156,6 +189,13 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
     });
     armylist.armylistScroller=armylistScroll;
+    plugins.registerPlugin('armylistScroller',{
+        onSizeOrLayoutChanged:function(){
+            //            if(armylistScroll){
+            armylistScroll.updateScroll();
+            //            }
+        }
+    });
     // END SCROLLABLE
     
     $('.pointsCount , .swcCount').bind('mousewheel',function(e,delta){
@@ -196,11 +236,12 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         return record;
     }
     var clear=armyList.clear=function(){
+        plugins.armylistRecordDeselected();
         listRecordsById=armyList.listRecordsById={};
-        armyList.listName='';
+        armylist.setListName('',true);
         armyList.newListId();
         $('#armyList .armyListModelRow').remove();
-		$('#genericPopup').hide();
+        $('#genericPopup').hide();
         validateList();
     };
 	
@@ -213,12 +254,12 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         return armyList.pointCap;
     }
     armyList.getEffectivePointCap=function(){
-        return armyList.pointCap+(campaign?campaign.getPointIncrement():0);
+        return armyList.pointCap+(plugins.getPointIncrement?plugins.getPointIncrement():0);
     }
     armyList.getEffectiveSwcCap=function(){
-        return armyList.swcCap+(campaign?campaign.getSwcIncrement():0);
+        return armyList.swcCap+(plugins.getSwcIncrement?plugins.getSwcIncrement():0);
     }
-    
+    plugins.configureMethod('armylistValidate');
     var validateList=armyList.validateList=function(){
         $('.listInfo .warning , .warningsBar .warning , #armyList .armyListModelRow.warning').removeClass('warning');
         armyList.pointCount=0;
@@ -315,9 +356,10 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
             warnings.push(messages.get('armylist.warning.ltMiscount'));
             armyList.addWarning(ltRecords);
         }
-        $.each(armyList.validations||[],function(i,validation){
-            validation.call(armyList);
-        });
+        //        $.each(armyList.validations||[],function(i,validation){
+        //            validation.call(armyList);
+        //        });
+        plugins.armylistValidate(armyList);
         $('#armyList .armyListSpacer').appendTo('#armyList tbody');
         checkGroupMarks();
         if(groupMarksCount>0){
@@ -359,11 +401,11 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         //armyList.warnings=warnings;
         drawListSummary();
-        utils.updateAllScroll();
+        plugins.onSizeOrLayoutChanged();
     }
     function drawListSummary(){
         var effectivePointCap=armyList.getEffectivePointCap(),
-            effectiveSwcCap=armyList.getEffectiveSwcCap();
+        effectiveSwcCap=armyList.getEffectiveSwcCap();
         $('.pointsCount .count').text(armyList.pointCount);
         $('.pointsCount .max').text(effectivePointCap);
         $('.pointsCount .diff').text(effectivePointCap-armyList.pointCount);
@@ -420,7 +462,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         $.each(removeAlso,function(index,companionRecord){
             popRecord(companionRecord);
         });
-        armyListControls.hide();
+        plugins.armylistRecordDeselected(listRecord);
         validateList();
         armyList.saveList();
     }
@@ -468,7 +510,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
             if(config.get('armylist.touchAction')=='showInfoAndChooser'){
                 units.showModelChooser(model.get('isc'));
             }
-            armyListControls.show();
+            plugins.armylistRecordSelected(listRecord);
         }).bind('dblclick',function(){
             removeRecord(listRecord);
         });
@@ -557,5 +599,5 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }else{
             return null;
         }
-    }
+    };
 

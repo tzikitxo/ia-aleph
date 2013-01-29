@@ -5,19 +5,21 @@
             <fileName>ia.js</fileName>
             <includes>
                 <include>ia_10_head.js</include>
+                <include>ia_15_plugins.js</include>
                 <include>ia_21_lang.js</include>
                 <include>ia_21_lang_en.js</include>
                 <include>ia_21_lang_it.js</include>
                 <include>ia_22_storage.js</include>
                 <include>ia_26_main.js</include>
                 <include>ia_27_armylist.js</include>
-                <include>ia_28_armylistextras.js</include>
+                <include>ia_28_extravalidations.js</include>
                 <include>ia_29_armylistutils.js</include>
                 <include>ia_31_armylistsave.js</include>
                 <include>ia_32_armylistprint.js</include>
                 <include>ia_33_units.js</include>
                 <include>ia_34_specops.js</include>
                 <include>ia_35_modelinfo.js</include>
+                <include>ia_37_gamemode.js</include>
                 <include>ia_40_wiki.js</include>
                 <include>ia_45_campaign.js</include>
                 <include>ia_50_weapons.js</include>
@@ -92,7 +94,7 @@
                 <include>lib/jquery.cycle.all.js</include>
                 <include>lib/jquery.jeditable.js</include>
                 <include>lib/iscroll.js</include>
-				<include>lib/ia-lib_utils.js</include>
+                <include>lib/ia-lib_utils.js</include>
             </includes>
         </script>
     </scripts>
