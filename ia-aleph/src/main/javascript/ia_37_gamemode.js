@@ -25,11 +25,14 @@ var game=ia.game={};
 			inactiveModelsByRecordId:{
                 
 			},
+                        photoIconsById:{
+                            
+                        },
 			gamePhoto:'images/default_game_photo.jpg'
 		};
+                saveGameStatus();
 		return currentGame;
 	}
-	//    clearCurrentGame();
         
 	game.isEnabled=game.isGameModeEnabled=function(){
 		return gameModeEnabled;
@@ -56,6 +59,9 @@ var game=ia.game={};
 			if(config.get('game.gameModeEnabled')){
 				game.enableGameMode();
 			}
+                        $.each(currentGame.photoIconsById,function(recordId,photoIconData){
+                            addPhotoIcon(recordId,photoIconData.position);
+                        });
 		}
 	});
     
@@ -66,8 +72,6 @@ var game=ia.game={};
 	$('.lossPercentage',gameModeContainer).before(messages.get('game.lossPercentage'));
         
 	function buildGameControlScreen(){
-		//        gameModeContainer.empty()
-		//        .append('<div class="listStatus" ><span class="remainingOrders" /><span class="remainingPoints" /><span class="lossPercentage" />%</div>');
 		$('#gamePhoto').attr('src',currentGame.gamePhoto).bind('load',function(){
 			$('#gamePhotoScrollContent').css({
 				width:$(this).width(),
@@ -189,21 +193,53 @@ var game=ia.game={};
 	var photoIconsByRecordId={
 		
 	};
-	
-	$('#gamePhotoScrollContent').droppable({
-		drop:function(event,ui){
-			var item=ui.draggable,recordId=$('.recordId',item).text();
-			if(item.hasClass('photoModelIcon')){
-				return;
-			}else if(photoIconsByRecordId[recordId]){
-				photoIconsByRecordId[recordId].css(ui.offset);
+        
+        function addPhotoIcon(recordId,position){
+            function getPosition(element){
+                return {
+                                top:element.attr('top'),
+                                left:element.attr('left')
+                            };
+            }
+            function savePosition(recordId){
+                var photoIcon=photoIconsByRecordId[recordId];
+                currentGame.photoIconsById[recordId]={
+                            position:getPosition(photoIcon)
+                        };
+            }
+				var record=armylist.listRecordsById[recordId],item=record.row;
+            if(photoIconsByRecordId[recordId]){
+				photoIconsByRecordId[recordId].css(position);
 			}else{
-				var record=armylist.listRecordsById[recordId];
 				photoIconsByRecordId[recordId]=$('.modelIcon',item).clone()
-					.addClass('photoModelIcon').css(ui.offset).appendTo('#gamePhotoOverlay').draggable().bind('click',function(){
+					.addClass('photoModelIcon').css(position).appendTo('#gamePhotoOverlay')
+                                        .draggable({
+                                            //TODO save position on move
+                                            drag:function(event,ui){
+                                                savePosition(recordId);//TODO broken!
+                        saveGameStatus();
+                                            }
+                                        }).bind('click',function(){
 						record.row.trigger('click');
 					}).attr('title',record.model.getDisplay('name')+' '+record.model.getDisplay('codename'));
 			}
+                        savePosition(recordId);
+                        saveGameStatus();
+        }
+        
+        function saveGameStatus(){
+            storage.pack('game.gameModeStatus',currentGame);
+        }
+	
+	$('#gamePhotoScrollContent').droppable({
+		drop:function(event,ui){
+                            var item=ui.draggable,recordId=$('.recordId',item).text();
+			if(item.hasClass('photoModelIcon')){
+				return;
+			}else {
+                            addPhotoIcon(recordId,ui.offset);
+                            saveGameStatus();
+                        }
 		}
 	});
     
