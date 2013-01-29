@@ -97,7 +97,7 @@ input{
         color: @groupBarColor;
         cursor: pointer;
     }
-    #armyListControls .armyListControlButton{
+    #armyListControls .armyListControlButton ,  #armyListGameModeControls .armyListControlButton{
         .button6r;
     }
     .modelNames  {
@@ -106,6 +106,11 @@ input{
     .modelCodename {
         font-style: italic;
         font-size: @fontSize1;
+    }
+}
+#rootContainer.gameMode #armyList .armyListModelRow{
+    &.deadModel td{
+        color: brown; //todo better graphics
     }
 }
 
@@ -187,6 +192,9 @@ input{
             font-weight: bold;
             color: red;
     }
+}
+.listInfo .armylistNameField{
+    font-style: italic;
 }
 
 //*********************
@@ -299,6 +307,10 @@ input{
 	}
 }
 
+//####################################
+//### CONFIG
+//###################################
+
 #configPopup{
     .style1;  
     .configPopupButton {
@@ -306,13 +318,18 @@ input{
     }
     .configPopupEntry , .localeBarButton {
         border-radius: 10px;
-        .brighter1;
+        .enhancedRow1;
     }
     .closeButton{
         font-weight: bold;
         font-size: @fontSize3;
     }
 }
+
+//####################################
+//### CAMPAIGN
+//###################################
+
 #campaignToolsContainer{
     .style1;  
     .campaignButton{
@@ -348,8 +365,8 @@ input{
 #savedLists {
     .style1;
     .savedListRow {
-        .button6r;
         .enhanceRows;
+        .button6r;
         .roundedCornersOfRow;
         &.currentList{
             font-style: oblique;
@@ -381,5 +398,19 @@ input{
     }
     #rulesText{
         border-radius: 10px;
+    }
+}
+
+//#################
+//### GAME MODE
+//#################
+
+#gameModeContainer{
+    .style1;  
+    .listStatus{
+        font-size: @fontSize3;
+        .remainingOrders , .remainingPoints , .lossPercentage{
+            font-weight: bold;
+        }
     }
 }

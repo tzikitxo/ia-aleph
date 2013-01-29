@@ -211,16 +211,12 @@
 		$('#cssLinkReference').attr('href','css/style_theme_'+newTheme+'.css');
 	}
 
-	$(window).resize(function() {
-		utils.updateAllScroll();
-	})
-
 	utils.createScroll=function(config){
 		var thisScroll=null,timeout=0;
 		utils.log('created scroll ',config.name);
     
 		var enableScroll=function(shouldReset){
-			config.getScrollWrapper().css('height',config.getAvailableHeight());
+			config.getScrollWrapper().css('height',Math.min(config.getAvailableHeight(),config.getExpectedHeight()));
 			if(config.getAvailableWidth){
 				config.getScrollWrapper().css('width',config.getAvailableWidth());
 			}

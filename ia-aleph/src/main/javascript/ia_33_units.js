@@ -199,17 +199,17 @@ var units=ia.units={};
             return 'w';
         }
     };
-    var getLocalAttr=function(attrName){
-        if(campaign.isEnabled()){
-            return campaign.getUnitValue(attrName,this[attrName],this);
-        }else{
-            return this[attrName];
+    plugins.configureMethod('getUnitValue',{
+        chain:true,
+        chainIndex:1
+    });
+    plugins.registerPlugin('defaultGetUnit',{
+        getUnitValue:function(attrName,originalValue,unit){
+            return originalValue;
         }
-    //        if(attrName=='w'){
-    //            return campaign.getWoundForUnit(this);
-    //        }else{
-    //            return this[attrName];
-    //        }
+    });
+    var getLocalAttr=function(attrName){
+        return plugins.getUnitValue(attrName,this[attrName],this);
     };
     
     var commonMethods={
@@ -256,7 +256,8 @@ var units=ia.units={};
             get:getLocalAttr,
             originalUnit:originalUnit
         });
-        if((unit.altp=originalUnit.altp||false)){
+        //        if((unit.altp=originalUnit.altp||false)){
+        if(unit.altp){
             $.each(unit.altp,function(i,alt){
                 $.extend(alt,commonMethods,{
                     altpParentUnit:unit,
@@ -265,6 +266,8 @@ var units=ia.units={};
                     }
                 });
             });
+        }else{
+            unit.altp=false;
         }
         loadAttrs(unit);
         prepareCbImages(unit);
@@ -371,7 +374,7 @@ var units=ia.units={};
                     unitButton.appendTo(searchUBContainer);
                 });
                 sortUnitButtons(searchUBContainer);
-                utils.updateAllScroll();
+                plugins.onSizeOrLayoutChanged();
             }
         }else{
             log('search value too short : ',searchValue);
@@ -672,9 +675,10 @@ var units=ia.units={};
             });
         }
         try{
-            armyList.postLoadProcessing();
+            //            armyList.postLoadProcessing();
+            plugins.armylistPostLoadProcess();
         }catch(e){
-            log('error in armyList.postLoadProcessing() : ',e);
+            log('error in plugins.armylistPostLoadProcess() : ',e);
         }
         prepareButtons();
         log('loaded units ',unitsByIsc);
@@ -777,11 +781,18 @@ var units=ia.units={};
             $('#modelChooserContainer .modelButton').draggable('enable');
         }
     });
-    units.updateScroll=function(){
-        if(modelChooserScroll){
-            modelChooserScroll.updateScroll();
+//    units.updateScroll=function(){
+//        if(modelChooserScroll){
+//            modelChooserScroll.updateScroll();
+//        }
+//    }
+    plugins.registerPlugin('unitsScroller',{
+        onSizeOrLayoutChanged:function(){
+            if(modelChooserScroll){
+                modelChooserScroll.updateScroll();
+            }
         }
-    }
+    });
     // END SCROLLABLE
 
     function clearCache(item){
@@ -798,7 +809,7 @@ var units=ia.units={};
             $.each(unit.childsByCode,function(i,child){
                 clearCache(child);
             });
-            $.each(unit.altp,function(i,alt){
+            $.each(unit.altp||[],function(i,alt){
                 clearCache(alt);
             });
         });
