@@ -36,6 +36,34 @@ var game=ia.game={};
         $('#gamePhotoOverlay .photoModelIcon').remove();
         return currentGame;
     }
+    
+//    function resizeImage(url, width, height, callback) {
+//        var sourceImage = new Image();
+//        sourceImage.onload = function() {
+//            try{
+//                var canvas = document.createElement("canvas");
+//                canvas.width = width;
+//                canvas.height = height;
+//                canvas.getContext("2d").drawImage(sourceImage, 0, 0, width, height);
+//                callback(canvas.toDataURL());
+//            }catch(e){
+//                log(e);
+//                callback(url);
+//            }
+//        }
+//        sourceImage.src = url;
+//    }
+    
+    $('#photoFileInput').bind('change',function(event){
+        var file=event.originalEvent.target.files[0];
+        log('loading image from file : ',file,' event : ',event);
+        var reader = new FileReader();
+        reader.onload=function(){
+            currentGame.gamePhoto=reader.result;
+            buildGameControlScreen();
+        };
+        reader.readAsDataURL(file);
+    });
         
     game.isEnabled=game.isGameModeEnabled=function(){
         return gameModeEnabled;
@@ -74,7 +102,7 @@ var game=ia.game={};
     $('.remainingPoints',gameModeContainer).before(messages.get('game.remainingPoints'));
     $('.lossPercentage',gameModeContainer).before(messages.get('game.lossPercentage'));
         
-    function buildGameControlScreen(){
+    function loadGamePhoto(){
         $('#gamePhoto').attr('src',currentGame.gamePhoto).bind('load',function(){
             $('#gamePhotoScrollContent').css({
                 width:$(this).width(),
@@ -82,6 +110,9 @@ var game=ia.game={};
             });
             gamePhotoScroll.updateScroll();
         });
+    }
+    function buildGameControlScreen(){
+        loadGamePhoto();
         updateGameControlScreen();
     }
     
