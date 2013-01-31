@@ -273,7 +273,11 @@ var game=ia.game={};
             if(item.hasClass('photoModelIcon')){
                 return;
             }else {
-                addPhotoIcon(recordId,ui.offset);
+				var containerOffset=$('#gamePhotoOverlay').offset();
+                addPhotoIcon(recordId,{
+					left:ui.offset.left-containerOffset.left,
+					top:ui.offset.top-containerOffset.top
+				});
                 saveGameStatus();
             }
         }
