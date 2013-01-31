@@ -178,6 +178,10 @@ var game=ia.game={};
             }else{
                 armyListControls.removeClass('inactiveModelSelected');                
             }
+			$('.photoModelIcon').removeClass('selected');
+			if(photoIconsByRecordId[record.id]){
+				photoIconsByRecordId[record.id].addClass('selected');
+			}
         }
     });
 	
@@ -247,9 +251,8 @@ var game=ia.game={};
             photoIconsByRecordId[recordId]=$('.modelIcon',item).clone()
             .addClass('photoModelIcon').css(position).appendTo('#gamePhotoOverlay')
             .draggable({
-                //TODO save position on move
                 drag:function(event,ui){
-                    savePosition(recordId);//TODO broken!
+                    savePosition(recordId);
                     saveGameStatus();
                 }
             }).bind('click',function(){
