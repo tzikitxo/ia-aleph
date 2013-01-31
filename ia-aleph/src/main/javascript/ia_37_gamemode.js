@@ -61,6 +61,7 @@ var game=ia.game={};
 		var reader = new FileReader();
 		reader.onload=function(){
 			currentGame.gamePhoto=reader.result;
+			clearPhotoIcons();
 			buildGameControlScreen();
 		};
 		reader.readAsDataURL(file);
@@ -109,7 +110,6 @@ var game=ia.game={};
 		$('#gamePhotoOverlay .photoModelIcon').remove();
 	}
 	function loadGamePhoto(){
-		clearPhotoIcons();
 		$('#gamePhoto').attr('src',currentGame.gamePhoto).bind('load',function(){
 			$('#gamePhotoScrollContent').css({
 				width:$(this).width(),
