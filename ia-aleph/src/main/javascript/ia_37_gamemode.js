@@ -18,7 +18,7 @@ var game=ia.game={};
 (function(){
     
     var gameModeEnabled=false;
-    var photoIconsByRecordId={},currentGame=storage.unpack('game.gameModeStatus')||clearCurrentGame();
+    var photoIconsByRecordId={},currentGame=storage.unpack('game.gameModeStatus');
     
     function clearCurrentGame(){
         currentGame={
@@ -34,8 +34,10 @@ var game=ia.game={};
         };
         saveGameStatus();
         $('#gamePhotoOverlay .photoModelIcon').remove();
-        return currentGame;
     }
+	if(!currentGame || !currentGame.inactiveModelsByRecordId || !currentGame.photoIconsById || !currentGame.gamePhoto ){
+		clearCurrentGame();
+	}
     
 //    function resizeImage(url, width, height, callback) {
 //        var sourceImage = new Image();
