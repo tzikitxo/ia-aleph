@@ -720,6 +720,10 @@ body{
 //#################
 #gameModeContainer{
     display: none;
+    margin: 12px;
+    .listStatus{
+        margin-top: 12px;
+    }
 }
 .gameMode{
     #typeAndUnitMenuWrapper , #modelChooserContainer{
@@ -731,6 +735,7 @@ body{
 }
 #gamePhotoContainer{
 	margin: 12px;
+    position: relative;
 }
 #gamePhotoScrollContent{
 	position: relative;
@@ -748,12 +753,28 @@ body{
                 width: @imageSize2;
                 height: @imageSize2;    
                 }
-				padding: 2px;
+            padding: 2px;
+            .gamePhotoToken{
+                position: absolute;
+                top: 2px;
+                left: @imageSize2 + 2px;
+                display: none;
+            }
+            &.deadModel{
+                .gamePhotoToken.unconsciousToken{
+                    display: block;
+                }
+            }
 	}
 }
 #gameModeControls{
+    position: absolute;
+    top:17px;
+    left: 20px;
+    z-index: 6;
     text-align: left;
-    margin-left: 30px;
+    padding: 5px;
+    //margin-left: 30px;
 }
 #photoFileInput , #photoFileInputWrapper , .gameModeControlsIcon{
     width: 24px;
@@ -769,7 +790,7 @@ body{
     z-index:4;
     opacity: 0;
 }
-#gamePhotoScrollWrapper , #gamePhotoScrollContent{
+#gamePhotoScrollWrapper {
 	margin-right: auto;
 	margin-left: auto;
 }

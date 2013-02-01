@@ -228,7 +228,8 @@ var menu=ia.menu={};
     $('#smallScreenTopBar .armylistViewButton').text(messages.get('menu.armylistView')).bind('click',function(){
         switchMode('armylistMode');
     });
-    $('#smallScreenTopBar .addModelButton').text(messages.get('menu.addModel')).bind('click',function(){
+    $('#smallScreenTopBar .addModelButton').append($('<div class="defaultLabel" />').text(messages.get('menu.addModel')))
+    .append($('<div class="gameModeLabel" />').text(messages.get('menu.gameMode'))).bind('click',function(){
         switchMode('unitSelectionMode');
     });
     $('#smallScreenTopBar .unitDetailButton').text(messages.get('menu.unitDetail')).bind('click',function(){

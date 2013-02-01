@@ -216,9 +216,10 @@
 		utils.log('created scroll ',config.name);
     
 		var enableScroll=function(shouldReset){
-			config.getScrollWrapper().css('height',Math.min(config.getAvailableHeight(),config.getExpectedHeight()));
+                    var ww=$(window).width(),wh=$(window).height();
+			config.getScrollWrapper().css('height',Math.min(config.getAvailableHeight(ww,wh),config.getExpectedHeight()));
 			if(config.getAvailableWidth){
-				config.getScrollWrapper().css('width',config.getAvailableWidth());
+				config.getScrollWrapper().css('width',config.getAvailableWidth(ww,wh));
 			}
 			//  .css('width',config.getScrollWrapper().width());
 			if(!thisScroll){
@@ -257,14 +258,15 @@
 			updateScroll:function(shouldReset){
 				if(ia.isReady){
 					setTimeout(function () {
+                                            var ww=$(window).width(),wh=$(window).height();
 						var scrollWrapper=config.getScrollWrapper();
 						if(!scrollWrapper || !(scrollWrapper[0]) || scrollWrapper.css('display') == 'none'){
 							log(config.name,' scroll unavailable/hidden, skipping');
 							return;
 						}
-						var availableHeight=config.getAvailableHeight(),expectedHeight=config.getExpectedHeight(),
+						var availableHeight=config.getAvailableHeight(ww,wh),expectedHeight=config.getExpectedHeight(),
 						expectedWidth=config.getExpectedWidth?config.getExpectedWidth():null,
-						availableWidth=config.getAvailableWidth?config.getAvailableWidth():null;
+						availableWidth=config.getAvailableWidth?config.getAvailableWidth(ww,wh):null;
 						log(config.name,' available : ',availableWidth||'_','x',availableHeight,
 							' , expected : ',expectedWidth||'_','x',expectedHeight);
 						if(availableHeight<0){
