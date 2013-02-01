@@ -61,7 +61,7 @@
         box-shadow: 0 0 0 0;
         width: auto;
     }
-    #armyList , #topBar , #typeAndUnitMenuWrapper , #modelChooserContainer , #modelInfoContainer , #weaponsInfo, #weaponsButton{
+    #armyList , #topBar , #typeAndUnitMenuWrapper , #modelChooserContainer , #modelInfoContainer , #weaponsInfo, #weaponsButton , #gameModeContainer{
         display: none;
     }
      
@@ -120,6 +120,21 @@
         }
     }
     
+    
+        #smallScreenTopBar .addModelButton .gameModeLabel{
+            display: none;
+        }
+        &.gameMode{
+            #smallScreenTopBar .addModelButton {
+                .defaultLabel{
+                    display: none;
+                }
+                .gameModeLabel{
+                    display: block;
+                }
+            }
+        }
+        
     &.unitSelectionMode {
         #typeAndUnitMenuWrapper{
             display: block;
@@ -137,7 +152,19 @@
             border-width: 0 0 1px 0; 
             border-radius: 0; 
         }
-    }
+        &.gameMode{
+            #typeAndUnitMenuWrapper ,  #modelChooserContainer{
+                display: none;
+            }
+            #gameModeContainer{
+                 display: block;
+                margin: 0;
+                border: 0;
+                border-radius: 0;    
+                padding-top: 3px;
+            }
+        }
+     }
     
     &.unitDetailMode {
         #modelInfoContainer{

@@ -47,6 +47,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     
     plugins.registerMethod('armylistRecordSelected',{discardResult:true});
     plugins.registerMethod('armylistRecordDeselected',{discardResult:true});
+    plugins.registerMethod('armylistCleanup',{discardResult:true});
     
     var armyListControls=$('#armyListControls');
     $('<div class="moveUpButton armyListControlButton" />').attr('title',messages.get('armylist.buttons.moveUpButton')).bind('click',function(){
@@ -237,6 +238,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     }
     var clear=armyList.clear=function(){
         plugins.armylistRecordDeselected();
+        plugins.armylistCleanup();
         listRecordsById=armyList.listRecordsById={};
         armylist.setListName('',true);
         armyList.newListId();

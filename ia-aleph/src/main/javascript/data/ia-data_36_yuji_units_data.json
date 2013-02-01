@@ -1,166 +1,166 @@
- {
-  "mov": "4-4",
-  "army": "Yu Jing",
-  "wip": "12",
-  "cbcode": [
-   "280323-0118",
-   "280324-0127",
-   "280334-0190",
-   "280344-0257"
-  ],
-  "bts": "0",
-  "isc": "Keisotsu",
-  "name": "Keisotsu",
-  "bs": "10",
-  "note": "",
-  "cube": "",
-  "type": "LI",
-  "ph": "10",
-  "cc": "14",
-  "arm": "1",
-  "irr": "",
-  "w": "1",
-  "ava": "T",
-  "bsw": [],
-  "spec": [
-   "V: Courage"
-  ],
-  "ccw": [
-   "Knife",
-   "Pistol"
-  ],
-  "childs": [
-   {
-    "code": "Default",
-    "cost": "9",
-    "codename": "Combi",
-    "swc": "0",
-    "cbcode": [],
-    "spec": [],
-    "bsw": [
-     "Combi Rifle"
+{
+    "mov": "4-4",
+    "army": "Yu Jing",
+    "wip": "12",
+    "cbcode": [
+    "280323-0118",
+    "280324-0127",
+    "280334-0190",
+    "280344-0257"
     ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "HMG",
-    "cost": "18",
-    "codename": "",
-    "swc": "0.5",
-    "cbcode": [],
-    "spec": [],
-    "bsw": [
-     "HMG"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Grenadier",
-    "cost": "14",
-    "codename": "",
-    "swc": "0.5",
-    "cbcode": [],
-    "spec": [],
-    "bsw": [
-     "Light GL",
-     "Combi Rifle"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Sniper",
-    "cost": "23",
-    "codename": "",
-    "swc": "1.5",
-    "cbcode": [],
-    "spec": [],
-    "bsw": [
-     "MULTI Sniper Rifle"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Missile",
-    "cost": "25",
-    "codename": "",
-    "swc": "0.5",
-    "cbcode": [],
-    "spec": [],
-    "bsw": [
-     "Missile Launcher"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Hacker",
-    "cost": "21",
-    "codename": "",
-    "swc": "0.5",
-    "cbcode": [],
+    "bts": "0",
+    "isc": "Keisotsu",
+    "name": "Keisotsu",
+    "bs": "10",
+    "note": "",
+    "cube": "",
+    "type": "LI",
+    "ph": "10",
+    "cc": "14",
+    "arm": "1",
+    "irr": "",
+    "w": "1",
+    "ava": "T",
+    "bsw": [],
     "spec": [
-     "Hacker",
-     "Hacking Device"
+    "V: Courage"
     ],
-    "bsw": [
-     "Combi Rifle"
+    "ccw": [
+    "Knife",
+    "Pistol"
     ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Observer",
-    "cost": "12",
-    "codename": "",
-    "swc": "0",
-    "cbcode": [],
-    "spec": [
-     "Forward Observer"
+    "childs": [
+    {
+        "code": "Default",
+        "cost": "9",
+        "codename": "Combi",
+        "swc": "0",
+        "cbcode": [],
+        "spec": [],
+        "bsw": [
+        "Combi Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "HMG",
+        "cost": "18",
+        "codename": "",
+        "swc": "0.5",
+        "cbcode": [],
+        "spec": [],
+        "bsw": [
+        "HMG"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Grenadier",
+        "cost": "14",
+        "codename": "",
+        "swc": "0.5",
+        "cbcode": [],
+        "spec": [],
+        "bsw": [
+        "Light GL",
+        "Combi Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Sniper",
+        "cost": "23",
+        "codename": "",
+        "swc": "1.5",
+        "cbcode": [],
+        "spec": [],
+        "bsw": [
+        "MULTI Sniper Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Missile",
+        "cost": "25",
+        "codename": "",
+        "swc": "0.5",
+        "cbcode": [],
+        "spec": [],
+        "bsw": [
+        "Missile Launcher"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Hacker",
+        "cost": "21",
+        "codename": "",
+        "swc": "0.5",
+        "cbcode": [],
+        "spec": [
+        "Hacker",
+        "Hacking Device"
+        ],
+        "bsw": [
+        "Combi Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Observer",
+        "cost": "12",
+        "codename": "",
+        "swc": "0",
+        "cbcode": [],
+        "spec": [
+        "Forward Observer"
+        ],
+        "bsw": [
+        "Combi Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Paramedic",
+        "cost": "12",
+        "codename": "",
+        "swc": "0",
+        "cbcode": [],
+        "spec": [
+        "MediKit"
+        ],
+        "bsw": [
+        "Combi Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    },
+    {
+        "code": "Lieutenant",
+        "cost": "9",
+        "codename": "",
+        "swc": "2",
+        "cbcode": [],
+        "spec": [
+        "Lieutenant"
+        ],
+        "bsw": [
+        "Combi Rifle"
+        ],
+        "ccw": [],
+        "note": ""
+    }
     ],
-    "bsw": [
-     "Combi Rifle"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Paramedic",
-    "cost": "12",
-    "codename": "",
-    "swc": "0",
-    "cbcode": [],
-    "spec": [
-     "MediKit"
-    ],
-    "bsw": [
-     "Combi Rifle"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Lieutenant",
-    "cost": "9",
-    "codename": "",
-    "swc": "2",
-    "cbcode": [],
-    "spec": [
-     "Lieutenant"
-    ],
-    "bsw": [
-     "Combi Rifle"
-    ],
-    "ccw": [],
-    "note": ""
-   }
-  ],
-  "imp": "",
-  "functions": []
- },
+    "imp": "",
+    "functions": []
+},
  {
   "mov": "4-4",
   "army": "Yu Jing",
@@ -553,7 +553,6 @@
   "bsw": [],
   "spec": [],
   "ccw": [
-   "CCW",
    "Pistol"
   ],
   "childs": [
@@ -568,7 +567,9 @@
      "MULTI Rifle",
      "Light GL"
     ],
-    "ccw": [],
+    "ccw": [
+    "CCW"
+    ],
     "note": ""
    },
    {
@@ -581,7 +582,9 @@
     "bsw": [
      "HMG"
     ],
-    "ccw": [],
+    "ccw": [
+    "CCW"
+    ],
     "note": ""
    },
    {
@@ -595,7 +598,9 @@
      "Boarding Shotgun",
      "Grenades"
     ],
-    "ccw": [],
+    "ccw": [
+    "CCW"
+    ],
     "note": ""
    },
    {
@@ -609,7 +614,9 @@
      "Combi Rifle",
      "E/Mitter"
     ],
-    "ccw": [],
+    "ccw": [
+    "Knife"
+    ],
     "note": ""
    },
    {
@@ -623,7 +630,9 @@
      "Combi Rifle",
      "Light Rocket Launcher"
     ],
-    "ccw": [],
+    "ccw": [
+    "Knife"
+    ],
     "note": ""
    }
   ],
