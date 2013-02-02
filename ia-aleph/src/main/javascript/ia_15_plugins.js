@@ -98,4 +98,4 @@ $(window).resize(function() {
     if(ia.isReady){
         plugins.onSizeOrLayoutChanged();
     }
-})
+});

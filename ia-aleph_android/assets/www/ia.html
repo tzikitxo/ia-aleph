@@ -56,6 +56,34 @@
                             </div>
                         </div>
                     </div>
+                    <div id="gameModeContainer" >
+                        <!--<div class="listInfo" />-->
+                        <div class="listStatus" >
+                            <span class="remainingOrders" ></span>
+                            <span class="remainingPoints" ></span>
+                            <span class="lossPercentage" ></span>
+                            <div class="warnings statusWarnings" ></div>
+                        </div>
+                        <div id="gamePhotoContainer">
+                            <div id="gameModeControls" >
+                                <div id="photoFileInputWrapper">
+                                    <input type="file" id="photoFileInput" name="photoFile" ></input>
+                                    <div id="photoFileInputIconWrapper" >
+                                        <img class="gameModeControlsIcon" src="images/photo_icon.png" ></img>
+                                    </div>
+                                </div>
+								<div id="gamePhotoCameraButton">
+									<img class="gameModeControlsIcon" src="images/photo_icon.png" ></img>
+								</div>
+                            </div>
+                            <div id="gamePhotoScrollWrapper">
+                                <div id="gamePhotoScrollContent">
+                                    <img id="gamePhoto" alt="game photo" src="images/default_game_photo.jpg" ></img>
+                                    <div id="gamePhotoOverlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="rightContainer">
@@ -71,6 +99,7 @@
                         </table>
                     </div>
                     <div id="armyListControls"></div>
+                    <div id="armyListGameModeControls"></div>
                     <div class="listInfo">
                         <div class="firstRow">
                             <div class="modelCount"></div><div class="pointsCount"><div class="count" ></div></div><div class="sep"> | </div><div class="swcCount"><div class="count" ></div></div>
@@ -98,20 +127,19 @@
                     <div id="factionsMenuScrollWrapper">
                         <div id="factionsMenuScrollContent"></div>
                     </div>
-                    
+
                 </div>
-                <!--<div id="sectorialsMenu" style="display:none"></div>-->
                 <div id="weaponsButton"></div>
                 <div id="weaponsInfo" class="showIn"></div>
             </div>
         </div>
         <div id="floaters">
             <div id="genericPopup" style="display:none">
-				<div id="genericPopupScrollWrapper">
+                <div id="genericPopupScrollWrapper">
                     <div id="genericPopupContent">
                     </div>
                 </div>
-			</div>
+            </div>
             <div id="configPopup" style="display:none">
                 <div id="configPopupScrollWrapper">
                     <div id="configPopupScrollerWrapper">
