@@ -14,12 +14,14 @@ rsync -crv --delete --exclude cordova*js css js images wiki_* "${target}"/
 
 t=`mktemp`
 
-grep -B 999 '</head>' "${target}"/ia.html > $t
-
 {
-	cat $t
+	grep -B 999 '</head>' "${target}"/ia.html
 	grep -A 999 '<body>' ia.html
-} > "${target}"/ia.html
+} > $t
+
+if diff -q $t "${target}"/ia.html | grep -q .; then
+	cat $t > "${target}"/ia.html
+fi
 
 rm $t
 
