@@ -49,33 +49,6 @@ ia.startupFunction=function(){
         log('device name = ',window.device.name,' , platform = ',window.device.platform);
     }
 
-	
-//	utils.updateAllScroll=function(){
-//		if(!ia.isReady){
-//			return;
-//		}
-//		log('updating scrolls');
-////		if(units && units.updateScroll){
-////			units.updateScroll();
-////		}
-////		if(armyList){
-////			if(armyList.armylistScroller){
-////				armyList.armylistScroller.updateScroll();
-////			}
-////			if(armyList.savedListScroller){
-////				armyList.savedListScroller.updateScroll();
-////			}
-////			if(armyList.popupScroller){
-////				armyList.popupScroller.updateScroll();
-////			}
-////		}
-////		if(configwindow && configwindow.configScroller){
-////			configwindow.configScroller.updateScroll();
-////		}
-//		if(campaign && campaign.controlScreenScroller){
-//			campaign.controlScreenScroller.updateScroll();
-//		}
-//	}
     
 
 
