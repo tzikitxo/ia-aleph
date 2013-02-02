@@ -132,7 +132,8 @@
 	})();
 
 	utils.encodeData=function(data){
-		return $.base64.encode(RawDeflate.deflate(JSON.stringify(data))).replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
+		var str=JSON.stringify(data);
+		return $.base64.encode(RawDeflate.deflate(str)).replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
 	};
 	utils.decodeData=function(string){
 		string=string.replace(/[%]../g,'').replace(/_/g,'/').replace(/-/g,'+').replace(/[.:]/g,'=').replace(/[^a-zA-Z0-9+\/=]/g,'');

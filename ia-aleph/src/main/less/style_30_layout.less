@@ -579,7 +579,7 @@ body{
  //   right: @margin1;
     padding: 4px;
 	> div{
-		padding: 2px;
+		padding: @padding8;
 	}
         &.hidden{   
             display: none;
@@ -775,13 +775,32 @@ body{
     text-align: left;
     padding: 5px;
     //margin-left: 30px;
+	
 }
 #photoFileInput , #photoFileInputWrapper , .gameModeControlsIcon{
-    width: 24px;
-    height: 24px;
+    width: @buttonSize1;
+    height: @buttonSize1;
+}
+#gamePhotoCameraButton{
+	display: none;
+}
+.hasCordova{ 
+	#gamePhotoCameraButton{
+		display: inline-block;
+	}
+	#gamePhotoOverlay{
+		.photoModelIcon {
+			padding: 12px;
+            .gamePhotoToken{
+                top: 12px;
+                left: @imageSize2 + 12px;
+            }
+		}
+	}
 }
 #photoFileInputWrapper{
     position: relative;
+	display: inline-block;
 }
 #photoFileInput ,#photoFileInputIconWrapper{
     position: absolute;

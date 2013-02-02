@@ -149,7 +149,10 @@
 		//hiding splash screen
 		window.navigator.splashscreen.hide();
 	}
-
+	
+	if(device.hasCordova()){
+		$('#rootContainer').addClass('hasCordova');
+	}
         
 	plugins.afterAppLoading();
 	
