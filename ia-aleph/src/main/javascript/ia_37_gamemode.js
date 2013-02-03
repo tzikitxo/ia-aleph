@@ -61,7 +61,7 @@ var game=ia.game={};
 		buildGameControlScreen();
 	}
 	if(device.hasCordova()){
-		$('#gamePhotoCameraButton').bind('click',function(){
+		$('#gamePhotoCameraButton').bind('touchstart',function(){
 			log('invoking camera');
 			//navigator.camera.getPicture( cameraSuccess, cameraError, [ cameraOptions ] );
 			navigator.camera.getPicture(function(imageData){
