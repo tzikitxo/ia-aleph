@@ -99,6 +99,7 @@ var game=ia.game={};
             });
         });
     }
+	$('#photoFileInputWrapper').attr('title',messages.get('game.photoFileInput.tooltip'));
     $('#photoFileInput').bind('change',function(event){
         var file=event.originalEvent.target.files[0];
         log('loading image from file : ',file,' event : ',event);
@@ -218,7 +219,7 @@ var game=ia.game={};
         menu.switchMode('unitSelectionMode')
         updateGameControlScreen();        
     })
-    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/photo_icon.png'))
+    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/flag_icon.png'))
     .appendTo(armyListControls);
     $('<div class="armyListControlButton activeControlButton" />').attr('title',messages.get('game.buttons.active')).bind('click',function(){
         var record=armylist.getSelectedRecord();
@@ -226,7 +227,7 @@ var game=ia.game={};
         armyListControls.removeClass('inactiveModelSelected');  
         updateGameControlScreen();
     })
-    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/disabled_icon.png'))
+    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/medic_icon.png'))
     .appendTo(armyListControls);
     $('<div class="armyListControlButton inactiveControlButton" />').attr('title',messages.get('game.buttons.dead')).bind('click',function(){
         var record=armylist.getSelectedRecord();
@@ -234,7 +235,7 @@ var game=ia.game={};
         armyListControls.addClass('inactiveModelSelected');
         updateGameControlScreen();
     })
-    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/enabled_icon.png'))
+    .append($('<img class="armyListControlButtonIcon" />').attr('src','images/unconscious_token_icon.png'))
     .appendTo(armyListControls);
     
     plugins.registerPlugin('gameModeRecordSelectionPlugin',{
