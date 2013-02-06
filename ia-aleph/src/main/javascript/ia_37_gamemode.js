@@ -95,6 +95,7 @@ var game=ia.game={};
             log('invoking camera');
             //navigator.camera.getPicture( cameraSuccess, cameraError, [ cameraOptions ] );
             navigator.camera.getPicture(function(imageData){
+				log('received image from camera');
                 setGamePhoto( "data:image/jpeg;base64," + imageData);
             });
         });
