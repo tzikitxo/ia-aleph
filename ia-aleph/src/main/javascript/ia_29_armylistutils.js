@@ -38,7 +38,7 @@ var importList=armyList.importList=function(list){
             log('unit child not found for isc/code : '+unit.isc+' / '+unit.code);
             return;
         }
-        pushModelAndCompanions(modelRecord);
+        pushModelAndCompanions(modelRecord,null,unit.recordid);
     });
     armyList.listId=list.listId||list.id; // legacy
     armylist.setListName(list.listName,true);
@@ -63,7 +63,8 @@ var exportList=armyList.exportList=function(){
         }
         models.push({
             'isc':listRecord.model.parent.isc,
-            'code':listRecord.model.code
+            'code':listRecord.model.code,
+            'recordid':listRecord.id
         });
         if(listRecord.model.parent.specop){
             specop={

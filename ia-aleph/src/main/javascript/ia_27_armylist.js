@@ -94,7 +94,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         var record=getSelectedRecord();
         if(record){
             removeRecord(record);
-//            armyListControls.hide();
+            //            armyListControls.hide();
             plugins.armylistRecordDeselected(record);
         }
     })
@@ -152,7 +152,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
                 //                    var record=listRecordsById[recordId];
                 //log('removing record : ',record);    
                 if(!game.isGameModeEnabled()){
-                    removeRecord(listRecordsById[Number($(e.srcElement||e.originalTarget).parents('.armyListModelRow').andSelf().find('.recordId').first().text())]);
+                    removeRecord(listRecordsById[$(e.srcElement||e.originalTarget).parents('.armyListModelRow').andSelf().find('.recordId').first().text()]);
                 }
                 //                    isOut=false;
             }else{
@@ -229,9 +229,9 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     //	var models=armyList.models=[];
     var idSequence=0;
     var listRecordsById=armyList.listRecordsById={};
-    function newListRecord(){
+    function newListRecord(recordId){
         var record={
-            id : idSequence++
+            id : recordId||utils.newId()
         };
         listRecordsById[record.id]=record;
         return record;
@@ -426,16 +426,17 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         listRecord.row.remove();
         delete listRecordsById[listRecord.id];
     }
-    function pushModel(model,replaceThis){
-        var listRecord=newListRecord();
+    function pushModel(model,replaceThis,recordId){
+        var listRecord=newListRecord(recordId);
         listRecord.model=model;
         addRecordToView(listRecord,replaceThis);
         return listRecord;
     }
-    function pushModelAndCompanions(model,replaceThis){
-        var listRecord=pushModel(model,replaceThis);
+    function pushModelAndCompanions(model,replaceThis,recordId){
+        var listRecord=pushModel(model,replaceThis,recordId);
+        var i=0;
         $.each(model.getCompanions(),function(index,companion){
-            var companionRecord=pushModel(companion,$('<div />').insertAfter(listRecord.row));
+            var companionRecord=pushModel(companion,$('<div />').insertAfter(listRecord.row),listRecord.id+'_'+(++i));
             companionRecord.parentRecord=listRecord;
             if(!listRecord.companionRecords){
                 listRecord.companionRecords=[companionRecord];
@@ -471,7 +472,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     var getListRecordsAsList=armyList.getListRecordsAsList=function(){
         var listRecords=[];
         $('#armyList .armyListModelRow').each(function(){
-            listRecords.push(listRecordsById[Number($('.recordId',this).text())]);
+            listRecords.push(listRecordsById[$('.recordId',this).text()]);
         });
         return listRecords;
     }
@@ -597,7 +598,7 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     var getSelectedRecord=armyList.getSelectedRecord=function(){
         var row=$('#armyList .armyListModelRow.selected');
         if(row[0]){
-            return listRecordsById[Number($('.recordId',row).text())];
+            return listRecordsById[$('.recordId',row).text()];
         }else{
             return null;
         }
