@@ -753,11 +753,14 @@ body{
                 width: @imageSize2;
                 height: @imageSize2;    
                 }
-            padding: 2px;
+            padding: 3px;
+			&.selected{
+				padding: 1px;
+			}
             .gamePhotoToken{
                 position: absolute;
                 top: 2px;
-                left: @imageSize2 + 2px;
+                left: @imageSize2 + 4px;
                 display: none;
             }
             &.deadModel{
@@ -793,8 +796,11 @@ body{
 			padding: 12px;
             .gamePhotoToken{
                 top: 12px;
-                left: @imageSize2 + 12px;
+                left: @imageSize2 + 14px;
             }
+			&.selected{
+				padding: 10px;
+			}
 		}
 	}
 }
