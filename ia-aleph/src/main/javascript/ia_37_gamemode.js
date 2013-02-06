@@ -330,7 +330,8 @@ var game=ia.game={};
                 drag:function(event,ui){
                     savePosition(recordId);
                     saveGameStatus();
-                }
+                },
+				containment:"parent"
             }).bind('click',function(){
                 record.row.trigger('click');
             }).attr('title',record.model.getDisplay('name')+' '+record.model.getDisplay('codename'))
