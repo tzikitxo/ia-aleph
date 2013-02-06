@@ -292,9 +292,10 @@ var game=ia.game={};
         }
     });
 	
-    $('#gamePhotoOverlay').bind('click mousedown touchstart',function(e){
+    $('#gamePhotoOverlay').bind('click mousedown mouseup',function(e){
         //		if(!($(e.currentTarget).attr('id')=='gamePhotoOverlay')){
         if(e.target!=this){
+			log('gamePhotoOverlay trap event');
             return false; //stop touch events started on items
         }
     });
