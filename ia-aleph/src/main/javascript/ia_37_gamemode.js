@@ -97,7 +97,10 @@ var game=ia.game={};
             navigator.camera.getPicture(function(imageData){
 				log('received image from camera');
                 setGamePhoto( "data:image/jpeg;base64," + imageData);
-            });
+            },{
+				targetWidth:750,
+				targetHeight:750
+			});
         });
     }
 	$('#photoFileInputWrapper').attr('title',messages.get('game.photoFileInput.tooltip'));
