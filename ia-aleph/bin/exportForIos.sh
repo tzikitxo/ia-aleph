@@ -17,7 +17,7 @@ cd ~/svn/ia-aleph/ia-aleph/target/ia-aleph/ || exit 1
 
 rsync -crv --delete --exclude cordova*js css js images wiki_* "${target}"/
 
-t=`mktemp`
+t=/tmp/temp_file_expio
 
 {
         grep -B 999 '</head>' "${target}"/ia.html

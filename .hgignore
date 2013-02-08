@@ -1,5 +1,5 @@
 ia-aleph/(target|src/main/webapp/wiki_)
-(ia-aleph_chrome/src|ia-aleph_android/assets/www)/(js|index.html|images|css|wiki_)
+(ia-aleph_chrome/src|ia-aleph_android/assets/www|ia-aleph_ios/www)/(js|index.html|images|css|wiki_)
 ia-aleph_chrome/src/ia.html
 ia-aleph_chrome/target
 [.]swp
