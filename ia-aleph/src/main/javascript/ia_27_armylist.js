@@ -200,7 +200,8 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     // END SCROLLABLE
     
     $('.pointsCount , .swcCount').bind('mousewheel',function(e,delta){
-        var newCap=delta*50+armyList.pointCap;
+        log('mousewheel ',arguments);
+        var newCap=(delta||(e.originalEvent.wheelDelta>0?1:-1))*50+armyList.pointCap;
         if(newCap>500){
             newCap=50;
         }else if(newCap<50){
