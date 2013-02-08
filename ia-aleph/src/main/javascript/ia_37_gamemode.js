@@ -97,7 +97,9 @@ var game=ia.game={};
             navigator.camera.getPicture(function(imageData){
 				log('received image from camera');
                 setGamePhoto( "data:image/jpeg;base64," + imageData);
-            },{
+            },function(e){
+				log('camera error ',e)
+			},{
 				targetWidth:750,
 				targetHeight:750
 			});
