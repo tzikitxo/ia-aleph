@@ -307,11 +307,12 @@ var game=ia.game={};
 		}
 	});
 	
-	$('#gamePhotoOverlay').bind('click mousedown mouseup',function(e){
+	$('#gamePhotoOverlay').bind('click mousedown mousemove',function(e){ //must let mouseleave to bubble
 		//		if(!($(e.currentTarget).attr('id')=='gamePhotoOverlay')){
 		if(e.target!=this){
-			log('gamePhotoOverlay trap event');
-			return false; //stop touch events started on items
+			//			log('gamePhotoOverlay trap event');
+			//			return false; //stop touch events started on items
+			e.stopPropagation();
 		}
 	});
 	
