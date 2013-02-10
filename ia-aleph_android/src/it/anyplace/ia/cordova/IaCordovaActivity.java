@@ -10,6 +10,6 @@ public class IaCordovaActivity extends DroidGap {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setIntegerProperty("splashscreen", R.drawable.splash);
-        super.loadUrl("file:///android_asset/www/ia.html",30000);
+        super.loadUrl("file:///android_asset/www/ia.html",120000); //timeout in ms
     }
 }
