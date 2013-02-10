@@ -235,7 +235,7 @@
             var ww=$(window).width(),wh=$(window).height();
             config.getScrollWrapper().css('height',Math.min(config.getAvailableHeight(ww,wh),config.getExpectedHeight()));
             if(config.getAvailableWidth){
-                config.getScrollWrapper().css('width',config.getAvailableWidth(ww,wh));
+                config.getScrollWrapper().css('width',Math.min(config.getAvailableWidth(ww,wh),config.getExpectedWidth()));
             }
             //  .css('width',config.getScrollWrapper().width());
             if(!thisScroll){
