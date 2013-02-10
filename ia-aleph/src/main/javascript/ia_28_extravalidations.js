@@ -59,7 +59,7 @@
                     armyList.addWarning(otherKnightsRecords);
                 }
             //    }
-            }else{
+            }else if(units.sectorialName!="Shock Army of Acontecimento"){
                 var errorMesssage='you can have at most one Knight of Order';
                 //   if($.inArray(errorMesssage, armyList.warnings)==-1){
                 log('testing knights ava');
