@@ -334,8 +334,10 @@
 				}				
 			},
 			unlockScroll:function(){
-				enableScroll();
-				thisScroll.scrollTo(preLockPosition.x,preLockPosition.y,0);
+				setTimeout(function(){
+					enableScroll();
+					thisScroll.scrollTo(preLockPosition.x,preLockPosition.y,0);
+				});
 			}
 		};
 	}
