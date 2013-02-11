@@ -307,15 +307,6 @@ var game=ia.game={};
 		}
 	});
 	
-	$('#gamePhotoOverlay').bind('click mousedown',function(e){ //must let mouseleave to bubble, and mousemove for dragging
-		//		if(!($(e.currentTarget).attr('id')=='gamePhotoOverlay')){
-		if(e.target!=this){
-			//			log('gamePhotoOverlay trap event');
-			//			return false; //stop touch events started on items
-			e.stopPropagation();
-		}
-	});
-	
 	function addPhotoIcon(recordId,position){
 		function getPosition(element){
 			return {
@@ -344,13 +335,21 @@ var game=ia.game={};
 			.attr('class',item.attr('class')||'').removeClass('armyListModelRow')
 			.addClass('photoModelIcon').css(position).appendTo('#gamePhotoOverlay')
 			.draggable({
-				drag:function(event,ui){
+				start:function(){
+					log('start dragging photo icon');
+					gamePhotoScroll.lockScroll();
+				},
+				stop:function(event,ui){
+					log('stop dragging photo icon');
 					savePosition(recordId);
 					saveGameStatus();
+					gamePhotoScroll.unlockScroll();
 				},
 				containment:"parent"
-			}).bind('click',function(){
+			}).bind('mousedown',function(){
+				gamePhotoScroll.lockScroll();
 				record.row.trigger('click');
+				gamePhotoScroll.unlockScroll();
 			}).attr('title',record.model.getDisplay('name')+' '+record.model.getDisplay('codename'))
 			.append(unconsciousIcon.clone());
 		}
