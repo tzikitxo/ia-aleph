@@ -307,7 +307,7 @@ var game=ia.game={};
 		}
 	});
 	
-	$('#gamePhotoOverlay').bind('click mousedown mousemove',function(e){ //must let mouseleave to bubble
+	$('#gamePhotoOverlay').bind('click mousedown',function(e){ //must let mouseleave to bubble, and mousemove for dragging
 		//		if(!($(e.currentTarget).attr('id')=='gamePhotoOverlay')){
 		if(e.target!=this){
 			//			log('gamePhotoOverlay trap event');
