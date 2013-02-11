@@ -269,11 +269,11 @@
 				}
 			}
 		};
-		var preLockPosition;
+		var preLockPosition,isLocked=false;
 		var api;
 		return api={
 			updateScroll:function(shouldReset){
-				if(ia.isReady){
+				if(ia.isReady && !isLocked){
 					setTimeout(function () {
 						var ww=$(window).width(),wh=$(window).height();
 						var scrollWrapper=config.getScrollWrapper();
@@ -321,8 +321,9 @@
 			},
 			disableScroll:disableScroll,
 			lockScroll:function(){
-				if(thisScroll){
+				if(thisScroll && !isLocked){
 					log('locking ',config.name);
+					isLocked=true;
 					preLockPosition={
 						x:thisScroll.x,
 						y:thisScroll.y
@@ -334,10 +335,13 @@
 				}				
 			},
 			unlockScroll:function(){
-				setTimeout(function(){
-					enableScroll();
-					thisScroll.scrollTo(preLockPosition.x,preLockPosition.y,0);
-				});
+				if(isLocked){
+					setTimeout(function(){
+						isLocked=false;
+						enableScroll();
+						thisScroll.scrollTo(preLockPosition.x,preLockPosition.y,0);
+					});
+				}
 			}
 		};
 	}
