@@ -337,6 +337,7 @@ var game=ia.game={};
 			.draggable({
 				start:function(){
 					log('start dragging photo icon');
+					record.row.trigger('click');
 					gamePhotoScroll.lockScroll();
 				},
 				stop:function(event,ui){
@@ -346,10 +347,8 @@ var game=ia.game={};
 					gamePhotoScroll.unlockScroll();
 				},
 				containment:"parent"
-			}).bind('mousedown',function(){
-				gamePhotoScroll.lockScroll();
+			}).bind('click',function(){
 				record.row.trigger('click');
-				gamePhotoScroll.unlockScroll();
 			}).attr('title',record.model.getDisplay('name')+' '+record.model.getDisplay('codename'))
 			.append(unconsciousIcon.clone());
 		}
