@@ -45,22 +45,32 @@ var plugins=ia.plugins={};
         }
         var methodConfig=methodConfigurations[methodName]||{};
         log('registering plugin method : ',methodName,' config : ',methodConfig);
+		
+		var invokeMethod=function(pluginId,plugin,methodArgs){
+			try{
+				return plugin[methodName].apply(plugin,methodArgs);
+			}catch(e){
+				log('error executing plugin ',pluginId,'.',methodName,'() : ',e);
+				return undefined;
+			}
+		}
+		
         if(methodConfig.discardResult){
             plugins[methodName]=function(){
                 var methodArgs=arguments;
                 $.each(pluginsById,function(id,plugin){
                     if(plugin[methodName]){
-                        plugin[methodName].apply(plugin,methodArgs);
+                        invokeMethod(id,plugin,methodArgs);
                     }                    
                 });
             };
-        }if(methodConfig.chain){
+        }else if(methodConfig.chain){
             var chainIndex=methodConfig.chainIndex||0;
             plugins[methodName]=function(){
                 var res=undefined,methodArgs=arguments;
                 $.each(pluginsById,function(id,plugin){
                     if(plugin[methodName]){
-                        var thisRes=plugin[methodName].apply(plugin,methodArgs);
+                        var thisRes=invokeMethod(id,plugin,methodArgs);
                         res=thisRes;
                         methodArgs[chainIndex]=thisRes;
                     }
@@ -72,7 +82,7 @@ var plugins=ia.plugins={};
                 var res=undefined,methodArgs=arguments;
                 $.each(pluginsById,function(id,plugin){
                     if(plugin[methodName]){
-                        var thisRes=plugin[methodName].apply(plugin,methodArgs);
+                        var thisRes=invokeMethod(id,plugin,methodArgs);
                         if(res===undefined){
                             res=thisRes;
                         }else if(!isNaN(res) && !isNaN(thisRes)){

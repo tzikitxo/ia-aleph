@@ -273,7 +273,11 @@
 		var api;
 		return api={
 			updateScroll:function(shouldReset){
-				if(ia.isReady && !isLocked){
+				if(!ia.isReady){
+					log('skipping ',config.name,' update : ia not ready');
+				}else if(isLocked) {
+					log('skipping ',config.name,' update : locked');
+				}else{
 					setTimeout(function () {
 						var ww=$(window).width(),wh=$(window).height();
 						var scrollWrapper=config.getScrollWrapper();
@@ -284,7 +288,7 @@
 						var availableHeight=config.getAvailableHeight(ww,wh),expectedHeight=config.getExpectedHeight(),
 						expectedWidth=config.getExpectedWidth?config.getExpectedWidth():null,
 						availableWidth=config.getAvailableWidth?config.getAvailableWidth(ww,wh):null;
-						log(config.name,' available : ',availableWidth||'_','x',availableHeight,
+						log('updating scroll ',config.name,', available : ',availableWidth||'_','x',availableHeight,
 							' , expected : ',expectedWidth||'_','x',expectedHeight);
 						if(availableHeight<0){
 						// skipping, non-showing scroller
