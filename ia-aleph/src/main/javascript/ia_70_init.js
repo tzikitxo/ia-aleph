@@ -14,7 +14,7 @@
  **/
 
 (function(){
-	
+		
 	log('starting ia-aleph app');
 	
 	$("#loadingContainer").hide();
