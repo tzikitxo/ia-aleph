@@ -290,9 +290,14 @@
         });
 		
         function buildQrCode(url){
-            var qrHolder=$('<div />').qrcode({
-                text:url
-            });
+            var qrHolder=$('<div />');
+            try{
+                qrHolder.qrcode({
+                    text:url
+                });
+            }catch(e){
+                log('qrcode error',e);
+            }
             var qrData=$('canvas',qrHolder)[0].toDataURL("image/png");
             $('.qrCode',newBody).attr('src',qrData);
         }    
