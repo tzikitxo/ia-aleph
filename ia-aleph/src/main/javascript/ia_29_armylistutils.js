@@ -178,9 +178,13 @@ armyList.exportAndShowList=function(){
         if(shortUrl){
             urlHref.text(listUrl);
         }
-        qrcode.empty().qrcode({
-            text:listUrl
-        });
+        try{
+            qrcode.empty().qrcode({
+                text:listUrl
+            });
+        }catch(e){
+            log('qrcode error',e);
+        }
     }
    
     //var htmlPreviewCode=exportContainer.html();
