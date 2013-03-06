@@ -105,6 +105,9 @@ var wiki=ia.wiki={};
     });
     
     function searchAndShowResults(pattern){
+		if(!pattern||pattern.length<3){
+			return;
+		}
         var match=cleanText(pattern);
         var exactMatch=pagesByLangAndMatch[currentLang][match];
         var regexp=new RegExp(match);
