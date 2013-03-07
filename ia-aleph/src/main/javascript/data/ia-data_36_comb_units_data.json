@@ -834,7 +834,7 @@
   "bsw": [],
   "spec": [
    "AutoMediKit",
-   "CH:Chamouflage",
+   "CH: Camouflage",
    "Infiltration",
    "Shasvastii"
   ],
@@ -1022,11 +1022,11 @@
     "swc": "1",
     "cbcode": [],
     "spec": [
-     "Monofilamet Mines"
     ],
     "bsw": [
      "Combi Rifle",
-     "Light Shotgun"
+     "Light Shotgun",
+     "Monofilament Mines"
     ],
     "ccw": [],
     "note": ""
@@ -4097,7 +4097,7 @@
  "ava": "1",
  "bs": "14",
  "bsw": [
-  "Mk-12",
+  "Mk12",
   "Light Flamethrower"
  ],
  "bts": "-9",

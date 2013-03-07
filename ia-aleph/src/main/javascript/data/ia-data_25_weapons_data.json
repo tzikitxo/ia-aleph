@@ -437,7 +437,7 @@
  {
   "ammo": "E/M",
   "burst": "1",
-  "cc": "Yes",
+  "cc": "No",
   "damage": "13",
   "em_vul": "Yes",
   "long_dist": "--",
