@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link id="cssLinkReference" rel="stylesheet" type="text/css" href="css/style_theme_default_default.css"/>
+        <link id="favicon" rel="icon" href="images/app_logo_small.png" type="image/png" />
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/hfgdhiehdeeajkmemembkhlfhkndbdil" />
+        <title>Aleph Toolbox</title>
+        <script type="text/javascript" src="js/ia-libs.js"></script>
+        <script type="text/javascript" src="js/ia-data.js"></script>
+        <script type="text/javascript" src="js/ia-lang.js"></script>
+        <script type="text/javascript" src="js/ia.js"></script>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-32771450-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="loadingContainer">
+            <img src="images/loading.gif" alt="loading"/>
+            <span>loading...</span>
+        </div>
+        <div id="rootContainer" style="display:none">
+            <div id="overly1"></div>
+            <div id="smallScreenTopBar">
+                <div class="mainMenuButton smallScreenTopBarButton">MENU</div>   
+                <div class="armylistViewButton smallScreenTopBarButton"></div>
+                <div class="addModelButton smallScreenTopBarButton"></div>
+                <div class="unitDetailButton smallScreenTopBarButton"></div>
+            </div>
+            <div id="leftContainer">
+                <div id="topBar">
+                    <div id="upperTopBar">
+                        <div id="mainMenuButton" class="mainMenuButton"></div>
+                        <div class="listInfo">
+                            <div class="modelCount"></div>
+                            <div class="pointsCount">
+                                <div class="count" ></div> / <div class="max" ></div> ( <div class="diff" ></div> )
+                            </div>
+                            <div class="swcCount">
+                                <div class="count" ></div> / <div class="max" ></div> ( <div class="diff" ></div> )
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warningsBar">
+                        <div class="warnings"></div>
+                    </div>                    
+                </div>
+                <div id="mainContainer">
+                    <div id="typeAndUnitMenuWrapper">
+                        <div id="typeMenu"></div>
+                        <div id="unitMenu"></div>
+                    </div>
+                    <div id="modelChooserContainer">
+                        <div id="modelChooserScrollWrapper">
+                            <div id="modelChooserScrollableWrapper">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="gameModeContainer" >
+                        <!--<div class="listInfo" />-->
+                        <div class="listStatus" >
+                            <span class="remainingOrders" ></span>
+                            <span class="remainingPoints" ></span>
+                            <span class="lossPercentage" ></span>
+                            <div class="warnings statusWarnings" ></div>
+                        </div>
+                        <div id="gamePhotoContainer">
+                            <div id="gameModeControls" >
+                                <div id="photoFileInputWrapper">
+                                    <input type="file" id="photoFileInput" name="photoFile" ></input>
+                                    <div id="photoFileInputIconWrapper" >
+                                        <img class="gameModeControlsIcon" src="images/image_icon.png" ></img>
+                                    </div>
+                                </div>
+								<div id="gamePhotoCameraButton">
+									<img class="gameModeControlsIcon" src="images/photo_icon.png" ></img>
+								</div>
+                            </div>
+                            <div id="gamePhotoScrollWrapper">
+                                <div id="gamePhotoScrollContent">
+                                    <img id="gamePhoto" alt="game photo" src="images/default_game_photo.jpg" ></img>
+                                    <div id="gamePhotoOverlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="rightContainer">
+                <div id="modelInfoContainer">
+                    <div id="modelInfoButton"></div>
+                </div>
+                <div id="armyList">
+                    <div id="armyListScrollWrapper">
+                        <table>
+                            <tbody>
+                                <tr class="armyListSpacer" ><td /></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="armyListControls"></div>
+                    <div id="armyListGameModeControls"></div>
+                    <div class="listInfo">
+                        <div class="firstRow">
+                            <div class="modelCount"></div><div class="pointsCount"><div class="count" ></div></div><div class="sep"> | </div><div class="swcCount"><div class="count" ></div></div>
+                        </div>
+                        <div class="secondRow">
+                            <div class="label"></div><div class="pointsCount"><div class="max" ></div></div><div class="sep"> | </div><div class="swcCount"><div class="max" ></div></div>
+                        </div>
+                        <div class="thirdRow">
+                            <div class="label"></div><div class="pointsCount"><div class="diff" ></div></div><div class="sep"> | </div><div class="swcCount"><div class="diff" ></div></div>
+                        </div>
+                    </div>
+                    <div class="warningsBar">
+                        <div class="warnings"></div>
+                    </div>  
+                </div>
+            </div>
+            <div id="inlineFloaters">
+                <div id="mainMenuButton"></div>
+                <div id="mainMenu" style="display:none">
+                    <div id="mainMenuScrollWrapper">
+                        <div id="mainMenuScrollContent"></div>
+                    </div>
+                </div>
+                <div id="factionsMenu" style="display:none">
+                    <div id="factionsMenuScrollWrapper">
+                        <div id="factionsMenuScrollContent"></div>
+                    </div>
+
+                </div>
+                <div id="weaponsButton"></div>
+                <div id="weaponsInfo" class="showIn"></div>
+            </div>
+        </div>
+        <div id="floaters">
+            <div id="genericPopup" style="display:none">
+                <div id="genericPopupScrollWrapper">
+                    <div id="genericPopupContent">
+                    </div>
+                </div>
+            </div>
+            <div id="configPopup" style="display:none">
+                <div id="configPopupScrollWrapper">
+                    <div id="configPopupScrollerWrapper">
+                    </div>
+                </div>
+            </div>
+            <div id="campaignToolsContainer" style="display:none">
+                <div id="campaignToolsScrollWrapper">
+                    <div id="campaignToolsContent">
+                    </div>
+                </div>
+            </div>
+            <div id="rulesBrowser" style="display:none">
+                <div id="rulesLeft">
+                    <div id="rulesButtons" ></div>
+                    <div id="rulesSearch" >
+                        <div id="rulesSearchField" >
+                            <input type="text" name="rule" />
+                        </div>
+                        <div id="rulesSearchResults" ></div>
+                    </div>
+                </div>
+                <div id="rulesRight" >
+                    <div id="rulesScrollWrapper">
+                        <div id="rulesText" ></div>
+                    </div>
+                </div>
+            </div>
+            <div id="armySelector" style="display:none"></div>
+            <div id="mask" style="display:none"></div>
+            <div id="savedLists" style="display:none"></div>
+            <div id="imagesPopup" style="display:none">
+                <div id="imagesPopupContentWrapper" >
+                    <div id="imagesPopupContent" />
+                </div>
+                <div id="imagesPopupCloseButton" />
+            </div>
+        </div>
+    </body>
+</html>
