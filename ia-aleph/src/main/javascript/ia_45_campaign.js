@@ -252,7 +252,7 @@ var campaign=ia.campaign={};
             $.each(campaign.skillCategories,function(i,category){
                 var thisLevel=level,selected=((militarySpecs[category]||0)>=thisLevel)||(level==5&&militarySpecs['ltident']==5);
                 var militarySpecTableCell=$('<td  class="militarySpecTableCell" />').addClass('level'+level).addClass(category).text(messages.get('campaign.militaryspecs.'+category+'.level'+level+'.desc'))
-                .appendTo(levelRow).bind('click',level<5?function(){
+                .appendTo(levelRow).bind('click',level<5?function(event){
                     if(!$(event.target).hasClass('militarySpecTableCell')){ //skip click on sub-controls
                         return;
                     }
