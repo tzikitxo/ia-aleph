@@ -76,6 +76,7 @@
                 <include>lang/ia-lang_51_it.js</include>
                 <include>lang/ia-lang_52_fr.js</include>
                 <include>lang/ia-lang_53_es.js</include>
+                <include>lang/ia-lang_54_de.js</include>
                 <include>lang/ia-lang_90_tail.js</include>
             </includes>
         </script>
