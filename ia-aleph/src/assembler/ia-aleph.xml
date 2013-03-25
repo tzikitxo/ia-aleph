@@ -10,6 +10,7 @@
                 <include>ia_21_lang_en.js</include>
                 <include>ia_21_lang_it.js</include>
                 <include>ia_22_storage.js</include>
+                <include>ia_24_remote.js</include>
                 <include>ia_26_main.js</include>
                 <include>ia_27_armylist.js</include>
                 <include>ia_28_extravalidations.js</include>
