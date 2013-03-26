@@ -33,6 +33,10 @@
 			window.console.debug.apply(window.console,arguments);
 		}
 	};
+	var dump=utils.dump=function(name,str){
+		log(name,' : ',str);
+		return str;
+	}
 
 	utils.getBaseUrl=((function(){
 		var url= window.location.protocol
@@ -54,7 +58,7 @@
 	}
 
 	utils.getAbsoluteBasePath=function(){
-		return 'http://anyplace.it/ia/';
+		return window.location.hostname=='localhost'?utils.getBasePath():'http://anyplace.it/ia/';
 	}
 
 	utils.cleanName=function(origName){
@@ -84,6 +88,42 @@
 		},
 		dataType: 'json'
 	});
+	
+	utils.ajax=function(config){
+		var name=config.name||config.action;
+		function success(data){
+			log(name,' success : ',data);
+			if(config.success){
+				config.success(data);
+			}
+		}
+		function error(data){
+			log(name,' error : ',data);
+			utils.remoteServiceAvailable=false;
+			if(config.error){
+				config.error(data);
+			}
+		}
+		var validateResponse=config.validateResponse||function(data){
+			return (data && data.success)?true:false;
+		};
+		$.ajax($.extend({
+			type: config.type||'GET',
+			url: utils.getAbsoluteBasePath()+'/ia.php?action='+config.action,
+			data: config.data,
+			success: function(data){
+				if(validateResponse(data)){
+					success(data);
+				}else{                
+					error(data);
+				}     
+			},
+			error: function(){     
+				error(data);
+			},
+			dataType: 'json'
+		},config.ajaxConfig||{}));
+	};
 
 	utils.getTinyUrl=function(configArg){
 		var config=$.extend({
@@ -94,29 +134,40 @@
 			log('getTinyUrl error : unavailable remoteService');
 			config.error();
 		}else{
-			$.ajax($.extend({
+			utils.ajax({
 				type: 'POST',
-				url: utils.getAbsoluteBasePath()+'/ia.php?action=getTinyUrl',
+				action:'getTinyUrl',
 				data: JSON.stringify({
 					"longUrl": config.url
 				}),
-				success: function(data){
-					if(data && data.id){
-						log('getTinyUrl success : ',data);
-						config.success(data.id);
-					}else{                
-						log('getTinyUrl error : ',data);
-						utils.remoteServiceAvailable=false;
-						config.error(data);
-					}     
+				success:function(data){
+					config.success(data.id);
 				},
-				error: function(){
-					log('getTinyUrl error');
-					utils.remoteServiceAvailable=false;
-					config.error();
-				},
-				dataType: 'json'
-			},config.ajaxConfig||{}));
+				ajaxConfig:config.ajaxConfig
+			});
+//			$.ajax($.extend({
+//				type: 'POST',
+//				url: utils.getAbsoluteBasePath()+'/ia.php?action=getTinyUrl',
+//				data: JSON.stringify({
+//					"longUrl": config.url
+//				}),
+//				success: function(data){
+//					if(data && data.id){
+//						log('getTinyUrl success : ',data);
+//						config.success(data.id);
+//					}else{                
+//						log('getTinyUrl error : ',data);
+//						utils.remoteServiceAvailable=false;
+//						config.error(data);
+//					}     
+//				},
+//				error: function(){
+//					log('getTinyUrl error');
+//					utils.remoteServiceAvailable=false;
+//					config.error();
+//				},
+//				dataType: 'json'
+//			},config.ajaxConfig||{}));
 		}
 	};
 
@@ -179,6 +230,14 @@
 		};
 		config.pack=function(key,value){
 			this.set(key,utils.encodeData(value,valueConfig[key]));
+		};
+		config.getOrInit=function(key,defaultInitializer){
+			var value=this.get(key);
+			if(value===undefined){
+				value=defaultInitializer();
+				this.set(key,value);
+			}
+			return value;
 		};
 		if(storage){
 			config.get=function(key){
