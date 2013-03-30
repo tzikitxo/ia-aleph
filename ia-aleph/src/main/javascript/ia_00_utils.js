@@ -187,8 +187,16 @@
 		if(config && config.encode===false){
 			return str;
 		}
-		var def=str.length>100?RawDeflate.deflate(str):str;
-		return $.base64.encode(def).replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
+		var def;
+		if(str.length>100){
+			def=RawDeflate.deflate(str);
+			log('deflated data from ',str.length,' to ',def.length,' characters');
+		}else{
+			def=str;
+		}
+		var enc=$.base64.encode(def).replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
+		log('b64 encoded data from ',def.length,' to ',enc.length,' characters');
+		return enc;
 	};
 	utils.decodeData=function(string,config){
 		if(config && config.encode===false){
