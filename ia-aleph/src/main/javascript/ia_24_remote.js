@@ -18,31 +18,16 @@ var remote=ia.remote=ia.remote||{};
     
 	log('loading 24: remote');
 	
-	var deviceId=remote.deviceId=config.getOrInit('remote.deviceId',function(){ return utils.newId(); });
+	var deviceId=remote.deviceId=config.getOrInit('remote.deviceId',function(){
+		return utils.newId();
+	});
 	log('device id = ',remote.deviceId);
-	
-	//var enabled=true
-	var locked=false,uploadQueue={};
-	
-	function processUploadQueue(){
-		var key=null,value=null;
-		$.each(uploadQueue,function(akey,avalue){
-			key=akey;
-			value=avalue;
-			return false;
-		});
-		if(key===null){ //no more data to sed
-			locked=false;
-			return;
-		}else{
-			delete uploadQueue[key];
-			uploadData(key,value,function(){
-				processUploadQueue();
-			});
-		}
-	}
-	function uploadData(key,data,callback){
+		
+	remote.storeData=function(key,data,success,error){
 		log('uploading ',key);
+		if(typeof data !== 'string'){
+			data=JSON.stringify(data);
+		}
 		utils.ajax({
 			type: 'POST',
 			action:'storeData',
@@ -51,22 +36,9 @@ var remote=ia.remote=ia.remote||{};
 				"key": key,
 				"data":data
 			},
-			success: function(data){
-				callback();
-			},
-			error: function(){
-				callback();
-			}
+			success: success,
+			error: error
 		});
-	}
-	
-	
-	remote.storeData=function(key,data){
-		uploadQueue[key]=data;
-		if(!locked){
-			locked=true;
-			processUploadQueue();
-		}
 	};
 	
 	
@@ -95,6 +67,19 @@ var remote=ia.remote=ia.remote||{};
 			},
 			error: error
 		});
+	};
+	
+	remote.listDataWithPrefix=function(prefix,success,error){
+		remote.listData(function(data){
+			var res={},regexp=new RegExp('^'+prefix);
+			$.each(data,function(key,value){
+				if(key.match(regexp)){
+					res[value.key=key.replace(regexp,'')]=value;
+				}
+			});
+			log('filtered remote data with prefix ',prefix,' : ',res);
+			success(res);
+		},error);
 	};
         
 })();
