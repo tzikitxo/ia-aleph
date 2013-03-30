@@ -48,7 +48,7 @@ if ($_REQUEST['action'] == 'checkService') {
 	$file = $dir . $_REQUEST['key'];
 	file_put_contents($file . '.gz', gzencode($_REQUEST['data'],9));
 
-	$data = file_get_contents($file);
+	$data = gzdecode(file_get_contents($file . '.gz'));
 
 	if ($data != FALSE) {
 		$response = json_encode(array('success' => true, 'data' => $data));
