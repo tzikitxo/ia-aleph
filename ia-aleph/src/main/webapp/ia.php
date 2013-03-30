@@ -64,14 +64,17 @@ if ($_REQUEST['action'] == 'checkService') {
 } else if ($_REQUEST['action'] == 'listData') {
 
 	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
-	$list = array();
+	$res = array();
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {
-			$list[] = $file;
+			$record = array();
+			$record['fileName'] = $file;
+			$record['lastMod'] = date('c', filemtime($dir . $file));
+			$res[basename($file)] = $record;
 		}
 	}
 
-	$response = json_encode(array('success' => true, 'data' => $list));
+	$response = json_encode(array('success' => true, 'data' => $res));
 }
 
 header('Content-type: application/json');
