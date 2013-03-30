@@ -203,8 +203,10 @@
             $('<div class="modelIsc" />').text(model.getDisplay('isc')).appendTo(modelNames);
             modelNames.append(' - ');
             $('<div class="modelCode" />').text(model.getDisplay('codename')).appendTo(modelNames);
+			var modelTypeAndCostWrapper=$('<div class="modelTypeAndCostWrapper" />').appendTo(modelHeader);
+			$('<div class="modelType" />').text(model.getDisplay('type')).appendTo(modelTypeAndCostWrapper);
             if(!model.parent.isPseudoUnit){
-                $('<div class="modelCost" />').text('('+model.cost+'|'+model.swc+')').appendTo(modelHeader);
+                $('<div class="modelCost" />').text('('+model.cost+'|'+model.swc+')').appendTo(modelTypeAndCostWrapper);
             }
             if(lastModel.parent.isc!=model.parent.isc){
                 //                alreadyPrintedProfileByIsc[model.parent.isc]=true;
