@@ -96,7 +96,7 @@
                 <include>lib/jquery.cycle.all.js</include>
                 <include>lib/jquery.jeditable.js</include>
                 <include>lib/iscroll.js</include>
-                <include>lib/ia-lib_utils.js</include>
+                <include>ia_00_utils.js</include>
             </includes>
         </script>
     </scripts>
