@@ -433,7 +433,10 @@
 	}
 
 	utils.newId=function(){
-		return (Math.random()*Math.pow(10, 17))+'';
+		//		function getRandomChars(){
+		return (Math.random()*Math.pow(10, 17))+''; // 10^17 random combinations . . UUID is 10^38, but this should be enought for us . . 
+	//		}
+	//		return getRandomChars()+getRandomChars(); //roughly the same space as UUID
 	};
 
 })();
