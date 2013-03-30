@@ -15,250 +15,224 @@
 
 (function(){
     
-    log('loading 31: armylist load/save');
+	log('loading 31: armylist load/save');
     
-    if(storage.isPersistent){
+	//    if(storage.isPersistent){
         
-        var savedListPrefix="savedList.",lastSavedListKey="lastSavedList";
-//        var savedLists=null;
-        var deleteButtonPath='images/trash_icon.png';
+	var savedListPrefix="savedList.",lastSavedListKey="lastSavedList";
+	//        var savedLists=null;
+	var deleteButtonPath='images/trash_icon.png';
 		
-		var lastSavedList;
-		function getLastSavedList(){
-			return lastSavedList || (lastSavedList=storage.get(lastSavedListKey));
+	var lastSavedList;
+	function getLastSavedList(){
+		return lastSavedList || (lastSavedList=storage.get(lastSavedListKey));
+	}
+		
+	//	armyList.syncFromRemote=function(){
+	//		remote.listDataWithPrefix(savedListPrefix,function(data){
+	//			$.each(data,function(listId,listData){
+	//				if(listData && listData )
+	//			});
+	//		});
+	//	};
+        
+	function saveList(list){
+		//            load();
+		log('saving list ',list);
+		//            var smallRecord=listToSmallRecord(list);
+		//            savedLists[list.listId]=list.listId;
+		lastSavedList=list.listId;
+		try{
+			storage.pack(savedListPrefix+list.listId,list);
+			storage.set(lastSavedListKey,lastSavedList);
+			//			storeLastSavedListId();
+			remote.storeData(savedListPrefix+list.listId,list);
+			remote.storeData(lastSavedListKey,lastSavedList);
+			return null;
+		}catch(e){
+			log('error saving list ',list);
+			e.printStackTrace();
+			return e;
 		}
-        
-//        var load=function(){
-////            if(!savedLists){
-//                try{
-////                    savedLists=storage.unpack(savedListsKey);
-//                    lastSavedList=storage.get(lastSavedListKey);
-//                    if(savedLists){
-//                        if(savedLists.push){ //new format, array
-//                            var savedListsOb={};
-//                            $.each(savedLists,function(index,value){
-//                                savedListsOb[value]=value;
-//                            })
-//                            savedLists=savedListsOb;
-//                        }else{//legacy format, must convert
-//                            lastSavedList=savedLists.lastSavedListId;
-//                            delete savedLists.lastSavedListId;
-//                            $.each(savedLists,function(index,value){
-//                                savedLists[index]=index;
-//                            });
-//                        }
-//                    }
-//                    log('loaded lists = ',savedLists);
-//                }catch(e){
-//                    log('error unpacking saved lists : ',e);
-//                }
-////            }
-//            if(!savedLists){
-//                savedLists={};
-//            }
-//            return savedLists;
-//        }
-        function storeLastSavedListId(){
-//            var savedListsArray=[];
-//            $.each(savedLists,function(index,value){
-//                savedListsArray.push(value);
-//            });
-//            storage.pack(savedListsKey,savedListsArray);
-            storage.set(lastSavedListKey,lastSavedList);
-        }
-        function saveList(list){
-//            load();
-            log('saving list ',list);
-            //            var smallRecord=listToSmallRecord(list);
-//            savedLists[list.listId]=list.listId;
-            lastSavedList=list.listId;
-            try{
-                storage.pack(savedListPrefix+list.listId,list);
-                storeLastSavedListId();
-                return null;
-            }catch(e){
-                log('error saving list ',list,' : ',e);
-                return e;
-            }
-        }
-        function loadList(id){
-            try{
-                var list=storage.unpack(savedListPrefix+id);
-                if(list && list.id && !list.listId){
-                    list.listId=list.id;
-                }
-            }catch(e){
-                log('error loading list for id ',id,' : ',e);
-                return false;
-            }
-            return list;
-        }
-        function deleteList(id){
-//            delete savedLists[id];
-//            store();
-            storage.remove(savedListPrefix+id);
-        }
-		function getAllSavedLists(){
-			return storage.unpackAllWithPrefix(savedListPrefix);
+	}
+	function loadList(id){
+		try{
+			var list=storage.unpack(savedListPrefix+id);
+			if(list && list.id && !list.listId){
+				list.listId=list.id;
+			}
+		}catch(e){
+			log('error loading list for id ',id,' : ',e);
+			return false;
 		}
+		return list;
+	}
+	function deleteList(id){
+		//            delete savedLists[id];
+		//            store();
+		storage.remove(savedListPrefix+id);
+	}
+	function getAllSavedLists(){
+		return storage.unpackAllWithPrefix(savedListPrefix);
+	}
         
-//        armyList.getSavedLists=getSavedLists;
-        armyList.getSavedList=function(id){
-            return armyList.listId==id?armyList.exportList():loadList(id);
-        }
-        armyList.getLastSavedList=function(){
-            getLastSavedList();
-            if(!lastSavedList){
-                return null;
-            }
-            return loadList(lastSavedList);
-        }
-        armyList.saveList=function(){
-            saveList(armyList.exportList());
-        }
-        armyList.newListId=function(){
-            return armyList.listId=utils.newId();
-        }
-        armyList.newListId();
+	//        armyList.getSavedLists=getSavedLists;
+	armyList.getSavedList=function(id){
+		return armyList.listId==id?armyList.exportList():loadList(id);
+	}
+	armyList.getLastSavedList=function(){
+		getLastSavedList();
+		if(!lastSavedList){
+			return null;
+		}
+		return loadList(lastSavedList);
+	}
+	armyList.saveList=function(){
+		saveList(armyList.exportList());
+	}
+	armyList.newListId=function(){
+		return armyList.listId=utils.newId();
+	}
+	armyList.newListId();
         
-        armyList.showSavedListsWindow=function(){
-            function backToMainView(){
-                $('#rootContainer').show();
-                savedListWindow.hide().empty();   
-                armyList.savedListScroller=null;
-            };            
-            var savedListWindow=$('#savedLists');
-//            load();
-            savedListWindow.empty();
-            $('<div id="savedListsBackButton" />').text(messages.get('common.close'))
-            .prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
-            .bind('click',function(){
-                backToMainView();
-            }).appendTo(savedListWindow);
-            var scrollWrapper=$('<div id="savedListsScrollWrapper" />').appendTo(savedListWindow);
-            var table=$('<table />').appendTo(scrollWrapper);
-            var header=$('<tr />').appendTo(table);
-            $.each(['factionLogo','faction','name','pcap','modelCount','lastView','buttons'],function(x,label){
-                $('<th />').text(messages.get('armylistsave.headerLabels.'+label)).appendTo(header);
-            });
-            var orderedLists=[];
-            $.each(getAllSavedLists(),function(listId,listInfo){
-//                var listInfo=loadList(listId);
-                if(listInfo && listInfo.models && listInfo.models.length==0 && listInfo.listId!=armyList.listId){ // cleanup empty lists
-                    deleteList(listId);
-                }else if(listInfo){
-                    orderedLists.push(listInfo);
-                }
-            });
-            orderedLists.sort(function(list1,list2){
-                return new Date(list1.dateMod)<new Date(list2.dateMod)?1:-1;
-            });
-            $.each(orderedLists,function(x,listInfo){
-                try{
-                    var isCurrentList=listInfo.listId==armyList.listId;
-                    var savedListRow=$('<tr class="savedListRow" />');
-                    if(isCurrentList){
-                        savedListRow.addClass('currentList');
-                    }
-                    var factionOrSectorial=listInfo.sectorial?listInfo.sectorial:listInfo.faction;
-                    var factionOrSectorialDisplay=names.get('faction',factionOrSectorial);
-                    var iconPath=utils.buildImagePath(factionOrSectorial,"logo_small");
-                    $('<td />').html($('<img />').attr('src',iconPath)).appendTo(savedListRow);
-                    $('<td />').text(factionOrSectorialDisplay).appendTo(savedListRow);
-                    var name=listInfo.listName;
-                    var nameField=$('<td class="nameField"/>').text(name?name:messages.get('armylistsave.setName')).appendTo(savedListRow).editable(function(value){
-                        if(isCurrentList){
-                            armylist.setListName(value);
-                        }else{
-                            listInfo.listName=value;
-                            saveList(listInfo);
-                        }
-                        return value;
-                    });
-                    if(!name){
-                        nameField.addClass('missingName');
-                    }
-                    $('<td />').text(listInfo.pcap).appendTo(savedListRow);
-                    $('<td />').text(listInfo.models.length).appendTo(savedListRow);
-                    var lastMod=new Date(listInfo.dateMod);
-                    $('<td class="dateMod"/>').text(lastMod.toLocaleDateString()+', '+lastMod.toLocaleTimeString()).appendTo(savedListRow);
-                    $('<td class="deleteButton"/>').html($('<img />').attr('src',deleteButtonPath).attr('title',messages.get('armylistsave.deleteListButton'))).bind('click',function(){
-                        deleteList(listInfo.listId);
-                        savedListRow.remove();
-                        savedListScroller.updateScroll();
-                    }).appendTo(savedListRow);
-                    $('td',savedListRow).not('.deleteButton , .nameField').bind('click',function(){
-                        var list=loadList(listInfo.listId);
-                        if(list){
-                            units.loadUnitsForList(list);
-                            armyList.importList(list);   
-                            armyList.saveList(); // mark loaded list as last opened
-                            backToMainView();                   
-                        }
-                    });
-                    savedListRow.appendTo(table);
-                }catch(e){
-                    log('error showing list ',listInfo,' : ',e);
-                }
-            });
-            savedListWindow.show();
-            $('#rootContainer').hide();
+	armyList.showSavedListsWindow=function(){
+		function backToMainView(){
+			$('#rootContainer').show();
+			savedListWindow.hide().empty();   
+			armyList.savedListScroller=null;
+		};            
+		var savedListWindow=$('#savedLists');
+		//            load();
+		savedListWindow.empty();
+		$('<div id="savedListsBackButton" />').text(messages.get('common.close'))
+		.prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
+		.bind('click',function(){
+			backToMainView();
+		}).appendTo(savedListWindow);
+		var scrollWrapper=$('<div id="savedListsScrollWrapper" />').appendTo(savedListWindow);
+		var table=$('<table />').appendTo(scrollWrapper);
+		var header=$('<tr />').appendTo(table);
+		$.each(['factionLogo','faction','name','pcap','modelCount','lastView','buttons'],function(x,label){
+			$('<th />').text(messages.get('armylistsave.headerLabels.'+label)).appendTo(header);
+		});
+		var orderedLists=[];
+		$.each(getAllSavedLists(),function(listId,listInfo){
+			//                var listInfo=loadList(listId);
+			if(listInfo && listInfo.models && listInfo.models.length==0 && listInfo.listId!=armyList.listId){ // cleanup empty lists
+				deleteList(listId);
+			}else if(listInfo){
+				orderedLists.push(listInfo);
+			}
+		});
+		orderedLists.sort(function(list1,list2){
+			return new Date(list1.dateMod)<new Date(list2.dateMod)?1:-1;
+		});
+		$.each(orderedLists,function(x,listInfo){
+			try{
+				var isCurrentList=listInfo.listId==armyList.listId;
+				var savedListRow=$('<tr class="savedListRow" />');
+				if(isCurrentList){
+					savedListRow.addClass('currentList');
+				}
+				var factionOrSectorial=listInfo.sectorial?listInfo.sectorial:listInfo.faction;
+				var factionOrSectorialDisplay=names.get('faction',factionOrSectorial);
+				var iconPath=utils.buildImagePath(factionOrSectorial,"logo_small");
+				$('<td />').html($('<img />').attr('src',iconPath)).appendTo(savedListRow);
+				$('<td />').text(factionOrSectorialDisplay).appendTo(savedListRow);
+				var name=listInfo.listName;
+				var nameField=$('<td class="nameField"/>').text(name?name:messages.get('armylistsave.setName')).appendTo(savedListRow).editable(function(value){
+					if(isCurrentList){
+						armylist.setListName(value);
+					}else{
+						listInfo.listName=value;
+						saveList(listInfo);
+					}
+					return value;
+				});
+				if(!name){
+					nameField.addClass('missingName');
+				}
+				$('<td />').text(listInfo.pcap).appendTo(savedListRow);
+				$('<td />').text(listInfo.models.length).appendTo(savedListRow);
+				var lastMod=new Date(listInfo.dateMod);
+				$('<td class="dateMod"/>').text(lastMod.toLocaleDateString()+', '+lastMod.toLocaleTimeString()).appendTo(savedListRow);
+				$('<td class="deleteButton"/>').html($('<img />').attr('src',deleteButtonPath).attr('title',messages.get('armylistsave.deleteListButton'))).bind('click',function(){
+					deleteList(listInfo.listId);
+					savedListRow.remove();
+					savedListScroller.updateScroll();
+				}).appendTo(savedListRow);
+				$('td',savedListRow).not('.deleteButton , .nameField').bind('click',function(){
+					var list=loadList(listInfo.listId);
+					if(list){
+						units.loadUnitsForList(list);
+						armyList.importList(list);   
+						armyList.saveList(); // mark loaded list as last opened
+						backToMainView();                   
+					}
+				});
+				savedListRow.appendTo(table);
+			}catch(e){
+				log('error showing list ',listInfo,' : ',e);
+			}
+		});
+		savedListWindow.show();
+		$('#rootContainer').hide();
             
             
-            var savedListScroller=armyList.savedListScroller=utils.createScroll({
-                getScrollWrapper:function(){
-                    return $('#savedListsScrollWrapper');
-                },
-                getAvailableHeight:function(){
-                    return $(window).height()-$('#savedLists').outerHeight(true)+$('#savedListsScrollWrapper').outerHeight(false)-17;
-                //                    return $(window).height()-40; // should be 38
-                },
-                getExpectedHeight:function(){
-                    return $('#savedListsScrollWrapper > *').outerHeight(false);
-                },
-                name:'savedListScroller'
-            //                beforeEnable:function(){
-            ////                    $('#modelChooserContainerScrollWrapper .modelButton').draggable('disable');
-            //                },
-            //                afterDisable:function(){
-            //                    $('#modelChooserContainerScrollWrapper .modelButton').draggable('enable');
-            //                }
-            });
-            //            setTimeout(function () {
-            savedListScroller.updateScroll();
+		var savedListScroller=armyList.savedListScroller=utils.createScroll({
+			getScrollWrapper:function(){
+				return $('#savedListsScrollWrapper');
+			},
+			getAvailableHeight:function(){
+				return $(window).height()-$('#savedLists').outerHeight(true)+$('#savedListsScrollWrapper').outerHeight(false)-17;
+			//                    return $(window).height()-40; // should be 38
+			},
+			getExpectedHeight:function(){
+				return $('#savedListsScrollWrapper > *').outerHeight(false);
+			},
+			name:'savedListScroller'
+		//                beforeEnable:function(){
+		////                    $('#modelChooserContainerScrollWrapper .modelButton').draggable('disable');
+		//                },
+		//                afterDisable:function(){
+		//                    $('#modelChooserContainerScrollWrapper .modelButton').draggable('enable');
+		//                }
+		});
+		//            setTimeout(function () {
+		savedListScroller.updateScroll();
             
-            plugins.registerPlugin('savedListScroller',{
-                onSizeOrLayoutChanged:function(){
-//                    if(savedListScroller){
-                        savedListScroller.updateScroll();
-//                    }
-                }
-            });
-        //            },1000);
-        //            units.updateScroll=savedListScroller.updateScroll;
-        }
-    }
+		plugins.registerPlugin('savedListScroller',{
+			onSizeOrLayoutChanged:function(){
+				//                    if(savedListScroller){
+				savedListScroller.updateScroll();
+			//                    }
+			}
+		});
+	//            },1000);
+	//            units.updateScroll=savedListScroller.updateScroll;
+	}
+	//    }
     
-    armyList.getFavouriteFactions=function(){
-        var countForFaction={};
-        $.each(savedLists,function(listId,x){
-            var listInfo=loadList(listId);
-            if(listInfo){
-                var factionOrSectorial=listInfo.sectorial?listInfo.sectorial:listInfo.faction;
-                countForFaction[factionOrSectorial]=(Number(countForFaction[factionOrSectorial])||0)+1;
-            }
-        });
-        var list=[];
-        $.each(countForFaction,function(faction,count){
-            list.push({
-                faction:faction,
-                count:count
-            });
-        });
-        list.sort(function(a,b){
-            return b.count-a.count;
-        });
-        return list;
-    };    
+	armyList.getFavouriteFactions=function(){
+		var countForFaction={};
+		$.each(savedLists,function(listId,x){
+			var listInfo=loadList(listId);
+			if(listInfo){
+				var factionOrSectorial=listInfo.sectorial?listInfo.sectorial:listInfo.faction;
+				countForFaction[factionOrSectorial]=(Number(countForFaction[factionOrSectorial])||0)+1;
+			}
+		});
+		var list=[];
+		$.each(countForFaction,function(faction,count){
+			list.push({
+				faction:faction,
+				count:count
+			});
+		});
+		list.sort(function(a,b){
+			return b.count-a.count;
+		});
+		return list;
+	};    
         
 })();
