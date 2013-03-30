@@ -241,7 +241,7 @@
 		};
 		storageWrapper.getOrInit=function(key,defaultInitializer){
 			var value=this.get(key);
-			if(value===undefined){
+			if(value===undefined || value===null){
 				value=defaultInitializer();
 				this.set(key,value);
 			}
