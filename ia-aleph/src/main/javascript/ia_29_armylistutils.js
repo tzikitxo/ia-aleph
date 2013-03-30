@@ -83,7 +83,7 @@ var exportList=armyList.exportList=function(){
         'listId':armyList.listId,
         'id':armyList.listId, // legacy
         'listName':armyList.listName,
-        'dateMod':Date(),
+        'dateMod':(new Date()).toISOString(),
         'groupMarks':armyList.getGroupMarks(),
         'combatGroupSize':armyList.combatGroupSize,
         'specop':specop,
