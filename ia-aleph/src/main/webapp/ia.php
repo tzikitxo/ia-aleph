@@ -15,7 +15,7 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * */
 
-$storage_dir = "/tmp/storage";
+$storage_dir = "storage";
 
 $response = "{ \"success\" : false }";
 
@@ -46,7 +46,7 @@ if ($_REQUEST['action'] == 'checkService') {
 	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
 	mkdir($dir, 0700, true);
 	$file = $dir . $_REQUEST['key'];
-	file_put_contents($file, $_REQUEST['data']);
+	file_put_contents($file . '.gz', gzencode($_REQUEST['data'],9));
 
 	$data = file_get_contents($file);
 
@@ -56,7 +56,7 @@ if ($_REQUEST['action'] == 'checkService') {
 } else if ($_REQUEST['action'] == 'getData') {
 
 	$file = $storage_dir . "/" . $_REQUEST['deviceId'] . "/" . $_REQUEST['key'];
-	$data = file_get_contents($file);
+	$data = gzdecode(file_get_contents($file . '.gz'));
 
 	if ($data != FALSE) {
 		$response = json_encode(array('success' => true, 'data' => $data, 'lastMod' => date('c', filemtime($file))));
@@ -68,9 +68,10 @@ if ($_REQUEST['action'] == 'checkService') {
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {
 			$record = array();
-			$record['fileName'] = $file;
+			$key=basename($file, '.gz');
+			$record['key'] = $key;
 			$record['lastMod'] = date('c', filemtime($dir . $file));
-			$res[basename($file)] = $record;
+			$res[$key] = $record;
 		}
 	}
 
