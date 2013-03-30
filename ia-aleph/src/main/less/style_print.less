@@ -194,11 +194,17 @@ body {
     .modelHeader > * {
         display: inline-block;
     }
-	.modelCost {
+	.modelTypeAndCostWrapper {
 		float: right;
 		font-size: 13px;
-		font-weight: bold;	
 		margin: 0 5px;	
+		.modelCost{
+			margin-left: 5px;
+			font-weight: bold;	
+		}
+		.modelCost , .modelType{
+			display: inline-block;
+		}
 	}
 	.specsContainer{
 		text-align: center;
