@@ -145,29 +145,29 @@
 				},
 				ajaxConfig:config.ajaxConfig
 			});
-//			$.ajax($.extend({
-//				type: 'POST',
-//				url: utils.getAbsoluteBasePath()+'/ia.php?action=getTinyUrl',
-//				data: JSON.stringify({
-//					"longUrl": config.url
-//				}),
-//				success: function(data){
-//					if(data && data.id){
-//						log('getTinyUrl success : ',data);
-//						config.success(data.id);
-//					}else{                
-//						log('getTinyUrl error : ',data);
-//						utils.remoteServiceAvailable=false;
-//						config.error(data);
-//					}     
-//				},
-//				error: function(){
-//					log('getTinyUrl error');
-//					utils.remoteServiceAvailable=false;
-//					config.error();
-//				},
-//				dataType: 'json'
-//			},config.ajaxConfig||{}));
+		//			$.ajax($.extend({
+		//				type: 'POST',
+		//				url: utils.getAbsoluteBasePath()+'/ia.php?action=getTinyUrl',
+		//				data: JSON.stringify({
+		//					"longUrl": config.url
+		//				}),
+		//				success: function(data){
+		//					if(data && data.id){
+		//						log('getTinyUrl success : ',data);
+		//						config.success(data.id);
+		//					}else{                
+		//						log('getTinyUrl error : ',data);
+		//						utils.remoteServiceAvailable=false;
+		//						config.error(data);
+		//					}     
+		//				},
+		//				error: function(){
+		//					log('getTinyUrl error');
+		//					utils.remoteServiceAvailable=false;
+		//					config.error();
+		//				},
+		//				dataType: 'json'
+		//			},config.ajaxConfig||{}));
 		}
 	};
 
@@ -210,11 +210,11 @@
 
 	utils.wrapStorage=function(storage){
 		var confingNs='it.anyplace.ia.';
-		var config={},valueConfig={};
-		config.configure=function(key,thisConfig){
+		var storageWrapper={},valueConfig={};
+		storageWrapper.configure=function(key,thisConfig){
 			valueConfig[key]=thisConfig;
 		};
-		config.unpack=function(key){
+		storageWrapper.unpack=function(key){
 			var value= this.get(key);
 			if(value){
 				try{
@@ -228,10 +228,10 @@
 				return null;
 			}
 		};
-		config.pack=function(key,value){
+		storageWrapper.pack=function(key,value){
 			this.set(key,utils.encodeData(value,valueConfig[key]));
 		};
-		config.getOrInit=function(key,defaultInitializer){
+		storageWrapper.getOrInit=function(key,defaultInitializer){
 			var value=this.get(key);
 			if(value===undefined){
 				value=defaultInitializer();
@@ -240,7 +240,7 @@
 			return value;
 		};
 		if(storage){
-			config.get=function(key){
+			storageWrapper.get=function(key){
 				var value=storage.getItem(confingNs+key);
 				if(value==="false"){
 					return false;
@@ -248,29 +248,44 @@
 					return value;
 				}
 			};
-			config.set=function(key,value){
+			storageWrapper.set=function(key,value){
 				if(value===undefined){
 					value=true;
 				}
 				storage.setItem(confingNs+key,value);
 			};
-			config.remove=function(key){
+			storageWrapper.remove=function(key){
 				storage.removeItem(confingNs+key);
 			};
-			config.isPersistent=true;
+			storageWrapper.getAllWithPrefix=function(prefix,doUnpack){
+				var res={},regexp=new RegExp('^'+confingNs+prefix),i;
+				for(i=0;i<storage.length;i++){
+					var key=storage.key(i);
+					if(key.match(regexp)){
+						key=key.replace(regexp,'');
+						var value=doUnpack?storageWrapper.unpack(prefix+key):storageWrapper.get(prefix+key);
+						res[key]=value;
+					}
+				}
+				return res;
+			};
+			storageWrapper.unpackAllWithPrefix=function(prefix){
+				return storageWrapper.getAllWithPrefix(prefix,true);
+			};
+			storageWrapper.isPersistent=true;
 		}else{
-			config.get=function(key){
+			storageWrapper.get=function(key){
 				return this[key];
 			};
-			config.set=function(key,value){
+			storageWrapper.set=function(key,value){
 				return this[key]=(value===undefined?true:value);
 			};
-			config.remove=function(key){
+			storageWrapper.remove=function(key){
 				delete this[key];
 			};
-			config.isPersistent=false;
+			storageWrapper.isPersistent=false;
 		}
-		return config;
+		return storageWrapper;
 	}
 
 	utils.getDisplayAttrName=function(attrName){

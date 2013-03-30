@@ -19,57 +19,62 @@
     
     if(storage.isPersistent){
         
-        var savedListsKey="savedLists",savedListPrefix="savedList.",lastSavedListKey="lastSavedList",lastSavedList;
-        var savedLists=null;
+        var savedListPrefix="savedList.",lastSavedListKey="lastSavedList";
+//        var savedLists=null;
         var deleteButtonPath='images/trash_icon.png';
+		
+		var lastSavedList;
+		function getLastSavedList(){
+			return lastSavedList || (lastSavedList=storage.get(lastSavedListKey));
+		}
         
-        var load=function(){
-            if(!savedLists){
-                try{
-                    savedLists=storage.unpack(savedListsKey);
-                    lastSavedList=storage.get(lastSavedListKey);
-                    if(savedLists){
-                        if(savedLists.push){ //new format, array
-                            var savedListsOb={};
-                            $.each(savedLists,function(index,value){
-                                savedListsOb[value]=value;
-                            })
-                            savedLists=savedListsOb;
-                        }else{//legacy format, must convert
-                            lastSavedList=savedLists.lastSavedListId;
-                            delete savedLists.lastSavedListId;
-                            $.each(savedLists,function(index,value){
-                                savedLists[index]=index;
-                            });
-                        }
-                    }
-                    log('loaded lists = ',savedLists);
-                }catch(e){
-                    log('error unpacking saved lists : ',e);
-                }
-            }
-            if(!savedLists){
-                savedLists={};
-            }
-            return savedLists;
-        }
-        function store(){
-            var savedListsArray=[];
-            $.each(savedLists,function(index,value){
-                savedListsArray.push(value);
-            });
-            storage.pack(savedListsKey,savedListsArray);
+//        var load=function(){
+////            if(!savedLists){
+//                try{
+////                    savedLists=storage.unpack(savedListsKey);
+//                    lastSavedList=storage.get(lastSavedListKey);
+//                    if(savedLists){
+//                        if(savedLists.push){ //new format, array
+//                            var savedListsOb={};
+//                            $.each(savedLists,function(index,value){
+//                                savedListsOb[value]=value;
+//                            })
+//                            savedLists=savedListsOb;
+//                        }else{//legacy format, must convert
+//                            lastSavedList=savedLists.lastSavedListId;
+//                            delete savedLists.lastSavedListId;
+//                            $.each(savedLists,function(index,value){
+//                                savedLists[index]=index;
+//                            });
+//                        }
+//                    }
+//                    log('loaded lists = ',savedLists);
+//                }catch(e){
+//                    log('error unpacking saved lists : ',e);
+//                }
+////            }
+//            if(!savedLists){
+//                savedLists={};
+//            }
+//            return savedLists;
+//        }
+        function storeLastSavedListId(){
+//            var savedListsArray=[];
+//            $.each(savedLists,function(index,value){
+//                savedListsArray.push(value);
+//            });
+//            storage.pack(savedListsKey,savedListsArray);
             storage.set(lastSavedListKey,lastSavedList);
         }
         function saveList(list){
-            load();
+//            load();
             log('saving list ',list);
             //            var smallRecord=listToSmallRecord(list);
-            savedLists[list.listId]=list.listId;
+//            savedLists[list.listId]=list.listId;
             lastSavedList=list.listId;
             try{
-                store();
                 storage.pack(savedListPrefix+list.listId,list);
+                storeLastSavedListId();
                 return null;
             }catch(e){
                 log('error saving list ',list,' : ',e);
@@ -89,17 +94,20 @@
             return list;
         }
         function deleteList(id){
-            delete savedLists[id];
-            store();
+//            delete savedLists[id];
+//            store();
             storage.remove(savedListPrefix+id);
         }
+		function getAllSavedLists(){
+			return storage.unpackAllWithPrefix(savedListPrefix);
+		}
         
-        armyList.getSavedLists=load;
+//        armyList.getSavedLists=getSavedLists;
         armyList.getSavedList=function(id){
             return armyList.listId==id?armyList.exportList():loadList(id);
         }
         armyList.getLastSavedList=function(){
-            load();
+            getLastSavedList();
             if(!lastSavedList){
                 return null;
             }
@@ -120,7 +128,7 @@
                 armyList.savedListScroller=null;
             };            
             var savedListWindow=$('#savedLists');
-            load();
+//            load();
             savedListWindow.empty();
             $('<div id="savedListsBackButton" />').text(messages.get('common.close'))
             .prepend($('<img class="buttonIcon"></img>').attr('src','images/delete_icon.png'))
@@ -134,9 +142,9 @@
                 $('<th />').text(messages.get('armylistsave.headerLabels.'+label)).appendTo(header);
             });
             var orderedLists=[];
-            $.each(savedLists,function(listId,x){
-                var listInfo=loadList(listId);
-                if(listInfo && listInfo.models && listInfo.models.length==0 && listInfo.listId!=armyList.listId){
+            $.each(getAllSavedLists(),function(listId,listInfo){
+//                var listInfo=loadList(listId);
+                if(listInfo && listInfo.models && listInfo.models.length==0 && listInfo.listId!=armyList.listId){ // cleanup empty lists
                     deleteList(listId);
                 }else if(listInfo){
                     orderedLists.push(listInfo);
