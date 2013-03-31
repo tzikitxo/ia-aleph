@@ -68,6 +68,12 @@ var remote=ia.remote=ia.remote||{};
 		});
 	};
 	
+	remote.deleteData=function(key,success,error){
+		remote.storeData(key,{
+			deleted:true
+		},success,error);
+	};
+	
 	remote.listData=function(success,error){
 		utils.ajax({
 			action:'listData',
