@@ -59,7 +59,8 @@ if ($_REQUEST['action'] == 'checkService') {
 	$data = gzdecode(file_get_contents($file . '.gz'));
 
 	if ($data != FALSE) {
-		$response = json_encode(array('success' => true, 'data' => $data, 'lastMod' => date('c', filemtime($file))));
+		$dateMod= json_decode($data, true)['dateMod'];
+		$response = json_encode(array('success' => true, 'data' => $data, 'dateMod' => $dateMod));
 	}
 } else if ($_REQUEST['action'] == 'listData') {
 
@@ -67,11 +68,9 @@ if ($_REQUEST['action'] == 'checkService') {
 	$res = array();
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {
-			$record = array();
+			$dateMod= json_decode(gzdecode(file_get_contents($dir . $file)), true)['dateMod'];
 			$key=basename($file, '.gz');
-			$record['key'] = $key;
-			$record['lastMod'] = date('c', filemtime($dir . $file));
-			$res[$key] = $record;
+			$res[$key] = array('key' => $key, 'dateMod' => $dateMod);
 		}
 	}
 
