@@ -39,23 +39,24 @@
 	//		},error);
 	//	}
 	
-	var remoteJobActive=false,remoteSyncTimeout=1000*10;
-	armyList.startSyncFromRemoteJob=function(){
+	var remoteJobActive=false;
+	armyList.startSyncFromRemoteJob=function(remoteSyncTimeout){
+		remoteSyncTimeout|=1000*10;
 		if(remoteJobActive){
 			return;
 		}
 		remoteJobActive=true;
-		setTimeout(remoteSyncTimeout,function executeSyncFromRemote(){
+		setTimeout(function executeSyncFromRemote(){
 			armyList.syncFromRemote({
 				skipLastSaved:true,
 				skipUpload:true
 			});
-			setTimeout(remoteSyncTimeout,executeSyncFromRemote);
-		});
+			setTimeout(executeSyncFromRemote,remoteSyncTimeout);
+		},remoteSyncTimeout);
 	};
 		
 	armyList.syncFromRemote=function(config){
-		config|={};
+		config=config||{};
 		var autoLoadId=null;
 		remote.listDataWithPrefix(savedListPrefix,function(data){
 			var remoteListIdList={};
