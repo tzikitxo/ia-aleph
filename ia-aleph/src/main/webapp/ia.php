@@ -15,6 +15,14 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * */
 
+if (!function_exists('gzdecode')) {
+
+	function gzdecode($data) {
+		return gzinflate(substr($data, 10, -8));
+	}
+
+}
+
 $storage_dir = "storage";
 
 $response = "{ \"success\" : false }";
@@ -44,7 +52,9 @@ if ($_REQUEST['action'] == 'checkService') {
 } else if ($_REQUEST['action'] == 'storeData') {
 
 	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
-	mkdir($dir, 0700, true);
+	if (!file_exists($dir)) {
+		mkdir($dir, 0700, true);
+	}
 	$file = $dir . $_REQUEST['key'];
 	file_put_contents($file . '.gz', gzencode($_REQUEST['data'], 9));
 
@@ -55,19 +65,23 @@ if ($_REQUEST['action'] == 'checkService') {
 	}
 } else if ($_REQUEST['action'] == 'getData') {
 
-	$file = $storage_dir . "/" . $_REQUEST['deviceId'] . "/" . $_REQUEST['key'];
-	$data = gzdecode(file_get_contents($file . '.gz'));
+	$file = $storage_dir . "/" . $_REQUEST['deviceId'] . "/" . $_REQUEST['key'] . '.gz';
+	if (!file_exists($file)) {
+		$response = json_encode(array('success' => false, 'message' => 'no data found for this key'));
+	} else {
+		$data = gzdecode(file_get_contents($file));
 
-	if ($data != FALSE) {
-		$response = json_encode(array('success' => true, 'data' => $data));
+		if ($data != FALSE) {
+			$response = json_encode(array('success' => true, 'data' => $data));
+		}
 	}
-}  else if ($_REQUEST['action'] == 'listData') {
+} else if ($_REQUEST['action'] == 'listData') {
 
 	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
 	$res = array();
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {
-			$data=json_decode(gzdecode(file_get_contents($dir . $file)), true);
+			$data = json_decode(gzdecode(file_get_contents($dir . $file)), true);
 			$key = basename($file, '.gz');
 			$res[$key] = array('key' => $key, 'dateMod' => $data['dateMod'], 'deleted' => $data['deleted'] || false);
 		}
