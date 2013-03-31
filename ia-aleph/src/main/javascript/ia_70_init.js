@@ -83,7 +83,9 @@
 				factions.showFactionChooser();
 			}
 		}
-		armylist.syncFromRemote(hasList);
+		armylist.syncFromRemote({
+			skipLastSaved:hasList
+		});
 	}
     
 	armyList.parseListStrFromUrl=function(url){

@@ -31,8 +31,8 @@ var remote=ia.remote=ia.remote||{};
 	};
 		
 	remote.storeData=function(key,data,success,error){
-		log('uploading ',key);
-		if(typeof data !== 'object'){
+		log('uploading ',key,' : ',data);
+		if(typeof data !== 'object' || !data){
 			data={
 				data:data
 			};

@@ -271,8 +271,12 @@
 					var key=storage.key(i);
 					if(key.match(regexp)){
 						key=key.replace(regexp,'');
-						var value=doUnpack?storageWrapper.unpack(prefix+key):storageWrapper.get(prefix+key);
-						res[key]=value;
+						if(key){
+							var value=doUnpack?storageWrapper.unpack(prefix+key):storageWrapper.get(prefix+key);
+							if(value){
+								res[key]=value;
+							}
+						}
 					}
 				}
 				return res;

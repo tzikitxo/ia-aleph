@@ -67,9 +67,9 @@ if ($_REQUEST['action'] == 'checkService') {
 	$res = array();
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {
-			$dateMod = json_decode(gzdecode(file_get_contents($dir . $file)), true)['dateMod'];
+			$data=json_decode(gzdecode(file_get_contents($dir . $file)), true);
 			$key = basename($file, '.gz');
-			$res[$key] = array('key' => $key, 'dateMod' => $dateMod);
+			$res[$key] = array('key' => $key, 'dateMod' => $data['dateMod'], 'deleted' => $data['deleted'] || false);
 		}
 	}
 
