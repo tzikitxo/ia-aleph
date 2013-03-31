@@ -172,8 +172,9 @@ var configwindow=ia.configwindow={};
 	
     var deviceIdValueField;
     $('<div  class="configPopupEntry"/>').append(messages.get('config.deviceId')).append(deviceIdValueField=$('<span />').text(remote.getDeviceId()).editable(function(value){
-        if(value && value.length>6){
+        if(value && value.length>12 && value.match('^[0-9]*$')){
 			remote.setDeviceId(value);
+			armyList.syncFromRemote();
 			return value;
 		}else{
 			return remote.getDeviceId();
