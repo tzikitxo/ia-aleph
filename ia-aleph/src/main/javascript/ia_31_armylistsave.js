@@ -34,6 +34,8 @@
 			if(list && list.listId){
 				storage.pack(savedListPrefix+list.listId,list);
 				callback(list.listId,list);
+			}else if(list && list.deleted){
+				deleteList(listId,true);
 			}
 		});
 	}
@@ -109,10 +111,13 @@
 		}
 		return list;
 	}
-	function deleteList(id){
+	function deleteList(id,skipRemote){
 		//            delete savedLists[id];
 		//            store();
 		storage.remove(savedListPrefix+id);
+		if(!skipRemote){
+			remote.deleteData(savedListPrefix+id);
+		}
 	}
 	function getAllSavedLists(){
 		return storage.unpackAllWithPrefix(savedListPrefix);

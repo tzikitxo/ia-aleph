@@ -46,7 +46,7 @@ if ($_REQUEST['action'] == 'checkService') {
 	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
 	mkdir($dir, 0700, true);
 	$file = $dir . $_REQUEST['key'];
-	file_put_contents($file . '.gz', gzencode($_REQUEST['data'],9));
+	file_put_contents($file . '.gz', gzencode($_REQUEST['data'], 9));
 
 	$data = gzdecode(file_get_contents($file . '.gz'));
 
@@ -61,14 +61,14 @@ if ($_REQUEST['action'] == 'checkService') {
 	if ($data != FALSE) {
 		$response = json_encode(array('success' => true, 'data' => $data));
 	}
-} else if ($_REQUEST['action'] == 'listData') {
+}  else if ($_REQUEST['action'] == 'listData') {
 
 	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
 	$res = array();
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {
-			$dateMod= json_decode(gzdecode(file_get_contents($dir . $file)), true)['dateMod'];
-			$key=basename($file, '.gz');
+			$dateMod = json_decode(gzdecode(file_get_contents($dir . $file)), true)['dateMod'];
+			$key = basename($file, '.gz');
 			$res[$key] = array('key' => $key, 'dateMod' => $dateMod);
 		}
 	}
