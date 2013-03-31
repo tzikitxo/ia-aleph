@@ -59,8 +59,7 @@ if ($_REQUEST['action'] == 'checkService') {
 	$data = gzdecode(file_get_contents($file . '.gz'));
 
 	if ($data != FALSE) {
-		$dateMod= json_decode($data, true)['dateMod'];
-		$response = json_encode(array('success' => true, 'data' => $data, 'dateMod' => $dateMod));
+		$response = json_encode(array('success' => true, 'data' => $data));
 	}
 } else if ($_REQUEST['action'] == 'listData') {
 
