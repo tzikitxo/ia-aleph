@@ -28,20 +28,9 @@
 		return lastSavedList || (lastSavedList=storage.get(lastSavedListKey));
 	}
 	
-	//	function importRemoteList(listId,success,error){
-	//		log('importing remote list ',listId);
-	//		remote.loadData(savedListPrefix+listId,function(list){
-	//			if(list && list.listId && listId==list.listId){
-	//				//TODO verify data
-	//				storage.pack(savedListPrefix+list.listId,list);
-	//				success(list.listId,list);
-	//			}
-	//		},error);
-	//	}
-	
 	var remoteJobActive=false;
 	armyList.startSyncFromRemoteJob=function(remoteSyncTimeout){
-		remoteSyncTimeout|=1000*10;
+		remoteSyncTimeout|=1000*60*10;
 		if(remoteJobActive){
 			return;
 		}
