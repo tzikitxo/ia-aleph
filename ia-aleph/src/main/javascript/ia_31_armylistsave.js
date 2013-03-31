@@ -28,37 +28,71 @@
 		return lastSavedList || (lastSavedList=storage.get(lastSavedListKey));
 	}
 	
-	function importRemoteList(listId,callback){
-		log('importing remote list ',listId);
-		remote.loadData(savedListPrefix+listId,function(list){
-			if(list && list.listId){
-				storage.pack(savedListPrefix+list.listId,list);
-				callback(list.listId,list);
-			}else if(list && list.deleted){
-				deleteList(listId,true);
-			}
+	//	function importRemoteList(listId,success,error){
+	//		log('importing remote list ',listId);
+	//		remote.loadData(savedListPrefix+listId,function(list){
+	//			if(list && list.listId && listId==list.listId){
+	//				//TODO verify data
+	//				storage.pack(savedListPrefix+list.listId,list);
+	//				success(list.listId,list);
+	//			}
+	//		},error);
+	//	}
+	
+	var remoteJobActive=false,remoteSyncTimeout=1000*10;
+	armyList.startSyncFromRemoteJob=function(){
+		if(remoteJobActive){
+			return;
+		}
+		remoteJobActive=true;
+		setTimeout(remoteSyncTimeout,function executeSyncFromRemote(){
+			armyList.syncFromRemote({
+				skipLastSaved:true,
+				skipUpload:true
+			});
+			setTimeout(remoteSyncTimeout,executeSyncFromRemote);
 		});
-	}
+	};
 		
-	armyList.syncFromRemote=function(skipLastSaved){
+	armyList.syncFromRemote=function(config){
+		config|={};
 		var autoLoadId=null;
 		remote.listDataWithPrefix(savedListPrefix,function(data){
+			var remoteListIdList={};
 			$.each(data,function(listId,listDataInfo){
 				var remoteTime=(new Date(listDataInfo.dateMod)).getTime();
 				var localData=loadList(listId),localTime=localData?new Date(localData.dateMod).getTime():null;
-				if(!localData || localTime<remoteTime){
-					importRemoteList(listId,function(listId,listData){
-						if(listId==armyList.listId || listId==autoLoadId){
-							units.loadUnitsForList(listData);
-							armyList.importList(listData);
+				remoteListIdList[listId]=localTime===null || localTime<=remoteTime;	
+				if(localTime===null || localTime<remoteTime){
+					if(listDataInfo.deleted){
+						if(localData){
+							deleteList(listId,true);
 						}
-					});
-				}else if(localTime>remoteTime){
-					remote.storeData(savedListPrefix+list.listId,list);							
+					}else{
+						log('retrieving remote list ',listId);
+						remote.loadData(savedListPrefix+listId,function(list){
+							if(list && list.listId && listId==list.listId){
+								log('importing remote list ',listId);
+								//TODO verify data
+								storage.pack(savedListPrefix+list.listId,list);
+								if(listId==armyList.listId || listId==autoLoadId){
+									units.loadUnitsForList(list);
+									armyList.importList(list);
+								}
+							}
+						});
+					}
 				}
 			});
+			if(!config.skipUpload){
+				$.each(getAllSavedLists(),function(listId,list){
+					if(!remoteListIdList[listId]){
+						remote.storeData(savedListPrefix+listId,list);	
+					}
+				});
+			}
 		});
-		if(!skipLastSaved){
+		if(!config.skipLastSaved){
 			remote.loadData(lastSavedListKey,function(data){
 				var remoteListId=data.data;
 				if(remoteListId && remoteListId!=lastSavedList){
@@ -116,13 +150,21 @@
 	function deleteList(id,skipRemote){
 		//            delete savedLists[id];
 		//            store();
+		log('removing from storage list ',id);
 		storage.remove(savedListPrefix+id);
 		if(!skipRemote){
 			remote.deleteData(savedListPrefix+id);
 		}
 	}
 	function getAllSavedLists(){
-		return storage.unpackAllWithPrefix(savedListPrefix);
+		var data=storage.unpackAllWithPrefix(savedListPrefix);
+		$.each(data,function(listId,list){
+			if(!list || !list.listId || list.listId!=listId){
+				delete data[listId];
+				deleteList(listId);
+			}
+		});
+		return data;
 	}
         
 	//        armyList.getSavedLists=getSavedLists;
