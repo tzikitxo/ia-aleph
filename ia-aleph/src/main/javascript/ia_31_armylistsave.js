@@ -40,7 +40,7 @@
 		});
 	}
 		
-	armyList.syncFromRemote=function(){
+	armyList.syncFromRemote=function(skipLastSaved){
 		var autoLoadId=null;
 		remote.listDataWithPrefix(savedListPrefix,function(data){
 			$.each(data,function(listId,listDataInfo){
@@ -58,19 +58,21 @@
 				}
 			});
 		});
-		remote.loadData(lastSavedListKey,function(data){
-			var remoteListId=data.data;
-			if(remoteListId && remoteListId!=lastSavedList){
-				var list=loadList(remoteListId);
-				if(list){
-					units.loadUnitsForList(list);
-					armyList.importList(list);
-				}else{
-					autoLoadId=remoteListId;
+		if(!skipLastSaved){
+			remote.loadData(lastSavedListKey,function(data){
+				var remoteListId=data.data;
+				if(remoteListId && remoteListId!=lastSavedList){
+					var list=loadList(remoteListId);
+					if(list){
+						units.loadUnitsForList(list);
+						armyList.importList(list);
+					}else{
+						autoLoadId=remoteListId;
+					}
+					setCurrentListId(remoteListId,true);
 				}
-				setCurrentListId(remoteListId,true);
-			}
-		});
+			});
+		}
 	};
        
 	function setCurrentListId(listId,skipRemote){

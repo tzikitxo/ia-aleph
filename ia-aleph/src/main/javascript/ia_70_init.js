@@ -52,7 +52,7 @@
 	};
         
 	function afterListStrSearch(){
-		var list=null;
+		var list=null,hasList=true;
 		// try to open ios native app, on ios
 		if(!device.isIphone() && device.isIosBrowser()){
 			var iosUrl='alephtoolbox:'+(listStr||'');
@@ -63,6 +63,7 @@
 			armylist.loadListStr(listStr);
 		}else{
 			if(!list){
+				hasList=false;
 				list=armyList.getLastSavedList();
 			}
 			if(list){
@@ -82,6 +83,7 @@
 				factions.showFactionChooser();
 			}
 		}
+		armylist.syncFromRemote(hasList);
 	}
     
 	armyList.parseListStrFromUrl=function(url){
