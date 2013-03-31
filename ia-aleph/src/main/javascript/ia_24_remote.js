@@ -18,15 +18,24 @@ var remote=ia.remote=ia.remote||{};
     
 	log('loading 24: remote');
 	
-	var deviceId=remote.deviceId=config.getOrInit('remote.deviceId',function(){
+	var deviceIdConfigkey='remote.deviceId',deviceId=remote.deviceId=config.getOrInit(deviceIdConfigkey,function(){
 		return utils.newId();
 	});
 	log('device id = ',remote.deviceId);
+	
+	remote.setDeviceId=function(newId){
+		config.set(deviceIdConfigkey,deviceId=remote.deviceId=newId);
+	};
 		
 	remote.storeData=function(key,data,success,error){
 		log('uploading ',key);
-		if(typeof data !== 'string'){
-			data=JSON.stringify(data);
+		if(typeof data !== 'object'){
+			data={
+				data:data
+			};
+		}
+		if(!data.dateMod){
+			data.dateMod=(new Date()).toISOString();
 		}
 		utils.ajax({
 			type: 'POST',
@@ -34,7 +43,7 @@ var remote=ia.remote=ia.remote||{};
 			data: {
 				"deviceId":deviceId,
 				"key": key,
-				"data":data
+				"data":JSON.stringify(data)
 			},
 			success: success,
 			error: error
@@ -50,7 +59,7 @@ var remote=ia.remote=ia.remote||{};
 				"key": key
 			},
 			success: function(data){
-				success(data.data);
+				success(JSON.parse(data.data));
 			},
 			error: error
 		});
