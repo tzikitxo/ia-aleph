@@ -46,7 +46,7 @@ var remote=ia.remote=ia.remote||{};
 			data: {
 				"deviceId":deviceId,
 				"key": key,
-				"data":JSON.stringify(data)
+				"b64data":$.base64.encode(JSON.stringify(data))
 			},
 			success: success,
 			error: error
