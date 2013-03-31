@@ -86,6 +86,7 @@
 		armylist.syncFromRemote({
 			skipLastSaved:hasList
 		});
+		armylist.startSyncFromRemoteJob();
 	}
     
 	armyList.parseListStrFromUrl=function(url){
