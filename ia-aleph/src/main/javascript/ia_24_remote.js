@@ -18,13 +18,16 @@ var remote=ia.remote=ia.remote||{};
     
 	log('loading 24: remote');
 	
-	var deviceIdConfigkey='remote.deviceId',deviceId=remote.deviceId=config.getOrInit(deviceIdConfigkey,function(){
+	var deviceIdConfigkey='remote.deviceId',deviceId=config.getOrInit(deviceIdConfigkey,function(){
 		return utils.newId();
 	});
-	log('device id = ',remote.deviceId);
+	log('device id = ',deviceId);
 	
 	remote.setDeviceId=function(newId){
-		config.set(deviceIdConfigkey,deviceId=remote.deviceId=newId);
+		return config.set(deviceIdConfigkey,deviceId=newId);
+	};
+	remote.getDeviceId=function(){
+		return deviceId;
 	};
 		
 	remote.storeData=function(key,data,success,error){
