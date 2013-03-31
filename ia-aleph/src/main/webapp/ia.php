@@ -56,7 +56,8 @@ if ($_REQUEST['action'] == 'checkService') {
 		mkdir($dir, 0700, true);
 	}
 	$file = $dir . $_REQUEST['key'];
-	file_put_contents($file . '.gz', gzencode($_REQUEST['data'], 9));
+	$data = $_REQUEST['data'];
+	file_put_contents($file . '.gz', gzencode($data, 9));
 
 	$data = gzdecode(file_get_contents($file . '.gz'));
 
