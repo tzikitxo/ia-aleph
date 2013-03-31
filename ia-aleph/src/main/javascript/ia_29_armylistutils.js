@@ -40,7 +40,7 @@ var importList=armyList.importList=function(list){
         }
         pushModelAndCompanions(modelRecord,null,unit.recordid);
     });
-    armyList.listId=list.listId||list.id; // legacy
+    armyList.listId=list.listId||list.id||utils.newId(); // legacy
     armylist.setListName(list.listName,true);
     if(!armyList.listId){
         armyList.newListId();
@@ -52,9 +52,12 @@ var importList=armyList.importList=function(list){
     validateList();
 };   
 var importListStr=armyList.importListStr=function(listStr){ 
-    importList(decodeList(listStr));
+	var list=decodeList(listStr);
+	delete list.listId;
+	delete list.id;
+    importList(list);
 };
-var exportList=armyList.exportList=function(){
+var exportList=armyList.exportList=function(regenerateListId){
     var models=[];
     var specop=null;
     $.each(armyList.getListRecordsAsList(),function(index,listRecord){
@@ -73,6 +76,7 @@ var exportList=armyList.exportList=function(){
             };
         }
     });
+	var listId=regenerateListId?utils.newId():armyList.listId;
     return {
         //            'name':armyList.name,
         'pcap':armyList.pointCap,
@@ -80,8 +84,8 @@ var exportList=armyList.exportList=function(){
         'sectorial':units.sectorialName,
         'includeMercs':units.includeMercs,
         'models':models,
-        'listId':armyList.listId,
-        'id':armyList.listId, // legacy
+        'listId':listId,
+        'id':listId, // legacy
         'listName':armyList.listName,
         'dateMod':(new Date()).toISOString(),
         'groupMarks':armyList.getGroupMarks(),
@@ -93,12 +97,12 @@ var exportList=armyList.exportList=function(){
 var encodeList=armyList.encodeList=utils.encodeData;
 var decodeList=armyList.decodeList=utils.decodeData;
 
-var exportListStr=armyList.exportListStr=function(){
-    return encodeList(exportList());
+var exportListStr=armyList.exportListStr=function(regenerateListId){
+    return encodeList(exportList(regenerateListId));
 };
 var exportListUrl=armyList.exportListUrl=function(){
     // must be absolute url !
-    return utils.getAbsoluteBasePath()+'ia.html?list='+escape(exportListStr());
+    return utils.getAbsoluteBasePath()+'ia.html?list='+escape(exportListStr(true));
 };
 // END import/export
 
