@@ -72,6 +72,7 @@
 		'config.mainTheme.white_default':"Graphic Theme: white",
 		'config.mainTheme.default_big':"Graphic Theme: default (big buttons)",
 		'config.mainTheme.white_big':"Graphic Theme: white (big buttons)",
+		'config.deviceId':"remote storage id : ",
         
         
 		'modelinfo.modelInfoTitle':'unit detail',

@@ -168,6 +168,19 @@ var configwindow=ia.configwindow={};
     })).appendTo(configScrollerWrapper).bind('click',function(){
         pointCapValueField.trigger('click');
     });
+	
+	
+    var deviceIdValueField;
+    $('<div  class="configPopupEntry"/>').append(messages.get('config.deviceId')).append(deviceIdValueField=$('<span />').text(remote.getDeviceId()).editable(function(value){
+        if(value && value.length>6){
+			remote.setDeviceId(value);
+			return value;
+		}else{
+			return remote.getDeviceId();
+		}
+    })).appendTo(configScrollerWrapper).bind('click',function(){
+        deviceIdValueField.trigger('click');
+    });
      
     var configScroller=configwindow.configScroller=utils.createScroll({
         getScrollWrapper:function(){

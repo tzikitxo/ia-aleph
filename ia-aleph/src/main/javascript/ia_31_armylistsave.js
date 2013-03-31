@@ -27,27 +27,69 @@
 	function getLastSavedList(){
 		return lastSavedList || (lastSavedList=storage.get(lastSavedListKey));
 	}
+	
+	function importRemoteList(listId,callback){
+		log('importing remote list ',listId);
+		remote.loadData(savedListPrefix+listId,function(list){
+			if(list && list.listId){
+				storage.pack(savedListPrefix+list.listId,list);
+				callback(list.listId,list);
+			}
+		});
+	}
 		
-	//	armyList.syncFromRemote=function(){
-	//		remote.listDataWithPrefix(savedListPrefix,function(data){
-	//			$.each(data,function(listId,listData){
-	//				if(listData && listData )
-	//			});
-	//		});
-	//	};
-        
+	armyList.syncFromRemote=function(){
+		var autoLoadId=null;
+		remote.listDataWithPrefix(savedListPrefix,function(data){
+			$.each(data,function(listId,listDataInfo){
+				var remoteTime=(new Date(listDataInfo.dateMod)).getTime();
+				var localData=loadList(listId),localTime=localData?new Date(localData.dateMod).getTime():null;
+				if(!localData || localTime<remoteTime){
+					importRemoteList(listId,function(listId,listData){
+						if(listId==armyList.listId || listId==autoLoadId){
+							units.loadUnitsForList(listData);
+							armyList.importList(listData);
+						}
+					});
+				}else if(localTime>remoteTime){
+					remote.storeData(savedListPrefix+list.listId,list);							
+				}
+			});
+		});
+		remote.loadData(lastSavedListKey,function(data){
+			var remoteListId=data.data;
+			if(remoteListId && remoteListId!=lastSavedList){
+				var list=loadList(remoteListId);
+				if(list){
+					units.loadUnitsForList(list);
+					armyList.importList(list);
+				}else{
+					autoLoadId=remoteListId;
+				}
+				setCurrentListId(remoteListId,true);
+			}
+		});
+	};
+       
+	function setCurrentListId(listId,skipRemote){
+		storage.set(lastSavedListKey,lastSavedList=listId);
+		if(!skipRemote){
+			remote.storeData(lastSavedListKey,lastSavedList);
+		}
+	}
+	   
 	function saveList(list){
 		//            load();
 		log('saving list ',list);
 		//            var smallRecord=listToSmallRecord(list);
 		//            savedLists[list.listId]=list.listId;
-		lastSavedList=list.listId;
+		//		lastSavedList=list.listId;
+		
 		try{
+			setCurrentListId(list.listId);
 			storage.pack(savedListPrefix+list.listId,list);
-			storage.set(lastSavedListKey,lastSavedList);
 			//			storeLastSavedListId();
 			remote.storeData(savedListPrefix+list.listId,list);
-			remote.storeData(lastSavedListKey,lastSavedList);
 			return null;
 		}catch(e){
 			log('error saving list ',list);
@@ -165,8 +207,11 @@
 					var list=loadList(listInfo.listId);
 					if(list){
 						units.loadUnitsForList(list);
-						armyList.importList(list);   
-						armyList.saveList(); // mark loaded list as last opened
+						armyList.importList(list); 
+						setCurrentListId(list.listId);
+						//						storage.set(lastSavedListKey,lastSavedList=list.listId);
+						//						storage.set(lastSavedListKey,list.listId);  
+						//						armyList.saveList(); // mark loaded list as last opened
 						backToMainView();                   
 					}
 				});
