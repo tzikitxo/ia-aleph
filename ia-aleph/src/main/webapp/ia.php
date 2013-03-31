@@ -56,7 +56,7 @@ if ($_REQUEST['action'] == 'checkService') {
 		mkdir($dir, 0700, true);
 	}
 	$file = $dir . $_REQUEST['key'];
-	$data = $_REQUEST['data'];
+	$data = isset($_REQUEST['b64data'])?base64_decode($_REQUEST['b64data']):$_REQUEST['data'];
 	file_put_contents($file . '.gz', gzencode($data, 9));
 
 	$data = gzdecode(file_get_contents($file . '.gz'));
@@ -84,7 +84,7 @@ if ($_REQUEST['action'] == 'checkService') {
 		if (is_file($dir . $file) == TRUE) {
 			$data = json_decode(gzdecode(file_get_contents($dir . $file)), true);
 			$key = basename($file, '.gz');
-			$res[$key] = array('key' => $key, 'dateMod' => $data['dateMod'], 'deleted' => $data['deleted'] || false);
+			$res[$key] = array('key' => $key, 'dateMod' => $data['dateMod'], 'deleted' => isset($data['deleted']) ? $data['deleted'] : false);
 		}
 	}
 
