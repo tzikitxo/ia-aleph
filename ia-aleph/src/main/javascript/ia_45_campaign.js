@@ -158,6 +158,9 @@ var campaign=ia.campaign={};
     function refreshCost(){
         var xpSpentForMilitarySpecs=0;
         $.each(militarySpecs,function(spec,level){
+			if((typeof level) != "number"){
+				return;
+			}
             if(level==5){
                 xpSpentForMilitarySpecs+=levelCosts[5-1];
             }else{
