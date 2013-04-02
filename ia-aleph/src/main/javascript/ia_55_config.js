@@ -171,14 +171,15 @@ var configwindow=ia.configwindow={};
 	
 	
     var deviceIdValueField;
-    $('<div  class="configPopupEntry"/>').append(messages.get('config.deviceId')).append(deviceIdValueField=$('<span />').text(remote.getDeviceId()).editable(function(value){
-        if(value && value.length>12 && value.match('^[0-9]*$')){
+    $('<div  class="configPopupEntry"/>').append(messages.get('config.deviceId')).append(deviceIdValueField=$('<span />').text(remote.getDeviceId().replace(/([0-9]{3})/g,'$1 ')).editable(function(value){
+        if(value && value.length>12 && value.match('^[0-9 ]*$')){
+			value=value.replace(/ /g,'');
 			remote.setDeviceId(value);
 			armyList.syncFromRemote();
-			return value;
 		}else{
-			return remote.getDeviceId();
+			value=remote.getDeviceId();
 		}
+		return value.replace(/([0-9]{3})/g,'$1 ');
     })).appendTo(configScrollerWrapper).bind('click',function(){
         deviceIdValueField.trigger('click');
     });
