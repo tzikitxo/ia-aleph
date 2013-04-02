@@ -46,7 +46,8 @@ var remote=ia.remote=ia.remote||{};
 			data: {
 				"deviceId":deviceId,
 				"key": key,
-				"b64data":$.base64.encode(JSON.stringify(data))
+				"b64data":$.base64.encode(JSON.stringify(data)),
+                                "requestId": utils.newId()
 			},
 			success: success,
 			error: error
@@ -59,7 +60,8 @@ var remote=ia.remote=ia.remote||{};
 			action:'getData',
 			data: {
 				"deviceId":deviceId,
-				"key": key
+				"key": key,
+                                "requestId": utils.newId()
 			},
 			success: function(data){
 				success(JSON.parse(data.data));
@@ -78,7 +80,8 @@ var remote=ia.remote=ia.remote||{};
 		utils.ajax({
 			action:'listData',
 			data: {
-				"deviceId":deviceId
+				"deviceId":deviceId,
+                                "requestId": utils.newId()
 			},
 			success: function(data){
 				success(data.data);
