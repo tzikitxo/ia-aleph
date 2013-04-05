@@ -1,0 +1,436 @@
+/*@import "style_commons";*/
+
+//*********************
+//MAIN
+//*********************
+
+body{
+    background-color: black;
+    color: @white;
+    .font1;
+//    &.wait *{
+ //       cursor: wait !important;
+ //   }
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+	//-webkit-user-modify: read-write-plaintext-only;
+}
+table{
+    //border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#loadingContainer{
+    .style1;
+}
+
+input{
+    background-color: @colorBg2;
+}
+
+#rootContainer {
+	.colors0;
+}
+
+//*********************
+//MODEL INFO
+//*********************
+
+#modelInfoContainer {
+    .style1;    
+}
+#modelInfoButton {
+	font-weight: bold;
+    .button6;
+	border-radius: 10px;
+}
+#modelInfoContainer{
+    //.modelInfoSpecs , .modelInfoWeapons {
+    .modelInfoType , .modelInfoName{
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: @fontSize3;
+    }
+    .modelInfoCode , .modelInfoSwc , .modelInfoType , .modelInfoCost{
+        font-size: @fontSize3;
+    }
+    .modelInfoSpecs {
+        font-style: italic;
+    }
+    .modelInfoAltName {
+        font-size: @fontSize2;
+        font-style: italic;
+    }
+    .modelInfoAltpButton{
+        .button6r;
+    }
+}
+
+//*********************
+//ARMYLIST
+//*********************
+
+#armyList {
+    .style1;
+    .armyListModelRow{
+        .enhanceRows;
+        font-size: @fontSize2;
+        .button5;
+        &.irregular{
+            color: @irregularColor;
+        }
+        &.noOrder{
+            color: @noOrderColor;
+        }
+            &.warning{
+                    font-weight: bold;
+                    color: red;
+            }
+            .modelCost , .swcCostSep , .modelSwc{
+                font-weight: bold;
+            }
+        &.ui-sortable-helper td{
+            background-color: @colorBg1;
+        }
+    }    
+    .groupBar{
+        font-weight: bold;
+        color: @groupBarColor;
+        cursor: pointer;
+    }
+    #armyListControls .armyListControlButton ,  #armyListGameModeControls .armyListControlButton{
+        .button6r;
+    }
+    .modelNames  {
+        text-align: left;
+    }
+    .modelCodename {
+        font-style: italic;
+        font-size: @fontSize1;
+    }
+}
+#rootContainer.gameMode #armyList .armyListModelRow{
+    &.deadModel td{
+        color: brown; //todo better graphics
+    }
+}
+
+//*********************
+//LEFT
+//*********************
+
+#topBar, #typeAndUnitMenuWrapper {
+    .style1;  
+}
+.unitTypeButton{
+    font-weight: bold;
+    font-size: @fontSize3;
+    .button6r;
+}
+.unitButton{
+    .button6r;
+    &.pseudoUnit{
+        opacity: 0.6;
+    }
+}
+
+#modelChooserContainer {
+    .style1;  
+    .unitInfo{
+        .style2;
+    }
+    .unitAttr, .modelChooser .unitSpec{
+        font-style: italic;
+    }
+    .modelButton{
+        .button5;
+        .enhanceRows;
+    }
+}
+#rootContainer.originalCostSwcPositioning .modelChooser .noteModelAttr {
+	border-radius: 0 10px 10px 0;
+}
+#rootContainer.classicCostSwcPositioning .modelChooser .costModelAttr{
+	border-radius: 0 10px 10px 0;
+}
+
+.modelDragHelper{
+   background-color: @colorBg2;
+    color: @black;
+    border: 2px solid @colorBg1;
+    border-radius: 10px;
+}
+
+.specopForm{
+    .style2;
+	//border: 1px solid @borderColor1;
+	//border-radius: 10px;
+	.baseModelChooserContainer , .costContainer , .boostableAttrsContainer , .extraWeaponsContainer , .extraSpecsContainer{
+            .enhancedRow1;	
+            border-radius: 10px;
+	}
+	.sopFormTitle{
+            font-weight: bold;
+	}
+        .costValue{
+            font-style: oblique;
+        }
+}
+
+//*********************
+//LISTINFO
+//*********************
+
+.listInfo, .warningsBar{
+    font-size: @fontSize3;
+    .modelCount, .pointsCount, .swcCount{
+            font-weight: bold;
+    }
+    .pointsCount{
+        cursor: pointer;
+    }
+    .warnings , .warning{
+            font-weight: bold;
+            color: red;
+    }
+}
+.listInfo .armylistNameField{
+    font-style: italic;
+}
+
+//*********************
+//TOP
+//*********************
+
+#topBar .mainMenuButton{
+    font-weight: bold;
+    font-size: @fontSize3;
+    padding:5px;
+    .button6;
+    border-right: 1px solid @borderColor1;
+    border-bottom: 1px solid @borderColor1;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#mainMenu , #factionsMenu{
+    .style1;  
+    .menuButton {
+        font-weight: bold;
+        font-size: @fontSize3;
+        padding:5px 0 5px 0;
+        .button6r;
+    }
+    .favouriteButton , .factionButton , .sectorialButton {
+        .button6r;
+    }
+}
+
+// SMALL SCREEN TOP BAR
+
+ #smallScreenTopBar{
+    .style1;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+    .smallScreenTopBarButton {
+        font-weight: bold;
+        font-size: @fontSize1;
+        .button6;
+        border-radius: 0 0 10px 10px;
+        .brighter2;        
+        img{
+            width: 12px;
+            height: 12px;
+        }
+    }
+ }
+ #rootContainer.unitSelectionMode #smallScreenTopBar .addModelButton, #rootContainer.armylistMode #smallScreenTopBar .armylistViewButton, #rootContainer.unitDetailMode #smallScreenTopBar .unitDetailButton{
+    .colors2;
+ }
+
+//*********************
+//POPUP
+//*********************
+
+#genericPopup{
+    .style2;  
+    border-color: black;
+    font-size: @fontSize3;
+
+     .exportButtons .exportButton {
+            .button7r;
+        }
+}
+#imagesPopup{
+    #imagesPopupCloseButton {
+        .style1;  
+        .button6r;
+        font-size: @fontSize3;
+    }
+    #imagesPopupContent {
+        .shadow1;
+        .colors0;  
+    }
+    img {
+        border-radius: 10px;
+    }
+}
+#weaponsInfo{
+    .style1;  
+    th {
+        font-weight: bold;
+        &.rangeHeaderWrapper{
+            .enhanceRows;
+        }
+    }
+	.weaponDataRow {
+        .enhanceRows2;
+        .roundedCornersOfRow;
+	}
+    .rangeMod{
+        .roundedCornersOfList;
+    }
+    .rangeUnitButton{
+        .button6r;
+    }
+    .altpModelCounter{
+        font-size: 8px;
+        font-style: italic;
+    }
+}
+#weaponsButton{
+	.style1;
+	padding: 5px;
+	box-shadow: 0 0 0 0;
+	font-weight: bold;
+	div{
+		.button6r;
+	}
+}
+
+//####################################
+//### CONFIG
+//###################################
+
+#configPopup{
+    .style1;  
+    .configPopupButton {
+        .button6r;
+    }
+    .configPopupEntry , .localeBarButton {
+        border-radius: 10px;
+        .enhancedRow1;
+    }
+    .closeButton{
+        font-weight: bold;
+        font-size: @fontSize3;
+    }
+}
+
+//####################################
+//### CAMPAIGN
+//###################################
+
+#campaignToolsContainer{
+    .style1;  
+    .campaignButton{
+        .button6r;
+        font-weight: bold;
+        font-size: @fontSize3;
+    }
+    .costContainer{
+        font-size: @fontSize3;
+        .costValue{
+            font-style: oblique;
+        }
+    }
+    .militarySpecTableCell:not(.emptyCell){
+        .button6;
+    }
+    .militarySpecTableHeader{
+        font-weight: bold;    
+    }
+    .militarySpecRowHeaderCell {
+        font-style: oblique;
+        font-weight: heavy;
+    }
+    .militarySpecTableRow{
+        .enhanceRows;
+        .roundedCornersOfRow;
+    }
+    .emptyCell{
+        background-color: transparent;
+    }
+}
+
+#savedLists {
+    .style1;
+    .savedListRow {
+        .enhanceRows;
+        .button6r;
+        .roundedCornersOfRow;
+        &.currentList{
+            font-style: oblique;
+        }
+    }
+    #savedListsBackButton {
+        .button6r;
+        font-weight: bold;
+        font-size: @fontSize3;
+    }
+    .missingName{
+        color: gray;
+    }
+}
+
+//*********************
+//RULES
+//*********************
+
+#rulesBrowser {
+    .style1;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+    border-top: 0;
+	
+    #rulesButtons .rulesButton , #rulesSearchResults .ruleMatch{
+        .button6r;
+        font-weight: bold;
+    }
+    #rulesText{
+        border-radius: 10px;
+    }
+}
+
+//#################
+//### GAME MODE
+//#################
+
+#gameModeContainer{
+    .style1;  
+    .listStatus{
+        font-size: @fontSize3;
+        .remainingOrders , .remainingPoints , .lossPercentage{
+            font-weight: bold;
+        }
+    }
+}
+#gamePhoto{
+    border-radius: 10px;
+}
+.photoModelIcon{
+    border-radius: 5px;
+   // &.deadModel{
+    //        background-color: brown;
+     //       opacity: 0.6;
+      //       img {
+       //         opacity: 0.6;
+        //       }
+    //}
+    &.selected{
+            border: 2px solid orange;
+    }
+}
+#gameModeControls{
+	.colors0;
+        border-radius: 10px;
+}
