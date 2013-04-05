@@ -234,7 +234,7 @@
                 var allSpecsStr=model.getAllSpecDisplay(),bswDisplay=model.getDisplay('bsw'),ccwDisplay=(bswDisplay.length>0?', ':'')+model.getDisplay('ccw');
                 $('<div class="specsContainer" />').text(allSpecsStr)
                 .append($('<span class="modelWeapons" />').text((allSpecsStr.length>0?', ':'')+bswDisplay+ccwDisplay)).appendTo(modelContainer);
-                $('<div class="modelWeapons" />').append(weapons.buildWeaponTableForModel(model)).appendTo(modelContainer).hide();
+                $('<div class="modelWeapons" />').append(weapons.buildWeaponTableForModel(model).addClass('modelWeaponsTable')).appendTo(modelContainer).hide();
             }
             //$('<div class="weaponsContainer" />').text(model.getAllWeapons().join(', ')).appendTo(modelContainer);
         
