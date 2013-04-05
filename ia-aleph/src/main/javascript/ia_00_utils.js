@@ -143,6 +143,9 @@
 				success:function(data){
 					config.success(data.id);
 				},
+                                validateResponse:function(data){
+                                    return (data && data.id)?true:false;
+                                },
 				ajaxConfig:config.ajaxConfig
 			});
 		//			$.ajax($.extend({
