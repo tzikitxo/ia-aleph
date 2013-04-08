@@ -457,7 +457,7 @@
 	};
 	utils.exportDate=function(date){
 		date=date||new Date();
-		return date.getTime()+'';
+		return String(date.getTime());
 	};
 
 })();
