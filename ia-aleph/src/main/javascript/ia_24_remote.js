@@ -38,7 +38,7 @@ var remote=ia.remote=ia.remote||{};
 			};
 		}
 		if(!data.dateMod){
-			data.dateMod=(new Date()).toISOString();
+			data.dateMod=utils.exportDate();
 		}
 		utils.ajax({
 			type: 'POST',

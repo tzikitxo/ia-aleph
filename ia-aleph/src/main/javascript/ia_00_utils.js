@@ -445,5 +445,19 @@
 	//		}
 	//		return getRandomChars()+getRandomChars(); //roughly the same space as UUID
 	};
+	
+	utils.parseDate=function(value){
+		var dtNum=Number(value),date;
+		if(isNaN(dtNum) || dtNum == 0 || !dtNum){
+			date=new Date(value);
+		}else{
+			date=new Date(dtNum);
+		}
+		return isNaN(date)?null:date;
+	};
+	utils.exportDate=function(date){
+		date=date||new Date();
+		return date.getTime()+'';
+	};
 
 })();

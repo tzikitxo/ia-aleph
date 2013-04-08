@@ -50,8 +50,8 @@
 		remote.listDataWithPrefix(savedListPrefix,function(data){
 			var remoteListIdList={};
 			$.each(data,function(listId,listDataInfo){
-				var remoteTime=(new Date(listDataInfo.dateMod)).getTime();
-				var localData=loadList(listId),localTime=localData?new Date(localData.dateMod).getTime():null;
+				var remoteTime=utils.parseDate(listDataInfo.dateMod).getTime();
+				var localData=loadList(listId),localTime=localData?utils.parseDate(localData.dateMod).getTime():null;
 				remoteListIdList[listId]=localTime===null || localTime<=remoteTime;	
 				if(localTime===null || localTime<remoteTime){
 					if(listDataInfo.deleted){
@@ -206,7 +206,14 @@
 			}
 		});
 		orderedLists.sort(function(list1,list2){
-			return new Date(list1.dateMod)<new Date(list2.dateMod)?1:-1;
+			var d1=utils.parseDate(list1.dateMod),d2=utils.parseDate(list2.dateMod);
+			if(d1 == d2){
+				return 0
+			}else if(d1===null || (d2!==null && d1 < d2)){
+				return 1;
+			}else{
+				return -1;
+			}
 		});
 		$.each(orderedLists,function(x,listInfo){
 			try{
@@ -235,8 +242,8 @@
 				}
 				$('<td />').text(listInfo.pcap).appendTo(savedListRow);
 				$('<td />').text(listInfo.models.length).appendTo(savedListRow);
-				var lastMod=new Date(listInfo.dateMod);
-				$('<td class="dateMod"/>').text(lastMod.toLocaleDateString()+', '+lastMod.toLocaleTimeString()).appendTo(savedListRow);
+				var lastMod=utils.parseDate(listInfo.dateMod),lastModText = lastMod ? lastMod.toLocaleString(messages.getLang()) : ('N/A');
+				$('<td class="dateMod"/>').text(lastModText).appendTo(savedListRow);
 				$('<td class="deleteButton"/>').html($('<img />').attr('src',deleteButtonPath).attr('title',messages.get('armylistsave.deleteListButton'))).bind('click',function(){
 					deleteList(listInfo.listId);
 					savedListRow.remove();

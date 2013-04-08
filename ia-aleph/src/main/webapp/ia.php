@@ -29,7 +29,7 @@ $response = "{ \"success\" : false }";
 
 if ($_REQUEST['action'] == 'checkService') {
 
-	$response = "{ \"success\" : true }";
+	$response = json_encode(array('success' => true, 'currentTime' => date('c')));
 } else if ($_REQUEST['action'] == 'getTinyUrl') {
 
 	require_once('gapikey.php'); // set $googleApiKey
@@ -56,13 +56,27 @@ if ($_REQUEST['action'] == 'checkService') {
 		mkdir($dir, 0700, true);
 	}
 	$file = $dir . $_REQUEST['key'];
-	$data = isset($_REQUEST['b64data'])?base64_decode($_REQUEST['b64data']):$_REQUEST['data'];
-	file_put_contents($file . '.gz', gzencode($data, 9));
+	$data = isset($_REQUEST['b64data']) ? base64_decode($_REQUEST['b64data']) : $_REQUEST['data'];
 
-	$data = gzdecode(file_get_contents($file . '.gz'));
+	$json = json_decode($data, true);
+	
+	if ($json != NULL) {
+		
+		$date = strtotime($json['dateMod']) || strtotime('@' . $json['dateMod']);
+		$now = time();
+		if( $date == FALSE || $date <=0 || $date > $now ){
+			$json['dateMod'] = date('U',$now);
+		}
+		
+		$data = json_encode($json);
 
-	if ($data != FALSE) {
-		$response = json_encode(array('success' => true, 'data' => $data));
+		file_put_contents($file . '.gz', gzencode($data, 9));
+
+		$data = gzdecode(file_get_contents($file . '.gz'));
+
+		if ($data != FALSE) {
+			$response = json_encode(array('success' => true, 'data' => $data));
+		}
 	}
 } else if ($_REQUEST['action'] == 'getData') {
 
