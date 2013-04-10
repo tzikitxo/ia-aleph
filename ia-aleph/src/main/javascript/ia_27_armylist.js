@@ -40,6 +40,9 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
         showListName();
     };
+	armylist.getListName=function(){
+		return armylist.listName||'';
+	};
     function showListName(){
         $('#topBar .armylistNameField , #armyList .armylistNameField').text(armylist.listName||messages.get('armylistsave.setName'));
     }

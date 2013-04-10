@@ -175,7 +175,7 @@
         $('<div class="listInfo"/>').text(armyList.pointCount+' points | '+armyList.swcCount+' swc ( '+armyList.modelCount+' models )').appendTo(listInfoWrapper);
         var shortUrlContainer=$('<div class="shortUrlContainer" />').appendTo(listInfoWrapper);
         $('<h1/>').text(units.getFactionNameDisplay()+(units.sectorialName?(' - '+units.getSectorialNameDisplay()):'')).prepend($('<img />').attr('src',basePath+units.logoPath)).appendTo(listHeader);
-        
+        $('<div class="armylistName" />').text(armylist.getListName()).appendTo(listInfoWrapper);
         //        var alreadyPrintedProfileByIsc={};
                 
         var allWeapons={};
