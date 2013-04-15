@@ -57,6 +57,28 @@ data.specs={
 			'19'	:"AP Rifle",
 			'20'	:"AutoMedikit"
 		}
+	},
+	booty2:{
+		list:[
+		'1-2','3-4','5','6','7','8','9','10','11','12-15','16','17','18','19','20'	
+		],
+		values:{
+			'1-2'   :"+1 ARM",
+			'3-4'	:"Chain Rifle",
+			'5'	:"Nanopulser",
+			'6'	 :"Panzerfaust",
+			'7'	:"Sniper Rifle",
+			'8'	:"Smoke Grenades",
+			'9'	:"CH: Mimetism",
+			'10'	:"+2 ARM",
+			'11'	:"Multispectral Visor L1",	 	
+			'12-15'	 :"Adhesive Launcher", 
+			'16'	:"+3 ARM", 
+			'17'	:"Flash Pulse",
+			'18'	:"Motorbyke (MOV 8-6)",
+			'19'	:"ODD: Optical Distruptor",
+			'20'	:"HMG"
+		}
 	}
 }
 
