@@ -283,6 +283,9 @@
             if(model.get('spec')['Booty']){
                 buildMetabootyTable('booty').appendTo(modelContainer);
             }
+            if(model.get('spec')['Booty L2']){
+                buildMetabootyTable('booty2').appendTo(modelContainer);
+            }
         
             lastModel=model;
         });
