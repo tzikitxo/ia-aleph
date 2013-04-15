@@ -1148,4 +1148,60 @@
  "type": "LI",
  "w": "1",
  "wip": "13"
+},
+{
+ "arm": "1",
+ "army": "Mercenary",
+ "ava": "3",
+ "bs": "12",
+ "bsw": [],
+ "bts": "-3",
+ "cbcode": [],
+ "cc": "14",
+ "ccw": [
+  "Pistol",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [
+    "Combi Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "Combi",
+   "cost": "14",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Boarding Shotgun"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "BS",
+   "codename": "",
+   "cost": "14",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "X",
+ "isc": "Authorized Bounty Hunters",
+ "mov": "4-4",
+ "name": "Bounty Hunter",
+ "note": "",
+ "ph": "10",
+ "spec": [
+  "Booty L2"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
 }
