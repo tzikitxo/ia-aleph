@@ -65,6 +65,11 @@ var configwindow=ia.configwindow={};
 		.append(config.label)
 		.append(inputField)
 		.appendTo(configScrollerWrapper);
+		return {
+			updateValue:function(){
+				inputField.val(config.getValue());	
+			}
+		};
 	}
     
 	var configScrollerWrapper=$('#configPopupScrollerWrapper');
@@ -184,30 +189,38 @@ var configwindow=ia.configwindow={};
 	
 	// CURRENT LIST CONFIG
      
-	var combatGroupSizeValueField;
-	$('<div  class="configPopupEntry"/>').append(messages.get('config.combatGroupSize')).append(combatGroupSizeValueField=$('<span />').text(armyList.combatGroupSize).editable(function(value){
-		var newValue=Number(value);
-		if(newValue&&newValue>0){
-			armyList.combatGroupSize=newValue;
-			return newValue;
-		}else{
+	var combatGroupSizeValueField=addInput({
+		label:messages.get('config.combatGroupSize'),
+		size:4,
+		getValue:function(){
 			return armyList.combatGroupSize;
+		},
+		onChange:function(value){
+			armyList.combatGroupSize=Number(value);
+		},
+		hasChanged:function(value){
+			return Number(value)!=armyList.combatGroupSize;
+		},
+		isValid:function(value){
+			return value && value.match('^[0-9]*$') && !isNaN(Number(value)) && Number(value)>0;
 		}
-	})).appendTo(configScrollerWrapper).bind('click',function(){
-		combatGroupSizeValueField.trigger('click');
 	});
      
-	var pointCapValueField;
-	$('<div  class="configPopupEntry"/>').append(messages.get('config.pointCap')).append(pointCapValueField=$('<span />').text(armyList.getPointCap()).editable(function(value){
-		var newValue=Number(value);
-		if(newValue&&newValue>0){
-			armyList.setPointCap(newValue);
-			return newValue;
-		}else{
+	var pointCapValueField=addInput({
+		label:messages.get('config.pointCap'),
+		size:4,
+		getValue:function(){
 			return armyList.getPointCap();
+		},
+		onChange:function(value){
+			armyList.setPointCap(Number(value));
+		},
+		hasChanged:function(value){
+			return Number(value)!=armyList.getPointCap();
+		},
+		isValid:function(value){
+			return value && value.match('^[0-9]*$') && !isNaN(Number(value)) && Number(value)>0;
 		}
-	})).appendTo(configScrollerWrapper).bind('click',function(){
-		pointCapValueField.trigger('click');
 	});
 	
 	addInput({
@@ -230,31 +243,7 @@ var configwindow=ia.configwindow={};
 		isValid:function(value){
 			return value && value.match('^[0-9 ]*$') && value.replace(/ /g,'').length>12;
 		}
-	})
-	//	var deviceIdValueField=$('<input type="text" />')
-	//	.attr('size',)
-	//	.val(remote.getDeviceId().replace(/([0-9]{3})/g,'$1 '))
-	//	.bind('change',function(){		
-	//		var value=$(this).val();
-	//		if(value && value.replace(/ /g,'').length>12 && value.match('^[0-9 ]*$')){
-	//			value=value.replace(/ /g,'');
-	//			remote.setDeviceId(value);
-	//			armyList.syncFromRemote();
-	//			$(this).removeClass('modifiedInput').removeClass('brokenInput');
-	//		}else{
-	//			//			value=remote.getDeviceId();
-	//			$(this).removeClass('modifiedInput').addClass('brokenInput');
-	//		}
-	//	//		return value.replace(/([0-9]{3})/g,'$1 ');
-	//	}).bind('keyup keydown',function(){
-	//		if(remote.getDeviceId()!=$(this).val().replace(/ /g,'')){
-	//			$(this).addClass('modifiedInput');
-	//		}
-	//	});
-	//	$('<div class="configPopupEntry"/>')
-	//	.append(messages.get('config.deviceId'))
-	//	.append(deviceIdValueField)
-	//	.appendTo(configScrollerWrapper);
+	});
      
 	var configPopupScrollWrapper = $('#configPopupScrollWrapper'),configPopupScrollerWrapper=$('#configPopupScrollerWrapper');
 	var configScroller=configwindow.configScroller=utils.createScroll({
@@ -285,8 +274,8 @@ var configwindow=ia.configwindow={};
     
 	configwindow.showConfigWindow=function(){
 		//BEGIN init
-		combatGroupSizeValueField.text(armyList.combatGroupSize);
-		pointCapValueField.text(armyList.getPointCap());
+		combatGroupSizeValueField.updateValue();
+		pointCapValueField.updateValue();
 		//END init
 		configPopup.show();
 		configScroller.updateScroll();
