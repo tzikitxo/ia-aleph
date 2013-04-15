@@ -25,6 +25,47 @@ var configwindow=ia.configwindow={};
 		}).appendTo(configScrollerWrapper);
 		config.update(button);
 	}
+	
+	function addInput(config){
+		var inputField=$('<input type="text" />');
+		function markField(className){
+			inputField.removeClass('modifiedInput').removeClass('brokenInput');
+			if(className){
+				inputField.addClass(className);
+			}
+		}
+		if(config.getSize || config.size){
+			inputField.attr('size',config.size||config.getSize());
+		}
+		config.isValid=config.isValid||function(){
+			return true;
+		};
+		inputField
+		.val(config.getValue())		
+		.bind('change',function(){		
+			var value=inputField.val();
+			if(config.isValid(value)){
+				config.onChange(value);
+				inputField.val(config.getValue());
+				markField();
+			}else{
+				markField('brokenInput');
+			}
+		}).bind('keyup keydown',function(){
+			var value=inputField.val();
+			if(config.hasChanged(value)){
+				if(config.isValid(value)){					
+					markField('modifiedInput');
+				}else{
+					markField('brokenInput');					
+				}
+			}
+		});
+		$('<div class="configPopupEntry"/>')
+		.append(config.label)
+		.append(inputField)
+		.appendTo(configScrollerWrapper);
+	}
     
 	var configScrollerWrapper=$('#configPopupScrollerWrapper');
 	var configPopup=$('#configPopup');
@@ -169,20 +210,51 @@ var configwindow=ia.configwindow={};
 		pointCapValueField.trigger('click');
 	});
 	
-	
-	var deviceIdValueField;
-	$('<div  class="configPopupEntry"/>').append(messages.get('config.deviceId')).append(deviceIdValueField=$('<span />').text(remote.getDeviceId().replace(/([0-9]{3})/g,'$1 ')).editable(function(value){
-		if(value && value.length>12 && value.match('^[0-9 ]*$')){
+	addInput({
+		label:messages.get('config.deviceId'),
+		getSize:function(){
+			return Math.round(remote.getDeviceId().length*4/3);
+		},
+		getValue:function(){
+			return remote.getDeviceId().replace(/([0-9]{3})/g,'$1 ');
+		},
+		onChange:function(value){
 			value=value.replace(/ /g,'');
 			remote.setDeviceId(value);
 			armyList.syncFromRemote();
-		}else{
-			value=remote.getDeviceId();
+			return value;
+		},
+		hasChanged:function(value){
+			return remote.getDeviceId()!=value.replace(/ /g,'');
+		},
+		isValid:function(value){
+			return value && value.match('^[0-9 ]*$') && value.replace(/ /g,'').length>12;
 		}
-		return value.replace(/([0-9]{3})/g,'$1 ');
-	})).appendTo(configScrollerWrapper).bind('click',function(){
-		deviceIdValueField.trigger('click');
-	});
+	})
+	//	var deviceIdValueField=$('<input type="text" />')
+	//	.attr('size',)
+	//	.val(remote.getDeviceId().replace(/([0-9]{3})/g,'$1 '))
+	//	.bind('change',function(){		
+	//		var value=$(this).val();
+	//		if(value && value.replace(/ /g,'').length>12 && value.match('^[0-9 ]*$')){
+	//			value=value.replace(/ /g,'');
+	//			remote.setDeviceId(value);
+	//			armyList.syncFromRemote();
+	//			$(this).removeClass('modifiedInput').removeClass('brokenInput');
+	//		}else{
+	//			//			value=remote.getDeviceId();
+	//			$(this).removeClass('modifiedInput').addClass('brokenInput');
+	//		}
+	//	//		return value.replace(/([0-9]{3})/g,'$1 ');
+	//	}).bind('keyup keydown',function(){
+	//		if(remote.getDeviceId()!=$(this).val().replace(/ /g,'')){
+	//			$(this).addClass('modifiedInput');
+	//		}
+	//	});
+	//	$('<div class="configPopupEntry"/>')
+	//	.append(messages.get('config.deviceId'))
+	//	.append(deviceIdValueField)
+	//	.appendTo(configScrollerWrapper);
      
 	var configPopupScrollWrapper = $('#configPopupScrollWrapper'),configPopupScrollerWrapper=$('#configPopupScrollerWrapper');
 	var configScroller=configwindow.configScroller=utils.createScroll({
