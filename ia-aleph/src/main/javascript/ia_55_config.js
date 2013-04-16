@@ -264,14 +264,7 @@ var configwindow=ia.configwindow={};
 		},
 		name:'configScroller',
 		iScrollConfig:{
-			vScrollbar:true,
-			onBeforeScrollStart : function (e) { 
-				//e.preventDefault();
-				var target = e.target.nodeName.toLowerCase();
-				if ( "input" != target && "select" != target) {		
-					e.preventDefault();
-				}
-			}
+			vScrollbar:true
 		}
 	});
     
