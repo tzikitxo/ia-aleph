@@ -1,0 +1,829 @@
+
+//*********************
+// COMMONS
+//*********************
+
+@margin1 : 12px;
+@margin2 : 5px;
+@margin3 : 2px;
+@maxWidth : 1280px;
+
+.rootCentered {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: @maxWidth;
+}
+
+//*********************
+// BITS
+//*********************
+
+img.flagIcon{
+    width: 24px;
+    height: 24px;
+}
+
+
+//*********************
+// MAIN
+//*********************
+
+body{
+    text-align: center;
+//    z-index: -10;
+	margin: 0;
+        overflow: hidden;
+}
+
+//*********************
+// LOADING
+//*********************
+
+#loadingContainer{	
+    width:12em;
+    margin-top:4em;        
+    margin-left: auto;
+    margin-right: auto;
+    padding:1em;
+}
+
+//*********************
+// ROOT
+//*********************
+
+#rootContainer{
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    .rootCentered;
+    #leftContainer, #rightContainer{
+        z-index: 2;
+    }
+    #overly1{
+    z-index: 1;
+            position: absolute;
+            top:0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+    }
+}
+
+
+//*********************
+// RIGHT
+//*********************
+
+#rightContainer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:25%;
+}
+#modelInfoContainer, #armyList {
+    margin: @margin1;
+    padding: @margin1;
+}
+#armyList table {
+    width:100%;
+}
+#armyList {
+    .listInfo , .warningsBar {
+        display: none;
+    }
+    .armyListModelRow td , .groupBar td{
+        padding-top: @padding4;
+        padding-bottom: @padding4;
+    }
+    .armyListSpacer td {
+            height: 25px;
+    }
+    .armyListModelRow ~ .armyListSpacer td {
+            display: none;
+    }
+    .modelIcon img {
+        width: @imageSize2;
+        height: @imageSize2;    
+    }
+    #armyListControls , #armyListGameModeControls {
+        display:none;
+        text-align: right;
+        .armyListControlButton{
+            display: inline-block;
+            padding: @padding4 @padding5;
+        }
+        .armyListControlButtonIcon{
+            width: 16px;
+            height: 16px;
+        }
+        .activeControlButton{
+            display: none;
+        }
+    }
+    .modelNames {
+        padding-left: 8px;
+        div {
+            display: inline-block;
+        }
+        .modelName {
+            min-width: 50%;
+        }
+    }
+}
+#rootContainer.armylistRecordSelected:not(.gameMode) #armyList  #armyListControls {
+        display: block;
+}
+#rootContainer.armylistRecordSelected.gameMode #armyList  #armyListGameModeControls {
+        display: block;
+}
+#armyList #armyListGameModeControls.inactiveModelSelected{
+    .activeControlButton{
+        display: inline-block;
+    }
+    .inactiveControlButton{
+        display: none;
+    }
+}
+
+//*********************
+//LEFT
+//*********************
+
+#leftContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+}
+#topBar, #typeAndUnitMenuWrapper{
+    margin: @margin1;
+    padding: @margin1;
+}
+#mainContainer{
+    padding-bottom: @margin1;
+}
+#modelChooserContainer {
+    margin: @margin1 @margin1 0 @margin1;
+    padding: 8px;
+    .unitInfo{
+        margin-bottom: 2px;
+    }
+}
+#typeMenu {
+    margin-bottom: @margin1;
+}
+#unitMenu {
+    margin-top: @margin1;
+}
+.unitTypeButton{
+    display: inline-block;
+    padding:0 25px;
+    margin: 0 auto;
+}
+.unitButton{
+    display: inline-block;
+    padding:3px 5px 3px 5px;
+    margin: 0 auto;
+}
+.unitButton img{
+    width:40px;
+    height: 40px;
+}
+.modelChooser {
+	.unitAttr {
+		height: 24px;
+		.flagIcon{
+			margin: 2px;
+		}
+	}
+	table{
+		width: 100%;
+		margin: 0;
+		th {
+			padding-top: 7px;
+			padding-bottom: 7px;
+		}
+	}
+	.wrappedHeaderFakeTable , .wrappedValuesFakeTable {
+		display: none;
+	}
+        .modelButton td{
+                padding-top: @padding2;
+                padding-bottom: @padding2;	
+        }
+}
+#rootContainer.originalCostSwcPositioning .modelChooser {
+	.swcModelAttr ~ .swcModelAttr , .costModelAttr ~ .costModelAttr{
+		display: none;
+	}
+}
+#rootContainer.classicCostSwcPositioning .modelChooser {
+	.swcModelAttr , .costModelAttr {
+		display: none;
+	}
+	.swcModelAttr ~ .swcModelAttr , .costModelAttr ~ .costModelAttr{
+		display: table-cell;
+	}
+}
+//.modelChooser .modelButtonList{
+//    overflow-x: auto;
+//}
+
+.modelDragHelper{
+    padding: 2px;
+    z-index: 99;
+    width: 300px !important;
+    height: 26px !important;
+}
+
+.specopForm{
+	margin-top: @margin1;
+//	padding: @margin1;
+	text-align: left;
+	.sopFormTitle{
+		margin: @margin1;
+	}
+	.baseModelChooserContainer , .costContainer , .boostableAttrsContainer , .extraWeaponsContainer , .extraSpecsContainer{
+		padding: @margin1;
+		margin: @margin1;
+	}	
+	.sopFormHeader {
+		.baseModelChooserContainer , .costContainer{
+			display: inline-block;
+			margin-top: 0;
+		}
+		.costContainer{
+			float: right;
+		}
+	}
+	.boostableAttrsContainer {
+		margin-top: 0;
+	}
+	.boostableAttrSelect{
+		min-width: 20%;
+	}
+	.extraSpecWrapper , .extraWeaponWrapper {
+		display: inline-block;
+		white-space: nowrap;
+		min-width: 20%;
+		margin: @margin3 @margin2;
+	}
+}
+
+//*********************
+//TOP
+//*********************
+
+#smallScreenTopBar{
+    display: none; 
+    .smallScreenTopBarButton{
+        padding: @padding3 0;
+        width: 24%;
+    }
+	position: fixed;
+	width: 100%;
+	white-space: nowrap;   
+	.smallScreenTopBarButton{
+		display: inline-block;
+	}
+	z-index: 2;
+	height: 17px + @padding3 + @padding3;
+}
+#topBar{
+    #warningsBar {
+        margin-top: 5px;
+    }
+}
+#mainMenu , #factionsMenu{
+    z-index:20;
+    position: absolute;
+    top: @margin1;
+    left: @margin1;
+    text-align: center;
+    padding: 5px 0;
+    #factionsMenuScrollContent , #mainMenuScrollContent{
+        padding: 10px;
+    }
+    .menuButton {
+        margin: 2px auto 2px auto;
+        padding: @padding5;
+		.menuButtonIcon{
+			width: 16px;
+			height: 16px;
+		}
+    }
+    .menuButtonIcon {
+        float: left;
+    }
+    .favouriteButton , .factionButton , .sectorialButton , .menuSeparator{
+        display: inline-block;
+        padding: 5px;
+    }
+    .favouriteButton img , .factionButton img{
+            width: @imageSize3;
+            height: @imageSize3;
+    }
+    .sectorialButton img{
+            width: @imageSize1;
+            height: @imageSize1;
+    }
+}
+#factionsMenu {
+    right: @margin1;
+}
+#upperTopBar{
+    position: relative;
+    height: 18px;
+}
+#topBar .mainMenuButton{
+    z-index:2;
+    position: relative;
+    float: left;
+    top: -13px;
+    left: -13px;
+}
+.listInfo{
+  white-space: normal;
+  //position: absolute;
+ // left: 100px;
+ // left: @margin1;
+ // right: @margin1;
+ //   margin-left: 70px;
+    text-align: center;
+    div{
+        display: inline-block;
+    }
+}
+
+//*********************
+// MODEL INFO
+//*********************
+
+@modelInfoHeadHeight : 140px;
+@iconSize : 140px;
+#modelInfoContainer{
+    //height: 200px;
+    overflow: hidden;
+    .modelInfoHead {
+        position: relative;
+        width: 100%;
+        height: @modelInfoHeadHeight;
+    }
+    .modelInfoHead > div {
+        vertical-align: center;
+    }
+    .modelInfoNames{
+        position: absolute;
+      //  width: 100%;
+     //   height: @modelInfoHeadHeight;
+    //    left:10;
+        //top:80px;
+        top: 0;
+        left: @iconSize;
+        text-align: left;
+        > * {
+            position: relative;
+            z-index:10;
+        }
+    }
+    .modelInfoIcon {
+        position: relative;
+        height: @iconSize;   
+        width: @iconSize; 
+        
+    //    top: -15px;
+   //     left: 10px;
+    //    left: 0;
+     //   width: 0;
+        img{
+            height: @iconSize;   
+            width: @iconSize;           
+        }
+    }
+    .modelInfoLeft {
+        position: absolute;
+        bottom: 0;
+       // left: 0;
+       // width: 30%;
+        left: @iconSize;
+        vertical-align: center;
+        > * {
+      //      display: inline-block;
+        }
+    }
+    table{
+        width: 100%;
+    }
+
+    z-index: 10;
+    #modelInfoButton{
+        z-index: 20;
+        display: none;
+    }
+    .modelInfo.hidden{
+        display: none;
+    }
+    &.hidden {
+		padding: 5px;
+        height: auto;
+        .modelInfo {
+            display: none;
+        }
+		#modelInfoButton{
+			display: inherit;
+		}
+    }
+    .modelInfoAltpName {
+        text-align: left;
+    }
+    .modelInfoAltpNames {
+        font-weight: bold;
+    }
+ // .showDefault .modelInfoAltp0 , .showAltp0 .modelInfoDefault{
+ //        display: none;
+  //  }
+ //   .modelInfoAltpButton{
+ //       float:right;
+ //       padding: @padding4;
+ //   }
+}
+
+//*********************
+//POPUPS
+//*********************
+
+#floaters{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	min-height: 100%;
+	.rootCentered
+}
+#genericPopup{
+    z-index:50;
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    //margin-top: -50px;
+    //@width : 750;
+    margin-left: -250px;
+    width: 500px;
+    padding:15px;
+        //height:80%;
+        //margin: 10%;
+    textarea{
+        width: 450px;
+    }
+    .exportButtons {
+        margin-top: 10px;
+        .exportButton {
+            display: inline-block;
+            padding: 5px;
+            margin: 0 2px 0 2px;
+        }
+    }
+}
+#imagesPopup{
+    z-index:50;
+    //position: absolute;
+   // top: 0;
+   // left: 0;
+    img {
+        margin: 10px;
+    }
+    #imagesPopupCloseButton {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        padding: @padding1;
+    }
+}
+
+#configPopup{
+    z-index:80;
+	margin: @margin1;
+    padding: @margin1;
+    min-height: 60%;
+    input{
+        text-align: center;
+        margin-left: @margin1;
+    }
+	.modifiedInput{
+		background-color: @modifiedInputColor;
+	}
+	.brokenInput{
+		background-color: @brokenInputColor;
+	}
+     .configPopupEntry {
+        display: inline-block;
+        min-width: 45%;
+        padding: @margin1;
+        margin: @margin2;
+        //min-height: 40px;
+    }
+    .entryLabel , input{
+        display: inline-block;
+    }
+    .localeBarButton {
+            display: inline-block;
+            padding: @padding7 @padding5;
+            margin: 0;
+    }
+    .closeButton{
+        display: block;
+    }
+}
+#campaignToolsContainer{
+    z-index:80;
+    #campaignToolsContent{
+		min-width: 600px;
+		.militarySpecTableWrapper{
+			width: 100%;
+		}
+        .militarySpecTable{
+            padding: @margin1;
+            width: 100%;
+            .militarySpecTableCell , .militarySpecTableHeader{
+                padding: @margin2;
+				width: 14%;
+                &.emptyCell{
+                    padding: 0;
+                    width: 0;
+                    height: 0;
+                }
+				.unitSelect{
+					max-width: 150px;
+				}
+            }
+			.fakeLastCell{
+				padding:5px;
+			}
+        }
+        .campaignButton , .costContainer{
+            display: inline-block;
+            margin: @margin1;
+            padding: @margin1;
+        }
+        .buttonIcon{
+            width: 16px;
+            height: 16px;
+            margin-right: @margin2;
+        }
+    }
+    vertical-align: middle;
+}
+
+#weaponsButton{
+	z-index: 10;
+    position: absolute;
+    bottom: @margin1;
+    left: @margin1;
+ //   right: @margin1;
+    padding: 4px;
+	> div{
+		padding: @padding8;
+	}
+        &.hidden{   
+            display: none;
+        }
+}
+#weaponsInfo{
+    z-index:15;
+    position: absolute;
+    bottom: @margin1;
+    left: @margin1;
+    right: @margin1;
+    padding: 10px;
+    table {
+        width: 100%;
+    }
+    tr,td{
+        padding: 2px;
+    }
+    td.rangeMod {
+        color: black;
+    }
+    .weaponInfoHeader th:first-child{
+        text-align: right;
+    }
+    &.hidden{   
+        display: none;
+    }
+    .wrappedHeaderDiv , .wrappedFakeTable{
+        display:none;
+    }
+}
+
+#rootContainer.showIn .rangeCm{
+    display: none;
+}
+#rootContainer.showCm .rangeIn{
+    display: none;
+}
+
+//*********************
+//RULES
+//*********************
+
+@rulesLeftWidth: 200px;
+
+#rulesBrowser {
+    position: relative;
+    margin-left: @margin1;
+    margin-right: @margin1;
+    top: 0;
+    padding: @margin1;  
+    min-height: 200px;
+    z-index:70;
+    #rulesLeft{
+        position: absolute;
+        top: @margin1;
+        left: @margin1;
+		bottom: @margin1;
+        width: @rulesLeftWidth;
+    }
+    #rulesRight{
+        margin-left: @rulesLeftWidth+@margin1;
+    }
+    #rulesButtons{
+        min-height: 30px;
+        text-align: left;
+        .rulesButton {
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+    #rulesSearch{
+        //position: absolute;
+        width: 100%;
+        height: 100%;
+		//top: 35px;
+		//left: 0;
+		//right: 0;
+		//bottom: 0;
+        input{
+             margin: 5px 0px;
+             width: 90%;
+        }
+        #rulesSearchResults {
+			//position: absolute;
+			//top: 35px;
+			//left: 0;
+			//right: 0;
+			//bottom: 0;	
+            overflow-y: hidden;	
+            overflow-x: hidden;
+        }
+        #rulesSearchResults .ruleMatch{
+            padding: 5px 0 5px 0;
+            margin: 0 25px 0 25px;
+        }
+    }
+    #rulesText{
+		padding: 5px;
+        }
+}
+
+//*********************
+//SAVED LISTS
+//*********************
+
+#savedLists {
+   position: absolute;
+    left: @margin1;
+    right: @margin1;
+    top: @margin1;
+    padding: @margin1;
+    min-height: 50%;    
+    .rootCentered;
+    z-index:70;
+    table{
+        min-width: 100%;
+    }
+    #savedListsBackButton {
+        padding: 5px;
+        margin: 5px;
+    }
+    .savedListRow td {
+        padding: @padding1 0;
+        &.deleteButton{
+            padding: @padding1;
+        }
+    }
+    img{
+        width: @imageSize2;
+        height: @imageSize2;   
+    }
+}
+
+//#################
+//### GAME MODE
+//#################
+#gameModeContainer{
+    display: none;
+    margin: 12px;
+    .listStatus{
+        margin-top: 12px;
+    }
+}
+.gameMode{
+    #typeAndUnitMenuWrapper , #modelChooserContainer{
+        display: none;
+    }
+    #gameModeContainer{
+        display: block;
+    }
+}
+#gamePhotoContainer{
+	margin: 12px;
+    position: relative;
+}
+#gamePhotoScrollContent{
+	position: relative;
+}
+#gamePhotoOverlay{
+	position: absolute;
+	z-index:5;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	.photoModelIcon{
+            position: absolute;
+            img {
+                width: @imageSize2;
+                height: @imageSize2;    
+                }
+            padding: 3px;
+			&.selected{
+				padding: 1px;
+			}
+            .gamePhotoToken{
+                position: absolute;
+                top: 2px;
+                left: @imageSize2 + 4px;
+                display: none;
+            }
+            &.deadModel{
+                .gamePhotoToken.unconsciousToken{
+                    display: block;
+                }
+            }
+	}
+}
+#gameModeControls{
+    position: absolute;
+    top:17px;
+    left: 20px;
+    z-index: 6;
+    text-align: left;
+    padding: 5px;
+    //margin-left: 30px;
+	
+}
+#photoFileInput , #photoFileInputWrapper , .gameModeControlsIcon{
+    width: @buttonSize1;
+    height: @buttonSize1;
+}
+#gamePhotoCameraButton{
+	display: none;
+}
+.hasCordova{ 
+	#photoFileInputWrapper{
+		display: none;
+	}
+	#gamePhotoCameraButton{
+		display: inline-block;
+	}
+	#gamePhotoOverlay{
+		.photoModelIcon {
+			padding: 12px;
+            .gamePhotoToken{
+                top: 12px;
+                left: @imageSize2 + 14px;
+            }
+			&.selected{
+				padding: 10px;
+			}
+		}
+	}
+}
+#photoFileInputWrapper{
+    position: relative;
+	display: inline-block;
+}
+#photoFileInput ,#photoFileInputIconWrapper{
+    position: absolute;
+}
+#photoFileInput{
+    z-index:4;
+    opacity: 0;
+}
+#gamePhotoScrollWrapper {
+	margin-right: auto;
+	margin-left: auto;
+}
