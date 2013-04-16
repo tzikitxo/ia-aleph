@@ -290,7 +290,7 @@
             });
         }
 		
-        // iscroll select fix
+        // iscroll select fix (TODO check if really needed)
         specopForm.find('select').each(function(){
             this.addEventListener('touchstart', function(e) {
                 e.stopPropagation();

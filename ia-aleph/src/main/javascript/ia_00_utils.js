@@ -143,9 +143,9 @@
 				success:function(data){
 					config.success(data.id);
 				},
-                                validateResponse:function(data){
-                                    return (data && data.id)?true:false;
-                                },
+				validateResponse:function(data){
+					return (data && data.id)?true:false;
+				},
 				ajaxConfig:config.ajaxConfig
 			});
 		//			$.ajax($.extend({
@@ -209,7 +209,7 @@
 		try{
 			return JSON.parse($.base64.decode(string));
 		}catch(noDeflateError){
-//			log('error decoding without deflate, ',noDeflateError,' trying with deflate');
+			//			log('error decoding without deflate, ',noDeflateError,' trying with deflate');
 			try{
 				return JSON.parse(RawDeflate.inflate($.base64.decode(string)));
 			}catch(newB64Error){
@@ -334,7 +334,14 @@
 				}
 				thisScroll=new iScroll(config.getScrollWrapper()[0].id, $.extend({
 					hScrollbar: false, 
-					vScrollbar: false
+					vScrollbar: false,
+					onBeforeScrollStart : function (e) { 
+						//e.preventDefault();
+						var target = e.target.nodeName.toLowerCase();
+						if ( "input" != target && "select" != target) {		
+							e.preventDefault();
+						}
+					}
 				},config.iScrollConfig||{}));
 			}
 			setTimeout(function () {
