@@ -208,12 +208,12 @@
 		string=string.replace(/[%]../g,'').replace(/_/g,'/').replace(/-/g,'+').replace(/[.:]/g,'=').replace(/[^a-zA-Z0-9+\/=]/g,'');
 		try{
 			return JSON.parse($.base64.decode(string));
-		}catch(e){
-			log('error decoding without deflate, ',e,' trying with deflate');
+		}catch(noDeflateError){
+//			log('error decoding without deflate, ',noDeflateError,' trying with deflate');
 			try{
 				return JSON.parse(RawDeflate.inflate($.base64.decode(string)));
-			}catch(e){
-				log('error decoding with new b64 encoding, ',e,' trying with old encoding');
+			}catch(newB64Error){
+				log('error decoding with new b64 encoding, ',newB64Error,' trying with old encoding');
 				return JSON.parse(RawDeflate.inflate($.base64legacy.decode(string)));
 			}
 		}
