@@ -50,7 +50,12 @@
 		remote.listDataWithPrefix(savedListPrefix,function(data){
 			var remoteListIdList={};
 			$.each(data,function(listId,listDataInfo){
-				var remoteTime=utils.parseDate(listDataInfo.dateMod).getTime();
+				var remoteTime=utils.parseDate(listDataInfo.dateMod);
+				remoteTime=remoteTime?remoteTime.getTime():null;
+				if(!remoteTime){
+					log('unable to parse remote time : ',listDataInfo.dateMod);
+					return;
+				}
 				var localData=loadList(listId),localTime=localData?utils.parseDate(localData.dateMod).getTime():null;
 				remoteListIdList[listId]=localTime===null || localTime<=remoteTime;	
 				if(localTime===null || localTime<remoteTime){
