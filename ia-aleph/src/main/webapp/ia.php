@@ -63,9 +63,11 @@ if ($_REQUEST['action'] == 'checkService') {
 	if ($json != NULL) {
 		
 		$date = strtotime($json['dateMod']) || strtotime('@' . $json['dateMod']);
-		$now = time();
-		if( $date == FALSE || $date <=0 || $date > $now + 10*60 ){ // if broken date, or more than 10 minutes in the future
-			$json['dateMod'] = date('U',$now);
+		$now = time(); 
+		
+		// note: php time() ( $now ) returns epoch in sec, js dateMod ( $date ) is in msec
+		if( $date == FALSE || $date <=0 || $date / 1000 > $now + 10 * 60 ){ // if broken date, or more than 10 minutes in the future
+			$json['dateMod'] = date('U',$now).'000';
 		}
 		
 		$data = json_encode($json);
