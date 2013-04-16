@@ -53,21 +53,22 @@
 				var remoteTime=utils.parseDate(listDataInfo.dateMod);
 				remoteTime=remoteTime?remoteTime.getTime():null;
 				if(!remoteTime){
-					log('unable to parse remote time : ',listDataInfo.dateMod);
+					log('listsync : unable to parse remote time : ',listDataInfo.dateMod);
 					return;
 				}
 				var localData=loadList(listId),localTime=localData?utils.parseDate(localData.dateMod).getTime():null;
 				remoteListIdList[listId]=localTime===null || localTime<=remoteTime;	
+				log('listsync : listid = ',listId,' remoteTime = ',remoteTime,' localTime = ',localTime);
 				if(localTime===null || localTime<remoteTime){
 					if(listDataInfo.deleted){
 						if(localData){
 							deleteList(listId,true);
 						}
 					}else{
-						log('retrieving remote list ',listId);
+						log('listsync : retrieving remote list ',listId);
 						remote.loadData(savedListPrefix+listId,function(list){
 							if(list && list.listId && listId==list.listId){
-								log('importing remote list ',listId);
+								log('listsync : importing remote list ',listId);
 								//TODO verify data
 								storage.pack(savedListPrefix+list.listId,list);
 								if(listId==armyList.listId || listId==autoLoadId){
@@ -157,7 +158,9 @@
 			if(!list || !list.listId || list.listId!=listId){
 				delete data[listId];
 				deleteList(listId);
+				return;
 			}
+			list.dateMod=utils.exportDate(utils.parseDate(list.dateMod)); // fix old date format
 		});
 		return data;
 	}
