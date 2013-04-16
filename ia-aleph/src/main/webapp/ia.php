@@ -64,7 +64,7 @@ if ($_REQUEST['action'] == 'checkService') {
 		
 		$date = strtotime($json['dateMod']) || strtotime('@' . $json['dateMod']);
 		$now = time();
-		if( $date == FALSE || $date <=0 || $date > $now ){
+		if( $date == FALSE || $date <=0 || $date > $now + 10*60 ){ // if broken date, or more than 10 minutes in the future
 			$json['dateMod'] = date('U',$now);
 		}
 		
