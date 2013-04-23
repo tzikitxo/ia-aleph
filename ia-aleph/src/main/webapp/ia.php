@@ -27,8 +27,8 @@ $storage_dir = "storage";
 
 $response = "{ \"success\" : false }";
 
-if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
-    sleep(1); // emulate remote call on debug
+if ($_SERVER['REMOTE_ADDR'] == '127.0.0.1') {
+	sleep(1); // emulate remote call on debug
 }
 
 if ($_REQUEST['action'] == 'checkService') {
@@ -54,61 +54,70 @@ if ($_REQUEST['action'] == 'checkService') {
 
 	curl_close($curl);
 } else if ($_REQUEST['action'] == 'storeData') {
+	$deviceId = $_REQUEST['deviceId'];
+	$key = $_REQUEST['key'];
+	if (preg_match('/^[0-9]+$/', $deviceId) && preg_match('/^[a-zA-Z0-9.]+$/', $key)) {
 
-	$dir = $storage_dir . "/" . (int)$_REQUEST['deviceId'] . "/";
-	if (!file_exists($dir)) {
-		mkdir($dir, 0700, true);
-	}
-	$file = $dir . preg_replace('/[^a-z0-9.]/i','',$_REQUEST['key']);
-	$data = isset($_REQUEST['b64data']) ? base64_decode($_REQUEST['b64data']) : $_REQUEST['data'];
-
-	$json = json_decode($data, true);
-	
-	if ($json != NULL) {
-		
-		$date = strtotime($json['dateMod']) || strtotime('@' . $json['dateMod']);
-		$now = time(); 
-		
-		// note: php time() ( $now ) returns epoch in sec, js dateMod ( $date ) is in msec
-		if( $date == FALSE || $date <=0 || $date / 1000 > $now + 10 * 60 ){ // if broken date, or more than 10 minutes in the future
-			$json['dateMod'] = date('U',$now).'000';
+		$dir = $storage_dir . "/" . $deviceId . "/";
+		if (!file_exists($dir)) {
+			mkdir($dir, 0700, true);
 		}
-		
-		$data = json_encode($json);
+		$file = $dir . $key;
+		$data = isset($_REQUEST['b64data']) ? base64_decode($_REQUEST['b64data']) : $_REQUEST['data'];
 
-		file_put_contents($file . '.gz', gzencode($data, 9));
+		$json = json_decode($data, true);
 
-		$data = gzdecode(file_get_contents($file . '.gz'));
+		if ($json != NULL) {
 
-		if ($data != FALSE) {
-			$response = json_encode(array('success' => true, 'data' => $data));
+			$date = strtotime($json['dateMod']) || strtotime('@' . $json['dateMod']);
+			$now = time();
+
+			// note: php time() ( $now ) returns epoch in sec, js dateMod ( $date ) is in msec
+			if ($date == FALSE || $date <= 0 || $date / 1000 > $now + 10 * 60) { // if broken date, or more than 10 minutes in the future
+				$json['dateMod'] = date('U', $now) . '000';
+			}
+
+			$data = json_encode($json);
+
+			file_put_contents($file . '.gz', gzencode($data, 9));
+
+			$data = gzdecode(file_get_contents($file . '.gz'));
+
+			if ($data != FALSE) {
+				$response = json_encode(array('success' => true, 'data' => $data));
+			}
 		}
 	}
 } else if ($_REQUEST['action'] == 'getData') {
+	$deviceId = $_REQUEST['deviceId'];
+	$key = $_REQUEST['key'];
+	if (preg_match('/^[0-9]+$/', $deviceId) && preg_match('/^[a-zA-Z0-9.]+$/', $key)) {
+		$file = $storage_dir . "/" . $deviceId . "/" . $key . '.gz';
+		if (!file_exists($file)) {
+			$response = json_encode(array('success' => false, 'message' => 'no data found for this key'));
+		} else {
+			$data = gzdecode(file_get_contents($file));
 
-	$file = $storage_dir . "/" . (int)$_REQUEST['deviceId'] . "/" . preg_replace('/[^a-z0-9.]/i','',$_REQUEST['key']) . '.gz';
-	if (!file_exists($file)) {
-		$response = json_encode(array('success' => false, 'message' => 'no data found for this key'));
-	} else {
-		$data = gzdecode(file_get_contents($file));
-
-		if ($data != FALSE) {
-			$response = json_encode(array('success' => true, 'data' => $data));
+			if ($data != FALSE) {
+				$response = json_encode(array('success' => true, 'data' => $data));
+			}
 		}
 	}
 } else if ($_REQUEST['action'] == 'listData') {
-
-	$dir = $storage_dir . "/" . (int)$_REQUEST['deviceId'] . "/";
-	$res = array();
-	foreach (scandir($dir) as $file) {
-		if (is_file($dir . $file) == TRUE) {
-			$data = json_decode(gzdecode(file_get_contents($dir . $file)), true);
-			$key = basename($file, '.gz');
-			$res[$key] = array('key' => $key, 'dateMod' => $data['dateMod'], 'deleted' => isset($data['deleted']) ? $data['deleted'] : false);
+	$deviceId = $_REQUEST['deviceId'];
+	if (preg_match('/^[0-9]+$/', $deviceId)) {
+		$dir = $storage_dir . "/" . $deviceId . "/";
+		$res = array();
+		foreach (scandir($dir) as $file) {
+			if (is_file($dir . $file) == TRUE) {
+				$data = json_decode(gzdecode(file_get_contents($dir . $file)), true);
+				$key = basename($file, '.gz');
+				$res[$key] = array('key' => $key, 'dateMod' => $data['dateMod'], 'deleted' => isset($data['deleted']) ? $data['deleted'] : false);
+			}
 		}
-	}
 
-	$response = json_encode(array('success' => true, 'data' => $res));
+		$response = json_encode(array('success' => true, 'data' => $res));
+	}
 }
 
 header('Content-type: application/json');
