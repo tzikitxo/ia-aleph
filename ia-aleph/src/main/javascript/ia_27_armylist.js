@@ -27,8 +27,8 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
     $('#armyList .secondRow .label').text(messages.get('armylist.listinfo.max')+": ");
     $('#armyList .thirdRow .label').text(messages.get('armylist.listinfo.remaining')+": ");
     
-    $('<div class="armylistNameField"/>').appendTo('#topBar .listInfo');
-    $('<div class="armylistNameField"/>').appendTo($('<div class="fourthRow" />').appendTo('#armyList .listInfo'));
+    $('<div class="armylistNameField"/>').insertAfter('#topBar .listInfo .swcCount');
+    $('<div class="armylistNameField"/>').appendTo($('<div class="fourthRow" />').insertAfter('#armyList .listInfo .thirdRow'));
     $('.armylistNameField').editable(function(value){
         armylist.setListName(value);
         return value;
