@@ -28,6 +28,9 @@
         log('ajax start');
         $('.loadingIcon').show();
     });
+	if($.active){
+		$('.loadingIcon').show();
+	}
     $(document).ajaxStop(function() {
         log('ajax stop');
         $('.loadingIcon').hide();        

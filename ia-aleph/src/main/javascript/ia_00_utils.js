@@ -26,6 +26,9 @@
 		}else if(ia.device && ia.device.hasCordova()){
 			var str='';
 			$.each(arguments,function(x,val){
+				//				if(typeof val == 'object'){
+				//					val = JSON.stringify(val);
+				//				}
 				str+=val; 
 			});
 			window.console.debug(str);
@@ -120,7 +123,7 @@
 					error(data);
 				}     
 			},
-			error: function(){   
+			error: function(data){   
 				$('.offlineIcon').show();  
 				error(data);
 			},
@@ -194,30 +197,33 @@
 			return str;
 		}
 		var def;
-		if(str.length>100){
-			def=RawDeflate.deflate(str);
-			log('deflated data from ',str.length,' to ',def.length,' characters');
-		}else{
-			def=str;
-		}
+//		if(str.length>100){
+//			def=RawDeflate.deflate(str);
+//			log('deflated data from ',str.length,' to ',def.length,' characters');
+//		}else{
+			def=str; // skip deflate
+//		}
 		var enc=$.base64.encode(def).replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
-		log('b64 encoded data from ',def.length,' to ',enc.length,' characters');
+//		log('b64 encoded data from ',def.length,' to ',enc.length,' characters');
 		return enc;
 	};
 	utils.decodeData=function(string,config){
-		if(config && config.encode===false){
-			return JSON.parse(string);
-		}
-		string=string.replace(/[%]../g,'').replace(/_/g,'/').replace(/-/g,'+').replace(/[.:]/g,'=').replace(/[^a-zA-Z0-9+\/=]/g,'');
+		//		if(config && config.encode===false){
 		try{
-			return JSON.parse($.base64.decode(string));
-		}catch(noDeflateError){
-			//			log('error decoding without deflate, ',noDeflateError,' trying with deflate');
+			return JSON.parse(string);
+		}catch(plainJsonError){
+			//		}
+			string=string.replace(/[%]../g,'').replace(/_/g,'/').replace(/-/g,'+').replace(/[.:]/g,'=').replace(/[^a-zA-Z0-9+\/=]/g,'');
 			try{
-				return JSON.parse(RawDeflate.inflate($.base64.decode(string)));
-			}catch(newB64Error){
-				log('error decoding with new b64 encoding, ',newB64Error,' trying with old encoding');
-				return JSON.parse(RawDeflate.inflate($.base64legacy.decode(string)));
+				return JSON.parse($.base64.decode(string));
+			}catch(noDeflateError){
+				//			log('error decoding without deflate, ',noDeflateError,' trying with deflate');
+				try{
+					return JSON.parse(RawDeflate.inflate($.base64.decode(string)));
+				}catch(newB64Error){
+					log('error decoding with new b64 encoding, ',newB64Error,' trying with old encoding');
+					return JSON.parse(RawDeflate.inflate($.base64legacy.decode(string)));
+				}
 			}
 		}
 	};
@@ -243,7 +249,8 @@
 			}
 		};
 		storageWrapper.pack=function(key,value){
-			this.set(key,utils.encodeData(value,valueConfig[key]));
+			//			this.set(key,utils.encodeData(value,valueConfig[key]));
+			this.set(key,JSON.stringify(value)); // skip compression
 		};
 		storageWrapper.getOrInit=function(key,defaultInitializer){
 			var value=this.get(key);

@@ -56,7 +56,9 @@
 					log('listsync : unable to parse remote time : ',listDataInfo.dateMod);
 					return;
 				}
-				var localData=loadList(listId),localTime=localData?utils.parseDate(localData.dateMod).getTime():null;
+				var localData=loadList(listId),
+					localDate=localData?utils.parseDate(localData.dateMod):null,
+					localTime=localDate?localDate.getTime():null;
 				remoteListIdList[listId]=localTime===null || localTime<=remoteTime;	
 				log('listsync : listid = ',listId,' remoteTime = ',remoteTime,' localTime = ',localTime);
 				if(localTime===null || localTime<remoteTime){
