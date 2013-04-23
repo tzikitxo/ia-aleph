@@ -23,5 +23,14 @@
         'background-position':$(document).height()>600?"right 300px":"right -0",
         'background-repeat':"no-repeat"
     });
+    
+    $(document).ajaxStart(function() {
+        log('ajax start');
+        $('.loadingIcon').show();
+    });
+    $(document).ajaxStop(function() {
+        log('ajax stop');
+        $('.loadingIcon').hide();        
+    });
         
 })();

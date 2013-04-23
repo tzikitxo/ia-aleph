@@ -27,6 +27,10 @@ $storage_dir = "storage";
 
 $response = "{ \"success\" : false }";
 
+if($_SERVER['REMOTE_ADDR'] == '127.0.0.1'){
+    sleep(1); // emulate remote call on debug
+}
+
 if ($_REQUEST['action'] == 'checkService') {
 
 	$response = json_encode(array('success' => true, 'currentTime' => date('c')));
@@ -51,11 +55,11 @@ if ($_REQUEST['action'] == 'checkService') {
 	curl_close($curl);
 } else if ($_REQUEST['action'] == 'storeData') {
 
-	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
+	$dir = $storage_dir . "/" . (int)$_REQUEST['deviceId'] . "/";
 	if (!file_exists($dir)) {
 		mkdir($dir, 0700, true);
 	}
-	$file = $dir . $_REQUEST['key'];
+	$file = $dir . preg_replace('/[^a-z0-9.]/i','',$_REQUEST['key']);
 	$data = isset($_REQUEST['b64data']) ? base64_decode($_REQUEST['b64data']) : $_REQUEST['data'];
 
 	$json = json_decode($data, true);
@@ -82,7 +86,7 @@ if ($_REQUEST['action'] == 'checkService') {
 	}
 } else if ($_REQUEST['action'] == 'getData') {
 
-	$file = $storage_dir . "/" . $_REQUEST['deviceId'] . "/" . $_REQUEST['key'] . '.gz';
+	$file = $storage_dir . "/" . (int)$_REQUEST['deviceId'] . "/" . preg_replace('/[^a-z0-9.]/i','',$_REQUEST['key']) . '.gz';
 	if (!file_exists($file)) {
 		$response = json_encode(array('success' => false, 'message' => 'no data found for this key'));
 	} else {
@@ -94,7 +98,7 @@ if ($_REQUEST['action'] == 'checkService') {
 	}
 } else if ($_REQUEST['action'] == 'listData') {
 
-	$dir = $storage_dir . "/" . $_REQUEST['deviceId'] . "/";
+	$dir = $storage_dir . "/" . (int)$_REQUEST['deviceId'] . "/";
 	$res = array();
 	foreach (scandir($dir) as $file) {
 		if (is_file($dir . $file) == TRUE) {

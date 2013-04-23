@@ -208,7 +208,7 @@ var menu=ia.menu={};
             label:messages.get('menu.donate'),
             handler:function(){
                 hideMenu();
-                window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LUCCGRC73TPGW",'_blank');
+                window.open("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=T7JQH367RK3D2",'_blank');
             },
             icon:'donate'
         }]);
