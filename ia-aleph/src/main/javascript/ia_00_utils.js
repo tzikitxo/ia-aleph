@@ -84,6 +84,7 @@
 				utils.remoteServiceAvailable=true;
 			}else{
 				log('remote service unavailable: ',data);
+				$('.offlineIcon').show();
 			}
 		},
 		dataType: 'json'
@@ -112,13 +113,15 @@
 			url: utils.getAbsoluteBasePath()+'/ia.php?action='+config.action,
 			data: config.data,
 			success: function(data){
+				$('.offlineIcon').hide();
 				if(validateResponse(data)){
 					success(data);
 				}else{                
 					error(data);
 				}     
 			},
-			error: function(){     
+			error: function(){   
+				$('.offlineIcon').show();  
 				error(data);
 			},
 			dataType: 'json'
