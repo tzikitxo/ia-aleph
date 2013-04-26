@@ -200,10 +200,12 @@ var units=ia.units={};
         }
     };
 	var getPublicModel=function(){
-		if(this.code == 'Lieutenant'){
+		if(this.hiddenalias){
+			return this.parent.childsByCode[this.hiddenalias];
+		}else if(this.code == 'Lieutenant'){
 			return this.parent.childsByCode['Default'];
 		}else{
-			return null; //TODO better handling
+			return this.parent.childsByCode[this.code.replace(/[^a-zA-Z]*(Lt|Lieutenant)[^a-zA-Z]*/,'')]; //TODO better handling
 		}
 	};
     plugins.configureMethod('getUnitValue',{

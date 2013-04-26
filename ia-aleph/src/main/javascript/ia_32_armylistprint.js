@@ -200,7 +200,7 @@
 		
 		var hiddenCost=0,hiddenSwc=0,hiddenModels=0;
 		
-		function buildListRecord(model){
+		function buildListRecord(model,skipGobal){
 			//			var model=listRecord.model;
                         
 			$.each(model.getAllWeapons(),function(x,weapon){
@@ -222,7 +222,7 @@
 				var publicModel = model.getPublicModel();
 				if(publicModel){
 					modelContainer.addClass('privateInfo');
-					var publicModelContainer = buildListRecord(publicModel);
+					var publicModelContainer = buildListRecord(publicModel,true);
 					publicModelContainer.addClass('publicInfo');
 					hiddenCost+=Number(model.get('cost'))-Number(publicModel.get('cost'));
 					hiddenSwc+=Number(model.get('swc'))-Number(publicModel.get('swc'));
@@ -321,7 +321,9 @@
 				buildMetabootyTable('booty2').appendTo(modelContainer);
 			}
         
-			lastModel=model;
+			if(!skipGobal){
+				lastModel=model;
+			}
 			
 			return modelContainer;
 		}
