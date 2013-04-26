@@ -539,6 +539,7 @@
    },
    {
     "code": "Lieutenant",
+	"hiddenalias": "Devabot",
     "cost": "26",
     "codename": "",
     "swc": "0",
