@@ -151,6 +151,10 @@
 			label:messages.get('print.buttonLabel.hiddenList'),
 			onclick:'$(\'body\').toggleClass(\'hiddenList\').toggleClass(\'publicList\')',
 			defaultOn:false
+		},{
+			label:messages.get('print.buttonLabel.doubleColumn'),
+			onclick:'$(\'body\').toggleClass(\'doubleColumn\')',
+			defaultOn:false
 		}],function(i,config){
 			addCheckbox(config);
 		})
