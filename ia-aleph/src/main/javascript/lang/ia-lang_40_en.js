@@ -187,6 +187,9 @@
 		//        'print.buttonLabel.hiddenList':'TOGGLE HIDDEN LIST',
 		'print.buttonLabel.campaignspecs':'show campaign specs',
 		'print.buttonLabel.metabooty':'show metachemistry/booty tables',
+		'print.buttonLabel.hiddenList':'hidden list',
+		'print.buttonLabel.doubleColumn':'double column',
+		'print.hiddenList':'hidden list',
         
 		'weapons.label.D':'D',
 		'weapons.label.B':'B',
@@ -287,7 +290,8 @@
 			'Uxia McNeill':'Uxìa McNeill',
 			'Margot Berthnier, Mirage-5':'Margot Berthier, Mirage-5',
 			'Su-Jian Immediate Action Unit (COMBAT FORM)':'Su-Jian Immediate Action Unit',
-			'Throakitai':'Thorakitai'
+			'Throakitai':'Thorakitai',
+			'Moderators from Bakunin':'Moderators'
 		},
 		'name':{
 			'Phoneix':'Phoenix',
