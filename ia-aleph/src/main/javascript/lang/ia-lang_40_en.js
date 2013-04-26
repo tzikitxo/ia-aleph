@@ -187,6 +187,8 @@
 		//        'print.buttonLabel.hiddenList':'TOGGLE HIDDEN LIST',
 		'print.buttonLabel.campaignspecs':'show campaign specs',
 		'print.buttonLabel.metabooty':'show metachemistry/booty tables',
+		'print.buttonLabel.hiddenList':'hidden list',
+		'print.hiddenList':'hidden list',
         
 		'weapons.label.D':'D',
 		'weapons.label.B':'B',

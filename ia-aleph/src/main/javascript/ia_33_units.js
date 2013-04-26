@@ -199,6 +199,13 @@ var units=ia.units={};
             return 'w';
         }
     };
+	var getPublicModel=function(){
+		if(this.code == 'Lieutenant'){
+			return this.parent.childsByCode['Default'];
+		}else{
+			return null; //TODO better handling
+		}
+	};
     plugins.configureMethod('getUnitValue',{
         chain:true,
         chainIndex:1
@@ -221,7 +228,8 @@ var units=ia.units={};
         getAllWeaponsForTable:getAllWeaponsForTable,
         getCompanions:getCompanions,
         getWoundType:getWoundType,
-        getAllSpecAndWeaponsDisplay:getAllSpecAndWeaponsDisplay
+        getAllSpecAndWeaponsDisplay:getAllSpecAndWeaponsDisplay,
+		getPublicModel:getPublicModel
     };
     
     var loadUnit=units.loadUnit=function(originalUnit,shouldReplace,forMercenaryCompany){
