@@ -198,6 +198,8 @@
 			parent:{}
 		};
 		
+		var modelListContainer = $('<div class="modelListContainer" />').appendTo(newBody);
+		
 		var hiddenCost=0,hiddenSwc=0,hiddenModels=0;
 		
 		function buildListRecord(model,skipGobal){
@@ -208,7 +210,7 @@
 			});
 			allWeapons['Discover']='Discover';
                         
-			var modelContainer=$('<div class="modelContainer" />').appendTo(newBody);
+			var modelContainer=$('<div class="modelContainer" />').appendTo(modelListContainer);
 			
 			var specs=model.get('spec');
 			if(specs["CH: Limited Camouflage"] || specs["CH: TO Camouflage"] || specs["CH: Camouflage"]
