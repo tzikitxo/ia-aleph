@@ -9,18 +9,6 @@ body {
         -webkit-print-color-adjust: exact; // force print background, on webkit
 }
 
-.groupMark {
-    font-size: 13px;
-    font-weight: bold;
-    width: 700px;
-    margin: 10px 20px;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px 10px;
-    text-align: center;
-    font-style: italic;
-}
-
 .limitedUses{
     display: table;
     border: 1px solid darkgray;
@@ -185,11 +173,22 @@ body {
     margin: 0 10px;
 }
 
-.modelContainer{
+.groupMark , .modelContainer {
 	box-sizing: border-box;
 	page-break-inside: avoid;
     margin: 10px 10px;
 	width: 100%;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.groupMark {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.modelContainer{
 	min-height: 26px;
 	table {
 		width: 100%;
@@ -231,18 +230,22 @@ body {
 		font-style: italic;
 		font-size: 12px;
 	}
-	border: 1px solid black;
-	border-radius: 5px;
-    padding: 5px 10px;
 	.modelIsc {
 		font-weight: bold;
 	}
 }
 
-.doubleColumn .modelContainer{
-    margin: 10px 10px;
-    width: 340px;
-	display: inline-block;
+.doubleColumn .modelListContainer{
+	-webkit-column-count: 2;
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+	-moz-column-gap: 0;
+	-webkit-column-gap: 0; 
+	column-gap: 0;
+	.modelContainer , .groupMark{
+		width: 350px;
+		display: inline-block;
+	}
 }
 
 .qrCode {
@@ -306,13 +309,13 @@ body.grayscalePrint{
 }
 
 .publicList .publicInfo {
-	display: none;
+	display: none !important;
 }
 .hiddenList .privateInfo {
-	display: none;
+	display: none !important;
 }
 .hideListInfo .listInfo {
-	display: none;
+	display: none !important;
 }
 
 @media print{
