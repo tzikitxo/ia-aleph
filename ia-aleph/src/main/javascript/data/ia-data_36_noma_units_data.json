@@ -626,7 +626,7 @@
     "ccw": [
      "CCW"
     ],
-    "note": "HS"
+    "note": ""
    },
    {
     "code": "AP CCW",
@@ -1039,7 +1039,7 @@
      "Antipersonnel Mines"
     ],
     "ccw": [],
-    "note": "HS"
+    "note": ""
    },
    {
     "code": "Shotgun",
@@ -1332,7 +1332,7 @@
      "Assault Pistol",
      "AP CCW"
     ],
-    "note": "HS"
+    "note": ""
    },
    {
     "code": "AP CCW",
@@ -1500,10 +1500,10 @@
    "Combi Rifle"
   ],
   "spec": [
-   "D-Charges",
    "Engineer"
   ],
   "ccw": [
+   "D-Charges",
    "Knife",
    "Pistol"
   ],
@@ -1860,7 +1860,6 @@
    "Combi Rifle"
   ],
   "spec": [
-   "D-Charges",
    "Engineer",
    "Hacker",
    "Hacking Device",
@@ -1868,6 +1867,7 @@
    "Personality"
   ],
   "ccw": [
+   "D-Charges",
    "Knife",
    "Pistol"
   ],
@@ -1898,7 +1898,7 @@
   "isc": "pi-well",
   "name": "pi-well",
   "bs": "11",
-  "note": "Companion of: Zoe",
+  "note": "",
   "cube": "R",
   "type": "REM",
   "ph": "8",
@@ -1996,7 +1996,7 @@
   "isc": "Iguana Squadron",
   "name": "Iguana",
   "bs": "14",
-  "note": "HS",
+  "note": "",
   "cube": "X",
   "type": "TAG",
   "ph": "16",
@@ -2039,7 +2039,7 @@
   "isc": "Operator",
   "name": "Operator",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "X",
   "type": "HI",
   "ph": "12",
@@ -2069,7 +2069,7 @@
   "bs": "12",
   "isc": "Lunokhod Sputniks",
   "name": "Lunokhod",
-  "note": "HS",
+  "note": "",
   "spec": [
    "Climbing Plus",
    "G: Remote Presence",
@@ -2113,10 +2113,11 @@
     "cbcode": [],
     "spec": [],
     "bsw": [
-     "Akrylat-Kanone",
-     "D-Charges"
+     "Akrylat-Kanone"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    }
   ],
@@ -2303,7 +2304,7 @@
   "bs": "12",
   "isc": "Moran, Maasai Hunter",
   "name": "Moran",
-  "note": "HS",
+  "note": "",
   "spec": [
    "CH: Mimetism",
    "Infiltration",
@@ -2400,7 +2401,7 @@
   "isc": "Prowlers",
   "name": "Prowler",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "",
   "type": "MI",
   "ph": "12",
@@ -2445,10 +2446,11 @@
     "spec": [],
     "bsw": [
      "Boarding Shotgun",
-     "Grenades",
-     "D-Charges"
+     "Grenades"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -2459,10 +2461,11 @@
     "cbcode": [],
     "spec": [],
     "bsw": [
-     "Spitfire",
-     "D-Charges"
+     "Spitfire"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    }
   ],
@@ -2481,7 +2484,7 @@
   "isc": "Reverend Custodiers",
   "name": "Reverend Custodier",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "X",
   "type": "MI",
   "ph": "11",
@@ -2649,7 +2652,7 @@
   "isc": "Sin-Eater Observants",
   "name": "Sin-Eater",
   "bs": "13",
-  "note": "HS",
+  "note": "",
   "cube": "X",
   "type": "MI",
   "ph": "11",
@@ -2737,7 +2740,7 @@
   "isc": "Tomcats",
   "name": "Tomcat",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "",
   "type": "LI",
   "ph": "11",
@@ -2877,7 +2880,7 @@
   "isc": "Tsyklon Sputniks",
   "name": "Tsyklon",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "R",
   "type": "REM",
   "ph": "8",
@@ -2939,7 +2942,7 @@
   "isc": "Zondbots",
   "name": "Zondbot",
   "bs": "8",
-  "note": "HS",
+  "note": "",
   "cube": "R",
   "type": "REM",
   "ph": "8",
@@ -2983,7 +2986,7 @@
   "isc": "Zondcats",
   "name": "Zondcat",
   "bs": "8",
-  "note": "HS",
+  "note": "",
   "cube": "S",
   "type": "REM",
   "ph": "8",
@@ -3202,8 +3205,7 @@
   "bsw": [
    "Combi Rifle",
    "Light Flamethrower",
-   "Adhesive Launcher",
-   "D-Charges"
+   "Adhesive Launcher"
   ],
   "spec": [
    "AD: Aerial Infiltration or Zero-G",
@@ -3212,6 +3214,7 @@
    "Personality"
   ],
   "ccw": [
+   "D-Charges",
    "Pistol",
    "Knife"
   ],
