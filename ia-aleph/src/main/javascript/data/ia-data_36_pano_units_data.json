@@ -1700,9 +1700,10 @@
     "swc": "1",
     "cbcode": [],
     "spec": [
-     "Monofilament Mines"
     ],
-    "bsw": [],
+    "bsw": [
+     "Monofilament Mines"
+     ],
     "ccw": [],
     "note": ""
    }

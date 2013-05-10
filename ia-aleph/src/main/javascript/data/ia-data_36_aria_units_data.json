@@ -317,10 +317,11 @@
     "spec": [],
     "bsw": [
      "AP Rifle",
-     "Adhesive Launcher",
-     "D-Charges"
+     "Adhesive Launcher"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -334,10 +335,11 @@
     ],
     "bsw": [
      "AP Rifle",
-     "Adhesive Launcher",
-     "D-Charges"
+     "Adhesive Launcher"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -348,10 +350,11 @@
     "cbcode": [],
     "spec": [],
     "bsw": [
-     "AP Sniper Rifle",
-     "D-Charges"
+     "AP Sniper Rifle"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -375,10 +378,11 @@
     "cbcode": [],
     "spec": [],
     "bsw": [
-     "Autocannon",
-     "D-Charges"
+     "Autocannon"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -389,10 +393,11 @@
     "cbcode": [],
     "spec": [],
     "bsw": [
-     "AP HMG",
-     "D-Charges"
+     "AP HMG"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    }
   ],
@@ -1423,7 +1428,6 @@
   "w": "1",
   "ava": "3",
   "bsw": [
-   "D-Charges",
    "Smoke Grenades"
   ],
   "spec": [
@@ -1431,6 +1435,7 @@
    "Engineer"
   ],
   "ccw": [
+   "D-Charges",
    "AP CCW",
    "Pistol"
   ],
@@ -2087,10 +2092,11 @@
      "Inferior Infiltration"
     ],
     "bsw": [
-     "Rifle",
-     "D-Charges"
+     "Rifle"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -2225,10 +2231,11 @@
     "spec": [],
     "bsw": [
      "Rifle",
-     "Adhesive Launcher",
-     "D-Charges"
+     "Adhesive Launcher"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -2305,10 +2312,10 @@
     "spec": [
      "Traktor Mul Control Device"
     ],
-    "bsw": [
+    "bsw": [],
+    "ccw": [
      "D-Charges"
     ],
-    "ccw": [],
     "note": ""
    },
    {
@@ -2331,10 +2338,10 @@
     "swc": "0",
     "cbcode": [],
     "spec": [],
-    "bsw": [
+    "bsw": [],
+    "ccw": [
      "D-Charges"
     ],
-    "ccw": [],
     "note": ""
    }
   ],
@@ -2601,10 +2608,11 @@
      "Inferior Infiltration"
     ],
     "bsw": [
-     "Rifle",
+     "Rifle"
+     ],
+    "ccw": [
      "D-Charges"
     ],
-    "ccw": [],
     "note": ""
    },
    {

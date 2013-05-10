@@ -1352,10 +1352,10 @@
   "w": "1",
   "ava": "T",
   "bsw": [
+   "Antipersonnel Mines (Biomines)",
    "Chain Rifle"
   ],
   "spec": [
-   "Antipersonnel Mines(Biomines)",
    "Poison",
    "V: Dogged"
   ],
@@ -1402,11 +1402,11 @@
    "Combi Rifle"
   ],
   "spec": [
-   "D-Charges",
    "Doctor",
    "Engineer"
   ],
   "ccw": [
+   "D-Charges",
    "Knife",
    "Pistol"
   ],
@@ -1542,10 +1542,10 @@
     "swc": "1",
     "cbcode": [],
     "spec": [
-     "Monofilamet Mines"
     ],
     "bsw": [
-     "HMG"
+     "HMG",
+     "Monofilament Mines"
     ],
     "ccw": [],
     "note": ""
@@ -1711,14 +1711,14 @@
   "w": "1",
   "ava": "2",
   "bsw": [
-   "Antipersonnel Mines",
-   "D-Charges"
+   "Antipersonnel Mines"
   ],
   "spec": [
    "Engineer",
    "Morat"
   ],
   "ccw": [
+   "D-Charges",
    "Knife",
    "Pistol"
   ],
@@ -1808,10 +1808,10 @@
      "Martial Arts L3"
     ],
     "bsw": [
-     "Combi Rifle",
-     "D-Charges"
+     "Combi Rifle"
     ],
     "ccw": [
+     "D-Charges",
      "EXP CCW"
     ],
     "note": ""
@@ -1844,10 +1844,10 @@
     ],
     "bsw": [
      "E/Mitter",
-     "Combi Rifle",
-     "D-Charges"
+     "Combi Rifle"
     ],
     "ccw": [
+     "D-Charges",
      "AP CCW"
     ],
     "note": ""
@@ -1862,10 +1862,10 @@
      "Martial Arts L3"
     ],
     "bsw": [
-     "Boarding Shotgun",
-     "D-Charges"
+     "Boarding Shotgun"
     ],
     "ccw": [
+     "D-Charges",
      "EXP CCW"
     ],
     "note": ""
@@ -3079,10 +3079,11 @@
      "Hacking Device"
     ],
     "bsw": [
-     "Combi Rifle",
-     "D-Charges"
+     "Combi Rifle"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -3170,8 +3171,7 @@
   "ava": "1",
   "bsw": [
    "MULTI Rifle",
-   "Nanopulser",
-   "D-Charges"
+   "Nanopulser"
   ],
   "spec": [
    "Nanoscreen",
@@ -3181,6 +3181,7 @@
    "Personality"
   ],
   "ccw": [
+   "D-Charges",
    "Pistol",
    "DA CCW"
   ],

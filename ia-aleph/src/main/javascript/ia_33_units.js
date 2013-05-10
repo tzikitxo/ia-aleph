@@ -518,11 +518,12 @@ var units=ia.units={};
         var modelChooser=$('<div class="modelChooser"/>');
         var unit=unitsByIsc[unitIsc];
         var table=$('<table/>').appendTo($('<div class="unitInfo" />').appendTo(modelChooser));
+        var attrs=["xxx","isc","type","mov","cc","bs","ph","wip","arm","bts","w","ava"];
         var header=$('<tr class="unitHeader"/>').appendTo(table),
         values=$('<tr/>').appendTo(table),
         wrappedHeader=$('<div class="wrappedHeaderFakeTable"/>').appendTo($('<td colspan="3"/>').appendTo($('<tr class="wrappedHeader"/>').appendTo(table))),
-        wrappedValues=$('<div class="wrappedValuesFakeTable"/>').appendTo($('<td colspan="3"/>').appendTo($('<tr class="wrappedValues"/>').appendTo(table)));
-        var attrs=["xxx","isc","type","mov","cc","bs","ph","wip","arm","bts","w","ava"];
+        wrappedValues=$('<div class="wrappedValuesFakeTable"/>').appendTo($('<td colspan="3"/>').appendTo($('<tr class="wrappedValues"/>').appendTo(table))),
+        notesContainer=$('<div class="notesContainer" />');
         var altp=[];
         $('<tr />').append($('<td  class="unitSpec unitAttr"/>').attr('colSpan',attrs.length).text(unit.getAllSpecDisplay())).appendTo(table);
         $.each(attrs,function(index,attr){
@@ -560,11 +561,18 @@ var units=ia.units={};
         $.each(attrs,function(index,attr){
             $('<th/>').text(messages.get('units.attribute.'+attr)).addClass(attr+'ModelAttr').appendTo(header);
         });
+        var noteId=1;
         $.each(childs||unit.childsByCode,function(index,child){
             var modelButton=$('<tr class="modelButton"/>').appendTo(table);
             $.each(attrs,function(index,attr){
-                var text=attr=='spec'?child.getDisplay('specOrig'):child.getDisplay(attr);
-                $('<td class="modelAttr"/>').addClass(attr+'ModelAttr').appendTo(modelButton).text(text);
+                var text=attr=='spec'?child.getDisplay('specOrig'):child.getDisplay(attr),row=$('<td class="modelAttr"/>').addClass(attr+'ModelAttr').appendTo(modelButton);
+                if(attr=='note' && text!=''){
+                    var noteIndex=$('<span class="noteIndex"/>').text(noteId++);
+                    $('<div class="noteRow" />').text(' '+text).prepend(noteIndex).appendTo(notesContainer);
+                    noteIndex.clone().appendTo(row);
+                }else{
+                    row.text(text);
+                }
             });
             $('<div class="modelCode" />').text(child.code).hide().appendTo($('td:first-child',modelButton));
             modelButton.bind('click',function(){
@@ -615,6 +623,7 @@ var units=ia.units={};
         if(unitIsc.match(/.* Spec-Ops$/)){
             units.buildSpecopForm().appendTo(modelChooser);
         }
+        notesContainer.appendTo(modelChooser);
         
         return modelChooser;
     }

@@ -1363,7 +1363,7 @@
     "ccw": [
      "AP CCW"
     ],
-    "note": "HS"
+    "note": ""
    },
    {
     "code": "Shotgun",
@@ -1379,7 +1379,7 @@
     "ccw": [
      "EXP CCW"
     ],
-    "note": "HS"
+    "note": ""
    },
    {
     "code": "AP",
@@ -2001,7 +2001,7 @@
   "isc": "Al Hawwa' Unit",
   "name": "Hawwa'",
   "bs": "11",
-  "note": "HS",
+  "note": "",
   "cube": "",
   "type": "SK",
   "ph": "11",
@@ -2044,10 +2044,11 @@
      "Forward Observer"
     ],
     "bsw": [
-     "Boarding Shotgun",
+     "Boarding Shotgun"
+    ],
+    "ccw": [
      "D-Charges"
     ],
-    "ccw": [],
     "note": ""
    },
    {
@@ -2061,10 +2062,11 @@
      "Hacking Device"
     ],
     "bsw": [
-     "Boarding Shotgun",
-     "D-Charges"
+     "Boarding Shotgun"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    }
   ],
@@ -2083,7 +2085,7 @@
   "isc": "Asawira Regiment",
   "name": "Asawira",
   "bs": "14",
-  "note": "HS",
+  "note": "",
   "cube": "X",
   "type": "HI",
   "ph": "14",
@@ -2369,7 +2371,7 @@
   "isc": "Hafza Unit",
   "name": "Hafza",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "X",
   "type": "LI",
   "ph": "10",
@@ -2476,7 +2478,7 @@
   "isc": "Hassassin Farzans",
   "name": "Farzan",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "",
   "type": "SK",
   "ph": "11",
@@ -2610,7 +2612,7 @@
   "isc": "Hassassin Muyibs",
   "name": "Muyib",
   "bs": "12",
-  "note": "HS",
+  "note": "",
   "cube": "",
   "type": "LI",
   "ph": "11",
@@ -2688,10 +2690,11 @@
      "X Visor"
     ],
     "bsw": [
-     "Spitfire",
-     "D-Charges"
+     "Spitfire"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -2740,10 +2743,11 @@
     "bsw": [
      "Rifle",
      "Light Shotgun",
-     "Panzerfaust",
-     "D-Charges"
+     "Panzerfaust"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {
@@ -2756,10 +2760,11 @@
      "X Visor"
     ],
     "bsw": [
-     "Heavy Rocket Launcher",
-     "D-Charges"
+     "Heavy Rocket Launcher"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    }
   ],
@@ -2828,7 +2833,7 @@
   "isc": "Kameel Remotes",
   "name": "Kameel",
   "bs": "11",
-  "note": "HS",
+  "note": "",
   "cube": "R",
   "type": "REM",
   "ph": "8",
@@ -2904,7 +2909,7 @@
   "isc": "Nasmat Remotes",
   "name": "Nasmat",
   "bs": "8",
-  "note": "HS",
+  "note": "",
   "cube": "R",
   "type": "REM",
   "ph": "8",

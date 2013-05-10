@@ -1511,10 +1511,10 @@
    "Combi Rifle"
   ],
   "spec": [
-   "D-Charges",
    "Engineer"
   ],
   "ccw": [
+   "D-Charges",
    "Knife",
    "Pistol"
   ],
@@ -3246,9 +3246,10 @@
      "Engineer"
     ],
     "bsw": [
-     "D-Charges"
     ],
-    "ccw": [],
+    "ccw": [
+     "D-Charges"
+     ],
     "note": ""
    },
    {

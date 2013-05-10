@@ -1458,8 +1458,7 @@
   "w": "1",
   "ava": "2",
   "bsw": [
-   "Combi Rifle",
-   "D-Charges"
+   "Combi Rifle"
   ],
   "spec": [
    "Doctor",
@@ -1467,6 +1466,7 @@
    "V: No Wound Incapacitation"
   ],
   "ccw": [
+   "D-Charges",
    "Knife",
    "Pistol"
   ],
