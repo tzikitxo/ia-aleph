@@ -102,6 +102,9 @@
         log('importing specop ',toimport);
         var newsop=newSpecop(getBaseModel(toimport.base.isc,toimport.base.code));
         newsop.extra=toimport.extra;
+        newsop.extra.attrboost=$.extend({},newsop.extra.attrboost);
+        newsop.extra.weapons=$.extend({},newsop.extra.weapons);
+        newsop.extra.specs=$.extend({},newsop.extra.specs);
         applyExtra(newsop);
         addSpecop(newsop);
     };
