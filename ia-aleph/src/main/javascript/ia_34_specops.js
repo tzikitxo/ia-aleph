@@ -117,6 +117,24 @@
         return units.unitsByIsc[getSpecopIsc()];
     };
 	
+	units.getSpecopSpecsDisplay=function(){
+		var res=[],specop=getSpecop();
+		if(!specop || !specop.extra){
+			return '';
+		}
+		$.each(specop.extra.attrboost,function(attr,inc){
+			var ninc=Number(inc);
+			res.push((ninc>0?'+':'-')+ninc+' '+messages.get('units.attribute.'+attr));
+		});
+		$.each(specop.extra.weapons,function(weapon,x){
+			res.push(names.get('weapon',weapon));
+		});
+		$.each(specop.extra.specs,function(spec,x){
+			res.push(names.get('spec',spec));
+		});
+		return res.join(', ');
+	};
+	
     function applyChanges(){
         importSpecop(getSpecop());
     }

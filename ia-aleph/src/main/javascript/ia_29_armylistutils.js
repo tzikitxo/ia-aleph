@@ -130,8 +130,13 @@ armyList.exportAndShowList=function(){
         if(codename=='Default'||codename==''||!codename||codename==' '){
             codename='';
         }
-        var costText=(modelData.parent.isPseudoUnit?'':(' ('+modelData.cost+'|'+modelData.swc+')')),
-        modelTextForum=' '+modelData.getDisplay('name')+" [i]"+codename+"[/i]"+costText,
+		var specopCost='',detail = '',isSpecop=modelData.get('isc')==units.getSpecop().get('isc');
+		if(isSpecop){
+			detail =' ('+units.getSpecopSpecsDisplay()+') ';
+			specopCost='|'+campaign.xpSpentForSpecop+'xp';
+		}
+        var costText=(modelData.parent.isPseudoUnit?'':(' ('+modelData.cost+'|'+modelData.swc+specopCost+')'));
+        var modelTextForum=' '+modelData.getDisplay('name')+" [i]"+codename+"[/i]"+detail+costText,
         modelLogo=utils.buildImagePath(modelData.get('isc'),'logo_small');
         if(groupMarks[0]===i){
             var text=messages.get('armylist.groups.groupTitle')+cg;
@@ -145,7 +150,7 @@ armyList.exportAndShowList=function(){
         previewContainer.append($('<div></div>')
             .text(' '+modelData.getDisplay('name')+' ')
             .append($('<i />').text(codename))
-            .append(costText)
+            .append(detail+costText)
             .prepend('<image src="'+modelLogo+'" />'))
     }
     $.each(modelRecords,function(index,listRecord){
