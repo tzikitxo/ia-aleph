@@ -202,7 +202,7 @@ var units=ia.units={};
 	var getPublicModel=function(){
 		if(this.hiddenalias){
 			return this.parent.childsByCode[this.hiddenalias];
-		}else if(this.code == 'Lieutenant'){
+		}else if(this.code == 'Lieutenant' || this.code == 'Lt'){
 			return this.parent.childsByCode['Default'];
 		}else{
 			return this.parent.childsByCode[this.code.replace(/[^a-zA-Z]*(Lt|Lieutenant)[^a-zA-Z]*/,'')]; //TODO better handling
