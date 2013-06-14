@@ -100,8 +100,9 @@
 			.append(checkboxLabel)
 			.appendTo(buttons);
 		}
-        
-		$('<input type="button" onClick="window.print()" value="PRINT" class="printButton" />').val(messages.get('print.buttonLabel.print')).appendTo(buttons);
+        var topButtons=$('<div class="topButtons" />').appendTo(buttons);
+		$('<input type="button" onClick="window.print()" value="PRINT" class="printButton" />').val(messages.get('print.buttonLabel.print')).appendTo(topButtons);
+		$('<input type="button" class="convertToPdfButton" />').val("PDF").appendTo(topButtons);
         
 		$.each([{
 			label:messages.get('print.buttonLabel.qrcode'),
@@ -186,7 +187,7 @@
 		$('<div class="listInfo privateInfo"/>').text(buildCostText(armyList.pointCount,armyList.swcCount,armyList.modelCount)).appendTo(listInfoWrapper);
 		var hiddenListInfo=$('<div class="listInfo publicInfo"/>').appendTo(listInfoWrapper);
 		var shortUrlContainer=$('<div class="shortUrlContainer" />').appendTo(listInfoWrapper);
-		$('<h1/>').text(units.getFactionNameDisplay()+(units.sectorialName?(' - '+units.getSectorialNameDisplay()):'')).prepend($('<img />').attr('src',basePath+units.logoPath)).appendTo(listHeader);
+		$('<h1 class="listTitle"/>').text(units.getFactionNameDisplay()+(units.sectorialName?(' - '+units.getSectorialNameDisplay()):'')).prepend($('<img />').attr('src',basePath+units.logoPath)).appendTo(listHeader);
 		$('<div class="armylistName" />').text(armylist.getListName()).appendTo(listInfoWrapper)
 		.append($('<span class="publicInfo" />').text(' - '+messages.get('print.hiddenList')));
 		//        var alreadyPrintedProfileByIsc={};
