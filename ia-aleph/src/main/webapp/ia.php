@@ -143,8 +143,18 @@ if ($_REQUEST['action'] == 'checkService') {
             'storageFileCount' => $storageFileCount,
             'storageDirCount' => $storageDirCount
     )));
+} else if ($_REQUEST['action'] == 'printPdf') {
+	$htmlData=$_REQUEST['htmlData'];
+	$process= proc_open("bin/wkhtmltopdf-amd64 - -",array(0 => array("pipe", "r"),1 => array("pipe", "w")),$pipes);
+	#$process= proc_open("wkhtmltopdf - -",array(0 => array("pipe", "r"),1 => array("pipe", "w")),$pipes);
+	fwrite($pipes[0],$htmlData);
+	fclose($pipes[0]);
+	$pdfData = stream_get_contents($pipes[1]);
+	header('Content-Type: application/pdf');
+	header('Content-Disposition: attachment; filename='."file.pdf");
+	echo $pdfData;
+	exit;
 }
-
 
 header('Content-type: application/json');
 echo $response;
