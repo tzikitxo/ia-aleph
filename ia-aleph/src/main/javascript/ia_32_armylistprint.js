@@ -100,8 +100,9 @@
 			.append(checkboxLabel)
 			.appendTo(buttons);
 		}
-        
-		$('<input type="button" onClick="window.print()" value="PRINT" class="printButton" />').val(messages.get('print.buttonLabel.print')).appendTo(buttons);
+        var topButtons=$('<div class="topButtons" />').appendTo(buttons);
+		$('<input type="button" onClick="window.print()" value="PRINT" class="printButton" />').val(messages.get('print.buttonLabel.print')).appendTo(topButtons);
+		$('<input type="button" class="convertToPdfButton" />').val("PDF").appendTo(topButtons);
         
 		$.each([{
 			label:messages.get('print.buttonLabel.qrcode'),
@@ -186,7 +187,7 @@
 		$('<div class="listInfo privateInfo"/>').text(buildCostText(armyList.pointCount,armyList.swcCount,armyList.modelCount)).appendTo(listInfoWrapper);
 		var hiddenListInfo=$('<div class="listInfo publicInfo"/>').appendTo(listInfoWrapper);
 		var shortUrlContainer=$('<div class="shortUrlContainer" />').appendTo(listInfoWrapper);
-		$('<h1/>').text(units.getFactionNameDisplay()+(units.sectorialName?(' - '+units.getSectorialNameDisplay()):'')).prepend($('<img />').attr('src',basePath+units.logoPath)).appendTo(listHeader);
+		$('<h1 class="listTitle"/>').text(units.getFactionNameDisplay()+(units.sectorialName?(' - '+units.getSectorialNameDisplay()):'')).prepend($('<img />').attr('src',basePath+units.logoPath)).appendTo(listHeader);
 		$('<div class="armylistName" />').text(armylist.getListName()).appendTo(listInfoWrapper)
 		.append($('<span class="publicInfo" />').text(' - '+messages.get('print.hiddenList')));
 		//        var alreadyPrintedProfileByIsc={};
@@ -204,7 +205,7 @@
 		
 		function buildListRecord(model,skipGobal){
 			//			var model=listRecord.model;
-                        
+            log('building list record for ',model);            
 			$.each(model.getAllWeapons(),function(x,weapon){
 				allWeapons[weapon]=weapon;
 			});
@@ -212,6 +213,7 @@
                         
 			var modelContainer=$('<div class="modelContainer" />').appendTo(modelListContainer);
 			
+//            log('building public record (if needed)');  
 			var specs=model.get('spec');
 			if(specs["CH: Limited Camouflage"] || specs["CH: TO Camouflage"] || specs["CH: Camouflage"]
 				|| specs["Impersonation Plus"] || specs["Basic Impersonation"]
@@ -223,6 +225,7 @@
 			} else if(specs['Lieutenant']){
 				var publicModel = model.getPublicModel();
 				if(publicModel){
+//					log('replacing ',model,' with ',publicModel,' in private list');
 					modelContainer.addClass('privateInfo');
 					var publicModelContainer = buildListRecord(publicModel,true);
 					publicModelContainer.addClass('publicInfo');
@@ -230,6 +233,7 @@
 					hiddenSwc+=Number(model.get('swc'))-Number(publicModel.get('swc'));
 				}
 			}
+//            log('building record body');  
 			//			var modelHeader=$('<div class="modelHeader" />').appendTo(modelContainer);
 			var modelHeader=modelContainer;
 			var modelNames=$('<div class="modelNames" />').appendTo(modelHeader);
@@ -244,7 +248,7 @@
 			if(!model.parent.isPseudoUnit){
 				$('<div class="modelCost" />').text('('+model.cost+'|'+model.swc+')').appendTo(modelTypeAndCostWrapper);
 			}
-			if(lastModel.parent.isc!=model.parent.isc){
+			if(lastModel.parent.isc!==model.parent.isc){
 				//                alreadyPrintedProfileByIsc[model.parent.isc]=true;
 				var table=$('<table class="modelProfile"/>').appendTo(modelContainer),header=$('<tr />').appendTo(table),row=$('<tr />').appendTo(table);
 				$.each(["mov","cc","bs","ph","wip","arm","bts","w","ava"],function(index,attr){
@@ -266,7 +270,7 @@
 			//var specs=model.getAllSpec().join(', '),weapons=model.getAllWeapons().join(', ');
 			//var text=specs+((specs!=''&&weapons!='')?' - ':'')+weapons;
 			var allSpecs=model.getAllSpec();
-			if(lastModel.parent.isc!=model.parent.isc || lastModel.code!=model.code){
+			if(lastModel.parent.isc!==model.parent.isc || lastModel.code!=model.code){
 				var allSpecsStr=model.getAllSpecDisplay(),bswDisplay=model.getDisplay('bsw'),ccwDisplay=(bswDisplay.length>0?', ':'')+model.getDisplay('ccw');
 				$('<div class="specsContainer" />').text(allSpecsStr)
 				.append($('<span class="modelWeapons" />').text((allSpecsStr.length>0?', ':'')+bswDisplay+ccwDisplay)).appendTo(modelContainer);

@@ -14,5 +14,13 @@
  **/
 
 $(function(){
-	
+	$('.convertToPdfButton').bind('click',function(){
+		var html=$('html')[0].outerHTML;
+		var form=$('<form target="_blank" action="http://ia-aleph.herokuapp.com/print/printFromHtml" method="POST"></form>');
+		$('<textarea name="html" />').text(html).appendTo(form);
+		$('<textarea name="filename" />').text($('.listTitle').text()).appendTo(form);
+//		$('<textarea name="filename" />').text($('.listTitle').text()+' '+$('.armylistName').text()).appendTo(form); TODO
+		form.submit();
+	});
+//	log('print js ready!');
 });

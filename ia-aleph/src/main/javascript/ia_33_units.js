@@ -200,13 +200,24 @@ var units=ia.units={};
         }
     };
 	var getPublicModel=function(){
+//		log('searching public model for ',this);
+		var code='';
 		if(this.hiddenalias){
-			return this.parent.childsByCode[this.hiddenalias];
+			code=this.hiddenalias;
 		}else if(this.code == 'Lieutenant' || this.code == 'Lt'){
-			return this.parent.childsByCode['Default'];
+			code='Default';
 		}else{
-			return this.parent.childsByCode[this.code.replace(/[^a-zA-Z]*(Lt|Lieutenant)[^a-zA-Z]*/,'')]; //TODO better handling
+			code=this.code.replace(/[^a-zA-Z]*(Lt|Lieutenant)[^a-zA-Z]*/,''); //TODO better handling
 		}
+//		log('found code ',code)
+		if(code===this.code){
+			return null;
+		}else{
+			return this.parent.childsByCode[code];
+		}
+//		var res = this.parent.childsByCode[code];
+////		log('returning ',res);
+//		return res;
 	};
     plugins.configureMethod('getUnitValue',{
         chain:true,
