@@ -1,6 +1,6 @@
 {
   "name": "Aleph Toolbox",
-  "version": "0.2.150",
+  "version": "0.2.151",
   "manifest_version": 2,
 
     "description": "__MSG_appDesc__",
@@ -23,6 +23,7 @@
   
     "web_accessible_resources":[ 
     "js/ia-libs.js",
+    "js/ia-print.js",
     "css/style_print.css",
     
 
