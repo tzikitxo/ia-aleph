@@ -2617,7 +2617,8 @@
   "army": "Yu Jing",
   "wip": "13",
   "cbcode": [
-   "280330-0163"
+   "280330-0163",
+   "280364-0421"
   ],
   "bts": "0",
   "isc": "Aragoto Senkenbutai",
@@ -3792,7 +3793,7 @@
  "childs": [
   {
    "bsw": [],
-   "cbcode": [],
+   "cbcode": ["280364-0421"],
    "ccw": [],
    "code": "Default",
    "codename": "",
