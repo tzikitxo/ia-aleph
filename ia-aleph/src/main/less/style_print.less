@@ -1,0 +1,322 @@
+@import "style_02_theme_commons";
+@import "style_03a_sizes_default";
+@import "style_05a_theme_default";
+@import "style_10_commons";
+
+
+body {
+	.font1;
+        -webkit-print-color-adjust: exact; // force print background, on webkit
+}
+
+.limitedUses{
+    display: table;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    padding: 3px 10px;
+    margin: 5px;
+    .limitedUsesRow{
+         display: table-row;
+         > div {
+            display: table-cell;
+            padding: 1px 4px;
+        }
+    }
+}
+
+.modelProfile {
+    td , th {
+        border-spacing: 0;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    th:first-child {
+        border-top-left-radius: 5px;
+    }
+    td:first-child {
+        border-bottom-left-radius: 5px;
+    }
+    td:last-child {
+        border-bottom-right-radius: 5px;
+    }
+    th:last-child {
+        border-top-right-radius: 5px;
+    }
+	.altpHeaderIsc td{
+		border: 0;
+		text-align: left;
+		padding: 5px 0 5px 12px;
+		font-size: 13px;
+	}
+}
+
+.allWeapons {
+    width: 724px;
+    page-break-inside: avoid;
+    margin: 10px 20px;
+}
+
+.allWeapons , div.modelWeapons {
+    .weaponInfoWrappedHeader , .wrappedRow{
+        display:none;
+    }
+    td , th {
+        border-spacing: 0;
+        text-align: center;
+    }
+    th {
+        border: 1px solid black;
+    }
+    td {
+        border: 1px solid gray;
+    }
+    th:first-child {
+        border-top-left-radius: 5px;
+    }
+    th:last-child {
+        border-top-right-radius: 5px;
+    }
+    tr:last-child {
+        td:first-child {
+            border-bottom-left-radius: 5px;
+        }
+        td:last-child {
+            border-bottom-right-radius: 5px;
+        }
+    }
+}
+
+.modelWeaponsTable{
+	.weaponInfoHeader , .weaponDataRow{
+		font-size: 12px;
+	}
+}
+.allWeapons{
+	font-size: 13px;
+	.rangeHeader{
+		font-size: 13px;
+	}
+	.weaponDataRow{
+	}
+}
+
+.campaignSpecs{
+    font-size: 14px;
+    width: 724px;
+    margin: 10px 20px;
+    page-break-inside: avoid;
+    td , th {
+        border-spacing: 0;
+        text-align: center;
+    }
+    .campaignSpecsTitle , .totalXpCost{
+        border: 1px solid black;
+        width: 100%;
+        padding: 4px;
+        /*margin: 2px;*/
+    }
+    .campaignSpecsTitle{
+        border-radius: 5px 5px 0 0;
+    }
+    .totalXpCost{
+        border-radius:  0 0 5px 5px;
+        font-weight: normal;
+        font-style: oblique;
+        .costValue{
+            font-weight: bold;
+        }
+    }
+    .militarySpec{
+        width: 100%;
+        /*display:table-row;*/
+        td {
+            padding: 3px;
+            border: 1px solid gray;
+            /*margin: 2px;*/
+            /*display:table-cell;*/
+        }
+        .levelLabel{
+            font-style: oblique;
+        }
+    }
+    .levelLabel {
+        width:300px;
+    }
+}
+
+.showIn .rangeCm {
+     display: none;
+ }
+.showCm .rangeIn {
+     display: none;
+ }
+
+#listHeader{
+    vertical-align: middle;
+    margin: 0 30px;
+    img {
+        margin: 5px;
+    }
+	#listCost{
+		margin: 5px;
+		float: right;
+                .shortUrlContainer , .armylistName{
+                    text-align: right;
+                }
+	}
+	width: 700px;
+}
+
+.modelListContainer{
+    width: 720px;
+    margin: 0 10px;
+}
+
+.groupMark , .modelContainer {
+	box-sizing: border-box;
+	page-break-inside: avoid;
+    margin: 10px 10px;
+	width: 100%;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.groupMark {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.modelContainer{
+	min-height: 26px;
+	table {
+		width: 100%;
+		margin: 5px 0;
+	}
+    .modelNames {
+		height: 16px;		
+		font-size: 14px;
+        vertical-align: middle;
+		float: left;
+		& > * {
+			display: inline-block;
+			margin: 0 5px;
+		}
+		margin-bottom: 5px;
+    }
+    .flagIcons img{
+        width: 16px;
+        height: 16px;
+        margin-left: 2px;
+    }
+    .modelHeader > * {
+        display: inline-block;
+    }
+	.modelTypeAndCostWrapper {
+		float: right;
+		font-size: 13px;
+		margin: 0 5px;	
+		.modelCost{
+			margin-left: 5px;
+			font-weight: bold;	
+		}
+		.modelCost , .modelType{
+			display: inline-block;
+		}
+	}
+	.specsContainer{
+		text-align: center;
+		font-style: italic;
+		font-size: 12px;
+	}
+	.modelIsc {
+		font-weight: bold;
+	}
+}
+
+.doubleColumn .modelListContainer{
+	-webkit-column-count: 2;
+	-moz-column-count: 2; /* Firefox */
+	column-count: 2;
+	-moz-column-gap: 0;
+	-webkit-column-gap: 0; 
+	column-gap: 0;
+	.modelContainer , .groupMark{
+		width: 350px;
+		display: inline-block;
+	}
+}
+
+.qrCode {
+    margin: 10px 0 10px 242px;
+    page-break-inside: avoid;
+}
+
+.tailAdvice{
+    font-style: italic;
+    text-align: center;
+    font-size: 11px;
+    padding: 20px;
+    width: 700px;
+}
+
+body.grayscalePrint{
+    .rangeMod {
+        background-color: white !important;
+    }
+}
+
+#buttons{
+	margin: 25px 20px;
+    width: 700px;
+    .printConfigCheckboxWrapper {
+        display: inline-block;
+        width: 49%;
+    }
+}
+
+.metabootyContainer{
+	width: 100%;
+	margin: 5px 0;
+	//border: 1px solid black;
+	border-radius: 5px;
+
+	-moz-column-count: 2;
+	-moz-column-gap: 2px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 2px;
+	.metabootyRecord{
+		display: inline-block;
+	//	width: 48%;
+		width: 99%;
+		margin: 2px 0;
+		border: 1px solid black;
+		.metabootyCheckbox , .metabootyRoll , .metabootySpec {
+			display: inline-block;
+			padding: 2px;
+		}
+		.metabootyRoll{
+			margin-right: 5px;
+			width: 40px;
+			font-style: oblique;
+		}
+		
+	}
+}
+
+.publicList .publicInfo {
+	display: none !important;
+}
+.hiddenList .privateInfo {
+	display: none !important;
+}
+.hideListInfo .listInfo {
+	display: none !important;
+}
+
+@media print{
+	#buttons{
+		display: none;
+	}
+}
