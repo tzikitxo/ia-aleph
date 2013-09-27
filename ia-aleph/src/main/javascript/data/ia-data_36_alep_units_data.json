@@ -2256,7 +2256,9 @@
   "Nanopulser"
  ],
  "bts": "-3",
- "cbcode": [],
+ "cbcode": [
+    "280835-0440"
+    ],
  "cc": "14",
  "ccw": [
   "Pistol",

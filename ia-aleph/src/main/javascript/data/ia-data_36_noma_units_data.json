@@ -1990,7 +1990,9 @@
   "mov": "6-4",
   "army": "Nomads",
   "wip": "13",
-  "cbcode": [],
+  "cbcode": [
+      "280565-0438"
+  ],
   "bts": "-6",
   "isc": "Iguana Squadron",
   "name": "Iguana",
