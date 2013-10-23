@@ -1204,4 +1204,63 @@
  "type": "LI",
  "w": "1",
  "wip": "13"
+},
+{
+ "arm": "1",
+ "army": "Mercenary",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Nanopulser"
+ ],
+ "bts": "-3",
+ "cbcode": [],
+ "cc": "18",
+ "ccw": [
+  "Pistol",
+  "Monofilament CCW"
+ ],
+ "childs": [
+  {
+   "bsw": [
+    "Combi Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "Combi",
+   "cost": "21",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Boarding Shotgun"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "BS",
+   "codename": "BS",
+   "cost": "20",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "X",
+ "isc": "Miranda Ashcroft, Authorized Bounty Hunter",
+ "mov": "4-4",
+ "name": "Miranda Ashcroft",
+ "note": "",
+ "ph": "10",
+ "spec": [
+  "ODD: Optical Disruptor",
+  "i-Kohl L1"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
 }
