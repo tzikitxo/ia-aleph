@@ -1,6 +1,6 @@
 {
   "name": "Aleph Toolbox",
-  "version": "0.2.154",
+  "version": "0.2.155",
   "manifest_version": 2,
 
     "description": "__MSG_appDesc__",
@@ -63,6 +63,8 @@
 "images/all_armies_logo_small.png",
 "images/all_browser_icon_long_big.png",
 "images/all_browser_icon_long_small.png",
+"images/anaconda_logo.png",
+"images/anaconda_logo_small.png",
 "images/android_logo.png",
 "images/android_logo_small.png",
 "images/antipode_logo.png",
@@ -498,6 +500,8 @@
 "images/military_order_logo_small.png",
 "images/minutemen_logo.png",
 "images/minutemen_logo_small.png",
+"images/miranda_ashcroft_authorized_bounty_hunter_logo.png",
+"images/miranda_ashcroft_authorized_bounty_hunter_logo_small.png",
 "images/missing_logo_big.png",
 "images/missing_logo.png",
 "images/missing_logo_small.png",
