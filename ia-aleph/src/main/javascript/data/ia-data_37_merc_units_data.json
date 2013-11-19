@@ -1264,3 +1264,76 @@
  "w": "1",
  "wip": "13"
 }
+,
+{
+ "arm": "6",
+ "army": "Mercenary",
+ "ava": "1",
+ "bs": "13",
+ "bsw": [
+  "Spitfire",
+  "Light Flamethrower",
+  "Panzerfaust"
+ ],
+ "bts": "-6",
+ "cbcode": ["280711-0425"],
+ "cc": "16",
+ "ccw": [
+  "CCW"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "62",
+   "note": "",
+   "spec": [],
+   "swc": "2"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Anaconda",
+ "mov": "4-4",
+ "name": "Anaconda",
+ "note": "",
+ "ph": "16",
+ "spec": [
+  "V: Courage",
+  "Ejection System",
+  "ECM"
+ ],
+ "type": "TAG",
+ "w": "2",
+ "wip": "13",
+ "altp":[{
+  "mov": "4-2",
+  "army": "Mercenary",
+  "wip": "13",
+  "cbcode": [],
+  "bts": "-3",
+  "isc": "Anaconda Operator",
+  "name": "Operator",
+  "bs": "12",
+  "note": "",
+  "cube": "X",
+  "type": "LI",
+  "ph": "10",
+  "cc": "13",
+  "arm": "1",
+  "w": "1",
+  "ava": " ",
+  "spec": ["V: Courage"],
+  "ccw": [
+   "Knife",
+   "Pistol"
+  ],
+  "bsw": [
+   "Spitfire"
+  ]
+ }]
+}
