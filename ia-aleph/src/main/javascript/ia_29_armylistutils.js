@@ -130,7 +130,7 @@ armyList.exportAndShowList=function(){
         if(codename=='Default'||codename==''||!codename||codename==' '){
             codename='';
         }
-		var specopCost='',detail = '',isSpecop=modelData.get('isc')==units.getSpecop().get('isc');
+		var specopCost='',detail = '',isSpecop=units.getSpecop() && modelData.get('isc')==units.getSpecop().get('isc');
 		if(isSpecop){
 			detail =' ('+units.getSpecopSpecsDisplay()+') ';
 			specopCost='|'+campaign.xpSpentForSpecop+'xp';
