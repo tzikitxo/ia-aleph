@@ -203,7 +203,8 @@
 //		}else{
 			def=str; // skip deflate
 //		}
-		var enc=$.base64.encode(def).replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
+		var enc=$.base64.encode(def).replace(/\//g,'backslash').replace(/[+]/g,'plusSign').replace(/[=]/g,'equalSign');
+                        //.replace(/\//g,'_').replace(/[+]/g,'-').replace(/[=]/g,':');
 //		log('b64 encoded data from ',def.length,' to ',enc.length,' characters');
 		return enc;
 	};
@@ -213,7 +214,12 @@
 			return JSON.parse(string);
 		}catch(plainJsonError){
 			//		}
-			string=string.replace(/[%]../g,'').replace(/_/g,'/').replace(/-/g,'+').replace(/[.:]/g,'=').replace(/[^a-zA-Z0-9+\/=]/g,'');
+			string=string
+                                .replace(/[%]../g,'')
+                                .replace(/_|backslash/g,'/')
+                                .replace(/-|plusSign/g,'+')
+                                .replace(/[.:]|equalSign/g,'=')
+                                .replace(/[^a-zA-Z0-9+\/=]/g,'');
 			try{
 				return JSON.parse($.base64.decode(string));
 			}catch(noDeflateError){
