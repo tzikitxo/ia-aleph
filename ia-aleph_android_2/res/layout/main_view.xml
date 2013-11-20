@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" >
 
-        <include layout="@layout/main_roster" />
+        <include layout="@layout/armylist_view" />
         <include layout="@layout/unit_list" />
         <include layout="@layout/unit_detail" />
     </ViewFlipper>
