@@ -1,12 +1,19 @@
 package it.anyplace.alephtoolbox2.beans;
 
+import java.util.Collections;
 import java.util.List;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.Iterators;
+
 public class UnitData {
-	
-	private String mov,army,wip,bts,isc,name,bs,note,cube,type,ph,cc,arm,irr,w,ava;
-	private List<String> cbcode,bsw,ccw,spec;
-	
+
+	private String mov, army, wip, bts, isc, name, bs, note, cube, type, ph,
+			cc, arm, irr, w, ava;
+	private List<String> cbcode, bsw, ccw, spec;
+	private List<UnitChildData> childs;
+
 	public String getMov() {
 		return mov;
 	}
@@ -87,101 +94,64 @@ public class UnitData {
 		return spec;
 	}
 
-	public static class UnitChildData{
-		private String code,cost,codename,swc,spec,note;
-		private List<String> cbcode,sec,bsw,ccw;
+	public List<UnitChildData> getChilds() {
+		return childs;
+	}
+
+	public Integer getMinCost() {
+		return Collections.min(Collections2.transform(getChilds(),
+				new Function<UnitChildData, Integer>() {
+
+					@Override
+					public Integer apply(UnitChildData child) {
+						return child.getCostInt();
+					}
+				}));
+	}
+
+	public static class UnitChildData {
+		private String code, cost, codename, swc, note;
+		private List<String> cbcode, spec, bsw, ccw;
+
 		public String getCode() {
 			return code;
 		}
+
 		public String getCost() {
 			return cost;
 		}
+
 		public String getCodename() {
 			return codename;
 		}
+
 		public String getSwc() {
 			return swc;
 		}
-		public String getSpec() {
-			return spec;
-		}
+
 		public String getNote() {
 			return note;
 		}
+
 		public List<String> getCbcode() {
 			return cbcode;
 		}
-		public List<String> getSec() {
-			return sec;
+
+		public List<String> getSpec() {
+			return spec;
 		}
+
 		public List<String> getBsw() {
 			return bsw;
 		}
+
 		public List<String> getCcw() {
 			return ccw;
 		}
-		
+
+		public Integer getCostInt() {
+			return Integer.valueOf(getCost());
+		}
+
 	}
-/*
- * "mov": "6-4",
-  "army": "Aleph",
-  "wip": "15",
-  "cbcode": [
-   "280812-0271"
-  ],
-  "bts": "-6",
-  "isc": "Achilles",
-  "name": "Achilles",
-  "bs": "15",
-  "note": "",
-  "cube":"2",
-  "type": "HI",
-  "ph": "16",
-  "cc": "20",
-  "arm": "5",
-  "irr": "",
-  "w": "3",
-  "ava": "1",
-  "bsw": [
-   "Nanopulser"
-  ],
-  "spec": [
-   "Martial Arts L4",
-   "Multiterrain",
-   "ODD: Optical Disruptor",
-   "Personality"
-  ],
-  "ccw": [
-   "EXP CCW",
-   "Pistol"
-  ],
-  "childs": [
-   {
-    "code": "Default",
-    "cost": "80",
-    "codename": "MULTI",
-    "swc": "0",
-    "cbcode": [],
-    "spec": [],
-    "bsw": [
-     "MULTI Rifle"
-    ],
-    "ccw": [],
-    "note": ""
-   },
-   {
-    "code": "Lieutenant",
-    "cost": "80",
-    "codename": "",
-    "swc": "0",
-    "cbcode": [],
-    "spec": [
-     "Lieutenant"
-    ],
-    "bsw": [
-     "MULTI Rifle"
-    ],
-    "ccw": [],
-    "note": ""
- */
 }

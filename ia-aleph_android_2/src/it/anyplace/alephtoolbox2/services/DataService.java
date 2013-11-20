@@ -36,7 +36,7 @@ public class DataService {
 				.getResources().openRawResource(R.raw.armylist_data)),
 				new TypeToken<List<UnitData>>() {
 				}.getType());
-		Multimaps.index(allUnitDataList, new Function<UnitData, String>() {
+		unitDataByFaction=Multimaps.index(allUnitDataList, new Function<UnitData, String>() {
 
 			@Override
 			public String apply(UnitData unit) {
