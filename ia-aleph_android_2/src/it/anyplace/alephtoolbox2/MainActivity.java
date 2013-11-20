@@ -4,13 +4,21 @@ import java.util.Arrays;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Lists;
+import com.google.common.eventbus.EventBus;
+import com.google.gson.Gson;
+import com.google.inject.Binder;
 import com.google.inject.Guice;
+import com.google.inject.Inject;
 import com.google.inject.Injector;
+import com.google.inject.Module;
 
 import it.anyplace.alephtoolbox2.beans.ArmyList;
 import it.anyplace.alephtoolbox2.beans.ArmyList.ArmyListUnit;
+import it.anyplace.alephtoolbox2.beans.UnitData;
 import it.anyplace.alephtoolbox2.services.ArmylistService;
+import it.anyplace.alephtoolbox2.services.DataService;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,68 +28,35 @@ import android.widget.ListView;
 import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
-	
-	private ArmylistService  armylistService;
-	
-	private ListView mainRosterList;
-	private ViewFlipper mainViewFlipper;
+
+	// @Inject
+	// private UnitDataService unitDataService;
+	// @Inject
+	// private UnitDataViewController unitDataViewController;
+	@Inject
+	private EventBus eventBus;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		{
-			Injector injector = Guice.createInjector();
-			armylistService=injector.getInstance(ArmylistService.class);
-		}
-		
-	    setContentView(R.layout.main_view);
-	    
-	    mainRosterList=(ListView)this.findViewById(R.id.mainRosterList);
-	    mainViewFlipper=(ViewFlipper)this.findViewById(R.id.mainViewFlipper);
-	    
-	    loadArmylist();
+		setContentView(R.layout.main_view);
 
-	    Button leftButton = (Button)findViewById(R.id.leftButton);
-	    leftButton.setOnClickListener(new OnClickListener() {
-			
+		Injector injector = Guice.createInjector(new Module() {
+
 			@Override
-			public void onClick(View v) {
-				mainViewFlipper.showPrevious();
-				
+			public void configure(Binder binder) {
+				binder.bind(Context.class).toInstance(MainActivity.this);
+				binder.bind(Activity.class).toInstance(MainActivity.this);
+				binder.bind(Gson.class).asEagerSingleton();
+				binder.bind(EventBus.class).asEagerSingleton();
 			}
 		});
-	    Button rightButton = (Button)findViewById(R.id.rightButton);
-	    rightButton.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				mainViewFlipper.showNext();
-				
-			}
-		});
-	}
-	
-	private void reset(){
-		//mainRosterList. TODO clear
-	}
-	
-	private void loadArmylist(){
-		reset();
-		ArmyList armylist = armylistService.getArmylist();
-		ArrayAdapter adapter = new ArrayAdapter<String>(this, 
-				android.R.layout.simple_list_item_1, 
-				Lists.transform(armylist.getModels(),new Function<ArmyListUnit,String>(){
+		injector.injectMembers(this);
 
-					@Override
-					public String apply(ArmyListUnit model) {
-							return model.getIsc();
-					}}));
-		mainRosterList.setAdapter(adapter);
-		//		for(ArmyListUnit model:armylist.getModels()){
-//			mainRosterList
-//		}
-		
+		// init components
+		injector.getInstance(ViewFlipperController.class);
+		injector.getInstance(ArmyListViewController.class);
+		injector.getInstance(UnitDataViewController.class);
 	}
 
 }
