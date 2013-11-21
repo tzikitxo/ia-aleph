@@ -1,20 +1,21 @@
 package it.anyplace.alephtoolbox2;
 
+import it.anyplace.alephtoolbox2.beans.Events;
+import it.anyplace.alephtoolbox2.services.CurrentListService;
+import it.anyplace.alephtoolbox2.services.DataService;
+import it.anyplace.alephtoolbox2.services.DataService.UnitData;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import it.anyplace.alephtoolbox2.beans.UnitData;
-import it.anyplace.alephtoolbox2.services.DataService;
 import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -22,18 +23,27 @@ import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class UnitDataViewController {
+public class AvailableUnitsController {
 	final List<String> types = Arrays.asList("LI", "MI", "HI", "WB", "SK",
 			"REM", "TAG");
 
 	@Inject
 	private DataService unitDataService;
 	@Inject
+	private CurrentListService sessionService;
+	@Inject
 	private Activity activity;
+	@Inject
+	private UnitDetailController unitDetailController;
+
+	@Inject
+	private EventBus eventBus;
 
 	private ListView unitListView, typeListView;
 
@@ -41,14 +51,7 @@ public class UnitDataViewController {
 	private void init() {
 		unitListView = (ListView) activity.findViewById(R.id.unitListView);
 		typeListView = (ListView) activity.findViewById(R.id.typeListView);
-		initTypeList();
 
-		loadUnitList("Aleph");
-	}
-
-	private String typeFilter = types.get(0);
-
-	private void initTypeList() {
 		typeListView.setAdapter(new ArrayAdapter<String>(activity,
 				android.R.layout.simple_list_item_1, types));
 		typeListView.setOnItemClickListener(new OnItemClickListener() {
@@ -57,30 +60,39 @@ public class UnitDataViewController {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int index,
 					long arg3) {
 				typeFilter = types.get(index);
-				Log.i("UD", "filtering units by type = " + typeFilter);
+				Log.i("AvailableUnitsController", "filtering units by type = "
+						+ typeFilter);
 				showAvailableUnits();
 			}
-
-			// @Override
-			// public void onItemSelected(AdapterView<?> arg0, View arg1,
-			// int index, long arg3) {
-			// typeFilter = types.get(index);
-			// Log.i("UD", "filtering units by type = " + typeFilter);
-			// showAvailableUnits();
-			// }
-			//
-			// @Override
-			// public void onNothingSelected(AdapterView<?> arg0) {
-			// // TODO Auto-generated method stub
-			//
-			// }
-
 		});
+		unitListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View arg1, int index,
+					long arg3) {
+				UnitData selectedUnit=availableUnitsForType.get(index);
+//				String isc=((ArrayAdapter<String>)adapterView).getItem(index);
+//				typeFilter = types.get(index);
+				Log.i("AvailableUnitsController", "selected unit = "
+						+ selectedUnit.getIsc());
+				unitDetailController.openUnitDetail(selectedUnit);
+			}
+		});
+
+		eventBus.register(this);
 	}
 
-	private void showAvailableUnits() {
+	private String typeFilter = types.get(0);
 
-		List<UnitData> availableUnitsForType = Lists.newArrayList(Iterables
+	@Subscribe
+	public void loadFaction(Events.FactionLoadEvent event) {
+		loadAllAvailableUnits();
+	}
+	
+	private List<UnitData> availableUnitsForType;
+
+	private void showAvailableUnits() {
+		availableUnitsForType = Lists.newArrayList(Iterables
 				.filter(allAvailableUnits, new Predicate<UnitData>() {
 
 					@Override
@@ -96,8 +108,9 @@ public class UnitDataViewController {
 			}
 		});
 
-		Log.i("UD", "showAvailableUnits, availableUnitsForType = "
-				+ availableUnitsForType.size());
+		Log.i("AvailableUnitsController",
+				"showAvailableUnits, availableUnitsForType = "
+						+ availableUnitsForType.size());
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
 				android.R.layout.simple_list_item_1, Lists.transform(
 						availableUnitsForType,
@@ -113,9 +126,9 @@ public class UnitDataViewController {
 
 	private Collection<UnitData> allAvailableUnits = Lists.newArrayList();
 
-	private void loadUnitList(String factionName) {
-		allAvailableUnits = unitDataService.getUnitDataByFaction(factionName);
+	private void loadAllAvailableUnits() {
+		allAvailableUnits = unitDataService.getAvailableUnitData();
 		showAvailableUnits();
-
 	}
+
 }

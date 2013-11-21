@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/unitDetailView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:text="unit detail" >
+    <!-- xmlns:app="http://schemas.android.com/apk/res/it.anyplace.alephtoolbox2" -->
 
-            <requestFocus />
-        </EditText>
+    <android.support.v7.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        grid:columnCount="1" >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            grid:layout_column="0"
+            grid:layout_gravity="center"
+            grid:layout_row="0"
+            android:text="isc" />
+
+        <TextView
+            android:id="@+id/unitDetailIsc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            grid:layout_column="0"
+            grid:layout_gravity="center"
+            grid:layout_row="1" />
+    </android.support.v7.widget.GridLayout>
+
+    <ListView
+        android:id="@+id/unitChildsListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.50"
+        android:choiceMode="singleChoice" >
+    </ListView>
 
 </LinearLayout>

@@ -12,11 +12,9 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 
-import it.anyplace.alephtoolbox2.beans.ArmyList;
-import it.anyplace.alephtoolbox2.beans.ArmyList.ArmyListUnit;
-import it.anyplace.alephtoolbox2.beans.UnitData;
-import it.anyplace.alephtoolbox2.services.ArmylistService;
+import it.anyplace.alephtoolbox2.services.ArmyListService;
 import it.anyplace.alephtoolbox2.services.DataService;
+import it.anyplace.alephtoolbox2.services.CurrentListService;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -29,10 +27,15 @@ import android.widget.ViewFlipper;
 
 public class MainActivity extends Activity {
 
-	// @Inject
-	// private UnitDataService unitDataService;
+	 @Inject
+	 private ArmyListService armyListService;
+	 @Inject
+	 private CurrentListService currentListService;
 	// @Inject
 	// private UnitDataViewController unitDataViewController;
+	
+	
+	
 	@Inject
 	private EventBus eventBus;
 
@@ -55,8 +58,14 @@ public class MainActivity extends Activity {
 
 		// init components
 		injector.getInstance(ViewFlipperController.class);
-		injector.getInstance(ArmyListViewController.class);
-		injector.getInstance(UnitDataViewController.class);
+		injector.getInstance(ArmyListController.class);
+		injector.getInstance(AvailableUnitsController.class);
+		injector.getInstance(UnitDetailController.class);
+		
+		//begin
+		final String armylistData = "{'pcap':200,'faction':'Panoceania','includeMercs':false,'models':[{'isc':'Cutters','code':'Default','recordid':'26341055822558700'},{'isc':'Bagh-Mari','code':'Shotgun','recordid':'58486073673702776'},{'isc':'Lieutenant Stephen Rao','code':'Default','recordid':'71578364423476160'},{'isc':'Fusiliers','code':'Default','recordid':'15866463608108460'},{'isc':'Fusiliers','code':'Default','recordid':'94999620621092620'},{'isc':'Order Sergeants','code':'Spitfire','recordid':'64432820701040330'},{'isc':'Order Sergeants','code':'TO Sniper','recordid':'2207046304829418.8'}],'listId':'3542035631835460.5','id':'3542035631835460.5','listName':'','dateMod':'1384377643000','groupMarks':[],'combatGroupSize':10,'specop':null,'mercenaryFactions':null}";
+		currentListService.loadArmyList(armyListService.parseArmyList(armylistData));
+//		injector.getInstance(CurrentListService.class).loadFaction("Aleph", null);
 	}
 
 }
