@@ -4,3 +4,6 @@ ia-aleph_chrome/src/ia.html
 ia-aleph_chrome/target
 [.]swp
 ia-aleph_android/bin
+ia-aleph_android_2/bin
+ia-aleph_android_2/gen
+ia-aleph_android_2/res/raw/armylist_data.json

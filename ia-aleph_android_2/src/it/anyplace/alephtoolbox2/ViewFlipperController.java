@@ -16,32 +16,40 @@ public class ViewFlipperController {
 	private Activity activity;
 
 	private ViewFlipper mainViewFlipper;
+	private View unitDetailView;
 
 	@Inject
-	private void init(){
+	private void init() {
 		// unitDataList = (ListView) this.findViewById(R.id.unitList);
-				mainViewFlipper = (ViewFlipper) activity.findViewById(R.id.mainViewFlipper);
+		unitDetailView = (View) activity.findViewById(R.id.unitDetailView);
 
-				
-				// loadUnitData();
+		mainViewFlipper = (ViewFlipper) activity
+				.findViewById(R.id.mainViewFlipper);
 
-				Button leftButton = (Button) activity.findViewById(R.id.leftButton);
-				leftButton.setOnClickListener(new OnClickListener() {
+		// loadUnitData();
 
-					@Override
-					public void onClick(View v) {
-						mainViewFlipper.showPrevious();
+		Button leftButton = (Button) activity.findViewById(R.id.leftButton);
+		leftButton.setOnClickListener(new OnClickListener() {
 
-					}
-				});
-				Button rightButton = (Button) activity.findViewById(R.id.rightButton);
-				rightButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				mainViewFlipper.showPrevious();
 
-					@Override
-					public void onClick(View v) {
-						mainViewFlipper.showNext();
+			}
+		});
+		Button rightButton = (Button) activity.findViewById(R.id.rightButton);
+		rightButton.setOnClickListener(new OnClickListener() {
 
-					}
-				});
+			@Override
+			public void onClick(View v) {
+				mainViewFlipper.showNext();
+
+			}
+		});
+	}
+
+	public void showUnitDetailView() {
+		mainViewFlipper.setDisplayedChild(mainViewFlipper
+				.indexOfChild(unitDetailView));
 	}
 }
