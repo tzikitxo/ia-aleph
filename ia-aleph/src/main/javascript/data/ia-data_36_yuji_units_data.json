@@ -3842,3 +3842,67 @@
     "spec":[]
  }]
 }
+,
+{
+ "arm": "1",
+ "army": "Yu Jing",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Combi Rifle",
+  "D-Charges",
+  "Antipersonnel Mines"
+ ],
+ "bts": "-3",
+ "cbcode": ["280001-0441"],
+ "cc": "14",
+ "ccw": [
+  "Pistol",
+  "CCW"
+ ],
+ "childs": [
+  {
+   "bsw": [
+    "E\/Mitter"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "E\/Mitter",
+   "cost": "23",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Panzerfaust"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Pf",
+   "codename": "",
+   "cost": "24",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  }
+ ],
+ "cube": "",
+ "imp": "",
+ "irr": "",
+ "isc": "Keisotsu Gui Feng Yuriko Oda",
+ "mov": "4-4",
+ "name": "Yuriko Oda",
+ "note": "Special SpecOp",
+ "ph": "11",
+ "spec": [
+  "Engineer",
+  "Hyper-Dynamics L1",
+  "Minelayer",
+  "V: Courage"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
+}

@@ -4151,3 +4151,52 @@
  "w": "1",
  "wip": "14"
 }
+,
+{
+ "arm": "1",
+ "army": "Combined Army",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "K1 Combi Rifle",
+  "Chain Colt",
+  "Smoke Grenades",
+  "E\/M Grenades"
+ ],
+ "bts": "-3",
+ "cbcode": ["280002-0442"],
+ "cc": "16",
+ "ccw": [
+  "Pistol",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "25",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Treitak Anyat",
+ "mov": "4-4",
+ "name": "Anyat",
+ "note": "Special Spec-Op",
+ "ph": "12",
+ "spec": [
+  "Morat",
+  "Climbing Plus",
+  "Specialist Troop"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
+}

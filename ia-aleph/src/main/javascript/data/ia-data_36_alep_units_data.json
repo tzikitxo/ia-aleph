@@ -2759,3 +2759,68 @@
  "w": "1",
  "wip": "14"
 }
+,
+{
+ "arm": "3",
+ "army": "Aleph",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Submachine gun",
+  "Nanopulser",
+  "Flash Grenades"
+ ],
+ "bts": "0",
+ "cbcode": ["280003-0443"],
+ "cc": "19",
+ "ccw": [
+  "Pistol",
+  "Shock CCW"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "Inf",
+   "cost": "27",
+   "note": "",
+   "spec": [
+    "Infiltration"
+   ],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Light Rocket Launcher"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "LRL",
+   "codename": "",
+   "cost": "29",
+   "note": "",
+   "spec": [
+    "Fireteam: Enomotarchos"
+   ],
+   "swc": "0.5"
+  }
+ ],
+ "cube": "2",
+ "imp": "F",
+ "irr": "",
+ "isc": "Chandra Sergeant Thrasymedes",
+ "mov": "4-2",
+ "name": "Thrasymedes",
+ "note": "Special Spec-Op",
+ "ph": "13",
+ "spec": [
+  "ODD: Optical Disruptor Device",
+  "360° Visor",
+  "Specialist Troop"
+ ],
+ "type": "MI",
+ "w": "1",
+ "wip": "13"
+}

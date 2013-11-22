@@ -132,6 +132,7 @@
 	};
 
 	utils.getTinyUrl=function(configArg){
+                log('tinyfing url, config = ',configArg);
 		var config=$.extend({
 			error:function(){},
 			success:function(){}

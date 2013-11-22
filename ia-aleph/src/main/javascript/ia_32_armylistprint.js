@@ -350,11 +350,11 @@
 				qrHolder.qrcode({
 					text:url
 				});
+                                var qrData=$('canvas',qrHolder)[0].toDataURL("image/png");
+                                $('.qrCode',newBody).attr('src',qrData);
 			}catch(e){
 				log('qrcode error',e);
 			}
-			var qrData=$('canvas',qrHolder)[0].toDataURL("image/png");
-			$('.qrCode',newBody).attr('src',qrData);
 		}    
        
 		//WEAPON TABLE

@@ -210,6 +210,11 @@
     "linkable": true
    },
    {
+    "ava": "1",
+    "isc": "Treitak Anyat",
+    "linkable": true
+   },
+   {
     "ava": "3",
     "isc": "Kurgat Reg. of Assault Engineers"
    },
@@ -410,6 +415,11 @@
     "linkable": true
    },
    {
+    "ava": "1",
+    "isc": "Volunteer Intel Isobel McGregor",
+    "linkable": true
+   },
+   {
     "ava": "4",
     "isc": "Highlander Caterans"
    },
@@ -604,6 +614,11 @@
    {
     "ava": "2",
     "isc": "Kempeitai"
+   },
+   {
+    "ava": "1",
+    "isc": "Keisotsu Gui Feng Yuriko Oda",
+	"linkable":true
    },
    {
     "ava": "4",
@@ -844,6 +859,11 @@
     "linkable": true
    },
    {
+    "ava": "1",
+    "isc": "Alguacil Vortex Lupe Balboa",
+    "linkable": true
+   },
+   {
     "ava": "4",
     "isc": "Tomcats"
    },
@@ -1065,6 +1085,11 @@
     "isc": "Auxilia"
    },
    {
+    "ava": "1",
+    "isc": "Fusilier Indigo Bipandra",
+    "linkable": true
+   },
+   {
     "ava": "5",
     "isc": "Fusiliers",
     "linkable": true
@@ -1158,6 +1183,11 @@
    {
     "ava": "3",
     "isc": "Fusiliers",
+    "linkable": true
+   },
+   {
+    "ava": "1",
+    "isc": "Fusilier Indigo Bipandra",
     "linkable": true
    },
    {
@@ -1349,6 +1379,10 @@
    {
     "ava": "4",
     "isc": "Ekdromoi"
+   },
+   {
+    "ava": "1",
+    "isc": "Chandra Sergeant Thrasymedes"
    },
    {
     "ava": "1",
