@@ -3820,3 +3820,48 @@
  "w": "1",
  "wip": "14"
 }
+,{
+ "arm": "2",
+ "army": "Panoceania",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Combi Rifle",
+  "Light Shotgun"
+ ],
+ "bts": "-3",
+ "cbcode": ["280002-0442"],
+ "cc": "13",
+ "ccw": [
+  "Pistol",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "24",
+   "note": "",
+   "spec": [],
+   "swc": "0.5"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Fusilier Indigo Bipandra",
+ "mov": "4-4",
+ "name": "Bipandra",
+ "note": "Special SpecOp",
+ "ph": "11",
+ "spec": [
+  "Doctor",
+  "Specialist Troop"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
+}

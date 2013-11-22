@@ -3685,3 +3685,52 @@
  }
  ]
 }
+,
+{
+ "arm": "2",
+ "army": "Nomads",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Combi Rifle",
+  "Nanopulser",
+  "Panzerfaust",
+  "Smoke Grenades"
+ ],
+ "bts": "-3",
+ "cbcode": ["280003-0443"],
+ "cc": "14",
+ "ccw": [
+  "Pistol",
+  "CCW"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "23",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Alguacil Vortex Lupe Balboa",
+ "mov": "4-4",
+ "name": "Lupe Balboa",
+ "note": "Special Spec-Op",
+ "ph": "11",
+ "spec": [
+  "CH: Mimetism",
+  "Specialist Troop",
+  "V: Dogged"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
+}

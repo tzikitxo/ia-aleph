@@ -3699,3 +3699,68 @@
  "w": "1",
  "wip": "13"
 }
+,
+{
+ "arm": "2",
+ "army": "Ariadna",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Flash Pulse",
+  "D-Charges",
+  "E\/Mauler"
+ ],
+ "bts": "0",
+ "cbcode": ["280001-0441"],
+ "cc": "13",
+ "ccw": [
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [
+    "Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [
+    "Assault Pistol"
+   ],
+   "code": "Default",
+   "codename": "AP",
+   "cost": "23",
+   "note": "",
+   "spec": [],
+   "swc": "0.5"
+  },
+  {
+   "bsw": [
+    "T2 Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [
+    "Pistol"
+   ],
+   "code": "T2",
+   "codename": "",
+   "cost": "26",
+   "note": "",
+   "spec": [],
+   "swc": "0.5"
+  }
+ ],
+ "cube": "",
+ "imp": "",
+ "irr": "",
+ "isc": "Volunteer Intel Isobel McGregor",
+ "mov": "4-4",
+ "name": "Isobel McGregor",
+ "note": "Special Spec-Op",
+ "ph": "11",
+ "spec": [
+  "Hacker (Defensive Hacker Dev.)",
+  "V: Courage"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
+}
