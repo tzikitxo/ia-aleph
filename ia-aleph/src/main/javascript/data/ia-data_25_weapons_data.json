@@ -326,6 +326,24 @@
   "template": "No"
  },
  {
+  "ammo": "K1",
+  "burst": "3",
+  "cc": "No",
+  "damage": "12",
+  "em_vul": "Yes",
+  "long_dist": "24",
+  "long_mod": "-3",
+  "max_dist": "48",
+  "max_mod": "-6",
+  "medium_dist": "16",
+  "medium_mod": "3",
+  "name": "K1 Combi Rifle",
+  "note": "",
+  "short_dist": "8",
+  "short_mod": "3",
+  "template": "No"
+ },
+ {
   "ammo": "DA",
   "burst": "1",
   "cc": "No",
