@@ -81,10 +81,11 @@ echo "parsing pages from files $plist and $pages"
 # echo -e "\t<pages lang=\"${lang}\">"
 first=`mktemp`
 echo -e "\t{\n\t\t\"lang\":\"${lang}\",\n\t\t\"baseurl\":\"${baseUrl}\",\n\t\t\"pages\":[\n"
- cat $plist | egrep -v '^(Bookmarks|Wiki.*)$' | sed  -r -e 's#%28#(#g' -e 's#%29#)#g' -e 's#(%..)+#_#g' | while read page; do 
+ cat $plist | egrep -v '^(Bookmarks|Wiki.*)$' | sed  -r -e 's#%28#(#g' -e 's#%29#)#g' -e 's#%C2%B0#°#g' -e 's#%2C#,#g' -e 's#%E2%80%9C#“#g' -e 's#%E2%80%9D#”#g' -e 's#(%..)+#_#g' | while read page; do 
 	regexp="^[a-zA-Z0-9.-]+.[^a-zA-Z0-9]*$(echo "$page" | sed -r 's#[^a-zA-Z0-9]+#[^a-zA-Z0-9]*#g')[^a-zA-Z0-9]*.html$"
 	fileName="$(egrep "${regexp}" $pages | cut -f1 | head -n1)"
-	if [ -e "$fileName" ]; then
+        if [ -e "$fileName" ]; then
+	#if [ -e "$fileName" ] && (( $(php ~/ia/ia-aleph/bin/check_page.php $fileName) ==  0 )); then
 #		echo -e "\t\t<page fileName=\"${fileName}\">$page</page>"; 
 		[ -e $first ] && rm $first ||  echo ","
 		echo -e "\t\t{\n\t\t\t\"filename\":\"${fileName}\",\n\t\t\t\"pagename\":\"${page}\"\n\t\t}"
@@ -96,7 +97,7 @@ done
 # echo -e "\t</pages>"
 #	echo 
 	echo -e "\t\t],"
-echo -e "\t\"date\":\"$(echo 'print((new Date()).toString());' | js)\""
+        echo -e "\t\"date\":\"$(echo 'print((new Date()).toString());' | js)\""
 	echo -e "\t}"
 } >> "${wikiFile}"
 
@@ -110,6 +111,10 @@ echo -e "\t\"date\":\"$(echo 'print((new Date()).toString());' | js)\""
 }  >> "`ls *.css | tail -n1`"
 
 rm $counter
+
+#cp bootstrap.css "copy_dir"
+#cp page.template "copy_dir"
+
 
 for file in *.html; do 
 	php ~/svn/ia-aleph/ia-aleph/bin/clean_wiki_page.php "$file" || echo "error on $file"

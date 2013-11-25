@@ -20,6 +20,7 @@ index=`mktemp`
 wget "$indexUrl" -U "$ua" -e robots=off -O $index
 
 plist=`mktemp`
+#php ~/ia/ia-aleph/bin/get_file_list.php $index $plist
 sed -n -r 's#<br><a href="([^"]+)".*#\1#p' $index > $plist
 
 echo "got `wc -l < $plist` pages to fetch"
@@ -31,7 +32,7 @@ cat $plist | while read page; do
 #	wget -U "$ua" -e robots=off -p -k "http://infinitythegame.wikispot.org/${page}" 
 #-O "${cleanName}.html"
 	echo "${baseUrl}${page}"
-done | wget -U "$ua" -e robots=off -p -k -E -i -
+done | wget -U "$ua" -e robots=off -p -k -E  --restrict-file-names=unix -i -
 
 mv */* ./
 
