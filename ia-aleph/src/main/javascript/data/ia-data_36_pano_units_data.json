@@ -3864,4 +3864,64 @@
  "type": "LI",
  "w": "1",
  "wip": "13"
+},
+{
+ "arm": "2",
+ "army": "Panoceania",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Combi Rifle"
+ ],
+ "bts": "0",
+ "cbcode": [],
+ "cc": "16",
+ "ccw": [
+  "D-Charges",
+  "Assault Pistol",
+  "CCW"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "29",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  },
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Infiltrator",
+   "codename": "Inf",
+   "cost": "34",
+   "note": "",
+   "spec": [
+    "Infiltration"
+   ],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Indigo Brother Konstantinos",
+ "mov": "4-4",
+ "name": "Konstantinos",
+ "note": "Special Spec-Op",
+ "ph": "12",
+ "spec": [
+  "Multispectral Visor L2",
+  "CH: Mimetism",
+  "Specialist Troop",
+  "Religious Troop"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13"
 }

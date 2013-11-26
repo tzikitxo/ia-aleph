@@ -4199,4 +4199,69 @@
  "type": "LI",
  "w": "1",
  "wip": "13"
+},{
+ "arm": "3",
+ "army": "Combined Army",
+ "ava": "1",
+ "bs": "13",
+ "bsw": [
+  "Spitfire"
+ ],
+ "bts": "-3",
+ "cbcode": [],
+ "cc": "15",
+ "ccw": [
+  "Pistol",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "35",
+   "note": "",
+   "spec": [],
+   "swc": "1.5"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Shasvastii Corax Hasht",
+ "mov": "4-4",
+ "name": "Hasht",
+ "note": "Special Spec-Op",
+ "ph": "12",
+ "spec": [
+  "Shasvastii",
+  "Seed-Embryo",
+  "Specialist Troop",
+  "V: No Wound Incapacitation",
+  "Nanoscreen"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "13" ,
+ "altp":[{
+		"isc": "Seed-Embryo",
+		"mov": "0",
+		"wip": "0",
+		"bts": "-3",
+		"bs": "0",
+		"ph": "0",
+		"cc": "0",
+		"arm": "2",
+		"w": "1",
+                "spec":[
+                    "CH: Limited Camouflage"
+                ],
+                "bsw":[],
+                "ccw":[],
+                "ava":" ",
+                "type":" "
+	 }],
 }
+
