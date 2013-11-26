@@ -1313,4 +1313,66 @@
   ],
   "w": "X",
   "wip": "X"
- }
+ },{
+ "arm": "2",
+ "army": "Tohaa",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Nanopulser",
+  "Flash Pulse"
+ ],
+ "bts": "-3",
+ "cbcode": [],
+ "cc": "14",
+ "ccw": [
+  "D-Charges",
+  "Pistol",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [
+    "Viral Combi Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "Viral",
+   "cost": "35",
+   "note": "",
+   "spec": [],
+   "swc": "0.5"
+  },
+  {
+   "bsw": [
+    "K1 Combi Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "K1",
+   "codename": "",
+   "cost": "33",
+   "note": "",
+   "spec": [],
+   "swc": "0.5"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Hatail Aelis Keesan",
+ "mov": "4-4",
+ "name": "Keesan",
+ "note": "Special Spec-Op",
+ "ph": "12",
+ "spec": [
+  "Defensive Hacking Device",
+  "Fireteam: Tohaa",
+  "Regeneration",
+  "Sensor"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "14"
+}

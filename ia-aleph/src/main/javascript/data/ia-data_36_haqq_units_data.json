@@ -3552,4 +3552,69 @@
  "type": "MI",
  "w": "1",
  "wip": "14"
+},{
+ "arm": "1",
+ "army": "Haqqislam",
+ "ava": "1",
+ "bs": "12",
+ "bsw": [
+  "Rifle",
+  "Light Shotgun",
+  "Nanopulser"
+ ],
+ "bts": "-3",
+ "cbcode": [],
+ "cc": "22",
+ "ccw": [
+  "Pistol",
+  "Viral CCW",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "",
+   "cost": "28",
+   "note": "",
+   "spec": [
+    "Holoprojector L1"
+   ],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Smoke Grenades"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Infiltrator",
+   "codename": "Inf",
+   "cost": "35",
+   "note": "",
+   "spec": [
+    "Infiltration",
+    "Holoprojector L2"
+   ],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Hassassin Husam Yasbir",
+ "mov": "4-4",
+ "name": "Yasbir",
+ "note": "Special Spec-Op",
+ "ph": "13",
+ "spec": [
+  "Martial Arts L3",
+  "Specialist Troop",
+  "Religious Troop"
+ ],
+ "type": "LI",
+ "w": "1",
+ "wip": "14"
 }
