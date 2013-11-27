@@ -1,6 +1,7 @@
 package it.anyplace.alephtoolbox2.services;
 
 import it.anyplace.alephtoolbox2.R;
+import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 
 import java.io.InputStreamReader;
 import java.util.Collection;
@@ -171,6 +172,11 @@ public class DataService {
 			return isc;
 		}
 
+		public String getCleanIsc() {
+			return isc.toLowerCase().replaceAll("[^a-z0-9]+", "_")
+					.replaceAll("(^_|_$)", "");
+		}
+
 		public String getName() {
 			return name;
 		}
@@ -274,6 +280,10 @@ public class DataService {
 
 		public Integer getCostInt() {
 			return Integer.valueOf(getCost());
+		}
+
+		public UnitData getDefaultChild() {
+			return getChildByCode("Default");
 		}
 
 	}

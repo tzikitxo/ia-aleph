@@ -13,13 +13,16 @@ import java.util.List;
 
 import android.app.Activity;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.google.common.base.Function;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -68,14 +71,16 @@ public class AvailableUnitsController {
 		unitListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> adapterView, View arg1, int index,
-					long arg3) {
-				UnitData selectedUnit=availableUnitsForType.get(index);
-//				String isc=((ArrayAdapter<String>)adapterView).getItem(index);
-//				typeFilter = types.get(index);
+			public void onItemClick(AdapterView<?> adapterView, View arg1,
+					int index, long arg3) {
+				UnitData selectedUnit = availableUnitsForType.get(index);
+				// String
+				// isc=((ArrayAdapter<String>)adapterView).getItem(index);
+				// typeFilter = types.get(index);
 				Log.i("AvailableUnitsController", "selected unit = "
 						+ selectedUnit.getIsc());
-				unitDetailController.openUnitDetail(selectedUnit);
+				unitDetailController.openUnitDetail(selectedUnit
+						.getDefaultChild());
 			}
 		});
 
@@ -88,12 +93,12 @@ public class AvailableUnitsController {
 	public void loadFaction(Events.FactionLoadEvent event) {
 		loadAllAvailableUnits();
 	}
-	
+
 	private List<UnitData> availableUnitsForType;
 
 	private void showAvailableUnits() {
-		availableUnitsForType = Lists.newArrayList(Iterables
-				.filter(allAvailableUnits, new Predicate<UnitData>() {
+		availableUnitsForType = Lists.newArrayList(Iterables.filter(
+				allAvailableUnits, new Predicate<UnitData>() {
 
 					@Override
 					public boolean apply(UnitData unitData) {
@@ -111,16 +116,28 @@ public class AvailableUnitsController {
 		Log.i("AvailableUnitsController",
 				"showAvailableUnits, availableUnitsForType = "
 						+ availableUnitsForType.size());
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
-				android.R.layout.simple_list_item_1, Lists.transform(
-						availableUnitsForType,
-						new Function<UnitData, String>() {
+		ArrayAdapter<UnitData> adapter = new ArrayAdapter<UnitData>(activity,
+				R.layout.availableunits_record, availableUnitsForType) {
 
-							@Override
-							public String apply(UnitData unit) {
-								return unit.getIsc();
-							}
-						}));
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				if (convertView == null) {
+					convertView = LayoutInflater.from(activity).inflate(
+							R.layout.availableunits_record, null);
+				}
+				UnitData unitData = getItem(position);
+				((TextView) convertView.findViewById(R.id.unitListRecordIsc))
+						.setText(unitData.getIsc());
+
+				((ImageView) convertView.findViewById(R.id.unitListRecordIcon))
+						.setImageResource(activity.getResources()
+								.getIdentifier(
+										"unitlogo_" + unitData.getCleanIsc(),
+										"drawable", activity.getPackageName()));
+				return convertView;
+			}
+
+		};
 		unitListView.setAdapter(adapter);
 	}
 
