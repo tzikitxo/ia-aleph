@@ -28,6 +28,9 @@ ia.isReady=false;
         isAndroid:function(){
             return (this.hasCordova() && window.device.platform.match(/android/i))?true:false;
         },
+        isAndroidBefore44:function(){
+            return (this.isAndroid() && window.device.version.match(/^([0123]\..*|[4]\.[0123](|[^0-9].*))$/))?true:false;
+        },
         isIosBrowser:function(){
             return navigator.userAgent.match(/(iPad|iPhone|iPod)/i)?true:false;
         }
