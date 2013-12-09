@@ -71,7 +71,7 @@
 		var modelRecords=armyList.getListRecordsAsList();
 		var newDoc=$('<html />');
 		var headContent='<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />';
-		headContent+='<script type="text/javascript" src="'+(basePath+"js/ia-libs.js")+'" ></script>';
+		headContent+='<script type="text/javascript" src="'+(basePath+"js/ia-lib.js")+'" ></script>';
 		headContent+='<script type="text/javascript" src="'+(basePath+"js/ia-print.js")+'" ></script>';
 		headContent+='<link rel="stylesheet" type="text/css"  href="'+(basePath+"css/style_print.css")+'" ></link>';
 		var newBody=$('<body />').appendTo(newDoc).addClass('publicList');
