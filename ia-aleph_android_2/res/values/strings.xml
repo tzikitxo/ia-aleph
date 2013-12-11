@@ -200,11 +200,11 @@
     <string name="campaign.militaryspecs.deployment.level4.descTotal">initiative and deployment automatically won</string>
     <string name="campaign.militaryspecs.intelligence.level1.desc">to know whether the opponent has airborne deployment</string>
     <string name="campaign.militaryspecs.intelligence.level2.desc">to know wether the opponent has holoprojector L1, impersonation or hidden deployment</string>
-    <string name="campaign.militaryspecs.intelligence.level3.desc">to know the opponent\&apos;s army list</string>
+    <string name="campaign.militaryspecs.intelligence.level3.desc">to know the opponent\'s army list</string>
     <string name="campaign.militaryspecs.intelligence.level4.desc">to have an alternative army list</string>
     <string name="campaign.militaryspecs.intelligence.level2.descTotal">to know wether the opponent has airborne deployment, holoprojector L1, impersonation or hidden deployment</string>
-    <string name="campaign.militaryspecs.intelligence.level3.descTotal">to know the opponent\&apos;s army list</string>
-    <string name="campaign.militaryspecs.intelligence.level4.descTotal">to know the opponent\&apos;s army list, and to have an alternative army list</string>
+    <string name="campaign.militaryspecs.intelligence.level3.descTotal">to know the opponent\'s army list</string>
+    <string name="campaign.militaryspecs.intelligence.level4.descTotal">to know the opponent\'s army list, and to have an alternative army list</string>
     <string name="campaign.militaryspecs.ltident.level5.desc">enemy lieutenant always identified</string>
     <string name="campaign.militaryspecs.level1.label">Level 1 (2 XP)</string>
     <string name="campaign.militaryspecs.level2.label">Level 2 (5 XP)</string>
@@ -230,4 +230,7 @@
     <string name="game.buttons.dead">mark model as unconscious/dead</string>
     <!-- END LOCALES FROM IA -->
 
+    <string name="app.main.armylist">Current Roster</string>
+    <string name="app.main.availableunits">Available Units</string>
+    <string name="app.main.unitdetail">Unit Detail</string>
 </resources>

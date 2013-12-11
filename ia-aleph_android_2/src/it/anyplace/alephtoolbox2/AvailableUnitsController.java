@@ -24,6 +24,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.common.base.Predicate;
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
@@ -97,6 +100,8 @@ public class AvailableUnitsController {
 	private List<UnitData> availableUnitsForType;
 
 	private void showAvailableUnits() {
+		// availableUnitsForType =
+		// availableUntisByType.getUnchecked(typeFilter);
 		availableUnitsForType = Lists.newArrayList(Iterables.filter(
 				allAvailableUnits, new Predicate<UnitData>() {
 
@@ -143,8 +148,31 @@ public class AvailableUnitsController {
 
 	private Collection<UnitData> allAvailableUnits = Lists.newArrayList();
 
+	// private Cache<String, List<UnitData>> availableUntisByType = CacheBuilder
+	// .newBuilder().build(new CacheLoader<String, List<UnitData>>() {
+	// public List<UnitData> load(final String filter) {
+	// List<UnitData> res = Lists.newArrayList(Iterables.filter(
+	// allAvailableUnits, new Predicate<UnitData>() {
+	//
+	// @Override
+	// public boolean apply(UnitData unitData) {
+	// return unitData.getType().equals(filter);
+	// }
+	// }));
+	// Collections.sort(res, new Comparator<UnitData>() {
+	//
+	// @Override
+	// public int compare(UnitData a, UnitData b) {
+	// return a.getMinCost().compareTo(b.getMinCost());
+	// }
+	// });
+	// return res;
+	// }
+	// });
+
 	private void loadAllAvailableUnits() {
 		allAvailableUnits = unitDataService.getAvailableUnitData();
+		// availableUntisByType.invalidateAll();
 		showAvailableUnits();
 	}
 

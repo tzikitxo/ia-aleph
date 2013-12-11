@@ -12,13 +12,16 @@ import java.util.Map;
 import android.content.Context;
 
 import com.google.common.base.Function;
+import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
+import com.google.common.base.Strings;
 import com.google.common.collect.Collections2;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
+import com.google.common.collect.Sets;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.inject.Inject;
@@ -107,20 +110,25 @@ public class DataService {
 	// return null;
 	// }};
 
-	public static class UnitData {
+	public static class UnitData implements Cloneable {
 
 		private String mov, army, wip, bts, isc, name, bs, note, cube, type,
 				ph, cc, arm, irr, w, ava, code, codename, cost, swc;
 		private List<String> cbcode, bsw, ccw, spec;
 		private List<UnitData> childs;
-		private transient UnitData originalChild;
+		private transient UnitData originalChild, parent;
 
 		public UnitData() {
 
 		}
 
 		protected void loadFromParent(UnitData parent) {
-			this.originalChild = this;
+			this.parent = parent;
+			try {
+				this.originalChild = (UnitData) this.clone();
+			} catch (CloneNotSupportedException e) {
+				throw new RuntimeException(e);
+			}
 
 			this.mov = parent.mov;
 			this.army = parent.army;
@@ -137,17 +145,26 @@ public class DataService {
 			this.irr = parent.irr;
 			this.w = parent.w;
 			this.ava = parent.ava;
-			this.cbcode = Lists.newArrayList(parent.cbcode);
-			this.bsw = Lists.newArrayList(parent.bsw);
-			this.ccw = Lists.newArrayList(parent.ccw);
-			this.spec = Lists.newArrayList(parent.spec);
+			// this.cbcode = Lists.newArrayList(parent.cbcode);
+			// this.bsw = Lists.newArrayList(parent.bsw);
+			// this.ccw = Lists.newArrayList(parent.ccw);
+			// this.spec = Lists.newArrayList(parent.spec);
 
 			this.childs = Collections.emptyList();
 
-			this.cbcode.addAll(this.originalChild.cbcode);
-			this.bsw.addAll(this.originalChild.bsw);
-			this.ccw.addAll(this.originalChild.ccw);
-			this.spec.addAll(this.originalChild.spec);
+			// this.cbcode.addAll(this.originalChild.cbcode);
+			// this.bsw.addAll(this.originalChild.bsw);
+			// this.ccw.addAll(this.originalChild.ccw);
+			// this.c.addAll(this.originalChild.spec);
+
+			this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(
+					parent.bsw, this.bsw)));
+			this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(
+					parent.ccw, this.ccw)));
+			this.spec = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(
+					parent.spec, this.spec)));
+			this.cbcode = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(
+					parent.cbcode, this.cbcode)));
 
 			this.note = parent.note + this.originalChild.note;
 		}
@@ -284,6 +301,30 @@ public class DataService {
 
 		public UnitData getDefaultChild() {
 			return getChildByCode("Default");
+		}
+
+		public String getDisplayCode() {
+			return Objects.firstNonNull(Strings.emptyToNull(codename), code);
+		}
+
+		public List<String> getChildBsw() {
+			return getOriginalChild().getBsw();
+		}
+
+		public List<String> getChildCcw() {
+			return getOriginalChild().getCcw();
+		}
+
+		public List<String> getChildSpec() {
+			return getOriginalChild().getSpec();
+		}
+
+		private UnitData getOriginalChild() {
+			return Objects.firstNonNull(originalChild, this);
+		}
+
+		public UnitData getParent() {
+			return Objects.firstNonNull(parent, this);
 		}
 
 	}
