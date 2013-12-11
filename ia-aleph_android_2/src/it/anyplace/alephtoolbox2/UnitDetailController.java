@@ -24,6 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
@@ -84,20 +85,35 @@ public class UnitDetailController {
 				.setOnItemClickListener(new OnItemClickListener() {
 
 					@Override
-					public void onItemClick(AdapterView<?> arg0, View arg1,
-							int index, long arg3) {
+					public void onItemClick(AdapterView<?> arg0,
+							View clickedView, int index, long arg3) {
 						final UnitData newUnit = childs.get(index);
-						eventBus.post(new UnitDetailChildUnitSelectedEvent() {
+						if (selectedIndex == index) {
+							Toast.makeText(
+									activity,
+									activity.getResources().getString(
+											R.string.app_toast_addedUnit,
+											newUnit.getName(),
+											newUnit.getCode()),
+									activity.getResources().getInteger(
+											R.integer.toastDelay)).show();
+							eventBus.post(new UnitDetailChildUnitSelectedEvent() {
 
-							@Override
-							public UnitData getUnitData() {
-								return newUnit;
-							}
-						});
-
+								@Override
+								public UnitData getUnitData() {
+									return newUnit;
+								}
+							});
+						} else {
+							selectedIndex = index;
+							// unitDetailChildsListView.setSelection(index);
+							loadUnitDetail(newUnit, false);
+						}
 					}
 				});
 	}
+
+	private int selectedIndex = -1;
 
 	@Subscribe
 	public void handleArmyListUnitSelectedEvent(
@@ -113,6 +129,10 @@ public class UnitDetailController {
 	}
 
 	public void loadUnitDetail(UnitData unitData) {
+		loadUnitDetail(unitData, true);
+	}
+
+	public void loadUnitDetail(UnitData unitData, boolean reloadChilds) {
 		unitDetailName.setText(unitData.getName());
 		unitDetailCode.setText(unitData.getCode());
 		unitDetailCost.setText(unitData.getCost());
@@ -157,49 +177,62 @@ public class UnitDetailController {
 			}.execute();
 		}
 
-		childs = Lists.newArrayList(unitData.getParent().getChilds());
-		Log.i("UnitDetailController", "child units = " + childs);
+		if (reloadChilds) {
+			childs = Lists.newArrayList(unitData.getParent().getChilds());
+			Log.i("UnitDetailController", "child units = " + childs);
 
-		unitDetailChildsListView.setAdapter(new ArrayAdapter<UnitData>(
-				activity, R.layout.unit_detail_child_record, childs) {
+			unitDetailChildsListView.setAdapter(new ArrayAdapter<UnitData>(
+					activity, R.layout.unit_detail_child_record, childs) {
 
-			@Override
-			public View getView(int position, View convertView, ViewGroup parent) {
-				if (convertView == null) {
-					convertView = LayoutInflater.from(activity).inflate(
-							R.layout.unit_detail_child_record, null);
+				@Override
+				public View getView(int position, View convertView,
+						ViewGroup parent) {
+					if (convertView == null) {
+						convertView = LayoutInflater.from(activity).inflate(
+								R.layout.unit_detail_child_record, null);
+					}
+					UnitData unitData = getItem(position);
+
+					((TextView) convertView
+							.findViewById(R.id.unitDetailChildRecordCode))
+							.setText(unitData.getDisplayCode());
+
+					((TextView) convertView
+							.findViewById(R.id.unitDetailChildRecordSwc))
+							.setText(unitData.getSwc());
+					((TextView) convertView
+							.findViewById(R.id.unitDetailChildRecordCost))
+							.setText(unitData.getCost());
+
+					Joiner joiner = Joiner.on(", ");
+					((TextView) convertView
+							.findViewById(R.id.unitDetailChildRecordWeapons))
+							.setText(joiner.join(Iterables.concat(
+									unitData.getChildBsw(),
+									unitData.getChildCcw())));
+					// ((TextView) convertView
+					// .findViewById(R.id.unitDetailChildRecordCcw))
+					// .setText(joiner.join(unitData.getChildCcw()));
+					((TextView) convertView
+							.findViewById(R.id.unitDetailChildRecordSpec))
+							.setText(joiner.join(unitData.getChildSpec()));
+
+					return convertView;
 				}
-				UnitData unitData = getItem(position);
 
-				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordCode))
-						.setText(unitData.getDisplayCode());
-
-				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordSwc))
-						.setText(unitData.getSwc());
-				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordCost))
-						.setText(unitData.getCost());
-
-				Joiner joiner = Joiner.on(", ");
-				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordWeapons)).setText(joiner
-						.join(Iterables.concat(unitData.getChildBsw(),
-								unitData.getChildCcw())));
-				// ((TextView) convertView
-				// .findViewById(R.id.unitDetailChildRecordCcw))
-				// .setText(joiner.join(unitData.getChildCcw()));
-				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordSpec))
-						.setText(joiner.join(unitData.getChildSpec()));
-
-				return convertView;
-			}
-
-		});
-		unitDetailChildsListView.setSelection(childs.indexOf(unitData));
+			});
+			unitDetailChildsListView.setSelection(childs.indexOf(unitData));
+			selectedIndex = -1;
+			// selectChild(childs.indexOf(unitData),true);
+		}
 	}
+
+	// private void selectChild(int index, boolean scrollTo) {
+	// if (scrollTo){
+	// unitDetailChildsListView.setSelection(index);
+	// }
+	// selectedIndex=index;
+	// }
 
 	public void openUnitDetail(UnitData unitData) {
 		loadUnitDetail(unitData);

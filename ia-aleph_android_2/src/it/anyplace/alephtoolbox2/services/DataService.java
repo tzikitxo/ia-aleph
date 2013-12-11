@@ -6,6 +6,7 @@ import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -16,6 +17,7 @@ import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 import com.google.common.collect.Collections2;
+import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -29,6 +31,7 @@ import com.google.inject.Singleton;
 
 @Singleton
 public class DataService {
+	public final static String DEFAULT_CHILD_CODE="Default";
 
 	@Inject
 	private Gson gson;
@@ -52,6 +55,12 @@ public class DataService {
 			for (UnitData child : parent.getChilds()) {
 				child.loadFromParent(parent);
 			}
+			Collections.sort(parent.getChilds(),new Comparator<UnitData>(){
+
+				@Override
+				public int compare(UnitData lhs, UnitData rhs) {
+					return lhs.isDefaultChild()?1:ComparisonChain.start().compare(lhs.getCostNum(), rhs.getCostNum()).result();
+				}});
 		}
 		unitDataByFaction = Multimaps.index(allUnitDataList,
 				new Function<UnitData, String>() {
@@ -274,7 +283,7 @@ public class DataService {
 
 						@Override
 						public Integer apply(UnitData child) {
-							return child.getCostInt();
+							return child.getCostNum();
 						}
 					}));
 		}
@@ -295,12 +304,15 @@ public class DataService {
 			return swc;
 		}
 
-		public Integer getCostInt() {
-			return Integer.valueOf(getCost());
-		}
+//		public Integer getCostInt() {
+//			return Integer.valueOf(getCost());
+//		}
 
 		public UnitData getDefaultChild() {
-			return getChildByCode("Default");
+			return getChildByCode(DEFAULT_CHILD_CODE);
+		}
+		public boolean isDefaultChild(){
+			return code.equalsIgnoreCase(DEFAULT_CHILD_CODE);
 		}
 
 		public String getDisplayCode() {
