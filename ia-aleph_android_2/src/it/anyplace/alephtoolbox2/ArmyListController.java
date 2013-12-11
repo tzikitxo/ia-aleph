@@ -85,7 +85,7 @@ public class ArmyListController {
 	@Subscribe
 	public void handleArmyListUpdateEvent(ArmyListUpdateEvent event) {
 		loadArmylist();
-		viewFlipperController.showArmyListView();
+//		viewFlipperController.showArmyListView();
 	}
 
 	private void loadArmylist() {
