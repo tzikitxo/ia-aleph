@@ -22,11 +22,15 @@ public class ViewFlipperController {
 	private View unitDetailView;
 	private Button leftButton, rightButton;
 
-	private final List<String> buttonLabels = Arrays.asList("list info",
-			"unit list", "unit detail");
+	private List<String> buttonLabels;
 
 	@Inject
 	private void init() {
+		buttonLabels = Arrays
+				.asList(activity.getResources().getString(
+						R.string.app_main_armylist), activity.getResources()
+						.getString(R.string.app_main_availableunits), activity
+						.getResources().getString(R.string.app_main_unitdetail));
 		// unitDataList = (ListView) this.findViewById(R.id.unitList);
 		unitDetailView = (View) activity.findViewById(R.id.unitDetailView);
 
@@ -57,11 +61,11 @@ public class ViewFlipperController {
 		});
 		updateButtonLabels();
 	}
-	
-	private void updateButtonLabels(){
-		int index=mainViewFlipper.getDisplayedChild();
-		leftButton.setText(buttonLabels.get((index+2)%3));
-		rightButton.setText(buttonLabels.get((index+1)%3));
+
+	private void updateButtonLabels() {
+		int index = mainViewFlipper.getDisplayedChild();
+		leftButton.setText(buttonLabels.get((index + 2) % 3));
+		rightButton.setText(buttonLabels.get((index + 1) % 3));
 	}
 
 	public void showUnitDetailView() {

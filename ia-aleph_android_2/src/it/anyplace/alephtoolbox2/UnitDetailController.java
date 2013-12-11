@@ -6,16 +6,25 @@ import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.util.List;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
@@ -37,6 +46,8 @@ public class UnitDetailController {
 			unitDetailBs, unitDetailPh, unitDetailWip, unitDetailArm,
 			unitDetailBts, unitDetailW, unitDetailSpecs;
 	private ImageView unitDetailImage;
+	private ListView unitDetailChildsListView;
+	private List<UnitData> childs = Lists.newArrayList();
 
 	@Inject
 	private void init() {
@@ -57,9 +68,23 @@ public class UnitDetailController {
 				.findViewById(R.id.unitDetailSpecs);
 		unitDetailImage = (ImageView) activity
 				.findViewById(R.id.unitDetailImage);
-
+		unitDetailChildsListView = (ListView) activity
+				.findViewById(R.id.unitDetailChildsListView);
 		eventBus.register(this);
+
+		unitDetailChildsListView
+				.setOnItemClickListener(new OnItemClickListener() {
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int index, long arg3) {
+						UnitData newUnit=childs.get(index);
+						// TODO add unit
+
+					}
+				});
 	}
+
 
 	public void loadUnitDetail(UnitData unitData) {
 		unitDetailName.setText(unitData.getName());
@@ -105,6 +130,48 @@ public class UnitDetailController {
 				}
 			}.execute();
 		}
+
+		childs = Lists.newArrayList(unitData.getParent().getChilds());
+		Log.i("UnitDetailController", "child units = " + childs);
+
+		unitDetailChildsListView.setAdapter(new ArrayAdapter<UnitData>(
+				activity, R.layout.unit_detail_child_record, childs) {
+
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				if (convertView == null) {
+					convertView = LayoutInflater.from(activity).inflate(
+							R.layout.unit_detail_child_record, null);
+				}
+				UnitData unitData = getItem(position);
+
+				((TextView) convertView
+						.findViewById(R.id.unitDetailChildRecordCode))
+						.setText(unitData.getDisplayCode());
+
+				((TextView) convertView
+						.findViewById(R.id.unitDetailChildRecordSwc))
+						.setText(unitData.getSwc());
+				((TextView) convertView
+						.findViewById(R.id.unitDetailChildRecordCost))
+						.setText(unitData.getCost());
+
+				Joiner joiner = Joiner.on(", ");
+				((TextView) convertView
+						.findViewById(R.id.unitDetailChildRecordBsw))
+						.setText(joiner.join(unitData.getChildBsw()));
+				((TextView) convertView
+						.findViewById(R.id.unitDetailChildRecordCcw))
+						.setText(joiner.join(unitData.getChildCcw()));
+				((TextView) convertView
+						.findViewById(R.id.unitDetailChildRecordSpec))
+						.setText(joiner.join(unitData.getChildSpec()));
+
+				return convertView;
+			}
+
+		});
+		unitDetailChildsListView.setSelection(childs.indexOf(unitData));
 	}
 
 	public void openUnitDetail(UnitData unitData) {
