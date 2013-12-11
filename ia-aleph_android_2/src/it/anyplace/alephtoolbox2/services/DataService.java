@@ -35,7 +35,7 @@ public class DataService {
 	@Inject
 	private Context context;
 	@Inject
-	private CurrentListService sessionService;
+	private CurrentRosterService sessionService;
 
 	private List<UnitData> allUnitDataList;
 	private Multimap<String, UnitData> unitDataByFaction, unitDataByIsc;
@@ -325,6 +325,14 @@ public class DataService {
 
 		public UnitData getParent() {
 			return Objects.firstNonNull(parent, this);
+		}
+
+		public Double getSwcNum() {
+			return Strings.isNullOrEmpty(swc) ? 0.0 : Double.valueOf(swc);
+		}
+
+		public Integer getCostNum() {
+			return Strings.isNullOrEmpty(cost) ? 0 : Integer.valueOf(cost);
 		}
 
 	}

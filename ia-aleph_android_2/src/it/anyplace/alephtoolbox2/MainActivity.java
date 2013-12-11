@@ -14,7 +14,7 @@ import com.google.inject.Module;
 
 import it.anyplace.alephtoolbox2.services.ArmyListService;
 import it.anyplace.alephtoolbox2.services.DataService;
-import it.anyplace.alephtoolbox2.services.CurrentListService;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 	 @Inject
 	 private ArmyListService armyListService;
 	 @Inject
-	 private CurrentListService currentListService;
+	 private CurrentRosterService currentListService;
 	// @Inject
 	// private UnitDataViewController unitDataViewController;
 	

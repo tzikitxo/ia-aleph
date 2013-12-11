@@ -1,6 +1,8 @@
 package it.anyplace.alephtoolbox2;
 
-import it.anyplace.alephtoolbox2.services.CurrentListService;
+import it.anyplace.alephtoolbox2.ArmyListController.ArmyListUnitSelectedEvent;
+import it.anyplace.alephtoolbox2.AvailableUnitsController.AvailableUnitsUnitSelectedEvent;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService;
 import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 
 import java.io.IOException;
@@ -24,8 +26,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
@@ -33,7 +37,7 @@ import com.google.inject.Singleton;
 public class UnitDetailController {
 
 	@Inject
-	private CurrentListService sessionService;
+	private CurrentRosterService sessionService;
 	@Inject
 	private Activity activity;
 	@Inject
@@ -48,6 +52,10 @@ public class UnitDetailController {
 	private ImageView unitDetailImage;
 	private ListView unitDetailChildsListView;
 	private List<UnitData> childs = Lists.newArrayList();
+
+	public interface UnitDetailChildUnitSelectedEvent {
+		public UnitData getUnitData();
+	}
 
 	@Inject
 	private void init() {
@@ -78,13 +86,31 @@ public class UnitDetailController {
 					@Override
 					public void onItemClick(AdapterView<?> arg0, View arg1,
 							int index, long arg3) {
-						UnitData newUnit=childs.get(index);
-						// TODO add unit
+						final UnitData newUnit = childs.get(index);
+						eventBus.post(new UnitDetailChildUnitSelectedEvent() {
+
+							@Override
+							public UnitData getUnitData() {
+								return newUnit;
+							}
+						});
 
 					}
 				});
 	}
 
+	@Subscribe
+	public void handleArmyListUnitSelectedEvent(
+			ArmyListUnitSelectedEvent armyListUnitSelectedEvent) {
+		openUnitDetail(armyListUnitSelectedEvent.getUnitRecord().getUnitData());
+	}
+
+	@Subscribe
+	public void handleAvailableUnitsUnitSelectedEvent(
+			AvailableUnitsUnitSelectedEvent availableUnitsUnitSelectedEvent) {
+		openUnitDetail(availableUnitsUnitSelectedEvent.getUnitData()
+				.getDefaultChild());
+	}
 
 	public void loadUnitDetail(UnitData unitData) {
 		unitDetailName.setText(unitData.getName());
@@ -158,11 +184,12 @@ public class UnitDetailController {
 
 				Joiner joiner = Joiner.on(", ");
 				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordBsw))
-						.setText(joiner.join(unitData.getChildBsw()));
-				((TextView) convertView
-						.findViewById(R.id.unitDetailChildRecordCcw))
-						.setText(joiner.join(unitData.getChildCcw()));
+						.findViewById(R.id.unitDetailChildRecordWeapons)).setText(joiner
+						.join(Iterables.concat(unitData.getChildBsw(),
+								unitData.getChildCcw())));
+				// ((TextView) convertView
+				// .findViewById(R.id.unitDetailChildRecordCcw))
+				// .setText(joiner.join(unitData.getChildCcw()));
 				((TextView) convertView
 						.findViewById(R.id.unitDetailChildRecordSpec))
 						.setText(joiner.join(unitData.getChildSpec()));
