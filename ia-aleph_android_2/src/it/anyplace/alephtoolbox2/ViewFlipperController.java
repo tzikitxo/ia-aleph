@@ -19,7 +19,7 @@ public class ViewFlipperController {
 	private Activity activity;
 
 	private ViewFlipper mainViewFlipper;
-	private View unitDetailView;
+	private View unitDetailView,armyListView;
 	private Button leftButton, rightButton;
 
 	private List<String> buttonLabels;
@@ -33,6 +33,7 @@ public class ViewFlipperController {
 						.getResources().getString(R.string.app_main_unitdetail));
 		// unitDataList = (ListView) this.findViewById(R.id.unitList);
 		unitDetailView = (View) activity.findViewById(R.id.unitDetailView);
+		armyListView = (View) activity.findViewById(R.id.armyListView);
 
 		mainViewFlipper = (ViewFlipper) activity
 				.findViewById(R.id.mainViewFlipper);
@@ -72,5 +73,12 @@ public class ViewFlipperController {
 		mainViewFlipper.setDisplayedChild(mainViewFlipper
 				.indexOfChild(unitDetailView));
 		updateButtonLabels();
+	}
+
+	public void showArmyListView() {
+		mainViewFlipper.setDisplayedChild(mainViewFlipper
+				.indexOfChild(armyListView));
+		updateButtonLabels();
+		
 	}
 }

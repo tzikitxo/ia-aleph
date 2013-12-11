@@ -4,7 +4,4 @@ public class Events {
 	public enum FactionLoadEvent{
 		INSTANCE
 	}
-	public enum ArmyListLoadEvent {
-		INSTANCE
-	}
 }

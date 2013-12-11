@@ -1,11 +1,13 @@
 package it.anyplace.alephtoolbox2.services;
 
+import it.anyplace.alephtoolbox2.UnitDetailController.UnitDetailChildUnitSelectedEvent;
 import it.anyplace.alephtoolbox2.beans.Events;
 import it.anyplace.alephtoolbox2.services.ArmyListService.ArmyList;
 import it.anyplace.alephtoolbox2.services.ArmyListService.ArmyList.ArmyListUnit;
 import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 
 import java.util.List;
+import java.util.UUID;
 
 import android.util.Log;
 
@@ -13,11 +15,12 @@ import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class CurrentListService {
+public class CurrentRosterService {
 	@Inject
 	private EventBus eventBus;
 	@Inject
@@ -30,7 +33,17 @@ public class CurrentListService {
 
 	private List<UnitRecord> unitRecords;
 
+	private transient Integer totalCost;
+	private transient Double totalSwc;
+
 	// private ArmyList armyList;
+	public enum ArmyListLoadEvent {
+		INSTANCE
+	}
+
+	public enum ArmyListUpdateEvent {
+		INSTANCE
+	}
 
 	@Inject
 	private void init() {
@@ -41,6 +54,29 @@ public class CurrentListService {
 	// public void loadFaction(LoadFactionEvent loadFactionEvent){
 	//
 	// }
+	@Subscribe
+	public void handleUnitDetailChildUnitSelectedEvent(
+			UnitDetailChildUnitSelectedEvent unitDetailChildUnitSelectedEvent) {
+		addUnit(unitDetailChildUnitSelectedEvent.getUnitData());
+	}
+
+	public void addUnit(UnitData unitData) {
+		UnitRecord newUnitRecord = new UnitRecord(unitData.getIsc(),
+				unitData.getCode(), UUID.randomUUID().toString(), unitData);
+		unitRecords.add(newUnitRecord);
+		validateList();
+		eventBus.post(ArmyListUpdateEvent.INSTANCE);
+	}
+
+	public void validateList() {
+		// TODO
+		totalSwc = 0.0;
+		totalCost = 0;
+		for (UnitRecord unitRecord : unitRecords) {
+			totalSwc += unitRecord.getUnitData().getSwcNum();
+			totalCost += unitRecord.getUnitData().getCostNum();
+		}
+	}
 
 	public void loadArmyList(ArmyList armyList) {
 		this.pointCap = armyList.getPcap();
@@ -62,7 +98,8 @@ public class CurrentListService {
 					}
 				}));
 
-		eventBus.post(Events.ArmyListLoadEvent.INSTANCE);
+		validateList();
+		eventBus.post(ArmyListLoadEvent.INSTANCE);
 	}
 
 	public void loadFaction(String faction, String sectorial,
@@ -77,7 +114,8 @@ public class CurrentListService {
 
 	public void resetList() {
 		unitRecords = Lists.newArrayList();
-		eventBus.post(Events.ArmyListLoadEvent.INSTANCE);
+		validateList();
+		eventBus.post(ArmyListUpdateEvent.INSTANCE);
 	}
 
 	public String getCurrentFaction() {
@@ -98,6 +136,14 @@ public class CurrentListService {
 
 	public List<UnitRecord> getUnitRecords() {
 		return unitRecords;
+	}
+
+	public Integer getPointTotal() {
+		return totalCost;
+	}
+
+	public Double getSwcTotal() {
+		return totalSwc;
 	}
 
 	public class UnitRecord {
@@ -128,6 +174,18 @@ public class CurrentListService {
 			return unitData;
 		}
 
+	}
+
+	public Integer getSwcCap() {
+		return getPointCap() / 50;
+	}
+
+	public Integer getPointLeft() {
+		return getPointCap() - getPointTotal();
+	}
+
+	public Double getSwcLeft() {
+		return getSwcCap() - getSwcTotal();
 	}
 
 }

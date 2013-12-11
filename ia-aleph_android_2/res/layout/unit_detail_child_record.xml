@@ -12,32 +12,38 @@
         android:layout_marginLeft="5dp"
         android:gravity="left"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <TextView
         android:id="@+id/unitDetailChildRecordCost"
         android:layout_width="30dp"
-        android:gravity="center"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <TextView
         android:id="@+id/unitDetailChildRecordSwc"
         android:layout_width="30dp"
-        android:gravity="center"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-    <TextView
-        android:id="@+id/unitDetailChildRecordSpec"
-        android:layout_marginLeft="3dp"
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/unitDetailChildRecordBsw"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/unitDetailChildRecordCcw"
-        android:layout_marginLeft="3dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/unitDetailChildRecordSpec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="5" />
+
+        <TextView
+            android:id="@+id/unitDetailChildRecordWeapons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="5" />
+    </LinearLayout>
 
 </LinearLayout>

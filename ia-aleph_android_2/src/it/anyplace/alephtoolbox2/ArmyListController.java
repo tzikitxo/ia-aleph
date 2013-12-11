@@ -1,15 +1,15 @@
 package it.anyplace.alephtoolbox2;
 
-import it.anyplace.alephtoolbox2.beans.Events;
 import it.anyplace.alephtoolbox2.services.ArmyListService;
-import it.anyplace.alephtoolbox2.services.CurrentListService;
-import it.anyplace.alephtoolbox2.services.CurrentListService.UnitRecord;
-import it.anyplace.alephtoolbox2.services.DataService.UnitData;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService.ArmyListLoadEvent;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService.ArmyListUpdateEvent;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService.UnitRecord;
+import it.anyplace.alephtoolbox2.services.DataService;
 
 import java.util.List;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,15 +36,26 @@ public class ArmyListController {
 	@Inject
 	private ArmyListService armylistService;
 	@Inject
-	private CurrentListService currentListService;
+	private CurrentRosterService currentListService;
+	// @Inject
+	// private UnitDetailController unitDetailController;
 	@Inject
-	private UnitDetailController unitDetailController;
+	private DataService dataService;
 
 	private ListView mainRosterList;
+	private TextView currentRosterInfo;
+	@Inject
+	private ViewFlipperController viewFlipperController;
+
+	public interface ArmyListUnitSelectedEvent {
+		public UnitRecord getUnitRecord();
+	}
 
 	@Inject
 	private void init() {
 		mainRosterList = (ListView) activity.findViewById(R.id.mainRosterList);
+		currentRosterInfo = (TextView) activity
+				.findViewById(R.id.currentRosterInfo);
 		eventBus.register(this);
 
 		mainRosterList.setOnItemClickListener(new OnItemClickListener() {
@@ -52,16 +63,29 @@ public class ArmyListController {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View arg1,
 					int index, long arg3) {
-				UnitRecord unitRecord = currentListService.getUnitRecords()
-						.get(index);
-				unitDetailController.openUnitDetail(unitRecord.getUnitData());
+				final UnitRecord unitRecord = currentListService
+						.getUnitRecords().get(index);
+				// unitDetailController.openUnitDetail(unitRecord.getUnitData());
+				eventBus.post(new ArmyListUnitSelectedEvent() {
+
+					@Override
+					public UnitRecord getUnitRecord() {
+						return unitRecord;
+					}
+				});
 			}
 		});
 	}
 
 	@Subscribe
-	public void updateArmylist(Events.ArmyListLoadEvent event) {
+	public void handleArmyListLoadEvent(ArmyListLoadEvent event) {
 		loadArmylist();
+	}
+
+	@Subscribe
+	public void handleArmyListUpdateEvent(ArmyListUpdateEvent event) {
+		loadArmylist();
+		viewFlipperController.showArmyListView();
 	}
 
 	private void loadArmylist() {
@@ -92,6 +116,14 @@ public class ArmyListController {
 				((TextView) convertView.findViewById(R.id.armyListRecordCode))
 						.setText(unitRecord.getCode());
 
+				// UnitData unitData = dataService.getUnitDataByIscCode(
+				// unitRecord.getIsc(), unitRecord.getCode());
+
+				((TextView) convertView.findViewById(R.id.armyListRecordCost))
+						.setText(unitRecord.getUnitData().getCost());
+				((TextView) convertView.findViewById(R.id.armyListRecordSwc))
+						.setText(unitRecord.getUnitData().getSwc());
+
 				((ImageView) convertView.findViewById(R.id.armyListRecordIcon))
 						.setImageResource(activity.getResources()
 								.getIdentifier(
@@ -104,9 +136,21 @@ public class ArmyListController {
 
 		};
 		mainRosterList.setAdapter(adapter);
+
+		updateRosterInfo();
 		// for(ArmyListUnit model:armylist.getModels()){
 		// mainRosterList
 		// }
 
+	}
+
+	private void updateRosterInfo() {
+		currentRosterInfo.setText("points: "
+				+ currentListService.getPointTotal() + "/"
+				+ currentListService.getPointCap() + " ("
+				+ currentListService.getPointLeft() + ")" + " swc: "
+				+ currentListService.getSwcTotal() + "/"
+				+ currentListService.getSwcCap() + " ("
+				+ currentListService.getSwcLeft() + ")");
 	}
 }

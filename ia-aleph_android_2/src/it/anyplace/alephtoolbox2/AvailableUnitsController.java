@@ -1,7 +1,7 @@
 package it.anyplace.alephtoolbox2;
 
 import it.anyplace.alephtoolbox2.beans.Events;
-import it.anyplace.alephtoolbox2.services.CurrentListService;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService;
 import it.anyplace.alephtoolbox2.services.DataService;
 import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 
@@ -42,17 +42,21 @@ public class AvailableUnitsController {
 	@Inject
 	private DataService unitDataService;
 	@Inject
-	private CurrentListService sessionService;
+	private CurrentRosterService sessionService;
 	@Inject
 	private Activity activity;
-	@Inject
-	private UnitDetailController unitDetailController;
+//	@Inject
+//	private UnitDetailController unitDetailController;
 
 	@Inject
 	private EventBus eventBus;
 
 	private ListView unitListView, typeListView;
 
+	public interface AvailableUnitsUnitSelectedEvent{
+		public UnitData getUnitData();
+	}
+	
 	@Inject
 	private void init() {
 		unitListView = (ListView) activity.findViewById(R.id.unitListView);
@@ -76,14 +80,20 @@ public class AvailableUnitsController {
 			@Override
 			public void onItemClick(AdapterView<?> adapterView, View arg1,
 					int index, long arg3) {
-				UnitData selectedUnit = availableUnitsForType.get(index);
+				final UnitData selectedUnit = availableUnitsForType.get(index);
 				// String
 				// isc=((ArrayAdapter<String>)adapterView).getItem(index);
 				// typeFilter = types.get(index);
 				Log.i("AvailableUnitsController", "selected unit = "
 						+ selectedUnit.getIsc());
-				unitDetailController.openUnitDetail(selectedUnit
-						.getDefaultChild());
+				eventBus.post(new AvailableUnitsUnitSelectedEvent(){
+
+					@Override
+					public UnitData getUnitData() {
+						return selectedUnit;
+					}});
+//				unitDetailController.openUnitDetail(selectedUnit
+//						.getDefaultChild());
 			}
 		});
 
