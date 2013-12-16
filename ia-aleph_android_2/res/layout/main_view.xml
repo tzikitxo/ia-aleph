@@ -5,7 +5,6 @@
     android:orientation="vertical" >
 
     <ViewFlipper
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/mainViewFlipper"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -24,15 +23,19 @@
             android:id="@+id/leftButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="LEFT" />
+            android:layout_weight="1" />
 
+        <Button
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/app.main.menu" />
         <Button
             android:id="@+id/rightButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="RIGHT" />
+            android:layout_weight="1" />
     </LinearLayout>
 
 </LinearLayout>

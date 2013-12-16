@@ -30,6 +30,7 @@ public class ViewFlipperController {
 	// private List<String> buttonLabels;
 
 	private Map<View, View> swipeRightMap, swipeLeftMap;
+	private Map<View, String> rightButtonLabelMap, leftButtonLabelMap;
 
 	@Inject
 	private void init() {
@@ -39,6 +40,10 @@ public class ViewFlipperController {
 				.findViewById(R.id.availableUnitsView);
 		mainViewFlipper = (ViewFlipper) activity
 				.findViewById(R.id.mainViewFlipper);
+		String unitDetailLabel = activity
+				.getString(R.string.app_main_unitdetail), armyListLabel = activity
+				.getString(R.string.app_main_armylist), availableUnitsLabel = activity
+				.getString(R.string.app_main_availableunits);
 
 		swipeRightMap = ImmutableMap.of(unitDetailView, armyListView,
 				armyListView, unitDetailView, availableUnitsView,
@@ -46,72 +51,78 @@ public class ViewFlipperController {
 		swipeLeftMap = ImmutableMap.of(unitDetailView, availableUnitsView,
 				armyListView, availableUnitsView, availableUnitsView,
 				armyListView);
+		rightButtonLabelMap = ImmutableMap.of(unitDetailView, armyListLabel,
+				armyListView, unitDetailLabel, availableUnitsView,
+				unitDetailLabel);
+		leftButtonLabelMap = ImmutableMap.of(unitDetailView,
+				availableUnitsLabel, armyListView, availableUnitsLabel,
+				availableUnitsView, armyListLabel);
 
-		mainViewFlipper.setOnTouchListener(new OnTouchListener() {
-
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				Log.d("MotionEvent", "event = " + event);
-				return gestureDetector.onTouchEvent(event);
-			}
-
-			GestureDetector gestureDetector = new GestureDetector(activity,
-					new SimpleOnGestureListener() {
-						private static final int SWIPE_THRESHOLD = 100;
-						private static final int SWIPE_VELOCITY_THRESHOLD = 100;
-
-						@Override
-						public boolean onDown(MotionEvent e) {
-							return true;
-						}
-
-						@Override
-						public boolean onFling(MotionEvent e1, MotionEvent e2,
-								float velocityX, float velocityY) {
-							float diffY = e2.getY() - e1.getY();
-							float diffX = e2.getX() - e1.getX();
-							Log.i("Fling event", "dx = " + diffX + " dy = "
-									+ diffY + " velx = " + velocityX
-									+ " velY = " + velocityY);
-							if (Math.abs(diffX) > Math.abs(diffY)) {
-								if (Math.abs(diffX) > SWIPE_THRESHOLD
-										&& Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-									if (diffX > 0) {
-										onSwipeRight();
-									} else {
-										onSwipeLeft();
-									}
-								}
-							} else {
-								if (Math.abs(diffY) > SWIPE_THRESHOLD
-										&& Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-									if (diffY > 0) {
-										onSwipeBottom();
-									} else {
-										onSwipeTop();
-									}
-								}
-							}
-							return false;
-						}
-
-						public void onSwipeRight() {
-							shiftViewToRight();
-						}
-
-						public void onSwipeLeft() {
-							shiftViewToLeft();
-						}
-
-						public void onSwipeTop() {
-						}
-
-						public void onSwipeBottom() {
-						}
-
-					});
-
-		});
+		// mainViewFlipper.setOnTouchListener(new OnTouchListener() {
+		//
+		// @Override
+		// public boolean onTouch(View v, MotionEvent event) {
+		// Log.d("MotionEvent", "event = " + event);
+		// return gestureDetector.onTouchEvent(event);
+		// }
+		//
+		// GestureDetector gestureDetector = new GestureDetector(activity,
+		// new SimpleOnGestureListener() {
+		// private static final int SWIPE_THRESHOLD = 100;
+		// private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+		//
+		// @Override
+		// public boolean onDown(MotionEvent e) {
+		// return true;
+		// }
+		//
+		// @Override
+		// public boolean onFling(MotionEvent e1, MotionEvent e2,
+		// float velocityX, float velocityY) {
+		// float diffY = e2.getY() - e1.getY();
+		// float diffX = e2.getX() - e1.getX();
+		// Log.i("Fling event", "dx = " + diffX + " dy = "
+		// + diffY + " velx = " + velocityX
+		// + " velY = " + velocityY);
+		// if (Math.abs(diffX) > Math.abs(diffY)) {
+		// if (Math.abs(diffX) > SWIPE_THRESHOLD
+		// && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+		// if (diffX > 0) {
+		// onSwipeRight();
+		// } else {
+		// onSwipeLeft();
+		// }
+		// }
+		// } else {
+		// if (Math.abs(diffY) > SWIPE_THRESHOLD
+		// && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+		// if (diffY > 0) {
+		// onSwipeBottom();
+		// } else {
+		// onSwipeTop();
+		// }
+		// }
+		// }
+		// return false;
+		// }
+		//
+		// public void onSwipeRight() {
+		// shiftViewToRight();
+		// }
+		//
+		// public void onSwipeLeft() {
+		// shiftViewToLeft();
+		// }
+		//
+		// public void onSwipeTop() {
+		// }
+		//
+		// public void onSwipeBottom() {
+		// }
+		//
+		// });
+		//
+		// });
 
 		// buttonLabels = Arrays
 		// .asList(activity.getResources().getString(
@@ -136,7 +147,7 @@ public class ViewFlipperController {
 
 			}
 		});
-		// updateButtonLabels();
+		updateButtonLabels();
 	}
 
 	private void shiftViewToLeft() {
@@ -144,8 +155,7 @@ public class ViewFlipperController {
 				.indexOfChild(swipeLeftMap.get(mainViewFlipper
 						.getChildAt(mainViewFlipper.getDisplayedChild()))));
 		// mainViewFlipper.showPrevious();
-		// updateButtonLabels();
-
+		updateButtonLabels();
 	}
 
 	private void shiftViewToRight() {
@@ -153,26 +163,25 @@ public class ViewFlipperController {
 				.indexOfChild(swipeRightMap.get(mainViewFlipper
 						.getChildAt(mainViewFlipper.getDisplayedChild()))));
 		// mainViewFlipper.showNext();
-		// updateButtonLabels();
-
+		updateButtonLabels();
 	}
 
-	// private void updateButtonLabels() {
-	// int index = mainViewFlipper.getDisplayedChild();
-	// // leftButton.setText(buttonLabels.get((index + 2) % 3));
-	// // rightButton.setText(buttonLabels.get((index + 1) % 3));
-	// }
+	private void updateButtonLabels() {
+		leftButton.setText(leftButtonLabelMap.get(mainViewFlipper
+				.getChildAt(mainViewFlipper.getDisplayedChild())));
+		rightButton.setText(rightButtonLabelMap.get(mainViewFlipper
+				.getChildAt(mainViewFlipper.getDisplayedChild())));
+	}
 
 	public void showUnitDetailView() {
 		mainViewFlipper.setDisplayedChild(mainViewFlipper
 				.indexOfChild(unitDetailView));
-		// updateButtonLabels();
+		updateButtonLabels();
 	}
 
 	public void showArmyListView() {
 		mainViewFlipper.setDisplayedChild(mainViewFlipper
 				.indexOfChild(armyListView));
-		// updateButtonLabels();
-
+		updateButtonLabels();
 	}
 }

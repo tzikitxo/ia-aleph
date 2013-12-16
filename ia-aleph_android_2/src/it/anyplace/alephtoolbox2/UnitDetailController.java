@@ -1,31 +1,30 @@
 package it.anyplace.alephtoolbox2;
 
-import it.anyplace.alephtoolbox2.ArmyListController.ArmyListUnitSelectedEvent;
+import it.anyplace.alephtoolbox2.CurrentRosterController.ArmyListUnitSelectedEvent;
 import it.anyplace.alephtoolbox2.AvailableUnitsController.AvailableUnitsUnitSelectedEvent;
+import it.anyplace.alephtoolbox2.beans.Events;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService;
+import it.anyplace.alephtoolbox2.services.DataService;
 import it.anyplace.alephtoolbox2.services.DataService.UnitData;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
+import java.util.Collection;
 import java.util.List;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidquery.AQuery;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -39,6 +38,9 @@ public class UnitDetailController {
 
 	@Inject
 	private CurrentRosterService sessionService;
+
+	@Inject
+	private DataService unitDataService;
 	@Inject
 	private Activity activity;
 	@Inject
@@ -84,36 +86,62 @@ public class UnitDetailController {
 		unitDetailChildsListView
 				.setOnItemClickListener(new OnItemClickListener() {
 
-					@Override
-					public void onItemClick(AdapterView<?> arg0,
-							View clickedView, int index, long arg3) {
-						final UnitData newUnit = childs.get(index);
-						if (selectedIndex == index) {
-							Toast.makeText(
-									activity,
-									activity.getResources().getString(
-											R.string.app_toast_addedUnit,
-											newUnit.getName(),
-											newUnit.getCode()),
-									activity.getResources().getInteger(
-											R.integer.toastDelay)).show();
-							eventBus.post(new UnitDetailChildUnitSelectedEvent() {
+					// private long lastClickTime = 0;
 
-								@Override
-								public UnitData getUnitData() {
-									return newUnit;
-								}
-							});
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View view,
+							int index, long arg3) {
+						final UnitData newUnit = childs.get(index);
+						// long thisClickedTime = System.currentTimeMillis();
+						if (lastClickedUnit == newUnit
+						// && (thisClickedTime - lastClickTime) < 1000
+						) {
+							addUnit(newUnit);
 						} else {
-							selectedIndex = index;
+							lastClickedUnit = newUnit;
+							// lastClickTime = thisClickedTime;
+							// selectedIndex = index;
 							// unitDetailChildsListView.setSelection(index);
 							loadUnitDetail(newUnit, false);
 						}
 					}
 				});
+		unitDetailChildsListView
+				.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+					@Override
+					public boolean onItemLongClick(AdapterView<?> arg0,
+							View arg1, int index, long arg3) {
+						UnitData newUnit = childs.get(index);
+						if (lastClickedUnit != newUnit) {
+							loadUnitDetail(newUnit, false);
+						}
+						addUnit(newUnit);
+						return true;
+					}
+
+				});
 	}
 
-	private int selectedIndex = -1;
+	private UnitData lastClickedUnit;
+
+	private void addUnit(final UnitData newUnit) {
+		Toast.makeText(
+				activity,
+				activity.getResources().getString(R.string.app_toast_addedUnit,
+						newUnit.getName(), newUnit.getCode()),
+				activity.getResources().getInteger(R.integer.toastDelay))
+				.show();
+		eventBus.post(new UnitDetailChildUnitSelectedEvent() {
+
+			@Override
+			public UnitData getUnitData() {
+				return newUnit;
+			}
+		});
+	}
+
+	// private int selectedIndex = -1;
 
 	@Subscribe
 	public void handleArmyListUnitSelectedEvent(
@@ -126,6 +154,15 @@ public class UnitDetailController {
 			AvailableUnitsUnitSelectedEvent availableUnitsUnitSelectedEvent) {
 		openUnitDetail(availableUnitsUnitSelectedEvent.getUnitData()
 				.getDefaultChild());
+	}
+
+	@Subscribe
+	public void loadFaction(Events.FactionLoadEvent event) {
+		Collection<UnitData> allAvailableUnits = unitDataService
+				.getAvailableUnitData();
+		if (!allAvailableUnits.isEmpty()) {
+			loadUnitDetail(allAvailableUnits.iterator().next());
+		}
 	}
 
 	public void loadUnitDetail(UnitData unitData) {
@@ -148,36 +185,9 @@ public class UnitDetailController {
 		unitDetailW.setText(unitData.getW());
 		unitDetailSpecs.setText(Joiner.on(", ").join(unitData.getSpec()));
 
-		unitDetailImage.setImageResource(R.drawable.missing_logo_big);
-		if (!unitData.getCbcode().isEmpty()) {
-			// TODO show loading screen
-			String cbCode = unitData.getCbcode().get(0);// TODO slideshow
-			final String url = "http://www.infinitythegame.com/infinity/catalogo/"
-					+ cbCode + "-recorte.png";
-			new AsyncTask<Void, Void, Bitmap>() {
-
-				@Override
-				protected Bitmap doInBackground(Void... params) {
-					InputStream in;
-					try {
-						in = new java.net.URL(url).openStream();
-						Bitmap bitmap = BitmapFactory.decodeStream(in);
-						return bitmap;
-					} catch (MalformedURLException e) {
-						Log.w("Error loading unit icon", e);
-					} catch (IOException e) {
-						Log.w("Error loading unit icon", e);
-					}
-					return null;
-				}
-
-				protected void onPostExecute(Bitmap result) {
-					unitDetailImage.setImageBitmap(result);
-				}
-			}.execute();
-		}
-
 		if (reloadChilds) {
+			unitDetailImage.setImageResource(R.drawable.missing_logo_big);
+
 			childs = Lists.newArrayList(unitData.getParent().getChilds());
 			Log.i("UnitDetailController", "child units = " + childs);
 
@@ -222,8 +232,37 @@ public class UnitDetailController {
 
 			});
 			unitDetailChildsListView.setSelection(childs.indexOf(unitData));
-			selectedIndex = -1;
+			// selectedIndex = -1;
 			// selectChild(childs.indexOf(unitData),true);
+		}
+
+		if (!unitData.getCbcode().isEmpty()) {
+			// TODO show loading screen
+			String cbCode = unitData.getCbcode().get(0);// TODO slideshow
+			final String url = "http://www.infinitythegame.com/infinity/catalogo/"
+					+ cbCode + "-recorte.png";
+			new AQuery(activity).id(unitDetailImage).image(url);
+			// new AsyncTask<Void, Void, Bitmap>() {
+			//
+			// @Override
+			// protected Bitmap doInBackground(Void... params) {
+			// InputStream in;
+			// try {
+			// in = new java.net.URL(url).openStream();
+			// Bitmap bitmap = BitmapFactory.decodeStream(in);
+			// return bitmap;
+			// } catch (MalformedURLException e) {
+			// Log.w("Error loading unit icon", e);
+			// } catch (IOException e) {
+			// Log.w("Error loading unit icon", e);
+			// }
+			// return null;
+			// }
+			//
+			// protected void onPostExecute(Bitmap result) {
+			// unitDetailImage.setImageBitmap(result);
+			// }
+			// }.execute();
 		}
 	}
 

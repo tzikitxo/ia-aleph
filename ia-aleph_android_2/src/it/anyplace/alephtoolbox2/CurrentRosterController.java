@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -26,7 +27,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
 @Singleton
-public class ArmyListController {
+public class CurrentRosterController {
 
 	@Inject
 	private Activity activity;
@@ -75,6 +76,17 @@ public class ArmyListController {
 				});
 			}
 		});
+		mainRosterList.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+					int index, long arg3) {
+				UnitRecord unitRecord = currentListService.getUnitRecords().get(index);
+				//TODO remove unit
+				return true;
+			}
+		});
+		
 	}
 
 	@Subscribe
