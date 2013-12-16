@@ -233,5 +233,6 @@
     <string name="app.main.armylist">Current Roster</string>
     <string name="app.main.availableunits">Available Units</string>
     <string name="app.main.unitdetail">Unit Detail</string>
+    <string name="app.main.menu">Menu</string>
     <string name="app.toast.addedUnit" formatted="false" >Added %s (%s)</string>
 </resources>
