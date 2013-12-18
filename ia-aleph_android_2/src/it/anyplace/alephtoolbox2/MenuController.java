@@ -1,62 +1,104 @@
 package it.anyplace.alephtoolbox2;
 
+import it.anyplace.alephtoolbox2.services.CurrentRosterService;
+import it.anyplace.alephtoolbox2.services.SourceDataService;
+import it.anyplace.alephtoolbox2.services.SourceDataService.FactionData;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
 public class MenuController {
 
-	@Inject
-	private Activity activity;
+    @Inject
+    private Activity activity;
 
-	private Button menuButton;
+    @Inject
+    private SourceDataService sourceDataService;
+    private Button menuButton;
 
-	@Inject
-	private void init() {
-		menuButton = (Button) activity.findViewById(R.id.menuButton);
-		menuButton.setOnClickListener(new OnClickListener() {
+    @Inject
+    private Provider<CurrentRosterService> currentRosterService;
 
-			@Override
-			public void onClick(View v) {
-				showMenu();
-			}
-		});
-	}
+    @Inject
+    private Provider<UnitDetailController> unitDetailController;
 
-	AlertDialog menuPopup;
+    @Inject
+    private Provider<AvailableUnitsController> availableUnitsController;
 
-	public void hideMenu() {
-		if (menuPopup != null) {
-			menuPopup.dismiss();
-			menuPopup = null;
-		}
-	}
+    @Inject
+    private void init() {
+        menuButton = (Button) activity.findViewById(R.id.menuButton);
+        menuButton.setOnClickListener(new OnClickListener() {
 
-	public void showMenu() {
-		menuPopup = new AlertDialog.Builder(activity)
-				.setView(
-						activity.getLayoutInflater().inflate(
-								R.layout.main_menu, null))
-				.setNegativeButton("CLOSE",
-						new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMainMenu();
+            }
+        });
+    }
 
-							@Override
-							public void onClick(DialogInterface dialog,
-									int which) {
-								hideMenu();
-							}
-						}).show();
-		// PopupMenu popup = new PopupMenu(activity, menuButton);
-		// MenuInflater inflater = popup.getMenuInflater();
-		// inflater.inflate(R.layout.main_menu, popup.getMenu());
-		// popup.show();
-	}
+    AlertDialog menuPopup;
+
+    public void hideMenu() {
+        if (menuPopup != null) {
+            menuPopup.dismiss();
+            menuPopup = null;
+        }
+    }
+
+    public void showMainMenu() {
+        hideMenu();
+        menuPopup = new AlertDialog.Builder(activity)
+                .setView(activity.getLayoutInflater().inflate(R.layout.main_menu, null))
+                .setNegativeButton("CLOSE", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        hideMenu();
+                    }
+                }).show();
+        ((Button) activity.findViewById(R.id.newRosterMenuButton)).setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                showNewRosterMenu();
+            }
+        });
+    }
+
+    public void showNewRosterMenu() {
+        hideMenu();
+        LinearLayout view = (LinearLayout) activity.getLayoutInflater().inflate(R.layout.new_roster_menu, null);
+        for (final FactionData factionData : sourceDataService.getAllFactionsData()) {
+            Button button = new Button(activity);
+            button.setText(factionData.getFactionName());
+            button.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    currentRosterService.get().newRoster(factionData);
+                }
+            });
+            view.addView(button);
+        }
+
+        menuPopup = new AlertDialog.Builder(activity).setView(view)
+                .setNegativeButton("BACK", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        showMainMenu();
+                    }
+                }).show();
+    }
 
 }

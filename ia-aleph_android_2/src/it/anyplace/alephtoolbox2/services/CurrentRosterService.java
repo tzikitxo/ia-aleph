@@ -1,9 +1,9 @@
 package it.anyplace.alephtoolbox2.services;
 
-import it.anyplace.alephtoolbox2.beans.Events;
-import it.anyplace.alephtoolbox2.services.ArmyListService.ArmyList;
-import it.anyplace.alephtoolbox2.services.ArmyListService.ArmyList.ArmyListUnit;
-import it.anyplace.alephtoolbox2.services.DataService.UnitData;
+import it.anyplace.alephtoolbox2.services.RosterDataService.ArmyList;
+import it.anyplace.alephtoolbox2.services.RosterDataService.ArmyList.ArmyListUnit;
+import it.anyplace.alephtoolbox2.services.SourceDataService.FactionData;
+import it.anyplace.alephtoolbox2.services.SourceDataService.UnitData;
 
 import java.util.List;
 import java.util.UUID;
@@ -19,209 +19,217 @@ import com.google.inject.Singleton;
 
 @Singleton
 public class CurrentRosterService {
-	@Inject
-	private EventBus eventBus;
-	@Inject
-	private DataService dataService;
+    @Inject
+    private EventBus eventBus;
+    @Inject
+    private SourceDataService dataService;
 
-	private String currentFaction, currentSectorial;
+    private String currentFaction, currentSectorial;
 
-	private Integer pointCap;
-	private Boolean includeMercenaryUnits;
+    private Integer pointCap;
+    private Boolean includeMercenaryUnits;
 
-	private List<UnitRecord> unitRecords;
+    private List<UnitRecord> unitRecords;
 
-	private transient Integer totalCost;
-	private transient Double totalSwc;
+    private transient Integer totalCost;
+    private transient Double totalSwc;
 
-	// private ArmyList armyList;
-	public enum ArmyListLoadEvent {
-		INSTANCE
-	}
+    // private ArmyList armyList;
+    public enum RosterLoadEvent {
+        INSTANCE
+    }
 
-	public enum ArmyListUpdateEvent {
-		INSTANCE
-	}
+    public enum RosterUpdateEvent {
+        INSTANCE
+    }
 
-	@Inject
-	private void init() {
-		eventBus.register(this);
-	}
+    @Inject
+    private void init() {
+        eventBus.register(this);
+    }
 
-	// @Subscribe
-	// public void loadFaction(LoadFactionEvent loadFactionEvent){
-	//
-	// }
-//	@Subscribe
-//	public void handleUnitDetailChildUnitSelectedEvent(
-//			UnitDetailChildUnitSelectedEvent unitDetailChildUnitSelectedEvent) {
-//		addUnit(unitDetailChildUnitSelectedEvent.getUnitData());
-//	}
+    // @Subscribe
+    // public void loadFaction(LoadFactionEvent loadFactionEvent){
+    //
+    // }
+    // @Subscribe
+    // public void handleUnitDetailChildUnitSelectedEvent(
+    // UnitDetailChildUnitSelectedEvent unitDetailChildUnitSelectedEvent) {
+    // addUnit(unitDetailChildUnitSelectedEvent.getUnitData());
+    // }
 
-	public void addUnit(UnitData unitData) {
-		UnitRecord newUnitRecord = new UnitRecord(unitData.getIsc(),
-				unitData.getCode(), UUID.randomUUID().toString(), unitData);
-		unitRecords.add(newUnitRecord);
-		validateList();
-		eventBus.post(ArmyListUpdateEvent.INSTANCE);
-	}
+    public void addUnit(UnitData unitData) {
+        UnitRecord newUnitRecord = new UnitRecord(unitData.getIsc(), unitData.getCode(), UUID.randomUUID().toString(),
+                unitData);
+        unitRecords.add(newUnitRecord);
+        validateList();
+        eventBus.post(RosterUpdateEvent.INSTANCE);
+    }
 
-	public void validateList() {
-		// TODO
-		totalSwc = 0.0;
-		totalCost = 0;
-		for (UnitRecord unitRecord : unitRecords) {
-			totalSwc += unitRecord.getUnitData().getSwcNum();
-			totalCost += unitRecord.getUnitData().getCostNum();
-		}
-	}
+    public void validateList() {
+        // TODO
+        totalSwc = 0.0;
+        totalCost = 0;
+        for (UnitRecord unitRecord : unitRecords) {
+            totalSwc += unitRecord.getUnitData().getSwcNum();
+            totalCost += unitRecord.getUnitData().getCostNum();
+        }
+    }
 
-	public void loadArmyList(ArmyList armyList) {
-		this.pointCap = armyList.getPcap();
-		this.includeMercenaryUnits = armyList.getIncludeMercs();
-		loadFaction(armyList.getFaction(), armyList.getSectorial(),
-				armyList.getIncludeMercs());
-		unitRecords = Lists.newArrayList(Iterables.transform(
-				armyList.getModels(), new Function<ArmyListUnit, UnitRecord>() {
+    public void loadArmyList(ArmyList armyList) {
+        this.pointCap = armyList.getPcap();
+//        this.includeMercenaryUnits = armyList.getIncludeMercs();
+        setFaction(armyList.getFaction(), armyList.getSectorial(), armyList.getIncludeMercs());
+        unitRecords = Lists.newArrayList(Iterables.transform(armyList.getModels(),
+                new Function<ArmyListUnit, UnitRecord>() {
 
-					@Override
-					public UnitRecord apply(ArmyListUnit armyListUnit) {
+                    @Override
+                    public UnitRecord apply(ArmyListUnit armyListUnit) {
 
-						return new UnitRecord(armyListUnit.getIsc(),
-								armyListUnit.getCode(), armyListUnit
-										.getRecordid(), dataService
-										.getUnitDataByIscCode(
-												armyListUnit.getIsc(),
-												armyListUnit.getCode()));
-					}
-				}));
+                        return new UnitRecord(armyListUnit.getIsc(), armyListUnit.getCode(),
+                                armyListUnit.getRecordid(), dataService.getUnitDataByIscCode(armyListUnit.getIsc(),
+                                        armyListUnit.getCode()));
+                    }
+                }));
+        validateList();
+        eventBus.post(RosterLoadEvent.INSTANCE);
+    }
 
-		validateList();
-		eventBus.post(ArmyListLoadEvent.INSTANCE);
-	}
+//    public void loadFaction(String faction, String sectorial, Boolean includeMercenaryUnits) {
+//        setFaction(faction, sectorial, includeMercenaryUnits);
+//        eventBus.post(Events.FactionLoadEvent.INSTANCE);
+//    }
 
-	public void loadFaction(String faction, String sectorial,
-			Boolean includeMercenaryUnits) {
-		Log.i("CurrentListService", "loadFaction " + faction + " - "
-				+ sectorial);
-		currentFaction = faction;
-		currentSectorial = sectorial;
-		this.includeMercenaryUnits = includeMercenaryUnits;
-		eventBus.post(Events.FactionLoadEvent.INSTANCE);
-	}
+    private void setFaction(String faction, String sectorial, Boolean includeMercenaryUnits) {
+        Log.i("CurrentListService", "loadFaction " + faction + " - " + sectorial);
+        currentFaction = faction;
+        currentSectorial = sectorial;
+        this.includeMercenaryUnits = includeMercenaryUnits;
+    }
 
-	public void resetList() {
-		unitRecords = Lists.newArrayList();
-		validateList();
-		eventBus.post(ArmyListUpdateEvent.INSTANCE);
-	}
+    public void newRoster(FactionData factionData) {
+        clearList();
+        setFaction(factionData.getFactionName(), factionData.getSectorialName(), false);
+        validateList();
+        eventBus.post(RosterLoadEvent.INSTANCE);
+    }
 
-	public String getCurrentFaction() {
-		return currentFaction;
-	}
+    private void clearList() {
+        unitRecords = Lists.newArrayList();
+    }
 
-	public String getCurrentSectorial() {
-		return currentSectorial;
-	}
+    public void resetList() {
+        clearList();
+        validateList();
+        eventBus.post(RosterUpdateEvent.INSTANCE);
+    }
 
-	public Integer getPointCap() {
-		return pointCap;
-	}
+    public String getCurrentFaction() {
+        return currentFaction;
+    }
 
-	public Boolean getIncludeMercenaryUnits() {
-		return includeMercenaryUnits;
-	}
+    public String getCurrentSectorial() {
+        return currentSectorial;
+    }
 
-	public List<UnitRecord> getUnitRecords() {
-		return unitRecords;
-	}
+    public Integer getPointCap() {
+        return pointCap;
+    }
 
-	public Integer getPointTotal() {
-		return totalCost;
-	}
+    public Boolean getIncludeMercenaryUnits() {
+        return includeMercenaryUnits;
+    }
 
-	public Double getSwcTotal() {
-		return totalSwc;
-	}
+    public List<UnitRecord> getUnitRecords() {
+        return unitRecords;
+    }
 
-	public class UnitRecord {
-		private String isc, code, id;
-		private UnitData unitData;
+    public Integer getPointTotal() {
+        return totalCost;
+    }
 
-		public UnitRecord(String isc, String code, String id, UnitData unitData) {
-			super();
-			this.isc = isc;
-			this.code = code;
-			this.id = id;
-			this.unitData = unitData;
-		}
+    public Double getSwcTotal() {
+        return totalSwc;
+    }
 
-		public String getIsc() {
-			return isc;
-		}
+    public class UnitRecord {
+        private String isc, code, id;
+        private UnitData unitData;
 
-		public String getCode() {
-			return code;
-		}
+        public UnitRecord(String isc, String code, String id, UnitData unitData) {
+            super();
+            this.isc = isc;
+            this.code = code;
+            this.id = id;
+            this.unitData = unitData;
+        }
 
-		public String getId() {
-			return id;
-		}
+        public String getIsc() {
+            return isc;
+        }
 
-		public UnitData getUnitData() {
-			return unitData;
-		}
+        public String getCode() {
+            return code;
+        }
 
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + getOuterType().hashCode();
-			result = prime * result + ((id == null) ? 0 : id.hashCode());
-			return result;
-		}
+        public String getId() {
+            return id;
+        }
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			UnitRecord other = (UnitRecord) obj;
-			if (!getOuterType().equals(other.getOuterType()))
-				return false;
-			if (id == null) {
-				if (other.id != null)
-					return false;
-			} else if (!id.equals(other.id))
-				return false;
-			return true;
-		}
+        public UnitData getUnitData() {
+            return unitData;
+        }
 
-		private CurrentRosterService getOuterType() {
-			return CurrentRosterService.this;
-		}
+        @Override
+        public int hashCode() {
+            final int prime = 31;
+            int result = 1;
+            result = prime * result + getOuterType().hashCode();
+            result = prime * result + ((id == null) ? 0 : id.hashCode());
+            return result;
+        }
 
-	}
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj)
+                return true;
+            if (obj == null)
+                return false;
+            if (getClass() != obj.getClass())
+                return false;
+            UnitRecord other = (UnitRecord) obj;
+            if (!getOuterType().equals(other.getOuterType()))
+                return false;
+            if (id == null) {
+                if (other.id != null)
+                    return false;
+            } else if (!id.equals(other.id))
+                return false;
+            return true;
+        }
 
-	public Integer getSwcCap() {
-		return getPointCap() / 50;
-	}
+        private CurrentRosterService getOuterType() {
+            return CurrentRosterService.this;
+        }
 
-	public Integer getPointLeft() {
-		return getPointCap() - getPointTotal();
-	}
+    }
 
-	public Double getSwcLeft() {
-		return getSwcCap() - getSwcTotal();
-	}
+    public Integer getSwcCap() {
+        return getPointCap() / 50;
+    }
 
-	public void removeUnitRecord(final UnitRecord unitRecord) {
-		unitRecords.remove(unitRecord);
-		validateList();
-		eventBus.post(ArmyListUpdateEvent.INSTANCE);
-	}
+    public Integer getPointLeft() {
+        return getPointCap() - getPointTotal();
+    }
+
+    public Double getSwcLeft() {
+        return getSwcCap() - getSwcTotal();
+    }
+
+    public void removeUnitRecord(final UnitRecord unitRecord) {
+        unitRecords.remove(unitRecord);
+        validateList();
+        eventBus.post(RosterUpdateEvent.INSTANCE);
+    }
 
 }
