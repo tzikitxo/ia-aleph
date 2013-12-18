@@ -1,7 +1,5 @@
 package it.anyplace.alephtoolbox2;
 
-import it.anyplace.alephtoolbox2.CurrentRosterController.ArmyListUnitSelectedEvent;
-import it.anyplace.alephtoolbox2.AvailableUnitsController.AvailableUnitsUnitSelectedEvent;
 import it.anyplace.alephtoolbox2.beans.Events;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService;
 import it.anyplace.alephtoolbox2.services.DataService;
@@ -31,6 +29,7 @@ import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
@@ -47,6 +46,8 @@ public class UnitDetailController {
 	private ViewFlipperController viewFlipperController;
 	@Inject
 	private EventBus eventBus;
+	@Inject
+	private Provider<CurrentRosterService> currentRosterService;
 
 	private TextView unitDetailName, unitDetailCode, unitDetailCost,
 			unitDetailSwc, unitDetailType, unitDetailMov, unitDetailCc,
@@ -56,9 +57,9 @@ public class UnitDetailController {
 	private ListView unitDetailChildsListView;
 	private List<UnitData> childs = Lists.newArrayList();
 
-	public interface UnitDetailChildUnitSelectedEvent {
-		public UnitData getUnitData();
-	}
+//	public interface UnitDetailChildUnitSelectedEvent {
+//		public UnitData getUnitData();
+//	}
 
 	@Inject
 	private void init() {
@@ -132,29 +133,30 @@ public class UnitDetailController {
 						newUnit.getName(), newUnit.getCode()),
 				activity.getResources().getInteger(R.integer.toastDelay))
 				.show();
-		eventBus.post(new UnitDetailChildUnitSelectedEvent() {
-
-			@Override
-			public UnitData getUnitData() {
-				return newUnit;
-			}
-		});
+		currentRosterService.get().addUnit(newUnit);
+//		eventBus.post(new UnitDetailChildUnitSelectedEvent() {
+//
+//			@Override
+//			public UnitData getUnitData() {
+//				return newUnit;
+//			}
+//		});
 	}
 
 	// private int selectedIndex = -1;
 
-	@Subscribe
-	public void handleArmyListUnitSelectedEvent(
-			ArmyListUnitSelectedEvent armyListUnitSelectedEvent) {
-		openUnitDetail(armyListUnitSelectedEvent.getUnitRecord().getUnitData());
-	}
-
-	@Subscribe
-	public void handleAvailableUnitsUnitSelectedEvent(
-			AvailableUnitsUnitSelectedEvent availableUnitsUnitSelectedEvent) {
-		openUnitDetail(availableUnitsUnitSelectedEvent.getUnitData()
-				.getDefaultChild());
-	}
+//	@Subscribe
+//	public void handleArmyListUnitSelectedEvent(
+//			ArmyListUnitSelectedEvent armyListUnitSelectedEvent) {
+//		openUnitDetail(armyListUnitSelectedEvent.getUnitRecord().getUnitData());
+//	}
+//
+//	@Subscribe
+//	public void handleAvailableUnitsUnitSelectedEvent(
+//			AvailableUnitsUnitSelectedEvent availableUnitsUnitSelectedEvent) {
+//		openUnitDetail(availableUnitsUnitSelectedEvent.getUnitData()
+//				.getDefaultChild());
+//	}
 
 	@Subscribe
 	public void loadFaction(Events.FactionLoadEvent event) {

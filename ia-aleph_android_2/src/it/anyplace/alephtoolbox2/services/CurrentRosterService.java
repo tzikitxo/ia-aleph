@@ -1,6 +1,5 @@
 package it.anyplace.alephtoolbox2.services;
 
-import it.anyplace.alephtoolbox2.UnitDetailController.UnitDetailChildUnitSelectedEvent;
 import it.anyplace.alephtoolbox2.beans.Events;
 import it.anyplace.alephtoolbox2.services.ArmyListService.ArmyList;
 import it.anyplace.alephtoolbox2.services.ArmyListService.ArmyList.ArmyListUnit;
@@ -15,7 +14,6 @@ import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
-import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 
@@ -54,11 +52,11 @@ public class CurrentRosterService {
 	// public void loadFaction(LoadFactionEvent loadFactionEvent){
 	//
 	// }
-	@Subscribe
-	public void handleUnitDetailChildUnitSelectedEvent(
-			UnitDetailChildUnitSelectedEvent unitDetailChildUnitSelectedEvent) {
-		addUnit(unitDetailChildUnitSelectedEvent.getUnitData());
-	}
+//	@Subscribe
+//	public void handleUnitDetailChildUnitSelectedEvent(
+//			UnitDetailChildUnitSelectedEvent unitDetailChildUnitSelectedEvent) {
+//		addUnit(unitDetailChildUnitSelectedEvent.getUnitData());
+//	}
 
 	public void addUnit(UnitData unitData) {
 		UnitRecord newUnitRecord = new UnitRecord(unitData.getIsc(),
@@ -174,6 +172,38 @@ public class CurrentRosterService {
 			return unitData;
 		}
 
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + getOuterType().hashCode();
+			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			UnitRecord other = (UnitRecord) obj;
+			if (!getOuterType().equals(other.getOuterType()))
+				return false;
+			if (id == null) {
+				if (other.id != null)
+					return false;
+			} else if (!id.equals(other.id))
+				return false;
+			return true;
+		}
+
+		private CurrentRosterService getOuterType() {
+			return CurrentRosterService.this;
+		}
+
 	}
 
 	public Integer getSwcCap() {
@@ -186,6 +216,12 @@ public class CurrentRosterService {
 
 	public Double getSwcLeft() {
 		return getSwcCap() - getSwcTotal();
+	}
+
+	public void removeUnitRecord(final UnitRecord unitRecord) {
+		unitRecords.remove(unitRecord);
+		validateList();
+		eventBus.post(ArmyListUpdateEvent.INSTANCE);
 	}
 
 }

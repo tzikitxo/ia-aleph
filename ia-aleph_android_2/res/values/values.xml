@@ -1,0 +1,3 @@
+<resources>
+	<integer name="toastDelay" >500</integer>
+</resources>

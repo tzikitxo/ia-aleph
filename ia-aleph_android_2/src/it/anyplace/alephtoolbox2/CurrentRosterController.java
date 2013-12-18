@@ -20,10 +20,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
@@ -47,10 +49,14 @@ public class CurrentRosterController {
 	private TextView currentRosterInfo;
 	@Inject
 	private ViewFlipperController viewFlipperController;
+	@Inject
+	private Provider<UnitDetailController> unitDetailController;
 
-	public interface ArmyListUnitSelectedEvent {
-		public UnitRecord getUnitRecord();
-	}
+	@Inject
+	private Provider<CurrentRosterService> currentRosterService;
+//	public interface ArmyListUnitSelectedEvent {
+//		public UnitRecord getUnitRecord();
+//	}
 
 	@Inject
 	private void init() {
@@ -66,14 +72,15 @@ public class CurrentRosterController {
 					int index, long arg3) {
 				final UnitRecord unitRecord = currentListService
 						.getUnitRecords().get(index);
+				unitDetailController.get().openUnitDetail(unitRecord.getUnitData());
 				// unitDetailController.openUnitDetail(unitRecord.getUnitData());
-				eventBus.post(new ArmyListUnitSelectedEvent() {
-
-					@Override
-					public UnitRecord getUnitRecord() {
-						return unitRecord;
-					}
-				});
+//				eventBus.post(new ArmyListUnitSelectedEvent() {
+//
+//					@Override
+//					public UnitRecord getUnitRecord() {
+//						return unitRecord;
+//					}
+//				});
 			}
 		});
 		mainRosterList.setOnItemLongClickListener(new OnItemLongClickListener() {
@@ -82,7 +89,13 @@ public class CurrentRosterController {
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					int index, long arg3) {
 				UnitRecord unitRecord = currentListService.getUnitRecords().get(index);
-				//TODO remove unit
+				Toast.makeText(
+						activity,
+						activity.getResources().getString(R.string.app_toast_removedUnit,
+								unitRecord.getUnitData().getName(), unitRecord.getUnitData().getCode()),
+						activity.getResources().getInteger(R.integer.toastDelay))
+						.show();
+				currentRosterService.get().removeUnitRecord(unitRecord);
 				return true;
 			}
 		});

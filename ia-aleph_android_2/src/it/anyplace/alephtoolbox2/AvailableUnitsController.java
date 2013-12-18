@@ -24,14 +24,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.common.base.Predicate;
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
@@ -45,6 +43,8 @@ public class AvailableUnitsController {
 	private CurrentRosterService sessionService;
 	@Inject
 	private Activity activity;
+	@Inject
+	private Provider<UnitDetailController> unitDetailController;
 //	@Inject
 //	private UnitDetailController unitDetailController;
 
@@ -53,9 +53,9 @@ public class AvailableUnitsController {
 
 	private ListView unitListView, typeListView;
 
-	public interface AvailableUnitsUnitSelectedEvent{
-		public UnitData getUnitData();
-	}
+//	public interface AvailableUnitsUnitSelectedEvent{
+//		public UnitData getUnitData();
+//	}
 	
 	@Inject
 	private void init() {
@@ -86,12 +86,13 @@ public class AvailableUnitsController {
 				// typeFilter = types.get(index);
 				Log.i("AvailableUnitsController", "selected unit = "
 						+ selectedUnit.getIsc());
-				eventBus.post(new AvailableUnitsUnitSelectedEvent(){
-
-					@Override
-					public UnitData getUnitData() {
-						return selectedUnit;
-					}});
+				unitDetailController.get().openUnitDetail(selectedUnit);
+//				eventBus.post(new AvailableUnitsUnitSelectedEvent(){
+//
+//					@Override
+//					public UnitData getUnitData() {
+//						return selectedUnit;
+//					}});
 //				unitDetailController.openUnitDetail(selectedUnit
 //						.getDefaultChild());
 			}

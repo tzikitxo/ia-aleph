@@ -55,7 +55,9 @@ public class MainActivity extends Activity {
 			}
 		});
 		injector.injectMembers(this);
-
+		
+//		List<Class> controllers=Lists.newArrayList()
+//		injector.
 		// init components
 		injector.getInstance(ViewFlipperController.class);
 		injector.getInstance(CurrentRosterController.class);

@@ -235,4 +235,5 @@
     <string name="app.main.unitdetail">Unit Detail</string>
     <string name="app.main.menu">Menu</string>
     <string name="app.toast.addedUnit" formatted="false" >Added %s (%s)</string>
+    <string name="app.toast.removedUnit" formatted="false" >Removed %s (%s)</string>
 </resources>
