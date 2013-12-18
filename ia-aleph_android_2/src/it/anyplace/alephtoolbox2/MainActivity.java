@@ -12,8 +12,8 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 
-import it.anyplace.alephtoolbox2.services.ArmyListService;
-import it.anyplace.alephtoolbox2.services.DataService;
+import it.anyplace.alephtoolbox2.services.RosterDataService;
+import it.anyplace.alephtoolbox2.services.SourceDataService;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService;
 import android.app.Activity;
 import android.content.Context;
@@ -28,7 +28,7 @@ import android.widget.ViewFlipper;
 public class MainActivity extends Activity {
 
 	 @Inject
-	 private ArmyListService armyListService;
+	 private RosterDataService armyListService;
 	 @Inject
 	 private CurrentRosterService currentListService;
 	// @Inject

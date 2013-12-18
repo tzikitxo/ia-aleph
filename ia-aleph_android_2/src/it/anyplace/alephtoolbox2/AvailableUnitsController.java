@@ -1,9 +1,9 @@
 package it.anyplace.alephtoolbox2;
 
-import it.anyplace.alephtoolbox2.beans.Events;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService;
-import it.anyplace.alephtoolbox2.services.DataService;
-import it.anyplace.alephtoolbox2.services.DataService.UnitData;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService.RosterLoadEvent;
+import it.anyplace.alephtoolbox2.services.SourceDataService;
+import it.anyplace.alephtoolbox2.services.SourceDataService.UnitData;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -38,7 +38,7 @@ public class AvailableUnitsController {
 			"REM", "TAG");
 
 	@Inject
-	private DataService unitDataService;
+	private SourceDataService unitDataService;
 	@Inject
 	private CurrentRosterService sessionService;
 	@Inject
@@ -104,7 +104,7 @@ public class AvailableUnitsController {
 	private String typeFilter = types.get(0);
 
 	@Subscribe
-	public void loadFaction(Events.FactionLoadEvent event) {
+	public void loadFaction(RosterLoadEvent event) {
 		loadAllAvailableUnits();
 	}
 

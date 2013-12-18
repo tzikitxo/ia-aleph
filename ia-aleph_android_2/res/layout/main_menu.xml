@@ -10,7 +10,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="MAIN MENU BUTTON" />
+            android:text="NEW ROSTER"
+            android:id="@+id/newRosterMenuButton" />
 
 
 </LinearLayout>

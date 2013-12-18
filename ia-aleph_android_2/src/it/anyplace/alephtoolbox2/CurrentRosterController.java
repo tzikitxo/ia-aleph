@@ -1,11 +1,11 @@
 package it.anyplace.alephtoolbox2;
 
-import it.anyplace.alephtoolbox2.services.ArmyListService;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService;
-import it.anyplace.alephtoolbox2.services.CurrentRosterService.ArmyListLoadEvent;
-import it.anyplace.alephtoolbox2.services.CurrentRosterService.ArmyListUpdateEvent;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService.RosterLoadEvent;
+import it.anyplace.alephtoolbox2.services.CurrentRosterService.RosterUpdateEvent;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService.UnitRecord;
-import it.anyplace.alephtoolbox2.services.DataService;
+import it.anyplace.alephtoolbox2.services.RosterDataService;
+import it.anyplace.alephtoolbox2.services.SourceDataService;
 
 import java.util.List;
 
@@ -37,13 +37,13 @@ public class CurrentRosterController {
 	@Inject
 	private EventBus eventBus;
 	@Inject
-	private ArmyListService armylistService;
+	private RosterDataService armylistService;
 	@Inject
 	private CurrentRosterService currentListService;
 	// @Inject
 	// private UnitDetailController unitDetailController;
 	@Inject
-	private DataService dataService;
+	private SourceDataService dataService;
 
 	private ListView mainRosterList;
 	private TextView currentRosterInfo;
@@ -103,12 +103,12 @@ public class CurrentRosterController {
 	}
 
 	@Subscribe
-	public void handleArmyListLoadEvent(ArmyListLoadEvent event) {
+	public void handleArmyListLoadEvent(RosterLoadEvent event) {
 		loadArmylist();
 	}
 
 	@Subscribe
-	public void handleArmyListUpdateEvent(ArmyListUpdateEvent event) {
+	public void handleArmyListUpdateEvent(RosterUpdateEvent event) {
 		loadArmylist();
 //		viewFlipperController.showArmyListView();
 	}
