@@ -203,10 +203,10 @@ public class SourceDataService {
             // this.ccw.addAll(this.originalChild.ccw);
             // this.c.addAll(this.originalChild.spec);
 
-            this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.bsw, this.bsw)));
-            this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.ccw, this.ccw)));
-            this.spec = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.spec, this.spec)));
-            this.cbcode = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.cbcode, this.cbcode)));
+            this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.bsw, this.originalChild.bsw)));
+            this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.ccw, this.originalChild.ccw)));
+            this.spec = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.spec, this.originalChild.spec)));
+            this.cbcode = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.cbcode, this.originalChild.cbcode)));
 
             this.note = parent.note + this.originalChild.note;
         }
@@ -377,6 +377,14 @@ public class SourceDataService {
 
         public Integer getCostNum() {
             return Strings.isNullOrEmpty(cost) ? 0 : Integer.valueOf(cost);
+        }
+
+        public List<String> getAllBsw() {
+            return getBsw();
+        }
+
+        public List<String> getAllCcw() {
+            return getCcw();
         }
 
     }

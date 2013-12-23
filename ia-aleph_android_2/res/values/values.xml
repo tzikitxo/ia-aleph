@@ -1,3 +1,6 @@
 <resources>
 	<integer name="toastDelay" >500</integer>
+	<integer name="remoteSynchronization.synchronizationDelay" >0</integer>
+	<integer name="remoteSynchronization.synchronizationPeriod" >500</integer>
+	<string name="remoteSynchronization_serviceUrl">http://anyplace.it/ia/ia.php</string>
 </resources>

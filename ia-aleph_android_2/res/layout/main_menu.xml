@@ -4,14 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    
+    <Button
+        android:id="@+id/newRosterMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/app.menu.newRosterButton" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="NEW ROSTER"
-            android:id="@+id/newRosterMenuButton" />
+    <Button
+        android:id="@+id/currentRosterOptionsMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/app.menu.currentRosterOptionsButton" />
 
+    <Button
+        android:id="@+id/optionsMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/app.menu.optionsButton" />
+    <Button
+        android:id="@+id/loadRosterMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/app.menu.loadRosterButton" />
 
 </LinearLayout>

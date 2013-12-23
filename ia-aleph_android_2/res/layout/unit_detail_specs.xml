@@ -9,6 +9,10 @@
 
         <TextView
             android:gravity="center"
+            android:text="@string/units.attribute.type" />
+
+        <TextView
+            android:gravity="center"
             android:text="@string/units.attribute.mov" />
 
         <TextView
@@ -42,6 +46,9 @@
 
     <TableRow>
 
+        <TextView
+            android:id="@+id/unitDetailType"
+            android:gravity="center" />
         <TextView
             android:id="@+id/unitDetailMov"
             android:gravity="center" />
