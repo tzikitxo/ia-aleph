@@ -236,4 +236,8 @@
     <string name="app.main.menu">Menu</string>
     <string name="app.toast.addedUnit" formatted="false" >Added %s (%s)</string>
     <string name="app.toast.removedUnit" formatted="false" >Removed %s (%s)</string>
+    <string name="app.menu.newRosterButton">New Roster</string>
+    <string name="app.menu.currentRosterOptionsButton">Roster Options</string>
+    <string name="app.menu.optionsButton">App Config</string>
+    <string name="app.menu.loadRosterButton">Load Roster</string>
 </resources>

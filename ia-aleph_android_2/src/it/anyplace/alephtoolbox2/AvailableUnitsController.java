@@ -45,6 +45,7 @@ public class AvailableUnitsController {
 	private Activity activity;
 	@Inject
 	private Provider<UnitDetailController> unitDetailController;
+
 //	@Inject
 //	private UnitDetailController unitDetailController;
 
