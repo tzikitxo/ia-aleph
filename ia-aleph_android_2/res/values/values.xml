@@ -1,6 +1,20 @@
 <resources>
-	<integer name="toastDelay" >500</integer>
-	<integer name="remoteSynchronization.synchronizationDelay" >0</integer>
-	<integer name="remoteSynchronization.synchronizationPeriod" >500</integer>
-	<string name="remoteSynchronization_serviceUrl">http://anyplace.it/ia/ia.php</string>
+
+    <integer name="toastDelay">500</integer>
+    <integer name="remoteSynchronization.synchronizationDelay">0</integer>
+    <integer name="remoteSynchronization.synchronizationPeriod">500</integer>
+
+    <string name="remoteSynchronization_serviceUrl">http://anyplace.it/ia/ia.php</string>
+
+    <string-array name="allFactions">
+        <item>Panoceania</item>
+        <item>Yu Jing</item>
+        <item>Ariadna</item>
+        <item>Haqqislam</item>
+        <item>Nomads</item>
+        <item>Combined Army</item>
+        <item>Aleph</item>
+        <item>Tohaa</item>
+    </string-array>
+
 </resources>

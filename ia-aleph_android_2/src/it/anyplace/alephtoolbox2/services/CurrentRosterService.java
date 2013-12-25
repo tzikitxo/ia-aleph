@@ -3,6 +3,7 @@ package it.anyplace.alephtoolbox2.services;
 import it.anyplace.alephtoolbox2.services.RosterDataService.RosterData;
 import it.anyplace.alephtoolbox2.services.RosterDataService.RosterData.Model;
 import it.anyplace.alephtoolbox2.services.SourceDataService.FactionData;
+import it.anyplace.alephtoolbox2.services.SourceDataService.SectorialData;
 import it.anyplace.alephtoolbox2.services.SourceDataService.UnitData;
 
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.UUID;
 import android.util.Log;
 
 import com.google.common.base.Function;
+import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -25,7 +27,7 @@ public class CurrentRosterService {
     @Inject
     private EventBus eventBus;
     @Inject
-    private SourceDataService dataService;
+    private Provider<SourceDataService> dataService;
     @Inject
     private Provider<PersistenceService> persistenceService;
 
@@ -142,7 +144,7 @@ public class CurrentRosterService {
             public UnitRecord apply(Model armyListUnit) {
 
                 return new UnitRecord(armyListUnit.getIsc(), armyListUnit.getCode(), armyListUnit.getRecordid(),
-                        dataService.getUnitDataByIscCode(armyListUnit.getIsc(), armyListUnit.getCode()));
+                        dataService.get().getUnitDataByIscCode(armyListUnit.getIsc(), armyListUnit.getCode()));
             }
         }));
         validateList();
@@ -167,9 +169,16 @@ public class CurrentRosterService {
         listName = listId = null;
         setFaction(factionData.getFactionName(), factionData.getSectorialName(), false);
         afterRosterUpdate(RosterLoadEvent.INSTANCE);
-        // validateList();
-        // eventBus.post(RosterLoadEvent.INSTANCE);
     }
+
+    // public void newRoster(SectorialData sectorialData) {
+    // clearList();
+    // listName = listId = null;
+    // setFaction(factionData.getFactionName(), factionData.getSectorialName(),
+    // false);
+    // afterRosterUpdate(RosterLoadEvent.INSTANCE);
+    //
+    // }
 
     private void clearList() {
         unitRecords = Lists.newArrayList();
@@ -188,6 +197,10 @@ public class CurrentRosterService {
 
     public String getCurrentSectorial() {
         return currentSectorial;
+    }
+
+    public String getCurrentFactionOrSectorial() {
+        return Objects.firstNonNull(Strings.emptyToNull(getCurrentSectorial()), getCurrentFaction());
     }
 
     public Integer getPointCap() {
@@ -304,7 +317,7 @@ public class CurrentRosterService {
         dateMod = new Date().getTime();
         validateList();
         persistenceService.get().saveRosterData(exportCurrentRoster());
-        //TODO set current roster as last modified
+        // TODO set current roster as last modified
         eventBus.post(event);
     }
 

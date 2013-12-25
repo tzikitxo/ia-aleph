@@ -6,7 +6,7 @@
     android:id="@+id/availableUnitsView" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/loadingInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Unit List" />

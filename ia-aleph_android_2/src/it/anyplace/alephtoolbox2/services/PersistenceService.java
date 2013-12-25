@@ -18,13 +18,14 @@ import android.util.Log;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
+import com.google.inject.Provider;
 import com.google.inject.Singleton;
 
 @Singleton
 public class PersistenceService {
 
     @Inject
-    private RosterDataService rosterDataService;
+    private Provider<RosterDataService> rosterDataService;
 
     @Inject
     private Context context;
@@ -48,7 +49,7 @@ public class PersistenceService {
     }
 
     public void saveRosterData(RosterData rosterData) {
-        String rosterDataStr = rosterDataService.serializeRosterData(rosterData), rosterInfoStr = gson
+        String rosterDataStr = rosterDataService.get().serializeRosterData(rosterData), rosterInfoStr = gson
                 .toJson(new RosterInfo(rosterData)), rosterId = rosterData.getListId();
         ContentValues values = new ContentValues();
         values.put(SavedRosterRecord.COLUMN_NAME_ROSTER_ID, rosterId);
@@ -99,7 +100,7 @@ public class PersistenceService {
         cursor.moveToFirst();
         String rosterDataStr = cursor.getString(0);
         cursor.close();
-        return rosterDataService.deserializeRosterData(rosterDataStr);
+        return rosterDataService.get().deserializeRosterData(rosterDataStr);
     }
 
     public static class RosterInfo extends RosterData {
