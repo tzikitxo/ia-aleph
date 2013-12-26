@@ -1,15 +1,18 @@
 package it.anyplace.alephtoolbox2.services;
 
+import it.anyplace.alephtoolbox2.R;
 import it.anyplace.alephtoolbox2.services.RosterDataService.RosterData;
 import it.anyplace.alephtoolbox2.services.RosterDataService.RosterData.Model;
 import it.anyplace.alephtoolbox2.services.SourceDataService.FactionData;
-import it.anyplace.alephtoolbox2.services.SourceDataService.SectorialData;
 import it.anyplace.alephtoolbox2.services.SourceDataService.UnitData;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.google.common.base.Function;
@@ -17,6 +20,8 @@ import com.google.common.base.Objects;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.Multimaps;
 import com.google.common.eventbus.EventBus;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -26,6 +31,8 @@ import com.google.inject.Singleton;
 public class CurrentRosterService {
     @Inject
     private EventBus eventBus;
+    @Inject
+    private Context context;
     @Inject
     private Provider<SourceDataService> dataService;
     @Inject
@@ -37,10 +44,11 @@ public class CurrentRosterService {
     private Long dateMod;
     private Boolean includeMercenaryUnits;
     private String listId, listName;
+    private List<String> validationNotes = Lists.newArrayList();
 
     private List<UnitRecord> unitRecords = Lists.newArrayList();
 
-    private transient Integer totalCost;
+    private transient Integer totalCost, modelCount;
     private transient Double totalSwc;
 
     // private ArmyList armyList;
@@ -115,6 +123,10 @@ public class CurrentRosterService {
         return listId;
     }
 
+    public List<String> getValidationNotes() {
+        return validationNotes;
+    }
+
     public void addUnit(UnitData unitData) {
         UnitRecord newUnitRecord = new UnitRecord(unitData.getIsc(), unitData.getCode(), UUID.randomUUID().toString(),
                 unitData);
@@ -123,12 +135,88 @@ public class CurrentRosterService {
     }
 
     public void validateList() {
-        // TODO
+        validationNotes.clear();
         totalSwc = 0.0;
         totalCost = 0;
+        modelCount = 0;
+//        List<UnitRecord> starAvaModels=Lists.newArrayList();
+        boolean hasLiutenant = false, hasHacker = false, hasTag = false, hasMnemonica = false, hasRemote = false, hasAutotoolRemote = false;
+
         for (UnitRecord unitRecord : unitRecords) {
+            unitRecord.getValidationNotes().clear();
             totalSwc += unitRecord.getUnitData().getSwcNum();
             totalCost += unitRecord.getUnitData().getCostNum();
+            if(!unitRecord.getUnitData().shouldSkipModelCount()){
+            modelCount++;
+            }
+            if (unitRecord.getUnitData().getSpec().contains("Lieutenant")) {
+                if (!hasLiutenant) {
+                    hasLiutenant = true;
+                } else {
+                    validationNotes.add(context.getResources().getString(R.string.armylist_warning_ltMiscount));
+                }
+            }
+            if (unitRecord.getUnitData().getSpec().contains("Hacker")) {
+                hasHacker = true;
+            }
+            if (unitRecord.getUnitData().getSpec().contains("G: Mnemonica")) {
+                hasMnemonica = true;
+            }
+            if (unitRecord.getUnitData().getSpec().contains("Control Device")) {
+                modelCount++;
+            }
+            if (unitRecord.getUnitData().getType().equals("TAG")) {
+                hasTag = true;
+            } else if (unitRecord.getUnitData().getType().equals("REM")) {
+                if (unitRecord.getUnitData().getSpec().contains("G: Autotool")) {
+                    hasAutotoolRemote = true;
+                } else if (unitRecord.getUnitData().getSpec().contains("G: Servant")
+                        || unitRecord.getUnitData().getSpec().contains("G: Synchronized")
+                        || unitRecord.getUnitData().getSpec().contains("AI Beacon")
+                        || unitRecord.getUnitData().getIsc().equals("Traktor Mul, Artillery and Support Regiment")) {
+                    // no need for hacker or stuff
+                } else {
+                    hasRemote = true;
+                }
+            }
+        }
+        if (!hasLiutenant) {
+            validationNotes.add(context.getResources().getString(R.string.armylist_warning_ltMiscount));
+        }
+        if (hasRemote && !(hasTag || hasHacker)) {
+            validationNotes.add(context.getResources().getString(R.string.armylist_warning_remWarning));
+        }
+        if (hasAutotoolRemote && !(hasMnemonica || hasHacker)) {
+            validationNotes.add(context.getResources().getString(R.string.armylist_warning_remAutotWarning));
+        }
+        Multimap<String, UnitRecord> unitRecordsByIsc = Multimaps.index(unitRecords,
+                new Function<UnitRecord, String>() {
+
+                    @Override
+                    public String apply(UnitRecord unitRecord) {
+                        return unitRecord.getIsc();
+                    }
+                });
+        for (Map.Entry<String, Collection<UnitRecord>> entry : unitRecordsByIsc.asMap().entrySet()) {
+            int count = entry.getValue().size();
+            UnitData unitData = entry.getValue().iterator().next().getUnitData();
+            Integer ava = unitData.getAvaNum();
+            if (ava != null && count > ava) {
+                String note = context.getResources().getString(R.string.app_validation_tooManyModels,
+                        unitData.getIsc(), count, ava);
+                validationNotes.add(note);
+                for (UnitRecord unitRecord : entry.getValue()) {
+                    unitRecord.getValidationNotes().add(note);
+                }
+            }
+        }
+        if (totalCost > getPointCap()) {
+            validationNotes.add(context.getResources().getString(R.string.app_validation_tooManyPoints, totalCost,
+                    getPointCap()));
+        }
+        if (totalSwc > getSwcCap()) {
+            validationNotes.add(context.getResources().getString(R.string.app_validation_tooManySwc, totalSwc,
+                    getSwcCap()));
         }
     }
 
@@ -224,8 +312,17 @@ public class CurrentRosterService {
     }
 
     public class UnitRecord {
+        private transient List<String> validationNotes = Lists.newArrayList();
         private String isc, code, id;
         private UnitData unitData;
+
+        public boolean hasError() {
+            return !validationNotes.isEmpty();
+        }
+
+        public List<String> getValidationNotes() {
+            return validationNotes;
+        }
 
         public UnitRecord(String isc, String code, String id, UnitData unitData) {
             super();

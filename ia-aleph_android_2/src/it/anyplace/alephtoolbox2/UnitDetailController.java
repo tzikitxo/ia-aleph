@@ -6,6 +6,7 @@ import it.anyplace.alephtoolbox2.services.SourceDataService;
 import it.anyplace.alephtoolbox2.services.SourceDataService.UnitData;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import android.app.Activity;
@@ -120,10 +121,15 @@ public class UnitDetailController {
     private UnitData lastClickedUnit;
 
     private void addUnit(final UnitData newUnit) {
-        Toast.makeText(activity,
-                activity.getResources().getString(R.string.app_toast_addedUnit, newUnit.getName(), newUnit.getCode()),
-                activity.getResources().getInteger(R.integer.toastDelay)).show();
         currentRosterService.get().addUnit(newUnit);
+        Toast.makeText(
+                activity,
+                Joiner.on(", ").join(
+                        Iterables.concat(
+                                Collections.singletonList(activity.getResources().getString(
+                                        R.string.app_toast_addedUnit, newUnit.getName(), newUnit.getCode())),
+                                currentRosterService.get().getValidationNotes())),
+                activity.getResources().getInteger(R.integer.toastDelay)).show();
         // eventBus.post(new UnitDetailChildUnitSelectedEvent() {
         //
         // @Override
@@ -165,7 +171,8 @@ public class UnitDetailController {
     public void loadUnitDetail(UnitData unitData) {
         boolean changedIsc = (currentUnitData == null || !Objects.equal(currentUnitData.getIsc(), unitData.getIsc()));
         unitDetailCode.setText(Strings.nullToEmpty(unitData.getCode()));
-        unitDetailCostAndSwc.setText(Strings.nullToEmpty(unitData.getCost()) + (unitData.getSwcNum() != 0 ? ("  " + unitData.getSwc()) : ""));
+        unitDetailCostAndSwc.setText(Strings.nullToEmpty(unitData.getCost())
+                + (unitData.getSwcNum() != 0 ? ("  " + unitData.getSwc()) : ""));
         unitDetailSpecs.setText(Joiner.on(", ").join(unitData.getSpec()));
         if (changedIsc) {
             unitDetailName.setText(unitData.getName());
