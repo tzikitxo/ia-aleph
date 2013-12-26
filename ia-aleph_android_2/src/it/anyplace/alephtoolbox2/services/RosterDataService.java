@@ -21,17 +21,20 @@ public class RosterDataService {
     @Inject
     private EventBus eventBus;
 
-    @Deprecated
-    public RosterData parseArmyList(String armyListGsonStr) {
-        RosterData armyList = gson.fromJson(armyListGsonStr, RosterData.class);
-        armyList.setSectorial(Strings.emptyToNull(armyList.getSectorial()));
-        // TODO validation
-        return armyList;
-    }
+    // @Deprecated
+    // public RosterData parseArmyList(String armyListGsonStr) {
+    // RosterData armyList = gson.fromJson(armyListGsonStr, RosterData.class);
+    // armyList.setSectorial(Strings.emptyToNull(armyList.getSectorial()));
+    // // TODO validation
+    // return armyList;
+    // }
+    // .replace(/\//g,'backslash').replace(/[+]/g,'plusSign').replace(/[=]/g,'equalSign');
 
     public RosterData deserializeRosterData(String rosterDataStr) {
         try {
-            String jsonStr = new String(Base64.decode(rosterDataStr, Base64.DEFAULT));
+            String jsonStr = new String(Base64.decode(
+                    rosterDataStr.replaceAll("_|backslash", "/").replace("-|plusSign", "+")
+                            .replace("[.:]|equalSign", "="), Base64.DEFAULT));
             RosterData rosterData = gson.fromJson(jsonStr, RosterData.class);
             // TODO validation
             return rosterData;
@@ -44,7 +47,8 @@ public class RosterDataService {
 
     public String serializeRosterData(RosterData rosterData) {
         String jsonStr = gson.toJson(rosterData);
-        String base64 = Base64.encodeToString(jsonStr.getBytes(), Base64.NO_WRAP);
+        String base64 = Base64.encodeToString(jsonStr.getBytes(), Base64.NO_WRAP).replace("/", "backslash")
+                .replace("+", "plusSign").replace("=", "equalSign");
         return base64;
     }
 
