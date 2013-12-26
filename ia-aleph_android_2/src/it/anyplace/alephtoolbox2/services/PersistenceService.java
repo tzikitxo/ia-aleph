@@ -7,14 +7,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
@@ -30,7 +33,7 @@ public class PersistenceService {
     private Provider<CurrentRosterService> currentRosterService;
 
     @Inject
-    private Context context;
+    private Activity activity;
 
     @Inject
     private Gson gson;
@@ -41,22 +44,82 @@ public class PersistenceService {
 
     @Inject
     private void init() {
-        savedRostersDbHelper = new SavedRostersDbHelper(context);
+        savedRostersDbHelper = new SavedRostersDbHelper(activity);
+    }
+
+    public static class LastSavedRosterInfo {
+        private Long dateMod;
+        private String rosterId;
+
+        public LastSavedRosterInfo() {
+        }
+
+        private LastSavedRosterInfo(RosterData rosterData) {
+            this.dateMod = rosterData.getDateMod();
+            this.rosterId = rosterData.getListId();
+        }
+
+        public Long getDateMod() {
+            return dateMod;
+        }
+
+        public void setDateMod(Long dateMod) {
+            this.dateMod = dateMod;
+        }
+
+        public String getRosterId() {
+            return rosterId;
+        }
+
+        public void setRosterId(String rosterId) {
+            this.rosterId = rosterId;
+        }
+
+    }
+
+    public static final String LAST_SAVED_ROSTER_INFO_PREFERENCE_KEY = "lastSavedRosterInfo";
+
+    public LastSavedRosterInfo getLastSavedRosterInfo() {
+        String value = activity.getPreferences(Context.MODE_PRIVATE).getString(LAST_SAVED_ROSTER_INFO_PREFERENCE_KEY,
+                null);
+        if (!Strings.isNullOrEmpty(value)) {
+            return gson.fromJson(value, LastSavedRosterInfo.class);
+        } else {
+            return null;
+        }
+    }
+
+    private void storeLastSavedRosterInfo(RosterData rosterData) {
+        activity.getPreferences(Context.MODE_PRIVATE).edit()
+                .putString(LAST_SAVED_ROSTER_INFO_PREFERENCE_KEY, gson.toJson(new LastSavedRosterInfo(rosterData)))
+                .commit();
+    }
+
+    public RosterData getLastSavedRoster() {
+        LastSavedRosterInfo lastSavedRosterInfo = getLastSavedRosterInfo();
+        if (lastSavedRosterInfo != null) {
+            return getRosterDataById(lastSavedRosterInfo.getRosterId());
+        } else {
+            return null;
+        }
     }
 
     private final Random random = new Random();
 
     public String newId() {
-        return new BigInteger(130, random).toString(32).replaceFirst("(.{16}).*", "$1");
+        // return new BigInteger(130,
+        // random).toString(32).replaceFirst("(.{16}).*", "$1");
+        return new BigInteger(130, random).toString().replaceAll("[^0-9]", "").replaceFirst("(.{16}).*", "$1");
     }
 
     public void saveCurrentRosterData() {
         RosterData rosterData = currentRosterService.get().exportCurrentRoster();
         Log.i("PersistenceService", "saving roster = " + rosterData.getListId());
-        persistRosterData(rosterData);
+        saveRosterData(rosterData);
+        storeLastSavedRosterInfo(rosterData);
     }
 
-    private void persistRosterData(RosterData rosterData) {
+    public void saveRosterData(RosterData rosterData) {
         String rosterDataStr = rosterDataService.get().serializeRosterData(rosterData), rosterInfoStr = gson
                 .toJson(new RosterInfo(rosterData)), rosterId = rosterData.getListId();
         ContentValues values = new ContentValues();
@@ -104,10 +167,19 @@ public class PersistenceService {
         Cursor cursor = sqLiteDatabase.query(SavedRosterRecord.TABLE_NAME,
                 new String[] { SavedRosterRecord.COLUMN_NAME_ROSTER_DATA }, "rosterId=?", new String[] { rosterId },
                 null, null, null);
-        cursor.moveToFirst();
-        String rosterDataStr = cursor.getString(0);
-        cursor.close();
-        return rosterDataService.get().deserializeRosterData(rosterDataStr);
+        if (cursor.moveToFirst()) {
+            String rosterDataStr = cursor.getString(0);
+            cursor.close();
+            return rosterDataService.get().deserializeRosterData(rosterDataStr);
+        } else {
+            return null;
+        }
+    }
+
+    public void deleteRosterDataById(String rosterId) {
+        Log.i("PersistenceService", "deleteRosterDataById = " + rosterId);
+        SQLiteDatabase sqLiteDatabase = savedRostersDbHelper.getWritableDatabase();
+        sqLiteDatabase.delete(SavedRosterRecord.TABLE_NAME, "rosterId=?", new String[] { rosterId });
     }
 
     public static class RosterInfo extends RosterData {

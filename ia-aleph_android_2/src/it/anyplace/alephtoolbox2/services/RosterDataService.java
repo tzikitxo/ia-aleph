@@ -33,14 +33,14 @@ public class RosterDataService {
     public RosterData deserializeRosterData(String rosterDataStr) {
         try {
             String jsonStr = new String(Base64.decode(
-                    rosterDataStr.replaceAll("_|backslash", "/").replace("-|plusSign", "+")
-                            .replace("[.:]|equalSign", "="), Base64.DEFAULT));
+                    rosterDataStr.replaceAll("_|backslash", "/").replaceAll("[-]|plusSign", "+")
+                            .replaceAll("[.:]|equalSign", "="), Base64.DEFAULT));
             RosterData rosterData = gson.fromJson(jsonStr, RosterData.class);
             // TODO validation
             return rosterData;
         } catch (Exception ex) {
-            eventBus.post(new IOException("Error deserializing roster data", ex));
-            Log.w("RosterDataService", "Error deserializing roster data", ex);
+//            eventBus.post(new RuntimeException("Error deserializing roster data", ex));
+            Log.w("RosterDataService", "Error deserializing roster data = "+rosterDataStr, ex);
             return null;
         }
     }
@@ -166,6 +166,14 @@ public class RosterDataService {
                 this.recordid = recordid;
             }
 
+        }
+
+        public Integer getModelCount() {
+            return models == null ? 0 : models.size();
+        }
+
+        public boolean isEmpty() {
+            return getModelCount() == 0;
         }
 
     }

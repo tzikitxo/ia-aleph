@@ -232,7 +232,7 @@ public class MenuController {
 
             @Override
             public int compare(RosterInfo lhs, RosterInfo rhs) {
-                return ComparisonChain.start().compare(lhs.getDateMod(), rhs.getDateMod()).result();
+                return -ComparisonChain.start().compare(lhs.getDateMod(), rhs.getDateMod()).result();
             }
         });
 
