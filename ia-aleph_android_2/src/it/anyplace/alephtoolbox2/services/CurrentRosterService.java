@@ -425,4 +425,8 @@ public class CurrentRosterService {
         loadRoster(persistenceService.get().getRosterDataById(listId));
     }
 
+    public Long getDateMod() {
+        return dateMod;
+    }
+
 }

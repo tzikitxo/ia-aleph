@@ -4,7 +4,6 @@ import it.anyplace.alephtoolbox2.R;
 import it.anyplace.alephtoolbox2.services.RosterDataService.RosterData;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -22,9 +21,13 @@ import android.util.Log;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
+import com.google.common.base.Objects;
+import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
 import com.google.gson.Gson;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
@@ -52,21 +55,43 @@ public class RosterSynchronizationService {
 
     }
 
+    public static enum RemoteActivityEvent {
+        REMOTE_ACTIVITY_IN_PROGRESS, REMOTE_ACTIVITY_COMPLETED
+    }
+
+    private int ajaxCallCount = 0;
+
+    private void startAjaxCall() {
+        if (ajaxCallCount++ == 0) {
+            activity.runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    eventBus.post(RemoteActivityEvent.REMOTE_ACTIVITY_IN_PROGRESS);
+                }
+            });
+        }
+    }
+
+    private void completeAjaxCall() {
+        if (--ajaxCallCount == 0) {
+
+            activity.runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    eventBus.post(RemoteActivityEvent.REMOTE_ACTIVITY_COMPLETED);
+                }
+            });
+        }
+    }
+
     private String geWsUrl(String action) {
         String remoteUrl = activity.getResources().getString(R.string.remoteSynchronization_serviceUrl);
         String wsCall = remoteUrl + "?action=" + action + "&deviceId=" + getDeviceId() + "&requestId="
                 + persistenceService.get().newId();
         return wsCall;
     }
-
-    // private String geWsUrl(String action, String key, String value) {
-    // return geWsUrl(action) + "&" + key + "=" + value;
-    // }
-    //
-    // private String geWsUrl(String action, Object value) {
-    // return geWsUrl(action,"b64data",Base64.encodeToString(gson.toJson(value),
-    // Base64.)
-    // }
 
     private <T> void callWs(String url, final Class<T> responseClass, final Callback<T> callback) {
         callWs(url, Collections.<String, Object> emptyMap(), responseClass, callback);
@@ -75,10 +100,12 @@ public class RosterSynchronizationService {
     private <T> void callWs(String url, Map<String, Object> data, final Class<T> responseClass,
             final Callback<T> callback) {
         Log.d("RosterSynchronizationService", "callWs url = " + url + " , data = " + data);
+        startAjaxCall();
         new AQuery(activity).ajax(url, data, JSONObject.class, new AjaxCallback<JSONObject>() {
 
             @Override
             public void callback(String url, JSONObject object, AjaxStatus status) {
+
                 try {
                     if (object != null) {
                         T response = gson.fromJson(object.toString(), responseClass);
@@ -94,12 +121,23 @@ public class RosterSynchronizationService {
                         }
                     }
                 } catch (Exception e) {
-                    Log.w("RosterSynchronizationService", "error calling remote ws", e);
+                    Log.w("RosterSynchronizationService", "error processing response = " + object, e);
+                } finally {
+                    completeAjaxCall();
                 }
             }
 
         });
     }
+
+    public RosterSynchronizationService loadNewListIfAvailableOnNextSynchronization() {
+        this.loadNewListIfAvailable = true;
+        return this;
+    }
+
+    public static final String LIST_DATA_RECORD_PREFIX = "savedList.";
+
+    private boolean loadNewListIfAvailable = true;
 
     private void synchronizeWithRemote() {
         callWs(geWsUrl("listData"), ListDataResponse.class, new Callback<ListDataResponse>() {
@@ -107,6 +145,54 @@ public class RosterSynchronizationService {
             @Override
             public void call(ListDataResponse response) {
                 Log.i("RosterSynchronizationService", "listed remote data = " + response.data);
+                for (ListDataResponse.ListDataRecord record : Maps.filterKeys(response.data, new Predicate<String>() {
+
+                    @Override
+                    public boolean apply(String recordId) {
+                        return recordId.startsWith(LIST_DATA_RECORD_PREFIX);
+                    }
+                }).values()) {
+                    String rosterId = record.key.substring(LIST_DATA_RECORD_PREFIX.length());
+                    RosterData rosterData = persistenceService.get().getRosterDataById(rosterId);
+                    boolean updateLocal = false, deleteLocal = false, updateRemote = false;
+                    if (rosterData == null) {
+                        if (record.deleted) {
+                            // do nothing
+                        } else {
+                            updateLocal = true;
+                        }
+                    } else {
+                        if (record.dateMod > rosterData.getDateMod()) {
+                            if (record.deleted) {
+                                deleteLocal = true;
+                            } else {
+                                updateLocal = true;
+                            }
+                        } else if (record.dateMod < rosterData.getDateMod()) {
+                            updateRemote = true;
+                        }
+                    }
+                    if (deleteLocal) {
+                        persistenceService.get().deleteRosterDataById(rosterId);
+                    } else if (updateLocal) {
+                        getRemoteRosterData(rosterId);
+                    } else if (updateRemote) {
+                        sendRosterToRemote(rosterData);
+                    }
+                }
+                if (loadNewListIfAvailable) {
+                    loadNewListIfAvailable = false;
+                    eventBus.register(new Object() {
+
+                        @Subscribe
+                        public void handleRemoteActivityEvent(RemoteActivityEvent event) {
+                            if (event.equals(RemoteActivityEvent.REMOTE_ACTIVITY_COMPLETED)) {
+                                eventBus.unregister(this);
+                                getLastSavedInfo();
+                            }
+                        }
+                    });
+                }
             }
         });
     }
@@ -124,14 +210,53 @@ public class RosterSynchronizationService {
                 });
     }
 
+    private void getLastSavedInfo() {
+        callWs(geWsUrl("getData") + "&key=" + "lastSavedList", DataResponse.class, new Callback<DataResponse>() {
+
+            @Override
+            public void call(DataResponse response) {
+                LastSavedListInfo lastSavedListInfo = gson.fromJson(response.data, LastSavedListInfo.class);
+                if (!Objects.equal(currentRosterService.get().getListId(), lastSavedListInfo.getRosterId())
+                        && lastSavedListInfo.getDateModNum() > currentRosterService.get().getDateMod()) {
+                    currentRosterService.get().loadRoster(lastSavedListInfo.getRosterId());
+                }
+            }
+        });
+    }
+
+    private void getRemoteRosterData(String rosterId) {
+        callWs(geWsUrl("getData") + "&key=" + LIST_DATA_RECORD_PREFIX + rosterId, DataResponse.class,
+                new Callback<DataResponse>() {
+
+                    @Override
+                    public void call(DataResponse response) {
+                        Log.i("RosterSynchronizationService", "getRemoteRosterData res = " + response);
+                        RosterData remoteRosterData = gson.fromJson(response.data, RosterData.class);
+                        RosterData rosterData = persistenceService.get()
+                                .getRosterDataById(remoteRosterData.getListId());
+                        // TODO validation of remote roster data
+                        if (rosterData == null || rosterData.getDateMod() < remoteRosterData.getDateMod()) {
+                            persistenceService.get().saveRosterData(remoteRosterData);
+                            if (Objects.equal(remoteRosterData.getListId(), currentRosterService.get().getListId())) {
+                                currentRosterService.get().loadRoster(remoteRosterData);
+                            }
+                        }
+                    }
+                });
+    }
+
+    private void sendRosterToRemote(RosterData rosterData) {
+        String rosterKey = LIST_DATA_RECORD_PREFIX + rosterData.getListId();
+        sendDataToRemote(rosterKey, rosterData);
+    }
+
     public void sendCurrentRosterToRemote() {
         Log.i("RosterSynchronizationService", "sendCurrentRosterToRemote");
         RosterData rosterData = currentRosterService.get().exportCurrentRoster();
-        String rosterKey = "savedList." + rosterData.getListId(), lastSavedListkey = "lastSavedList";
-        LastSavedListInfo lastSavedListValue = new LastSavedListInfo(rosterData);
-        sendDataToRemote(rosterKey, rosterData);
-        sendDataToRemote(lastSavedListkey, lastSavedListValue);
-
+        if (!rosterData.isEmpty()) {
+            sendRosterToRemote(rosterData);
+            sendDataToRemote("lastSavedList", new LastSavedListInfo(rosterData));
+        }
     }
 
     private interface Callback<E> {
@@ -149,6 +274,15 @@ public class RosterSynchronizationService {
             data = rosterData.getListId();
             dateMod = rosterData.getDateMod().toString();
         }
+
+        public String getRosterId() {
+            return data;
+        }
+
+        public Long getDateModNum() {
+            return Long.valueOf(dateMod);
+        }
+
     }
 
     private static class RemoteResponse {
@@ -156,8 +290,12 @@ public class RosterSynchronizationService {
         public boolean success;
     }
 
+    private static class DataResponse extends RemoteResponse {
+        public String data;
+    }
+
     private static class ListDataResponse extends RemoteResponse {
-        public Map<String,ListDataRecord> data;
+        public Map<String, ListDataRecord> data;
 
         private static class ListDataRecord {
             public boolean deleted;
