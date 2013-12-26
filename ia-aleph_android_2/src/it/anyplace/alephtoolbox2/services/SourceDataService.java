@@ -1,6 +1,7 @@
 package it.anyplace.alephtoolbox2.services;
 
 import it.anyplace.alephtoolbox2.R;
+import it.anyplace.alephtoolbox2.services.SourceDataService.FactionData;
 import it.anyplace.alephtoolbox2.services.SourceDataService.SectorialData.UnitRecord;
 
 import java.io.InputStreamReader;
@@ -636,5 +637,9 @@ public class SourceDataService {
 
     public static String cleanName(String name) {
         return Strings.nullToEmpty(name).toLowerCase().replaceAll("[^a-z0-9]+", "_").replaceAll("(^_|_$)", "");
+    }
+
+    public FactionData getFactionDataByName(String factionName) {
+        return factionAndSectorialDataByName.get(factionName);
     }
 }

@@ -37,6 +37,8 @@ public class CurrentRosterService {
     private Provider<SourceDataService> dataService;
     @Inject
     private Provider<PersistenceService> persistenceService;
+    @Inject
+    private Provider<RosterSynchronizationService> rosterSynchronizationService;
 
     private String currentFaction, currentSectorial;
 
@@ -139,15 +141,15 @@ public class CurrentRosterService {
         totalSwc = 0.0;
         totalCost = 0;
         modelCount = 0;
-//        List<UnitRecord> starAvaModels=Lists.newArrayList();
+        // List<UnitRecord> starAvaModels=Lists.newArrayList();
         boolean hasLiutenant = false, hasHacker = false, hasTag = false, hasMnemonica = false, hasRemote = false, hasAutotoolRemote = false;
 
         for (UnitRecord unitRecord : unitRecords) {
             unitRecord.getValidationNotes().clear();
             totalSwc += unitRecord.getUnitData().getSwcNum();
             totalCost += unitRecord.getUnitData().getCostNum();
-            if(!unitRecord.getUnitData().shouldSkipModelCount()){
-            modelCount++;
+            if (!unitRecord.getUnitData().shouldSkipModelCount()) {
+                modelCount++;
             }
             if (unitRecord.getUnitData().getSpec().contains("Lieutenant")) {
                 if (!hasLiutenant) {
@@ -413,7 +415,8 @@ public class CurrentRosterService {
     private void afterRosterUpdate(Object event) {
         dateMod = new Date().getTime();
         validateList();
-        persistenceService.get().saveRosterData(exportCurrentRoster());
+        persistenceService.get().saveCurrentRosterData();
+        rosterSynchronizationService.get().sendCurrentRosterToRemote();
         // TODO set current roster as last modified
         eventBus.post(event);
     }

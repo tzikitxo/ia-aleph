@@ -56,7 +56,7 @@ if ($_REQUEST['action'] == 'checkService') {
 } else if ($_REQUEST['action'] == 'storeData') {
     $deviceId = $_REQUEST['deviceId'];
     $key = $_REQUEST['key'];
-    if (preg_match('/^[0-9]+$/', $deviceId) && preg_match('/^[a-zA-Z0-9.]+$/', $key)) {
+    if (preg_match('/^[0-9a-zA-Z.]+$/', $deviceId) && preg_match('/^[a-zA-Z0-9.]+$/', $key)) {
 
         $dir = $storage_dir . "/" . $deviceId . "/";
         if (!file_exists($dir)) {
@@ -91,7 +91,7 @@ if ($_REQUEST['action'] == 'checkService') {
 } else if ($_REQUEST['action'] == 'getData') {
     $deviceId = $_REQUEST['deviceId'];
     $key = $_REQUEST['key'];
-    if (preg_match('/^[0-9]+$/', $deviceId) && preg_match('/^[a-zA-Z0-9.]+$/', $key)) {
+    if (preg_match('/^[0-9a-zA-Z.]+$/', $deviceId) && preg_match('/^[a-zA-Z0-9.]+$/', $key)) {
         $file = $storage_dir . "/" . $deviceId . "/" . $key . '.gz';
         if (!file_exists($file)) {
             $response = json_encode(array('success' => false, 'message' => 'no data found for this key'));
@@ -105,7 +105,7 @@ if ($_REQUEST['action'] == 'checkService') {
     }
 } else if ($_REQUEST['action'] == 'listData') {
     $deviceId = $_REQUEST['deviceId'];
-    if (preg_match('/^[0-9]+$/', $deviceId)) {
+    if (preg_match('/^[0-9a-zA-Z.]+$/', $deviceId)) {
         $dir = $storage_dir . "/" . $deviceId . "/";
         $res = array();
         foreach (scandir($dir) as $file) {

@@ -26,6 +26,8 @@ public class PersistenceService {
 
     @Inject
     private Provider<RosterDataService> rosterDataService;
+    @Inject
+    private Provider<CurrentRosterService> currentRosterService;
 
     @Inject
     private Context context;
@@ -48,14 +50,20 @@ public class PersistenceService {
         return new BigInteger(130, random).toString(32).replaceFirst("(.{16}).*", "$1");
     }
 
-    public void saveRosterData(RosterData rosterData) {
+    public void saveCurrentRosterData() {
+        RosterData rosterData = currentRosterService.get().exportCurrentRoster();
+        Log.i("PersistenceService", "saving roster = " + rosterData.getListId());
+        persistRosterData(rosterData);
+    }
+
+    private void persistRosterData(RosterData rosterData) {
         String rosterDataStr = rosterDataService.get().serializeRosterData(rosterData), rosterInfoStr = gson
                 .toJson(new RosterInfo(rosterData)), rosterId = rosterData.getListId();
         ContentValues values = new ContentValues();
         values.put(SavedRosterRecord.COLUMN_NAME_ROSTER_ID, rosterId);
         values.put(SavedRosterRecord.COLUMN_NAME_ROSTER_INFO, rosterInfoStr);
         values.put(SavedRosterRecord.COLUMN_NAME_ROSTER_DATA, rosterDataStr);
-        Log.i("PersistenceService", "saving roster = " + rosterInfoStr);
+        Log.i("PersistenceService", "persistRosterData = " + rosterInfoStr);
         SQLiteDatabase sqLiteDatabase = savedRostersDbHelper.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.query(SavedRosterRecord.TABLE_NAME,
                 new String[] { SavedRosterRecord.COLUMN_NAME_ROSTER_ID }, "rosterId=?", new String[] { rosterId },
@@ -67,7 +75,6 @@ public class PersistenceService {
         } else {
             insertRosterData(sqLiteDatabase, values);
         }
-
     }
 
     private void insertRosterData(SQLiteDatabase sqLiteDatabase, ContentValues values) {
@@ -124,7 +131,6 @@ public class PersistenceService {
         public Date getDateModAsDate() {
             return new Date(getDateMod());
         }
-
 
     }
 
