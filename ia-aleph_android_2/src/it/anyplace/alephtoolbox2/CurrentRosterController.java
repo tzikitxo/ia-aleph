@@ -10,6 +10,7 @@ import it.anyplace.alephtoolbox2.services.SourceDataService;
 import java.util.List;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.common.base.Joiner;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.google.inject.Inject;
@@ -31,151 +33,148 @@ import com.google.inject.Singleton;
 @Singleton
 public class CurrentRosterController {
 
-	@Inject
-	private Activity activity;
+    @Inject
+    private Activity activity;
 
-	@Inject
-	private EventBus eventBus;
-	@Inject
-	private RosterDataService armylistService;
-	@Inject
-	private CurrentRosterService currentListService;
-	// @Inject
-	// private UnitDetailController unitDetailController;
-	@Inject
-	private SourceDataService dataService;
+    @Inject
+    private EventBus eventBus;
+    @Inject
+    private RosterDataService armylistService;
+    @Inject
+    private CurrentRosterService currentListService;
+    // @Inject
+    // private UnitDetailController unitDetailController;
+    @Inject
+    private SourceDataService dataService;
 
-	private ListView mainRosterList;
-	private TextView currentRosterInfo;
-	@Inject
-	private ViewFlipperController viewFlipperController;
-	@Inject
-	private Provider<UnitDetailController> unitDetailController;
+    private ListView mainRosterList;
+    private TextView currentRosterInfo, currentRosterValidationNotes;
+    @Inject
+    private ViewFlipperController viewFlipperController;
+    @Inject
+    private Provider<UnitDetailController> unitDetailController;
 
-	@Inject
-	private Provider<CurrentRosterService> currentRosterService;
-//	public interface ArmyListUnitSelectedEvent {
-//		public UnitRecord getUnitRecord();
-//	}
+    @Inject
+    private Provider<CurrentRosterService> currentRosterService;
 
-	@Inject
-	private void init() {
-		mainRosterList = (ListView) activity.findViewById(R.id.mainRosterList);
-		currentRosterInfo = (TextView) activity
-				.findViewById(R.id.currentRosterInfo);
-		eventBus.register(this);
+    // public interface ArmyListUnitSelectedEvent {
+    // public UnitRecord getUnitRecord();
+    // }
 
-		mainRosterList.setOnItemClickListener(new OnItemClickListener() {
+    @Inject
+    private void init() {
+        mainRosterList = (ListView) activity.findViewById(R.id.mainRosterList);
+        currentRosterInfo = (TextView) activity.findViewById(R.id.currentRosterInfo);
+        currentRosterValidationNotes = (TextView) activity.findViewById(R.id.currentRosterValidationNotes);
+        eventBus.register(this);
 
-			@Override
-			public void onItemClick(AdapterView<?> adapterView, View arg1,
-					int index, long arg3) {
-				final UnitRecord unitRecord = currentListService
-						.getUnitRecords().get(index);
-				unitDetailController.get().openUnitDetail(unitRecord.getUnitData());
-				// unitDetailController.openUnitDetail(unitRecord.getUnitData());
-//				eventBus.post(new ArmyListUnitSelectedEvent() {
-//
-//					@Override
-//					public UnitRecord getUnitRecord() {
-//						return unitRecord;
-//					}
-//				});
-			}
-		});
-		mainRosterList.setOnItemLongClickListener(new OnItemLongClickListener() {
+        mainRosterList.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-					int index, long arg3) {
-				UnitRecord unitRecord = currentListService.getUnitRecords().get(index);
-				Toast.makeText(
-						activity,
-						activity.getResources().getString(R.string.app_toast_removedUnit,
-								unitRecord.getUnitData().getName(), unitRecord.getUnitData().getCode()),
-						activity.getResources().getInteger(R.integer.toastDelay))
-						.show();
-				currentRosterService.get().removeUnitRecord(unitRecord);
-				return true;
-			}
-		});
-		
-	}
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View arg1, int index, long arg3) {
+                final UnitRecord unitRecord = currentListService.getUnitRecords().get(index);
+                unitDetailController.get().openUnitDetail(unitRecord.getUnitData());
+                // unitDetailController.openUnitDetail(unitRecord.getUnitData());
+                // eventBus.post(new ArmyListUnitSelectedEvent() {
+                //
+                // @Override
+                // public UnitRecord getUnitRecord() {
+                // return unitRecord;
+                // }
+                // });
+            }
+        });
+        mainRosterList.setOnItemLongClickListener(new OnItemLongClickListener() {
 
-	@Subscribe
-	public void handleArmyListLoadEvent(RosterLoadEvent event) {
-		loadArmylist();
-	}
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int index, long arg3) {
+                UnitRecord unitRecord = currentListService.getUnitRecords().get(index);
+                Toast.makeText(
+                        activity,
+                        activity.getResources().getString(R.string.app_toast_removedUnit,
+                                unitRecord.getUnitData().getName(), unitRecord.getUnitData().getCode()),
+                        activity.getResources().getInteger(R.integer.toastDelay)).show();
+                currentRosterService.get().removeUnitRecord(unitRecord);
+                return true;
+            }
+        });
 
-	@Subscribe
-	public void handleArmyListUpdateEvent(RosterUpdateEvent event) {
-		loadArmylist();
-//		viewFlipperController.showArmyListView();
-	}
+    }
 
-	private void loadArmylist() {
-		// reset();
-		List<UnitRecord> unitRecords = currentListService.getUnitRecords();
-		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
-		// android.R.layout.simple_list_item_1, Lists.transform(
-		// unitRecords,
-		// new Function<UnitRecord, String>() {
-		//
-		// @Override
-		// public String apply(UnitRecord model) {
-		// return model.getIsc();
-		// }
-		// }));
-		ArrayAdapter<UnitRecord> adapter = new ArrayAdapter<UnitRecord>(
-				activity, R.layout.armylist_record, unitRecords) {
+    @Subscribe
+    public void handleArmyListLoadEvent(RosterLoadEvent event) {
+        loadArmylist();
+    }
 
-			@Override
-			public View getView(int position, View convertView, ViewGroup parent) {
-				if (convertView == null) {
-					convertView = LayoutInflater.from(activity).inflate(
-							R.layout.armylist_record, null);
-				}
-				UnitRecord unitRecord = getItem(position);
-				((TextView) convertView.findViewById(R.id.armyListRecordIsc))
-						.setText(unitRecord.getIsc());
-				((TextView) convertView.findViewById(R.id.armyListRecordCode))
-						.setText(unitRecord.getCode());
+    @Subscribe
+    public void handleArmyListUpdateEvent(RosterUpdateEvent event) {
+        loadArmylist();
+        // viewFlipperController.showArmyListView();
+    }
 
-				// UnitData unitData = dataService.getUnitDataByIscCode(
-				// unitRecord.getIsc(), unitRecord.getCode());
+    private void loadArmylist() {
+        // reset();
+        List<UnitRecord> unitRecords = currentListService.getUnitRecords();
+        // ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity,
+        // android.R.layout.simple_list_item_1, Lists.transform(
+        // unitRecords,
+        // new Function<UnitRecord, String>() {
+        //
+        // @Override
+        // public String apply(UnitRecord model) {
+        // return model.getIsc();
+        // }
+        // }));
+        ArrayAdapter<UnitRecord> adapter = new ArrayAdapter<UnitRecord>(activity, R.layout.current_roster_record, unitRecords) {
 
-				((TextView) convertView.findViewById(R.id.armyListRecordCost))
-						.setText(unitRecord.getUnitData().getCost());
-				((TextView) convertView.findViewById(R.id.armyListRecordSwc))
-						.setText(unitRecord.getUnitData().getSwc());
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(activity).inflate(R.layout.current_roster_record, null);
+                }
+                UnitRecord unitRecord = getItem(position);
+                TextView armyListRecordIsc = ((TextView) convertView.findViewById(R.id.armyListRecordIsc));
+                armyListRecordIsc.setText(unitRecord.getIsc());
+                if (unitRecord.hasError()) {
+                    armyListRecordIsc.setTextColor(Color.RED);
+                } else {
+                    armyListRecordIsc.setTextColor(Color.WHITE); // TODO get
+                                                                 // default
+                                                                 // color
+                }
+                ((TextView) convertView.findViewById(R.id.armyListRecordCode)).setText(unitRecord.getCode());
 
-				((ImageView) convertView.findViewById(R.id.armyListRecordIcon))
-						.setImageResource(activity.getResources()
-								.getIdentifier(
-										"unitlogo_"
-												+ unitRecord.getUnitData()
-														.getCleanIsc(),
-										"drawable", activity.getPackageName()));
-				return convertView;
-			}
+                // UnitData unitData = dataService.getUnitDataByIscCode(
+                // unitRecord.getIsc(), unitRecord.getCode());
 
-		};
-		mainRosterList.setAdapter(adapter);
+                ((TextView) convertView.findViewById(R.id.armyListRecordCost)).setText(unitRecord.getUnitData()
+                        .getCost());
+                ((TextView) convertView.findViewById(R.id.armyListRecordSwc))
+                        .setText(unitRecord.getUnitData().getSwc());
 
-		updateRosterInfo();
-		// for(ArmyListUnit model:armylist.getModels()){
-		// mainRosterList
-		// }
+                ((ImageView) convertView.findViewById(R.id.armyListRecordIcon)).setImageResource(activity
+                        .getResources().getIdentifier("unitlogo_" + unitRecord.getUnitData().getCleanIsc(), "drawable",
+                                activity.getPackageName()));
+                return convertView;
+            }
 
-	}
+        };
+        mainRosterList.setAdapter(adapter);
 
-	private void updateRosterInfo() {
-		currentRosterInfo.setText("points: "
-				+ currentListService.getPointTotal() + "/"
-				+ currentListService.getPointCap() + " ("
-				+ currentListService.getPointLeft() + ")" + " swc: "
-				+ currentListService.getSwcTotal() + "/"
-				+ currentListService.getSwcCap() + " ("
-				+ currentListService.getSwcLeft() + ")");
-	}
+        updateRosterInfo();
+        // for(ArmyListUnit model:armylist.getModels()){
+        // mainRosterList
+        // }
+
+    }
+
+    private void updateRosterInfo() {
+        currentRosterInfo.setText("points: " + currentListService.getPointTotal() + "/"
+                + currentListService.getPointCap() + " (" + currentListService.getPointLeft() + ")" + " swc: "
+                + currentListService.getSwcTotal() + "/" + currentListService.getSwcCap() + " ("
+                + currentListService.getSwcLeft() + ")");
+
+        currentRosterValidationNotes.setText(Joiner.on(", ").join(currentListService.getValidationNotes()));
+
+    }
 }

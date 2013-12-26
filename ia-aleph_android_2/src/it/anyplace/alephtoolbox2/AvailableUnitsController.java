@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.common.base.Predicate;
+import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.eventbus.EventBus;
@@ -34,158 +35,150 @@ import com.google.inject.Singleton;
 
 @Singleton
 public class AvailableUnitsController {
-	final List<String> types = Arrays.asList("LI", "MI", "HI", "WB", "SK",
-			"REM", "TAG");
+    final List<String> types = Arrays.asList("LI", "MI", "HI", "WB", "SK", "REM", "TAG");
 
-	@Inject
-	private SourceDataService unitDataService;
-	@Inject
-	private CurrentRosterService sessionService;
-	@Inject
-	private Activity activity;
-	@Inject
-	private Provider<UnitDetailController> unitDetailController;
+    @Inject
+    private SourceDataService unitDataService;
+    @Inject
+    private CurrentRosterService sessionService;
+    @Inject
+    private Activity activity;
+    @Inject
+    private Provider<UnitDetailController> unitDetailController;
 
-//	@Inject
-//	private UnitDetailController unitDetailController;
+    // @Inject
+    // private UnitDetailController unitDetailController;
 
-	@Inject
-	private EventBus eventBus;
+    @Inject
+    private EventBus eventBus;
 
-	private ListView unitListView, typeListView;
+    private ListView unitListView, typeListView;
 
-//	public interface AvailableUnitsUnitSelectedEvent{
-//		public UnitData getUnitData();
-//	}
-	
-	@Inject
-	private void init() {
-		unitListView = (ListView) activity.findViewById(R.id.unitListView);
-		typeListView = (ListView) activity.findViewById(R.id.typeListView);
+    // public interface AvailableUnitsUnitSelectedEvent{
+    // public UnitData getUnitData();
+    // }
 
-		typeListView.setAdapter(new ArrayAdapter<String>(activity,
-				android.R.layout.simple_list_item_1, types));
-		typeListView.setOnItemClickListener(new OnItemClickListener() {
+    @Inject
+    private void init() {
+        unitListView = (ListView) activity.findViewById(R.id.unitListView);
+        typeListView = (ListView) activity.findViewById(R.id.typeListView);
 
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int index,
-					long arg3) {
-				typeFilter = types.get(index);
-				Log.i("AvailableUnitsController", "filtering units by type = "
-						+ typeFilter);
-				showAvailableUnits();
-			}
-		});
-		unitListView.setOnItemClickListener(new OnItemClickListener() {
+        typeListView.setAdapter(new ArrayAdapter<String>(activity, android.R.layout.simple_list_item_1, types));
+        typeListView.setOnItemClickListener(new OnItemClickListener() {
 
-			@Override
-			public void onItemClick(AdapterView<?> adapterView, View arg1,
-					int index, long arg3) {
-				final UnitData selectedUnit = availableUnitsForType.get(index);
-				// String
-				// isc=((ArrayAdapter<String>)adapterView).getItem(index);
-				// typeFilter = types.get(index);
-				Log.i("AvailableUnitsController", "selected unit = "
-						+ selectedUnit.getIsc());
-				unitDetailController.get().openUnitDetail(selectedUnit);
-//				eventBus.post(new AvailableUnitsUnitSelectedEvent(){
-//
-//					@Override
-//					public UnitData getUnitData() {
-//						return selectedUnit;
-//					}});
-//				unitDetailController.openUnitDetail(selectedUnit
-//						.getDefaultChild());
-			}
-		});
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int index, long arg3) {
+                typeFilter = types.get(index);
+                Log.i("AvailableUnitsController", "filtering units by type = " + typeFilter);
+                showAvailableUnits();
+            }
+        });
+        unitListView.setOnItemClickListener(new OnItemClickListener() {
 
-		eventBus.register(this);
-	}
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View arg1, int index, long arg3) {
+                final UnitData selectedUnit = availableUnitsForType.get(index);
+                // String
+                // isc=((ArrayAdapter<String>)adapterView).getItem(index);
+                // typeFilter = types.get(index);
+                Log.i("AvailableUnitsController", "selected unit = " + selectedUnit.getIsc());
+                unitDetailController.get().openUnitDetail(selectedUnit);
+                // eventBus.post(new AvailableUnitsUnitSelectedEvent(){
+                //
+                // @Override
+                // public UnitData getUnitData() {
+                // return selectedUnit;
+                // }});
+                // unitDetailController.openUnitDetail(selectedUnit
+                // .getDefaultChild());
+            }
+        });
 
-	private String typeFilter = types.get(0);
+        eventBus.register(this);
+    }
 
-	@Subscribe
-	public void loadFaction(RosterLoadEvent event) {
-		loadAllAvailableUnits();
-	}
+    private String typeFilter = types.get(0);
 
-	private List<UnitData> availableUnitsForType;
+    @Subscribe
+    public void loadFaction(RosterLoadEvent event) {
+        loadAllAvailableUnits();
+    }
 
-	private void showAvailableUnits() {
-		// availableUnitsForType =
-		// availableUntisByType.getUnchecked(typeFilter);
-		availableUnitsForType = Lists.newArrayList(Iterables.filter(
-				allAvailableUnits, new Predicate<UnitData>() {
+    private List<UnitData> availableUnitsForType;
 
-					@Override
-					public boolean apply(UnitData unitData) {
-						return unitData.getType().equals(typeFilter);
-					}
-				}));
-		Collections.sort(availableUnitsForType, new Comparator<UnitData>() {
+    private void showAvailableUnits() {
+        // availableUnitsForType =
+        // availableUntisByType.getUnchecked(typeFilter);
+        availableUnitsForType = Lists.newArrayList(Iterables.filter(allAvailableUnits, new Predicate<UnitData>() {
 
-			@Override
-			public int compare(UnitData a, UnitData b) {
-				return a.getMinCost().compareTo(b.getMinCost());
-			}
-		});
+            @Override
+            public boolean apply(UnitData unitData) {
+                return unitData.getType().equals(typeFilter);
+            }
+        }));
+        Collections.sort(availableUnitsForType, new Comparator<UnitData>() {
 
-		Log.i("AvailableUnitsController",
-				"showAvailableUnits, availableUnitsForType = "
-						+ availableUnitsForType.size());
-		ArrayAdapter<UnitData> adapter = new ArrayAdapter<UnitData>(activity,
-				R.layout.availableunits_record, availableUnitsForType) {
+            @Override
+            public int compare(UnitData a, UnitData b) {
+                if (a.isPseudoUnit() || b.isPseudoUnit()) {
+                    return ComparisonChain.start().compare(a.isPseudoUnit(), b.isPseudoUnit())
+                            .compare(a.getIsc(), b.getIsc()).result();
+                } else {
+                    return ComparisonChain.start().compare(a.getMinCost(), b.getMinCost()).result();
+                }
+            }
+        });
 
-			@Override
-			public View getView(int position, View convertView, ViewGroup parent) {
-				if (convertView == null) {
-					convertView = LayoutInflater.from(activity).inflate(
-							R.layout.availableunits_record, null);
-				}
-				UnitData unitData = getItem(position);
-				((TextView) convertView.findViewById(R.id.unitListRecordIsc))
-						.setText(unitData.getIsc());
+        Log.i("AvailableUnitsController", "showAvailableUnits, availableUnitsForType = " + availableUnitsForType.size());
+        ArrayAdapter<UnitData> adapter = new ArrayAdapter<UnitData>(activity, R.layout.availableunits_record,
+                availableUnitsForType) {
 
-				((ImageView) convertView.findViewById(R.id.unitListRecordIcon))
-						.setImageResource(activity.getResources()
-								.getIdentifier(
-										"unitlogo_" + unitData.getCleanIsc(),
-										"drawable", activity.getPackageName()));
-				return convertView;
-			}
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(activity).inflate(R.layout.availableunits_record, null);
+                }
+                UnitData unitData = getItem(position);
+                ((TextView) convertView.findViewById(R.id.unitListRecordIsc)).setText(unitData.getIsc());
 
-		};
-		unitListView.setAdapter(adapter);
-	}
+                ((ImageView) convertView.findViewById(R.id.unitListRecordIcon)).setImageResource(activity
+                        .getResources().getIdentifier("unitlogo_" + unitData.getCleanIsc(), "drawable",
+                                activity.getPackageName()));
+                return convertView;
+            }
 
-	private Collection<UnitData> allAvailableUnits = Lists.newArrayList();
+        };
+        unitListView.setAdapter(adapter);
+    }
 
-	// private Cache<String, List<UnitData>> availableUntisByType = CacheBuilder
-	// .newBuilder().build(new CacheLoader<String, List<UnitData>>() {
-	// public List<UnitData> load(final String filter) {
-	// List<UnitData> res = Lists.newArrayList(Iterables.filter(
-	// allAvailableUnits, new Predicate<UnitData>() {
-	//
-	// @Override
-	// public boolean apply(UnitData unitData) {
-	// return unitData.getType().equals(filter);
-	// }
-	// }));
-	// Collections.sort(res, new Comparator<UnitData>() {
-	//
-	// @Override
-	// public int compare(UnitData a, UnitData b) {
-	// return a.getMinCost().compareTo(b.getMinCost());
-	// }
-	// });
-	// return res;
-	// }
-	// });
+    private Collection<UnitData> allAvailableUnits = Lists.newArrayList();
 
-	private void loadAllAvailableUnits() {
-		allAvailableUnits = unitDataService.getAvailableUnitData();
-		// availableUntisByType.invalidateAll();
-		showAvailableUnits();
-	}
+    // private Cache<String, List<UnitData>> availableUntisByType = CacheBuilder
+    // .newBuilder().build(new CacheLoader<String, List<UnitData>>() {
+    // public List<UnitData> load(final String filter) {
+    // List<UnitData> res = Lists.newArrayList(Iterables.filter(
+    // allAvailableUnits, new Predicate<UnitData>() {
+    //
+    // @Override
+    // public boolean apply(UnitData unitData) {
+    // return unitData.getType().equals(filter);
+    // }
+    // }));
+    // Collections.sort(res, new Comparator<UnitData>() {
+    //
+    // @Override
+    // public int compare(UnitData a, UnitData b) {
+    // return a.getMinCost().compareTo(b.getMinCost());
+    // }
+    // });
+    // return res;
+    // }
+    // });
+
+    private void loadAllAvailableUnits() {
+        allAvailableUnits = unitDataService.getAvailableUnitData();
+        // availableUntisByType.invalidateAll();
+        showAvailableUnits();
+    }
 
 }

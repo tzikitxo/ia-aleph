@@ -620,6 +620,18 @@ public class SourceDataService {
             return getCcw();
         }
 
+        public Integer getAvaNum() {
+            return Strings.isNullOrEmpty(ava) ? null : (ava.equals("T") ? Integer.MAX_VALUE : Integer.valueOf(ava));
+        }
+
+        public boolean shouldSkipModelCount() {
+            return getSpec().contains("G: Synchronized") || getSpec().contains("G: Servant")
+                    || getSpec().contains("Antipode");
+        }
+
+        public boolean isPseudoUnit() {
+            return Objects.equal(getAvaNum(), 0) || (Objects.equal(getCostNum(), 0) && Objects.equal(getSwcNum(), 0));
+        }
     }
 
     public static String cleanName(String name) {

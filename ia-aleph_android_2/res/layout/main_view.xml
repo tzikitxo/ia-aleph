@@ -10,7 +10,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" >
 
-        <include layout="@layout/armylist" />
+        <include layout="@layout/current_roster" />
         <include layout="@layout/availableunits" />
         <include layout="@layout/unit_detail" />
     </ViewFlipper>
