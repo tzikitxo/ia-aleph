@@ -1,0 +1,53 @@
+
+@red: red;
+@black: black;
+@white: white;
+@lightOrange: #FFBD76;
+@lightBlue: #A6F8FF;
+
+@darkOrange: darken(@lightOrange,40%);
+@darkBlue: darken(@lightBlue,40%);
+
+
+
+.buttonx(@colorBg,@colorFg,@colorSel){
+    cursor:pointer;
+    border-bottom: 2px solid @colorBg;
+    border-top: 2px solid @colorBg;
+    border-radius: 10px; 
+    &:hover{
+        border-bottom: 2px solid  @colorFg;
+        border-top: 2px solid  @colorFg;
+    }
+    &.selected{
+        border-bottom: 2px solid @colorSel;
+        border-top: 2px solid @colorSel;
+    }
+}
+
+.roundedCornersOfList{ 
+    &:first-child , &.first{
+        border-top-left-radius: 10px; 
+        border-bottom-left-radius: 10px; 
+    }
+    &:last-child , &.last{
+        border-top-right-radius: 10px; 
+        border-bottom-right-radius: 10px; 
+    }
+}
+
+.roundedCornersOfRow{
+    td{
+       .roundedCornersOfList;
+    }
+}
+
+.brighter1{
+    background-color:rgba(255,255,255,0.1);
+}
+.brighter2{
+    background-color:rgba(255,255,255,0.2);
+}
+.darker1{
+    background-color:rgba(0,0,0,0.1);
+}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:shrinkColumns="*"
+    android:stretchColumns="*" >
+
+    <TableRow>
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.type" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.mov" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.cc" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.bs" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.ph" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.wip" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.arm" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.bts" />
+
+        <TextView
+            android:gravity="center"
+            android:text="@string/units.attribute.w" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/unitDetailType"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/unitDetailMov"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailCc"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailBs"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailPh"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailWip"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailArm"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailBts"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/unitDetailW"
+            android:gravity="center" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/unitDetailSpecs"
+        android:gravity="center"
+        android:maxLines="5" />
+
+</TableLayout>
