@@ -1,7 +1,7 @@
 [
  {
   "baseurl": "http:\/\/infinitythegame.wikispot.org\/",
-  "date": "Mon Nov 25 2013 13:58:26 GMT+0100 (CET)",
+  "date": "Tue Feb 04 2014 09:47:00 GMT+0100 (CET)",
   "lang": "en",
   "pages": [
    {
@@ -3056,7 +3056,7 @@
  },
  {
   "baseurl": "http:\/\/infinity-tabletop.wikispot.org\/",
-  "date": "Mon Nov 25 2013 14:03:12 GMT+0100 (CET)",
+  "date": "Tue Feb 04 2014 09:51:34 GMT+0100 (CET)",
   "lang": "de",
   "pages": [
    {
@@ -3149,805 +3149,861 @@
    },
    {
     "filename": "0000030.html",
-    "pagename": "Beute"
+    "pagename": "BET"
    },
    {
     "filename": "0000031.html",
-    "pagename": "Bewegen"
+    "pagename": "BET-Waffen"
+   },
+   {
+    "filename": "0000032.html",
+    "pagename": "Beute"
    },
    {
     "filename": "0000033.html",
-    "pagename": "Bewusstlosigkeit"
-   },
-   {
-    "filename": "0000034.html",
-    "pagename": "BF"
+    "pagename": "Bewegen"
    },
    {
     "filename": "0000035.html",
-    "pagename": "Biologischer_Positionsgeber"
-   },
-   {
-    "filename": "0000037.html",
-    "pagename": "Blend"
+    "pagename": "Bewusstlosigkeit"
    },
    {
     "filename": "0000036.html",
-    "pagename": "Blenden"
+    "pagename": "BF"
    },
    {
-    "filename": "0000040.html",
-    "pagename": "Blitz-Impuls"
+    "filename": "0000037.html",
+    "pagename": "Biologischer_Positionsgeber"
    },
    {
     "filename": "0000039.html",
-    "pagename": "Blitzen"
+    "pagename": "Blend"
+   },
+   {
+    "filename": "0000038.html",
+    "pagename": "Blenden"
    },
    {
     "filename": "0000042.html",
+    "pagename": "Blitz-Impuls"
+   },
+   {
+    "filename": "0000041.html",
+    "pagename": "Blitzen"
+   },
+   {
+    "filename": "0000044.html",
     "pagename": "BRA"
    },
    {
-    "filename": "0000043.html",
-    "pagename": "Chain_Rifle"
-   },
-   {
     "filename": "0000045.html",
-    "pagename": "Charakteristiken"
+    "pagename": "Brandraketenwerfer"
    },
    {
     "filename": "0000046.html",
-    "pagename": "Contender"
+    "pagename": "Chain_Rifle"
    },
    {
     "filename": "0000047.html",
-    "pagename": "CrazyKoalas"
+    "pagename": "Chain_Waffen"
    },
    {
-    "filename": "0000048.html",
-    "pagename": "Darstellung"
+    "filename": "0000049.html",
+    "pagename": "Charakteristiken"
    },
    {
     "filename": "0000050.html",
-    "pagename": "Deckung"
+    "pagename": "Contender"
    },
    {
     "filename": "0000051.html",
-    "pagename": "Defensives_Hackermodul"
+    "pagename": "CrazyKoalas"
    },
    {
     "filename": "0000052.html",
-    "pagename": "DEP"
-   },
-   {
-    "filename": "0000053.html",
-    "pagename": "Detonationsautomatik"
+    "pagename": "Darstellung"
    },
    {
     "filename": "0000054.html",
-    "pagename": "Direkte-Schablonen"
-   },
-   {
-    "filename": "0000064.html",
-    "pagename": "E\/Mauler"
-   },
-   {
-    "filename": "0000066.html",
-    "pagename": "E\/Mitter"
+    "pagename": "Deckung"
    },
    {
     "filename": "0000055.html",
-    "pagename": "ECM"
+    "pagename": "Defensives_Hackermodul"
    },
    {
     "filename": "0000056.html",
-    "pagename": "Eigenschaften"
+    "pagename": "DEP"
    },
    {
     "filename": "0000057.html",
-    "pagename": "Einfache_Infiltration"
+    "pagename": "Detonationsautomatik"
    },
    {
     "filename": "0000058.html",
-    "pagename": "Einheitentypen"
-   },
-   {
-    "filename": "0000059.html",
-    "pagename": "Einleitung"
-   },
-   {
-    "filename": "0000061.html",
-    "pagename": "Einsteigen_Aussteigen"
-   },
-   {
-    "filename": "0000062.html",
-    "pagename": "Elektrischer_Puls"
-   },
-   {
-    "filename": "0000065.html",
-    "pagename": "EM"
-   },
-   {
-    "filename": "0000063.html",
-    "pagename": "EM2"
-   },
-   {
-    "filename": "0000067.html",
-    "pagename": "Entdecken"
+    "pagename": "Direkte-Schablonen"
    },
    {
     "filename": "0000068.html",
-    "pagename": "Entfernung"
+    "pagename": "E\/Mauler"
    },
    {
     "filename": "0000070.html",
-    "pagename": "Events_Board"
+    "pagename": "E\/Mitter"
+   },
+   {
+    "filename": "0000059.html",
+    "pagename": "ECM"
+   },
+   {
+    "filename": "0000060.html",
+    "pagename": "Eigenschaften"
+   },
+   {
+    "filename": "0000061.html",
+    "pagename": "Einfache_Infiltration"
+   },
+   {
+    "filename": "0000062.html",
+    "pagename": "Einheitentypen"
+   },
+   {
+    "filename": "0000063.html",
+    "pagename": "Einleitung"
+   },
+   {
+    "filename": "0000065.html",
+    "pagename": "Einsteigen_Aussteigen"
+   },
+   {
+    "filename": "0000066.html",
+    "pagename": "Elektrischer_Puls"
+   },
+   {
+    "filename": "0000069.html",
+    "pagename": "EM"
+   },
+   {
+    "filename": "0000067.html",
+    "pagename": "EM2"
    },
    {
     "filename": "0000071.html",
-    "pagename": "EVO_Repeater"
+    "pagename": "Entdecken"
    },
    {
     "filename": "0000072.html",
-    "pagename": "EXP"
+    "pagename": "Entfernung"
    },
    {
-    "filename": "0000073.html",
-    "pagename": "Exrah"
+    "filename": "0000074.html",
+    "pagename": "Events_Board"
    },
    {
     "filename": "0000075.html",
-    "pagename": "Fernsteuerung"
+    "pagename": "EVO_Repeater"
    },
    {
     "filename": "0000076.html",
-    "pagename": "Fertigkeiten"
+    "pagename": "EXP"
    },
    {
     "filename": "0000077.html",
-    "pagename": "Feuerbach"
+    "pagename": "Exrah"
    },
    {
     "filename": "0000079.html",
-    "pagename": "FL"
-   },
-   {
-    "filename": "0000078.html",
-    "pagename": "Flammenwerfer"
+    "pagename": "Fernsteuerung"
    },
    {
     "filename": "0000080.html",
-    "pagename": "Fortgeschrittene_Infiltration"
+    "pagename": "Fertigkeiten"
    },
    {
     "filename": "0000081.html",
-    "pagename": "Fortgeschrittenes__Klettern"
+    "pagename": "Feuerbach"
+   },
+   {
+    "filename": "0000084.html",
+    "pagename": "FL"
    },
    {
     "filename": "0000082.html",
+    "pagename": "Flammenspeer"
+   },
+   {
+    "filename": "0000083.html",
+    "pagename": "Flammenwerfer"
+   },
+   {
+    "filename": "0000085.html",
+    "pagename": "Fortgeschrittene_Infiltration"
+   },
+   {
+    "filename": "0000086.html",
+    "pagename": "Fortgeschrittenes__Klettern"
+   },
+   {
+    "filename": "0000087.html",
     "pagename": "Fraktionen"
    },
    {
-    "filename": "0000092.html",
+    "filename": "0000097.html",
     "pagename": "Front_Page"
    },
    {
-    "filename": "0000094.html",
+    "filename": "0000099.html",
     "pagename": "Gefechtstrupp:_Enomotarchos"
    },
    {
-    "filename": "0000095.html",
+    "filename": "0000100.html",
     "pagename": "Gefechtstrupp:_Haris_Stufe_1"
    },
    {
-    "filename": "0000096.html",
+    "filename": "0000101.html",
     "pagename": "Gefechtstrupp:_Tohaa"
    },
    {
-    "filename": "0000097.html",
+    "filename": "0000102.html",
     "pagename": "Geist:_Helfer"
    },
    {
-    "filename": "0000098.html",
+    "filename": "0000103.html",
     "pagename": "Geist:_Springer_Stufe_1"
    },
    {
-    "filename": "0000099.html",
+    "filename": "0000104.html",
     "pagename": "Geist:_Synchronisiert"
    },
    {
-    "filename": "0000104.html",
+    "filename": "0000109.html",
     "pagename": "Gewehr"
    },
    {
-    "filename": "0000106.html",
+    "filename": "0000111.html",
     "pagename": "Ghost_(G)"
    },
    {
-    "filename": "0000105.html",
+    "filename": "0000110.html",
     "pagename": "Ghost:_Autotool"
    },
    {
-    "filename": "0000107.html",
+    "filename": "0000112.html",
     "pagename": "Gift"
    },
    {
-    "filename": "0000108.html",
+    "filename": "0000113.html",
     "pagename": "Glossar"
    },
    {
-    "filename": "0000110.html",
+    "filename": "0000115.html",
     "pagename": "Granaten"
    },
    {
-    "filename": "0000111.html",
+    "filename": "0000116.html",
     "pagename": "Granatwerfer"
    },
    {
-    "filename": "0000112.html",
+    "filename": "0000117.html",
     "pagename": "Hackermodul"
    },
    {
-    "filename": "0000113.html",
+    "filename": "0000118.html",
     "pagename": "Haltegriffe"
    },
    {
-    "filename": "0000114.html",
+    "filename": "0000119.html",
     "pagename": "Haqqislam"
    },
    {
-    "filename": "0000117.html",
+    "filename": "0000122.html",
     "pagename": "Help"
    },
    {
-    "filename": "0000118.html",
+    "filename": "0000123.html",
     "pagename": "Hinlegen"
    },
    {
-    "filename": "0000119.html",
+    "filename": "0000124.html",
     "pagename": "Hinweise_Nahkampf"
    },
    {
-    "filename": "0000120.html",
+    "filename": "0000125.html",
     "pagename": "HMK"
    },
    {
-    "filename": "0000121.html",
+    "filename": "0000126.html",
     "pagename": "Holoprojektor"
    },
    {
-    "filename": "0000122.html",
+    "filename": "0000127.html",
     "pagename": "Hungrige_Kontrollsystem"
    },
    {
-    "filename": "0000123.html",
+    "filename": "0000128.html",
     "pagename": "Hyperdynamisch"
    },
    {
-    "filename": "0000124.html",
+    "filename": "0000129.html",
+    "pagename": "Igel_Nahkampfwaffe"
+   },
+   {
+    "filename": "0000130.html",
     "pagename": "Imitation"
    },
    {
-    "filename": "0000126.html",
+    "filename": "0000132.html",
     "pagename": "Indirektes_Feuer"
    },
    {
-    "filename": "0000127.html",
+    "filename": "0000133.html",
     "pagename": "Infiltrieren"
    },
    {
-    "filename": "0000128.html",
+    "filename": "0000134.html",
     "pagename": "Ingenieur"
    },
    {
-    "filename": "0000129.html",
+    "filename": "0000135.html",
     "pagename": "Initiative"
    },
    {
-    "filename": "0000132.html",
+    "filename": "0000138.html",
     "pagename": "Intuitiver_Angriff"
    },
    {
-    "filename": "0000133.html",
-    "pagename": "Kampfkunst"
-   },
-   {
-    "filename": "0000134.html",
-    "pagename": "Katjuscha"
-   },
-   {
-    "filename": "0000136.html",
-    "pagename": "KI-Signalboje"
-   },
-   {
-    "filename": "0000137.html",
-    "pagename": "KLE"
-   },
-   {
-    "filename": "0000138.html",
-    "pagename": "Klettern"
-   },
-   {
     "filename": "0000139.html",
-    "pagename": "KLEW"
+    "pagename": "Journalist"
    },
    {
     "filename": "0000140.html",
-    "pagename": "Koma"
+    "pagename": "K1_Spezialmunition"
    },
    {
     "filename": "0000141.html",
-    "pagename": "Kombi"
+    "pagename": "K1-Waffen"
    },
    {
     "filename": "0000142.html",
-    "pagename": "Kontrollbereich"
+    "pagename": "Kampfgruppen"
    },
    {
     "filename": "0000143.html",
-    "pagename": "Kontrollsystem"
+    "pagename": "Kampfkunst"
    },
    {
     "filename": "0000144.html",
-    "pagename": "Koordinierter_Befehl"
+    "pagename": "Katjuscha"
    },
    {
-    "filename": "0000145.html",
-    "pagename": "Kuang_Shi_Kontrollsystem"
+    "filename": "0000146.html",
+    "pagename": "KI-Signalboje"
+   },
+   {
+    "filename": "0000147.html",
+    "pagename": "KLE"
    },
    {
     "filename": "0000148.html",
-    "pagename": "Lebensbedrohliche_Umweltbedingungen"
+    "pagename": "Klettern"
+   },
+   {
+    "filename": "0000149.html",
+    "pagename": "KLEW"
    },
    {
     "filename": "0000150.html",
-    "pagename": "Leutnant"
+    "pagename": "Koma"
    },
    {
     "filename": "0000151.html",
-    "pagename": "Luftlandetruppen_(LL)"
+    "pagename": "Kombi"
    },
    {
     "filename": "0000152.html",
-    "pagename": "Medikits"
+    "pagename": "Kontrollbereich"
    },
    {
     "filename": "0000153.html",
-    "pagename": "Messer"
+    "pagename": "Kontrollsystem"
+   },
+   {
+    "filename": "0000154.html",
+    "pagename": "Koordinierter_Befehl"
    },
    {
     "filename": "0000155.html",
-    "pagename": "MetaChemie"
-   },
-   {
-    "filename": "0000156.html",
-    "pagename": "MF"
+    "pagename": "Kuang_Shi_Kontrollsystem"
    },
    {
     "filename": "0000158.html",
-    "pagename": "Minen"
+    "pagename": "Lebensbedrohliche_Umweltbedingungen"
    },
    {
-    "filename": "0000159.html",
-    "pagename": "Minenleger"
+    "filename": "0000160.html",
+    "pagename": "Leutnant"
    },
    {
     "filename": "0000161.html",
-    "pagename": "Mk12"
+    "pagename": "Luftlandetruppen_(LL)"
    },
    {
     "filename": "0000162.html",
-    "pagename": "Mobile_Einheit"
+    "pagename": "Maschinenpistole"
    },
    {
     "filename": "0000163.html",
-    "pagename": "Moralverlust"
+    "pagename": "Medikits"
    },
    {
     "filename": "0000164.html",
-    "pagename": "Morat"
-   },
-   {
-    "filename": "0000165.html",
-    "pagename": "Motorrad"
+    "pagename": "Messer"
    },
    {
     "filename": "0000166.html",
-    "pagename": "Multi"
+    "pagename": "MetaChemie"
    },
    {
     "filename": "0000167.html",
-    "pagename": "Multi_Nahkampf"
-   },
-   {
-    "filename": "0000168.html",
-    "pagename": "Munitionstypen"
+    "pagename": "MF"
    },
    {
     "filename": "0000169.html",
-    "pagename": "Nahkampfwaffen_(NKW)"
+    "pagename": "Minen"
    },
    {
     "filename": "0000170.html",
-    "pagename": "Nanopulser"
-   },
-   {
-    "filename": "0000171.html",
-    "pagename": "Nanoschirm"
+    "pagename": "Minenleger"
    },
    {
     "filename": "0000172.html",
-    "pagename": "Nanotech"
+    "pagename": "Mk12"
    },
    {
     "filename": "0000173.html",
-    "pagename": "Nanotech_Spezialmunition"
+    "pagename": "Mobile_Einheit"
    },
    {
     "filename": "0000174.html",
-    "pagename": "Neurokinetische_Implantate"
+    "pagename": "Molotok"
    },
    {
     "filename": "0000175.html",
-    "pagename": "NK"
+    "pagename": "Moralverlust"
    },
    {
     "filename": "0000176.html",
-    "pagename": "NK_mit_zwei_Waffen"
+    "pagename": "Morat"
    },
    {
     "filename": "0000177.html",
-    "pagename": "Nomaden"
+    "pagename": "Motorrad"
+   },
+   {
+    "filename": "0000178.html",
+    "pagename": "Multi"
+   },
+   {
+    "filename": "0000179.html",
+    "pagename": "Multi_Nahkampf"
    },
    {
     "filename": "0000180.html",
-    "pagename": "Normaler_Wurf"
+    "pagename": "Munitionstypen"
    },
    {
     "filename": "0000181.html",
-    "pagename": "Nullifier"
+    "pagename": "Nahkampfwaffen_(NKW)"
    },
    {
     "filename": "0000182.html",
-    "pagename": "Nummer_2"
+    "pagename": "Nanopulser"
    },
    {
     "filename": "0000183.html",
-    "pagename": "Orphaned_Pages"
+    "pagename": "Nanoschirm"
    },
    {
     "filename": "0000184.html",
-    "pagename": "OSE"
+    "pagename": "Nanotech"
    },
    {
     "filename": "0000185.html",
-    "pagename": "Outgoing_Links"
+    "pagename": "Nanotech_Spezialmunition"
    },
    {
     "filename": "0000186.html",
-    "pagename": "PanOceania"
+    "pagename": "Neurokinetische_Implantate"
+   },
+   {
+    "filename": "0000187.html",
+    "pagename": "NK"
+   },
+   {
+    "filename": "0000188.html",
+    "pagename": "NK_mit_zwei_Waffen"
    },
    {
     "filename": "0000189.html",
-    "pagename": "Panzerfaust"
-   },
-   {
-    "filename": "0000190.html",
-    "pagename": "Pilot"
-   },
-   {
-    "filename": "0000191.html",
-    "pagename": "Pionier"
+    "pagename": "Nomaden"
    },
    {
     "filename": "0000192.html",
-    "pagename": "Pistole"
+    "pagename": "Normaler_Wurf"
    },
    {
     "filename": "0000193.html",
-    "pagename": "Pistolen"
-   },
-   {
-    "filename": "0000195.html",
-    "pagename": "Plasma"
-   },
-   {
-    "filename": "0000196.html",
-    "pagename": "Plasma_Spezialmunition"
+    "pagename": "Nullifier"
    },
    {
     "filename": "0000194.html",
-    "pagename": "Plasmagewehr"
+    "pagename": "Nummer_2"
+   },
+   {
+    "filename": "0000195.html",
+    "pagename": "Orphaned_Pages"
+   },
+   {
+    "filename": "0000196.html",
+    "pagename": "OSE"
    },
    {
     "filename": "0000197.html",
-    "pagename": "Positionsmelder"
+    "pagename": "Outgoing_Links"
    },
    {
     "filename": "0000198.html",
-    "pagename": "Rakentenwerfer_(RW)"
-   },
-   {
-    "filename": "0000199.html",
-    "pagename": "Raketenwerfer"
-   },
-   {
-    "filename": "0000200.html",
-    "pagename": "Random_Pages"
+    "pagename": "PanOceania"
    },
    {
     "filename": "0000201.html",
-    "pagename": "Rauch"
+    "pagename": "Panzerfaust"
    },
    {
     "filename": "0000202.html",
-    "pagename": "Recent_Changes"
+    "pagename": "Pilot"
    },
    {
     "filename": "0000203.html",
-    "pagename": "Regelwerk"
+    "pagename": "Pionier"
+   },
+   {
+    "filename": "0000204.html",
+    "pagename": "Pistole"
+   },
+   {
+    "filename": "0000205.html",
+    "pagename": "Pistolen"
+   },
+   {
+    "filename": "0000207.html",
+    "pagename": "Plasma"
+   },
+   {
+    "filename": "0000208.html",
+    "pagename": "Plasma_Spezialmunition"
+   },
+   {
+    "filename": "0000206.html",
+    "pagename": "Plasmagewehr"
+   },
+   {
+    "filename": "0000209.html",
+    "pagename": "Positionsmelder"
    },
    {
     "filename": "0000211.html",
-    "pagename": "Regeneration"
+    "pagename": "Rakentenwerfer_(RW)"
    },
    {
     "filename": "0000212.html",
-    "pagename": "Relais"
+    "pagename": "Raketenwerfer"
+   },
+   {
+    "filename": "0000213.html",
+    "pagename": "Random_Pages"
+   },
+   {
+    "filename": "0000214.html",
+    "pagename": "Rauch"
    },
    {
     "filename": "0000215.html",
-    "pagename": "Schaden"
+    "pagename": "Recent_Changes"
    },
    {
-    "filename": "0000217.html",
-    "pagename": "Schleudersitz"
-   },
-   {
-    "filename": "0000218.html",
-    "pagename": "Schrotflinte"
-   },
-   {
-    "filename": "0000219.html",
-    "pagename": "Schrotflinten"
-   },
-   {
-    "filename": "0000220.html",
-    "pagename": "Schwimmen"
-   },
-   {
-    "filename": "0000221.html",
-    "pagename": "Sechster_Sinn"
-   },
-   {
-    "filename": "0000222.html",
-    "pagename": "Sektor_Armeen"
-   },
-   {
-    "filename": "0000223.html",
-    "pagename": "Sensoren"
+    "filename": "0000216.html",
+    "pagename": "Regelwerk"
    },
    {
     "filename": "0000224.html",
-    "pagename": "Sepsitor"
+    "pagename": "Regeneration"
    },
    {
     "filename": "0000225.html",
-    "pagename": "SF"
-   },
-   {
-    "filename": "0000227.html",
-    "pagename": "SH"
-   },
-   {
-    "filename": "0000226.html",
-    "pagename": "Shasvastii"
+    "pagename": "Relais"
    },
    {
     "filename": "0000228.html",
-    "pagename": "Sichtlinie"
-   },
-   {
-    "filename": "0000229.html",
-    "pagename": "Siegbedingungen"
+    "pagename": "Schaden"
    },
    {
     "filename": "0000230.html",
-    "pagename": "Site_Organization"
+    "pagename": "Schleudersitz"
    },
    {
     "filename": "0000231.html",
-    "pagename": "SMG"
+    "pagename": "Schrotflinte"
+   },
+   {
+    "filename": "0000232.html",
+    "pagename": "Schrotflinten"
+   },
+   {
+    "filename": "0000234.html",
+    "pagename": "SCHW"
+   },
+   {
+    "filename": "0000233.html",
+    "pagename": "Schwarm-Waffen"
    },
    {
     "filename": "0000235.html",
-    "pagename": "Spekulativer_Schuss"
+    "pagename": "Schwimmen"
    },
    {
     "filename": "0000236.html",
-    "pagename": "Spezialbefehl"
+    "pagename": "Sechster_Sinn"
    },
    {
     "filename": "0000237.html",
-    "pagename": "Spezialfertigkeiten"
+    "pagename": "Sektor_Armeen"
    },
    {
     "filename": "0000238.html",
-    "pagename": "Spezialist"
+    "pagename": "Sensoren"
+   },
+   {
+    "filename": "0000239.html",
+    "pagename": "Sepsitor"
    },
    {
     "filename": "0000240.html",
-    "pagename": "Spitfire"
-   },
-   {
-    "filename": "0000241.html",
-    "pagename": "Sporen-Embryo"
+    "pagename": "SF"
    },
    {
     "filename": "0000242.html",
-    "pagename": "Spotter"
+    "pagename": "SH"
+   },
+   {
+    "filename": "0000241.html",
+    "pagename": "Shasvastii"
    },
    {
     "filename": "0000243.html",
-    "pagename": "Sprengladungen"
+    "pagename": "Sichtlinie"
    },
    {
     "filename": "0000244.html",
-    "pagename": "Springen"
+    "pagename": "Siegbedingungen"
    },
    {
     "filename": "0000245.html",
-    "pagename": "Starten"
+    "pagename": "Site_Organization"
    },
    {
     "filename": "0000246.html",
-    "pagename": "Strategos"
-   },
-   {
-    "filename": "0000247.html",
-    "pagename": "Striga"
-   },
-   {
-    "filename": "0000249.html",
-    "pagename": "Sturmangriff"
+    "pagename": "SMG"
    },
    {
     "filename": "0000250.html",
-    "pagename": "Supersprung"
+    "pagename": "Spekulativer_Schuss"
    },
    {
     "filename": "0000251.html",
-    "pagename": "Symbiontenpanzerung"
+    "pagename": "Spezialbefehl"
    },
    {
     "filename": "0000252.html",
-    "pagename": "T2-Waffen"
-   },
-   {
-    "filename": "0000254.html",
-    "pagename": "Tapferkeit_(T)"
+    "pagename": "Spezialfertigkeiten"
    },
    {
     "filename": "0000253.html",
-    "pagename": "Tapferkeitswurf"
+    "pagename": "Spezialist"
    },
    {
     "filename": "0000255.html",
-    "pagename": "Tarnen_und_Verstecken_(TV)"
+    "pagename": "Spitfire"
    },
    {
     "filename": "0000256.html",
-    "pagename": "Templates\/Business"
+    "pagename": "Sporen-Embryo"
    },
    {
     "filename": "0000257.html",
-    "pagename": "Tod"
+    "pagename": "Spotter"
    },
    {
     "filename": "0000258.html",
-    "pagename": "Tohaa"
+    "pagename": "Sprengladungen"
+   },
+   {
+    "filename": "0000259.html",
+    "pagename": "Springen"
+   },
+   {
+    "filename": "0000260.html",
+    "pagename": "Starten"
    },
    {
     "filename": "0000261.html",
-    "pagename": "Totale_Reaktion"
+    "pagename": "Strategos"
    },
    {
     "filename": "0000262.html",
-    "pagename": "Traktor_Mul_Kontrollsystem"
+    "pagename": "Striga"
    },
    {
-    "filename": "0000263.html",
-    "pagename": "Truppeneinteilung"
+    "filename": "0000264.html",
+    "pagename": "Sturmangriff"
    },
    {
     "filename": "0000265.html",
-    "pagename": "User_Statistics"
+    "pagename": "Supersprung"
    },
    {
     "filename": "0000266.html",
-    "pagename": "UWK"
+    "pagename": "Symbiontenpanzerung"
+   },
+   {
+    "filename": "0000267.html",
+    "pagename": "T2-Waffen"
+   },
+   {
+    "filename": "0000269.html",
+    "pagename": "Tapferkeit_(T)"
    },
    {
     "filename": "0000268.html",
-    "pagename": "Vergleichender_Wurf"
+    "pagename": "Tapferkeitswurf"
    },
    {
     "filename": "0000270.html",
-    "pagename": "Verlinkte_Gruppen"
+    "pagename": "Tarnen_und_Verstecken_(TV)"
    },
    {
     "filename": "0000271.html",
-    "pagename": "Verteidigungsmodus"
+    "pagename": "Templates\/Business"
    },
    {
     "filename": "0000272.html",
-    "pagename": "Verwandlung"
+    "pagename": "Tod"
    },
    {
     "filename": "0000273.html",
-    "pagename": "Veteran"
+    "pagename": "Tohaa"
    },
    {
-    "filename": "0000274.html",
-    "pagename": "VG_Aktiver_Zug"
-   },
-   {
-    "filename": "0000275.html",
-    "pagename": "VG_Ausweichen"
+    "filename": "0000276.html",
+    "pagename": "Totale_Reaktion"
    },
    {
     "filename": "0000277.html",
-    "pagename": "VG_Gruppenzusammenhalt"
+    "pagename": "Traktor_Mul_Kontrollsystem"
    },
    {
     "filename": "0000278.html",
-    "pagename": "VG_Reaktiver_Zug"
+    "pagename": "Truppeneinteilung"
    },
    {
     "filename": "0000280.html",
-    "pagename": "VG_Verbindung_Unterbrochen"
+    "pagename": "User_Statistics"
    },
    {
     "filename": "0000281.html",
-    "pagename": "Viral"
-   },
-   {
-    "filename": "0000282.html",
-    "pagename": "Viral-Waffen"
+    "pagename": "UWK"
    },
    {
     "filename": "0000283.html",
-    "pagename": "Visoren"
+    "pagename": "Vergleichender_Wurf"
    },
    {
-    "filename": "0000284.html",
-    "pagename": "Vorbereitung"
+    "filename": "0000285.html",
+    "pagename": "Verlinkte_Gruppen"
    },
    {
     "filename": "0000286.html",
-    "pagename": "Vorsichtige_Bewegung"
+    "pagename": "Verteidigungsmodus"
+   },
+   {
+    "filename": "0000287.html",
+    "pagename": "Verwandlung"
    },
    {
     "filename": "0000288.html",
+    "pagename": "Veteran"
+   },
+   {
+    "filename": "0000289.html",
+    "pagename": "VG_Aktiver_Zug"
+   },
+   {
+    "filename": "0000290.html",
+    "pagename": "VG_Ausweichen"
+   },
+   {
+    "filename": "0000292.html",
+    "pagename": "VG_Gruppenzusammenhalt"
+   },
+   {
+    "filename": "0000293.html",
+    "pagename": "VG_Reaktiver_Zug"
+   },
+   {
+    "filename": "0000295.html",
+    "pagename": "VG_Verbindung_Unterbrochen"
+   },
+   {
+    "filename": "0000296.html",
+    "pagename": "Viral"
+   },
+   {
+    "filename": "0000297.html",
+    "pagename": "Viral-Waffen"
+   },
+   {
+    "filename": "0000298.html",
+    "pagename": "Visoren"
+   },
+   {
+    "filename": "0000299.html",
+    "pagename": "Vorbereitung"
+   },
+   {
+    "filename": "0000301.html",
+    "pagename": "Vorsichtige_Bewegung"
+   },
+   {
+    "filename": "0000304.html",
     "pagename": "Wanted_Pages"
    },
    {
-    "filename": "0000313.html",
+    "filename": "0000329.html",
     "pagename": "Willkommen"
    },
    {
-    "filename": "0000315.html",
+    "filename": "0000331.html",
     "pagename": "Wirk-Schablonen"
    },
    {
-    "filename": "0000317.html",
+    "filename": "0000333.html",
     "pagename": "Zivilisten"
    }
   ]
  },
  {
   "baseurl": "http:\/\/infinitylejeu.wikispot.org\/",
-  "date": "Mon Nov 25 2013 14:18:47 GMT+0100 (CET)",
+  "date": "Tue Feb 04 2014 10:07:12 GMT+0100 (CET)",
   "lang": "fr",
   "pages": [
    {
@@ -4747,847 +4803,847 @@
     "pagename": "Infiltrer"
    },
    {
-    "filename": "0000327.html",
+    "filename": "0000323.html",
     "pagename": "Infirmier"
    },
    {
-    "filename": "0000330.html",
+    "filename": "0000326.html",
     "pagename": "Inspiration"
    },
    {
-    "filename": "0000331.html",
+    "filename": "0000327.html",
     "pagename": "Instruction"
    },
    {
-    "filename": "0000332.html",
+    "filename": "0000328.html",
     "pagename": "Instructions"
    },
    {
-    "filename": "0000333.html",
+    "filename": "0000329.html",
     "pagename": "Interwiki_Map"
    },
    {
-    "filename": "0000342.html",
+    "filename": "0000338.html",
     "pagename": "Jet"
    },
    {
-    "filename": "0000341.html",
+    "filename": "0000337.html",
     "pagename": "Jet_d_Opposition"
    },
    {
-    "filename": "0000338.html",
+    "filename": "0000334.html",
     "pagename": "Jet_de_BLI"
    },
    {
-    "filename": "0000339.html",
+    "filename": "0000335.html",
     "pagename": "Jet_de_Bravoure"
    },
    {
-    "filename": "0000340.html",
+    "filename": "0000336.html",
     "pagename": "Jet_de_PB"
    },
    {
-    "filename": "0000341.html",
+    "filename": "0000337.html",
     "pagename": "Jet_d_Opposition"
    },
    {
-    "filename": "0000343.html",
+    "filename": "0000339.html",
     "pagename": "Jet_Normal"
    },
    {
-    "filename": "0000336.html",
+    "filename": "0000332.html",
     "pagename": "jetable"
    },
    {
-    "filename": "0000349.html",
+    "filename": "0000345.html",
     "pagename": "Jets"
    },
    {
-    "filename": "0000345.html",
+    "filename": "0000341.html",
     "pagename": "Jets_de_BLI"
    },
    {
-    "filename": "0000346.html",
+    "filename": "0000342.html",
     "pagename": "Jets_de_Bravoure"
    },
    {
-    "filename": "0000348.html",
+    "filename": "0000344.html",
     "pagename": "Jets_de_PB"
    },
    {
-    "filename": "0000350.html",
+    "filename": "0000346.html",
     "pagename": "Jets_Normaux"
    },
    {
-    "filename": "0000351.html",
+    "filename": "0000347.html",
     "pagename": "joueur_actif"
    },
    {
-    "filename": "0000352.html",
+    "filename": "0000348.html",
     "pagename": "Journaliste"
    },
    {
-    "filename": "0000354.html",
+    "filename": "0000350.html",
     "pagename": "Lance-flammes"
    },
    {
-    "filename": "0000356.html",
+    "filename": "0000352.html",
     "pagename": "Lance-grenades"
    },
    {
-    "filename": "0000359.html",
+    "filename": "0000355.html",
     "pagename": "Lance-Missiles"
    },
    {
-    "filename": "0000360.html",
+    "filename": "0000356.html",
     "pagename": "Lance-Roquettes"
    },
    {
-    "filename": "0000361.html",
+    "filename": "0000357.html",
     "pagename": "LdV"
    },
    {
-    "filename": "0000363.html",
+    "filename": "0000359.html",
     "pagename": "Lieutenant"
    },
    {
-    "filename": "0000364.html",
+    "filename": "0000360.html",
     "pagename": "Ligne_de_vue"
    },
    {
-    "filename": "0000365.html",
+    "filename": "0000361.html",
     "pagename": "Longue"
    },
    {
-    "filename": "0000366.html",
+    "filename": "0000362.html",
     "pagename": "LRM_Katyusha"
    },
    {
-    "filename": "0000367.html",
+    "filename": "0000363.html",
     "pagename": "LRM_Uragan"
    },
    {
-    "filename": "0000388.html",
+    "filename": "0000384.html",
     "pagename": "Marqueur_(Marker)"
    },
    {
-    "filename": "0000369.html",
+    "filename": "0000365.html",
     "pagename": "Marqueur_Camouflage"
    },
    {
-    "filename": "0000371.html",
+    "filename": "0000367.html",
     "pagename": "Marqueur_de_Blessure"
    },
    {
-    "filename": "0000372.html",
+    "filename": "0000368.html",
     "pagename": "Marqueur_de_Blessures"
    },
    {
-    "filename": "0000373.html",
+    "filename": "0000369.html",
     "pagename": "Marqueur_de_Camouflage"
    },
    {
-    "filename": "0000374.html",
+    "filename": "0000370.html",
     "pagename": "Marqueur_de_Camouflage_TO"
    },
    {
-    "filename": "0000375.html",
+    "filename": "0000371.html",
     "pagename": "Marqueur_de_IMP-1"
    },
    {
-    "filename": "0000378.html",
+    "filename": "0000374.html",
     "pagename": "Marqueur_de_Nullificateur_(NULLIFIER)"
    },
    {
-    "filename": "0000381.html",
+    "filename": "0000377.html",
     "pagename": "Marqueur_de_Supplantation"
    },
    {
-    "filename": "0000382.html",
+    "filename": "0000378.html",
     "pagename": "Marqueur_de_Supplantation_(IMP)"
    },
    {
-    "filename": "0000383.html",
+    "filename": "0000379.html",
     "pagename": "Marqueur_de_Terrier_(FOXHOLE)"
    },
    {
-    "filename": "0000384.html",
+    "filename": "0000380.html",
     "pagename": "marqueur_Graine-Embryon_(SEED-EMBRYO)"
    },
    {
-    "filename": "0000386.html",
+    "filename": "0000382.html",
     "pagename": "Marqueur_Hors_Service_(DIS)"
    },
    {
-    "filename": "0000389.html",
+    "filename": "0000385.html",
     "pagename": "Marqueur_Mine"
    },
    {
-    "filename": "0000390.html",
+    "filename": "0000386.html",
     "pagename": "Marqueur_POS"
    },
    {
-    "filename": "0000391.html",
+    "filename": "0000387.html",
     "pagename": "Marqueur_Proxy_Actif_(PROXY_ACTIVE)"
    },
    {
-    "filename": "0000396.html",
+    "filename": "0000392.html",
     "pagename": "Marqueurs"
    },
    {
-    "filename": "0000392.html",
+    "filename": "0000388.html",
     "pagename": "Marqueurs_de_Blessure"
    },
    {
-    "filename": "0000393.html",
+    "filename": "0000389.html",
     "pagename": "Marqueurs_de_Camouflage"
    },
    {
-    "filename": "0000398.html",
+    "filename": "0000394.html",
     "pagename": "Maximale"
    },
    {
-    "filename": "0000403.html",
+    "filename": "0000399.html",
     "pagename": "Meta-Chimie"
    },
    {
-    "filename": "0000405.html",
+    "filename": "0000401.html",
     "pagename": "meurt"
    },
    {
-    "filename": "0000406.html",
+    "filename": "0000402.html",
     "pagename": "MF"
    },
    {
-    "filename": "0000407.html",
+    "filename": "0000403.html",
     "pagename": "Mine"
    },
    {
-    "filename": "0000408.html",
+    "filename": "0000404.html",
     "pagename": "Mines"
    },
    {
-    "filename": "0000409.html",
+    "filename": "0000405.html",
     "pagename": "Mines_Virales"
    },
    {
-    "filename": "0000410.html",
+    "filename": "0000406.html",
     "pagename": "Mitrailleuse_(HMG)"
    },
    {
-    "filename": "0000411.html",
+    "filename": "0000407.html",
     "pagename": "Mk12"
    },
    {
-    "filename": "0000412.html",
+    "filename": "0000408.html",
     "pagename": "MOD"
    },
    {
-    "filename": "0000413.html",
+    "filename": "0000409.html",
     "pagename": "Modificateur"
    },
    {
-    "filename": "0000414.html",
+    "filename": "0000410.html",
     "pagename": "Modificateurs"
    },
    {
-    "filename": "0000415.html",
+    "filename": "0000411.html",
     "pagename": "Molotok"
    },
    {
-    "filename": "0000416.html",
+    "filename": "0000412.html",
     "pagename": "Monofilament"
    },
    {
-    "filename": "0000417.html",
+    "filename": "0000413.html",
     "pagename": "Monter\/Descendre"
    },
    {
-    "filename": "0000418.html",
+    "filename": "0000414.html",
     "pagename": "Moral_et_commandement"
    },
    {
-    "filename": "0000419.html",
+    "filename": "0000415.html",
     "pagename": "Morat"
    },
    {
-    "filename": "0000421.html",
+    "filename": "0000417.html",
     "pagename": "Mort"
    },
    {
-    "filename": "0000420.html",
+    "filename": "0000416.html",
     "pagename": "Morte"
    },
    {
-    "filename": "0000422.html",
+    "filename": "0000418.html",
     "pagename": "morts"
    },
    {
-    "filename": "0000423.html",
+    "filename": "0000419.html",
     "pagename": "Moto"
    },
    {
-    "filename": "0000425.html",
+    "filename": "0000421.html",
     "pagename": "Motos"
    },
    {
-    "filename": "0000427.html",
+    "filename": "0000423.html",
     "pagename": "Mouvement"
    },
    {
-    "filename": "0000426.html",
+    "filename": "0000422.html",
     "pagename": "Mouvement_(Fireteam)"
    },
    {
-    "filename": "0000428.html",
+    "filename": "0000424.html",
     "pagename": "Mouvement_Prudent"
    },
    {
-    "filename": "0000429.html",
+    "filename": "0000425.html",
     "pagename": "Mouvements"
    },
    {
-    "filename": "0000431.html",
+    "filename": "0000427.html",
     "pagename": "MOV"
    },
    {
-    "filename": "0000432.html",
+    "filename": "0000428.html",
     "pagename": "Moyenne"
    },
    {
-    "filename": "0000433.html",
+    "filename": "0000429.html",
     "pagename": "MULTI"
    },
    {
-    "filename": "0000434.html",
+    "filename": "0000430.html",
     "pagename": "MULTI_Lourd"
    },
    {
-    "filename": "0000435.html",
+    "filename": "0000431.html",
     "pagename": "Multi-terrain"
    },
    {
-    "filename": "0000436.html",
+    "filename": "0000432.html",
     "pagename": "Munition_Normale"
    },
    {
-    "filename": "0000437.html",
+    "filename": "0000433.html",
     "pagename": "Munitions_Normales"
    },
    {
-    "filename": "0000470.html",
+    "filename": "0000466.html",
     "pagename": "Nager"
    },
    {
-    "filename": "0000471.html",
+    "filename": "0000467.html",
     "pagename": "Nano-Ecran"
    },
    {
-    "filename": "0000473.html",
+    "filename": "0000469.html",
     "pagename": "Nanopulseur"
    },
    {
-    "filename": "0000474.html",
+    "filename": "0000470.html",
     "pagename": "Nanotec"
    },
    {
-    "filename": "0000475.html",
+    "filename": "0000471.html",
     "pagename": "Nettoyeur_de_Mines"
    },
    {
-    "filename": "0000481.html",
+    "filename": "0000477.html",
     "pagename": "Nullificateur"
    },
    {
-    "filename": "0000483.html",
+    "filename": "0000479.html",
     "pagename": "OEuf-Embryon"
    },
    {
-    "filename": "0000485.html",
+    "filename": "0000481.html",
     "pagename": "Opposition"
    },
    {
-    "filename": "0000486.html",
+    "filename": "0000482.html",
     "pagename": "ORA"
    },
    {
-    "filename": "0000489.html",
+    "filename": "0000485.html",
     "pagename": "Ordre"
    },
    {
-    "filename": "0000488.html",
+    "filename": "0000484.html",
     "pagename": "Ordre_de_Reaction_Automatique_(ORA)"
    },
    {
-    "filename": "0000492.html",
+    "filename": "0000488.html",
     "pagename": "Ordres"
    },
    {
-    "filename": "0000491.html",
+    "filename": "0000487.html",
     "pagename": "Ordres_et_reserve_d_ordres"
    },
    {
-    "filename": "0000495.html",
+    "filename": "0000491.html",
     "pagename": "Orphaned_Pages"
    },
    {
-    "filename": "0000496.html",
+    "filename": "0000492.html",
     "pagename": "Outgoing_Links"
    },
    {
-    "filename": "0000497.html",
+    "filename": "0000493.html",
     "pagename": "Ouvrir\/Fermer"
    },
    {
-    "filename": "0000498.html",
+    "filename": "0000494.html",
     "pagename": "Paraboliques"
    },
    {
-    "filename": "0000499.html",
+    "filename": "0000495.html",
     "pagename": "Parachutiste"
    },
    {
-    "filename": "0000500.html",
+    "filename": "0000496.html",
     "pagename": "PB"
    },
    {
-    "filename": "0000501.html",
+    "filename": "0000497.html",
     "pagename": "Perte_de_Lieutenant"
    },
    {
-    "filename": "0000502.html",
+    "filename": "0000498.html",
     "pagename": "Perte_du_Lieutenant"
    },
    {
-    "filename": "0000503.html",
+    "filename": "0000499.html",
     "pagename": "Petite_Larme"
    },
    {
-    "filename": "0000505.html",
+    "filename": "0000501.html",
     "pagename": "PH"
    },
    {
-    "filename": "0000506.html",
+    "filename": "0000502.html",
     "pagename": "Pilote"
    },
    {
-    "filename": "0000508.html",
+    "filename": "0000504.html",
     "pagename": "piratage"
    },
    {
-    "filename": "0000511.html",
+    "filename": "0000507.html",
     "pagename": "Pirate"
    },
    {
-    "filename": "0000516.html",
+    "filename": "0000512.html",
     "pagename": "Pirater"
    },
    {
-    "filename": "0000520.html",
+    "filename": "0000516.html",
     "pagename": "Pirater_un_T.A.G."
    },
    {
-    "filename": "0000519.html",
+    "filename": "0000515.html",
     "pagename": "Pirater_une_ILO_ou_un_D.C.D."
    },
    {
-    "filename": "0000522.html",
+    "filename": "0000518.html",
     "pagename": "Pistolet"
    },
    {
-    "filename": "0000523.html",
+    "filename": "0000519.html",
     "pagename": "Pistolet_Mitrailleur_(Submachine_Gun)"
    },
    {
-    "filename": "0000524.html",
+    "filename": "0000520.html",
     "pagename": "PLASMA"
    },
    {
-    "filename": "0000525.html",
+    "filename": "0000521.html",
     "pagename": "Points_de_Victoire"
    },
    {
-    "filename": "0000526.html",
+    "filename": "0000522.html",
     "pagename": "Poison"
    },
    {
-    "filename": "0000527.html",
+    "filename": "0000523.html",
     "pagename": "Poseur_de_Mines"
    },
    {
-    "filename": "0000531.html",
+    "filename": "0000527.html",
     "pagename": "Protocoles_Anti-Hacker"
    },
    {
-    "filename": "0000533.html",
+    "filename": "0000529.html",
     "pagename": "Pulsation_Flash"
    },
    {
-    "filename": "0000532.html",
+    "filename": "0000528.html",
     "pagename": "Pulsation_Flash_(Flash_Pulse)"
    },
    {
-    "filename": "0000534.html",
+    "filename": "0000530.html",
     "pagename": "Rafale"
    },
    {
-    "filename": "0000535.html",
+    "filename": "0000531.html",
     "pagename": "Random_Pages"
    },
    {
-    "filename": "0000539.html",
+    "filename": "0000535.html",
     "pagename": "Recent_Changes"
    },
    {
-    "filename": "0000554.html",
+    "filename": "0000550.html",
     "pagename": "Reset"
    },
    {
-    "filename": "0000555.html",
+    "filename": "0000551.html",
     "pagename": "Retraite"
    },
    {
-    "filename": "0000586.html",
+    "filename": "0000582.html",
     "pagename": "S:_Protheion"
    },
    {
-    "filename": "0000557.html",
+    "filename": "0000553.html",
     "pagename": "Sans_Cube"
    },
    {
-    "filename": "0000558.html",
+    "filename": "0000554.html",
     "pagename": "Sapeur"
    },
    {
-    "filename": "0000559.html",
+    "filename": "0000555.html",
     "pagename": "Saut_de_Combat"
    },
    {
-    "filename": "0000561.html",
+    "filename": "0000557.html",
     "pagename": "Saut_Tactique"
    },
    {
-    "filename": "0000560.html",
+    "filename": "0000556.html",
     "pagename": "Sauter"
    },
    {
-    "filename": "0000564.html",
+    "filename": "0000560.html",
     "pagename": "SE"
    },
    {
-    "filename": "0000565.html",
+    "filename": "0000561.html",
     "pagename": "Se_Lever"
    },
    {
-    "filename": "0000569.html",
+    "filename": "0000565.html",
     "pagename": "Se_Relever"
    },
    {
-    "filename": "0000566.html",
+    "filename": "0000562.html",
     "pagename": "Sepsitor"
    },
    {
-    "filename": "0000571.html",
+    "filename": "0000567.html",
     "pagename": "Seuil_d_Echec"
    },
    {
-    "filename": "0000573.html",
+    "filename": "0000569.html",
     "pagename": "SH"
    },
    {
-    "filename": "0000572.html",
+    "filename": "0000568.html",
     "pagename": "Shasvastii"
    },
    {
-    "filename": "0000574.html",
+    "filename": "0000570.html",
     "pagename": "Shock"
    },
    {
-    "filename": "0000575.html",
+    "filename": "0000571.html",
     "pagename": "Site_Organization"
    },
    {
-    "filename": "0000579.html",
+    "filename": "0000575.html",
     "pagename": "Soigner"
    },
    {
-    "filename": "0000581.html",
+    "filename": "0000577.html",
     "pagename": "Soutien_(Fireteam)"
    },
    {
-    "filename": "0000584.html",
+    "filename": "0000580.html",
     "pagename": "Spitfire"
    },
    {
-    "filename": "0000585.html",
+    "filename": "0000581.html",
     "pagename": "Spotter"
    },
    {
-    "filename": "0000591.html",
+    "filename": "0000587.html",
     "pagename": "STR"
    },
    {
-    "filename": "0000587.html",
+    "filename": "0000583.html",
     "pagename": "Strategos"
    },
    {
-    "filename": "0000588.html",
+    "filename": "0000584.html",
     "pagename": "Strategos_N1"
    },
    {
-    "filename": "0000589.html",
+    "filename": "0000585.html",
     "pagename": "Strategos_N2"
    },
    {
-    "filename": "0000590.html",
+    "filename": "0000586.html",
     "pagename": "Strategos_N3"
    },
    {
-    "filename": "0000592.html",
+    "filename": "0000588.html",
     "pagename": "Striga"
    },
    {
-    "filename": "0000593.html",
+    "filename": "0000589.html",
     "pagename": "Structure"
    },
    {
-    "filename": "0000594.html",
+    "filename": "0000590.html",
     "pagename": "Structure_(STR)"
    },
    {
-    "filename": "0000595.html",
+    "filename": "0000591.html",
     "pagename": "Super-Saut"
    },
    {
-    "filename": "0000597.html",
+    "filename": "0000593.html",
     "pagename": "Supplantation"
    },
    {
-    "filename": "0000596.html",
+    "filename": "0000592.html",
     "pagename": "Supplantation_de_Base"
    },
    {
-    "filename": "0000598.html",
+    "filename": "0000594.html",
     "pagename": "Supplantation_Plus"
    },
    {
-    "filename": "0000599.html",
+    "filename": "0000595.html",
     "pagename": "Supplanteurs"
    },
    {
-    "filename": "0000604.html",
+    "filename": "0000600.html",
     "pagename": "T2"
    },
    {
-    "filename": "0000606.html",
+    "filename": "0000602.html",
     "pagename": "Table_des_armes"
    },
    {
-    "filename": "0000605.html",
+    "filename": "0000601.html",
     "pagename": "Tableau_des_Armes"
    },
    {
-    "filename": "0000608.html",
+    "filename": "0000604.html",
     "pagename": "Templates"
    },
    {
-    "filename": "0000607.html",
+    "filename": "0000603.html",
     "pagename": "Templates\/Business"
    },
    {
-    "filename": "0000609.html",
+    "filename": "0000605.html",
     "pagename": "Tenace"
    },
    {
-    "filename": "0000613.html",
+    "filename": "0000609.html",
     "pagename": "Terrain"
    },
    {
-    "filename": "0000610.html",
+    "filename": "0000606.html",
     "pagename": "Terrain_0-G"
    },
    {
-    "filename": "0000611.html",
+    "filename": "0000607.html",
     "pagename": "Terrain_Aquatique"
    },
    {
-    "filename": "0000614.html",
+    "filename": "0000610.html",
     "pagename": "Terrain_Jungle"
    },
    {
-    "filename": "0000615.html",
+    "filename": "0000611.html",
     "pagename": "Terrain_Montagne"
    },
    {
-    "filename": "0000616.html",
+    "filename": "0000612.html",
     "pagename": "Terrains"
    },
    {
-    "filename": "0000622.html",
+    "filename": "0000618.html",
     "pagename": "Tir"
    },
    {
-    "filename": "0000626.html",
+    "filename": "0000622.html",
     "pagename": "Tir_(TR)"
    },
    {
-    "filename": "0000618.html",
+    "filename": "0000614.html",
     "pagename": "Tir_de_Suppression"
    },
    {
-    "filename": "0000623.html",
+    "filename": "0000619.html",
     "pagename": "Tir_Parabolique"
    },
    {
-    "filename": "0000619.html",
+    "filename": "0000615.html",
     "pagename": "Tire"
    },
    {
-    "filename": "0000620.html",
+    "filename": "0000616.html",
     "pagename": "tirer"
    },
    {
-    "filename": "0000621.html",
+    "filename": "0000617.html",
     "pagename": "Tirer_(TR)"
    },
    {
-    "filename": "0000627.html",
+    "filename": "0000623.html",
     "pagename": "TO"
    },
    {
-    "filename": "0000631.html",
+    "filename": "0000627.html",
     "pagename": "tour"
    },
    {
-    "filename": "0000629.html",
+    "filename": "0000625.html",
     "pagename": "tour_actif"
    },
    {
-    "filename": "0000628.html",
+    "filename": "0000624.html",
     "pagename": "Tour_Actif_(Fireteam)"
    },
    {
-    "filename": "0000630.html",
+    "filename": "0000626.html",
     "pagename": "tour_du_joueur"
    },
    {
-    "filename": "0000636.html",
+    "filename": "0000632.html",
     "pagename": "Tours_de_jeu_et_tours_des_joueurs"
    },
    {
-    "filename": "0000640.html",
+    "filename": "0000636.html",
     "pagename": "TR"
    },
    {
-    "filename": "0000637.html",
+    "filename": "0000633.html",
     "pagename": "Transformation"
    },
    {
-    "filename": "0000641.html",
+    "filename": "0000637.html",
     "pagename": "Troupe_Religieuse"
    },
    {
-    "filename": "0000645.html",
+    "filename": "0000641.html",
     "pagename": "Troupes_Religieuses"
    },
    {
-    "filename": "0000646.html",
+    "filename": "0000642.html",
     "pagename": "TS"
    },
    {
-    "filename": "0000647.html",
+    "filename": "0000643.html",
     "pagename": "Type_de_munition"
    },
    {
-    "filename": "0000648.html",
+    "filename": "0000644.html",
     "pagename": "type_de_terrain"
    },
    {
-    "filename": "0000649.html",
+    "filename": "0000645.html",
     "pagename": "Type_de_Troupe"
    },
    {
-    "filename": "0000652.html",
+    "filename": "0000648.html",
     "pagename": "Types_de_Jets"
    },
    {
-    "filename": "0000653.html",
+    "filename": "0000649.html",
     "pagename": "Types_de_munitions"
    },
    {
-    "filename": "0000654.html",
+    "filename": "0000650.html",
     "pagename": "TYPES_DE_TERRAIN"
    },
    {
-    "filename": "0000655.html",
+    "filename": "0000651.html",
     "pagename": "Types_de_Troupe"
    },
    {
-    "filename": "0000664.html",
+    "filename": "0000660.html",
     "pagename": "V_:_Ignorer_les_Blessures"
    },
    {
-    "filename": "0000677.html",
+    "filename": "0000673.html",
     "pagename": "V_:_Tenace"
    },
    {
-    "filename": "0000661.html",
+    "filename": "0000657.html",
     "pagename": "V:_Courage"
    },
    {
-    "filename": "0000664.html",
+    "filename": "0000660.html",
     "pagename": "V:_Ignorer_les_Blessures"
    },
    {
-    "filename": "0000677.html",
+    "filename": "0000673.html",
     "pagename": "V:_Tenace"
    },
    {
-    "filename": "0000659.html",
+    "filename": "0000655.html",
     "pagename": "Vaillance"
    },
    {
-    "filename": "0000660.html",
+    "filename": "0000656.html",
     "pagename": "Vaillance_(V)"
    },
    {
-    "filename": "0000662.html",
+    "filename": "0000658.html",
     "pagename": "Venin"
    },
    {
-    "filename": "0000666.html",
+    "filename": "0000662.html",
     "pagename": "Virale"
    },
    {
-    "filename": "0000669.html",
+    "filename": "0000665.html",
     "pagename": "Viseur_Multispectral"
    },
    {
-    "filename": "0000671.html",
+    "filename": "0000667.html",
     "pagename": "Viseur_Multispectral__N2"
    },
    {
-    "filename": "0000670.html",
+    "filename": "0000666.html",
     "pagename": "Viseur_Multispectral_N1"
    },
    {
-    "filename": "0000672.html",
+    "filename": "0000668.html",
     "pagename": "Viseur_Multispectral_N3"
    },
    {
-    "filename": "0000674.html",
+    "filename": "0000670.html",
     "pagename": "Viseur_X"
    },
    {
-    "filename": "0000673.html",
+    "filename": "0000669.html",
     "pagename": "Viseur_X-2"
    },
    {
-    "filename": "0000676.html",
+    "filename": "0000672.html",
     "pagename": "VOL"
    },
    {
-    "filename": "0000661.html",
+    "filename": "0000657.html",
     "pagename": "V_:_Courage"
    },
    {
@@ -5602,7 +5658,7 @@
  },
  {
   "baseurl": "http:\/\/infinity.wikispot.org\/",
-  "date": "Mon Nov 25 2013 14:44:25 GMT+0100 (CET)",
+  "date": "Tue Feb 04 2014 10:30:51 GMT+0100 (CET)",
   "lang": "es",
   "pages": [
    {
@@ -8429,7 +8485,7 @@
  },
  {
   "baseurl": "http:\/\/infinity.wikispot.org\/",
-  "date": "Mon Nov 25 2013 15:13:24 GMT+0100 (CET)",
+  "date": "Tue Feb 04 2014 10:55:34 GMT+0100 (CET)",
   "lang": "ca",
   "pages": [
    {
