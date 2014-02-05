@@ -12,14 +12,14 @@
         android:layout_height="32dp" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_weight="1"
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/armyListRecordIsc"
+            android:id="@+id/armyListRecordName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium" />

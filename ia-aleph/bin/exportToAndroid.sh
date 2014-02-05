@@ -23,7 +23,7 @@ echo "copying icons"
 {
 	for file in ~/svn/ia-aleph/ia-aleph/src/main/webapp/images/*_logo.png; do
 		newName="unitlogo_`basename "$file" | sed 's#_logo##'`"
-		ln "$file" ~/svn/ia-aleph/ia-aleph_android_2/res/drawable/"$newName"
+		cp -l "$file" ~/svn/ia-aleph/ia-aleph_android_2/res/drawable/"$newName"
 	done
 }
 
