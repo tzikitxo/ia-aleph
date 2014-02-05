@@ -4,6 +4,8 @@ import it.anyplace.alephtoolbox2.services.CurrentRosterService;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService.RosterLoadEvent;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService.RosterUpdateEvent;
 import it.anyplace.alephtoolbox2.services.CurrentRosterService.UnitRecord;
+import it.anyplace.alephtoolbox2.services.RosterSynchronizationService.RemoteActivityEvent;
+import it.anyplace.alephtoolbox2.services.SourceDataService.UnitData;
 import it.anyplace.alephtoolbox2.services.RosterDataService;
 import it.anyplace.alephtoolbox2.services.SourceDataService;
 
@@ -11,6 +13,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.transition.Visibility;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +23,7 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +52,10 @@ public class CurrentRosterController {
     private SourceDataService dataService;
 
     private ListView mainRosterList;
-    private TextView currentRosterInfo, currentRosterValidationNotes;
+    private TextView currentRosterPointsInfo, currentRosterSwcInfo, currentRosterModelsInfo,
+            currentRosterValidationNotes;
+    private View currentRosterValidationNotesContainer;
+    private ProgressBar remoteProgressBar;
     @Inject
     private ViewFlipperController viewFlipperController;
     @Inject
@@ -61,11 +68,29 @@ public class CurrentRosterController {
     // public UnitRecord getUnitRecord();
     // }
 
+    @Subscribe
+    public void handleRemoteActivityEvent(final RemoteActivityEvent event) {
+        switch (event) {
+        case REMOTE_ACTIVITY_COMPLETED:
+            remoteProgressBar.setVisibility(View.INVISIBLE);
+            break;
+        case REMOTE_ACTIVITY_IN_PROGRESS:
+            remoteProgressBar.setVisibility(View.VISIBLE);
+            break;
+        }
+    }
+
     @Inject
     private void init() {
         mainRosterList = (ListView) activity.findViewById(R.id.mainRosterList);
-        currentRosterInfo = (TextView) activity.findViewById(R.id.currentRosterInfo);
+        currentRosterPointsInfo = (TextView) activity.findViewById(R.id.currentRosterPointsInfo);
+        currentRosterSwcInfo = (TextView) activity.findViewById(R.id.currentRosterSwcInfo);
+        currentRosterModelsInfo = (TextView) activity.findViewById(R.id.currentRosterModelsInfo);
         currentRosterValidationNotes = (TextView) activity.findViewById(R.id.currentRosterValidationNotes);
+        currentRosterValidationNotesContainer = (View) activity
+                .findViewById(R.id.currentRosterValidationNotesContainer);
+        remoteProgressBar = (ProgressBar) activity.findViewById(R.id.remoteSynchronizationProgressbar);
+
         eventBus.register(this);
 
         mainRosterList.setOnItemClickListener(new OnItemClickListener() {
@@ -125,7 +150,8 @@ public class CurrentRosterController {
         // return model.getIsc();
         // }
         // }));
-        ArrayAdapter<UnitRecord> adapter = new ArrayAdapter<UnitRecord>(activity, R.layout.current_roster_record, unitRecords) {
+        ArrayAdapter<UnitRecord> adapter = new ArrayAdapter<UnitRecord>(activity, R.layout.current_roster_record,
+                unitRecords) {
 
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -133,24 +159,32 @@ public class CurrentRosterController {
                     convertView = LayoutInflater.from(activity).inflate(R.layout.current_roster_record, null);
                 }
                 UnitRecord unitRecord = getItem(position);
-                TextView armyListRecordIsc = ((TextView) convertView.findViewById(R.id.armyListRecordIsc));
-                armyListRecordIsc.setText(unitRecord.getIsc());
+                UnitData unitData = unitRecord.getUnitData();
+                TextView armyListRecordIsc = ((TextView) convertView.findViewById(R.id.armyListRecordName));
+                armyListRecordIsc.setText(unitData.getName());
                 if (unitRecord.hasError()) {
                     armyListRecordIsc.setTextColor(Color.RED);
                 } else {
-                    armyListRecordIsc.setTextColor(Color.WHITE); // TODO get
-                                                                 // default
-                                                                 // color
+                    if (unitData.isIrregular()) {
+                        armyListRecordIsc.setTextColor(Color.YELLOW);
+                    } else if (unitData.isSynchronizedUnit()) {
+                        armyListRecordIsc.setTextColor(Color.CYAN);
+                    } else {
+                        armyListRecordIsc.setTextColor(Color.WHITE); // TODO get
+                                                                     // default
+                                                                     // color
+                    }
                 }
-                ((TextView) convertView.findViewById(R.id.armyListRecordCode)).setText(unitRecord.getCode());
+                ((TextView) convertView.findViewById(R.id.armyListRecordCode)).setText(unitData.isDefaultChild() ? ""
+                        : unitData.getCode());
 
                 // UnitData unitData = dataService.getUnitDataByIscCode(
                 // unitRecord.getIsc(), unitRecord.getCode());
 
-                ((TextView) convertView.findViewById(R.id.armyListRecordCost)).setText(unitRecord.getUnitData()
-                        .getCost());
-                ((TextView) convertView.findViewById(R.id.armyListRecordSwc))
-                        .setText(unitRecord.getUnitData().getSwc());
+                ((TextView) convertView.findViewById(R.id.armyListRecordCost)).setText(unitData.isPseudoUnit() ? ""
+                        : unitData.getCost());
+                ((TextView) convertView.findViewById(R.id.armyListRecordSwc)).setText(unitData.isPseudoUnit() ? ""
+                        : unitData.getSwc());
 
                 ((ImageView) convertView.findViewById(R.id.armyListRecordIcon)).setImageResource(activity
                         .getResources().getIdentifier("unitlogo_" + unitRecord.getUnitData().getCleanIsc(), "drawable",
@@ -169,12 +203,29 @@ public class CurrentRosterController {
     }
 
     private void updateRosterInfo() {
-        currentRosterInfo.setText("points: " + currentListService.getPointTotal() + "/"
-                + currentListService.getPointCap() + " (" + currentListService.getPointLeft() + ")" + " swc: "
-                + currentListService.getSwcTotal() + "/" + currentListService.getSwcCap() + " ("
-                + currentListService.getSwcLeft() + ")");
+        currentRosterPointsInfo.setText(activity.getResources()
+                .getString(R.string.app_roster_info_value, currentListService.getPointTotal(),
+                        currentListService.getPointCap(), currentListService.getPointLeft()));
+        currentRosterPointsInfo.setTextColor(currentListService.getPointLeft() < 0 ? Color.RED : Color.WHITE);
+        currentRosterSwcInfo.setText(activity.getResources().getString(R.string.app_roster_info_value,
+                currentListService.getSwcTotal(), currentListService.getSwcCap(), currentListService.getSwcLeft()));
+        currentRosterSwcInfo.setTextColor(currentListService.getSwcLeft() < 0 ? Color.RED : Color.WHITE);
+        currentRosterModelsInfo.setText(currentListService.getModelCount().toString());
 
-        currentRosterValidationNotes.setText(Joiner.on(", ").join(currentListService.getValidationNotes()));
+        // currentRosterInfo.setText("points: " +
+        // currentListService.getPointTotal() + "/"
+        // + currentListService.getPointCap() + " (" +
+        // currentListService.getPointLeft() + ")" + " swc: "
+        // + currentListService.getSwcTotal() + "/" +
+        // currentListService.getSwcCap() + " ("
+        // + currentListService.getSwcLeft() + ")");
+
+        if (currentListService.getValidationNotes().isEmpty()) {
+            currentRosterValidationNotesContainer.setVisibility(View.GONE);
+        } else {
+            currentRosterValidationNotes.setText(Joiner.on(", ").join(currentListService.getValidationNotes()));
+            currentRosterValidationNotesContainer.setVisibility(View.VISIBLE);
+        }
 
     }
 }

@@ -17,6 +17,7 @@ import android.util.Log;
 
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
+import com.google.common.base.Predicate;
 import com.google.common.base.Strings;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
@@ -77,8 +78,14 @@ public class CurrentRosterService {
         rosterData.setPcap(getPointCap());
         rosterData.setListId(getListId());
         rosterData.setListName(getListName());
-        rosterData.setModels(Lists.newArrayList(Lists.transform(getUnitRecords(),
-                new Function<UnitRecord, RosterData.Model>() {
+        rosterData.setModels(Lists.newArrayList(Iterables.transform(
+                Iterables.filter(getUnitRecords(), new Predicate<UnitRecord>() {
+
+                    @Override
+                    public boolean apply(UnitRecord unitRecord) {
+                        return !unitRecord.getUnitData().isCompanion();
+                    }
+                }), new Function<UnitRecord, RosterData.Model>() {
 
                     @Override
                     public Model apply(UnitRecord unitRecord) {
@@ -130,10 +137,21 @@ public class CurrentRosterService {
     }
 
     public void addUnit(UnitData unitData) {
-        UnitRecord newUnitRecord = new UnitRecord(unitData.getIsc(), unitData.getCode(), UUID.randomUUID().toString(),
-                unitData);
-        unitRecords.add(newUnitRecord);
-        afterRosterUpdate();
+        if (unitData.isCompanion()) {
+            addUnit(dataService.get().getUnitDataByIscCode(unitData.getCompanionIsc(), unitData.getCompanionCode()));
+        } else {
+            UnitRecord newUnitRecord = new UnitRecord(unitData);
+            unitRecords.add(newUnitRecord);
+            if (unitData.hasCompanion()) {
+                UnitData companionUnitData = dataService.get().getUnitDataByIscCode(unitData.getCompanionIsc(),
+                        unitData.getCompanionCode());
+                UnitRecord companionUnitRecord = new UnitRecord(companionUnitData);
+                newUnitRecord.getCompanionUnits().add(companionUnitRecord);
+                companionUnitRecord.getCompanionUnits().add(newUnitRecord);
+                unitRecords.add(companionUnitRecord);
+            }
+            afterRosterUpdate();
+        }
     }
 
     public void validateList() {
@@ -317,6 +335,11 @@ public class CurrentRosterService {
         private transient List<String> validationNotes = Lists.newArrayList();
         private String isc, code, id;
         private UnitData unitData;
+        private List<UnitRecord> companionUnits = Lists.newArrayList();
+
+        public List<UnitRecord> getCompanionUnits() {
+            return companionUnits;
+        }
 
         public boolean hasError() {
             return !validationNotes.isEmpty();
@@ -326,8 +349,12 @@ public class CurrentRosterService {
             return validationNotes;
         }
 
+        public UnitRecord(UnitData unitData) {
+            this(unitData.getIsc(), unitData.getCode(), persistenceService.get().newId(), unitData);
+        }
+
         public UnitRecord(String isc, String code, String id, UnitData unitData) {
-            super();
+
             this.isc = isc;
             this.code = code;
             this.id = id;
@@ -398,6 +425,12 @@ public class CurrentRosterService {
 
     public void removeUnitRecord(final UnitRecord unitRecord) {
         unitRecords.remove(unitRecord);
+        unitRecords.removeAll(unitRecord.getCompanionUnits());
+        // if(unitRecord.getUnitData().isCompanion()){
+        // unitRecords.removeAll(unitRecord.getCompanionUnits());
+        // }else if(unitRecord.getUnitData().hasCompanion()){
+        // unitRecords.removeAll(unitRecord.getCompanionUnits());
+        // }
         afterRosterUpdate();
     }
 
@@ -427,6 +460,10 @@ public class CurrentRosterService {
 
     public Long getDateMod() {
         return dateMod;
+    }
+
+    public Integer getModelCount() {
+        return modelCount;
     }
 
 }

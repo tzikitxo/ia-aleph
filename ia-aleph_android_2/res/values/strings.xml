@@ -244,4 +244,10 @@
     <string name="app.validation.tooManyPoints" formatted="false">too many points spent (%s/%s)</string>
     <string name="app.validation.tooManySwc" formatted="false">too many swc spent (%s/%s)</string>
     <string name="app.validation.tooManyModels" formatted="false">too many %s (%s/%s)</string>
+    
+    <string name="app.roster.info.points" formatted="false">points: </string>
+    <string name="app.roster.info.swc" formatted="false">swc: </string>
+    <string name="app.roster.info.models" formatted="false">models: </string>
+    <string name="app.roster.info.warning" formatted="false">warning: </string>
+    <string name="app.roster.info.value" formatted="false">%s/%s (%s)</string>
 </resources>

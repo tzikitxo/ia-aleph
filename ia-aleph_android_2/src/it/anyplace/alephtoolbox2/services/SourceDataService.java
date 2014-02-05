@@ -18,6 +18,7 @@ import android.util.Log;
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import com.google.common.base.Stopwatch;
 import com.google.common.base.Strings;
 import com.google.common.collect.Collections2;
@@ -437,7 +438,7 @@ public class SourceDataService {
             // this.c.addAll(this.originalChild.spec);
 
             this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.bsw, this.originalChild.bsw)));
-            this.bsw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.ccw, this.originalChild.ccw)));
+            this.ccw = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.ccw, this.originalChild.ccw)));
             this.spec = Lists.newArrayList(Sets.newTreeSet(Iterables.concat(parent.spec, this.originalChild.spec)));
             this.cbcode = Lists
                     .newArrayList(Sets.newTreeSet(Iterables.concat(parent.cbcode, this.originalChild.cbcode)));
@@ -622,16 +623,63 @@ public class SourceDataService {
         }
 
         public Integer getAvaNum() {
-            return Strings.isNullOrEmpty(ava) ? null : (ava.equals("T") ? Integer.MAX_VALUE : Integer.valueOf(ava));
+            return Strings.isNullOrEmpty(ava) ? null : (ava.matches("[0-9]*") ? Integer.valueOf(ava)
+                    : Integer.MAX_VALUE);
         }
 
         public boolean shouldSkipModelCount() {
-            return getSpec().contains("G: Synchronized") || getSpec().contains("G: Servant")
-                    || getSpec().contains("Antipode");
+            return isSynchronizedUnit();
         }
 
         public boolean isPseudoUnit() {
             return Objects.equal(getAvaNum(), 0) || (Objects.equal(getCostNum(), 0) && Objects.equal(getSwcNum(), 0));
+        }
+
+        public boolean isIrregular() {
+            return Objects.equal(getIrr(), "X");
+        }
+
+        public boolean isSynchronizedUnit() {
+            return getSpec().contains("G: Synchronized") || getSpec().contains("G: Servant")
+                    || getSpec().contains("Antipode");
+        }
+
+        public static final String COMPANION_PREFIX = "Companion: ", COMPANION_OF_PREFIX = "Companion of: ";
+
+        private static final Predicate<String> companionSpecPredicate = new Predicate<String>() {
+
+            @Override
+            public boolean apply(String string) {
+                return string.startsWith(COMPANION_PREFIX);
+            }
+        }, companionOfSpecPredicate = new Predicate<String>() {
+
+            @Override
+            public boolean apply(String string) {
+                return string.startsWith(COMPANION_OF_PREFIX);
+            }
+        };
+
+        public boolean hasCompanion() {
+            return Iterables.any(getSpec(), companionSpecPredicate);
+        }
+
+        public boolean isCompanion() {
+            return Iterables.any(getSpec(), companionOfSpecPredicate);
+        }
+
+        private String getCompanion() {
+            return Iterables.find(getSpec(), Predicates.or(companionSpecPredicate, companionOfSpecPredicate))
+                    .replaceFirst("^(" + COMPANION_PREFIX + "|" + COMPANION_OF_PREFIX + ")", "");
+        }
+
+        public String getCompanionIsc() {
+            return getCompanion().split("[-]")[0];
+        }
+
+        public String getCompanionCode() {
+            String[] split = getCompanion().split("[-]");
+            return split.length == 1 ? DEFAULT_CHILD_CODE : split[1];
         }
     }
 

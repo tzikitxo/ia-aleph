@@ -58,24 +58,12 @@ public class UnitDetailController {
             unitDetailBs, unitDetailPh, unitDetailWip, unitDetailArm, unitDetailBts, unitDetailW, unitDetailSpecs;
     private ImageView unitDetailImage;
     private ListView unitDetailChildsListView;
-    private ProgressBar remoteProgressBar;
     private List<UnitData> childs = Lists.newArrayList();
 
     // public interface UnitDetailChildUnitSelectedEvent {
     // public UnitData getUnitData();
     // }
 
-    @Subscribe
-    public void handleRemoteActivityEvent(RemoteActivityEvent event) {
-        switch (event) {
-        case REMOTE_ACTIVITY_COMPLETED:
-            remoteProgressBar.setVisibility(View.INVISIBLE);
-            break;
-        case REMOTE_ACTIVITY_IN_PROGRESS:
-            remoteProgressBar.setVisibility(View.VISIBLE);
-            break;
-        }
-    }
 
     @Inject
     private void init() {
@@ -95,7 +83,6 @@ public class UnitDetailController {
         unitDetailSpecs = (TextView) activity.findViewById(R.id.unitDetailSpecs);
         unitDetailImage = (ImageView) activity.findViewById(R.id.unitDetailImage);
         unitDetailChildsListView = (ListView) activity.findViewById(R.id.unitDetailChildsListView);
-        remoteProgressBar = (ProgressBar) activity.findViewById(R.id.remoteSynchronizationProgressbar);
         eventBus.register(this);
 
         unitDetailChildsListView.setOnItemClickListener(new OnItemClickListener() {
