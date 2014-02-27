@@ -3924,4 +3924,152 @@
  "type": "LI",
  "w": "1",
  "wip": "13"
+},{
+ "arm": "2",
+ "army": "Panoceania",
+ "ava": "3",
+ "bs": "13",
+ "bsw": [],
+ "bts": "-6",
+ "cbcode": ["280270-0487"],
+ "cc": "14",
+ "ccw": [
+  "Pistol",
+  "Knife"
+ ],
+ "childs": [
+  {
+   "bsw": [
+    "Combi Rifle",
+    "Light Shotgun"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Default",
+   "codename": "Combi",
+   "cost": "22",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Boarding Shotgun",
+    "E\/M Grenades"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "BS",
+   "codename": "",
+   "cost": "19",
+   "note": "",
+   "spec": [],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "MULTI Sniper Rifle"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Sniper",
+   "codename": "",
+   "cost": "30",
+   "note": "",
+   "spec": [],
+   "swc": "1.5"
+  },
+  {
+   "bsw": [
+    "Missile Launcher",
+    "Light Shotgun"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "ML",
+   "codename": "",
+   "cost": "37",
+   "note": "",
+   "spec": [],
+   "swc": "1.5"
+  },
+  {
+   "bsw": [
+    "Spitfire"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Spitfire",
+   "codename": "",
+   "cost": "25",
+   "note": "",
+   "spec": [],
+   "swc": "1.5"
+  },
+  {
+   "bsw": [
+    "Boarding Shotgun",
+    "E\/M Grenades"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Hacker",
+   "codename": "",
+   "cost": "31",
+   "note": "",
+   "spec": [
+    "Hacker",
+    "Hacking Device"
+   ],
+   "swc": "0.5"
+  },
+  {
+   "bsw": [
+    "Combi Rifle",
+    "Light Shotgun"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Paramedic",
+   "codename": "",
+   "cost": "26",
+   "note": "",
+   "spec": [
+    "Paramedic",
+    "MediKit"
+   ],
+   "swc": "0"
+  },
+  {
+   "bsw": [
+    "Combi Rifle",
+    "Light Shotgun"
+   ],
+   "cbcode": [],
+   "ccw": [],
+   "code": "Lt",
+   "codename": "",
+   "cost": "22",
+   "note": "",
+   "spec": [
+    "Lieutenant"
+   ],
+   "swc": "0"
+  }
+ ],
+ "cube": "X",
+ "imp": "",
+ "irr": "",
+ "isc": "Neoterra Bolts",
+ "mov": "4-2",
+ "name": "Bolt",
+ "note": "",
+ "ph": "11",
+ "spec": [
+  "Bioimmunity"
+ ],
+ "type": "MI",
+ "w": "1",
+ "wip": "12"
 }
+

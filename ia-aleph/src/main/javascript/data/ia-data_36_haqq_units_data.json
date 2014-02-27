@@ -1864,7 +1864,7 @@
   "isc": "Tarik Mansuri",
   "name": "Tarik Mansuri",
   "bs": "13",
-  "note": "Personality",
+  "note": "",
   "cube": "X",
   "type": "LI",
   "ph": "14",
@@ -1874,43 +1874,74 @@
   "w": "2",
   "ava": "1",
   "bsw": [
-   "AP Rifle",
-   "Grenades",
-   "Light Flamethrower"
+   "Grenades"
   ],
   "spec": [
    "Martial Arts L2",
    "Poison",
    "Religious Troop",
    "Super-Jump",
-   "Personality"
+   "Personality",
+   "Bioimmunity"
   ],
   "ccw": [
-   "AP CCW",
+   "DA CCW",
    "Pistol"
   ],
   "childs": [
    {
     "code": "Default",
-    "cost": "56",
+    "cost": "58",
     "codename": "AP Rifle",
     "swc": "0",
     "cbcode": [],
     "spec": [],
-    "bsw": [],
+    "bsw": [        
+        "AP Rifle",
+        "Light Flamethrower"
+    ],
     "ccw": [],
     "note": ""
    },
    {
     "code": "Lieutenant",
-    "cost": "56",
+    "cost": "58",
     "codename": "Lt",
     "swc": "-1",
     "cbcode": [],
     "spec": [
      "Lieutenant"
     ],
-    "bsw": [],
+    "bsw": [
+        "AP Rifle",
+        "Light Flamethrower"
+        ],
+    "ccw": [],
+    "note": ""
+   },
+   {
+    "code": "Spitfire",
+    "cost": "61",
+    "swc": "2",
+    "cbcode": [],
+    "spec": [],
+    "bsw": [        
+        "Spitfire"
+    ],
+    "ccw": [],
+    "note": ""
+   },
+   {
+    "code": "Spitfire Lt",
+    "cost": "61",
+    "swc": "2",
+    "cbcode": [],
+    "spec": [
+     "Lieutenant"
+     ],
+    "bsw": [        
+        "Spitfire"
+    ],
     "ccw": [],
     "note": ""
    }
