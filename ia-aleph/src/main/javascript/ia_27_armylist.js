@@ -201,27 +201,28 @@ var armylist,armyList=armylist=ia.armyList=ia.armylist={};
         }
     });
     // END SCROLLABLE
-    
-    $('.pointsCount , .swcCount').bind('mousewheel',function(e,delta){
-        log('mousewheel ',arguments);
-        var newCap=(delta||(e.originalEvent.wheelDelta>0?1:-1))*50+armyList.pointCap;
-        if(newCap>500){
-            newCap=50;
-        }else if(newCap<50){
-            newCap=500;
-        }
-        setPointCap(newCap);
+    var pointCaps=[100,120,150,200,250,300,400,500];
+    function incPointCap(amount){
+        var curCapIndex=pointCaps.length;
+        $.each(pointCaps,function(i,cap){
+           if(armyList.pointCap<=cap) {
+               curCapIndex=i;
+               return false;
+           }
+        });
+        log('curCapIndex ',curCapIndex);
+        var nextCapIndex=(curCapIndex+(amount)+pointCaps.length)%pointCaps.length;
+        log('nextCapIndex ',nextCapIndex);
+        var nextCap=pointCaps[nextCapIndex];
+        log('nextCap ',nextCap);
+        setPointCap(nextCap);
         armyList.saveList();
+    }
+    $('.pointsCount , .swcCount').bind('mousewheel',function(e,delta){
+        incPointCap(delta||(e.originalEvent.wheelDelta>0?1:-1));
         return false;
     }).bind('click',function(){
-        var cap=armyList.pointCap;
-        if(cap<300){
-            cap+=50;
-        }else{
-            cap=100;
-        }
-        setPointCap(cap);
-        armyList.saveList();
+        incPointCap(1);
         return false;
     });
     armyList.addWarning=function(listRecords){
