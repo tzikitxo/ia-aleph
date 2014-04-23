@@ -3984,7 +3984,9 @@
     "Missile Launcher",
     "Light Shotgun"
    ],
-   "cbcode": [],
+   "cbcode": [
+       "280271-0466"
+   ],
    "ccw": [],
    "code": "ML",
    "codename": "",
