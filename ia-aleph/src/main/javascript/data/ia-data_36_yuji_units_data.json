@@ -1824,7 +1824,6 @@
   "w": "2",
   "ava": "1",
   "bsw": [
-   "MULTI Rifle",
    "Nanopulser"
   ],
   "spec": [
@@ -1845,7 +1844,7 @@
     "swc": "0",
     "cbcode": [],
     "spec": [],
-    "bsw": [],
+    "bsw": ["MULTI Rifle"],
     "ccw": [],
     "note": ""
    },
@@ -1858,7 +1857,30 @@
     "spec": [
      "Lieutenant"
     ],
-    "bsw": [],
+    "bsw": ["MULTI Rifle"],
+    "ccw": [],
+    "note": ""
+   },{
+    "code": "BS",
+    "cost": "65",
+    "codename": "",
+    "swc": "0",
+    "cbcode": [],
+    "spec": [],
+    "bsw": ["Boarding Shotgun"],
+    "ccw": [],
+    "note": ""
+   },
+   {
+    "code": "BS Lt",
+    "cost": "65",
+    "codename": "",
+    "swc": "0",
+    "cbcode": [],
+    "spec": [
+     "Lieutenant"
+    ],
+    "bsw": ["Boarding Shotgun"],
     "ccw": [],
     "note": ""
    }
