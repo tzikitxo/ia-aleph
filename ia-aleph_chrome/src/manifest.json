@@ -1,6 +1,6 @@
 {
   "name": "Aleph Toolbox",
-  "version": "0.2.172",
+  "version": "0.2.173",
   "manifest_version": 2,
 
     "description": "__MSG_appDesc__",
@@ -566,6 +566,8 @@
 "images/netrods_logo.png",
 "images/netrods_logo_small.png",
 "images/new_icon.png",
+"images/nikoul_ambush_unit_logo.png",
+"images/nikoul_ambush_unit_logo_small.png",
 "images/ninjas_logo.png",
 "images/ninjas_logo_small.png",
 "images/nisses_logo.png",
