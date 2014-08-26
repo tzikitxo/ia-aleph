@@ -1,6 +1,6 @@
 {
   "name": "Aleph Toolbox",
-  "version": "0.2.178",
+  "version": "0.2.179",
   "manifest_version": 2,
 
     "description": "__MSG_appDesc__",
@@ -894,6 +894,8 @@
 "images/zondcats_logo_small.png",
 "images/zouaves_logo.png",
 "images/zouaves_logo_small.png",
+"images/zuyong_invincibles_terra_cotta_soldiers_logo.png",
+"images/zuyong_invincibles_terra_cotta_soldiers_logo_small.png",
 "images/x"
 ]
 }
