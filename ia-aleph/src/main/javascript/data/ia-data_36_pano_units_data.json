@@ -149,7 +149,8 @@
     "swc": "0",
     "cbcode": [],
     "spec": [
-     "Forward Observer"
+     "Forward Observer",
+     "Deployable Repeater"
     ],
     "bsw": [
      "Combi Rifle"
