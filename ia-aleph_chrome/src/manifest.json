@@ -1,6 +1,6 @@
 {
   "name": "Aleph Toolbox",
-  "version": "0.2.181",
+  "version": "0.2.183",
   "manifest_version": 2,
 
     "description": "__MSG_appDesc__",
@@ -446,6 +446,8 @@
 "images/ko_dali_logo_small.png",
 "images/kornak_gazarot_logo.png",
 "images/kornak_gazarot_logo_small.png",
+"images/kotail_mobile_unit_logo.png",
+"images/kotail_mobile_unit_logo_small.png",
 "images/kts_kaplan_tactical_services_logo.png",
 "images/kts_kaplan_tactical_services_logo_small.png",
 "images/kuang_shi_logo.png",
