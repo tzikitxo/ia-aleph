@@ -33,6 +33,9 @@
                 <div class="ia-trooperSelectorMain">
                     <div class="ia-trooperType">{{trooper.type}}</div>
                     <div class="ia-trooperIscContainer"><div class="ia-trooperIsc">{{trooper.isc}}</div></div>
+                    <div class="ia-trooperEquipments">{{trooperEquipments trooper}}</div>
+                    <div class="ia-trooperSkills">{{trooperSkills trooper}}</div>
+                    <img class="ia-trooperLogo" src="img/troop/{{trooper.logo}}_logo.png"></img>
                     <table class="ia-trooperSelectorAttributesTable">
                         <thead >
                             <tr class="ia-trooperSelectorAttributesHeader">
@@ -79,8 +82,8 @@
                         {{#each trooper.options}}
                             <tr class="ia-trooperSelectorOptionRow">
                                 <td><span class="ia-troopetSelectorOptionName">{{../trooper.name}}</span> {{joinForTrooperOption this}}</td>
-                                <td>{{join bsw}}</td>
-                                <td>{{join ccw}}</td>
+                                <td>{{join allBsw}}</td>
+                                <td>{{join allCcw}}</td>
                                 <td class="ia-trooperSelectorOptionSwcCell">{{swc}}</td>
                                 <td class="ia-trooperSelectorOptionCostCell">{{cost}}</td>
                             </tr>

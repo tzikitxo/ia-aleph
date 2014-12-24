@@ -21,7 +21,7 @@ var data = ia.data;
     $.each(data.troopers, function (i, trooper) {
         troopersByCode[trooper.code] = trooper;
         trooper.options = $.map(trooper.options, function (option) {
-            return $.extend({
+            option = $.extend({
                 bsw: [],
                 ccw: [],
                 swc: '',
@@ -29,6 +29,12 @@ var data = ia.data;
                 skills: [],
                 equipments: []
             }, option);
+            option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
+            option.allCcw = [].concat(trooper.ccw).concat(option.ccw);
+            option.allSkills = [].concat(trooper.skills).concat(option.skills);
+            option.allEquipments = [].concat(trooper.equipments).concat(option.equipments);
+            //TODO sort by range
+            return option;
 //            option.skillsAndEquipments = [].concat(option.skills || []).concat(option.equipments || []);
         });
     });

@@ -25,10 +25,24 @@ Handlebars.registerHelper("joinForTrooperOption", function (context) {
     }
     return res;
 });
+Handlebars.registerHelper("trooperEquipments", function (context) {
+    if (context.equipments.length > 0) {
+        return 'Equipment: ' + context.equipments.join(' · ');
+    } else {
+        return '';
+    }
+});
+Handlebars.registerHelper("trooperSkills", function (context) {
+    if (context.skills.length > 0) {
+        return 'Special Skills: ' + context.skills.join(' · ');
+    } else {
+        return '';
+    }
+});
 
 var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 $('#ia-mainContainer').html(trooperSelectorTemplate({
-    trooper: data.findTrooperByCode(2), 
+    trooper: data.findTrooperByCode(2),
     messages: {
         name: 'Name',
         bsw: "BS Weapons",
@@ -43,11 +57,13 @@ $('#ia-mainContainer').html(trooperSelectorTemplate({
         arm: "ARM",
         bts: "BTS",
         wounds: "W",
+        str: "STR",
         silhouette: "S",
         ava: "AVA"
     }
 }));
 
-$('#ia-loadingContainer').hide('fast', function () {
-    $('#ia-mainContainer').show('fast');
-});
+$('#ia-loadingContainer').hide();
+//'fast', function () {
+$('#ia-mainContainer').show();
+//});

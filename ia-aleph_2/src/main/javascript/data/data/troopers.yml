@@ -36,6 +36,7 @@
    skills: [ Lieutenant ]
 -
   isc: Squalos, PanOceanian Armored Cavalry Heavy Lancers
+  logo: armoured_cavalry
   army: Panoceania
   code: 2
   name: Squalo
@@ -52,7 +53,7 @@
   str: true
   s: 7
   ava: 2
-  skills: [ G: Remote Presence ]
+  skills: [ "G: Remote Presence" ]
   equipments: [ Advanced ECM ]
   bsw: [ MULTI HMG ]
   ccw: [ AP Heavy Pistol ]
