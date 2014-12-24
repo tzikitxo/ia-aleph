@@ -35,12 +35,15 @@ body{
 }
 .ia-trooperSelectorHeader{
     padding: 5px;
+    position: relative;
 
     font-weight: bold;
 }
 .ia-trooperClassification{
-    float:right;
-    padding-right: 5px;
+    position: absolute;
+    bottom: 7px;
+    right: 5px;
+    font-size: smaller;
 }
 .ia-trooperSelectorMain{
     width: 798px;
@@ -62,10 +65,18 @@ body{
         color: @trooperTypeFontColor;
         font-weight: bolder;
     }
-    .ia-trooperIsc{
+    .ia-trooperIscContainer{        
         position: absolute;
-        bottom: 130px;
+        top: 2px;
         left: 185px;
+        width: 550px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .ia-trooperIsc{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
 
         color: @trooperIscTitleFontColor;
         text-transform: uppercase;

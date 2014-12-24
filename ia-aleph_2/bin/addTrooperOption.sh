@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "adding trooper option"
 t=`mktemp`
 echo '  - ' > $t
 for name in skills equipments bsw ccw; do
@@ -10,7 +11,7 @@ done
 for name in swc cost; do
         echo -n "  $name : "
         read value
-        echo "  $name: $value" >> $t
+        echo "    $name: $value" >> $t
 done
 
 echo "## TROOPER OPTION DATA ##"
@@ -21,5 +22,5 @@ read
 cat $t >> ./src/main/javascript/data/data/troopers.yml
 rm $t
 
-bin/loadTrooperOption.sh
+bin/addTrooperOption.sh
 

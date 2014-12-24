@@ -31,8 +31,8 @@
                     <span class="ia-trooperClassification">{{trooper.classification}}</span>
                 </div>
                 <div class="ia-trooperSelectorMain">
-                    <span class="ia-trooperType">{{trooper.type}}</span>
-                    <span class="ia-trooperIsc">{{trooper.isc}}</span>
+                    <div class="ia-trooperType">{{trooper.type}}</div>
+                    <div class="ia-trooperIscContainer"><div class="ia-trooperIsc">{{trooper.isc}}</div></div>
                     <table class="ia-trooperSelectorAttributesTable">
                         <thead >
                             <tr class="ia-trooperSelectorAttributesHeader">
@@ -43,12 +43,24 @@
                                 <th>{{messages.wip}}</th>
                                 <th>{{messages.arm}}</th>
                                 <th>{{messages.bts}}</th>
-                                <th>{{messages.wounds}}</th>
+                                <th>{{#if trooper.str}}{{messages.str}}{{else}}{{messages.wounds}}{{/if}}</th>
                                 <th>{{messages.silhouette}}</th>
                                 <th>{{messages.ava}}</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>{{trooper.mov}}</td>
+                                <td>{{trooper.cc}}</td>
+                                <td>{{trooper.bs}}</td>
+                                <td>{{trooper.ph}}</td>
+                                <td>{{trooper.wip}}</td>
+                                <td>{{trooper.arm}}</td>
+                                <td>{{trooper.bts}}</td>
+                                <td>{{trooper.w}}</td>
+                                <td>{{trooper.s}}</td>
+                                <td>{{trooper.ava}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
