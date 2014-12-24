@@ -13,4 +13,28 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **/
 
+var data = ia.data;
 
+(function () {
+
+    var troopersByCode = {};
+    $.each(data.troopers, function (i, trooper) {
+        troopersByCode[trooper.code] = trooper;
+        trooper.options = $.map(trooper.options, function (option) {
+            return $.extend({
+                bsw: [],
+                ccw: [],
+                swc: '',
+                cost: '',
+                skills: [],
+                equipments: []
+            }, option);
+//            option.skillsAndEquipments = [].concat(option.skills || []).concat(option.equipments || []);
+        });
+    });
+
+    data.findTrooperByCode = function (code) {
+        return troopersByCode[code];
+    }
+
+})();

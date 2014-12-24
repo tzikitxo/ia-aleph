@@ -59,18 +59,18 @@
                                 <th>{{messages.name}}</th>
                                 <th>{{messages.bsw}}</th>
                                 <th>{{messages.ccw}}</th>
-                                <th>{{messages.swc}}</th>
-                                <th>{{messages.cost}}</th>
+                                <th class="ia-trooperSelectorOptionSwcCell">{{messages.swc}}</th>
+                                <th class="ia-trooperSelectorOptionCostCell">{{messages.cost}}</th>
                             </tr>
                         </thead>
                         <tbody>
                         {{#each trooper.options}}
                             <tr class="ia-trooperSelectorOptionRow">
-                                <td><span class="ia-troopetSelectorOptionName">{{name}}</span> {{skillsAndEquips}}</td>
-                                <td>{{bsw}}</td>
-                                <td>{{ccw}}</td>
-                                <td>{{swc}}</td>
-                                <td>{{cost}}</td>
+                                <td><span class="ia-troopetSelectorOptionName">{{../trooper.name}}</span> {{joinForTrooperOption this}}</td>
+                                <td>{{join bsw}}</td>
+                                <td>{{join ccw}}</td>
+                                <td class="ia-trooperSelectorOptionSwcCell">{{swc}}</td>
+                                <td class="ia-trooperSelectorOptionCostCell">{{cost}}</td>
                             </tr>
                         {{/each}}
                         </tbody>

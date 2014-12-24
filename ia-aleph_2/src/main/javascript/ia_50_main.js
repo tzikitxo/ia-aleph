@@ -14,35 +14,22 @@
  **/
 
 
+Handlebars.registerHelper("joinForTrooperOption", function (context) {
+    var res = '';
+    if (context.skills.length > 0) {
+        res += ' ' + context.skills.join(', ');
+    }
+    if (context.equipments.length > 0) {
+        res += ' (' + context.equipments.join(', ') + ')';
+
+    }
+    return res;
+});
+
 var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 $('#ia-mainContainer').html(trooperSelectorTemplate({
-    trooper: {
-        isc: 'Fusilers',
-        classification: 'Line Troops',
-        type: 'LI',
-        options: [{
-                name: 'Fusilier',
-                skillsAndEquips: '',
-                bsw: 'Combi Rifle',
-                ccw: 'Pistol, Knife',
-                swc: '0',
-                c: '10'
-            },{
-                name: 'Fusilier',
-                skillsAndEquips: 'Lieutenant',
-                bsw: 'Combi Rifle',
-                ccw: 'Pistol, Knife',
-                swc: '0',
-                c: '10'
-            },{
-                name: 'Fusilier',
-                skillsAndEquips: '',
-                bsw: 'HMG',
-                ccw: 'Pistol, Knife',
-                swc: '1',
-                c: '18'
-            }]
-    }, messages: {
+    trooper: data.findTrooperByCode(1), 
+    messages: {
         name: 'Name',
         bsw: "BS Weapons",
         ccw: "CC Weapons",
