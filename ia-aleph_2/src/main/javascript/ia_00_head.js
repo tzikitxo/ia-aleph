@@ -15,5 +15,5 @@
 
 (function(){
 
-    var ia = window.ia = {};
+    var ia = window.ia = window.ia || {};
     

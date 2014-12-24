@@ -20,3 +20,9 @@ var log = ia.log = function () {
         window.console.debug.apply(window.console, arguments);
     }
 };
+
+var utils = ia.utils = {};
+
+utils.cleanName = function (name) {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+};
