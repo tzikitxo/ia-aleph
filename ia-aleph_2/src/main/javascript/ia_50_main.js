@@ -28,7 +28,7 @@ Handlebars.registerHelper("joinForTrooperOption", function (context) {
 
 var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 $('#ia-mainContainer').html(trooperSelectorTemplate({
-    trooper: data.findTrooperByCode(1), 
+    trooper: data.findTrooperByCode(2), 
     messages: {
         name: 'Name',
         bsw: "BS Weapons",

@@ -1,7 +1,7 @@
 
 # PANOCEANIA    
 
--        
+- 
  isc: Fusilers
  code: 1
  army: Panoceania
@@ -34,3 +34,47 @@
    swc: 0
    cost: 10
    skills: [ Lieutenant ]
+-
+  isc: Squalos, PanOceanian Armored Cavalry Heavy Lancers
+  army: Panoceania
+  code: 2
+  name: Squalo
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 17
+  wip: 12
+  arm: 8
+  bts: 6
+  w: 3
+  str: true
+  s: 7
+  ava: 2
+  skills: [ G: Remote Presence ]
+  equipments: [ Advanced ECM ]
+  bsw: [ MULTI HMG ]
+  ccw: [ AP Heavy Pistol ]
+  options:
+  - 
+    skills: [  ]
+    equipments: [  ]
+    bsw: [  ]
+    ccw: [  ]
+    swc: 2
+    cost: 93
+  - 
+    skills: [  ]
+    equipments: [  ]
+    bsw: [ Heavy Grenade Launcher ]
+    ccw: [  ]
+    swc: 2.5
+    cost: 95
+  - 
+    skills: [ Lieutenant ]
+    equipments: [  ]
+    bsw: [  ]
+    ccw: [  ]
+    swc: 2
+    cost: 93

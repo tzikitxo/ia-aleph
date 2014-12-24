@@ -2,7 +2,7 @@
 
 t=`mktemp`
 echo '- ' > $t
-for name in army isc name type classification mov cc bs ph wip arm bts w s ava; do
+for name in isc army name type classification mov cc bs ph wip arm bts w s ava; do
 	echo -n "  $name : "
 	read value
 	echo "  $name: $value" >> $t
