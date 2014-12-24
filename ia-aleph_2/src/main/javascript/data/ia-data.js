@@ -13,8 +13,13 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **/
 
-(function(){
+(function () {
 
     var ia = window.ia = window.ia || {};
-    
-    
+    var data = ia.data = {};
+
+    data.factions = anyplacetools.importFile('data/factions.yml');
+
+    data.units = anyplacetools.importFile('data/units.yml');
+
+})();
