@@ -20,6 +20,6 @@
 
     data.factions = anyplacetools.importFile('data/factions.yml');
 
-    data.units = anyplacetools.importFile('data/units.yml');
+    data.troopers = anyplacetools.importFile('data/troopers.yml');
 
 })();

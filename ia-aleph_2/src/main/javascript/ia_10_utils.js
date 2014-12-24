@@ -26,3 +26,7 @@ var utils = ia.utils = {};
 utils.cleanName = function (name) {
     return name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
 };
+
+Handlebars.registerHelper("join", function(context) {
+     return context.join(', ');
+});

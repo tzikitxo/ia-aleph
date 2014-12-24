@@ -1,0 +1,36 @@
+
+# PANOCEANIA    
+
+-        
+ isc: Fusilers
+ code: 1
+ army: Panoceania
+ name: Fusilier
+ classification: Line Troops
+ type: LI
+ options: 
+ - 
+   bsw: [ Combi Rifle ]
+   ccw: [ Pistol, Knife ]
+   swc: 0
+   cost: 10
+ - 
+   bsw: [ HMG ]
+   ccw: [ Pistol, Knife ]
+   swc: 1
+   cost: 18
+ - 
+   bsw: [ Combi Rifle ]
+   ccw: [ Pistol, Knife ]
+   swc: 0
+   cost: 12
+   skills:
+   - Paramedic
+   equipments:
+   - MediKit
+ - 
+   bsw: [ Combi Rifle ]
+   ccw: [ Pistol, Knife ]
+   swc: 0
+   cost: 10
+   skills: [ Lieutenant ]
