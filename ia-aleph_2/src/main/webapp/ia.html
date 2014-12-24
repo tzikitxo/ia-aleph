@@ -1,6 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -8,16 +7,16 @@
         <link rel="icon" href="img/various/favicon.png" type="image/png" />
         <!--<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/hfgdhiehdeeajkmemembkhlfhkndbdil" />-->
         <title>Aleph Toolbox 2.0</title>
-<!--        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-32771450-1']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>-->
+        <!--        <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-32771450-1']);
+                    _gaq.push(['_trackPageview']);
+                    (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                    })();
+                </script>-->
     </head>
     <body>
         <div id="ia-loadingContainer">
@@ -25,6 +24,61 @@
             <span>loading...</span>
         </div>
         <div id="ia-mainContainer" style="display:none" ></div>
+        <script id="ia-trooperSelectorTemplate" type="text/x-handlebars-template">
+            <div class="ia-trooperSelectorContainer">
+                <div class="ia-trooperSelectorHeader">
+                    <span class="ia-trooperIsc">ISC: {{trooper.isc}}</span>
+                    <span class="ia-trooperClassification">{{trooper.classification}}</span>
+                </div>
+                <div class="ia-trooperSelectorMain">
+                    <span class="ia-trooperType">{{trooper.type}}</span>
+                    <span class="ia-trooperIsc">{{trooper.isc}}</span>
+                    <table class="ia-trooperSelectorAttributesTable">
+                        <thead >
+                            <tr class="ia-trooperSelectorAttributesHeader">
+                                <th>{{messages.mov}}</th>
+                                <th>{{messages.cc}}</th>
+                                <th>{{messages.bs}}</th>
+                                <th>{{messages.ph}}</th>
+                                <th>{{messages.wip}}</th>
+                                <th>{{messages.arm}}</th>
+                                <th>{{messages.bts}}</th>
+                                <th>{{messages.wounds}}</th>
+                                <th>{{messages.silhouette}}</th>
+                                <th>{{messages.ava}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="ia-trooperSelectorOptionList">
+                    <table class="ia-trooperSelectorOptionListTable">
+                        <thead >
+                            <tr class="ia-trooperSelectorOptionListHeader">
+                                <th>{{messages.name}}</th>
+                                <th>{{messages.bsw}}</th>
+                                <th>{{messages.ccw}}</th>
+                                <th>{{messages.swc}}</th>
+                                <th>{{messages.cost}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {{#each trooper.options}}
+                            <tr class="ia-trooperSelectorOptionRow">
+                                <td><span class="ia-troopetSelectorOptionName">{{name}}</span> {{skillsAndEquips}}</td>
+                                <td>{{bsw}}</td>
+                                <td>{{ccw}}</td>
+                                <td>{{swc}}</td>
+                                <td>{{cost}}</td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                    <div class="ia-trooperSelectorOptionListFooter" ></div>
+                </div>
+            </div>
+        </script>
         <script type="text/javascript" src="js/ia-lib.js"></script>
         <script type="text/javascript" src="js/ia-data.js"></script>
         <script type="text/javascript" src="js/ia-lang.js"></script>
