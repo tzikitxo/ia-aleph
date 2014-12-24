@@ -1,0 +1,105 @@
+
+// COLORS
+
+@headerBgColor: #c7e8fb;
+@headerBorderColor: #94ccf0;
+
+@trooperTypeFontColor: #0094d1;
+@trooperIscTitleFontColor: white;
+
+@tableRowAlternateColor: #e6e6e6;
+
+// BODY
+
+body{
+    /*font-family: open-sans, sans-serif;*/
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+// MAIN
+
+.ia-mainContainer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 798px;
+}
+
+// UNIT SELECTOR CONTAINER
+
+.ia-trooperSelectorContainer{
+    width: 798px;
+}
+.ia-trooperSelectorHeader, .ia-trooperSelectorOptionListFooter, .ia-trooperSelectorOptionListHeader{
+    border: 2px solid @headerBorderColor;
+    background-color: @headerBgColor;
+}
+.ia-trooperSelectorHeader{
+    padding: 5px;
+
+    font-weight: bold;
+}
+.ia-trooperClassification{
+    float:right;
+    padding-right: 5px;
+}
+.ia-trooperSelectorMain{
+    width: 798px;
+    height: 170px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background-image: url('../img/theme/trooperSelectorBg1.png');
+
+    .ia-trooperType{
+        position: relative;
+        top: 37px;
+        left: 4px;
+        text-align: center;
+        width: 40px;
+        display: block;
+
+        color: @trooperTypeFontColor;
+        font-weight: bolder;
+    }
+    .ia-trooperIsc{
+        position: absolute;
+        bottom: 130px;
+        left: 185px;
+
+        color: @trooperIscTitleFontColor;
+        text-transform: uppercase;
+        font-size: larger;
+    }
+}
+.ia-trooperSelectorAttributesTable{
+    position: absolute;
+    width: 600px;
+    top: 54px;
+    left: 170px;
+}
+.ia-trooperSelectorOptionList{
+    padding: 0 5px;
+}
+.ia-trooperSelectorOptionListTable{
+    width: 100%;
+    border-collapse: collapse;
+    th{
+        text-align: left;
+        padding: 4px;
+    }
+    tr:nth-child(even) {
+        background-color: @tableRowAlternateColor;
+    }
+}
+.ia-trooperSelectorOptionRow{
+    td{
+        padding: 4px;
+    }
+}
+.ia-troopetSelectorOptionName{
+    text-transform: uppercase;
+}
+.ia-trooperSelectorOptionListFooter{
+    height: 3px;
+}
