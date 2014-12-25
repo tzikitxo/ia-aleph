@@ -17,13 +17,14 @@
 
     ui.unitSelector = {
         showUnitSelector: function (factionCode) {
+            factionCode = factionCode || 1;
             var faction = data.findFactionByCode(factionCode);
             var troopers = data.findTroopersByFaction(factionCode);
             var unitSelectorContainer = $('#ia-unitSelectorContainer').empty();
             $.each(troopers, function (i, trooper) {
                 var unitSelector = $('<img class="ia-unitSelector" />')
                         .attr('src', 'img/troop/' + trooper.logo + '_logo.png')
-                        .attr('title',trooper.isc)
+                        .attr('title', trooper.isc)
                         .appendTo(unitSelectorContainer).on('click', function () {
                     ui.trooperSelector.showTrooperSelector(trooper.code);
                 });
