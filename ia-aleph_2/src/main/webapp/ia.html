@@ -28,8 +28,30 @@
             <div class="ia-mainScreenContainer">
                 <div class="ia-mainScreenTopBar">
                     <div id="ia-unitSelectorContainer"></div>
+                    <div id="ia-rosterContainerOnTopBar"></div>
                 </div>
                 <div id="ia-mainScreenCenter"></div>                
+            </div>
+        </script>
+        <script id="ia-rosterTemplate" type="text/x-handlebars-template">
+            <div class="ia-rosterContainer">
+                <div class="ia-rosterTopBar">
+                {{messages.troopers}}: <b>{{roster.trooperCount}}</b> {{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b>  {{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b>
+                <span class="ia-warning">{{join roster.warningMessages}}</span>
+                </div>
+                <div class="ia-rosterBody">
+                    <table>
+                        <thead></thead>
+                        <tbody>
+                            {{#each roster.troopers}}
+                            <tr class="ia-rosterTrooperEntry" data-ia-entryindex="{{@index}}">
+                                <td>{{name}}</td>
+                                <td>{{description}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>       
             </div>
         </script>
         <script id="ia-trooperSelectorTemplate" type="text/x-handlebars-template">
@@ -114,7 +136,7 @@
                         </thead>
                         <tbody>
                         {{#each trooper.options}}
-                            <tr class="ia-trooperSelectorOptionRow" title="{{../trooper.name}} {{description}}">
+                            <tr class="ia-trooperSelectorOptionRow" title="{{../trooper.name}} {{description}}" data-ia-optioncode="{{code}}" >
                                 <td><span class="ia-troopetSelectorOptionName">{{../trooper.name}}</span> {{joinForTrooperOption this}}</td>
                                 <td>{{join allBsw}}</td>
                                 <td>{{join allCcw}}</td>
