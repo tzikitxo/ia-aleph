@@ -12,21 +12,48 @@
 // BODY
 
 body{
+    margin: 0;
+    padding: 0;
+
     /*font-family: open-sans, sans-serif;*/
-    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Bitstream Vera', 'Arial Narrow', Arial, sans-serif;
+    font-size: 12px;
 }
 
 // MAIN
 
-.ia-mainContainer{
+.ia-mainScreenTopBar{    
     margin-left: auto;
     margin-right: auto;
-    width: 798px;
+    max-width: 850px;
+    padding: 4px 25px;
+
+    background-image: url('../img/theme/topBarBgLeft.png') left center no-repeat, url('../img/theme/topBarBgCenter.png') center repeat-y, url('../img/theme/topBarBgRight.png') right center no-repeat;
+/*    background-position: left, center, right;
+    background-repeat: no-repeat;*/
+}
+#ia-mainScreenCenter{
+    margin-top:10px;
 }
 
-// UNIT SELECTOR CONTAINER
+// UNIT SELECTOR
+
+#ia-unitSelectorContainer {
+    .ia-unitSelector{
+        display: inline-block;
+        margin-left: 5px;
+        width: 40px;
+        height: 40px;
+
+        cursor: pointer;
+    }
+}
+
+// TROOPER SELECTOR 
 
 .ia-trooperSelectorContainer{
+    margin-left: auto;
+    margin-right: auto;
     width: 798px;
 }
 .ia-trooperSelectorHeader, .ia-trooperSelectorOptionListFooter, .ia-trooperSelectorOptionListHeader{
@@ -37,13 +64,14 @@ body{
     padding: 5px;
     position: relative;
 
-    font-weight: bold;
+    font-size: 18px;
 }
 .ia-trooperClassification{
     position: absolute;
     bottom: 7px;
     right: 5px;
-    font-size: smaller;
+
+    font-size: 14px;
 }
 .ia-trooperSelectorMain{
     width: 798px;
@@ -82,17 +110,20 @@ body{
 
         color: @trooperIscTitleFontColor;
         text-transform: uppercase;
-        font-size: larger;
+        font-size: 18px;
+        text-shadow: 2px 2px black;
     }
     .ia-trooperEquipments, .ia-trooperSkills{
         position: absolute;
         left: 185px;
+
+        text-shadow: 1px 1px darkgray;
     }
     .ia-trooperEquipments{
-        top: 113px;        
+        bottom: 40px;      
     }
     .ia-trooperSkills{
-        top: 134px;
+        bottom: 20px;
     }
     .ia-trooperLogo{
         position: absolute;
@@ -108,9 +139,10 @@ body{
     width: 600px;
     top: 54px;
     left: 170px;
-    td{
+    th, td{
         text-align: center;
         font-weight: bold;
+        font-size: 16px;
     }
 }
 .ia-trooperSelectorOptionList{
@@ -131,6 +163,9 @@ body{
     }
 }
 .ia-trooperSelectorOptionRow{
+
+    cursor: pointer;
+
     td{
         padding: 4px;
     }

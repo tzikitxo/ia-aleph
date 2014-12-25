@@ -13,57 +13,19 @@
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  **/
 
+(function () {
 
-Handlebars.registerHelper("joinForTrooperOption", function (context) {
-    var res = '';
-    if (context.skills.length > 0) {
-        res += ' ' + context.skills.join(', ');
-    }
-    if (context.equipments.length > 0) {
-        res += ' (' + context.equipments.join(', ') + ')';
+    var mainScreenTemplate = Handlebars.compile($('#ia-mainScreenTemplate').html());
 
-    }
-    return res;
-});
-Handlebars.registerHelper("trooperEquipments", function (context) {
-    if (context.equipments.length > 0) {
-        return 'Equipment: ' + context.equipments.join(' · ');
-    } else {
-        return '';
-    }
-});
-Handlebars.registerHelper("trooperSkills", function (context) {
-    if (context.skills.length > 0) {
-        return 'Special Skills: ' + context.skills.join(' · ');
-    } else {
-        return '';
-    }
-});
 
-var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
-$('#ia-mainContainer').html(trooperSelectorTemplate({
-    trooper: data.findTrooperByCode(2),
-    messages: {
-        name: 'Name',
-        bsw: "BS Weapons",
-        ccw: "CC Weapons",
-        swc: "SWC",
-        cost: "C",
-        mov: 'MOV',
-        cc: 'CC',
-        bs: 'BS',
-        ph: "PH",
-        wip: "WIP",
-        arm: "ARM",
-        bts: "BTS",
-        wounds: "W",
-        str: "STR",
-        silhouette: "S",
-        ava: "AVA"
-    }
-}));
 
-$('#ia-loadingContainer').hide();
-//'fast', function () {
-$('#ia-mainContainer').show();
-//});
+    $('#ia-mainContainer').html(mainScreenTemplate({
+    }));
+    
+    ui.unitSelector.showUnitSelector(1);
+    ui.trooperSelector.showTrooperSelector(2);
+    
+    $('#ia-loadingContainer').hide();
+    $('#ia-mainContainer').show();
+
+})();
