@@ -48,6 +48,7 @@
 
     ui.trooperSelector = {
         showTrooperSelector: function (trooperCode) {
+            trooperCode = trooperCode || 100;
             $('#ia-mainScreenCenter').html(trooperSelectorTemplate({
                 trooper: data.findTrooperByCode(trooperCode),
                 messages: {

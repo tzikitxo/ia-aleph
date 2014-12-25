@@ -1,46 +1,11 @@
 
 # PANOCEANIA    
 
-- 
- isc: Fusilers
- logo: fusiliers
- code: 1
- faction: 1
- name: Fusilier
- classification: Line Troops
- type: LI
- cube: C
- options: 
- - 
-   bsw: [ Combi Rifle ]
-   ccw: [ Pistol, Knife ]
-   swc: 0
-   cost: 10
- - 
-   bsw: [ HMG ]
-   ccw: [ Pistol, Knife ]
-   swc: 1
-   cost: 18
- - 
-   bsw: [ Combi Rifle ]
-   ccw: [ Pistol, Knife ]
-   swc: 0
-   cost: 12
-   skills:
-   - Paramedic
-   equipments:
-   - MediKit
- - 
-   bsw: [ Combi Rifle ]
-   ccw: [ Pistol, Knife ]
-   swc: 0
-   cost: 10
-   skills: [ Lieutenant ]
 -
   isc: Squalos, PanOceanian Armored Cavalry Heavy Lancers
   logo: armoured_cavalry
   faction: 1
-  code: 2
+  code: 100
   name: Squalo
   type: TAG
   classification: Mechanized Troops
@@ -62,23 +27,100 @@
   ccw: [ AP Heavy Pistol ]
   options:
   - 
-    skills: [  ]
-    equipments: [  ]
-    bsw: [  ]
-    ccw: [  ]
+    code: 1
+    description: [ MHMG ]
     swc: 2
     cost: 93
   - 
-    skills: [  ]
-    equipments: [  ]
+    code: 2
+    description: [ HGL ]
     bsw: [ Heavy Grenade Launcher ]
-    ccw: [  ]
     swc: 2.5
     cost: 95
   - 
+    code: 3
+    description: [ Lieutenant ]
     skills: [ Lieutenant ]
-    equipments: [  ]
-    bsw: [  ]
-    ccw: [  ]
     swc: 2
     cost: 93
+- 
+  isc: Fusiliers
+  code: 101
+  faction: 1
+  logo: fusiliers
+  name: Fusilier
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  cube: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: [ Combi ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10
+  - 
+    code: 2
+    description: [ HMG ]
+    bsw: [ HMG ]
+    swc: 1
+    cost: 18
+  - 
+    code: 3
+    description: [ LGL ]
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 14
+  - 
+    code: 4
+    description: [ ML ]
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 15
+  - 
+    code: 5
+    description: [ Sniper ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 18
+  - 
+    code: 6
+    description: [ Hacker ]
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 18
+  - 
+    code: 7
+    description: [ FO,DR ]
+    equipments: [ Forward Observer, Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 8
+    description: [ Paramedic ]
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 9
+    description: [ Lieutenant ]
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10

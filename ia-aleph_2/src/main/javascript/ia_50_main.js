@@ -22,8 +22,8 @@
     $('#ia-mainContainer').html(mainScreenTemplate({
     }));
     
-    ui.unitSelector.showUnitSelector(1);
-    ui.trooperSelector.showTrooperSelector(2);
+    ui.unitSelector.showUnitSelector();
+    ui.trooperSelector.showTrooperSelector();
     
     $('#ia-loadingContainer').hide();
     $('#ia-mainContainer').show();

@@ -1,17 +1,19 @@
 #!/bin/bash
 
-echo "adding trooper option"
+code="$1"
+echo "adding trooper option $code"
 t=`mktemp`
 echo '  - ' > $t
-for name in skills equipments bsw ccw; do
+echo "    code: $code" >> $t
+for name in description skills equipments bsw ccw; do
 	echo -n "  $name : "
 	read value
-	echo "    $name: [ $value ]" >> $t
+	[ -z "$value" ] || echo "    $name: [ $value ]" >> $t
 done
 for name in swc cost; do
         echo -n "  $name : "
         read value
-        echo "    $name: $value" >> $t
+        [ -z "$value" ] || echo "    $name: $value" >> $t
 done
 
 echo "## TROOPER OPTION DATA ##"
@@ -22,5 +24,5 @@ read
 cat $t >> ./src/main/javascript/data/data/troopers.yml
 rm $t
 
-bin/addTrooperOption.sh
+bin/addTrooperOption.sh $[code+1]
 
