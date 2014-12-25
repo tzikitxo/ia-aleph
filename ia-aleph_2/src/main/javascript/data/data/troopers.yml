@@ -3,8 +3,9 @@
 
 - 
  isc: Fusilers
+ logo: fusiliers
  code: 1
- army: Panoceania
+ faction: 1
  name: Fusilier
  classification: Line Troops
  type: LI
@@ -37,7 +38,7 @@
 -
   isc: Squalos, PanOceanian Armored Cavalry Heavy Lancers
   logo: armoured_cavalry
-  army: Panoceania
+  faction: 1
   code: 2
   name: Squalo
   type: TAG

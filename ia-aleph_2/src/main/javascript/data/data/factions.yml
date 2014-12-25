@@ -1,3 +1,8 @@
 - 
-  factionId: 1
-  factionName: Panoceania
+  code: 1
+  name: Panoceania
+  logo: panoceania
+- 
+  code: 2
+  name: Yu Jing
+  logo: yu_jing

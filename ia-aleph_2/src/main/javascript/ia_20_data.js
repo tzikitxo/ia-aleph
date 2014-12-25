@@ -17,9 +17,23 @@ var data = ia.data;
 
 (function () {
 
+    var factionsByCode = {};
+    $.each(data.factions, function (i, faction) {
+        factionsByCode[faction.code] = faction;
+    });
+
+    data.findFactionByCode = function (code) {
+        return factionsByCode[code];
+    };
+
     var troopersByCode = {};
     $.each(data.troopers, function (i, trooper) {
-        troopersByCode[trooper.code] = trooper;
+        troopersByCode[trooper.code] = trooper = $.extend({            
+                bsw: [],
+                ccw: [],
+                skills: [],
+                equipments: []
+        }, trooper);
         trooper.options = $.map(trooper.options, function (option) {
             option = $.extend({
                 bsw: [],
@@ -39,8 +53,24 @@ var data = ia.data;
         });
     });
 
+    var troopersByFaction = {};
+
+
     data.findTrooperByCode = function (code) {
         return troopersByCode[code];
-    }
+    };
+
+    data.findTroopersByFaction = function (factionCode) {
+        if (!troopersByFaction[factionCode]) {
+            troopersByFaction[factionCode] = [];
+            $.each(data.troopers, function (i, trooper) {
+                if (trooper.faction === factionCode) {
+                    troopersByFaction[factionCode].push(trooper);
+                }
+            });
+        }
+        return troopersByFaction[factionCode];
+    };
+
 
 })();
