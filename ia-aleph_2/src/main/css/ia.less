@@ -28,9 +28,10 @@ body{
     max-width: 850px;
     padding: 4px 25px;
 
-    background-image: url('../img/theme/topBarBgLeft.png') left center no-repeat, url('../img/theme/topBarBgCenter.png') center repeat-y, url('../img/theme/topBarBgRight.png') right center no-repeat;
-    /*    background-position: left, center, right;
-        background-repeat: no-repeat;*/
+    background-image: url('../img/theme/topBarBgLeft.png'), url('../img/theme/topBarBgCenter.png'), url('../img/theme/topBarBgRight.png');
+    background-position: left, center, right;
+    background-repeat: no-repeat;
+    background-size: auto,850px,auto;
 }
 #ia-mainScreenCenter{
     margin-top:10px;
@@ -41,11 +42,16 @@ body{
 #ia-unitSelectorContainer {
     .ia-unitSelector{
         display: inline-block;
-        margin-left: 5px;
+        /*margin-left: 5px;*/
         width: 40px;
         height: 40px;
+        padding: 5px;
 
         cursor: pointer;
+        &:hover{
+            background-image: url('../img/theme/topBarrHexaBg1.png');
+            background-size: 50px 50px;
+        }
     }
 }
 
