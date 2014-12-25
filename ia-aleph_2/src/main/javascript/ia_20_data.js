@@ -28,12 +28,20 @@ var data = ia.data;
 
     var troopersByCode = {};
     $.each(data.troopers, function (i, trooper) {
-        troopersByCode[trooper.code] = trooper = $.extend({            
-                bsw: [],
-                ccw: [],
-                skills: [],
-                equipments: []
+        troopersByCode[trooper.code] = trooper = $.extend({
+            bsw: [],
+            ccw: [],
+            skills: [],
+            equipments: [],
+            isRegular: !trooper.irregular,
+            isIrregular: trooper.irregular,
+            isImpetuous: trooper.impetuosity === 'I',
+            isFrenzy: trooper.impetuosity === 'F',
+            isExtremelyImpetuous: trooper.impetuosity === 'E',
+            hasCube: trooper.cube === 'C' || trooper.cube === '2',
+            hasCube2: trooper.cube === '2'
         }, trooper);
+        trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO
         trooper.options = $.map(trooper.options, function (option) {
             option = $.extend({
                 bsw: [],
