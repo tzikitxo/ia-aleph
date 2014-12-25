@@ -9,6 +9,7 @@
  name: Fusilier
  classification: Line Troops
  type: LI
+ cube: C
  options: 
  - 
    bsw: [ Combi Rifle ]
@@ -54,6 +55,7 @@
   str: true
   s: 7
   ava: 2
+  cube: R
   skills: [ "G: Remote Presence" ]
   equipments: [ Advanced ECM ]
   bsw: [ MULTI HMG ]

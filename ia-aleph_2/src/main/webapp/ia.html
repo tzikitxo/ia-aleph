@@ -41,6 +41,32 @@
                 <div class="ia-trooperSelectorMain">
                     <div class="ia-trooperType">{{trooper.type}}</div>
                     <div class="ia-trooperIscContainer"><div class="ia-trooperIsc">{{trooper.isc}}</div></div>
+                    <div class="ia-trooperCube">
+                        {{#if trooper.hasCube}}
+                            {{#if trooper.hasCubeL2}}
+                                <img class="ia-trooperIcon" src="img/icon/cube2_icon.png"></img>
+                            {{else}}
+                                <img class="ia-trooperIcon" src="img/icon/cube_icon.png"></img>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    <div class="ia-trooperTraining">
+                        {{#if trooper.isRegular}}<img class="ia-trooperIcon" src="img/icon/regular_icon.png"></img>{{/if}}
+                        {{#if trooper.isIrregular}}<img class="ia-trooperIcon" src="img/icon/irregular_icon.png"></img>{{/if}}
+                    </div>
+                    <div class="ia-trooperImpetuosity">
+                        {{#if trooper.isFrenzy}}<img class="ia-trooperIcon" src="img/icon/frenzy_icon.png"></img>{{/if}}                        
+                        {{#if trooper.isImpetuous}}
+                            {{#if trooper.isExtremelyImpetuous}}
+                                <img class="ia-trooperIcon" src="img/icon/extremely_impetuous_icon.png"></img>
+                            {{else}}
+                                <img class="ia-trooperIcon" src="img/icon/impetuous_icon.png"></img>
+                            {{/if}}
+                        {{/if}}
+                    </div>
+                    <div class="ia-trooperHackable">
+                        {{#if trooper.isHackable}}<img class="ia-trooperIcon" src="img/icon/hackable_icon.png"></img>{{/if}}
+                    </div>
                     <div class="ia-trooperEquipments">{{trooperEquipments trooper}}</div>
                     <div class="ia-trooperSkills">{{trooperSkills trooper}}</div>
                     <img class="ia-trooperLogo" src="img/troop/{{trooper.logo}}_logo.png"></img>
