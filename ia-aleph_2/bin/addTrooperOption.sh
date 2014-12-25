@@ -5,7 +5,12 @@ echo "adding trooper option $code"
 t=`mktemp`
 echo '  - ' > $t
 echo "    code: $code" >> $t
-for name in description skills equipments bsw ccw; do
+for name in description; do
+        echo -n "  $name : "
+        read value
+        echo "    $name: $value" >> $t
+done
+for name in  skills equipments bsw ccw; do
 	echo -n "  $name : "
 	read value
 	[ -z "$value" ] || echo "    $name: [ $value ]" >> $t

@@ -24,6 +24,7 @@
     
     ui.unitSelector.showUnitSelector();
     ui.trooperSelector.showTrooperSelector();
+    ui.armyRoster.updateArmyRoster();
     
     $('#ia-loadingContainer').hide();
     $('#ia-mainContainer').show();

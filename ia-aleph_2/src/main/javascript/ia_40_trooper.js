@@ -69,7 +69,9 @@
                     silhouette: "S",
                     ava: "AVA"
                 }
-            }));
+            })).find('.ia-trooperSelectorOptionRow').on('click', function () {
+                roster.addTrooper(data.findTrooperByCode(trooperCode).findTrooperOptionByCode(Number($(this).data('ia-optioncode'))));
+            });
         }
     };
 

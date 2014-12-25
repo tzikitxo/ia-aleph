@@ -42,23 +42,23 @@ var data = ia.data;
             hasCube2: trooper.cube === '2'
         }, trooper);
         trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO
+        var trooperOptionsByCode = {};
         trooper.options = $.map(trooper.options, function (option) {
             option = $.extend({
-                bsw: [],
-                ccw: [],
                 swc: '',
-                cost: '',
-                skills: [],
-                equipments: []
-            }, option);
+                cost: ''
+            }, trooper, option);
+            //TODO sort by range
             option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
             option.allCcw = [].concat(trooper.ccw).concat(option.ccw);
             option.allSkills = [].concat(trooper.skills).concat(option.skills);
             option.allEquipments = [].concat(trooper.equipments).concat(option.equipments);
-            //TODO sort by range
+            trooperOptionsByCode[option.code] = option;
             return option;
-//            option.skillsAndEquipments = [].concat(option.skills || []).concat(option.equipments || []);
         });
+        trooper.findTrooperOptionByCode = function (optionCode) {
+            return trooperOptionsByCode[optionCode];
+        };
     });
 
     var troopersByFaction = {};

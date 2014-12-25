@@ -1,6 +1,9 @@
 
 // COLORS
 
+@topBarBgColor: #e6e6e6;
+@topBarBorderColor: #a0a0a0;
+
 @headerBgColor: #c7e8fb;
 @headerBorderColor: #94ccf0;
 
@@ -20,6 +23,14 @@ body{
     font-size: 12px;
 }
 
+// COMMON
+
+.ia-warning {
+    font-weight: bold;
+    color: red;
+    text-decoration: underline;
+}
+
 // MAIN
 
 .ia-mainScreenTopBar{    
@@ -28,10 +39,10 @@ body{
     max-width: 850px;
     padding: 4px 25px;
 
-    border: 1px solid @headerBorderColor;
-    border-radius: 0 0 5px 5px;
-    border-top: 0;
-    background-color: @headerBgColor;
+    /*border: 2px solid @topBarBorderColor;*/
+    border-radius: 0 0 15px 15px;
+    /*border-top: 0;*/
+    background-color: @topBarBgColor;
 }
 #ia-mainScreenCenter{
     margin-top:10px;
@@ -40,6 +51,8 @@ body{
 // UNIT SELECTOR
 
 #ia-unitSelectorContainer {
+display: inline-block;
+
     .ia-unitSelector{
         display: inline-block;
         /*margin-left: 5px;*/
@@ -53,6 +66,13 @@ body{
             background-size: 50px 50px;
         }
     }
+}
+
+// ROSTER
+
+#ia-rosterContainerOnTopBar{
+display: inline-block;
+    
 }
 
 // TROOPER SELECTOR 
