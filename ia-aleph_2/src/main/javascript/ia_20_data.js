@@ -41,6 +41,7 @@ var data = ia.data;
             hasCube: trooper.cube === 'C' || trooper.cube === '2',
             hasCube2: trooper.cube === '2'
         }, trooper);
+        trooper.longisc = trooper.longisc || trooper.isc;
         trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO
         var trooperOptionsByCode = {};
         trooper.options = $.map(trooper.options, function (option) {

@@ -1,51 +1,9 @@
 
 # PANOCEANIA    
 
--
-  isc: Squalos, PanOceanian Armored Cavalry Heavy Lancers
-  logo: armoured_cavalry
-  faction: 1
-  code: 100
-  name: Squalo
-  type: TAG
-  classification: Mechanized Troops
-  mov: 6-4
-  cc: 18
-  bs: 15
-  ph: 17
-  wip: 12
-  arm: 8
-  bts: 6
-  w: 3
-  str: true
-  s: 7
-  ava: 2
-  cube: R
-  skills: [ "G: Remote Presence" ]
-  equipments: [ Advanced ECM ]
-  bsw: [ MULTI HMG ]
-  ccw: [ AP Heavy Pistol ]
-  options:
-  - 
-    code: 1
-    description: MHMG
-    swc: 2
-    cost: 93
-  - 
-    code: 2
-    description: HGL
-    bsw: [ Heavy Grenade Launcher ]
-    swc: 2.5
-    cost: 95
-  - 
-    code: 3
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    swc: 2
-    cost: 93
 - 
   isc: Fusiliers
-  code: 101
+  code: 100
   faction: 1
   logo: fusiliers
   name: Fusilier
@@ -124,3 +82,52 @@
     bsw: [ Combi Rifle ]
     swc: 0
     cost: 10
+- 
+  isc: Akalis
+  longisc: AKALIS, Sikh Commandos
+  code: 101
+  faction: 1
+  logo: akalis
+  name: AKAL COMMANDO
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  cube: C
+  skills: [ "AD: Combat Jump", Religious Troop ]
+  ccw: [ Pistol, E/M CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 21
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 28
