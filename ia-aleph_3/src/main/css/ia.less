@@ -51,7 +51,19 @@ body{
 // UNIT SELECTOR
 
 #ia-unitSelectorContainer {
+    width: 100%;
+}
+#ia-unitSelectorScrollerContainer {
+    /*width: 100%;*/
+    overflow: auto;
+}
+.ia-unitSelectorSpacer{
     display: inline-block;
+    width: 300px;
+    height: 100%;
+}
+#ia-unitSelectorScroller{
+    white-space: nowrap;
 
     .ia-unitSelector{
         display: inline-block;
@@ -66,6 +78,11 @@ body{
             background-size: 50px 50px;
         }
     }
+}
+#ia-unitSelectorScrollButtonLeft, #ia-unitSelectorScrollButtonRight{
+    display: inline-block;
+    
+    cursor: pointer;
 }
 
 // ROSTER
@@ -89,6 +106,16 @@ body{
 #ia-rosterContainerOnTopBar .ia-rosterBody{
     display: none;
     margin-top: 5px;
+}
+#ia-rosterContainerOnTopBar .ia-rosterContainer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    border-radius: 0 0 0 5px;
+    z-index:5;
+
+    background-color: @topBarBgColor;
 }
 #ia-rosterContainerOnTopBar.ia-showRosterBody .ia-rosterContainer{
     position: fixed;
@@ -185,6 +212,7 @@ body{
     .ia-trooperEquipments, .ia-trooperSkills{
         position: absolute;
         left: 185px;
+        max-width: 600px;
 
         text-shadow: 1px 1px darkgray;
     }

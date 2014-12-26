@@ -15,20 +15,34 @@
 
 (function () {
 
+
+    var unitSelectorTemplate = Handlebars.compile($('#ia-unitSelectorTemplate').html());
+
     ui.unitSelector = {
         showUnitSelector: function (factionCode) {
+            $('#ia-unitSelectorContainer').replaceWith(unitSelectorTemplate({}));
             factionCode = factionCode || 1;
             var faction = data.findFactionByCode(factionCode);
             var troopers = data.findTroopersByFaction(factionCode);
-            var unitSelectorContainer = $('#ia-unitSelectorContainer').empty();
-            $.each(troopers, function (i, trooper) {
+            var unitSelectorScroller = $('#ia-unitSelectorScroller');
+            unitSelectorScroller.find('.ia-unitSelector').remove();
+            $.each([].concat(troopers).reverse(), function (i, trooper) {
                 var unitSelector = $('<img class="ia-unitSelector" />')
                         .attr('src', 'img/troop/' + trooper.logo + '_logo.png')
                         .attr('title', trooper.isc)
-                        .appendTo(unitSelectorContainer).on('click', function () {
+                        .prependTo(unitSelectorScroller).on('click', function () {
                     ui.trooperSelector.showTrooperSelector(trooper.code);
                 });
             });
+//                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});
+//                unitSelectorScroller.draggable({cursor: "move", axis: "x"});
+            $('#ia-unitSelectorScrollButtonLeft').on('click', function () {
+                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() - 50);
+            });
+            $('#ia-unitSelectorScrollButtonRight').on('click', function () {
+                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + 50);
+            });
+            $('#ia-unitSelectorScrollerContainer').jScrollPane();
         }
     };
 
