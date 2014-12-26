@@ -131,3 +131,150 @@
     bsw: [ Combi Rifle ]
     swc: 0.5
     cost: 28
+- 
+  isc: Nisses
+  longisc: Svalarheima NISSES
+  code: 102
+  faction: 1
+  logo: nisses
+  name: NISSE
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  cube: C
+  skills: [ "CH: Mimetism", Multiterrain ]
+  equipments: [ Multispectral Visor L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle+ Light Shotgun ]
+    swc: 0
+    cost: 30
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle+ Light Shotgun ]
+    swc: 0.5
+    cost: 38
+  - 
+    code: 5
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle+ Light Shotgun ]
+    swc: 0
+    cost: 32
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle+ Light Shotgun ]
+    swc: 1
+    cost: 30
+- 
+  isc: Neoterra Bolts
+  longisc: 
+  code: 103
+  faction: 1
+  logo: neoterra_bolts
+  name: BOLT
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 11
+  wip: 12
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 3
+  cube: C
+  skills: [ Bioimmunity, Veteran L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: Drop Bears
+    bsw: [ Combi Rifle + Light Shotgun, Drop Bears ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, E/M Grenades ]
+    swc: 0
+    cost: 19
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 26
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher, Light Shotgun ]
+    swc: 1.5
+    cost: 27
+  - 
+    code: 6
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 24
+  - 
+    code: 7
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Boarding Shotgun, E/M Grenades ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 22
