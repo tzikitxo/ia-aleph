@@ -2,7 +2,7 @@
 
 t=`mktemp`
 echo '- ' > $t
-for name in isc; do
+for name in isc longisc; do
 	echo -n "  $name : "
 	read value
 	echo "  $name: $value" >> $t
