@@ -43,6 +43,7 @@ var data = ia.data;
         }, trooper);
         trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
         trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO
+        trooper.hasStr = trooper.hasStr || trooper.type === 'REM' || trooper.type === 'TAG';
         var trooperOptionsByCode = {};
         trooper.options = $.map(trooper.options, function (option) {
             option = $.extend({}, trooper, {

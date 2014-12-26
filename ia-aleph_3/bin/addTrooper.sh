@@ -9,10 +9,25 @@ for name in isc longisc; do
 done
 code=`bin/nextDataCode.sh`
 echo "  code: $code" >> $t
-for name in faction logo name type classification mov cc bs ph wip arm bts w s ava cube irregular impetuous; do
-        echo -n "  $name : "
-        read value
+function readSingleValue(){
+	name="$1"
+	default="$2"
+	saveValueTo="$3"
+	echo -n "  $name ($default) : "
+	read value
+	if [ -z "$value" ] && ! [ -z "$default" ]; then
+		value="$default"
+	fi
 	[ -z "$value" ] || echo "  $name: $value" >> $t
+	[ -z "$saveValueTo" ] || echo "$value" > "$saveValueTo"
+}
+readSingleValue faction "`cat /tmp/factionId`" /tmp/factionId
+readSingleValue logo "`grep '^ *isc *:' $t | tail -n1 | sed 's# *isc *: *##' | tr '[:upper:]' '[:lower:]' | tr -c '[a-z0-9]' '_' | tr -s '_' | sed -r 's#^_|_$##g'`"
+for name in name type classification mov cc bs ph wip arm bts w s ava cube irregular impetuous; do
+	readSingleValue $name
+ #       echo -n "  $name : "
+ #       read value
+	#[ -z "$value" ] || echo "  $name: $value" >> $t
 done
 for name in skills equipments bsw ccw; do
         echo -n "  $name : "
