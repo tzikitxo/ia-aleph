@@ -12,6 +12,8 @@
 
 @tableRowAlternateColor: #e6e6e6;
 
+@weaponsTableRowAlternateColor: #d4edfc;
+
 // BODY
 
 body{
@@ -38,6 +40,7 @@ body{
     margin-right: auto;
     max-width: 850px;
     padding: 0 5px;
+    position: relative;
 
     /*border: 2px solid @topBarBorderColor;*/
     /*border-radius: 0 0 15px 15px;*/
@@ -52,7 +55,7 @@ body{
     height: 40px;  
     position: absolute;
     top: 5px;
-    left: 35px;  
+    left: 10px;
     z-index: 5;
 
     cursor: pointer;
@@ -113,6 +116,35 @@ body{
 #ia-unitSelectorScrollButtonRight{
     right:0;
     background-image: url('../img/theme/scrollButtonRightBg.png');
+}
+
+//WEAPONS
+
+#ia-weaponsDisplay{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+#ia-weaponsDisplayContainer{    
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+.ia-weaponsDisplayTable{
+    width: 100%;
+    border-collapse: collapse;
+
+    tr:nth-child(odd) {
+        background-color: @weaponsTableRowAlternateColor;
+    }
+    td{
+        padding: 2px;
+    }
+    .ia-weaponDamageCell, .ia-weaponBurstCell, .ia-weaponAmmunitionsCell {
+        text-align: center;
+    }
 }
 
 // ROSTER
