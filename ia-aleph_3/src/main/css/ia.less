@@ -47,13 +47,23 @@ body{
 #ia-mainScreenCenter{
     margin-top:10px;
 }
+#ia-mainMenuButton{
+    width: 40px;
+    height: 40px;  
+    position: absolute;
+    top: 5px;
+    left: 35px;  
+    z-index: 5;
+
+    cursor: pointer;
+}
 
 // UNIT SELECTOR
 
 #ia-unitSelectorContainer {
     box-sizing: border-box;
     width: 100%;
-    padding: 0 25px;
+    padding: 0 25px+40px+5px;
     position: relative;
 }
 #ia-unitSelectorScrollerContainer {
@@ -97,7 +107,7 @@ body{
     cursor: pointer;
 }
 #ia-unitSelectorScrollButtonLeft{
-    left:0;
+    left:0+40px+5px;
     background-image: url('../img/theme/scrollButtonLeftBg.png');
 }
 #ia-unitSelectorScrollButtonRight{
