@@ -278,3 +278,237 @@
     bsw: [ Combi Rifle + Light Shotgun ]
     swc: 0
     cost: 22
+- 
+  isc: Orc Troops
+  longisc: 
+  code: 104
+  faction: 1
+  logo: orc_troops
+  name: ORC
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 15
+  bs: 14
+  ph: 14
+  wip: 12
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 3
+  cube: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 40
+  - 
+    code: 2
+    description: TinBot
+    bsw: [ MULTI Rifle + 1 TinBot A (Deflector L1) ]
+    swc: 0.5
+    cost: 41
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 44
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 35
+  - 
+    code: 5
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 36
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 42
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 40
+  - 
+    code: 8
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    swc: 2
+    cost: 44
+- 
+  isc: Knights Hospitaller
+  longisc: Holy Order of HOSPITALLER KNIGHTS of Saint John of Skovorodino
+  code: 105
+  faction: 1
+  logo: knights_hospitaller
+  name: KNIGHT HOSPITALLER
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 21
+  bs: 14
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  cube: C
+  impetuous: F
+  skills: [ Martial Arts L2, Religious Troop ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 37
+  - 
+    code: 2
+    description: DACCW
+    bsw: [ MULTI Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 38
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG ]
+    ccw: [ AP CCW ]
+    swc: 2
+    cost: 41
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 33
+  - 
+    code: 5
+    description: Combi
+    bsw: [ Combi Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 33
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor ]
+    equipments: [ MediKit ]
+    bsw: [ MULTI Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 41
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 37
+  - 
+    code: 8
+    description: Lt+DACCW
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 38
+- 
+  isc: Military Order Father-Knights
+  longisc: Military Order FATHER-KNIGHTS
+  code: 106
+  faction: 1
+  logo: father_knights
+  name: FATHER-KNIGHT
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 23
+  bs: 14
+  ph: 14
+  wip: 13
+  arm: 5
+  bts: 9
+  w: 2
+  s: 2
+  ava: 2
+  cube: C
+  skills: [ Assault, Kinematika L1, Religious Troop ]
+  ccw: [ Breaker Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 44
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 43
+  - 
+    code: 3
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 49
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 50
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle, D-Charges ]
+    swc: 0.5
+    cost: 50
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Nimbus Grenades ]
+    swc: 0
+    cost: 46
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 44
+  - 
+    code: 8
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 50
