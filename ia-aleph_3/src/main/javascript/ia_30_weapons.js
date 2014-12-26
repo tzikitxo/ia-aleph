@@ -58,7 +58,6 @@
             if (addBarehands) {
                 weapons.push(data.findWeaponsByName(bareHandsWeapon)[0]);
             }
-            var weapons2 = [];
             $.each(weapons, function (i, weapon) {
                 if (weapons.mode !== suppressionFireWeapon && $.inArray('Suppressive Fire', weapon.traits) !== -1) {
                     var supFire = data.findWeaponsByName(suppressionFireWeapon)[0];
@@ -69,18 +68,47 @@
                         name: weapon.name,
                         mode: supFire.name
                     });
-                    weapons2.push(supFire);
+                    weapons.push(supFire);
                 }
-                weapon = $.extend({}, weapon);
-
+            });
+            var weapons2 = [];
+            var rangesSet = {}, ranges = [];
+            $.each(weapons, function (i, weapon) {
+                if (weapon.hasRange) {
+                    $.each(weapon.ranges, function (i, range) {
+                        if (!rangesSet[range]) {
+                            rangesSet[range] = true;
+                            ranges.push(range);
+                        }
+                    });
+                }
+            });
+            ranges.sort();
+            $.each(weapons, function (i, weapon) {
+                weapon = $.extend({
+                    rangeMods:[]
+                }, weapon);
                 if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
                     weapon.damage = eval(weapon.damage.replace(/WIP/, trooper.wip).replace(/PH/, trooper.ph));
                 }
-
+                var basicValue = ($.inArray('Technical Weapon', weapon.traits) !== -1 || weapon.name === discoverWeapon) ? trooper.wip : trooper.bs;
+                var rangeIndex = 0;
+                if (weapon.hasRange) {
+                    $.each(weapon.ranges, function (i, range) {
+                        for (; ranges[rangeIndex] <= range; rangeIndex++) {
+                            weapon.rangeMods.push(weapon.mods[i] + basicValue);
+                        }
+                    });
+                }
+                for (; rangeIndex < ranges.length; rangeIndex++) {
+                    weapon.rangeMods.push('');
+                }
                 weapons2.push(weapon);
             });
             $('#ia-weaponsDisplayContainer').html(weaponsDisplayTemplate({
-                weapons: weapons2
+                weapons: weapons2,
+                ranges: ranges,
+                rangeLength: ranges.length
             }));
         }
     }

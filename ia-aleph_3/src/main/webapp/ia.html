@@ -170,12 +170,23 @@
         <script id="ia-weaponsDisplayTemplate" type="text/x-handlebars-template">
             <div id="ia-weaponsDisplay">
                 <table class="ia-weaponsDisplayTable">
-                    <thead></thead>
+                    <thead>
+                        <tr>
+                            <th></th>
+                        {{#each ranges}}
+                            <th class="ia-weaponRangeCell">{{this}}</th>
+                        {{/each}}
+                        </tr>
+                    </thead>
                     <tbody>
                         {{#each weapons}}
                         <tr>
                             <td>{{name}}<div class="ia-weaponMode" >{{mode}}</div></td>
-                            <td>{{#if hasRange}}range{{else}}-{{/if}}</td>
+                            {{#if hasRange}}
+                            {{#each rangeMods}}
+                                <td class="ia-weaponRangeCell">{{this}}</td>
+                            {{/each}}
+                            {{else}}<td colwidth="{{../rangeLength}}">-</td>{{/if}}  
                             <td class="ia-weaponDamageCell" >{{damage}}</td>
                             <td class="ia-weaponBurstCell" >{{burst}}</td>
                             <td class="ia-weaponAmmunitionsCell" >{{ammunitions}}</td>
