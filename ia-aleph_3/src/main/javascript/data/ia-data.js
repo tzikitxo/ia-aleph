@@ -21,5 +21,7 @@
     data.factions = anyplacetools.importFile('data/factions.yml');
 
     data.troopers = anyplacetools.importFile('data/troopers.yml');
+    
+    data.weapons = anyplacetools.importFile('data/weapons.yml');
 
 })();

@@ -92,5 +92,20 @@ var data = ia.data;
         return troopersByFaction[factionCode];
     };
 
+    var weaponsByName = {};
+    data.weapons = $.map(data.weapons, function (weapon) {
+        weapon = $.extend({
+            damage: '-',
+            traits: [],
+            ammunitions: '-'
+        }, weapon);
+        weapon.hasRange = weapon.ranges ? true : false;
+        if (weaponsByName[weapon.name]) {
+            weaponsByName[weapon.name].push(weapon);
+        } else {
+            weaponsByName[weapon.name] = [weapon];
+        }
+        return weapon;
+    });
 
 })();
