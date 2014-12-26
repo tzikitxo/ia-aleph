@@ -70,7 +70,19 @@ var roster = ia.roster = {};
                 roster: roster.getRosterData()
             }));
             rosterContainer.find('.ia-rosterTopBar').on('click', function () {
-                rosterContainer.toggleClass('ia-showRosterBody');
+                $('.ia-rosterBody', rosterContainer).toggle('fast');
+//                if (rosterContainer.hasClass('ia-showRosterBody')) {
+//                    $('.ia-rosterBody', rosterContainer).hide('fast', function () {
+//                        rosterContainer.removeClass('ia-showRosterBody');
+//                        $('.ia-rosterBody', rosterContainer).css('display', '');
+//                    });
+//                } else {
+//                    $('.ia-rosterBody', rosterContainer).hide();
+////                    rosterContainer.addClass('ia-showRosterBody');
+//                    $('.ia-rosterBody', rosterContainer).show('fast');
+////                    $('.ia-rosterBody', rosterContainer).css('display', '');
+//                }
+//                rosterContainer.toggleClass('ia-showRosterBody');
                 return false;
             });
             rosterContainer.find('.ia-rosterTrooperEntry').on('click', function () {

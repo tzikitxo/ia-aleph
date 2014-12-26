@@ -38,8 +38,8 @@ var data = ia.data;
             isImpetuous: trooper.impetuosity === 'I',
             isFrenzy: trooper.impetuosity === 'F',
             isExtremelyImpetuous: trooper.impetuosity === 'E',
-            hasCube: trooper.cube === 'C' || trooper.cube === '2',
-            hasCube2: trooper.cube === '2'
+            hasCube: trooper.backup === 'C' || trooper.backup === '2',
+            hasCube2: trooper.backup === '2'
         }, trooper);
         trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
         trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO

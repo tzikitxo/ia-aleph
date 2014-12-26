@@ -1,8 +1,8 @@
 
 // COLORS
 
-@topBarBgColor: #e6e6e6;
-@topBarBorderColor: #a0a0a0;
+@topBarBgColor: #fcc002;
+/*@topBarBorderColor: #a0a0a0;*/
 
 @headerBgColor: #c7e8fb;
 @headerBorderColor: #94ccf0;
@@ -37,10 +37,10 @@ body{
     margin-left: auto;
     margin-right: auto;
     max-width: 850px;
-    padding: 4px 25px;
+    padding: 0 5px;
 
     /*border: 2px solid @topBarBorderColor;*/
-    border-radius: 0 0 15px 15px;
+    /*border-radius: 0 0 15px 15px;*/
     /*border-top: 0;*/
     background-color: @topBarBgColor;
 }
@@ -51,11 +51,16 @@ body{
 // UNIT SELECTOR
 
 #ia-unitSelectorContainer {
+    box-sizing: border-box;
     width: 100%;
+    padding: 0 25px;
+    position: relative;
 }
 #ia-unitSelectorScrollerContainer {
     /*width: 100%;*/
-    overflow: auto;
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
 }
 .ia-unitSelectorSpacer{
     display: inline-block;
@@ -71,6 +76,7 @@ body{
         width: 40px;
         height: 40px;
         padding: 5px;
+        /*padding: 0 5px;*/
 
         cursor: pointer;
         &:hover{
@@ -81,8 +87,22 @@ body{
 }
 #ia-unitSelectorScrollButtonLeft, #ia-unitSelectorScrollButtonRight{
     display: inline-block;
-    
+    height: 100%;
+    width: 25px;
+    position: absolute;
+    /*height: 50px;*/
+    top:0;
+
+    background-size: 100% 100%;
     cursor: pointer;
+}
+#ia-unitSelectorScrollButtonLeft{
+    left:0;
+    background-image: url('../img/theme/scrollButtonLeftBg.png');
+}
+#ia-unitSelectorScrollButtonRight{
+    right:0;
+    background-image: url('../img/theme/scrollButtonRightBg.png');
 }
 
 // ROSTER
@@ -99,30 +119,37 @@ body{
         text-shadow: 1px 1px black;
     }
 }
+.ia-rosterTopBar{
+    cursor: pointer;
+}
 .ia-rosterTrooperEntryLogo{
     width: 16px;
     height: 16px;
 }
 #ia-rosterContainerOnTopBar .ia-rosterBody{
-    display: none;
+    /*display: none;*/
     margin-top: 5px;
 }
 #ia-rosterContainerOnTopBar .ia-rosterContainer{
     position: fixed;
     top: 0;
     right: 0;
-    padding: 5px;
+    /*padding: 5px;*/
+    padding: 5px 10px 5px 10px;
     border-radius: 0 0 0 5px;
     z-index:5;
 
-    background-color: @topBarBgColor;
+    background-color: @headerBgColor;
+    border: 2px solid @headerBorderColor;
+    border-top: 0;
+    border-right: 0;
 }
-#ia-rosterContainerOnTopBar.ia-showRosterBody .ia-rosterContainer{
+/*#ia-rosterContainerOnTopBar.ia-showRosterBody .ia-rosterContainer{
     position: fixed;
     top:0;
     right:0;
     z-index:10;
-    /*width: 300px;*/
+    width: 300px;
     padding: 5px 5px 10px 10px;
 
     border: 2px solid @headerBorderColor;
@@ -133,7 +160,7 @@ body{
     .ia-rosterBody{
         display: block;
     }
-}
+}*/
 .ia-rosterTable{
     width: 100%;
     border-collapse: collapse;
