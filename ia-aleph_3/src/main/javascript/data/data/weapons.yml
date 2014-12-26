@@ -364,3 +364,323 @@
   burst: 1
   ammunitions: Nimbus
   traits: [ Impact Template (Circular), Non-Lethal, Reflective, Speculative Fire, Targetless ]
+- 
+  name: Light Shotgun
+  code: 46
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 13
+  burst: 2
+  ammunitions: N
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: Light Smoke GL
+  code: 47
+  ranges: [ 8,16,24,48 ]
+  mods: [ 0,3,-3,-6 ]
+  burst: 1
+  ammunitions: Smoke
+  traits: [ Impact Template (Circular), Non-Lethal, Special Dodge, Speculative Fire, Targetless ]
+- 
+  name: MediKit
+  code: 48
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  burst: 1
+  traits: [ Non-Lethal ]
+- 
+  name: Missile Launcher
+  code: 49
+  mode: Antitank Mode
+  ranges: [ 8,24,40,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 1
+  ammunitions: AP+EXP
+  traits: [ Anti-materiel ]
+- 
+  name: Missile Launcher
+  code: 50
+  mode: Blast Mode
+  ranges: [ 8,24,40,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 1
+  ammunitions: EXP
+  traits: [ Anti-materiel, Impact Template (Circular) ]
+- 
+  name: Monofilament CCW
+  code: 51
+  damage: 12
+  burst: 1
+  ammunitions: Monofilament
+  traits: [ CC ]
+- 
+  name: Monofilament Mine
+  code: 52
+  damage: 12
+  burst: 1
+  ammunitions: Monofilament
+  traits: [ Concealed, Deployable, Direct Template (Small Teardrop), Disposable (3), Intuitive Attack ]
+- 
+  name: MULTI HMG
+  code: 53
+  mode: Anti-materiel Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 1
+  ammunitions: EXP
+  traits: [ Anti-materiel, Heavy MULTI, Non-Lootable ]
+- 
+  name: MULTI HMG
+  code: 54
+  mode: Burst Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 4
+  ammunitions: AP/Shock
+  traits: [ Heavy MULTI, Non-Lootable, Suppressive Fire ]
+- 
+  name: MULTI Rifle
+  code: 55
+  mode: Anti-materiel Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, Light MULTI ]
+- 
+  name: MULTI Rifle
+  code: 56
+  mode: Burst Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: AP/Shock
+  traits: [ Light MULTI, Suppressive Fire ]
+- 
+  name: MULTI Sniper Rifle
+  code: 57
+  mode: Anti-materiel Mode
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: DA
+  traits: [ Anti-materiel, Medium MULTI ]
+- 
+  name: MULTI Sniper Rifle
+  code: 58
+  mode: AP Mode
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: AP
+  traits: [ Medium MULTI ]
+- 
+  name: Nanopulser
+  code: 59
+  damage: 13
+  burst: 1
+  ammunitions: Nanotech
+  traits: [ Direct Template (Small Teardrop), Intuitive Attack, Non-Lootable ]
+- 
+  name: Nimbus Grenades
+  code: 60
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  burst: 1
+  ammunitions: Nimbus
+  traits: [ Impact Template (Circular), Non Lethal, Reflective, Speculative Fire, Targetless, Throwing Weapon ]
+- 
+  name: Nimbus Plus Grenades
+  code: 61
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  burst: 1
+  ammunitions: Nimbus Plus
+  traits: [ Impact Template (Circular), Non Lethal, Reflective, Speculative Fire, Targetless, Throwing Weapon ]
+- 
+  name: Ojotnik
+  code: 62
+  ranges: [ 8,32,40,96 ]
+  mods: [ -3,3,0,-6 ]
+  damage: 14
+  burst: 2
+  ammunitions: AP
+- 
+  name: Panzerfaust
+  code: 63
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,+3,-3 ]
+  damage: 14
+  burst: 1 (2 Uses)
+  ammunitions: AP+EXP
+  traits: [ Anti-materiel, Disposable (2) ]
+- 
+  name: Pistol
+  code: 64
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: 11
+  burst: 2 (1 in CC)
+  ammunitions: N
+  traits: [ CC ]
+- 
+  name: Plasma Carbine
+  code: 65
+  mode: Blast Mode
+  ranges: [ 8,16,32,40 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 13
+  burst: 2
+  ammunitions: Plasma
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: Plasma Carbine
+  code: 66
+  mode: Hit Mode
+  ranges: [ 8,16,32,40 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 14
+  burst: 2
+  ammunitions: Plasma
+- 
+  name: Plasma Rifle
+  code: 67
+  mode: Blast Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: Plasma
+  traits: [ Impact Template (Small Teardrop), Suppressive Fire ]
+- 
+  name: Plasma Rifle
+  code: 68
+  mode: Hit Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 14
+  burst: 3
+  ammunitions: Plasma
+  traits: [ Suppressive Fire ]
+- 
+  name: Plasma Sniper Rifle
+  code: 69
+  mode: Blast Mode
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: Plasma
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: Plasma Sniper Rifle
+  code: 70
+  mode: Hit Mode
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: Plasma
+- 
+  name: Portable Autocannon
+  code: 71
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: AP+EXP
+  traits: [ Anti-materiel ]
+- 
+  name: Rifle
+  code: 72
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: N
+  traits: [ Suppressive Fire ]
+- 
+  name: Sepsitor
+  code: 73
+  damage: WIP
+  burst: 1 (2 Uses)
+  traits: [ Direct Template (Large Teardrop), Disposable (2), Intuitive Attack, Non-Lootable ]
+- 
+  name: Sepsitor Plus
+  code: 74
+  damage: WIP
+  burst: 1
+  traits: [ Direct Template (Large Teardrop), Intuitive Attack, Non-Lootable ]
+- 
+  name: Shock CCW
+  code: 75
+  damage: PH
+  burst: 1
+  ammunitions: Shock
+  traits: [ CC ]
+- 
+  name: Smart Missile Launcher
+  code: 76
+  mode: Guided Mode
+  damage: 14
+  burst: 1
+  ammunitions: AP+DA
+  traits: [ Anti-materiel, Guided, Impact Template (Circular) ]
+- 
+  name: Smart Missile Launcher
+  code: 77
+  mode: Auto Aim-Mode
+  ranges: [ 8,24,40,96 ]
+  mods: [ 0,0,3,0 ]
+  damage: 14
+  burst: 1
+  ammunitions: AP+DA
+  traits: [ Anti-materiel, Impact Template (Circular) ]
+- 
+  name: Smoke Grenades
+  code: 78
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  burst: 1
+  ammunitions: Smoke
+  traits: [ Impact Template (Circular), Non-Lethal, Special Dodge, Speculative Fire, Targetless, Throwing Weapon ]
+- 
+  name: Sniper Rifle
+  code: 79
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: Shock
+- 
+  name: Spitfire
+  code: 80
+  ranges: [ 8,24,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 14
+  burst: 4
+  ammunitions: N
+  traits: [ Suppressive Fire ]
+- 
+  name: Suppressive Fire Mode
+  code: 81
+  ranges: [ 8,16,24 ]
+  mods: [ 0,0,-3 ]
+  burst: 3
+- 
+  name: Tactical Bow
+  code: 82
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: PH
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, Silent ]
