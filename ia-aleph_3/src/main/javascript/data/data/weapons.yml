@@ -1,0 +1,366 @@
+-
+  name: Adhesive Launcher
+  code: 1
+  ranges: [ 8, 16, 32, 48 ]
+  mods: [ 0, 3, -3, -6 ]
+  burst: 1
+  ammunitions: ADHL
+  traits: [ Non-Lethal ]
+- 
+  name: Anti-personnel Mines
+  code: 2
+  damage: 13
+  burst: 1
+  ammunitions: Shock
+  traits: [ Concealed, Deployable, Direct Template (Small Teardrop), Disposable (3), Intuitive Attack ]
+- 
+  name: AP CCW
+  code: 3
+  damage: PH
+  burst: 1
+  ammunitions: AP
+  traits: [ CC ]
+- 
+  name: AP HMG
+  code: 4
+  ranges: [ 8, 16, 32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 4
+  ammunitions: AP
+  traits: [ Suppressive Fire ]
+- 
+  name: AP Heavy Pistol
+  code: 5
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: 14
+  burst: 2 (1 in CC)
+  ammunitions: AP
+  traits: [ CC ]
+- 
+  name: AP Rifle
+  code: 6
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: AP
+  traits: [ Suppressive Fire ]
+- 
+  name: AP Sniper Rifle
+  code: 7
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: AP
+- 
+  name: Bare Hands
+  code: 8
+  damage: PH-2
+  burst: 1
+  ammunitions: N
+  traits: [ CC ]
+- 
+  name: Boarding Shotgun
+  code: 9
+  mode: AP Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: AP
+- 
+  name: Boarding Shotgun
+  code: 9
+  mode: Blast Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: N
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: Breaker Combi Rifle
+  code: 11
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: Breaker
+  traits: [ Suppressive Fire ]
+- 
+  name: Breaker Pistol
+  code: 12
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: 12
+  burst: 2 (1 in CC)
+  ammunitions: Breaker
+  traits: [ CC ]
+- 
+  name: Breaker Rifle
+  code: 13
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: Breaker
+  traits: [ Suppressive Fire ]
+- 
+  name: CCW
+  code: 14
+  damage: PH
+  burst: 1
+  ammunitions: N
+  traits: [ CC ]
+- 
+  name: Chain Rifle
+  code: 15
+  damage: 13
+  burst: 1
+  ammunitions: N
+  traits: [ Direct Template (Large Teardrop), Intuitive Attack ]
+- 
+  name: Combi Rifle
+  code: 16
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: N
+  traits: [ Suppressive Fire ]
+- 
+  name: D-Charges
+  code: 17
+  damage: 14
+  burst: 1
+  ammunitions: AP+EXP
+  traits: [ Anti-materiel, CC, Deployable, Disposable (3) ]
+- 
+  name: DA CCW
+  code: 18
+  damage: PH
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, CC ]
+- 
+  name: Deactivator
+  code: 19
+  ranges: [ 8,16,24 ]
+  mods: [ 6,3,-6 ]
+  burst: 1
+  traits: [ BS Attack, Non-Lootable ]
+- 
+  name: Discover
+  code: 20
+  ranges: [ 8,32,48,96 ]
+  mods: [ 3,0,-3,-6 ]
+- 
+  name: Drop Bears
+  code: 21
+  mode: Throwing Weapon
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  burst: 1
+  traits: [ Disposable (3), Speculative Fire, Targetless, Throwing Weapon ]
+- 
+  name: Drop Bears
+  code: 22
+  mode: Deployable Weapon
+  damage: 13
+  burst: 1
+  ammunitions: Shock
+  traits: [ Deployable, Direct Template (Small Teardrop), Disposable (3), Intuitive Attack ]
+- 
+  name: E/M CCW
+  code: 23
+  damage: PH
+  burst: 1
+  ammunitions: N+E/M
+  traits: [ CC ]
+- 
+  name: E/M Grenades
+  code: 24
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  damage: 13
+  burst: 1
+  ammunitions: E/M
+  traits: [ Impact Template (Circular), Speculative Fire, Throwing Weapon ]
+- 
+  name: E/Mauler
+  code: 25
+  damage: 13
+  burst: 1
+  ammunitions: E/M
+  traits: [ Concealed, Deployable, Direct Template (Small Teardrop), Disposable (3), Intuitive Attack ]
+- 
+  name: Electric Pulse
+  code: 26
+  burst: 1
+  traits: [ 2 Turns, CC, IMM-2, Non-Lootable ]
+- 
+  name: EXP CCW
+  code: 27
+  damage: PH
+  burst: 1
+  ammunitions: EXP
+  traits: [ Anti-materiel, CC ]
+- 
+  name: Flash Pulse
+  code: 28
+  ranges: [ 8,24,48,96 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: Flash
+  traits: [ Non-Lootable, Technical Weapon ]
+- 
+  name: Forward Observer
+  code: 29
+  ranges: [ 8,24,48,96 ]
+  mods: [ 0,0,-3,-6 ]
+  burst: 2
+  traits: [ Non-Lethal, Non-Lootable, Technical Weapon ]
+- 
+  name: Grenades
+  code: 30
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  damage: 13
+  burst: 1
+  ammunitions: N
+  traits: [ Impact Template (Circular), Speculative Fire, Throwing Weapon ]
+- 
+  name: Heavy Flamethrower
+  code: 31
+  damage: 14
+  burst: 1
+  ammunitions: Fire
+  traits: [ Direct Template (Large Teardrop), Intuitive Attack ]
+- 
+  name: Heavy Grenade Launcher
+  code: 32
+  ranges: [ 8,32,48,96 ]
+  mods: [ -3,0,-3,-6 ]
+  damage: 14
+  burst: 1
+  ammunitions: N
+  traits: [ Impact Template (Circular), Non-Lootable, Speculative Fire ]
+- 
+  name: HMG
+  code: 33
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 4
+  ammunitions: N
+  traits: [ Suppressive Fire ]
+- 
+  name: Heavy Pistol
+  code: 34
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: 14
+  burst: 2 (1 in CC)
+  ammunitions: Shock
+  traits: [ CC ]
+- 
+  name: Heavy Shotgun
+  code: 35
+  mode: AP Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: AP
+- 
+  name: Heavy Shotgun
+  code: 36
+  mode: Blast Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: N
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: Hyper-Rapid Magnetic Cannon
+  code: 37
+  mode: Anti-materiel Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,0 ]
+  damage: 15
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, Light MULTI, Non-Lootable ]
+- 
+  name: Hyper-Rapid Magnetic Cannon
+  code: 38
+  mode: Burst Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,0 ]
+  damage: 15
+  burst: 5
+  ammunitions: AP/ Shock
+  traits: [ Light MULTI, Non-Lootable, Suppressive Fire ]
+- 
+  name: K1 Combi Rifle
+  code: 39
+  ranges: [ 8,16,32,48 ]
+  mods: [ 3,3,-3,-6 ]
+  damage: 12
+  burst: 3
+  ammunitions: K1
+  traits: [ Anti-material, Suppressive Fire ]
+- 
+  name: K1 Sniper Rifle
+  code: 40
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 12
+  burst: 2
+  ammunitions: K1
+  traits: [ Anti-materiel ]
+- 
+  name: Knife
+  code: 41
+  damage: PH-1
+  burst: 1
+  ammunitions: Shock
+  traits: [ CC, Silent ]
+- 
+  name: Light E/M GL
+  code: 42
+  ranges: [ 8,16,24,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: E/M
+  traits: [ Impact Template (Circular), Speculative Fire ]
+- 
+  name: Light Flamethrower
+  code: 43
+  damage: 13
+  burst: 1
+  ammunitions: Fire
+  traits: [ Direct Template (Small Teardrop), Intuitive Attack ]
+- 
+  name: Light GL
+  code: 44
+  ranges: [ 8,16,24,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: N
+  traits: [ Impact Template (Circular), Speculative Fire ]
+- 
+  name: Light Nimbus GL
+  code: 45
+  ranges: [ 8,16,24,48 ]
+  mods: [ 0,3,-3,-6 ]
+  burst: 1
+  ammunitions: Nimbus
+  traits: [ Impact Template (Circular), Non-Lethal, Reflective, Speculative Fire, Targetless ]
