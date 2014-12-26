@@ -859,3 +859,139 @@
     description: 
     swc: 0
     cost: 16
+- 
+  isc: Sierra Dronbots
+  longisc: "'SIERRA' DRONBOTS"
+  code: 116
+  faction: 1
+  logo: sierra_dronbots
+  name: SIERRA DRONBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "G: Remote Presence", Total Reaction ]
+  equipments: [ 360° Visor ]
+  bsw: [ HMG ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    swc: 1
+    cost: 25
+- 
+  isc: Clipper Dronbots
+  longisc: "'CLIPPER' DRONBOTS"
+  code: 117
+  faction: 1
+  logo: clipper_dronbots
+  name: CLIPPER DRONBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  bsw: [ Smart Missile Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: SML
+    swc: 1.5
+    cost: 18
+- 
+  isc: Fugazi Dronbots
+  longisc: 
+  code: 118
+  faction: 1
+  logo: fugazi_dronbots
+  name: FUGAZI DRONBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-6
+  cc: 8
+  bs: 8
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "CH: Mimetism", "G: Remote Presence", Repeater ]
+  bsw: [ Flash Pulse, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 8
+- 
+  isc: "Jeanne d'Arc"
+  longisc: JOAN OF ARC
+  code: 119
+  faction: 1
+  logo: joan_of_arc
+  name: JOAN OF ARC
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 23
+  bs: 15
+  ph: 15
+  wip: 15
+  arm: 5
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  cube: C
+  impetuous: F
+  skills: [ Inspiring Leadership, Martial Arts L3, Religious Troop, "V: No Wound Incapacitation" ]
+  bsw: [ MULTI Rifle, Nanopulser ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: APCCW
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 49
+  - 
+    code: 2
+    description: DACCW
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 50
+  - 
+    code: 3
+    description: Lt+APCCW
+    skills: [ Lieutenant ]
+    ccw: [ AP CCW ]
+    swc: -1
+    cost: 49
+  - 
+    code: 4
+    description: Lt+DACCW
+    skills: [ Lieutenant ]
+    ccw: [ DA CCW ]
+    swc: -1
+    cost: 50
