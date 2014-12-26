@@ -70,7 +70,12 @@
                     ava: "AVA"
                 }
             })).find('.ia-trooperSelectorOptionRow').on('click', function () {
-                roster.addTrooper(data.findTrooperByCode(trooperCode).findTrooperOptionByCode(Number($(this).data('ia-optioncode'))));
+                if ($(this).hasClass('ia-selected')) {
+                    roster.addTrooper(data.findTrooperByCode(trooperCode).findTrooperOptionByCode(Number($(this).data('ia-optioncode'))));
+                } else {
+                    $(this).parent().find('.ia-selected').removeClass('ia-selected');
+                    $(this).addClass('ia-selected');
+                }
             });
         }
     };
