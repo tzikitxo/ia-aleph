@@ -18,10 +18,30 @@
 
     var weaponsDisplayTemplate = Handlebars.compile($('#ia-weaponsDisplayTemplate').html());
 
+    var weaponLikeEquipsAndSkills = {
+        'MediKit': 'MediKit',
+        'Forward Observer': 'Forward Observer'
+    };
+    var discoverWeapon = 'Discover',
+            bareHandsWeapon = 'Bare Hands',
+            suppressionFireWeapon = 'Suppressive Fire Mode';
     ui.weaponsDisplay = {
         showWeaponsDisplayForTrooper: function (trooper) {
             var weapons = [];
-            $.each(trooper.allWeapons, function (i, weaponName) {
+            var allWeapons = [].concat(trooper.allWeapons);
+            $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
+                if (weaponLikeEquipsAndSkills[name]) {
+                    allWeapons.push(weaponLikeEquipsAndSkills[name]);
+                }
+            });
+            allWeapons.push(discoverWeapon);
+            var addBarehands = true;
+            $.each(allWeapons, function (i, weaponName) {
+                if (weaponName.match(/\+/)) {
+                    allWeapons.push.apply(allWeapons, weaponName.split(/ *\+ */));
+                }
+            });
+            $.each(allWeapons, function (i, weaponName) {
                 var weaponsByName = data.findWeaponsByName(weaponName);
                 if (weaponsByName) {
                     weapons = weapons.concat(weaponsByName);
@@ -29,8 +49,38 @@
                     log('WARNING: weapons not found for name = ', weaponName);
                 }
             });
+            var addBarehands = true;
+            $.each(weapons, function (i, weapon) {
+                if ($.inArray('CC', weapon.traits) !== -1) {
+                    addBarehands = false;
+                }
+            });
+            if (addBarehands) {
+                weapons.push(data.findWeaponsByName(bareHandsWeapon)[0]);
+            }
+            var weapons2 = [];
+            $.each(weapons, function (i, weapon) {
+                if (weapons.mode !== suppressionFireWeapon && $.inArray('Suppressive Fire', weapon.traits) !== -1) {
+                    var supFire = data.findWeaponsByName(suppressionFireWeapon)[0];
+                    supFire = $.extend({}, supFire, {
+                        damage: weapon.damage,
+                        ammunitions: weapon.ammunitions,
+                        traits: weapon.traits,
+                        name: weapon.name,
+                        mode: supFire.name
+                    });
+                    weapons2.push(supFire);
+                }
+                weapon = $.extend({}, weapon);
+
+                if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
+                    weapon.damage = eval(weapon.damage.replace(/WIP/, trooper.wip).replace(/PH/, trooper.ph));
+                }
+
+                weapons2.push(weapon);
+            });
             $('#ia-weaponsDisplayContainer').html(weaponsDisplayTemplate({
-                weapons: weapons
+                weapons: weapons2
             }));
         }
     }
