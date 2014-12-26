@@ -59,6 +59,12 @@ var data = ia.data;
             option.allCcw = [].concat(trooper.ccw).concat(option.ccw);
             option.allSkills = [].concat(trooper.skills).concat(option.skills);
             option.allEquipments = [].concat(trooper.equipments).concat(option.equipments);
+            if (typeof option.swc === 'number' && option.swc < 0) {
+                option.positiveSwc = true;
+                option.swcStr = '+' + (-option.swc);
+            } else {
+                option.swcStr = option.swc;
+            }
             trooperOptionsByCode[option.code] = option;
             return option;
         });
