@@ -512,3 +512,350 @@
     bsw: [ Spitfire ]
     swc: 2
     cost: 50
+- 
+  isc: Aquila Guard
+  longisc: 
+  code: 107
+  faction: 1
+  logo: aquila_guard
+  name: AQUILA
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 15
+  bs: 15
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  cube: C
+  equipments: [ Multispectral Visor L3 ]
+  ccw: [ Pistol, Shock CCW ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 58
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 62
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 58
+- 
+  isc: Swiss Guard
+  longisc: 
+  code: 108
+  faction: 1
+  logo: swiss_guard
+  name: SWISS GUARD
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 15
+  bs: 15
+  ph: 14
+  wip: 13
+  arm: 5
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  cube: C
+  skills: [ "CH: TO Camouflage" ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 64
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 68
+  - 
+    code: 3
+    description: ML
+    bsw: [ Missile Launcher, Light Shotgun ]
+    swc: 2
+    cost: 69
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ MULTI Rifle ]
+    swc: 0.5
+    cost: 70
+-
+  isc: Squalos, PanOceanian Armored Cavalry Heavy Lancers
+  longisc: SQUALOS, PanOceanian Armored Cavalry Heavy Lancers
+  logo: armoured_cavalry
+  faction: 1
+  code: 109
+  name: Squalo
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 17
+  wip: 12
+  arm: 8
+  bts: 6
+  w: 3
+  str: true
+  s: 7
+  ava: 2
+  cube: R
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Advanced ECM ]
+  bsw: [ MULTI HMG ]
+  ccw: [ AP Heavy Pistol ]
+  options:
+  - 
+    code: 1
+    description: MHMG
+    swc: 2
+    cost: 93
+  - 
+    code: 2
+    description: HGL
+    bsw: [ Heavy Grenade Launcher ]
+    swc: 2.5
+    cost: 95
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 2
+    cost: 93- 
+  isc: Dragões, Acontecimento Dragoons
+  longisc: DRAGÕES, Acontecimento Dragoons
+  code: 110
+  faction: 1
+  logo: dragoes
+  name: DRÃGAO
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 17
+  wip: 12
+  arm: 8
+  bts: 6
+  w: 3
+  s: 7
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  equipments: [ ECM ]
+  bsw: [ Hyper-Rapid Magnetic Cannon, Heavy Flamethrower ]
+  options:
+  - 
+    code: 1
+    description: HMC
+    swc: 2.5
+    cost: 94
+- 
+  isc: Cutters, Varuna Naval Chasseurs
+  longisc: CUTTERS, Varuna Naval Chasseurs
+  code: 111
+  faction: 1
+  logo: cutters
+  name: CUTTER
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 17
+  wip: 12
+  arm: 8
+  bts: 6
+  w: 3
+  s: 7
+  ava: 1
+  skills: [ Aquatic Terrain, "CH: TO Camouflage", "G: Remote Presence" ]
+  equipments: [ ECM ]
+  bsw: [ MULTI HMG ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    swc: 2.5
+    cost: 115
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 3
+    cost: 115
+- 
+  isc: Croc Men
+  longisc: Paradiso CROC MEN
+  code: 112
+  faction: 1
+  logo: croc_men
+  name: CROC MAN
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  cube: C
+  skills: [ "CH: TO Camouflage", Infiltration, Multiterrain ]
+  equipments: [ X Visor ]
+  bsw: [ Antipersonnel Mines ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 30
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 29
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 38
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 36
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer, Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 32
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 2
+    cost: 30
+- 
+  isc: Trauma-Docs
+  longisc: TRAUMA-DOCS
+  code: 113
+  faction: 1
+  logo: trauma_docs
+  name: TRAUMA-DOC
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  cube: C
+  skills: [ Doctor ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Doctor
+    swc: 0
+    cost: 14
+- 
+  isc: Machinists
+  longisc: 
+  code: 114
+  faction: 1
+  logo: machinists
+  name: MACHINIST
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  cube: C
+  skills: [ Engineer ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Engineer
+    swc: 0
+    cost: 15
+- 
+  isc: Pathfinder Dronbots
+  longisc: 
+  code: 115
+  faction: 1
+  logo: pathfinder_dronbots
+  name: PATHFINDER DRONBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Deactivator, Forward Observer, "G: Remote Presence", Repeater, Sat-lock, Sensor ]
+  bsw: [ Combi Rifle, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 16
