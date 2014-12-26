@@ -57,6 +57,7 @@ var data = ia.data;
             //TODO sort by range
             option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
             option.allCcw = [].concat(trooper.ccw).concat(option.ccw);
+            option.allWeapons = [].concat(option.allBsw).concat(option.allCcw);
             option.allSkills = [].concat(trooper.skills).concat(option.skills);
             option.allEquipments = [].concat(trooper.equipments).concat(option.equipments);
             if (typeof option.swc === 'number' && option.swc < 0) {
@@ -107,5 +108,8 @@ var data = ia.data;
         }
         return weapon;
     });
+    data.findWeaponsByName = function (name) {
+        return weaponsByName[name];
+    };
 
 })();

@@ -32,7 +32,8 @@
                     <img id="ia-mainMenuButton" src="img/app/app_logo.png" title="{{messages.mainMenu}}" ></img>
                     <div id="ia-unitSelectorContainer"></div>
                 </div>
-                <div id="ia-mainScreenCenter"></div>                
+                <div id="ia-mainScreenCenter"></div>                     
+                <div id="ia-weaponsDisplayContainer"></div>
             </div>
         </script>
         <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">
@@ -164,6 +165,25 @@
                     </table>
                     <div class="ia-trooperSelectorOptionListFooter" ></div>
                 </div>
+            </div>
+        </script>
+        <script id="ia-weaponsDisplayTemplate" type="text/x-handlebars-template">
+            <div id="ia-weaponsDisplay">
+                <table class="ia-weaponsDisplayTable">
+                    <thead></thead>
+                    <tbody>
+                        {{#each weapons}}
+                        <tr>
+                            <td>{{name}}</td>
+                            <td>{{#if hasRange}}range{{else}}-{{/if}}</td>
+                            <td class="ia-weaponDamageCell" >{{damage}}</td>
+                            <td class="ia-weaponBurstCell" >{{burst}}</td>
+                            <td class="ia-weaponAmmunitionsCell" >{{ammunitions}}</td>
+                            <td>{{join traits}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </script>
         <script type="text/javascript" src="js/ia-lib.js"></script>
