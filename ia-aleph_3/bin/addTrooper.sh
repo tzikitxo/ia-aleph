@@ -23,7 +23,7 @@ function readSingleValue(){
 }
 readSingleValue faction "`cat /tmp/factionId`" /tmp/factionId
 readSingleValue logo "`grep '^ *isc *:' $t | tail -n1 | sed 's# *isc *: *##' | tr '[:upper:]' '[:lower:]' | tr -c '[a-z0-9]' '_' | tr -s '_' | sed -r 's#^_|_$##g'`"
-for name in name type classification mov cc bs ph wip arm bts w s ava cube irregular impetuous; do
+for name in name type classification mov cc bs ph wip arm bts w s ava backup irregular impetuosity; do
 	readSingleValue $name
  #       echo -n "  $name : "
  #       read value

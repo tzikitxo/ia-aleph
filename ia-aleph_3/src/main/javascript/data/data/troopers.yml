@@ -19,7 +19,7 @@
   w: 1
   s: 2
   ava: T
-  cube: C
+  backup: C
   ccw: [ Pistol, Knife ]
   options:
   - 
@@ -101,7 +101,7 @@
   w: 1
   s: 2
   ava: 3
-  cube: C
+  backup: C
   skills: [ "AD: Combat Jump", Religious Troop ]
   ccw: [ Pistol, E/M CCW ]
   options:
@@ -150,7 +150,7 @@
   w: 1
   s: 2
   ava: 2
-  cube: C
+  backup: C
   skills: [ "CH: Mimetism", Multiterrain ]
   equipments: [ Multispectral Visor L2 ]
   ccw: [ Pistol, Knife ]
@@ -215,7 +215,7 @@
   w: 1
   s: 2
   ava: 3
-  cube: C
+  backup: C
   skills: [ Bioimmunity, Veteran L1 ]
   ccw: [ Pistol, Knife ]
   options:
@@ -297,7 +297,7 @@
   w: 2
   s: 2
   ava: 3
-  cube: C
+  backup: C
   ccw: [ Pistol, Knife ]
   options:
   - 
@@ -371,8 +371,8 @@
   w: 2
   s: 2
   ava: 1
-  cube: C
-  impetuous: F
+  backup: C
+  impetuosity: F
   skills: [ Martial Arts L2, Religious Troop ]
   ccw: [ Pistol ]
   options:
@@ -455,7 +455,7 @@
   w: 2
   s: 2
   ava: 2
-  cube: C
+  backup: C
   skills: [ Assault, Kinematika L1, Religious Troop ]
   ccw: [ Breaker Pistol, DA CCW ]
   options:
@@ -531,7 +531,7 @@
   w: 2
   s: 2
   ava: 1
-  cube: C
+  backup: C
   equipments: [ Multispectral Visor L3 ]
   ccw: [ Pistol, Shock CCW ]
   options:
@@ -573,7 +573,7 @@
   w: 2
   s: 2
   ava: 1
-  cube: C
+  backup: C
   skills: [ "CH: TO Camouflage" ]
   ccw: [ Pistol, AP CCW ]
   options:
@@ -623,7 +623,7 @@
   str: true
   s: 7
   ava: 2
-  cube: R
+  backup: R
   skills: [ "G: Remote Presence" ]
   equipments: [ Advanced ECM ]
   bsw: [ MULTI HMG ]
@@ -726,7 +726,7 @@
   w: 1
   s: 2
   ava: 2
-  cube: C
+  backup: C
   skills: [ "CH: TO Camouflage", Infiltration, Multiterrain ]
   equipments: [ X Visor ]
   bsw: [ Antipersonnel Mines ]
@@ -791,7 +791,7 @@
   w: 1
   s: 2
   ava: 1
-  cube: C
+  backup: C
   skills: [ Doctor ]
   equipments: [ MediKit ]
   bsw: [ Combi Rifle ]
@@ -821,7 +821,7 @@
   w: 1
   s: 2
   ava: 1
-  cube: C
+  backup: C
   skills: [ Engineer ]
   bsw: [ Combi Rifle, D-Charges ]
   ccw: [ Pistol, Knife ]
@@ -963,8 +963,8 @@
   w: 2
   s: 2
   ava: 1
-  cube: C
-  impetuous: F
+  backup: C
+  impetuosity: F
   skills: [ Inspiring Leadership, Martial Arts L3, Religious Troop, "V: No Wound Incapacitation" ]
   bsw: [ MULTI Rifle, Nanopulser ]
   ccw: [ Pistol ]
