@@ -51,7 +51,7 @@ body{
 // UNIT SELECTOR
 
 #ia-unitSelectorContainer {
-display: inline-block;
+    display: inline-block;
 
     .ia-unitSelector{
         display: inline-block;
@@ -71,8 +71,49 @@ display: inline-block;
 // ROSTER
 
 #ia-rosterContainerOnTopBar{
-display: inline-block;
-    
+    display: inline-block;
+}
+.ia-rosterTrooperEntry{
+
+    cursor: pointer;
+    &.ia-selected{
+        color: yellow;
+        text-shadow: 1px 1px black;
+    }
+}
+.ia-rosterTrooperEntryLogo{
+    width: 16px;
+    height: 16px;
+}
+#ia-rosterContainerOnTopBar .ia-rosterBody{
+    display: none;
+}
+#ia-rosterContainerOnTopBar.ia-showRosterBody .ia-rosterContainer{
+    position: fixed;
+    top:0;
+    right:0;
+    z-index:10;
+    width: 300px;
+    padding: 5px 5px 10px 10px;
+
+    border: 2px solid @headerBorderColor;
+    border-top: 0;
+    border-right: 0;
+    background-color: @headerBgColor;
+
+    .ia-rosterBody{
+        display: block;
+    }
+}
+.ia-rosterTable{
+    width: 100%;
+    border-collapse: collapse;
+    .ia-rosterEntrySwcCell, .ia-rosterEntryCostCell{
+        text-align: center;
+    }
+    tr:nth-child(even) {
+        background-color: @tableRowAlternateColor;
+    }
 }
 
 // TROOPER SELECTOR 
@@ -213,7 +254,7 @@ display: inline-block;
     .ia-trooperSelectorOptionRow{
         text-shadow: 1px 1px white;
     }
-    .ia-trooperSelectorOptionRow:hover{
+    .ia-trooperSelectorOptionRow.ia-selected{
         color: yellow;
         text-shadow: 1px 1px black;
     }

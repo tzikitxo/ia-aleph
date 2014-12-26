@@ -61,15 +61,26 @@ var roster = ia.roster = {};
 
     ui.armyRoster = {
         updateArmyRoster: function () {
-            $('#ia-rosterContainerOnTopBar').html(rosterTemplate({
+            var rosterContainer = $('#ia-rosterContainerOnTopBar').html(rosterTemplate({
                 messages: {
                     swc: "swc",
                     troopers: "troopers",
                     points: "points"
                 },
                 roster: roster.getRosterData()
-            })).find('.ia-rosterTrooperEntry').on('click', function () {
-                roster.removeTrooperByIndex(Number($(this).data('ia-entryindex')));
+            }));
+            rosterContainer.find('.ia-rosterTopBar').on('click', function () {
+                rosterContainer.toggleClass('ia-showRosterBody');
+                return false;
+            });
+            rosterContainer.find('.ia-rosterTrooperEntry').on('click', function () {
+                if ($(this).hasClass('ia-selected')) {
+                    roster.removeTrooperByIndex(Number($(this).data('ia-entryindex')));
+                } else {
+                    $(this).parent().find('.ia-selected').removeClass('ia-selected');
+                    $(this).addClass('ia-selected');
+                }
+                return false;
             });
         }
     };

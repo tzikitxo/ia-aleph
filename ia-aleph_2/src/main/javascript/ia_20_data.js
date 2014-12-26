@@ -44,10 +44,14 @@ var data = ia.data;
         trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO
         var trooperOptionsByCode = {};
         trooper.options = $.map(trooper.options, function (option) {
-            option = $.extend({
+            option = $.extend({}, trooper, {
                 swc: '',
-                cost: ''
-            }, trooper, option);
+                cost: '',
+                bsw: [],
+                ccw: [],
+                skills: [],
+                equipments: []
+            }, option);
             //TODO sort by range
             option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
             option.allCcw = [].concat(trooper.ccw).concat(option.ccw);
