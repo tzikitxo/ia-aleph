@@ -4,7 +4,7 @@
 
     <groupId>it.anyplace</groupId>
     <artifactId>ia-aleph</artifactId>
-    <version>4.0-SNAPSHOT</version>
+    <version>3.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>ia-aleph</name>
