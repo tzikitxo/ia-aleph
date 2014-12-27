@@ -25,6 +25,8 @@
             weaponsButtonTitle: 'Weapons'
         }
     }));
+    
+    data.loadTroopersByFaction(1);
 
     ui.unitSelector.showUnitSelector();
     ui.trooperSelector.showTrooperSelector();
