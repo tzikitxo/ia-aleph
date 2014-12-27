@@ -1371,3 +1371,200 @@
     bsw: [ Hyper-Rapid Magnetic Cannon ]
     swc: 2
     cost: 54
+- 
+  isc: Wú Míng Assault Corps
+  longisc: WÚ MÍNG Assault Corps (Those Without Name)
+  code: 125
+  faction: 2
+  logo: wu_ming
+  name: WU MÍNG
+  type: HI
+  classification: Line Troops
+  mov: 4-4
+  cc: 16
+  bs: 13
+  ph: 13
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 3
+  skills: [ Kinematika L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle + Light GL ]
+    swc: 0
+    cost: 39
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 39
+  - 
+    code: 3
+    description: Nimbus
+    bsw: [ MULTI Rifle + Nimbus Light GL ]
+    swc: 0
+    cost: 35
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun + 1 TinBot B (Deflector L2) ]
+    swc: 0.5
+    cost: 33
+  - 
+    code: 5
+    description: Panzerfaust
+    bsw: [ Panzerfaust, Light Shotgun ]
+    swc: 0.5
+    cost: 29
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 31
+- 
+  isc: Dàofei Tactical Section
+  longisc: DÀOFEI Tactical Section
+  code: 126
+  faction: 2
+  logo: daofei
+  name: DÀOFEI
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 16
+  bs: 13
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Camouflage", Infiltration ]
+  ccw: [ Pistol, Shock CCW ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 53
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 57
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 48
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 55
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ MULTI Rifle ]
+    swc: 0.5
+    cost: 59
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 53
+  - 
+    code: 7
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 55
+- 
+  isc: Hac Tao Special Unit
+  longisc: HAC TAO Special Unit
+  code: 127
+  faction: 2
+  logo: hac_tao
+  name: HAC TAO
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 19
+  bs: 14
+  ph: 14
+  wip: 14
+  arm: 5
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage", Kinematika L1 ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle, Nanopulser ]
+    swc: 0
+    cost: 64
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG, Nanopulser ]
+    swc: 2
+    cost: 68
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Nanopulser ]
+    swc: 0
+    cost: 59
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher, Nanopulser ]
+    swc: 2
+    cost: 65
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ MULTI Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 70
+  - 
+    code: 6
+    description: XO
+    equipments: [ Executive Order ]
+    bsw: [ MULTI Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 65
+  - 
+    code: 7
+    description: XO+HMG
+    equipments: [ Executive Order ]
+    bsw: [ HMG, Nanopulser ]
+    swc: 2
+    cost: 69
