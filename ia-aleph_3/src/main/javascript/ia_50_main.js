@@ -21,13 +21,15 @@
 
     $('#ia-mainContainer').html(mainScreenTemplate({
         messages: {
-            mainMenu: 'Main Menu'
+            mainMenu: 'Main Menu',
+            weaponsButtonTitle: 'Weapons'
         }
     }));
 
     ui.unitSelector.showUnitSelector();
     ui.trooperSelector.showTrooperSelector();
     ui.armyRoster.updateArmyRoster();
+    ui.weaponsDisplay.initializeWeaponsDisplay();
 
     $('#ia-loadingContainer').hide();
     $('#ia-mainContainer').show();

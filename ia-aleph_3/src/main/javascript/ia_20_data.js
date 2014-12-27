@@ -52,7 +52,16 @@ var data = ia.data;
                 bsw: [],
                 ccw: [],
                 skills: [],
-                equipments: []
+                equipments: [],
+                hasSkillOrEquipment:function(name){
+                    if($.inArray(name,this.allSkills)!==-1){
+                        return true;
+                    }else if($.inArray(name,this.allEquipments)!==-1){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
             }, option);
             //TODO sort by range
             option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
@@ -98,7 +107,10 @@ var data = ia.data;
         weapon = $.extend({
             damage: '-',
             traits: [],
-            ammunitions: '-'
+            ammunitions: '-',
+            hasTrait:function(trait){
+                return $.inArray(trait, this.traits) !== -1;
+            }
         }, weapon);
         weapon.hasRange = weapon.ranges ? true : false;
         if (weaponsByName[weapon.name]) {

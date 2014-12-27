@@ -76,7 +76,7 @@
                 } else {
                     $(this).parent().find('.ia-selected').removeClass('ia-selected');
                     $(this).addClass('ia-selected');
-                    ui.weaponsDisplay.showWeaponsDisplayForTrooper(trooper);
+                    ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
                 }
             });
         }
