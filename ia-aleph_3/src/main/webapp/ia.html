@@ -63,26 +63,31 @@
         </script>
         <script id="ia-rosterTemplate" type="text/x-handlebars-template">
             <div class="ia-rosterContainer">
-            <div class="ia-rosterTopBar">
-            {{messages.troopers}}: <b>{{roster.trooperCount}}</b> {{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b>  {{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b>
-            <span class="ia-warning">{{join roster.warningMessages}}</span>
-            </div>
-            <div class="ia-rosterBody">
-            <table class="ia-rosterTable">
-            <thead></thead>
-            <tbody>
-            {{#each roster.troopers}}
-            <tr class="ia-rosterTrooperEntry" data-ia-entryindex="{{@index}}">
-            <td><img class="ia-rosterTrooperEntryLogo" src="img/troop/{{logo}}_logo.png"></td>
-            <td>{{name}}</td>
-            <td>{{description}}</td>
-            <td class="ia-rosterEntrySwcCell">{{swcStr}}</td>
-            <td class="ia-rosterEntryCostCell">{{cost}}</td>
-            </tr>
-            {{/each}}
-            </tbody>
-            </table>
-            </div>       
+                <div class="ia-rosterTopBar">
+                <div class="ia-rosterDownButton" style="display: none;"></div>
+                {{messages.troopers}}: <b>{{roster.trooperCount}}</b> {{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b>  {{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b>
+                <span class="ia-warning">{{join roster.warningMessages}}</span>
+                </div>
+                <div class="ia-rosterMainContainer">
+                    
+                    <div class="ia-rosterBody">
+                        <table class="ia-rosterTable">
+                            <thead></thead>
+                            <tbody>
+                                {{#each roster.troopers}}
+                                <tr class="ia-rosterTrooperEntry" data-ia-entryindex="{{@index}}">
+                                <td><img class="ia-rosterTrooperEntryLogo" src="img/troop/{{logo}}_logo.png"></td>
+                                <td>{{name}}</td>
+                                <td>{{description}}</td>
+                                <td class="ia-rosterEntrySwcCell">{{swcStr}}</td>
+                                <td class="ia-rosterEntryCostCell">{{cost}}</td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                        <div class="ia-rosterUpButton"></div>
+                    </div>       
+                </div>    
             </div>
         </script>
         <script id="ia-trooperSelectorTemplate" type="text/x-handlebars-template">

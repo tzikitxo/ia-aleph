@@ -79,20 +79,15 @@ var roster = ia.roster = {};
                 },
                 roster: roster.getRosterData()
             }));
-            rosterContainer.find('.ia-rosterTopBar').on('click', function () {
-                $('.ia-rosterBody', rosterContainer).toggle('fast');
-//                if (rosterContainer.hasClass('ia-showRosterBody')) {
-//                    $('.ia-rosterBody', rosterContainer).hide('fast', function () {
-//                        rosterContainer.removeClass('ia-showRosterBody');
-//                        $('.ia-rosterBody', rosterContainer).css('display', '');
-//                    });
-//                } else {
-//                    $('.ia-rosterBody', rosterContainer).hide();
-////                    rosterContainer.addClass('ia-showRosterBody');
-//                    $('.ia-rosterBody', rosterContainer).show('fast');
-////                    $('.ia-rosterBody', rosterContainer).css('display', '');
-//                }
-//                rosterContainer.toggleClass('ia-showRosterBody');
+            rosterContainer.find('.ia-rosterDownButton').on('click', function () {
+                $('.ia-rosterDownButton', rosterContainer).hide();
+                $('.ia-rosterBody', rosterContainer).show('fast');
+                return false;
+            });
+            rosterContainer.find('.ia-rosterUpButton').on('click', function () {
+                $('.ia-rosterBody', rosterContainer).hide('fast', function () {
+                    $('.ia-rosterDownButton', rosterContainer).show();
+                });
                 return false;
             });
             rosterContainer.find('.ia-rosterTrooperEntry').on('click', function () {
