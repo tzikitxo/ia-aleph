@@ -146,11 +146,13 @@ var data = ia.data;
             }
         }, weapon);
         weapon.hasRange = weapon.ranges ? true : false;
-        if (weaponsByName[weapon.name]) {
-            weaponsByName[weapon.name].push(weapon);
-        } else {
-            weaponsByName[weapon.name] = [weapon];
-        }
+        $.each(weapon.names || [weapon.name], function (i, weaponName) {
+            if (weaponsByName[weaponName]) {
+                weaponsByName[weaponName].push(weapon);
+            } else {
+                weaponsByName[weaponName] = [weapon];
+            }
+        });
         return weapon;
     });
     data.findWeaponsByName = function (name) {

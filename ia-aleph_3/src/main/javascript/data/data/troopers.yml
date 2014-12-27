@@ -1700,3 +1700,425 @@
   - 
     code: 1
     description: 
+- 
+  isc: Guiláng Skirmishers
+  longisc: GUILÁNG Skirmishers
+  code: 131
+  faction: 2
+  logo: guilang
+  name: GUILÁNG
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain ]
+  equipments: [ Multispectral Visor L1 ]
+  bsw: [ Antipersonnel Mines ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 33
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 31
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer, Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 27
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 2
+    cost: 25
+- 
+  isc: Ninjas
+  longisc: 
+  code: 132
+  faction: 2
+  logo: ninjas
+  name: NINJA
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 23
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: TO Camouflage", Infiltration, Kinematika L1, Martial Arts L3, Multiterrain ]
+  ccw: [ Pistol,Knife ]
+  options:
+  - 
+    code: 1
+    description: Archer
+    bsw: [ Tactical Bow ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: Combi
+    bsw: [ Combi Rifle ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 34
+  - 
+    code: 3
+    description: APCCW
+    bsw: [ Combi Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 34
+  - 
+    code: 4
+    description: DACCW
+    bsw: [ Combi Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 35
+  - 
+    code: 5
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    ccw: [ Shock CCW ]
+    swc: 1.5
+    cost: 42
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    ccw: [ Shock CCW ]
+    swc: 0.5
+    cost: 40
+- 
+  isc: Shaolin Warrior Monks
+  longisc: SHAOLIN Warrior Monks
+  code: 133
+  faction: 2
+  logo: shaolin_warrior_monks
+  name: SHAOLIN
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 22
+  bs: 9
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L1, Martial Arts L3, Religious Troop ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle,Smoke Grenades ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 11
+  - 
+    code: 2
+    description: APCCW
+    bsw: [ Combi Rifle,Smoke Grenades ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 11
+  - 
+    code: 3
+    description: DACCW
+    bsw: [ Combi Rifle,Smoke Grenades ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 12
+  - 
+    code: 4
+    description: Chain
+    bsw: [ Chain Rifle,Smoke Grenades ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 5
+  - 
+    code: 5
+    description: BS
+    bsw: [ Boarding Shotgun,Smoke Grenades ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 10
+  - 
+    code: 6
+    description: SLGL
+    bsw: [ Combi Rifle + Smoke Light GL ]
+    ccw: [ Shock CCW ]
+    swc: 1
+    cost: 11
+- 
+  isc: Zhanshi Yisheng
+  longisc: Zhanshi YISHENG
+  code: 134
+  faction: 2
+  logo: yisheng
+  name: Zhanshi YISHENG
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Doctor ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Doctor
+    swc: 0
+    cost: 15
+- 
+  isc: Mech-Engineer, Zhanshi Gongchéng
+  longisc: MECH-ENGINEERS (Zhanshi Gongchéng)
+  code: 135
+  faction: 2
+  logo: zhanshi_gongcheng
+  name: MECH-ENGINEER
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Engineer ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Engineer
+    swc: 0
+    cost: 15
+- 
+  isc: Wèibing Yáokòng
+  longisc: WÈIBING Yáokòng (Guardian Remote)
+  code: 136
+  faction: 2
+  logo: weibing_yaokong
+  name: WÈIBING Yaókòng
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Deactivator, Forward Observer, "G: Remote Presence", Repeater, Sat-lock, Sensor ]
+  bsw: [ Combi Rifle, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 16
+- 
+  isc: Hùsòng Yáokòng
+  longisc: HÙSÒNG Yáokòng (Escort Remote)
+  code: 137
+  faction: 2
+  logo: husong_yaokong
+  name: HÙSÒNG Yaókòng
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "G: Remote Presence", Total Reaction ]
+  equipments: [ 360° Visor ]
+  bsw: [ HMG ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    swc: 1
+    cost: 25
+- 
+  isc: Son-Bae Yaókòng
+  longisc: SON-BAE Yáokòng
+  code: 138
+  faction: 2
+  logo: son_bae_yaokong
+  name: SON-BAE Yaókòng
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  bsw: [ Smart Missile Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: SML
+    swc: 1.5
+    cost: 18
+- 
+  isc: Chaiyì Yáokòng
+  longisc: CHAIYÌ Yáokòng (Messenger Remote)
+  code: 139
+  faction: 2
+  logo: chaiyi_yaokong
+  name: CHAIYÌ Yaókòng
+  type: REM
+  classification: Support Troops
+  mov: 6-6
+  cc: 8
+  bs: 8
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "CH: Mimetism","G: Remote Presence", Repeater ]
+  bsw: [ Flash Pulse, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 8
+- 
+  isc: Sun Tze
+  longisc: 
+  code: 140
+  faction: 2
+  logo: sun_tze
+  name: SUN TZE
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 12
+  wip: 17
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Strategos L3, Total Immunity,"V: No Wound Incapacitation" ]
+  bsw: [ Nanopulser (2), Flash Pulse ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 55
+  - 
+    code: 2
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 60
+  - 
+    code: 3
+    description: Lt+BS
+    skills: [ Lieutenant ]
+    equipments: [ Advanced Command ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 60
+  - 
+    code: 4
+    description: Lt+MULTI
+    skills: [ Lieutenant ]
+    equipments: [ Advanced Command ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 65
