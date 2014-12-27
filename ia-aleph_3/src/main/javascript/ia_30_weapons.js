@@ -46,12 +46,12 @@
 
 
     var weaponLikeEquipsAndSkills = {
-        'MediKit': 'MediKit',
-        'Forward Observer': 'Forward Observer'
+        'MediKit': ['MediKit'],
+        'Forward Observer': ['Forward Observer', 'Flash Pulse']
     };
     ui.weaponsDisplay = {
-        initializeWeaponsDisplay:function(){
-            $('#ia-weaponsDisplayButton').on('click',function(){
+        initializeWeaponsDisplay: function () {
+            $('#ia-weaponsDisplayButton').on('click', function () {
                 $('#ia-weaponsDisplayContainer').show('fast');
             });
         },
@@ -60,7 +60,7 @@
             var allWeapons = [].concat(trooper.allWeapons);
             $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
                 if (weaponLikeEquipsAndSkills[name]) {
-                    allWeapons.push(weaponLikeEquipsAndSkills[name]);
+                    allWeapons.push.apply(allWeapons, weaponLikeEquipsAndSkills[name]);
                 }
             });
             allWeapons.push(discoverWeapon);
@@ -168,7 +168,7 @@
                     rangeSpec: "(up to)"
                 }
             }));
-            $('#ia-weaponsDisplayContainer .ia-weaponDownButton').on('click',function(){
+            $('#ia-weaponsDisplayContainer .ia-weaponDownButton').on('click', function () {
                 $('#ia-weaponsDisplayContainer').hide('fast');
             });
         }
