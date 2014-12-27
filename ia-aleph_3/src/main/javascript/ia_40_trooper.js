@@ -40,6 +40,18 @@
             return '';
         }
     });
+    Handlebars.registerHelper("trooperAvailableAva", function (context) {
+        if (context.hasLimitedAva) {
+            var availableAva = roster.getAvailableAvaByTrooperCode(context.code);
+            if (availableAva !== context.ava) {
+                return ' (' + availableAva + ')';
+            } else {
+                return '';
+            }
+        } else {
+            return '';
+        }
+    });
 
     var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 
@@ -89,6 +101,7 @@
             }
             addSelectListener(trooperSelector, function (trooper) {
                 roster.addTrooper(trooper);
+                //TODO update view (ava) after add
             });
             $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
             if (trooper.otherprofiles) {
