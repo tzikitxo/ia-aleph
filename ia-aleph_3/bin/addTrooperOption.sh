@@ -24,8 +24,8 @@ done
 echo "## TROOPER OPTION DATA ##"
 cat $t
 echo "## TROOPER OPTION DATA ##"
-echo "append data to troopers.yml?"
-read
+#echo "append data to troopers.yml?"
+#read
 cat $t >> ./src/main/javascript/data/data/troopers.yml
 rm $t
 

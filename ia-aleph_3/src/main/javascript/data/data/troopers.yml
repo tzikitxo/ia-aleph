@@ -2122,3 +2122,192 @@
     bsw: [ MULTI Rifle ]
     swc: 0
     cost: 65
+    
+# ARIADNA
+    
+- 
+  isc: Line Kazaks
+  longisc: 
+  code: 141
+  faction: 3
+  logo: line_kazaks
+  name: LINE KAZAK
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 9
+  - 
+    code: 2
+    description: HMG
+    bsw: [ AP HMG ]
+    swc: 1
+    cost: 23
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Rifle, Light Grenade Launcher ]
+    swc: 1
+    cost: 13
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 16
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 17
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 10
+  - 
+    code: 7
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 11
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 9
+- 
+  isc: Para-Commandos
+  longisc: 1er Régiment de PARA-COMMANDOS
+  code: 142
+  faction: 3
+  logo: para_commandos
+  name: PARA-COMMANDO
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  skills: [ "AD: Parachutist","CH: Mimetism" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 20
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 31
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 22
+  - 
+    code: 4
+    description: LGL
+    bsw: [ Rifle, Light Grenade Launcher ]
+    swc: 1
+    cost: 24
+  - 
+    code: 5
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 21
+- 
+  isc: Kazak Spetsnazs
+  longisc: 
+  code: 143
+  faction: 3
+  logo: kazak_spetsnazs
+  name: SPETSNAZ
+  type: LI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Marksmanship L2, Martial Arts L2 ]
+  ccw: [ Pistol,Knife ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    skills: [ "CH: Ambush Camouflage" ]
+    bsw: [ HMG ]
+    ccw: [ CCW ]
+    swc: 1.5
+    cost: 38
+  - 
+    code: 2
+    description: Sniper
+    skills: [ "CH: Ambush Camouflage" ]
+    bsw: [ Sniper Rifle ]
+    ccw: [ CCW ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 3
+    description: BS
+    skills: [ "CH: Mimetism", "AD: Parachutist" ]
+    bsw: [ Boarding Shotgun, Grenades ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 33
+  - 
+    code: 4
+    description: Rifle
+    skills: [ "CH: Mimetism", "AD: Parachutist" ]
+    bsw: [ Rifle, Grenades ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 31
