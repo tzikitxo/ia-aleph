@@ -116,13 +116,8 @@
                     </div>
                     <div class="ia-trooperImpetuosity">
                         {{#if trooper.isFrenzy}}<img class="ia-trooperIcon" src="img/icon/frenzy_icon.png"></img>{{/if}}                        
-                        {{#if trooper.isImpetuous}}
-                            {{#if trooper.isExtremelyImpetuous}}
-                                <img class="ia-trooperIcon" src="img/icon/extremely_impetuous_icon.png"></img>
-                            {{else}}
-                                <img class="ia-trooperIcon" src="img/icon/impetuous_icon.png"></img>
-                            {{/if}}
-                        {{/if}}
+                        {{#if trooper.isImpetuous}}<img class="ia-trooperIcon" src="img/icon/impetuous_icon.png"></img>{{/if}}
+                        {{#if trooper.isExtremelyImpetuous}}<img class="ia-trooperIcon" src="img/icon/extremely_impetuous_icon.png"></img>{{/if}}
                     </div>
                     <div class="ia-trooperHackable">
                         {{#if trooper.isHackable}}<img class="ia-trooperIcon" src="img/icon/hackable_icon.png"></img>{{/if}}
