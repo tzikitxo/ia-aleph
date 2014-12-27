@@ -19,11 +19,11 @@
     var unitSelectorTemplate = Handlebars.compile($('#ia-unitSelectorTemplate').html());
 
     ui.unitSelector = {
-        showUnitSelector: function (factionCode) {
+        showUnitSelector: function () {
             $('#ia-unitSelectorContainer').replaceWith(unitSelectorTemplate({}));
-            factionCode = factionCode || 1;
-            var faction = data.findFactionByCode(factionCode);
-            var troopers = data.findTroopersByFaction(factionCode);
+//            factionCode = factionCode || 1;
+//            var faction = data.findFactionByCode(factionCode);
+            var troopers = data.getTroopers();
             var unitSelectorScroller = $('#ia-unitSelectorScroller');
             unitSelectorScroller.find('.ia-unitSelector').remove();
             $.each([].concat(troopers).reverse(), function (i, trooper) {
