@@ -50,9 +50,9 @@ var data = ia.data;
                 hasCube2: trooper.backup === '2',
                 hasLimitedAva: typeof trooper.ava === 'number',
                 hasSkillOrEquipment: function (name) {
-                    if ($.inArray(name, this.allSkills) !== -1) {
+                    if ($.inArray(name, this.skills) !== -1) {
                         return true;
-                    } else if ($.inArray(name, this.allEquipments) !== -1) {
+                    } else if ($.inArray(name, this.equipments) !== -1) {
                         return true;
                     } else {
                         return false;
@@ -74,7 +74,16 @@ var data = ia.data;
                     bsw: [],
                     ccw: [],
                     skills: [],
-                    equipments: []
+                    equipments: [],
+                    hasSkillOrEquipment: function (name) {
+                        if ($.inArray(name, this.allSkills) !== -1) {
+                            return true;
+                        } else if ($.inArray(name, this.allEquipments) !== -1) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
                 }, option);
                 //TODO sort by range
                 option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
