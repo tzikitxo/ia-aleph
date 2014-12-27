@@ -1317,3 +1317,57 @@
     bsw: [ HMG ]
     swc: 1
     cost: 39
+- 
+  isc: Yan Huo Invicibles, Fire Support Heavy Regiment
+  longisc: YAN HUO Invicibles, Fire Support Heavy Regiment
+  code: 124
+  faction: 2
+  logo: yan_huo_invicibles
+  name: YAN HUO
+  type: HI
+  classification: Line Troops
+  mov: 4-2
+  cc: 15
+  bs: 14
+  ph: 13
+  wip: 13
+  arm: 5
+  bts: 3
+  w: 2
+  s: 5
+  ava: 2
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MHMG
+    bsw: [ MULTI HMG ]
+    swc: 2
+    cost: 53
+  - 
+    code: 2
+    description: HMC
+    bsw: [ Hyper-Rapid Magnetic Cannon ]
+    swc: 2
+    cost: 54
+  - 
+    code: 3
+    description: ML
+    bsw: [ Missile Launcher (2) ]
+    swc: 2
+    cost: 52
+  - 
+    code: 4
+    description: Lt+MHMG
+    skills: [ Lieutenant ]
+    bsw: [ MULTI HMG ]
+    swc: 2
+    cost: 53
+  - 
+    code: 5
+    description: Lt+HMC
+    skills: [ Lieutenant ]
+    bsw: [ Hyper-Rapid Magnetic Cannon ]
+    swc: 2
+    cost: 54
