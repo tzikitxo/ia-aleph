@@ -19,7 +19,7 @@
     var unitSelectorTemplate = Handlebars.compile($('#ia-unitSelectorTemplate').html());
 
     ui.unitSelector = {
-        showUnitSelector: function () {
+        updateUnitSelector: function () {
             $('#ia-unitSelectorContainer').replaceWith(unitSelectorTemplate({}));
 //            factionCode = factionCode || 1;
 //            var faction = data.findFactionByCode(factionCode);
@@ -33,7 +33,7 @@
                         .attr('src', 'img/troop/' + trooper.logo + '_logo.png')
                         .attr('title', trooper.isc)
                         .prependTo(unitSelectorScroller).on('click', function () {
-                    ui.trooperSelector.showTrooperSelector(trooper.code);
+                    ui.trooperSelector.updateTrooperSelector(trooper.code);
                 });
             });
 //                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});

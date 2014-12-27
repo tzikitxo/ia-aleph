@@ -27,7 +27,12 @@
                 modal: true
             });
             $('#ia-mainMenuContainer .ia-mainMenuFactionButton').on('click', function () {
-                data.loadTroopersByFaction(Number($(this).data('ia-factioncode')));
+                var factionCode = Number($(this).data('ia-factioncode'));
+                data.loadTroopersByFaction(factionCode);
+                roster.updateRosterData({
+                    faction: factionCode,
+                    troopers: []
+                });
                 ui.main.updateMainScreen();
                 mainMenu.dialog('close');
             });

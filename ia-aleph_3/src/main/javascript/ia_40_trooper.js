@@ -69,7 +69,7 @@
 
 
     ui.trooperSelector = {
-        showTrooperSelector: function (trooperCode) {
+        updateTrooperSelector: function (trooperCode) {
             trooperCode = trooperCode || data.getTroopers()[0].code;
             var trooper = data.findTrooperByCode(trooperCode);
             var trooperSelector = buildTrooperSelector(trooper);
