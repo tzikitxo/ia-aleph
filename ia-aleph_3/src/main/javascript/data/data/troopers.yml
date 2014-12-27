@@ -2679,3 +2679,212 @@
     bsw: [ AP HMG ]
     swc: 1
     cost: 47
+- 
+  isc: Foxtrot Rangers
+  longisc: 7th FOXTROT RANGERS 'Newport'
+  code: 149
+  faction: 3
+  logo: foxtrot_rangers
+  name: FOXTROT
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 17
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 19
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Rifle, Light Grenade Launcher ]
+    swc: 1
+    cost: 20
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Sniper Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 18
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle, Antipersonnel Mines ]
+    swc: 2
+    cost: 17
+- 
+  isc: HARDCASES, 2nd Irregular FRONTIERSMEN Battalion
+  longisc: HARDCASES, 2nd Irregular FRONTIERSMEN Battalion
+  code: 150
+  faction: 3
+  logo: hardcases
+  name: HARDCASE FRONTIERSMAN
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 13
+  wip: 12
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  irregular: I
+  skills: [ "CH: Ambush Camouflage", Infiltration, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Shotgun
+    bsw: [ Tactical Bow, Light Shotgun ]
+    swc: 0
+    cost: 12
+  - 
+    code: 2
+    description: Rifle
+    bsw: [ Tactical Bow, Rifle ]
+    swc: 0
+    cost: 14
+- 
+  isc: S.A.S.
+  longisc: 1st Highlanders S.A.S.
+  code: 151
+  faction: 3
+  logo: s_a_s
+  name: S.A.S.
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 19
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "CH: Camouflage", Infiltration, Kinematika L1, Martial Arts L2, Multiterrain ]
+  ccw: [ Pistol, AP CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 30
+  - 
+    code: 4
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 24
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle ]
+    swc: 2
+    cost: 23
+- 
+  isc: Scouts
+  longisc: Ariadna SCOUTS
+  code: 152
+  faction: 3
+  logo: scouts
+  name: SCOUT
+  type: SK
+  classification: Elite Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  skills: [ "CH: Camouflage", Infiltration, Marksmanship L1, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Ojotnik
+    bsw: [ Ojotnik, D-Charges, Antipersonnel Mines ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: E/Mauler
+    bsw: [ Ojotnik, D-Charges, E/Mauler ]
+    swc: 0
+    cost: 29
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, D-Charges, Antipersonnel Mines ]
+    swc: 0
+    cost: 25
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ AP Sniper Rifle, Antipersonnel Mines ]
+    swc: 1
+    cost: 29
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Ojotnik, D-Charges, Antipersonnel Mines ]
+    swc: 0
+    cost: 30
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Ojotnik, D-Charges, Antipersonnel Mines ]
+    swc: 0
+    cost: 29
