@@ -3095,3 +3095,96 @@
   bsw: [ Chain Rifle (2), Grenades, Smoke Grenades ]
   ccw: [ AP CCW ]
   options: []
+- 
+  isc: Kazak Doktor
+  longisc: 
+  code: 159
+  faction: 3
+  logo: kazak_doktor
+  name: KAZAK DOKTOR
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ Doctor ]
+  equipments: [ MediKit ]
+  bsw: [ Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 13
+- 
+  isc: Uxía McNeill
+  longisc: UXÍA McNEILL, Corporal of 1st Highlanders S.A.S.
+  code: 160
+  faction: 3
+  logo: uxia_mcneill
+  name: UXÍA McNEILL
+  type: SK
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  impetuosity: F
+  skills: [ "CH: Camouflage", Infiltration, Kinematika L1, Martial Arts L2, Multiterrain ]
+  equipments: [ Multispectral Visor L1 ]
+  bsw: [ Boarding Shotgun, Grenades, Smoke Grenades ]
+  ccw: [ Pistol, AP CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 28
+- 
+  isc: Van Zant
+  longisc: Roger VAN ZANT, Captain of 6th Airborne Ranger Reg. 'Oklahoma'
+  code: 161
+  faction: 3
+  logo: van_zant
+  name: VAN ZANT
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 13
+  ph: 13
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "AD: Tactical Jump",Kinematika L1, Martial Arts L2, "V: Dogged" ]
+  bsw: [ AP Rifle ]
+  ccw: [ Heavy Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    swc: 1
+    cost: 37
+  - 
+    code: 2
+    description: XO
+    skills: [ Executive Order ]
+    swc: 1
+    cost: 38
