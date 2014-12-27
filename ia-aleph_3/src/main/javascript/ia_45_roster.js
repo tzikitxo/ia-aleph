@@ -47,19 +47,61 @@ var roster = ia.roster = {};
         roster.validate();
         ui.armyRoster.updateArmyRoster();
     };
+    roster.getAvailableAvaByTrooperCode = function (trooperCode) {
+        var trooper = data.findTrooperByCode(trooperCode);
+        if (!trooper.hasLimitedAva) {
+            return trooper.ava;
+        } else {
+            return trooper.ava - (rosterData.trooperCountByCode[trooperCode] || 0);
+        }
+    };
     roster.validate = function () {
         rosterData.pointCount = 0;
         rosterData.swcCount = 0;
         rosterData.trooperCount = 0;
         rosterData.warningMessages = [];
+
+        var hasHacker = false, ltCount = 0, needHacker = false;
+        rosterData.trooperCountByCode = {};
         $.each(rosterData.troopers, function (i, trooper) {
             rosterData.pointCount += Number(trooper.cost) || 0;
             rosterData.swcCount += Number(trooper.swc) || 0;
             rosterData.trooperCount++;
+            if (trooper.type === 'REM') {
+                needHacker = true;
+            }
+            if (trooper.hasSkillOrEquipment('Hacker')) {
+                hasHacker = true;
+            }
+            if (trooper.hasSkillOrEquipment('Lieutenant')) {
+                ltCount++;
+            }
+            if (!rosterData.trooperCountByCode[trooper.troopercode]) {
+                rosterData.trooperCountByCode[trooper.troopercode] = 1;
+            } else {
+                rosterData.trooperCountByCode[trooper.troopercode]++;
+            }
         });
         rosterData.pointDiff = rosterData.pointCap - rosterData.pointCount;
         rosterData.swcDiff = rosterData.swcCap - rosterData.swcCount;
-        //TODO
+        if (rosterData.pointDiff < 0) {
+            rosterData.warningMessages.push("Too many points spent (" + rosterData.pointCount + "/" + rosterData.pointCap + ")");
+        }
+        if (rosterData.swcDiff < 0) {
+            rosterData.warningMessages.push("Too many swc spent (" + rosterData.swcCount + "/" + rosterData.swcCap + ")");
+        }
+        if (needHacker && !hasHacker) {
+            rosterData.warningMessages.push("Need an hacker for deploying REMs");
+        }
+        if (ltCount !== 1) {
+            rosterData.warningMessages.push("Must have exactly one Lieutenant");
+        }
+        $.each(rosterData.trooperCountByCode, function (code, count) {
+            var trooper = data.findTrooperByCode(code);
+            if (trooper.hasLimitedAva && count > trooper.ava) {
+                rosterData.warningMessages.push("Can have at most " + trooper.ava + " " + trooper.name);
+            }
+        });
     };
     roster.validate();
 

@@ -66,7 +66,7 @@
                 <div class="ia-rosterTopBar">
                 <div class="ia-rosterDownButton" style="display: none;"></div>
                 {{messages.troopers}}: <b>{{roster.trooperCount}}</b> {{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b>  {{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b>
-                <span class="ia-warning">{{join roster.warningMessages}}</span>
+                <div class="ia-warning">{{join roster.warningMessages}}</div>
                 </div>
                 <div class="ia-rosterMainContainer">
                     
@@ -154,7 +154,7 @@
                                 <td>{{trooper.bts}}</td>
                                 <td>{{trooper.w}}</td>
                                 <td>{{trooper.s}}</td>
-                                <td>{{trooper.ava}}</td>
+                                <td>{{trooper.ava}}{{trooperAvailableAva trooper}}</td>
                             </tr>
                         </tbody>
                     </table>

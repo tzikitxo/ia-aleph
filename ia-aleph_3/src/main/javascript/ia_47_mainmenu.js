@@ -24,7 +24,9 @@
                 factions: data.getFactions()
             })).appendTo('body');
             mainMenu.dialog({
-                modal: true
+                modal: true,
+                width: 450,
+                height: 250
             });
             $('#ia-mainMenuContainer .ia-mainMenuFactionButton').on('click', function () {
                 var factionCode = Number($(this).data('ia-factioncode'));

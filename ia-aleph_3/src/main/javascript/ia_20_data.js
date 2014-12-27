@@ -47,7 +47,8 @@ var data = ia.data;
                 isFrenzy: trooper.impetuosity === 'F',
                 isExtremelyImpetuous: trooper.impetuosity === 'E',
                 hasCube: trooper.backup === 'C' || trooper.backup === '2',
-                hasCube2: trooper.backup === '2'
+                hasCube2: trooper.backup === '2',
+                hasLimitedAva: typeof trooper.ava === 'number'
             }, trooper);
             troopers.push(trooper);
             trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
@@ -55,7 +56,10 @@ var data = ia.data;
             trooper.hasStr = trooper.hasStr || trooper.type === 'REM' || trooper.type === 'TAG';
             var trooperOptionsByCode = {};
             trooper.options = $.map(trooper.options, function (option) {
-                option = $.extend({}, trooper, {
+                option = $.extend({
+                    troopercode: trooper.code,
+                    optioncode: option.code
+                }, trooper, {
                     swc: '',
                     cost: '',
                     bsw: [],
