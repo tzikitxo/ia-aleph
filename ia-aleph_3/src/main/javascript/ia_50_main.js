@@ -25,13 +25,24 @@
             weaponsButtonTitle: 'Weapons'
         }
     }));
-    
+    $('#ia-mainMenuButton').on('click', function () {
+        ui.mainMenu.showMainMenu();
+    });
+
     data.loadTroopersByFaction(1);
 
-    ui.unitSelector.showUnitSelector();
-    ui.trooperSelector.showTrooperSelector();
-    ui.armyRoster.updateArmyRoster();
-    ui.weaponsDisplay.initializeWeaponsDisplay();
+    ui.main = {
+        updateMainScreen: function () {
+            ui.unitSelector.showUnitSelector();
+            ui.trooperSelector.showTrooperSelector();
+            ui.armyRoster.updateArmyRoster();
+            ui.weaponsDisplay.initializeWeaponsDisplay();
+        }
+    };
+    
+    ui.main.updateMainScreen();
+
+
 
     $('#ia-loadingContainer').hide();
     $('#ia-mainContainer').show();

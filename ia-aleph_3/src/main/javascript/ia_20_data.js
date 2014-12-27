@@ -26,6 +26,10 @@ var data = ia.data;
         return factionsByCode[code];
     };
 
+    data.getFactions = function () {
+        return data.factions;
+    };
+
     var troopersByCode = {};
     var troopers = [];
     function loadTroopers(troopersToLoad) {
