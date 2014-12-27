@@ -2888,3 +2888,88 @@
     bsw: [ Ojotnik, D-Charges, Antipersonnel Mines ]
     swc: 0
     cost: 29
+- 
+  isc: 45th Highlanders Rifles
+  longisc: 45th HIGHLANDERS RIFLES 'Galwegian'
+  code: 153
+  faction: 3
+  logo: 45th_highlanders
+  name: HIGHLANDER
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 21
+  bs: 10
+  ph: 14
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  impetuosity: E
+  skills: [ Berserk, "V: Dogged" ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle, Smoke Grenades ]
+    swc: 0
+    cost: 11
+  - 
+    code: 2
+    description: Chain
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    swc: 0
+    cost: 6
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Smoke Grenades ]
+    swc: 0
+    cost: 13
+- 
+  isc: Irmandinhos
+  longisc: 
+  code: 154
+  faction: 3
+  logo: irmandinhos
+  name: IRMANDINHO
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 20
+  bs: 10
+  ph: 14
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  irregular: I
+  impetuosity: E
+  skills: [ Booty L1, Engineer, Scavenger ]
+  bsw: [ D-Charges, Smoke Grenades ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: Chain
+    bsw: [ Chain Rifle ]
+    swc: 0
+    cost: 8
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 16
