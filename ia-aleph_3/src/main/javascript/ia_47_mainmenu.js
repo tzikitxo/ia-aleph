@@ -32,7 +32,7 @@
                 var factionCode = Number($(this).data('ia-factioncode'));
                 data.loadTroopersByFaction(factionCode);
                 roster.updateRosterData({
-                    faction: factionCode,
+                    factionCode: factionCode,
                     troopers: []
                 });
                 ui.main.updateMainScreen();
