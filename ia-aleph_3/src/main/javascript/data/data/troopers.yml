@@ -995,3 +995,159 @@
     ccw: [ DA CCW ]
     swc: -1
     cost: 50
+
+# YU JING
+
+- 
+  isc: Zhanshi
+  longisc: 
+  code: 120
+  faction: 2
+  logo: zhanshi
+  name: ZHANSHI
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 11
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 19
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light GL ]
+    swc: 1
+    cost: 15
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 19
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 16
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 19
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 13
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 11
+- 
+  isc: Zhànying Imperial Agents
+  longisc: ZHÀNYING Imperial Agents
+  code: 121
+  faction: 2
+  logo: zhanying_imperial_agents
+  name: ZHÀNYING
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 16
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Bioimmunity, Sixth Sense L2 ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    equipments: [ Sensor ]
+    bsw: [ Breaker Combi Rifle, Nimbus Grenades ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 30
+  - 
+    code: 3
+    description: BS
+    equipments: [ Sensor ]
+    bsw: [ Boarding Shotgun, Nimbus Grenades ]
+    swc: 0
+    cost: 23
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher, Nanopulser, Nimbus Grenades ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Breaker Combi Rifle, D-Charges ]
+    swc: 0.5
+    cost: 32
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Breaker Combi Rifle ]
+    swc: 0
+    cost: 25
+  - 
+    code: 7
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    swc: 1
+    cost: 30

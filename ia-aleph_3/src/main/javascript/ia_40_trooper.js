@@ -79,6 +79,7 @@
                     ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
                 }
             });
+            $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
         }
     };
 
