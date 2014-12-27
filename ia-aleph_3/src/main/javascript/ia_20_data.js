@@ -48,11 +48,20 @@ var data = ia.data;
                 isExtremelyImpetuous: trooper.impetuosity === 'E',
                 hasCube: trooper.backup === 'C' || trooper.backup === '2',
                 hasCube2: trooper.backup === '2',
-                hasLimitedAva: typeof trooper.ava === 'number'
+                hasLimitedAva: typeof trooper.ava === 'number',
+                hasSkillOrEquipment: function (name) {
+                    if ($.inArray(name, this.allSkills) !== -1) {
+                        return true;
+                    } else if ($.inArray(name, this.allEquipments) !== -1) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
             }, trooper);
             troopers.push(trooper);
             trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
-            trooper.isHackable = trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI';// TODO
+            trooper.isHackable = (trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI') && !trooper.hasSkillOrEquipment('Not Hackable');
             trooper.hasStr = trooper.hasStr || trooper.type === 'REM' || trooper.type === 'TAG';
             var trooperOptionsByCode = {};
             trooper.options = $.map(trooper.options, function (option) {
@@ -65,16 +74,7 @@ var data = ia.data;
                     bsw: [],
                     ccw: [],
                     skills: [],
-                    equipments: [],
-                    hasSkillOrEquipment: function (name) {
-                        if ($.inArray(name, this.allSkills) !== -1) {
-                            return true;
-                        } else if ($.inArray(name, this.allEquipments) !== -1) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
+                    equipments: []
                 }, option);
                 //TODO sort by range
                 option.allBsw = [].concat(trooper.bsw).concat(option.bsw);
@@ -82,6 +82,7 @@ var data = ia.data;
                 option.allWeapons = [].concat(option.allBsw).concat(option.allCcw);
                 option.allSkills = [].concat(trooper.skills).concat(option.skills);
                 option.allEquipments = [].concat(trooper.equipments).concat(option.equipments);
+//                option.isHackable = option.isHackable || option.hasSkillOrEquipment('Hacker');
                 if (typeof option.swc === 'number' && option.swc < 0) {
                     option.positiveSwc = true;
                     option.swcStr = '+' + (-option.swc);

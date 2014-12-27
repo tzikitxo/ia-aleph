@@ -21,6 +21,7 @@
             suppressiveFireTrait = 'Suppressive Fire',
             technicalWeaponTrait = 'Technical Weapon',
             trowingWeaponTrait = 'Throwing Weapon',
+            deactivatorWeapon = 'Deactivator',
             ccTrait = 'CC';
 
     var weaponsDisplayTemplate = Handlebars.compile($('#ia-weaponsDisplayTemplate').html());
@@ -47,6 +48,7 @@
 
     var weaponLikeEquipsAndSkills = {
         'MediKit': ['MediKit'],
+        'Engineer': [deactivatorWeapon],
         'Forward Observer': ['Forward Observer', 'Flash Pulse']
     };
     ui.weaponsDisplay = {
@@ -124,7 +126,7 @@
                     weapon.damage = eval(weapon.damage.replace(/WIP/, trooper.wip).replace(/PH/, trooper.ph));
                 }
                 var basicValue = trooper.bs;
-                if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon) {
+                if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon || weapon.name === deactivatorWeapon) {
                     basicValue = trooper.wip;
                 } else if (weapon.hasTrait(trowingWeaponTrait)) {
                     basicValue = trooper.ph;
