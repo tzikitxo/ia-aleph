@@ -142,7 +142,7 @@
                     weapon.rangeLength = ranges.length;
                 }
                 for (; rangeIndex < ranges.length; rangeIndex++) {
-                    weapon.rangeMods.push('');
+                    weapon.rangeMods.push('-');
                 }
                 if (!weapon.hasTrait(ccTrait)) {
                     weapon.rangeSum += 0.5;

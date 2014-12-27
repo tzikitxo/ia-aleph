@@ -32,7 +32,7 @@ done
 for name in skills equipments bsw ccw; do
         echo -n "  $name : "
         read value
-        [ -z "$value" ] || echo "  $name: [ $value ]" >> $t
+        [ -z "$value" ] || echo "  $name: [ $value ]" | sed 's# *· *#, #g' >> $t
 done
 echo "  options:" >> $t
 
