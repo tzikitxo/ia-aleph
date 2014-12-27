@@ -35,7 +35,8 @@
   ranges: [ 8,16,24 ]
   mods: [ 3,0,-6 ]
   damage: 14
-  burst: 2 (1 in CC)
+  burst: 2
+  burstcc: 1
   ammunitions: AP
   traits: [ CC ]
 - 
@@ -96,7 +97,8 @@
   ranges: [ 8,16,24 ]
   mods: [ 3,0,-6 ]
   damage: 12
-  burst: 2 (1 in CC)
+  burst: 2
+  burstcc: 1
   ammunitions: Breaker
   traits: [ CC ]
 - 
@@ -264,7 +266,8 @@
   ranges: [ 8,16,24 ]
   mods: [ 3,0,-6 ]
   damage: 14
-  burst: 2 (1 in CC)
+  burst: 2
+  burstcc: 1
   ammunitions: Shock
   traits: [ CC ]
 - 
@@ -519,7 +522,7 @@
   ranges: [ 8,16,32,48 ]
   mods: [ -3,0,+3,-3 ]
   damage: 14
-  burst: 1 (2 Uses)
+  burst: 1
   ammunitions: AP+EXP
   traits: [ Anti-materiel, Disposable (2) ]
 - 
@@ -528,7 +531,8 @@
   ranges: [ 8,16,24 ]
   mods: [ 3,0,-6 ]
   damage: 11
-  burst: 2 (1 in CC)
+  burst: 2
+  burstcc: 1
   ammunitions: N
   traits: [ CC ]
 - 
@@ -611,7 +615,7 @@
   name: Sepsitor
   code: 73
   damage: WIP
-  burst: 1 (2 Uses)
+  burst: 1
   traits: [ Direct Template (Large Teardrop), Disposable (2), Intuitive Attack, Non-Lootable ]
 - 
   name: Sepsitor Plus

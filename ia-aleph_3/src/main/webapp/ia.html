@@ -205,7 +205,7 @@
                             <td>{{name}}<div class="ia-weaponMode" >{{mode}}</div></td>
                             {{#if hasRange}}
                             {{#each rangeMods}}
-                                <td class="ia-weaponRangeCell" style="background-color: {{weaponColorByRange this}};">{{this}}</td>
+                                <td class="ia-weaponRangeCell"><div class="ia-weaponRangeCellContent" style="background-color: {{weaponColorByRange this}};">{{this}}</div></td>
                             {{/each}}
                             {{else}}<td class="ia-weaponRangeReplacerCell" colspan="{{rangeLength}}" >-</td>{{/if}}  
                             <td class="ia-weaponDamageCell" >{{damage}}</td>

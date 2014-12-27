@@ -1151,3 +1151,169 @@
     bsw: [ HMG ]
     swc: 1
     cost: 30
+- 
+  isc: Tiger Soldiers
+  longisc: 
+  code: 122
+  faction: 2
+  logo: tiger_soldiers
+  name: TIGER SOLDIER
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 12
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "AD: Combat Jump / Multiterrain", "CH: Mimetism" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0.5
+    cost: 33
+  - 
+    code: 6
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 29
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 1
+    cost: 27
+- 
+  isc: Zúyong Invincibles, Terra-Cotta Soldiers
+  longisc: ZÚYONG Invincibles, Terra-Cotta Soldiers
+  code: 123
+  faction: 2
+  logo: zuyong_invincibles
+  name: ZÚYONG
+  type: HI
+  classification: Line Troops
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 5
+  backup: C
+  skills: [ Kinematika L1 ]
+  ccw: [ Breaker Pistol (2), Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: TinBot
+    bsw: [ Combi Rifle + 1 TinBot B (Deflector L2) ]
+    swc: 0.5
+    cost: 30
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 35
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 26
+  - 
+    code: 5
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 31
+  - 
+    code: 6
+    description: ML
+    bsw: [ Missile Launcher, Light Shotgun ]
+    swc: 2
+    cost: 36
+  - 
+    code: 7
+    description: HMG+AM
+    equipments: [ AutomediKit ]
+    bsw: [ HMG ]
+    swc: 2
+    cost: 39
+  - 
+    code: 8
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 28
+  - 
+    code: 9
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 29
+  - 
+    code: 10
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 27
+  - 
+    code: 11
+    description: Lt+AM
+    skills: [ Lieutenant ]
+    equipments: [ AutomediKit ]
+    bsw: [ HMG ]
+    swc: 1
+    cost: 39

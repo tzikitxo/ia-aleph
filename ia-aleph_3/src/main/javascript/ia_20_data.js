@@ -142,6 +142,20 @@ var data = ia.data;
         return weapon;
     });
     data.findWeaponsByName = function (name) {
+        if (!weaponsByName[name] && name.match(/ *\([0-9]+\) */)) {
+            var weaponName = name.replace(/ *\([0-9]+\) */, ''), weaponCount = Number(name.replace(/.*\(([0-9]+)\).*/, '$1'));
+            var weapon = weaponsByName[weaponName];
+            if (weapon) {
+                weapon = $.map(weapon, function (weapon) {
+                    weapon = $.extend({}, weapon);
+                    weapon.burst += 1;
+                    weapon.name = weaponName + ' (' + weaponCount + ')';
+                    delete weapon.code;
+                    return weapon;
+                });
+                weaponsByName[name] = weaponsByName[weapon[0].name] = weapon;
+            }
+        }
         return weaponsByName[name];
     };
 
