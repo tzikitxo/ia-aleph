@@ -91,6 +91,18 @@ var data = ia.data;
                 return trooperOptionsByCode[optionCode];
             };
         });
+
+        var altps = {};
+        $.each(troopers, function (i, trooper) {
+            if (trooper.otherprofiles) {
+                $.each(trooper.otherprofiles, function (i, altp) {
+                    altps[altp] = true;
+                });
+            }
+        });
+        $.each(altps, function (altp) {
+            troopersByCode[altp].isAlternateProfile = true;
+        });
     }
 //    var troopersByFaction = {};
 
