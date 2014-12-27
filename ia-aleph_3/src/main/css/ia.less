@@ -13,6 +13,7 @@
 @tableRowAlternateColor: #e6e6e6;
 
 @weaponsTableRowAlternateColor: #d4edfc;
+@weaponsTableHeaderBgColor: #fcc002;
 
 // BODY
 
@@ -120,17 +121,41 @@ body{
 
 //WEAPONS
 
-#ia-weaponsDisplay{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-}
-#ia-weaponsDisplayContainer{    
+#ia-weaponsDisplayWrapper{    
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 10;
+}
+#ia-weaponsDisplayCenter{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    position: relative;
+}
+#ia-weaponsDisplayButton{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px 10px 5px 50px;
+    z-index: 8;
+    width: 45px;
+    height: 25px;
+
+    cursor: pointer;
+    background-image: url('../img/theme/arrowButtonUpBg.png');
+    background-size: 55px 35px;
+    background-color: @weaponsTableHeaderBgColor;
+    background-repeat: no-repeat;
+    font-weight: bold;
+    line-height: 25px;
+}
+#ia-weaponsDisplayContainer{
+    z-index: 10;
+    position: relative;
+    
+    background-color: white;
 }
 .ia-weaponsDisplayTable{
     width: 100%;
@@ -139,14 +164,51 @@ body{
     tr:nth-child(odd) {
         background-color: @weaponsTableRowAlternateColor;
     }
+    th{
+        padding: 2px 5px;
+
+        background-color: @weaponsTableHeaderBgColor;
+    }
     td{
         padding: 2px;
     }
-    .ia-weaponDamageCell, .ia-weaponBurstCell, .ia-weaponAmmunitionsCell, .ia-weaponRangeCell {
+    td:nth-child(1){
+        padding-left: 10px;
+    }
+    .ia-weaponDamageCell, .ia-weaponBurstCell, .ia-weaponAmmunitionsCell, .ia-weaponRangeReplacerCell {
         text-align: center;
+    }
+    td.ia-weaponRangeCell{
+        text-align: center;
+        /*padding: 2px 4px;*/
+        width: 30px;
+    }
+    th.ia-weaponRangeCell{
+        text-align: right;
+        padding-left: 0;
+
+        font-style: italic;
     }
     .ia-weaponMode{
         font-style: italic;
+    }
+    .ia-weaponRangeSpec{
+        font-weight: normal;
+    }
+    .ia-weaponNameCell{
+        position: relative;
+    }
+    .ia-weaponDownButton{
+        position:absolute;
+        top:5px;
+        left:2px;
+        z-index: 12;
+        width: 45px;
+        height: 25px;
+
+        cursor: pointer;
+        background-image: url('../img/theme/arrowButtonDownBg.png');
+        background-size: 100% 100%;
     }
 }
 

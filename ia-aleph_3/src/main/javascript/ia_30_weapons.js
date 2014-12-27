@@ -15,18 +15,47 @@
 
 (function () {
 
+    var discoverWeapon = 'Discover',
+            bareHandsWeapon = 'Bare Hands',
+            suppressionFireWeapon = 'Suppressive Fire Mode',
+            suppressiveFireTrait = 'Suppressive Fire',
+            technicalWeaponTrait = 'Technical Weapon',
+            trowingWeaponTrait = 'Throwing Weapon',
+            ccTrait = 'CC';
 
     var weaponsDisplayTemplate = Handlebars.compile($('#ia-weaponsDisplayTemplate').html());
+
+    function getColorByRange(range) {
+        var
+                p = (range / 20),
+                g = p >= 0.5 ? (200) : (p * 0.8 * 2 * 255),
+                r = p > 0.5 ? ((1 - p) * 0.9 * 2 * 255) : 250,
+                b = 0;
+        return 'rgb('
+                + (Math.round(r) % 256) + ','
+                + (Math.round(g) % 256) + ','
+                + (Math.round(b) % 256) + ')';
+    }
+    Handlebars.registerHelper("weaponColorByRange", function (context) {
+        if (typeof context === 'number' && context > 0) {
+            return getColorByRange(context);
+        } else {
+            return 'black';
+        }
+    });
+
 
     var weaponLikeEquipsAndSkills = {
         'MediKit': 'MediKit',
         'Forward Observer': 'Forward Observer'
     };
-    var discoverWeapon = 'Discover',
-            bareHandsWeapon = 'Bare Hands',
-            suppressionFireWeapon = 'Suppressive Fire Mode';
     ui.weaponsDisplay = {
-        showWeaponsDisplayForTrooper: function (trooper) {
+        initializeWeaponsDisplay:function(){
+            $('#ia-weaponsDisplayButton').on('click',function(){
+                $('#ia-weaponsDisplayContainer').show('fast');
+            });
+        },
+        updateWeaponsDisplayForTrooper: function (trooper) {
             var weapons = [];
             var allWeapons = [].concat(trooper.allWeapons);
             $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
@@ -51,7 +80,7 @@
             });
             var addBarehands = true;
             $.each(weapons, function (i, weapon) {
-                if ($.inArray('CC', weapon.traits) !== -1) {
+                if (weapon.hasTrait(ccTrait)) {
                     addBarehands = false;
                 }
             });
@@ -59,7 +88,7 @@
                 weapons.push(data.findWeaponsByName(bareHandsWeapon)[0]);
             }
             $.each(weapons, function (i, weapon) {
-                if (weapons.mode !== suppressionFireWeapon && $.inArray('Suppressive Fire', weapon.traits) !== -1) {
+                if (weapons.mode !== suppressionFireWeapon && weapon.hasTrait(suppressiveFireTrait)) {
                     var supFire = data.findWeaponsByName(suppressionFireWeapon)[0];
                     supFire = $.extend({}, supFire, {
                         damage: weapon.damage,
@@ -83,33 +112,65 @@
                     });
                 }
             });
-            ranges.sort();
+            ranges.sort(function (a, b) {
+                return a - b;
+            });
             $.each(weapons, function (i, weapon) {
                 weapon = $.extend({
-                    rangeMods:[]
+                    rangeMods: [],
+                    rangeSum: 0
                 }, weapon);
                 if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
                     weapon.damage = eval(weapon.damage.replace(/WIP/, trooper.wip).replace(/PH/, trooper.ph));
                 }
-                var basicValue = ($.inArray('Technical Weapon', weapon.traits) !== -1 || weapon.name === discoverWeapon) ? trooper.wip : trooper.bs;
+                var basicValue = trooper.bs;
+                if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon) {
+                    basicValue = trooper.wip;
+                } else if (weapon.hasTrait(trowingWeaponTrait)) {
+                    basicValue = trooper.ph;
+                }
                 var rangeIndex = 0;
                 if (weapon.hasRange) {
                     $.each(weapon.ranges, function (i, range) {
                         for (; ranges[rangeIndex] <= range; rangeIndex++) {
-                            weapon.rangeMods.push(weapon.mods[i] + basicValue);
+                            var value = weapon.mods[i] + basicValue;
+                            weapon.rangeMods.push(value);
+                            weapon.rangeSum += value;
                         }
                     });
+                } else {
+                    weapon.rangeLength = ranges.length;
                 }
                 for (; rangeIndex < ranges.length; rangeIndex++) {
                     weapon.rangeMods.push('');
                 }
+                if (!weapon.hasTrait(ccTrait)) {
+                    weapon.rangeSum += 0.5;
+                }
+                if (typeof weapon.damage === 'number') {
+                    weapon.rangeSum += weapon.damage / 100;
+                }
                 weapons2.push(weapon);
+            });
+            weapons2.sort(function (a, b) {
+                return b.rangeSum - a.rangeSum;
             });
             $('#ia-weaponsDisplayContainer').html(weaponsDisplayTemplate({
                 weapons: weapons2,
                 ranges: ranges,
-                rangeLength: ranges.length
+                messages: {
+                    name: "Name",
+                    range: "Range",
+                    damage: "Damage",
+                    burst: "B",
+                    ammunitions: "Ammunition",
+                    traits: "Traits",
+                    rangeSpec: "(up to)"
+                }
             }));
+            $('#ia-weaponsDisplayContainer .ia-weaponDownButton').on('click',function(){
+                $('#ia-weaponsDisplayContainer').hide('fast');
+            });
         }
     }
 

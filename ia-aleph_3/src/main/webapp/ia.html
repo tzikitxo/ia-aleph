@@ -33,7 +33,12 @@
                     <div id="ia-unitSelectorContainer"></div>
                 </div>
                 <div id="ia-mainScreenCenter"></div>                     
-                <div id="ia-weaponsDisplayContainer"></div>
+                <div id="ia-weaponsDisplayWrapper">
+                    <div id="ia-weaponsDisplayCenter">
+                        <div id="ia-weaponsDisplayButton">{{messages.weaponsButtonTitle}}</div>                 
+                        <div id="ia-weaponsDisplayContainer"></div>
+                    </div> 
+                </div>
             </div>
         </script>
         <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">
@@ -172,7 +177,14 @@
                 <table class="ia-weaponsDisplayTable">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th rowspan="2" class="ia-weaponNameCell"><div class="ia-weaponDownButton" ></div>{{messages.name}}</th>
+                            <th colspan="{{ranges.length}}">{{messages.range}} <span class="ia-weaponRangeSpec">{{messages.rangeSpec}}</span></th>
+                            <th rowspan="2">{{messages.damage}}</th>
+                            <th rowspan="2">{{messages.burst}}</th>
+                            <th rowspan="2">{{messages.ammunitions}}</th>                    
+                            <th rowspan="2">{{messages.traits}}</th>
+                        </tr>
+                        <tr>                            
                         {{#each ranges}}
                             <th class="ia-weaponRangeCell">{{this}}</th>
                         {{/each}}
@@ -184,9 +196,9 @@
                             <td>{{name}}<div class="ia-weaponMode" >{{mode}}</div></td>
                             {{#if hasRange}}
                             {{#each rangeMods}}
-                                <td class="ia-weaponRangeCell">{{this}}</td>
+                                <td class="ia-weaponRangeCell" style="background-color: {{weaponColorByRange this}};">{{this}}</td>
                             {{/each}}
-                            {{else}}<td colwidth="{{../rangeLength}}">-</td>{{/if}}  
+                            {{else}}<td class="ia-weaponRangeReplacerCell" colspan="{{rangeLength}}" >-</td>{{/if}}  
                             <td class="ia-weaponDamageCell" >{{damage}}</td>
                             <td class="ia-weaponBurstCell" >{{burst}}</td>
                             <td class="ia-weaponAmmunitionsCell" >{{ammunitions}}</td>
