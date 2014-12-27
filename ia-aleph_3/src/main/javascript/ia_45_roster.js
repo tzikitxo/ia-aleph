@@ -22,7 +22,7 @@ var roster = ia.roster = {};
         pointCap: 300,
         swcCap: 6,
         trooperCount: 0,
-        faction: null
+        factionCode: null
     };
 
     roster.updateRosterData = function (config) {
@@ -37,8 +37,17 @@ var roster = ia.roster = {};
     roster.getRosterData = function () {
         return rosterData;
     };
+    function getNextRosterEntryCode() {
+        var n = 0;
+        $.each(rosterData.troopers, function (i, trooper) {
+            n = Math.max(trooper.rosterentrycode, n);
+        });
+        return n + 1;
+    }
     roster.addTrooper = function (trooper) {
-        rosterData.troopers.push(trooper);
+        rosterData.troopers.push($.extend({
+            rosterentrycode: getNextRosterEntryCode()
+        }, trooper));
         roster.validate();
         ui.armyRoster.updateArmyRoster();
     };
@@ -54,6 +63,30 @@ var roster = ia.roster = {};
         } else {
             return trooper.ava - (rosterData.trooperCountByCode[trooperCode] || 0);
         }
+    };
+    roster.serializeRosterData = function () {
+        var str = 'F' + rosterData.factionCode + 'P' + rosterData.pointCap + 'S' + rosterData.swcCap;
+        $.each(rosterData.troopers, function (i, trooper) {
+            str += 'T' + trooper.troopercode + 'O' + trooper.optioncode;
+        });
+        return str;
+    };
+    roster.loadRosterData = function (str) {
+        var factionCode = Number(str.replace(/.*F([0-9]+).*$/, '$1')),
+                pcap = Number(str.replace(/.*P([0-9]+).*$/, '$1')),
+                swcap = Number(str.replace(/.*S([0-9.]+).*$/, '$1'));
+        //TODO check data
+        data.loadTroopersByFaction(factionCode);
+        roster.updateRosterData({
+            pointCap: pcap,
+            swcCap: swcap,
+            factionCode: factionCode
+        });
+        $.each(str.replace(/^.*?T/, '').split('T'), function (i, tr) {
+            var troopcode = Number(str.split(/O/)[0]), optioncode = Number(str.split(/O/)[1]);
+            var trooper = data.findTrooperByCode(troopcode).findTrooperOptionByCode(optioncode);
+            roster.addTrooper(trooper);
+        });
     };
     roster.validate = function () {
         rosterData.pointCount = 0;
@@ -86,11 +119,11 @@ var roster = ia.roster = {};
         rosterData.swcDiff = rosterData.swcCap - rosterData.swcCount;
         if (rosterData.pointDiff < 0) {
             rosterData.warningMessages.push("Too many points spent (" + rosterData.pointCount + "/" + rosterData.pointCap + ")");
-            rosterData.pointWarning=true;
+            rosterData.pointWarning = true;
         }
         if (rosterData.swcDiff < 0) {
             rosterData.warningMessages.push("Too many swc spent (" + rosterData.swcCount + "/" + rosterData.swcCap + ")");
-            rosterData.swcWarning=true;
+            rosterData.swcWarning = true;
         }
         if (needHacker && !hasHacker) {
             rosterData.warningMessages.push("Need an hacker for deploying REMs");
