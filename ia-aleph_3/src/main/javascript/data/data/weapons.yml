@@ -335,7 +335,7 @@
   ammunitions: Shock
   traits: [ CC, Silent ]
 - 
-  name: Light E/M GL
+  name: E/M Light GL
   code: 42
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
@@ -361,6 +361,7 @@
   traits: [ Impact Template (Circular), Speculative Fire ]
 - 
   name: Light Nimbus GL
+  names: [ Nimbus Light GL, Light Nimbus GL ]
   code: 45
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
@@ -378,6 +379,7 @@
   traits: [ Impact Template (Small Teardrop) ]
 - 
   name: Light Smoke GL
+  names: [ Smoke Light GL, Light Smoke GL ]
   code: 47
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
