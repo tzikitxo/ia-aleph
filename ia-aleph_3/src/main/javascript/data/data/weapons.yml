@@ -381,7 +381,7 @@
   traits: [ Impact Template (Small Teardrop) ]
 - 
   name: Light Smoke GL
-  names: [ Smoke Light GL, Light Smoke GL ]
+  names: [ Smoke Light GL, Light Smoke GL, Smoke Light Grenade Launcher  ]
   code: 47
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]

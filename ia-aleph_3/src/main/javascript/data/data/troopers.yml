@@ -2973,3 +2973,125 @@
     bsw: [ Boarding Shotgun ]
     swc: 0
     cost: 16
+- 
+  isc: Antipode Assault Pack
+  compositetroop:
+  -
+    code: 155
+    min: 1
+    max: 1
+  -
+    code: 156
+    min: 3
+    max: 3
+  longisc: ANTIPODE ASSAULT PACK HANDLER
+  code: 155
+  faction: 3
+  logo: antipode_assault_pack
+  name: HANDLER
+  type: WB
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  equipments: [ Antipode Control Device ]
+  bsw: [ Rifle, Smoke Light Grenade Launcher ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 10
+- 
+  isc: Antipode Assault Pack
+  longisc: ANTIPODE ASSAULT PACK ANTIPODE
+  code: 156
+  faction: 3
+  logo: antipode_assault_pack
+  name: ANTIPODE
+  type: WB
+  classification: Support Troops
+  mov: 6-6
+  cc: 20
+  bs: 0
+  ph: 15
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 5
+  ava: 3
+  irregular: I
+  impetuosity: F
+  skills: [ Antipode, "CH: Camouflage", Jungle Terrain, Kinematika L2, Sensor, Super-Jump ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 5
+- 
+  isc: Dog-Warriors
+  longisc: "DOG-WARRIORS FORM: DOGFACE"
+  code: 157
+  otherprofiles: [158]
+  faction: 3
+  logo: dog_warriors
+  name: DOG-WARRIOR
+  type: WB
+  classification: Support Troops
+  mov: 4-4
+  cc: 19
+  bs: 10
+  ph: 14
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  irregular: I
+  impetuosity: E
+  skills: [ Super-Jump, Total Immunity, Transmutation, "V: Courage" ]
+  bsw: [ Chain Rifle (2), Grenades, Smoke Grenades ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 27
+- 
+  isc: Dog-Warriors
+  longisc: "DOG-WARRIORS FORM: DOG-WARRIOR"
+  code: 158
+  faction: 3
+  logo: dog_warriors
+  name: DOG-WARRIOR
+  type: WB
+  classification: Support Troops
+  mov: 6-4
+  cc: 21
+  bs: 10
+  ph: 16
+  wip: 12
+  arm: 3
+  bts: 0
+  w: 2
+  s: 6
+  ava: "-"
+  irregular: I
+  impetuosity: E
+  skills: [ Super-Jump, Total Immunity, "V: Courage" ]
+  bsw: [ Chain Rifle (2), Grenades, Smoke Grenades ]
+  ccw: [ AP CCW ]
+  options: []

@@ -156,6 +156,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="ia-trooperSelectorOtherProfilesContainer">
+                </div>
+                {{#if trooper.hasOptions}}
                 <div class="ia-trooperSelectorOptionList">
                     <table class="ia-trooperSelectorOptionListTable">
                         <thead >
@@ -181,6 +184,7 @@
                     </table>
                     <div class="ia-trooperSelectorOptionListFooter" ></div>
                 </div>
+                {{/if}}
             </div>
         </script>
         <script id="ia-weaponsDisplayTemplate" type="text/x-handlebars-template">

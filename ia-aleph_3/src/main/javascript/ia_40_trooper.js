@@ -106,7 +106,9 @@
             $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
             if (trooper.otherprofiles) {
                 $.each(trooper.otherprofiles, function (i, otherprofileCode) {
-                    buildTrooperSelector(data.findTrooperByCode(otherprofileCode)).addClass('ia-trooperSelectorOtherProfile').appendTo('#ia-mainScreenCenter');
+                    var otherProfile = data.findTrooperByCode(otherprofileCode);
+                    buildTrooperSelector(otherProfile).addClass('ia-trooperSelectorOtherProfile')
+                            .appendTo(otherProfile.hasOptions ? '#ia-mainScreenCenter' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
                 });
                 addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
                 });

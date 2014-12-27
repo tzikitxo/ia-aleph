@@ -64,7 +64,7 @@ var data = ia.data;
             trooper.isHackable = (trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI') && !trooper.hasSkillOrEquipment('Not Hackable');
             trooper.hasStr = trooper.hasStr || trooper.type === 'REM' || trooper.type === 'TAG';
             var trooperOptionsByCode = {};
-            trooper.options = $.map(trooper.options, function (option) {
+            trooper.options = $.map(trooper.options || [], function (option) {
                 option = $.extend({
                     troopercode: trooper.code,
                     optioncode: option.code
@@ -101,6 +101,7 @@ var data = ia.data;
                 trooperOptionsByCode[option.code] = option;
                 return option;
             });
+            trooper.hasOptions = trooper.options.length > 0;
             trooper.findTrooperOptionByCode = function (optionCode) {
                 return trooperOptionsByCode[optionCode];
             };
