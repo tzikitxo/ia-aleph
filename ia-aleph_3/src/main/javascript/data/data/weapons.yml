@@ -244,6 +244,7 @@
   traits: [ Direct Template (Large Teardrop), Intuitive Attack ]
 - 
   name: Heavy Grenade Launcher
+  names: [ Heavy Grenade Launcher, Heavy GL ]
   code: 32
   ranges: [ 8,32,48,96 ]
   mods: [ -3,0,-3,-6 ]
@@ -352,6 +353,7 @@
   traits: [ Direct Template (Small Teardrop), Intuitive Attack ]
 - 
   name: Light GL
+  names: [ Light GL, Light Grenade Launcher ]
   code: 44
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
