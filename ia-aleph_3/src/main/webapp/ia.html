@@ -64,9 +64,11 @@
         <script id="ia-rosterTemplate" type="text/x-handlebars-template">
             <div class="ia-rosterContainer">
                 <div class="ia-rosterTopBar">
-                <div class="ia-rosterDownButton" style="display: none;"></div>
-                {{messages.troopers}}: <b>{{roster.trooperCount}}</b> {{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b>  {{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b>
-                <div class="ia-warning">{{join roster.warningMessages}}</div>
+                    <div class="ia-rosterDownButton" style="display: none;"></div>
+                    {{messages.troopers}}: <b>{{roster.trooperCount}}</b>
+                    <span class="{{#if roster.pointWarning}}ia-warning{{/if}}">{{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b></span>
+                    <span class="{{#if roster.swcWarning}}ia-warning{{/if}}">{{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b></span>
+                    <div class="ia-warning">{{join roster.warningMessages}}</div>
                 </div>
                 <div class="ia-rosterMainContainer">
                     

@@ -86,9 +86,11 @@ var roster = ia.roster = {};
         rosterData.swcDiff = rosterData.swcCap - rosterData.swcCount;
         if (rosterData.pointDiff < 0) {
             rosterData.warningMessages.push("Too many points spent (" + rosterData.pointCount + "/" + rosterData.pointCap + ")");
+            rosterData.pointWarning=true;
         }
         if (rosterData.swcDiff < 0) {
             rosterData.warningMessages.push("Too many swc spent (" + rosterData.swcCount + "/" + rosterData.swcCap + ")");
+            rosterData.swcWarning=true;
         }
         if (needHacker && !hasHacker) {
             rosterData.warningMessages.push("Need an hacker for deploying REMs");
