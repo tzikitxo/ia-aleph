@@ -43,43 +43,62 @@
 
     var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 
-
+    function buildTrooperSelector(trooper) {
+        return $(trooperSelectorTemplate({
+            trooper: trooper,
+            messages: {
+                name: 'Name',
+                bsw: "BS Weapons",
+                ccw: "CC Weapons",
+                swc: "SWC",
+                cost: "C",
+                mov: 'MOV',
+                cc: 'CC',
+                bs: 'BS',
+                ph: "PH",
+                wip: "WIP",
+                arm: "ARM",
+                bts: "BTS",
+                wounds: "W",
+                str: "STR",
+                silhouette: "S",
+                ava: "AVA"
+            }
+        }));
+    }
 
 
     ui.trooperSelector = {
         showTrooperSelector: function (trooperCode) {
             trooperCode = trooperCode || data.getTroopers()[0].code;
-            $('#ia-mainScreenCenter').html(trooperSelectorTemplate({
-                trooper: data.findTrooperByCode(trooperCode),
-                messages: {
-                    name: 'Name',
-                    bsw: "BS Weapons",
-                    ccw: "CC Weapons",
-                    swc: "SWC",
-                    cost: "C",
-                    mov: 'MOV',
-                    cc: 'CC',
-                    bs: 'BS',
-                    ph: "PH",
-                    wip: "WIP",
-                    arm: "ARM",
-                    bts: "BTS",
-                    wounds: "W",
-                    str: "STR",
-                    silhouette: "S",
-                    ava: "AVA"
-                }
-            })).find('.ia-trooperSelectorOptionRow').on('click', function () {
-                var trooper=data.findTrooperByCode(trooperCode).findTrooperOptionByCode(Number($(this).data('ia-optioncode')));
-                if ($(this).hasClass('ia-selected')) {
-                    roster.addTrooper(trooper);
-                } else {
-                    $(this).parent().find('.ia-selected').removeClass('ia-selected');
-                    $(this).addClass('ia-selected');
-                    ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
-                }
+            var trooper = data.findTrooperByCode(trooperCode);
+            var trooperSelector = buildTrooperSelector(trooper);
+            $('#ia-mainScreenCenter').html(trooperSelector);
+
+            function addSelectListener(context, callback) {
+                context.find('.ia-trooperSelectorOptionRow').on('click', function () {
+                    var trooper = data.findTrooperByCode(Number($(this).closest('.ia-trooperSelectorContainer').data('ia-troopercode'))).findTrooperOptionByCode(Number($(this).data('ia-optioncode')));
+                    if ($(this).hasClass('ia-selected')) {
+                        callback(trooper);
+                    } else {
+                        $('#ia-mainScreenCenter .ia-trooperSelectorContainer .ia-selected').removeClass('ia-selected');
+                        $(this).addClass('ia-selected');
+                        ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
+                    }
+                });
+            }
+            addSelectListener(trooperSelector, function (trooper) {
+                roster.addTrooper(trooper);
             });
             $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
+            if (trooper.otherprofiles) {
+                $.each(trooper.otherprofiles, function (i, otherprofileCode) {
+                    buildTrooperSelector(data.findTrooperByCode(otherprofileCode)).addClass('ia-trooperSelectorOtherProfile').appendTo('#ia-mainScreenCenter');
+                });
+                addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
+                });
+
+            }
         }
     };
 

@@ -23,7 +23,9 @@
             $('#ia-unitSelectorContainer').replaceWith(unitSelectorTemplate({}));
 //            factionCode = factionCode || 1;
 //            var faction = data.findFactionByCode(factionCode);
-            var troopers = data.getTroopers();
+            var troopers = $.grep(data.getTroopers(), function (trooper) {
+                return !trooper.isAlternateProfile;
+            });
             var unitSelectorScroller = $('#ia-unitSelectorScroller');
             unitSelectorScroller.find('.ia-unitSelector').remove();
             $.each([].concat(troopers).reverse(), function (i, trooper) {

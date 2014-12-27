@@ -1568,3 +1568,135 @@
     bsw: [ HMG, Nanopulser ]
     swc: 2
     cost: 69
+- 
+  isc: Hsien Warriors
+  longisc: HSIEN Warriors
+  code: 128
+  faction: 2
+  logo: hsien
+  name: HSIEN
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 19
+  bs: 14
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Martial Arts L1 ]
+  equipments: [ Multispectral Visor L2 ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 57
+  - 
+    code: 2
+    description: TinBot
+    bsw: [ MULTI Rifle, 1 TinBot B (Deflector L2) ]
+    swc: 0.5
+    cost: 60
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 61
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 52
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: -1
+    cost: 57
+  - 
+    code: 6
+    description: Lt+TinBot
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle,1 TinBot B (Deflector L2) ]
+    swc: 0
+    cost: 60
+  - 
+    code: 7
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    swc: 2
+    cost: 61
+- 
+  isc: Guijia Squadrons
+  longisc: GUIJIA Squadrons
+  code: 129
+  faction: 2
+  logo: guijia
+  name: GUIJIA
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 19
+  bs: 14
+  ph: 17
+  wip: 13
+  arm: 8
+  bts: 6
+  w: 3
+  s: 7
+  ava: 2
+  backup: C
+  skills: [ Manned ]
+  equipments: [ ECM ]
+  bsw: [ MULTI HMG, Heavy Flamethrower ]
+  ccw: [ AP CCW ]
+  otherprofiles: [130]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 88
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 3
+    cost: 88
+- 
+  isc: GUIJIA PILOT
+  code: 130
+  faction: 2
+  logo: guijia
+  name: GUIJIA PILOT
+  type: LI
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: "-"
+  classification: Mechanized Troops
+  backup: C
+  skills: [ Pilot ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
