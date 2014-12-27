@@ -30,16 +30,25 @@
     });
 
     data.loadTroopersByFaction(1);
+    roster.updateRosterData({
+        faction: 1,
+        troopers: []
+    });
 
     ui.main = {
+        updateMainStuffForFaction: function (faction) {
+            $('#ia-favicon').attr('href', 'img/army/' + faction.logo + '_logo.png');
+            $('#ia-mainMenuButton').attr('src', 'img/army/' + faction.logo + '_logo.png');
+        },
         updateMainScreen: function () {
-            ui.unitSelector.showUnitSelector();
-            ui.trooperSelector.showTrooperSelector();
+            ui.main.updateMainStuffForFaction(data.findFactionByCode(roster.getRosterData().faction));
+            ui.unitSelector.updateUnitSelector();
+            ui.trooperSelector.updateTrooperSelector();
             ui.armyRoster.updateArmyRoster();
             ui.weaponsDisplay.initializeWeaponsDisplay();
         }
     };
-    
+
     ui.main.updateMainScreen();
 
 

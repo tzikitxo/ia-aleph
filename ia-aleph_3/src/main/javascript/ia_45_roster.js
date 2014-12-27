@@ -21,12 +21,22 @@ var roster = ia.roster = {};
         troopers: [],
         pointCap: 300,
         swcCap: 6,
-        trooperCount: 0
+        trooperCount: 0,
+        faction: null
     };
 
+    roster.updateRosterData = function (config) {
+        $.extend(rosterData, config);
+        roster.validate();
+    };
+//    roster.clearRosterTroopers = function () {
+//        rosterData.troopers = [];
+//        roster.validate();
+//        ui.armyRoster.updateArmyRoster();
+//    };
     roster.getRosterData = function () {
         return rosterData;
-    }
+    };
     roster.addTrooper = function (trooper) {
         rosterData.troopers.push(trooper);
         roster.validate();
