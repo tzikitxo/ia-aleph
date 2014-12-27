@@ -246,17 +246,21 @@ body{
     }
 }
 .ia-rosterTopBar{
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 .ia-rosterTrooperEntryLogo{
     width: 16px;
     height: 16px;
 }
-#ia-rosterContainerOnTopBar .ia-rosterBody{
+.ia-rosterBody{
     /*display: none;*/
     margin-top: 5px;
+    /*    z-index:8;
+        position: relative;
+        
+        background-color: @headerBgColor;*/
 }
-#ia-rosterContainerOnTopBar .ia-rosterContainer{
+.ia-rosterContainer{
     position: fixed;
     top: 0;
     right: 0;
@@ -270,23 +274,6 @@ body{
     border-top: 0;
     border-right: 0;
 }
-/*#ia-rosterContainerOnTopBar.ia-showRosterBody .ia-rosterContainer{
-    position: fixed;
-    top:0;
-    right:0;
-    z-index:10;
-    width: 300px;
-    padding: 5px 5px 10px 10px;
-
-    border: 2px solid @headerBorderColor;
-    border-top: 0;
-    border-right: 0;
-    background-color: @headerBgColor;
-
-    .ia-rosterBody{
-        display: block;
-    }
-}*/
 .ia-rosterTable{
     width: 100%;
     border-collapse: collapse;
@@ -297,6 +284,33 @@ body{
         background-color: @tableRowAlternateColor;
     }
 }
+.ia-rosterMainContainer{
+    position: relative;
+}
+.ia-rosterDownButton, .ia-rosterUpButton{
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.ia-rosterDownButton{
+    float: left;
+    width: 30px;
+    height: 15px;
+    margin-right: 3px;
+    margin-left: -5px;
+    background-size: 100% 100%;
+
+    background-image: url('../img/theme/arrowButtonDownBg.png');
+}
+.ia-rosterUpButton{
+    background-image: url('../img/theme/arrowButtonUpBg.png');
+    width: 100%;
+    height: 25px;
+    background-size: 50px 100%;
+}
+/*.ia-rosterMainContainer{
+    min-height: 25px;
+}*/
 
 // TROOPER SELECTOR 
 
