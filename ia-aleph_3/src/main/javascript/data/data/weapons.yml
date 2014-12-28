@@ -8,6 +8,7 @@
   traits: [ Non-Lethal ]
 - 
   name: Anti-personnel Mines
+  names: [ Anti-personnel Mines, Antipersonnel Mines ]
   code: 2
   damage: 13
   burst: 1
