@@ -5109,3 +5109,61 @@
     bsw: [ Combi Rifle, E/Mauler ]
     swc: 0
     cost: 32
+- 
+  isc: Die Morlock Gruppe
+  longisc: 
+  code: 201
+  faction: 5
+  logo: die_morlock_gruppe
+  name: MORLOCK
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 22
+  bs: 11
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L1, Martial Arts L2, MetaChemistry ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Smoke Grenades ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: EMCCW
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Pistol, E/M CCW ]
+    swc: 0
+    cost: 6
+  - 
+    code: 3
+    description: DACCW
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 6
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun, Smoke Grenades ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 13
+  - 
+    code: 5
+    description: SmokeLGL
+    bsw: [ Combi Rifle + Smoke Light Grenade Launcher ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 1
+    cost: 14

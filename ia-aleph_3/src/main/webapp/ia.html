@@ -228,6 +228,19 @@
                 </table>
             </div>
         </script>
+        <script id="ia-referenceTableTemplate-metachemistry" type="text/x-handlebars-template">
+            <div class="ia-referenceTableContainer">
+                <table class="ia-referenceTable">
+                    <thead><tr><th colspan="4">{{reference.title}}</th></tr></thead>
+                    <tbody>
+                        {{#each reference.records}}
+                            <tr><td style="text-align: center">{{l1}}</td><td>{{v1}}</td><td style="text-align: center">{{l2}}</td><td>{{v2}}</td></tr>
+                        {{/each}}
+                        <tr class="ia-referenceTableFooter"><td colspan="4"></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </script>
         <script type="text/javascript" src="js/ia-lib.js"></script>
         <script type="text/javascript" src="js/ia-data.js"></script>
         <script type="text/javascript" src="js/ia-lang.js"></script>

@@ -55,8 +55,13 @@
 
     var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 
+    var skillsWithReferenceTable = {
+        'MetaChemistry': 'metachemistry'
+    };
+    var referenceTableTemplates = {};
+
     function buildTrooperSelector(trooper) {
-        return $(trooperSelectorTemplate({
+        var trooperSelector = $(trooperSelectorTemplate({
             trooper: trooper,
             messages: {
                 name: 'Name',
@@ -77,8 +82,16 @@
                 ava: "AVA"
             }
         }));
+        $.each(skillsWithReferenceTable, function (skill, table) {
+            if (trooper.hasSkillOrEquipment(skill)) {
+                if (!referenceTableTemplates[table]) {
+                    referenceTableTemplates[table] = Handlebars.compile($('#ia-referenceTableTemplate-' + table).html());
+                }
+                trooperSelector.append(referenceTableTemplates[table]({reference: data.getReferenceTableData(table)}));
+            }
+        });
+        return trooperSelector;
     }
-
 
     ui.trooperSelector = {
         updateTrooperSelector: function (trooperCode) {

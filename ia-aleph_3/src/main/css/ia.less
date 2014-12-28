@@ -15,6 +15,10 @@
 @weaponsTableRowAlternateColor: #d4edfc;
 @weaponsTableHeaderBgColor: #fcc002;
 
+@referenceTableRowAlternateColor: #d4edfc;
+@referenceTableHeaderBgColor: #bce4fa;
+@referenceTableHeaderBorderColor: #009fe3;
+
 // BODY
 
 body{
@@ -490,5 +494,40 @@ body{
     margin-top: 15px;
     .ia-trooperSelectorHeader{
         display: none;
+    }
+}
+
+// REFERNECE TABLES
+
+.ia-referenceTableContainer{
+    width: 100%;
+    padding: 0 0 0 10px;
+    box-sizing: border-box;
+}
+.ia-referenceTable{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    thead tr{
+        border: 1px solid @referenceTableHeaderBorderColor;
+        background-color: @referenceTableHeaderBgColor;
+
+    }
+    tr:nth-child(odd) {
+        background-color: @referenceTableRowAlternateColor;
+    }
+    td{
+        padding: 3px;
+    }
+    th{
+        padding: 4px;
+        font-size: 15px;
+    }
+    tr.ia-referenceTableFooter{       
+        background-color: @referenceTableHeaderBorderColor;
+        td{
+            padding: 2px;
+        }
     }
 }

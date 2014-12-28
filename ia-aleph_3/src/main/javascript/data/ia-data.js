@@ -23,5 +23,7 @@
     data.troopers = anyplacetools.importFile('data/troopers.yml');
     
     data.weapons = anyplacetools.importFile('data/weapons.yml');
+    
+    data.references = anyplacetools.importFile('data/references.yml');
 
 })();
