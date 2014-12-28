@@ -188,4 +188,8 @@ var data = ia.data;
         return weaponsByName[name];
     };
 
+    data.getReferenceTableData = function (name) {
+        return data.references[name];
+    };
+
 })();
