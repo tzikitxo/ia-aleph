@@ -4898,7 +4898,7 @@
   longisc: LIZARD PILOT
   code: 197
   faction: 5
-  logo: lizard_squad
+  logo: lizard
   name: LIZARD PILOT
   type: LI
   classification: Mechanized Troops
@@ -5167,3 +5167,376 @@
     ccw: [ Pistol, AP CCW ]
     swc: 1
     cost: 14
+- 
+  isc: Corregidor Jaguars
+  longisc: 
+  code: 202
+  faction: 5
+  logo: corregidor_jaguars
+  name: JAGUAR
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 21
+  bs: 11
+  ph: 13
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  impetuosity: F
+  skills: [ Martial Arts L2, "V: Dogged" ]
+  options:
+  - 
+    code: 1
+    description: Shotgun
+    bsw: [ Light Shotgun, Smoke Grenades ]
+    ccw: [ Pistol, E/M CCW ]
+    swc: 0
+    cost: 13
+  - 
+    code: 2
+    description: Chain
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 10
+  - 
+    code: 3
+    description: ADHL
+    bsw: [ Adhesive Launcher, Panzerfaust ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0.5
+    cost: 13
+- 
+  isc: Daktaris
+  longisc: DAKTARIS (Daks, Campaign Doctors)
+  code: 203
+  faction: 5
+  logo: daktaris
+  name: DAKTARI
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Doctor ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Doctor
+    swc: 0
+    cost: 14
+- 
+  isc: Clockmakers
+  longisc: Bakunin CLOCKMAKERS
+  code: 204
+  faction: 5
+  logo: clockmakers
+  name: CLOCKMAKER
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 15
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Engineer ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Engineer
+    swc: 0
+    cost: 18
+- 
+  isc: Tunguska Interventors
+  longisc: Tunguska INTERVENTORS
+  code: 205
+  faction: 5
+  logo: interventors
+  name: INTERVENTOR
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 15
+  arm: 1
+  bts: 9
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Hacker ]
+  equipments: [ Hacking Device Plus ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 25
+  - 
+    code: 2
+    description: FastPanda
+    bsw: [ Combi Rifle, 1 FastPanda ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 4
+    description: BS+FP
+    bsw: [ Boarding Shotgun, 1 FastPanda ]
+    swc: 0.5
+    cost: 26
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 25
+  - 
+    code: 6
+    description: Lt+FP
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, 1 FastPanda ]
+    swc: 0.5
+    cost: 27
+- 
+  isc: Stempler Zonds
+  longisc: 
+  code: 206
+  faction: 5
+  logo: stempler_zonds
+  name: STEMPLER ZOND
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Climbing Plus, Deactivator, Forward Observer, "G: Remote Presence", Repeater, Sat-lock, Sensor ]
+  bsw: [ Combi Rifle, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 17
+- 
+  isc: Reaktion Zonds
+  longisc: 
+  code: 207
+  faction: 5
+  logo: reaktion_zonds
+  name: REAKTION ZOND
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Climbing Plus, "G: Remote Presence", Total Reaction ]
+  equipments: [ 360° Visor ]
+  bsw: [ HMG ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    swc: 1
+    cost: 26
+- 
+  isc: Vertigo Zonds
+  longisc: 
+  code: 208
+  faction: 5
+  logo: vertigo_zonds
+  name: VERTIGO ZOND
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  bsw: [ Smart Missile Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: SML
+    swc: 1.5
+    cost: 18
+- 
+  isc: Meteor Zonds
+  longisc: 
+  code: 209
+  faction: 5
+  logo: meteor_zonds
+  name: METEOR ZOND
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "AD: Combat Jump", Forward Observer, "G: Remote Presence", Repeater, Sat-lock, Sensor ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    swc: 1
+    cost: 21
+- 
+  isc: Transductor Zonds
+  longisc: 
+  code: 210
+  faction: 5
+  logo: transductor_zonds
+  name: TRANSDUCTOR ZOND
+  type: REM
+  classification: Support Troops
+  mov: 6-6
+  cc: 8
+  bs: 8
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "CH: Mimetism", "G: Remote Presence", Repeater ]
+  bsw: [ Flash Pulse, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 8
+- 
+  isc: "Zoe & Π-Well, Special Clockmakers Team"
+  longisc: ZOE
+  code: 211
+  compositetroop:
+  -
+    code: 211
+    min: 1
+    max: 1
+  -
+    code: 212
+    min: 1
+    max: 1
+  faction: 5
+  logo: zoe
+  name: ZOE
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 15
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Engineer ]
+  equipments: [ "Hacking Device + UPGRADE: Stop!" ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 28
+- 
+  isc: "Zoe & Π-Well, Special Clockmakers Team"
+  longisc: Π-WELL
+  code: 213
+  faction: 5
+  logo: pi_well
+  name: Π-WELL
+  type: REM
+  classification: Character
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: "-"
+  skills: [ Forward Observer, "G: Remote Presence", Repeater, Sat-lock, Sensor ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 19
