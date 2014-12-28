@@ -6108,3 +6108,160 @@
   - 
     code: 1
     description: 
+- 
+  isc: Avatar
+  longisc: 
+  code: 224
+  faction: 6
+  logo: avatar
+  name: AVATAR
+  type: TAG
+  classification: Headquarters Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 17
+  wip: 17
+  arm: 9
+  bts: 9
+  w: 3
+  s: 7
+  ava: 1
+  skills: [ "G: Mnemonica","Immunity: POS" ]
+  equipments: [ "ODD: Optical Disrupto", ECM ]
+  bsw: [ MULTI HMG, Sepsitor Plus ]
+  ccw: [ DA CCW ]
+  options:
+  - 
+    code: 1
+    description: Lieutenant
+    skills: [ Lieutenant, Strategos L3 ]
+    swc: 3.5
+    cost: 137
+- 
+  isc: "'The Shrouded'"
+  longisc: "'THE SHROUDEDS' Shasvastii Pioneer Corps"
+  code: 225
+  faction: 6
+  logo: the_shrouded
+  name: SHROUDED
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain, Shasvastii ]
+  equipments: [ AutoMediKit ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 31
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 30
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 25
+- 
+  isc: Malignos
+  longisc: "'MALIGNOS' Shasvastii Deep Incursion Corps"
+  code: 226
+  faction: 6
+  logo: malignos
+  name: MALIGNOS
+  type: SK
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: TO Camouflage", Infiltration, Multiterrain, Shasvastii ]
+  equipments: [ AutoMediKit ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 35
+  - 
+    code: 2
+    description: Monofilament
+    bsw: [ Combi Rifle, Monofilament Mines ]
+    swc: 1
+    cost: 38
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 34
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 42
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 41
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 36
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 2
+    cost: 35
