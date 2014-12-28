@@ -4377,3 +4377,735 @@
   skills: [ "V: Dogged" ]
   bsw: [ Light Flamethrower (2), Smoke Grenades ]
   ccw: [ Breaker Pistol (2), DA CCW ]
+
+
+# NOMADS
+
+- 
+  isc: Corregidor Alguaciles
+  longisc: 
+  code: 189
+  faction: 5
+  logo: alguaciles
+  name: ALGUACIL
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 18
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 14
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 18
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 15
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 18
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer, Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 10
+- 
+  isc: Grenzers, Grenz Security Team
+  longisc: GRENZERS, Grenz Security Team
+  code: 190
+  faction: 5
+  logo: grenzers
+  name: GRENZER
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "V: Courage" ]
+  equipments: [ Multispectral Visor L1 ]
+  ccw: [ Pistol, Breaker Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 29
+  - 
+    code: 5
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer, Sensor ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 27
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 25
+- 
+  isc: Hellcats
+  longisc: 
+  code: 191
+  faction: 5
+  logo: hellcats
+  name: HELLCAT
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ "AD: Superior Combat Jump / Zero-G", "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG, E/Mauler ]
+    swc: 1.5
+    cost: 31
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 21
+  - 
+    code: 4
+    description: ADHL
+    bsw: [ Combi Rifle, Adhesive Launcher ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 5
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 28
+  - 
+    code: 7
+    description: DepRep
+    equipments: [ Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 24
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 22
+- 
+  isc: Intruders
+  longisc: NTRUDERS, Corregidor Assault Commandos
+  code: 192
+  faction: 5
+  logo: intruders
+  name: INTRUDER
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 12
+  wip: 14
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Camouflage", Multiterrain ]
+  equipments: [ Multispectral Visor L2 ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower, Grenades ]
+    swc: 0
+    cost: 35
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG, Grenades ]
+    swc: 1.5
+    cost: 42
+  - 
+    code: 3
+    description: ADHL
+    bsw: [ Combi Rifle + Light Flamethrower, Adhesive Launcher ]
+    swc: 1
+    cost: 36
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0.5
+    cost: 43
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Flamethrower, Grenades ]
+    swc: 0
+    cost: 35
+  - 
+    code: 6
+    description: Sniper
+    equipments: [ X-Visor ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 43
+- 
+  isc: Reverend Moiras
+  longisc: 
+  code: 193
+  faction: 5
+  logo: reverend_moiras
+  name: REVEREND MOIRA
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Multiterrain, Religious Troop ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 30
+  - 
+    code: 2
+    description: APCCW
+    bsw: [ MULTI Rifle ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 30
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 5
+    description: E/M LGL
+    bsw: [ MULTI Rifle + E/M Light Grenade Launcher ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 1
+    cost: 34
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ MULTI Rifle ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0.5
+    cost: 36
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 1
+    cost: 30
+- 
+  isc: Reverend Healers
+  longisc: 
+  code: 194
+  faction: 5
+  logo: reverend_healers
+  name: REVEREND HEALER
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 19
+  bs: 13
+  ph: 12
+  wip: 14
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Doctor, Religious Troop ]
+  equipments: [ MediKit ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 33
+  - 
+    code: 2
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 37
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 32
+- 
+  isc: Mobile Brigada
+  longisc: 
+  code: 195
+  faction: 5
+  logo: mobile_brigada
+  name: MOBILE BRIGADA
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 39
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 42
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 33
+  - 
+    code: 4
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 34
+  - 
+    code: 5
+    description: TinBot
+    bsw: [ Combi Rifle + 1 TinBot B (Deflector L2) ]
+    swc: 0.5
+    cost: 37
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 39
+- 
+  isc: '"Lizard" Squad'
+  longisc: LIZARD SQUAD
+  code: 196
+  faction: 5
+  otherprofiles: [ 197 ]
+  logo: lizard
+  name: LIZARD
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 17
+  bs: 14
+  ph: 17
+  wip: 13
+  arm: 8
+  bts: 6
+  w: 3
+  s: 7
+  ava: 1
+  backup: C
+  skills: [ Manned ]
+  equipments: [ ECM ]
+  bsw: [ MULTI HMG ]
+  options:
+  - 
+    code: 1
+    description: HGL
+    bsw: [ Heavy Grenade Launcher ]
+    swc: 2.5
+    cost: 87
+  - 
+    code: 2
+    description: HFT
+    bsw: [ Heavy Flamethrower ]
+    swc: 2
+    cost: 87
+- 
+  isc: '"Lizard" Squad'
+  longisc: LIZARD PILOT
+  code: 197
+  faction: 5
+  logo: lizard_squad
+  name: LIZARD PILOT
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ Pilot ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+- 
+  isc: Corregidor Bandits
+  longisc: 
+  code: 198
+  faction: 5
+  logo: corregidor_bandits
+  name: BANDIT
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 12
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  irregular: I
+  skills: [ "CH: Camouflage", Infiltration, Martial Arts L2, Multiterrain, Scavenger ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, E/Mauler ]
+    swc: 0
+    cost: 26
+  - 
+    code: 3
+    description: ADHL
+    bsw: [ Light Shotgun, Adhesive Launcher ]
+    swc: 0
+    cost: 22
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Light Shotgun, Adhesive Launcher ]
+    swc: 0.5
+    cost: 28
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Light Shotgun, Adhesive Launcher ]
+    swc: 0
+    cost: 23
+  - 
+    code: 6
+    description: DepRep
+    equipments: [ Deployable Repeater ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 28
+- 
+  isc: Zeros
+  longisc: 
+  code: 199
+  faction: 5
+  logo: zeros
+  name: ZERO
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 18
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
+    swc: 1.5
+    cost: 26
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 17
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 19
+  - 
+    code: 6
+    description: DepRep
+    equipments: [ Deployable Repeater ]
+    bsw: [ Combi Rifle, E/Mauler ]
+    swc: 0
+    cost: 19
+- 
+  isc: Spektrs
+  longisc: 
+  code: 200
+  faction: 5
+  logo: spektrs
+  name: SPEKTR
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: TO Camouflage", Infiltration, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 31
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 30
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
+    swc: 1.5
+    cost: 39
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 36
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 32
+  - 
+    code: 6
+    description: DepRep
+    equipments: [ Deployable Repeater ]
+    bsw: [ Combi Rifle, E/Mauler ]
+    swc: 0
+    cost: 32
