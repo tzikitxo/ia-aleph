@@ -37,6 +37,13 @@ body{
 // MAIN
 
 .ia-mainScreenTopBar{    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    
+}
+.ia-mainScreenTopBarButtons{
     margin-left: auto;
     margin-right: auto;
     max-width: 850px;
@@ -49,7 +56,8 @@ body{
     background-color: @topBarBgColor;
 }
 #ia-mainScreenCenter{
-    margin-top:10px;
+    padding-top: 65px;
+    padding-bottom: 45px;
 }
 #ia-mainMenuButton{
     width: 40px;
@@ -57,7 +65,7 @@ body{
     position: absolute;
     top: 5px;
     left: 10px;
-    z-index: 5;
+    z-index: 25;
 
     cursor: pointer;
 }
@@ -271,7 +279,7 @@ body{
     /*padding: 5px;*/
     padding: 5px 10px 5px 10px;
     border-radius: 0 0 0 5px;
-    z-index:5;
+    z-index:35;
 
     background-color: @headerBgColor;
     border: 2px solid @headerBorderColor;
