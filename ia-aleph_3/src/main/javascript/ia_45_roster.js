@@ -25,13 +25,27 @@ var roster = ia.roster = {};
         factionCode: null
     };
 
-    roster.updateRosterData = function (config) {
+    function updateRosterData(config) {
         $.extend(rosterData, config);
-        roster.validate();
+    }
+    function addTrooper(trooper) {
+        rosterData.troopers.push($.extend({
+            rosterentrycode: getNextRosterEntryCode()
+        }, trooper));
+    }
+    function validateAndSave() {
+        validateRoster();
+        storage.saveRoster(roster.serializeRosterData());
+        ui.armyRoster.updateArmyRoster();
+    }
+
+    roster.updateRosterData = function (config) {
+        updateRosterData(config);
+        validateAndSave();
     };
 //    roster.clearRosterTroopers = function () {
 //        rosterData.troopers = [];
-//        roster.validate();
+//        validateRoster();
 //        ui.armyRoster.updateArmyRoster();
 //    };
     roster.getRosterData = function () {
@@ -45,16 +59,12 @@ var roster = ia.roster = {};
         return n + 1;
     }
     roster.addTrooper = function (trooper) {
-        rosterData.troopers.push($.extend({
-            rosterentrycode: getNextRosterEntryCode()
-        }, trooper));
-        roster.validate();
-        ui.armyRoster.updateArmyRoster();
+        addTrooper(trooper);
+        validateAndSave();
     };
     roster.removeTrooperByIndex = function (trooperIndex) {
         rosterData.troopers.splice(trooperIndex, 1);
-        roster.validate();
-        ui.armyRoster.updateArmyRoster();
+        validateAndSave();
     };
     roster.getAvailableAvaByTrooperCode = function (trooperCode) {
         var trooper = data.findTrooperByCode(trooperCode);
@@ -77,18 +87,22 @@ var roster = ia.roster = {};
                 swcap = Number(str.replace(/.*S([0-9.]+).*$/, '$1'));
         //TODO check data
         data.loadTroopersByFaction(factionCode);
-        roster.updateRosterData({
+        updateRosterData({
             pointCap: pcap,
             swcCap: swcap,
             factionCode: factionCode
         });
-        $.each(str.replace(/^.*?T/, '').split('T'), function (i, tr) {
-            var troopcode = Number(str.split(/O/)[0]), optioncode = Number(str.split(/O/)[1]);
-            var trooper = data.findTrooperByCode(troopcode).findTrooperOptionByCode(optioncode);
-            roster.addTrooper(trooper);
-        });
+        if (str.match(/T/)) {
+            $.each(str.replace(/^.*?T/, '').split('T'), function (i, tr) {
+                var troopcode = Number(tr.split(/O/)[0]), optioncode = Number(tr.split(/O/)[1]);
+                var trooper = data.findTrooperByCode(troopcode).findTrooperOptionByCode(optioncode);
+                addTrooper(trooper);
+            });
+        }
+        validateRoster();
+        ui.armyRoster.updateArmyRoster();
     };
-    roster.validate = function () {
+    function validateRoster() {
         rosterData.pointCount = 0;
         rosterData.swcCount = 0;
         rosterData.trooperCount = 0;
@@ -137,8 +151,9 @@ var roster = ia.roster = {};
                 rosterData.warningMessages.push("Can have at most " + trooper.ava + " " + trooper.name);
             }
         });
-    };
-    roster.validate();
+    }
+
+    validateRoster();
 
 //    roster.addTrooperAndUpdateView = function (trooper) {
 //        roster.addTrooper(trooper);
