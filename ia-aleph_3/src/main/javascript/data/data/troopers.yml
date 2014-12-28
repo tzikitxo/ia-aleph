@@ -6265,3 +6265,40 @@
     bsw: [ Combi Rifle, Antipersonnel Mines ]
     swc: 2
     cost: 35
+- 
+  isc: Speculo Killers
+  longisc: 
+  code: 227
+  faction: 6
+  logo: speculo_killers
+  name: SPECULO KILLER
+  type: SK
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Impersonation Plus, Kinematika L1, Martial Arts L3, Multiterrain, Shasvastii ]
+  equipments: [ AutoMediKit ]
+  bsw: [ Smoke Grenades ]
+  ccw: [ Pistol, Monofilament CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 35
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 1
+    cost: 34
