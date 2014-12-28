@@ -5887,3 +5887,224 @@
     bsw: [ Combi Rifle + Light Shotgun ]
     swc: 1
     cost: 29
+- 
+  isc: Rodok, Morat Armed Imposition Detachment
+  longisc: RODOK, Morat Armed Imposition Detachment
+  code: 220
+  faction: 6
+  logo: rodok
+  name: RODOK
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "CH: Mimetism", Morat, Super-Jump ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle,Light Shotgun (2) ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 27
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 19
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher, Light Shotgun ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 5
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0
+    cost: 21
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 25
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle,Light Shotgun (2) ]
+    swc: 1
+    cost: 26
+- 
+  isc: The Charontids
+  longisc: 
+  code: 221
+  faction: 6
+  logo: the_charontids
+  name: CHARONTID
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 15
+  bs: 14
+  ph: 13
+  wip: 16
+  arm: 5
+  bts: 6
+  w: 2
+  s: 5
+  ava: 1
+  skills: [ "G: Mnemonica", "V: No Wound Incapacitation" ]
+  ccw: [ Heavy Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Plasma
+    equipments: [ Multispectral Visor L3 ]
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0
+    cost: 78
+  - 
+    code: 2
+    description: HMG
+    equipments: [ Multispectral Visor L3 ]
+    bsw: [ HMG, Nanopulser ]
+    swc: 2
+    cost: 79
+  - 
+    code: 3
+    description: Sepsitor
+    bsw: [ Plasma Rifle, Sepsitor Plus + 1 TinBot A (Deflector L1) ]
+    swc: 0.5
+    cost: 78
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device Plus ]
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 73
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    equipments: [ Multispectral Visor L3 ]
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0
+    cost: 78
+  - 
+    code: 6
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    equipments: [ Multispectral Visor L3 ]
+    bsw: [ HMG, Nanopulser ]
+    swc: 2
+    cost: 79
+  - 
+    code: 7
+    description: Lt+Sepsitor
+    skills: [ Lieutenant ]
+    bsw: [ Plasma Rifle, Sepsitor Plus ]
+    swc: 0
+    cost: 77
+  - 
+    code: 8
+    description: Lt+Sep+TinBot
+    skills: [ Lieutenant ]
+    bsw: [ Plasma Rifle, Sepsitor Plus + 1 TinBot A (Deflector L1) ]
+    swc: 0
+    cost: 78
+  - 
+    code: 9
+    description: Lt+Hacker
+    skills: [ Lieutenant, Hacker ]
+    equipments: [ Hacking Device Plus ]
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 73
+- 
+  isc: Raicho Armored Brigade
+  longisc: RAICHO Armored Brigade
+  code: 222
+  otherprofiles: [ 223 ]
+  faction: 6
+  logo: raicho
+  name: RAICHO
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 19
+  bs: 14
+  ph: 17
+  wip: 12
+  arm: 8
+  bts: 6
+  w: 3
+  s: 7
+  ava: 1
+  backup: C
+  skills: [ Manned, Morat ]
+  equipments: [ ECM ]
+  bsw: [ MULTI HMG ]
+  options:
+  - 
+    code: 1
+    description: HFT
+    bsw: [ Heavy Flamethrower ]
+    swc: 2
+    cost: 91
+  - 
+    code: 2
+    description: HP
+    ccw: [ AP Heavy Pistol ]
+    swc: 2
+    cost: 90
+- 
+  isc: Raicho Armored Brigade
+  longisc: RAICHO PILOT
+  code: 223
+  faction: 6
+  logo: raicho
+  name: RAICHO PILOT
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 12
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ Morat, Pilot ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
