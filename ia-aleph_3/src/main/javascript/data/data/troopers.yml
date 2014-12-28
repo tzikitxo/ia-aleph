@@ -6302,3 +6302,276 @@
     bsw: [ Boarding Shotgun ]
     swc: 1
     cost: 34
+- 
+  isc: Daturazi Witch-Soldiers
+  longisc: DATURAZI Witch-Soldiers
+  code: 228
+  faction: 6
+  logo: daturazi_witch_soldiers
+  name: DATURAZI
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 21
+  bs: 11
+  ph: 14
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  impetuosity: E
+  skills: [ "CH: Mimetism", Kinematika L1, Martial Arts L4, Morat ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Smoke Grenades ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 21
+  - 
+    code: 2
+    description: APCCW
+    bsw: [ Combi Rifle, Smoke Grenades ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 21
+  - 
+    code: 3
+    description: DACCW
+    bsw: [ Combi Rifle, Smoke Grenades ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 22
+  - 
+    code: 4
+    description: Chain
+    bsw: [ Chain Rifle, Grenades, Smoke Grenades ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 14
+  - 
+    code: 5
+    description: BS
+    bsw: [ Boarding Shotgun, Smoke Grenades ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 20
+  - 
+    code: 6
+    description: SmokeLGL
+    bsw: [ Combi Rifle + Smoke Light Grenade Launcher ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0.5
+    cost: 21
+- 
+  isc: "The Hungries-'Gakis'"
+  longisc: "THE HUNGRIES: 'GAKIS'"
+  code: 229
+  faction: 6
+  logo: hungries
+  name: GAKI
+  type: WB
+  classification: Line Troops
+  mov: 6-6
+  cc: 19
+  bs: 9
+  ph: 14
+  wip: 12
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  impetuosity: E
+  skills: [ Climbing Plus, Explode L1, Kinematika L1 ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
+- 
+  isc: "The Hungries-'Pretas'"
+  longisc: "THE HUNGRIES: 'PRETAS'"
+  code: 230
+  faction: 6
+  logo: hungries
+  name: PRETA
+  type: WB
+  classification: Line Troops
+  mov: 6-6
+  cc: 19
+  bs: 9
+  ph: 14
+  wip: 12
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  impetuosity: E
+  skills: [ Climbing Plus, Kinematika L1, "V: Dogged" ]
+  bsw: [ Chain Rifle ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 7
+- 
+  isc: Med-Tech Obsidon Medchanoid
+  longisc: 
+  code: 231
+  faction: 6
+  logo: med_tech_obsidon_medchanoid
+  name: MED-TECH OBSIDON MEDCHANOID
+  type: LI
+  classification: Support Troops
+  mov: 6-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Doctor, Engineer ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 23
+- 
+  isc: M-Drones
+  longisc: 
+  code: 232
+  faction: 6
+  logo: m_drones
+  name: M-DRONE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Deactivator, Forward Observer, "G: Remote Presence", Multiterrain, Repeater, Sat-lock, Sensor ]
+  bsw: [ Combi Rifle, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 17
+- 
+  isc: Q-Drones
+  longisc: 
+  code: 233
+  faction: 6
+  logo: q_drones
+  name: Q-DRONE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "CH: Mimetism","G: Remote Presence", Total Reaction ]
+  equipments: [ 360° Visor ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 26
+  - 
+    code: 2
+    description: Plasma
+    bsw: [ Plasma Rifle ]
+    swc: 1
+    cost: 25
+- 
+  isc: T-Drones
+  longisc: 
+  code: 234
+  faction: 6
+  logo: t_drones
+  name: T-DRONE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  bsw: [ Smart Missile Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: SML
+    swc: 1.5
+    cost: 18
+- 
+  isc: R-Drones
+  longisc: 
+  code: 235
+  faction: 6
+  logo: r_drones
+  name: R-DRONE
+  type: REM
+  classification: Support Troops
+  mov: 6-6
+  cc: 8
+  bs: 8
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "CH: Mimetism", "G: Remote Presence", Repeater ]
+  bsw: [ Flash Pulse, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 8
