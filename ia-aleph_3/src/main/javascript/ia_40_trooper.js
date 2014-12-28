@@ -44,12 +44,12 @@
         if (context.hasLimitedAva) {
             var availableAva = roster.getAvailableAvaByTrooperCode(context.code);
             if (availableAva !== context.ava) {
-                return ' (' + availableAva + ')';
+                return availableAva + ' (' + context.ava + ')';
             } else {
-                return '';
+                return context.ava;
             }
         } else {
-            return '';
+            return context.ava;
         }
     });
 

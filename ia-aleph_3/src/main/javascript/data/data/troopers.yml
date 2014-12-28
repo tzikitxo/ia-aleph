@@ -5540,3 +5540,350 @@
     description: 
     swc: 0
     cost: 19
+
+# COMBINED ARMY
+
+- 
+  isc: Morat Vanguard Infantry
+  longisc: 
+  code: 214
+  faction: 6
+  logo: morat_vanguard_infantry
+  name: MORAT
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  backup: C
+  skills: [ Morat ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 22
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 18
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ K1 Sniper Rifle ]
+    swc: 1
+    cost: 21
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 19
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 22
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 15
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 16
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 14
+- 
+  isc: Unidron Batroids
+  longisc: 
+  code: 215
+  faction: 6
+  logo: unidron_batroids
+  name: UNIDRON
+  type: REM
+  classification: Line Troops
+  mov: 4-4
+  cc: 5
+  bs: 11
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 6
+  w: 1
+  s: 2
+  ava: 4
+  skills: [ "G: Autotool", "V: Dogged" ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Plasma
+    bsw: [ Plasma Carbine ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: K1
+    bsw: [ K1 Combi Rifle ]
+    swc: 0.5
+    cost: 16
+  - 
+    code: 3
+    description: TinBot
+    bsw: [ K1 Combi Rifle + 1 TinBot A (Deflector L1) ]
+    swc: 0.5
+    cost: 17
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Plasma Sniper Rifle ]
+    swc: 1.5
+    cost: 24
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher, Light Shotgun ]
+    swc: 1.5
+    cost: 20
+  - 
+    code: 6
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 18
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Plasma Carbine ]
+    swc: 0
+    cost: 15
+- 
+  isc: Fraacta Drop Unit
+  longisc: FRAACTA DROP UNIT
+  iscspecification: JUMP FORM
+  code: 216
+  otherprofiles: [ 217 ]
+  faction: 6
+  logo: fraacta
+  name: FRAACTA
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 12
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "AD: Combat Jump", Transmutation, "V: Courage" ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 28
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 35
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 35
+- 
+  isc: Fraacta Drop Unit
+  longisc: FRAACTA DROP UNIT
+  iscspecification: SURVIVAL FORM
+  code: 217
+  faction: 6
+  logo: fraacta
+  name: FRAACTA
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 12
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ "V: Courage" ]
+  options:
+- 
+  isc: Umbra Legates
+  longisc: 
+  code: 218
+  faction: 6
+  logo: umbra_legates
+  name: UMBRA LEGATE
+  type: LI
+  classification: Elite Troops
+  mov: 6-2
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Advanced Deployment L1, "CH: Mimetism", Kinematika L1, Martial Arts L4, "V: No Wound Incapacitation" ]
+  bsw: [ Flash Pulse ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: K1
+    bsw: [ K1 Combi Rifle ]
+    swc: 0
+    cost: 40
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 41
+  - 
+    code: 3
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device Plus ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0.5
+    cost: 43
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ K1 Combi Rifle ]
+    swc: 0.5
+    cost: 40
+  - 
+    code: 5
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 41
+- 
+  isc: Maakrep Trackers Unit
+  longisc: MAAKREP Trackers Unit
+  code: 219
+  faction: 6
+  logo: maakrep_trackers
+  name: MAAKREP TRACKER
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Sixth Sense L1, "V: Courage" ]
+  equipments: [ AutoMediKit, Multispectral Visor L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 33
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Grenades ]
+    swc: 0
+    cost: 26
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 33
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Hacking Device ]
+    bsw: [ Boarding Shotgun, Grenades ]
+    swc: 0.5
+    cost: 34
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 1
+    cost: 29
