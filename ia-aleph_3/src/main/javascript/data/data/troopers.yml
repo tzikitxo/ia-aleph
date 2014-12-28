@@ -2984,7 +2984,8 @@
     code: 156
     min: 3
     max: 3
-  longisc: ANTIPODE ASSAULT PACK HANDLER
+  longisc: ANTIPODE ASSAULT PACK
+  iscspecification: HANDLER
   code: 155
   faction: 3
   logo: antipode_assault_pack
@@ -3012,7 +3013,8 @@
     cost: 10
 - 
   isc: Antipode Assault Pack
-  longisc: ANTIPODE ASSAULT PACK ANTIPODE
+  longisc: ANTIPODE ASSAULT PACK
+  iscspecification: ANTIPODE
   code: 156
   faction: 3
   logo: antipode_assault_pack
@@ -3041,7 +3043,8 @@
     cost: 5
 - 
   isc: Dog-Warriors
-  longisc: "DOG-WARRIORS FORM: DOGFACE"
+  longisc: "DOG-WARRIORS"
+  iscspecification: "FORM: DOGFACE"
   code: 157
   otherprofiles: [158]
   faction: 3
@@ -3072,7 +3075,8 @@
     cost: 27
 - 
   isc: Dog-Warriors
-  longisc: "DOG-WARRIORS FORM: DOG-WARRIOR"
+  longisc: "DOG-WARRIORS"
+  iscspecification: "FORM: DOG-WARRIOR"
   code: 158
   faction: 3
   logo: dog_warriors
@@ -3188,3 +3192,1188 @@
     skills: [ Executive Order ]
     swc: 1
     cost: 38
+
+# HAQQISLAM
+
+- 
+  isc: Ghulam Infantry
+  longisc: GHULAM Infantry
+  code: 162
+  faction: 4
+  logo: ghulam
+  name: GHULAM
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 12
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 20
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 13
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 17
+  - 
+    code: 5
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 16
+  - 
+    code: 6
+    description: Panzerfaust
+    bsw: [ Rifle + Light Shotgun, Panzerfaust ]
+    swc: 0.5
+    cost: 15
+  - 
+    code: 7
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 20
+  - 
+    code: 8
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 9
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 13
+  - 
+    code: 10
+    description: Repeater
+    equipments: [ Deployable Repeater ]
+    bsw: [ Rifle + Light Shotgun, E/Mauler ]
+    swc: 0
+    cost: 14
+  - 
+    code: 11
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 12
+  - 
+    code: 12
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    swc: 0.5
+    cost: 20
+  - 
+    code: 13
+    description: Lt+ML
+    skills: [ Lieutenant ]
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 17
+- 
+  isc: Naffatûn
+  longisc: NAFFATÛN
+  code: 163
+  faction: 4
+  logo: naffatun
+  name: NAFFATÛN
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: LFT
+    bsw: [ Rifle + Light Flamethrower, Grenades ]
+    swc: 0
+    cost: 12
+  - 
+    code: 2
+    description: HFT
+    bsw: [ Rifle + Heavy Flamethrower ]
+    swc: 0
+    cost: 13
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Flamethrower, Grenades ]
+    swc: 0
+    cost: 12
+- 
+  isc: Khawarijs
+  longisc: 
+  code: 164
+  faction: 4
+  logo: khawarijs
+  name: KHAWARIJ
+  type: LI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 13
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Bioimmunity, Poison, Religious Troop, Super-Jump ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun, Grenades ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Panzerfaust ]
+    swc: 0
+    cost: 27
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 31
+  - 
+    code: 4
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Boarding Shotgun, Grenades ]
+    swc: 0
+    cost: 30
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun, Grenades ]
+    swc: 0
+    cost: 27
+  - 
+    code: 6
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 31
+- 
+  isc: HASSASSIN GOVADS
+  longisc: HASSASSIN GOVADS
+  code: 165
+  faction: 4
+  logo: hassassin_govads
+  name: GOVAD
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Religious Troop, Veteran L1 ]
+  equipments: [ Multispectral Visor L1 ]
+  ccw: [ Breaker Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 21
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 29
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 20
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 25
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher, Light Shotgun ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0.5
+    cost: 28
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 21
+- 
+  isc: Zhayedan Intervention Troops
+  longisc: ZHAYEDAN Intervention Troops
+  code: 166
+  faction: 4
+  logo: zhayedan
+  name: ZHAYEDAN
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Veteran L1 ]
+  equipments: [ AutoMediKit ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    skills: [ Marksmanship L2 ]
+    bsw: [ Breaker Rifle + Light Shotgun ]
+    swc: 0
+    cost: 31
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 3
+    description: Sniper
+    skills: [ Marksmanship L2 ]
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 31
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher, Nimbus Grenades ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 27
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant, Marksmanship L2 ]
+    bsw: [ Breaker Rifle + Light Shotgun ]
+    swc: 0
+    cost: 31
+  - 
+    code: 7
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 32
+- 
+  isc: Djanbazan Tactical Group
+  longisc: DJANBAZAN Tactical Group
+  code: 167
+  faction: 4
+  logo: djanbazan
+  name: DJANBAZAN
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Multiterrain, Regeneration ]
+  equipments: [ Multispectral Visor L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 35
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 31
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 35
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 31
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 1
+    cost: 27
+- 
+  isc: Hassassin Ragiks
+  longisc: 
+  code: 168
+  faction: 4
+  logo: hassassin_ragiks
+  name: RAGIK
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 15
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "AD: Combat Jump", Religious Troop, "V: Dogged" ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 32
+- 
+  isc: Janissaries
+  longisc: 
+  code: 169
+  faction: 4
+  logo: janissaries
+  name: JANISSARY
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  skills: [ Religious Troop ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ AP Rifle + Light Shotgun ]
+    swc: 0
+    cost: 36
+  - 
+    code: 2
+    description: TinBot
+    bsw: [ AP Rifle + Light Shotgun + 1 TinBot A (Deflector L1) ]
+    swc: 0.5
+    cost: 37
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 40
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 31
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Akbar Doctor ]
+    equipments: [ MediKit ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    swc: 0
+    cost: 41
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 36
+- 
+  isc: Maghariba Guard
+  longisc: 
+  code: 170
+  faction: 4
+  logo: maghariba_guard
+  otherprofiles: [ 171 ]
+  name: MAGHARIBA
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 16
+  bs: 14
+  ph: 17
+  wip: 14
+  arm: 8
+  bts: 6
+  w: 3
+  s: 8
+  ava: 1
+  backup: C
+  skills: [ Heavyweight, Manned ]
+  equipments: [ Advanced ECM ]
+  bsw: [ MULTI HMG ]
+  options:
+  - 
+    code: 1
+    description: HFT
+    bsw: [ Heavy Flamethrower ]
+    swc: 2
+    cost: 78
+  - 
+    code: 2
+    description: HP
+    ccw: [ Heavy Pistol (2) ]
+    swc: 2
+    cost: 79
+  - 
+    code: 3
+    description: 360
+    equipments: [ 360° Visor ]
+    bsw: [ Heavy Flamethrower ]
+    swc: 2
+    cost: 98
+- 
+  isc: MAGHARIBA PILOT
+  longisc: MAGHARIBA PILOT
+  code: 171
+  faction: 4
+  logo: maghariba_guard
+  name: MAGHARIBA PILOT
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: "-"
+  backup: C
+  skills: [ Pilot ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+- 
+  isc: Hunzakuts
+  longisc: 
+  code: 172
+  faction: 4
+  logo: hunzakuts
+  name: HUNZAKUT
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 14
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  irregular: I
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain ]
+  bsw: [ Antipersonnel Mines ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: LGL
+    equipments: [ Deployable Repeater ]
+    bsw: [ Rifle + Light Grenade Launcher ]
+    swc: 0.5
+    cost: 18
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 21
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer, Deployable Repeater ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 18
+- 
+  isc: Murabids Tuareg
+  longisc: 
+  code: 173
+  faction: 4
+  logo: murabids_tuareg
+  name: TUAREG
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 15
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: TO Camouflage", Infiltration, Multiterrain ]
+  bsw: [ Antipersonnel Mines ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 28
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 33
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 35
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 33
+- 
+  isc: Hassassin Fiday
+  longisc: 
+  code: 174
+  faction: 4
+  logo: hassassin_fiday
+  name: FIDAY
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 21
+  bs: 11
+  ph: 12
+  wip: 15
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ Basic Impersonation, Kinematika L1, Martial Arts L3, Multiterrain, Religious Troop ]
+  bsw: [ Rifle + Light Shotgun, Smoke Grenades ]
+  ccw: [ Pistol,Knife ]
+  options:
+  - 
+    code: 1
+    description: DACCW
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 31
+  - 
+    code: 2
+    description: APCCW
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 30
+- 
+  isc: Kum Motorized Troops
+  longisc: KUM MOTORIZED TROOPS
+  iscspecification: MOUNTED
+  code: 175
+  faction: 4
+  otherprofiles: [ 176 ]
+  logo: kum
+  name: KUM
+  type: WB
+  classification: Line Troops
+  mov: 8-6
+  cc: 20
+  bs: 11
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 4
+  ava: T
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L2, "V: Dogged" ]
+  equipments: [ Motorcycle ]
+  bsw: [ Smoke Grenades, Smoke Light Grenade Launcher ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 19
+  - 
+    code: 2
+    description: Chain
+    bsw: [ Chain Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 10
+  - 
+    code: 3
+    description: Shotgun
+    bsw: [ Light Shotgun ]
+    ccw: [ E/M CCW ]
+    swc: 0
+    cost: 14
+- 
+  isc: Kum Motorized Troops
+  longisc: KUM MOTORIZED TROOPS
+  iscspecification: DISMOUNTED
+  code: 176
+  faction: 4
+  logo: kum
+  name: KUM
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 20
+  bs: 11
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  impetuosity: E
+  skills: [ "V: Dogged" ]
+- 
+  isc: Najjarun Engineers
+  longisc: NAJJARUN Engineer
+  code: 177
+  faction: 4
+  logo: najjarun_engineers
+  name: NAJJARUN Engineer
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Engineer, "V: Courage" ]
+  bsw: [ Rifle + Light Shotgun, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 17
+- 
+  isc: Rafiq Remotes
+  longisc: 
+  code: 178
+  faction: 4
+  logo: rafiq_remotes
+  name: RAFIQ REMOTE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ Deactivator, Forward Observer, "G: Remote Presence", Repeater, Sat-lock, Sensor ]
+  bsw: [ Rifle + Light Shotgun, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 16
+- 
+  isc: Shihab Remotes
+  longisc: 
+  code: 179
+  faction: 4
+  logo: shihab_remotes
+  name: SHIHAB REMOTE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "G: Remote Presence", Total Reaction ]
+  equipments: [ 360° Visor ]
+  bsw: [ HMG ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    swc: 1
+    cost: 25
+- 
+  isc: Fanous Remotes
+  longisc: 
+  code: 180
+  faction: 4
+  logo: fanous_remotes
+  name: FANOUS REMOTE
+  type: REM
+  classification: Support Troops
+  mov: 6-6
+  cc: 8
+  bs: 8
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "CH: Mimetism", "G: Remote Presence", Repeater ]
+  bsw: [ Flash Pulse, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 8
+- 
+  isc: Shaytaniyah Remotes
+  longisc: 
+  code: 181
+  faction: 4
+  logo: shaytaniyah_remotes
+  name: SHAYTANIYAH REMOTE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  bsw: [ Smart Missile Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: SML
+    swc: 1.5
+    cost: 18
+- 
+  isc: Tarik Mansuri, Khawarij Amir
+  longisc: TARIK MANSURI, Khawarij Amir
+  code: 182
+  faction: 4
+  logo: tarik_mansuri
+  name: TARIK MANSURI
+  type: LI
+  classification: Character
+  mov: 6-4
+  cc: 23
+  bs: 13
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 3
+  w: 2
+  s: 5
+  ava: 1
+  backup: C
+  skills: [ Bioimmunity, Kinematika L1, Martial Arts L1, Poison, Religious Troop, Super-Jump ]
+  bsw: [ Nanopulser, Grenades ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ AP Rifle + Light Shotgun ]
+    swc: 0
+    cost: 54
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 56
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    swc: -1
+    cost: 54
+  - 
+    code: 4
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 56
+- 
+  isc: Kasym Beg, Kum Chieftain
+  longisc: KASYM BEG, Kum Chieftain
+  iscspecification: MOUNTED
+  code: 183
+  otherprofiles: [ 184 ]
+  faction: 4
+  logo: kum
+  name: KASYM BEG
+  type: WB
+  classification: Character
+  mov: 8-6
+  cc: 23
+  bs: 12
+  ph: 14
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 4
+  ava: 1
+  backup: C
+  irregular: I
+  impetuosity: I
+  skills: [ Kinematika L2, "V: Dogged" ]
+  equipments: [ Motorcycle ]
+  bsw: [ Chain Rifle, Panzerfaust, Smoke Grenades, Smoke Light Grenade Launcher ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: Chain
+    swc: 0
+    cost: 16
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant, Regular ]
+    swc: -1
+    cost: 26
+- 
+  isc: Kasym Beg, Kum Chieftain
+  longisc: KASYM BEG, Kum Chieftain
+  iscspecification: DISMOUNTED
+  code: 184
+  faction: 4
+  logo: kum
+  name: KASYM BEG
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 23
+  bs: 12
+  ph: 14
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  impetuosity: I
+  skills: [ "V: Dogged" ]
+  bsw: [ Chain Rifle, Panzerfaust, Smoke Grenades ]
+  ccw: [ Pistol, EXP CCW ]
+- 
+  isc: Nazarova Twins, Kum Enforcers. Zamira Nazarova
+  longisc: ZAMIRA NAZAROVA, Kum Enforcer
+  iscspecification: MOUNTED
+  code: 185
+  otherprofiles: [ 186 ]
+  faction: 4
+  logo: kum
+  name: ZAMIRA
+  type: WB
+  classification: Character
+  mov: 8-6
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 4
+  ava: 1
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L2, "V: Dogged" ]
+  equipments: [ Motorcycle ]
+  bsw: [ Light Shotgun, Smoke Grenades, Smoke Light Grenade Launcher ]
+  ccw: [ Pistol, E/M CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 15
+- 
+  isc: Nazarova Twins, Kum Enforcers. Zamira Nazarova
+  longisc: ZAMIRA NAZAROVA, Kum Enforcer
+  iscspecification: DISMOUNTED
+  code: 186
+  faction: 4
+  logo: kum
+  name: ZAMIRA
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  irregular: I
+  impetuosity: E
+  skills: [ "V: Dogged" ]
+  bsw: [ Light Shotgun, Smoke Grenades ]
+  ccw: [ Pistol, E/M CCW ]
+- 
+  isc: Nazarova Twins, Kum Enforcers. Zuleyka Nazarova
+  longisc: ZULEYKA NAZAROVA, Kum Enforcer
+  iscspecification: MOUNTED
+  code: 187
+  otherprofiles: [ 188 ]
+  faction: 4
+  logo: kum
+  name: ZULEYKA
+  type: WB
+  classification: Character
+  mov: 8-6
+  cc: 22
+  bs: 11
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 4
+  ava: 1
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L2, "V: Dogged" ]
+  equipments: [ Motorcycle ]
+  bsw: [ Light Flamethrower (2), Smoke Grenades, Smoke Light Grenade Launcher ]
+  ccw: [ Breaker Pistol (2), DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 14
+- 
+  isc: Nazarova Twins, Kum Enforcers. Zuleyka Nazarova
+  longisc: ZULEYKA NAZAROVA, Kum Enforcer
+  iscspecification: DISMOUNTED
+  code: 188
+  faction: 4
+  logo: kum
+  name: ZULEYKA
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 11
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  irregular: I
+  impetuosity: E
+  skills: [ "V: Dogged" ]
+  bsw: [ Light Flamethrower (2), Smoke Grenades ]
+  ccw: [ Breaker Pistol (2), DA CCW ]
