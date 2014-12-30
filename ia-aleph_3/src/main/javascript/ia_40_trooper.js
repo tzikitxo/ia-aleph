@@ -94,7 +94,7 @@
     }
 
     ui.trooperSelector = {
-        updateTrooperSelector: function (trooperCode) {
+        updateTrooperSelector: function (trooperCode, optionCode) {
             trooperCode = trooperCode || data.getTroopers()[0].code;
             var trooper = data.findTrooperByCode(trooperCode);
             var trooperSelector = buildTrooperSelector(trooper);
@@ -116,7 +116,11 @@
                 roster.addTrooper(trooper);
                 //TODO update view (ava) after add
             });
-            $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
+            if (!optionCode) {
+                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
+            } else {
+                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow-' + optionCode).trigger('click');
+            }
             if (trooper.otherprofiles) {
                 $.each(trooper.otherprofiles, function (i, otherprofileCode) {
                     var otherProfile = data.findTrooperByCode(otherprofileCode);

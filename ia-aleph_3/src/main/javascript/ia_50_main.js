@@ -63,6 +63,7 @@
         }
     };
 
+    ui.armyRoster.initArmyRoster();
     ui.main.updateMainScreen();
 
 
