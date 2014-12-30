@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/ia.css"/>
         <link id="ia-favicon" rel="icon" href="img/various/favicon.png" type="image/png" />
         <!--<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/hfgdhiehdeeajkmemembkhlfhkndbdil" />-->
-        <title>Aleph Toolbox 2.0</title>
+        <title>Aleph Toolbox N3</title>
         <!--        <script type="text/javascript">
                     var _gaq = _gaq || [];
                     _gaq.push(['_setAccount', 'UA-32771450-1']);
@@ -32,7 +32,6 @@
                         <img id="ia-mainMenuButton" src="img/app/app_logo.png" title="{{messages.mainMenu}}" ></img>
                         <div id="ia-unitSelectorContainer"></div>
                     </div>
-                    <div id="ia-rosterContainerOnTopBar"></div>
                 </div>
                 <div id="ia-mainScreenCenter"></div>                     
                 <div id="ia-weaponsDisplayWrapper">
@@ -41,45 +40,47 @@
                         <div id="ia-weaponsDisplayContainer"></div>
                     </div> 
                 </div>
+                <div id="ia-mainScreenFloatingStuffContainer">
+                    <div id="ia-rosterWindow" ><div class="ia-rosterContainer" ></div></div>
+                </div>
             </div>
         </script>
         <script id="ia-mainMenuTemplate" type="text/x-handlebars-template">
             <div id="ia-mainMenuContainer">
-                <div id="ia-mainMenuFactionChooser">
-                {{#each factions}}
-                    <img class="ia-mainMenuFactionButton" src="img/army/{{logo}}_logo.png" title="{{name}}" data-ia-factioncode="{{code}}"></img>
-                {{/each}}
-                </div>
+            <div id="ia-mainMenuFactionChooser">
+            {{#each factions}}
+            <img class="ia-mainMenuFactionButton" src="img/army/{{logo}}_logo.png" title="{{name}}" data-ia-factioncode="{{code}}"></img>
+            {{/each}}
+            </div>
             </div>
         </script>
         <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">
             <div id="ia-unitSelectorContainer">
-                        <div id="ia-unitSelectorScrollButtonLeft"></div>
-                        <div id="ia-unitSelectorScrollerContainer">
-                            <div id="ia-unitSelectorScroller">
-                                <div class="ia-unitSelectorSpacer" ></div>
-                            </div>
-                        </div>
-                        <div id="ia-unitSelectorScrollButtonRight"></div>
-                    </div>
+            <div id="ia-unitSelectorScrollButtonLeft"></div>
+            <div id="ia-unitSelectorScrollerContainer">
+            <div id="ia-unitSelectorScroller">
+            <div class="ia-unitSelectorSpacer" ></div>
+            </div>
+            </div>
+            <div id="ia-unitSelectorScrollButtonRight"></div>
+            </div>
         </script>
         <script id="ia-rosterTemplate" type="text/x-handlebars-template">
             <div class="ia-rosterContainer">
-                <div class="ia-rosterTopBar">
-                    <div class="ia-rosterDownButton" style="display: none;"></div>
-                    {{messages.troopers}}: <b>{{roster.trooperCount}}</b>
-                    <span class="{{#if roster.pointWarning}}ia-warning{{/if}}">{{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b></span>
-                    <span class="{{#if roster.swcWarning}}ia-warning{{/if}}">{{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b></span>
-                    <div class="ia-warning">{{join roster.warningMessages}}</div>
-                </div>
-                <div class="ia-rosterMainContainer">
-                    
+                <div class="ia-rosterHeader"><div class="ia-rosterDownButton" style="display: none;"></div>{{messages.windowTitle}}</div>
+                    <div class="ia-rosterMainContainer">
+                        <div class="ia-rosterTopBar">
+                        {{messages.troopers}}: <b>{{roster.trooperCount}}</b>
+                        <span class="{{#if roster.pointWarning}}ia-warning{{/if}}">{{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b></span>
+                        <span class="{{#if roster.swcWarning}}ia-warning{{/if}}">{{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b></span>
+                        <div class="ia-warning">{{join roster.warningMessages}}</div>
+                    </div>
                     <div class="ia-rosterBody">
                         <table class="ia-rosterTable">
                             <thead></thead>
                             <tbody>
                                 {{#each roster.troopers}}
-                                <tr class="ia-rosterTrooperEntry" data-ia-entryindex="{{@index}}">
+                                <tr class="ia-rosterTrooperEntry" data-ia-entryindex="{{@index}}" data-ia-troopercode="{{troopercode}}" data-ia-optioncode="{{optioncode}}">
                                 <td><img class="ia-rosterTrooperEntryLogo" src="img/troop/{{logo}}_logo.png"></td>
                                 <td>{{name}}</td>
                                 <td>{{description}}</td>
@@ -89,6 +90,11 @@
                                 {{/each}}
                             </tbody>
                         </table>
+                        <div class="ia-rosterEntryButtons" style="display: none;">
+                            <div class="ia-rosterEntryDetail" ></div>
+                            <div class="ia-rosterEntryRemove" ></div>
+                            <!--<div class="ia-rosterEntryButton ia-rosterEntryRemove" ></div>-->
+                        </div>
                         <div class="ia-rosterUpButton"></div>
                     </div>       
                 </div>    
@@ -96,149 +102,149 @@
         </script>
         <script id="ia-trooperSelectorTemplate" type="text/x-handlebars-template">
             <div class="ia-trooperSelectorContainer" data-ia-troopercode="{{trooper.code}}" >
-                <div class="ia-trooperSelectorHeader">
-                    <span class="ia-trooperIsc">ISC: {{trooper.isc}}</span>
-                    <span class="ia-trooperClassification">{{trooper.classification}}</span>
-                </div>
-                <div class="ia-trooperSelectorMain">
-                    <div class="ia-trooperType">{{trooper.type}}</div>
-                    <div class="ia-trooperIscContainer">
-                        <div class="ia-trooperIsc">{{trooper.longisc}}<div class="ia-trooperIscSpecification">{{trooper.iscspecification}}</div></div>
-                    </div>
-                    <div class="ia-trooperCube">
-                        {{#if trooper.hasCube}}
-                            {{#if trooper.hasCubeL2}}
-                                <img class="ia-trooperIcon" src="img/icon/cube2_icon.png"></img>
-                            {{else}}
-                                <img class="ia-trooperIcon" src="img/icon/cube_icon.png"></img>
-                            {{/if}}
-                        {{/if}}
-                    </div>
-                    <div class="ia-trooperTraining">
-                        {{#if trooper.isRegular}}<img class="ia-trooperIcon" src="img/icon/regular_icon.png"></img>{{/if}}
-                        {{#if trooper.isIrregular}}<img class="ia-trooperIcon" src="img/icon/irregular_icon.png"></img>{{/if}}
-                    </div>
-                    <div class="ia-trooperImpetuosity">
-                        {{#if trooper.isFrenzy}}<img class="ia-trooperIcon" src="img/icon/frenzy_icon.png"></img>{{/if}}                        
-                        {{#if trooper.isImpetuous}}<img class="ia-trooperIcon" src="img/icon/impetuous_icon.png"></img>{{/if}}
-                        {{#if trooper.isExtremelyImpetuous}}<img class="ia-trooperIcon" src="img/icon/extremely_impetuous_icon.png"></img>{{/if}}
-                    </div>
-                    <div class="ia-trooperHackable">
-                        {{#if trooper.isHackable}}<img class="ia-trooperIcon" src="img/icon/hackable_icon.png"></img>{{/if}}
-                    </div>
-                    <div class="ia-trooperEquipments">{{trooperEquipments trooper}}</div>
-                    <div class="ia-trooperSkills">{{trooperSkills trooper}}</div>
-                    <img class="ia-trooperLogo" src="img/troop/{{trooper.logo}}_logo.png"></img>
-                    <table class="ia-trooperSelectorAttributesTable">
-                        <thead >
-                            <tr class="ia-trooperSelectorAttributesHeader">
-                                <th>{{messages.mov}}</th>
-                                <th>{{messages.cc}}</th>
-                                <th>{{messages.bs}}</th>
-                                <th>{{messages.ph}}</th>
-                                <th>{{messages.wip}}</th>
-                                <th>{{messages.arm}}</th>
-                                <th>{{messages.bts}}</th>
-                                <th>{{#if trooper.hasStr}}{{messages.str}}{{else}}{{messages.wounds}}{{/if}}</th>
-                                <th>{{messages.silhouette}}</th>
-                                <th>{{messages.ava}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>{{trooper.mov}}</td>
-                                <td>{{trooper.cc}}</td>
-                                <td>{{trooper.bs}}</td>
-                                <td>{{trooper.ph}}</td>
-                                <td>{{trooper.wip}}</td>
-                                <td>{{trooper.arm}}</td>
-                                <td>{{trooper.bts}}</td>
-                                <td>{{trooper.w}}</td>
-                                <td>{{trooper.s}}</td>
-                                <td>{{trooperAvailableAva trooper}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="ia-trooperSelectorOtherProfilesContainer">
-                </div>
-                {{#if trooper.hasOptions}}
-                <div class="ia-trooperSelectorOptionList">
-                    <table class="ia-trooperSelectorOptionListTable">
-                        <thead >
-                            <tr class="ia-trooperSelectorOptionListHeader">
-                                <th>{{messages.name}}</th>
-                                <th>{{messages.bsw}}</th>
-                                <th>{{messages.ccw}}</th>
-                                <th class="ia-trooperSelectorOptionSwcCell">{{messages.swc}}</th>
-                                <th class="ia-trooperSelectorOptionCostCell">{{messages.cost}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {{#each trooper.options}}
-                            <tr class="ia-trooperSelectorOptionRow" title="{{../trooper.name}} {{description}}" data-ia-optioncode="{{code}}" >
-                                <td><span class="ia-troopetSelectorOptionName">{{../trooper.name}}</span> {{joinForTrooperOption this}}</td>
-                                <td>{{join allBsw}}</td>
-                                <td>{{join allCcw}}</td>
-                                <td class="ia-trooperSelectorOptionSwcCell">{{swcStr}}</td>
-                                <td class="ia-trooperSelectorOptionCostCell">{{cost}}</td>
-                            </tr>
-                        {{/each}}
-                        </tbody>
-                    </table>
-                    <div class="ia-trooperSelectorOptionListFooter" ></div>
-                </div>
-                {{/if}}
+            <div class="ia-trooperSelectorHeader">
+            <span class="ia-trooperIsc">ISC: {{trooper.isc}}</span>
+            <span class="ia-trooperClassification">{{trooper.classification}}</span>
+            </div>
+            <div class="ia-trooperSelectorMain">
+            <div class="ia-trooperType">{{trooper.type}}</div>
+            <div class="ia-trooperIscContainer">
+            <div class="ia-trooperIsc">{{trooper.longisc}}<div class="ia-trooperIscSpecification">{{trooper.iscspecification}}</div></div>
+            </div>
+            <div class="ia-trooperCube">
+            {{#if trooper.hasCube}}
+            {{#if trooper.hasCubeL2}}
+            <img class="ia-trooperIcon" src="img/icon/cube2_icon.png"></img>
+            {{else}}
+            <img class="ia-trooperIcon" src="img/icon/cube_icon.png"></img>
+            {{/if}}
+            {{/if}}
+            </div>
+            <div class="ia-trooperTraining">
+            {{#if trooper.isRegular}}<img class="ia-trooperIcon" src="img/icon/regular_icon.png"></img>{{/if}}
+            {{#if trooper.isIrregular}}<img class="ia-trooperIcon" src="img/icon/irregular_icon.png"></img>{{/if}}
+            </div>
+            <div class="ia-trooperImpetuosity">
+            {{#if trooper.isFrenzy}}<img class="ia-trooperIcon" src="img/icon/frenzy_icon.png"></img>{{/if}}                        
+            {{#if trooper.isImpetuous}}<img class="ia-trooperIcon" src="img/icon/impetuous_icon.png"></img>{{/if}}
+            {{#if trooper.isExtremelyImpetuous}}<img class="ia-trooperIcon" src="img/icon/extremely_impetuous_icon.png"></img>{{/if}}
+            </div>
+            <div class="ia-trooperHackable">
+            {{#if trooper.isHackable}}<img class="ia-trooperIcon" src="img/icon/hackable_icon.png"></img>{{/if}}
+            </div>
+            <div class="ia-trooperEquipments">{{trooperEquipments trooper}}</div>
+            <div class="ia-trooperSkills">{{trooperSkills trooper}}</div>
+            <img class="ia-trooperLogo" src="img/troop/{{trooper.logo}}_logo.png"></img>
+            <table class="ia-trooperSelectorAttributesTable">
+            <thead >
+            <tr class="ia-trooperSelectorAttributesHeader">
+            <th>{{messages.mov}}</th>
+            <th>{{messages.cc}}</th>
+            <th>{{messages.bs}}</th>
+            <th>{{messages.ph}}</th>
+            <th>{{messages.wip}}</th>
+            <th>{{messages.arm}}</th>
+            <th>{{messages.bts}}</th>
+            <th>{{#if trooper.hasStr}}{{messages.str}}{{else}}{{messages.wounds}}{{/if}}</th>
+            <th>{{messages.silhouette}}</th>
+            <th>{{messages.ava}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>{{trooper.mov}}</td>
+            <td>{{trooper.cc}}</td>
+            <td>{{trooper.bs}}</td>
+            <td>{{trooper.ph}}</td>
+            <td>{{trooper.wip}}</td>
+            <td>{{trooper.arm}}</td>
+            <td>{{trooper.bts}}</td>
+            <td>{{trooper.w}}</td>
+            <td>{{trooper.s}}</td>
+            <td>{{trooperAvailableAva trooper}}</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            <div class="ia-trooperSelectorOtherProfilesContainer">
+            </div>
+            {{#if trooper.hasOptions}}
+            <div class="ia-trooperSelectorOptionList">
+            <table class="ia-trooperSelectorOptionListTable">
+            <thead >
+            <tr class="ia-trooperSelectorOptionListHeader">
+            <th>{{messages.name}}</th>
+            <th>{{messages.bsw}}</th>
+            <th>{{messages.ccw}}</th>
+            <th class="ia-trooperSelectorOptionSwcCell">{{messages.swc}}</th>
+            <th class="ia-trooperSelectorOptionCostCell">{{messages.cost}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each trooper.options}}
+            <tr class="ia-trooperSelectorOptionRow ia-trooperSelectorOptionRow-{{code}}" title="{{../trooper.name}} {{description}}" data-ia-optioncode="{{code}}" >
+            <td><span class="ia-troopetSelectorOptionName">{{../trooper.name}}</span> {{joinForTrooperOption this}}</td>
+            <td>{{join allBsw}}</td>
+            <td>{{join allCcw}}</td>
+            <td class="ia-trooperSelectorOptionSwcCell">{{swcStr}}</td>
+            <td class="ia-trooperSelectorOptionCostCell">{{cost}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+            </table>
+            <div class="ia-trooperSelectorOptionListFooter" ></div>
+            </div>
+            {{/if}}
             </div>
         </script>
         <script id="ia-weaponsDisplayTemplate" type="text/x-handlebars-template">
             <div id="ia-weaponsDisplay">
-                <table class="ia-weaponsDisplayTable">
-                    <thead>
-                        <tr>
-                            <th rowspan="2" class="ia-weaponNameCell"><div class="ia-weaponDownButton" ></div>{{messages.name}}</th>
-                            <th colspan="{{ranges.length}}">{{messages.range}} <span class="ia-weaponRangeSpec">{{messages.rangeSpec}}</span></th>
-                            <th rowspan="2">{{messages.damage}}</th>
-                            <th rowspan="2">{{messages.burst}}</th>
-                            <th rowspan="2">{{messages.ammunitions}}</th>                    
-                            <th rowspan="2">{{messages.traits}}</th>
-                        </tr>
-                        <tr>                            
-                        {{#each ranges}}
-                            <th class="ia-weaponRangeCell">{{this}}</th>
-                        {{/each}}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each weapons}}
-                        <tr>
-                            <td>{{name}}<div class="ia-weaponMode" >{{mode}}</div></td>
-                            {{#if hasRange}}
-                            {{#each rangeMods}}
-                                <td class="ia-weaponRangeCell"><div class="ia-weaponRangeCellContent" style="background-color: {{weaponColorByRange this}};">{{this}}</div></td>
-                            {{/each}}
-                            {{else}}<td class="ia-weaponRangeReplacerCell" colspan="{{rangeLength}}" >-</td>{{/if}}  
-                            <td class="ia-weaponDamageCell" >{{damage}}</td>
-                            <td class="ia-weaponBurstCell" >{{burst}}</td>
-                            <td class="ia-weaponAmmunitionsCell" >{{ammunitions}}</td>
-                            <td>{{join traits}}</td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
+            <table class="ia-weaponsDisplayTable">
+            <thead>
+            <tr>
+            <th rowspan="2" class="ia-weaponNameCell"><div class="ia-weaponDownButton" ></div>{{messages.name}}</th>
+            <th colspan="{{ranges.length}}">{{messages.range}} <span class="ia-weaponRangeSpec">{{messages.rangeSpec}}</span></th>
+            <th rowspan="2">{{messages.damage}}</th>
+            <th rowspan="2">{{messages.burst}}</th>
+            <th rowspan="2">{{messages.ammunitions}}</th>                    
+            <th rowspan="2">{{messages.traits}}</th>
+            </tr>
+            <tr>                            
+            {{#each ranges}}
+            <th class="ia-weaponRangeCell">{{this}}</th>
+            {{/each}}
+            </tr>
+            </thead>
+            <tbody>
+            {{#each weapons}}
+            <tr>
+            <td>{{name}}<div class="ia-weaponMode" >{{mode}}</div></td>
+            {{#if hasRange}}
+            {{#each rangeMods}}
+            <td class="ia-weaponRangeCell"><div class="ia-weaponRangeCellContent" style="background-color: {{weaponColorByRange this}};">{{this}}</div></td>
+            {{/each}}
+            {{else}}<td class="ia-weaponRangeReplacerCell" colspan="{{rangeLength}}" >-</td>{{/if}}  
+            <td class="ia-weaponDamageCell" >{{damage}}</td>
+            <td class="ia-weaponBurstCell" >{{burst}}</td>
+            <td class="ia-weaponAmmunitionsCell" >{{ammunitions}}</td>
+            <td>{{join traits}}</td>
+            </tr>
+            {{/each}}
+            </tbody>
+            </table>
             </div>
         </script>
         <script id="ia-referenceTableTemplate-metachemistry" type="text/x-handlebars-template">
             <div class="ia-referenceTableContainer">
-                <table class="ia-referenceTable">
-                    <thead><tr><th colspan="4">{{reference.title}}</th></tr></thead>
-                    <tbody>
-                        {{#each reference.records}}
-                            <tr><td style="text-align: center">{{l1}}</td><td>{{v1}}</td><td style="text-align: center">{{l2}}</td><td>{{v2}}</td></tr>
-                        {{/each}}
-                        <tr class="ia-referenceTableFooter"><td colspan="4"></td></tr>
-                    </tbody>
-                </table>
+            <table class="ia-referenceTable">
+            <thead><tr><th colspan="4">{{reference.title}}</th></tr></thead>
+            <tbody>
+            {{#each reference.records}}
+            <tr><td style="text-align: center">{{l1}}</td><td>{{v1}}</td><td style="text-align: center">{{l2}}</td><td>{{v2}}</td></tr>
+            {{/each}}
+            <tr class="ia-referenceTableFooter"><td colspan="4"></td></tr>
+            </tbody>
+            </table>
             </div>
         </script>
         <script type="text/javascript" src="js/ia-lib.js"></script>

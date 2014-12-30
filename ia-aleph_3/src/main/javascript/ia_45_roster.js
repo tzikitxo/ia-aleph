@@ -162,15 +162,25 @@ var roster = ia.roster = {};
     var rosterTemplate = Handlebars.compile($('#ia-rosterTemplate').html());
 
     ui.armyRoster = {
+        initArmyRoster: function () {
+//            $('#ia-rosterWindow').dialog();
+            $('#ia-rosterWindow').draggable({
+                handle: '.ia-rosterHeader',
+                containment: 'window'
+            });
+//                    .resizable();
+        },
         updateArmyRoster: function () {
-            var rosterContainer = $('#ia-rosterContainerOnTopBar').html(rosterTemplate({
+            $('#ia-rosterWindow .ia-rosterContainer').replaceWith(rosterTemplate({
                 messages: {
                     swc: "swc",
                     troopers: "troopers",
-                    points: "points"
+                    points: "points",
+                    windowTitle: "roster"
                 },
                 roster: roster.getRosterData()
             }));
+            var rosterContainer = $('#ia-rosterWindow .ia-rosterContainer');
             rosterContainer.find('.ia-rosterDownButton').on('click', function () {
                 $('.ia-rosterDownButton', rosterContainer).hide();
                 $('.ia-rosterBody', rosterContainer).show('fast');
@@ -183,16 +193,28 @@ var roster = ia.roster = {};
                 return false;
             });
             rosterContainer.find('.ia-rosterTrooperEntry').on('click', function () {
-                if ($(this).hasClass('ia-selected')) {
-                    roster.removeTrooperByIndex(Number($(this).data('ia-entryindex')));
-                } else {
-                    $(this).parent().find('.ia-selected').removeClass('ia-selected');
-                    $(this).addClass('ia-selected');
-                }
+                log('click!', this);
+//                if ($(this).hasClass('ia-selected')) {
+//                    roster.removeTrooperByIndex(Number($(this).data('ia-entryindex')));
+//                } else {
+                $(this).parent().find('.ia-selected').removeClass('ia-selected');
+                $(this).addClass('ia-selected');
+                rosterContainer.find('.ia-rosterEntryButtons').show('fast');
+//                }
                 return false;
+            });
+            rosterContainer.find('.ia-rosterEntryRemove').on('click', function () {
+                roster.removeTrooperByIndex(Number(rosterContainer.find('.ia-rosterTrooperEntry.ia-selected').data('ia-entryindex')));
+            });
+            rosterContainer.find('.ia-rosterEntryDetail').on('click', function () {
+                ui.trooperSelector.updateTrooperSelector(
+                        Number(rosterContainer.find('.ia-rosterTrooperEntry.ia-selected').data('ia-troopercode')),
+                        Number(rosterContainer.find('.ia-rosterTrooperEntry.ia-selected').data('ia-optioncode')));
             });
         }
     };
+
+//    $('#ia-rosterContainerOnTopBar').draggable();
 
 
 })();
