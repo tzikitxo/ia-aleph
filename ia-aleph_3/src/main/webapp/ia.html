@@ -33,7 +33,10 @@
                         <div id="ia-unitSelectorContainer"></div>
                     </div>
                 </div>
-                <div id="ia-mainScreenCenter"></div>                     
+                <div id="ia-mainScreenCenter">
+                    <div id="ia-rosterWrapper" ></div>
+                    <div id="ia-trooperSelectorWrapper" ></div>
+                </div>                     
                 <div id="ia-weaponsDisplayWrapper">
                     <div id="ia-weaponsDisplayCenter">
                         <div id="ia-weaponsDisplayButton">{{messages.weaponsButtonTitle}}</div>                 
@@ -41,7 +44,6 @@
                     </div> 
                 </div>
                 <div id="ia-mainScreenFloatingStuffContainer">
-                    <div id="ia-rosterWindow" ><div class="ia-rosterContainer" ></div></div>
                 </div>
             </div>
         </script>
@@ -54,27 +56,28 @@
             </div>
             </div>
         </script>
-        <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">
-            <div id="ia-unitSelectorContainer">
+        <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">            
             <div id="ia-unitSelectorScrollButtonLeft"></div>
             <div id="ia-unitSelectorScrollerContainer">
             <div id="ia-unitSelectorScroller">
-            <div class="ia-unitSelectorSpacer" ></div>
             </div>
             </div>
             <div id="ia-unitSelectorScrollButtonRight"></div>
-            </div>
         </script>
         <script id="ia-rosterTemplate" type="text/x-handlebars-template">
             <div class="ia-rosterContainer">
-                <div class="ia-rosterHeader"><div class="ia-rosterDownButton" style="display: none;"></div>{{messages.windowTitle}}</div>
-                    <div class="ia-rosterMainContainer">
-                        <div class="ia-rosterTopBar">
+                <div class="ia-rosterHeader">
+                    <div class="ia-rosterDownButton" style="display: none;"></div>
+                    <div class="ia-rosterUpButton"></div>
+                    <div class="ia-rosterTitle">{{messages.windowTitle}}</div>
+                    <div class="ia-rosterTopBar">
                         {{messages.troopers}}: <b>{{roster.trooperCount}}</b>
                         <span class="{{#if roster.pointWarning}}ia-warning{{/if}}">{{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b></span>
                         <span class="{{#if roster.swcWarning}}ia-warning{{/if}}">{{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b></span>
                         <div class="ia-warning">{{join roster.warningMessages}}</div>
                     </div>
+                </div>
+                <div class="ia-rosterMainContainer">
                     <div class="ia-rosterBody">
                         <table class="ia-rosterTable">
                             <thead></thead>
@@ -95,7 +98,6 @@
                             <div class="ia-rosterEntryRemove" ></div>
                             <!--<div class="ia-rosterEntryButton ia-rosterEntryRemove" ></div>-->
                         </div>
-                        <div class="ia-rosterUpButton"></div>
                     </div>       
                 </div>    
             </div>

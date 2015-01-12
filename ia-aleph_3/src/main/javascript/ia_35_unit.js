@@ -44,8 +44,9 @@
             $('#ia-unitSelectorScrollButtonRight').on('click', function () {
                 $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + 50);
             });
-            $('#ia-unitSelectorContainer').on('mousewheel', function (event) {
+            $('#ia-unitSelectorScrollerContainer').on('mousewheel', function (event) {
                 $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + (event.deltaY < 0 ? +1 : -1) * 50);
+                return false;
             });
 //            $('#ia-unitSelectorScrollerContainer').jScrollPane();
         }

@@ -98,7 +98,7 @@
             trooperCode = trooperCode || data.getTroopers()[0].code;
             var trooper = data.findTrooperByCode(trooperCode);
             var trooperSelector = buildTrooperSelector(trooper);
-            $('#ia-mainScreenCenter').html(trooperSelector);
+            $('#ia-trooperSelectorWrapper').html(trooperSelector);
 
             function addSelectListener(context, callback) {
                 context.find('.ia-trooperSelectorOptionRow').on('click', function () {
