@@ -164,14 +164,14 @@ var roster = ia.roster = {};
     ui.armyRoster = {
         initArmyRoster: function () {
 //            $('#ia-rosterWindow').dialog();
-            $('#ia-rosterWindow').draggable({
-                handle: '.ia-rosterHeader',
-                containment: 'window'
-            });
+//            $('#ia-rosterWindow').draggable({
+//                handle: '.ia-rosterHeader',
+//                containment: 'window'
+//            });
 //                    .resizable();
         },
         updateArmyRoster: function () {
-            $('#ia-rosterWindow .ia-rosterContainer').replaceWith(rosterTemplate({
+            $('#ia-rosterWrapper').html(rosterTemplate({
                 messages: {
                     swc: "swc",
                     troopers: "troopers",
@@ -180,16 +180,17 @@ var roster = ia.roster = {};
                 },
                 roster: roster.getRosterData()
             }));
-            var rosterContainer = $('#ia-rosterWindow .ia-rosterContainer');
+            var rosterContainer = $('#ia-rosterWrapper .ia-rosterContainer');
             rosterContainer.find('.ia-rosterDownButton').on('click', function () {
                 $('.ia-rosterDownButton', rosterContainer).hide();
+                    $('.ia-rosterUpButton', rosterContainer).show();
                 $('.ia-rosterBody', rosterContainer).show('fast');
                 return false;
             });
             rosterContainer.find('.ia-rosterUpButton').on('click', function () {
-                $('.ia-rosterBody', rosterContainer).hide('fast', function () {
+                $('.ia-rosterUpButton', rosterContainer).hide();
                     $('.ia-rosterDownButton', rosterContainer).show();
-                });
+                $('.ia-rosterBody', rosterContainer).hide('fast');
                 return false;
             });
             rosterContainer.find('.ia-rosterTrooperEntry').on('click', function () {
