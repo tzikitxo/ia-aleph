@@ -67,11 +67,11 @@ body{
     width: 40px;
     height: 40px;  
     position: absolute;
-    top: 5px;
-    left: 10px;
+    padding: 5px;
     z-index: 25;
 
     cursor: pointer;
+    background-color: @topBarBgColor;
 }
 
 // MAIN MENU
@@ -116,28 +116,28 @@ body{
             background-size: 50px 50px;
         }
         &:first-child{
-            margin-left: 70px;
+            margin-left: 85px;
         }
         &:last-child{
-            margin-right: 30px;            
+            margin-right: 45px;            
         }
     }
 }
 #ia-unitSelectorScrollButtonLeft, #ia-unitSelectorScrollButtonRight{
     display: inline-block;
     height: 100%;
-    width: 35px;
+    width: 50px;
     position: absolute;
     top: 0;
 
     background-color: @topBarBgColor;
-    background-size: 25px 100%;
+    background-size: 30px 100%;
     cursor: pointer;
     background-repeat: no-repeat;
-    background-position: 5px 0;
+    background-position: 10px 0;
 }
 #ia-unitSelectorScrollButtonLeft{
-    left:0+40px+5px;
+    left:45px;
     background-image: url('../img/theme/scrollButtonLeftBg.png');
 }
 #ia-unitSelectorScrollButtonRight{
@@ -252,19 +252,7 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 798px;
-    margin-bottom: 10px;
 }
-/*#ia-rosterWindow{
-    position: fixed;
-    top: -2px;
-    right: -2px;
-    width:400px;
-    z-index: 30;
-    padding: 5px;
-    height:20px;
-    background-color: @headerBgColor;
-    border: 2px solid @headerBorderColor;
-}*/
 .ia-rosterTitle{
     display: inline-block;
 
@@ -306,20 +294,6 @@ body{
         position: relative;
         
         background-color: @headerBgColor;*/
-}
-.ia-rosterContainer{
-    /*    position: fixed;
-        top: 0;
-        right: 0;
-        padding: 5px;
-        padding: 5px 10px 5px 10px;
-        border-radius: 0 0 0 5px;
-        z-index:35;*/
-
-    /*    background-color: @headerBgColor;
-        border: 2px solid @headerBorderColor;
-        border-top: 0;
-        border-right: 0;*/
 }
 .ia-rosterTable{
     width: 100%;
@@ -365,11 +339,13 @@ body{
 .ia-rosterEntryRemove, .ia-rosterEntryDetail{
     width: 16px;
     height: 16px;
-    margin-right: 5px;
     display: inline-block;
+    padding: 5px 10px 5px 10px;
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
 
     cursor: pointer;
-    background-size: 100% 100%;
 }
 .ia-rosterEntryRemove{
     background-image: url('../img/app/trash_icon.png');
