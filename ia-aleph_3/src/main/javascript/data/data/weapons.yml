@@ -354,7 +354,7 @@
   traits: [ Direct Template (Small Teardrop), Intuitive Attack ]
 - 
   name: Light GL
-  names: [ Light GL, Light Grenade Launcher ]
+  names: [ Light GL, Light Grenade Launcher, LGL ]
   code: 44
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
@@ -364,7 +364,7 @@
   traits: [ Impact Template (Circular), Speculative Fire ]
 - 
   name: Light Nimbus GL
-  names: [ Nimbus Light GL, Light Nimbus GL ]
+  names: [ Nimbus Light GL, Light Nimbus GL, Nimbus LGL ]
   code: 45
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
@@ -382,7 +382,7 @@
   traits: [ Impact Template (Small Teardrop) ]
 - 
   name: Light Smoke GL
-  names: [ Smoke Light GL, Light Smoke GL, Smoke Light Grenade Launcher  ]
+  names: [ Smoke Light GL, Light Smoke GL, Smoke Light Grenade Launcher, Smoke LGL ]
   code: 47
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
