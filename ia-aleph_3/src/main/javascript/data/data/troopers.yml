@@ -6795,3 +6795,80 @@
     bsw: [ Spitfire ]
     swc: 1
     cost: 22
+- 
+  isc: Hassassin Muyibs
+  longisc: HASSASSIN MUYIBS
+  code: 240
+  faction: 4
+  logo: hassassin_muyibs
+  name: MUYIB
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Religious Troop, "V: Dogged" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun, Panzerfaust, D-Charges ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 2
+    description: LGL
+    bsw: [ Rifle + LGL + Smoke LGL ]
+    swc: 1
+    cost: 22
+  - 
+    code: 3
+    description: Emauler
+    skills: [ Minelayer ]
+    bsw: [ Rifle + Light Shotgun, D.E.P., E/Mauler ]
+    swc: 0
+    cost: 23
+  - 
+    code: 4
+    description: ViralMines
+    skills: [ Minelayer ]
+    bsw: [ Rifle + Light Shotgun, D.E.P., Viral Mines ]
+    swc: 0
+    cost: 24
+  - 
+    code: 5
+    description: Spitfire
+    equipments: [ X-Visor ]
+    bsw: [ Spitfire, D-Charges ]
+    swc: 1
+    cost: 30
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun, D.E.P. ]
+    swc: 0
+    cost: 26
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + LGL + Smoke LGL ]
+    swc: 1.5
+    cost: 22
+  - 
+    code: 8
+    description: HRL
+    equipments: [ X-Visor ]
+    bsw: [ Heavy Rocket Launcher, D-Charges ]
+    swc: 1
+    cost: 22
