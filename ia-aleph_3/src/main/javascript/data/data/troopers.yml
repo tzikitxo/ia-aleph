@@ -6691,3 +6691,107 @@
     bsw: [ Rifle + Light Shotgun ]
     swc: 1
     cost: 25
+- 
+  isc: Bashi Bazouks
+  longisc: 
+  code: 238
+  faction: 4
+  logo: bashi_bazouks
+  name: BASHI BAZOUK
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 11
+  ph: 10
+  wip: 12
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  irregular: I
+  skills: [ AD: Parachutist / Zero-G ]
+  equipments: [ Holoprojector L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 15
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 14
+  - 
+    code: 3
+    description: APRifle
+    bsw: [ AP Rifle ]
+    swc: 0
+    cost: 15
+  - 
+    code: 4
+    description: EMauler
+    bsw: [ Combi Rifle, E/Mauler ]
+    swc: 0.5
+    cost: 16
+- 
+  isc: Hafza Unit
+  longisc: HAFZA Unit
+  code: 239
+  faction: 4
+  logo: hafza_unit
+  name: HAFZA
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  equipments: [ Holoprojector L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 22
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 17
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 5
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 22
