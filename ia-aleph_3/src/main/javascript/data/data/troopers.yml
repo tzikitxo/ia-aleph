@@ -6575,3 +6575,119 @@
     description: 
     swc: 0
     cost: 8
+- 
+  isc: Daylami Infantry
+  longisc: DAYLAMI Infantry
+  code: 236
+  faction: 4
+  logo: daylami_infantry
+  name: DAYLAMI
+  type: LI
+  classification: Garrison Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Shotgun
+    bsw: [ Light Shotgun ]
+    swc: 0
+    cost: 5
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 0.5
+    cost: 17
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Light Shotgun, Light Grenade Launcher ]
+    swc: 0.5
+    cost: 8
+  - 
+    code: 4
+    description: Panzerfaust
+    bsw: [ Light Shotgun, Panzerfaust ]
+    swc: 0.5
+    cost: 7
+  - 
+    code: 5
+    description: Chamo
+    skills: [ "CH: Limited Camouflage", Inferior Infiltration ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 10
+  - 
+    code: 6
+    description: Ch+Panz
+    skills: [ "CH: Limited Camouflage", Inferior Infiltration ]
+    bsw: [ Light Shotgun, Panzerfaust ]
+    swc: 0.5
+    cost: 8
+- 
+  isc: Odalisques
+  longisc: ODALISQUES
+  code: 237
+  faction: 4
+  logo: odalisques
+  name: ODALISQUE
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ I-kohl L3, "V: No Wound Incapacitation" ]
+  equipments: [ "360° Visor OR Sixth Sense L2" ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 30
+  - 
+    code: 4
+    description: Smg
+    bsw: [ Submachine gun, Contender ]
+    swc: 0
+    cost: 22
+  - 
+    code: 5
+    description: Haris
+    skills: [ Fireteam: Haris L1 ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 1
+    cost: 25
