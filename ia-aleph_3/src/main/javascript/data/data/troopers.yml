@@ -7622,4 +7622,360 @@
     swc: 0
     cost: 8
 
+# PANO NEW
 
+- 
+  isc: Acontecimento Regulars
+  longisc: Acontecimento REGULARS
+  code: 257
+  faction: 1
+  logo: acontecimento_regulars
+  name: REGULAR
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Jungle Terrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10
+  - 
+    code: 2
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 14
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 16
+  - 
+    code: 4
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 11
+  - 
+    code: 5
+    description: Sniper
+    skills: [ Sapper ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 22
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device, Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 19
+  - 
+    code: 7
+    description: Mines
+    skills: [ Minelayer ]
+    equipments: [ Sensor ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 14
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 10
+- 
+  isc: Auxilia
+  compositetroop:
+  -
+    code: 258
+    min: 1
+    max: 1
+  -
+    code: 259
+    min: 1
+    max: 1
+  longisc: 
+  code: 258
+  faction: 1
+  logo: auxilia
+  name: AUXILIA
+  type: LI
+  classification: Garrison Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: FO
+    equipments: [ Forward Observer ]
+    swc: 0
+    cost: 16
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 14
+- 
+  isc: Auxilia
+  longisc: AUXBOT
+  code: 259
+  faction: 1
+  logo: auxilia
+  name: AUXBOT_1
+  type: REM
+  classification: Garrison Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized" ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
+- 
+  isc: Hexas, Strategic Security Division
+  longisc: HEXAS, Strategic Security Division
+  code: 260
+  faction: 1
+  logo: hexas_strategic_security_division
+  name: HEXA
+  type: LI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage" ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 32
+- 
+  isc: Bagh-Mari Unit
+  longisc: BAGH-MARI Unit
+  code: 261
+  faction: 1
+  logo: bagh_mari
+  name: BAGH-MARI
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Aquatic Terrain / Desert Terrain / Jungle Terrain, "CH: Mimetism" ]
+  equipments: [ Multispectral Visor L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 26
+  - 
+    code: 3
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 28
+  - 
+    code: 4
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 1
+    cost: 22
+  - 
+    code: 6
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 17
+  - 
+    code: 7
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
+    swc: 1.5
+    cost: 28
+- 
+  isc: Guarda de Assalto
+  compositetroop:
+  -
+    code: 262
+    min: 1
+    max: 1
+  -
+    code: 263
+    min: 1
+    max: 1
+  longisc: 
+  code: 262
+  faction: 1
+  logo: guarda_de_assalto
+  name: GUARDA DE ASSALTO
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 17
+  bs: 15
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle + Heavy Flamethrower ]
+    swc: 0
+    cost: 49
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire + Heavy Flamethrower ]
+    swc: 2
+    cost: 52
+- 
+  isc: Guarda de Assalto
+  longisc: AUXBOT
+  code: 263
+  faction: 1
+  logo: guarda_de_assalto
+  name: AUXBOT_2
+  type: REM
+  classification: Veteran Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized" ]
+  bsw: [ Light Shotgun + Zero-V Smoke Light Grenade Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: "-"
+    cost: 6

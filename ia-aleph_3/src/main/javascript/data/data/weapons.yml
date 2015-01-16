@@ -390,6 +390,15 @@
   ammunitions: Smoke
   traits: [ Impact Template (Circular), Non-Lethal, Special Dodge, Speculative Fire, Targetless ]
 - 
+  name: Light Zero-V Smoke GL
+  names: [ Zero-V Smoke Light GL, Light Zero-V Smoke GL, Zero-V Smoke Light Grenade Launcher, Zero-V Smoke LGL ]
+  code: 83
+  ranges: [ 8,16,24,48 ]
+  mods: [ 0,3,-3,-6 ]
+  burst: 1
+  ammunitions: Zero-V Smoke
+  traits: [ Impact Template (Circular), Non-Lethal, Special Dodge, Speculative Fire, Targetless ]
+- 
   name: MediKit
   code: 48
   ranges: [ 8,16,24 ]
