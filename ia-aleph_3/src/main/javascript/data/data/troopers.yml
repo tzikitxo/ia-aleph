@@ -7431,3 +7431,40 @@
     ccw: [ Pistol, Stun Pistol, Knife ]
     swc: 0
     cost: 22
+- 
+  isc: "Muttawi'ah"
+  longisc: "GHAZI MUTTAWI'AH"
+  code: 253
+  faction: 4
+  logo: muttawi_ah
+  name: "MUTTAWI'AH"
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 15
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  irregular: I
+  impetuosity: E
+  skills: [ Religious Troop, V: Dogged ]
+  bsw: [ E/Marat, Jammer ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Chain
+    bsw: [ Chain Rifle ]
+    swc: 0
+    cost: 5
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 10
