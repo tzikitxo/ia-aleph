@@ -7158,10 +7158,6 @@
     skills: [ Lieutenant ]
     swc: 0
     cost: 36
-
-# HAQQISLAM Paradiso
-
-
 - 
   isc: Hassassin Barids
   longisc: 
@@ -7452,7 +7448,7 @@
   ava: 4
   irregular: I
   impetuosity: E
-  skills: [ Religious Troop, V: Dogged ]
+  skills: [ Religious Troop, "V: Dogged" ]
   bsw: [ E/Marat, Jammer ]
   ccw: [ Pistol, Knife ]
   options:
@@ -7468,3 +7464,163 @@
     bsw: [ Boarding Shotgun ]
     swc: 0
     cost: 10
+- 
+  isc: Hassassin Husam Yasbir
+  longisc: 
+  code: 254
+  faction: 4
+  logo: hassassin_husam_yasbir
+  name: YASBIR
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L3, Religious Troop, Specialist Troop ]
+  bsw: [ Rifle + Light Shotgun, Nanopulser ]
+  ccw: [ Pistol, Viral CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    equipments: [ Holoprojector L1 ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: Inf
+    skills: [ Infiltration ]
+    equipments: [ Holoprojector L2 ]
+    bsw: [ Smoke Grenades ]
+    swc: 0
+    cost: 34
+- 
+  isc: Halqa Mechanized Infantry
+  longisc: HALQA Mechanized Infantry
+  code: 255
+  faction: 4
+  logo: halqa
+  name: HALQA
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  skills: [ Mechanized Deployment ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 15
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 23
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Rifle + Light GL ]
+    swc: 1
+    cost: 16
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1
+    cost: 20
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 19
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 1
+    cost: 15
+- 
+  isc: Ahl Fassed Regiment
+  longisc: AHL FASSED Regiment
+  code: 256
+  faction: 4
+  logo: ahl_fassed
+  name: FASSED
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: APRifle
+    bsw: [ AP Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 34
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 41
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 32
+  - 
+    code: 4
+    description: Panzerfaust
+    bsw: [ AP Rifle, Panzerfaust ]
+    swc: 0
+    cost: 36
