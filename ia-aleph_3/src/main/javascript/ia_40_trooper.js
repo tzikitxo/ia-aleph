@@ -125,7 +125,7 @@
                 $.each(trooper.otherprofiles, function (i, otherprofileCode) {
                     var otherProfile = data.findTrooperByCode(otherprofileCode);
                     buildTrooperSelector(otherProfile).addClass('ia-trooperSelectorOtherProfile')
-                            .appendTo(otherProfile.hasOptions ? '#ia-mainScreenCenter' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
+                            .appendTo(otherProfile.hasOptions ? '#ia-trooperSelectorWrapper' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
                 });
                 addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
                 });
