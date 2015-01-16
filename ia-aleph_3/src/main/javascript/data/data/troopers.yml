@@ -8359,3 +8359,325 @@
     description: 
     swc: "-"
     cost: 4
+- 
+  isc: "Armbots: Bulleteer"
+  longisc: BULLETEER ARMBOTS
+  code: 273
+  faction: 1
+  logo: armbots_bulleteer
+  name: BULLETEER
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ "ODD: Optical Disruptor Device", Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HS
+    bsw: [ Heavy Shotgun ]
+    swc: 0
+    cost: 19
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 25
+- 
+  isc: "Armbots: Peacemakers"
+  compositetroop:
+  -
+    code: 274
+    min: 1
+    max: 1
+  -
+    code: 275
+    min: 1
+    max: 1
+  longisc: PEACEMAKER ARMBOTS
+  code: 274
+  faction: 1
+  logo: armbots_peacemakers
+  name: PEACEMAKER
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ Mechanized Deployment ]
+  equipments: [ Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HS
+    bsw: [ Heavy Shotgun ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 29
+- 
+  isc: "Armbots: Peacemakers"
+  longisc: AUXBOT
+  code: 275
+  faction: 1
+  logo: armbots_peacemakers
+  name: AUXBOT_1
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized", Mechanized Deployment ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: "-"
+    cost: 4
+- 
+  isc: Palbots
+  longisc: 
+  code: 276
+  faction: 1
+  logo: palbots
+  name: PALBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 3
+  skills: [ "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Mulebots
+  longisc: 
+  code: 277
+  faction: 1
+  logo: mulebots
+  name: MULEBOT
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage, Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: EVO
+    equipments: [ EVO Repeater ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 3
+    description: Combi
+    skills: [ Total Reaction ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 21
+- 
+  isc: Kirpal Singh, Akalis Sergeant
+  longisc: KIRPAL SINGH, Akalis Sergeant
+  code: 278
+  faction: 1
+  logo: kirpal_singh_akalis_sergeant
+  name: SINGH
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 16
+  bs: 13
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "AD: Combat Jump", Chain of Command, Martial Arts L2, Religious Troop ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Assault Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 36
+- 
+  isc: Father-Officer Gabriele De Fersen
+  longisc: 
+  code: 279
+  faction: 1
+  logo: father_officer_gabriele_de_fersen
+  name: DE FERSEN
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 14
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L3, Religious Troop ]
+  bsw: [ Spitfire ]
+  ccw: [ Pistol, Templar CCW (AP + Shock) ]
+  options:
+  - 
+    code: 1
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 2
+    cost: 60
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Hacker, Lieutenant ]
+    equipments: [ Hacking Device ]
+    swc: 2
+    cost: 60
+- 
+  isc: Toni Macayana, Tikbalangs Lieutenant
+  longisc: TONI MACAYANA Tikbalangs Lieutenant
+  code: 280
+  faction: 1
+  logo: toni_macayana_tikbalangs_lieutenant
+  name: MACAYANA
+  type: TAG
+  classification: Character
+  mov: 6-4
+  cc: 17
+  bs: 15
+  ph: 15
+  wip: 13
+  arm: 6
+  bts: 9
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: Mimetism", Climbing Plus, "G: Remote Presence", Multiterrain ]
+  equipments: [ ECM ]
+  bsw: [ HMG, Heavy Flamethrower, Antipersonnel Mines ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 85
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 2
+    cost: 85
+- 
+  isc: "Jeanne d'Arc 2.0 (Mobility Armor)"
+  longisc: "JOAN OF ARC 2.0 (Mobility Armor)"
+  code: 281
+  faction: 1
+  logo: joan_of_arc_2_0_mobility_armor
+  name: JOAN OF ARC
+  type: HI
+  classification: Character
+  mov: 6-2
+  cc: 23
+  bs: 15
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Inspiring Leadership, Martial Arts L3, Multiterrain, Religious Troop, "V: No Wound Incapacitation", Kinematica L1 ]
+  bsw: [ Spitfire, Nanopulser ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: 
+    ccw: [ AP CCW ]
+    swc: 2
+    cost: 51
+  - 
+    code: 2
+    description: EXPCCW
+    ccw: [ EXP CCW ]
+    swc: 2
+    cost: 53
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    ccw: [ AP CCW ]
+    swc: 1
+    cost: 51

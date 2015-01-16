@@ -22,7 +22,9 @@ function readSingleValue(){
 	[ -z "$saveValueTo" ] || echo "$value" > "$saveValueTo"
 }
 readSingleValue faction "`cat /tmp/factionId`" /tmp/factionId
-readSingleValue logo "`grep '^ *isc *:' $t | tail -n1 | sed 's# *isc *: *##' | tr '[:upper:]' '[:lower:]' | tr -c '[a-z0-9]' '_' | tr -s '_' | sed -r 's#^_|_$##g'`"
+defaultLogo="`grep '^ *isc *:' $t | tail -n1 | sed 's# *isc *: *##' | tr '[:upper:]' '[:lower:]' | tr -c '[a-z0-9]' '_' | tr -s '_' | sed -r 's#^_|_$##g'`"
+echo "    available logo file: `find src/ -name "${defaultLogo}_logo.png"`"
+readSingleValue logo "$defaultLogo"
 for name in name type classification mov cc bs ph wip arm bts w s ava backup irregular impetuosity; do
 	readSingleValue $name
  #       echo -n "  $name : "
