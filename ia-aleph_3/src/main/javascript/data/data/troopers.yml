@@ -7162,3 +7162,272 @@
 # HAQQISLAM Paradiso
 
 
+- 
+  isc: Hassassin Barids
+  longisc: 
+  code: 249
+  faction: 4
+  logo: hassassin_barids
+  name: BARID
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Religious Troop ]
+  bsw: [ Rifle + Marker ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 0.5
+    cost: 22
+  - 
+    code: 2
+    description: Hacker+FO
+    skills: [ Hacker ]
+    equipments: [ Hacking Device, Forward Observer ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    swc: 0
+    cost: 15
+  - 
+    code: 4
+    description: Lt+Hacker
+    skills: [ Hacker, Lieutenant ]
+    equipments: [ Hacking Device ]
+    swc: 1
+    cost: 22
+  - 
+    code: 5
+    description: Lt+FO
+    skills: [ Lieutenant ]
+    equipments: [ Forward Observer ]
+    swc: 0
+    cost: 15
+- 
+  isc: KTS, Kaplan Tactical Services
+  longisc: "KAPLAN TACTICAL SERVICES (KTS)"
+  code: 250
+  faction: 4
+  logo: kts_kaplan_tactical_services
+  name: KAPLAN
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "CH: Mimetism", "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: ADHL
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Blitzen
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 28
+  - 
+    code: 5
+    description: Eng+ADHL
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 27
+  - 
+    code: 6
+    description: Eng+Blitzen
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 27
+  - 
+    code: 7
+    description: Doctor
+    skills: [ Doctor ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 27
+- 
+  isc: Asawira Regiment
+  longisc: ASAWIRA Regiment
+  code: 251
+  faction: 4
+  logo: asawira_regiment
+  name: ASAWIRA
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 21
+  bs: 14
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L2, Regeneration ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 48
+  - 
+    code: 2
+    description: DACCW
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 49
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 43
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Shock CCW ]
+    swc: 2
+    cost: 50
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 52
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 48
+- 
+  isc: Sekban, Naval Special Unit
+  longisc: SEKBAN, Naval Special Unit
+  code: 252
+  faction: 4
+  logo: sekban
+  name: SEKBAN
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Zero-G ]
+  equipments: [ 360° Visor ]
+  options:
+  - 
+    code: 1
+    description: BS
+    bsw: [ Boarding Shotgun, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 21
+  - 
+    code: 2
+    description: APRifle
+    bsw: [ AP Rifle, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 22
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 4
+    description: HRL
+    bsw: [ Heavy Rocket Launcher, Chain-colt ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1.5
+    cost: 24
+  - 
+    code: 5
+    description: Haris
+    skills: [ "Fireteam: Haris L1" ]
+    bsw: [ AP Rifle, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 23
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Boarding Shotgun, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 15
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Rifle, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 22
