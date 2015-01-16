@@ -4377,6 +4377,1052 @@
   skills: [ "V: Dogged" ]
   bsw: [ Light Flamethrower (2), Smoke Grenades ]
   ccw: [ Breaker Pistol (2), DA CCW ]
+- 
+  isc: Daylami Infantry
+  longisc: DAYLAMI Infantry
+  code: 236
+  faction: 4
+  logo: daylami_infantry
+  name: DAYLAMI
+  type: LI
+  classification: Garrison Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  irregular: I
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Shotgun
+    bsw: [ Light Shotgun ]
+    swc: 0
+    cost: 5
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 0.5
+    cost: 17
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Light Shotgun, Light Grenade Launcher ]
+    swc: 0.5
+    cost: 8
+  - 
+    code: 4
+    description: Panzerfaust
+    bsw: [ Light Shotgun, Panzerfaust ]
+    swc: 0.5
+    cost: 7
+  - 
+    code: 5
+    description: Chamo
+    skills: [ "CH: Limited Camouflage", Inferior Infiltration ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 10
+  - 
+    code: 6
+    description: Ch+Panz
+    skills: [ "CH: Limited Camouflage", Inferior Infiltration ]
+    bsw: [ Light Shotgun, Panzerfaust ]
+    swc: 0.5
+    cost: 8
+- 
+  isc: Odalisques
+  longisc: ODALISQUES
+  code: 237
+  faction: 4
+  logo: odalisques
+  name: ODALISQUE
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ I-kohl L3, "V: No Wound Incapacitation" ]
+  equipments: [ "360° Visor OR Sixth Sense L2" ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 30
+  - 
+    code: 4
+    description: Smg
+    bsw: [ Submachine gun, Contender ]
+    swc: 0
+    cost: 22
+  - 
+    code: 5
+    description: Haris
+    skills: [ Fireteam: Haris L1 ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 1
+    cost: 25
+- 
+  isc: Bashi Bazouks
+  longisc: 
+  code: 238
+  faction: 4
+  logo: bashi_bazouks
+  name: BASHI BAZOUK
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 11
+  ph: 10
+  wip: 12
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  irregular: I
+  skills: [ AD: Parachutist / Zero-G ]
+  equipments: [ Holoprojector L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 15
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 14
+  - 
+    code: 3
+    description: APRifle
+    bsw: [ AP Rifle ]
+    swc: 0
+    cost: 15
+  - 
+    code: 4
+    description: EMauler
+    bsw: [ Combi Rifle, E/Mauler ]
+    swc: 0.5
+    cost: 16
+- 
+  isc: Hafza Unit
+  longisc: HAFZA Unit
+  code: 239
+  faction: 4
+  logo: hafza_unit
+  name: HAFZA
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  equipments: [ Holoprojector L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 22
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 17
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 5
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 22
+- 
+  isc: Hassassin Muyibs
+  longisc: HASSASSIN MUYIBS
+  code: 240
+  faction: 4
+  logo: hassassin_muyibs
+  name: MUYIB
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Religious Troop, "V: Dogged" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun, Panzerfaust, D-Charges ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 2
+    description: LGL
+    bsw: [ Rifle + LGL + Smoke LGL ]
+    swc: 1
+    cost: 22
+  - 
+    code: 3
+    description: Emauler
+    skills: [ Minelayer ]
+    bsw: [ Rifle + Light Shotgun, D.E.P., E/Mauler ]
+    swc: 0
+    cost: 23
+  - 
+    code: 4
+    description: ViralMines
+    skills: [ Minelayer ]
+    bsw: [ Rifle + Light Shotgun, D.E.P., Viral Mines ]
+    swc: 0
+    cost: 24
+  - 
+    code: 5
+    description: Spitfire
+    equipments: [ X-Visor ]
+    bsw: [ Spitfire, D-Charges ]
+    swc: 1
+    cost: 30
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun, D.E.P. ]
+    swc: 0
+    cost: 26
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + LGL + Smoke LGL ]
+    swc: 1.5
+    cost: 22
+  - 
+    code: 8
+    description: HRL
+    equipments: [ X-Visor ]
+    bsw: [ Heavy Rocket Launcher, D-Charges ]
+    swc: 1
+    cost: 22
+- 
+  isc: Hassassin Lasiqs
+  longisc: 
+  code: 241
+  faction: 4
+  logo: hassassin_lasiqs
+  name: LASIQ
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "CH: Mimetism", Climbing Plus, Religious Troop ]
+  equipments: [ X-Visor ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: VRifle
+    bsw: [ Viral Rifle + Light Shotgun ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: VSniper
+    bsw: [ Viral Sniper Rifle ]
+    swc: 1.5
+    cost: 26
+- 
+  isc: "Special Deterrance Group Azra'il"
+  longisc: "Special Deterrance Group AZRA'IL"
+  code: 242
+  faction: 4
+  logo: azra_il
+  name: "AZRA'IL"
+  type: HI
+  classification: Veteran Troop
+  mov: 4-2
+  cc: 12
+  bs: 13
+  ph: 13
+  wip: 14
+  arm: 5
+  bts: 3
+  w: 2
+  s: 5
+  ava: 1
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 38
+  - 
+    code: 2
+    description: Feuerbach
+    equipments: [ X-Visor ]
+    bsw: [ Feuerbach ]
+    swc: 2
+    cost: 41
+- 
+  isc: "Al Hawwa' Unit"
+  longisc: "AL HAWWA' Unit"
+  code: 243
+  faction: 4
+  logo: al_hawwa_unit
+  name: "HAWWA'"
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Sniper
+    bsw: [ Sniper Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 2
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    swc: 0.5
+    cost: 26
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    swc: 0
+    cost: 21
+- 
+  isc: Hassassin Farzans
+  longisc: 
+  code: 244
+  faction: 4
+  logo: hassassin_farzans
+  name: FARZAN
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain, Religious Troop ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: CoC
+    skills: [ Chain of Command ]
+    bsw: [ Boarding Shotgun, Contender ]
+    swc: 0
+    cost: 31
+  - 
+    code: 2
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+- 
+  isc: Nasmat Remotes
+  longisc: NASMAT Remotes
+  code: 245
+  faction: 4
+  logo: nasmat_remotes
+  name: NASMAT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 2
+  skills: [ "CH: Mimetism","G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Kameel Remotes
+  longisc: KAMEEL Remotes
+  code: 246
+  faction: 4
+  logo: kameel_remotes
+  name: KAMEEL
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage, Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: EVO
+    equipments: [ EVO Repeater ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 3
+    description: Rifle
+    skills: [ Total Reaction ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 21
+- 
+  isc: Hussein Al-Djabel
+  longisc: "HUSSEIN AL-DJABEL, Hassassin Fiday"
+  code: 247
+  faction: 4
+  logo: hussein_al_djabel
+  name: AL-DJABEL
+  type: SK
+  classification: Character
+  mov: 4-4
+  cc: 23
+  bs: 12
+  ph: 13
+  wip: 15
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ Basic Impersonation, Kinematika L1, Martial Arts L4, Multiterrain, Religious Troop ]
+  bsw: [ Rifle + Light Shotgun, Smoke Grenades ]
+  ccw: [ Pistol, Viral CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 35
+- 
+  isc: Saladin, O-12 Liaison Officer
+  longisc: SALADIN, O-12 Liaison Officer
+  code: 248
+  faction: 4
+  logo: saladin_o_12_liaison_officer
+  name: SALADIN
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 12
+  wip: 16
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Strategos L3, "V: No Wound Incapacitation" ]
+  equipments: [ Repeater ]
+  bsw: [ Combi Rifle, Nanopulser ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 36
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 36
+- 
+  isc: Hassassin Barids
+  longisc: 
+  code: 249
+  faction: 4
+  logo: hassassin_barids
+  name: BARID
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Religious Troop ]
+  bsw: [ Rifle + Marker ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 0.5
+    cost: 22
+  - 
+    code: 2
+    description: Hacker+FO
+    skills: [ Hacker ]
+    equipments: [ Hacking Device, Forward Observer ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    swc: 0
+    cost: 15
+  - 
+    code: 4
+    description: Lt+Hacker
+    skills: [ Hacker, Lieutenant ]
+    equipments: [ Hacking Device ]
+    swc: 1
+    cost: 22
+  - 
+    code: 5
+    description: Lt+FO
+    skills: [ Lieutenant ]
+    equipments: [ Forward Observer ]
+    swc: 0
+    cost: 15
+- 
+  isc: KTS, Kaplan Tactical Services
+  longisc: "KAPLAN TACTICAL SERVICES (KTS)"
+  code: 250
+  faction: 4
+  logo: kts_kaplan_tactical_services
+  name: KAPLAN
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "CH: Mimetism", "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: ADHL
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Blitzen
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 28
+  - 
+    code: 5
+    description: Eng+ADHL
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 27
+  - 
+    code: 6
+    description: Eng+Blitzen
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 27
+  - 
+    code: 7
+    description: Doctor
+    skills: [ Doctor ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 27
+- 
+  isc: Asawira Regiment
+  longisc: ASAWIRA Regiment
+  code: 251
+  faction: 4
+  logo: asawira_regiment
+  name: ASAWIRA
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 21
+  bs: 14
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L2, Regeneration ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 48
+  - 
+    code: 2
+    description: DACCW
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 49
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 43
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Shock CCW ]
+    swc: 2
+    cost: 50
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 52
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Rifle + Light Shotgun ]
+    ccw: [ Shock CCW ]
+    swc: 0
+    cost: 48
+- 
+  isc: Sekban, Naval Special Unit
+  longisc: SEKBAN, Naval Special Unit
+  code: 252
+  faction: 4
+  logo: sekban
+  name: SEKBAN
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Zero-G ]
+  equipments: [ 360° Visor ]
+  options:
+  - 
+    code: 1
+    description: BS
+    bsw: [ Boarding Shotgun, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 21
+  - 
+    code: 2
+    description: APRifle
+    bsw: [ AP Rifle, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 22
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 4
+    description: HRL
+    bsw: [ Heavy Rocket Launcher, Chain-colt ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1.5
+    cost: 24
+  - 
+    code: 5
+    description: Haris
+    skills: [ "Fireteam: Haris L1" ]
+    bsw: [ AP Rifle, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 23
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Boarding Shotgun, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 15
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Rifle, Chain-colt ]
+    ccw: [ Pistol, Stun Pistol, Knife ]
+    swc: 0
+    cost: 22
+- 
+  isc: "Muttawi'ah"
+  longisc: "GHAZI MUTTAWI'AH"
+  code: 253
+  faction: 4
+  logo: muttawi_ah
+  name: "MUTTAWI'AH"
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 15
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  irregular: I
+  impetuosity: E
+  skills: [ Religious Troop, "V: Dogged" ]
+  bsw: [ E/Marat, Jammer ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Chain
+    bsw: [ Chain Rifle ]
+    swc: 0
+    cost: 5
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 10
+- 
+  isc: Hassassin Husam Yasbir
+  longisc: 
+  code: 254
+  faction: 4
+  logo: hassassin_husam_yasbir
+  name: YASBIR
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L3, Religious Troop, Specialist Troop ]
+  bsw: [ Rifle + Light Shotgun, Nanopulser ]
+  ccw: [ Pistol, Viral CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    equipments: [ Holoprojector L1 ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: Inf
+    skills: [ Infiltration ]
+    equipments: [ Holoprojector L2 ]
+    bsw: [ Smoke Grenades ]
+    swc: 0
+    cost: 34
+- 
+  isc: Halqa Mechanized Infantry
+  longisc: HALQA Mechanized Infantry
+  code: 255
+  faction: 4
+  logo: halqa
+  name: HALQA
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  skills: [ Mechanized Deployment ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 15
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 23
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Rifle + Light GL ]
+    swc: 1
+    cost: 16
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1
+    cost: 20
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 6
+    description: Doctor
+    skills: [ Doctor Plus ]
+    equipments: [ MediKit ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 19
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 1
+    cost: 15
+- 
+  isc: Ahl Fassed Regiment
+  longisc: AHL FASSED Regiment
+  code: 256
+  faction: 4
+  logo: ahl_fassed
+  name: FASSED
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: APRifle
+    bsw: [ AP Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 34
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 41
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 32
+  - 
+    code: 4
+    description: Panzerfaust
+    bsw: [ AP Rifle, Panzerfaust ]
+    swc: 0
+    cost: 36
 
 
 # NOMADS
@@ -6576,1051 +7622,4 @@
     swc: 0
     cost: 8
 
-# HAQQISLAM Human Sphere
 
-- 
-  isc: Daylami Infantry
-  longisc: DAYLAMI Infantry
-  code: 236
-  faction: 4
-  logo: daylami_infantry
-  name: DAYLAMI
-  type: LI
-  classification: Garrison Troops
-  mov: 4-4
-  cc: 13
-  bs: 11
-  ph: 10
-  wip: 13
-  arm: 1
-  bts: 0
-  w: 1
-  s: 2
-  ava: T
-  irregular: I
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Shotgun
-    bsw: [ Light Shotgun ]
-    swc: 0
-    cost: 5
-  - 
-    code: 2
-    description: HMG
-    bsw: [ HMG ]
-    swc: 0.5
-    cost: 17
-  - 
-    code: 3
-    description: LGL
-    bsw: [ Light Shotgun, Light Grenade Launcher ]
-    swc: 0.5
-    cost: 8
-  - 
-    code: 4
-    description: Panzerfaust
-    bsw: [ Light Shotgun, Panzerfaust ]
-    swc: 0.5
-    cost: 7
-  - 
-    code: 5
-    description: Chamo
-    skills: [ "CH: Limited Camouflage", Inferior Infiltration ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 10
-  - 
-    code: 6
-    description: Ch+Panz
-    skills: [ "CH: Limited Camouflage", Inferior Infiltration ]
-    bsw: [ Light Shotgun, Panzerfaust ]
-    swc: 0.5
-    cost: 8
-- 
-  isc: Odalisques
-  longisc: ODALISQUES
-  code: 237
-  faction: 4
-  logo: odalisques
-  name: ODALISQUE
-  type: LI
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 14
-  bs: 12
-  ph: 10
-  wip: 14
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  backup: C
-  skills: [ I-kohl L3, "V: No Wound Incapacitation" ]
-  equipments: [ "360° Visor OR Sixth Sense L2" ]
-  bsw: [ Nanopulser ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Rifle
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 24
-  - 
-    code: 2
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    swc: 0
-    cost: 23
-  - 
-    code: 3
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 30
-  - 
-    code: 4
-    description: Smg
-    bsw: [ Submachine gun, Contender ]
-    swc: 0
-    cost: 22
-  - 
-    code: 5
-    description: Haris
-    skills: [ Fireteam: Haris L1 ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 1
-    cost: 25
-- 
-  isc: Bashi Bazouks
-  longisc: 
-  code: 238
-  faction: 4
-  logo: bashi_bazouks
-  name: BASHI BAZOUK
-  type: LI
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 15
-  bs: 11
-  ph: 10
-  wip: 12
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  irregular: I
-  skills: [ AD: Parachutist / Zero-G ]
-  equipments: [ Holoprojector L2 ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Rifle
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 15
-  - 
-    code: 2
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    swc: 0
-    cost: 14
-  - 
-    code: 3
-    description: APRifle
-    bsw: [ AP Rifle ]
-    swc: 0
-    cost: 15
-  - 
-    code: 4
-    description: EMauler
-    bsw: [ Combi Rifle, E/Mauler ]
-    swc: 0.5
-    cost: 16
-- 
-  isc: Hafza Unit
-  longisc: HAFZA Unit
-  code: 239
-  faction: 4
-  logo: hafza_unit
-  name: HAFZA
-  type: LI
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 13
-  bs: 12
-  ph: 10
-  wip: 14
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  backup: C
-  equipments: [ Holoprojector L1 ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Rifle
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 16
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 22
-  - 
-    code: 3
-    description: FO
-    equipments: [ Forward Observer ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 17
-  - 
-    code: 4
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 16
-  - 
-    code: 5
-    description: Lt+Spitfire
-    skills: [ Lieutenant ]
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 22
-- 
-  isc: Hassassin Muyibs
-  longisc: HASSASSIN MUYIBS
-  code: 240
-  faction: 4
-  logo: hassassin_muyibs
-  name: MUYIB
-  type: LI
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 15
-  bs: 12
-  ph: 11
-  wip: 14
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  skills: [ Religious Troop, "V: Dogged" ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Rifle
-    bsw: [ Rifle + Light Shotgun, Panzerfaust, D-Charges ]
-    swc: 0.5
-    cost: 24
-  - 
-    code: 2
-    description: LGL
-    bsw: [ Rifle + LGL + Smoke LGL ]
-    swc: 1
-    cost: 22
-  - 
-    code: 3
-    description: Emauler
-    skills: [ Minelayer ]
-    bsw: [ Rifle + Light Shotgun, D.E.P., E/Mauler ]
-    swc: 0
-    cost: 23
-  - 
-    code: 4
-    description: ViralMines
-    skills: [ Minelayer ]
-    bsw: [ Rifle + Light Shotgun, D.E.P., Viral Mines ]
-    swc: 0
-    cost: 24
-  - 
-    code: 5
-    description: Spitfire
-    equipments: [ X-Visor ]
-    bsw: [ Spitfire, D-Charges ]
-    swc: 1
-    cost: 30
-  - 
-    code: 6
-    description: Doctor
-    skills: [ Doctor Plus ]
-    equipments: [ MediKit ]
-    bsw: [ Rifle + Light Shotgun, D.E.P. ]
-    swc: 0
-    cost: 26
-  - 
-    code: 7
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Rifle + LGL + Smoke LGL ]
-    swc: 1.5
-    cost: 22
-  - 
-    code: 8
-    description: HRL
-    equipments: [ X-Visor ]
-    bsw: [ Heavy Rocket Launcher, D-Charges ]
-    swc: 1
-    cost: 22
-- 
-  isc: Hassassin Lasiqs
-  longisc: 
-  code: 241
-  faction: 4
-  logo: hassassin_lasiqs
-  name: LASIQ
-  type: MI
-  classification: Spec. Trained Troops
-  mov: 4-2
-  cc: 14
-  bs: 12
-  ph: 11
-  wip: 14
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  skills: [ "CH: Mimetism", Climbing Plus, Religious Troop ]
-  equipments: [ X-Visor ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: VRifle
-    bsw: [ Viral Rifle + Light Shotgun ]
-    swc: 0
-    cost: 26
-  - 
-    code: 2
-    description: VSniper
-    bsw: [ Viral Sniper Rifle ]
-    swc: 1.5
-    cost: 26
-- 
-  isc: "Special Deterrance Group Azra'il"
-  longisc: "Special Deterrance Group AZRA'IL"
-  code: 242
-  faction: 4
-  logo: azra_il
-  name: "AZRA'IL"
-  type: HI
-  classification: Veteran Troop
-  mov: 4-2
-  cc: 12
-  bs: 13
-  ph: 13
-  wip: 14
-  arm: 5
-  bts: 3
-  w: 2
-  s: 5
-  ava: 1
-  backup: C
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: HMG
-    bsw: [ HMG ]
-    swc: 2
-    cost: 38
-  - 
-    code: 2
-    description: Feuerbach
-    equipments: [ X-Visor ]
-    bsw: [ Feuerbach ]
-    swc: 2
-    cost: 41
-- 
-  isc: "Al Hawwa' Unit"
-  longisc: "AL HAWWA' Unit"
-  code: 243
-  faction: 4
-  logo: al_hawwa_unit
-  name: "HAWWA'"
-  type: SK
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 13
-  bs: 11
-  ph: 11
-  wip: 14
-  arm: 1
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ "CH: Camouflage", Infiltration, Multiterrain ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Sniper
-    bsw: [ Sniper Rifle, Antipersonnel Mines ]
-    swc: 0.5
-    cost: 27
-  - 
-    code: 2
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Assault Hacking Device ]
-    bsw: [ Boarding Shotgun, D-Charges ]
-    swc: 0.5
-    cost: 26
-  - 
-    code: 3
-    description: FO
-    equipments: [ Forward Observer ]
-    bsw: [ Boarding Shotgun, D-Charges ]
-    swc: 0
-    cost: 21
-- 
-  isc: Hassassin Farzans
-  longisc: 
-  code: 244
-  faction: 4
-  logo: hassassin_farzans
-  name: FARZAN
-  type: SK
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 15
-  bs: 12
-  ph: 11
-  wip: 14
-  arm: 0
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  skills: [ "CH: Camouflage", Infiltration, Multiterrain, Religious Troop ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: CoC
-    skills: [ Chain of Command ]
-    bsw: [ Boarding Shotgun, Contender ]
-    swc: 0
-    cost: 31
-  - 
-    code: 2
-    description: FO
-    equipments: [ Forward Observer ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 24
-- 
-  isc: Nasmat Remotes
-  longisc: NASMAT Remotes
-  code: 245
-  faction: 4
-  logo: nasmat_remotes
-  name: NASMAT
-  type: REM
-  classification: Support Troops
-  mov: 6-4
-  cc: 8
-  bs: 8
-  ph: 10
-  wip: 13
-  arm: 0
-  bts: 3
-  w: 1
-  s: 1
-  ava: 2
-  skills: [ "CH: Mimetism","G: Servant" ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 3
-- 
-  isc: Kameel Remotes
-  longisc: KAMEEL Remotes
-  code: 246
-  faction: 4
-  logo: kameel_remotes
-  name: KAMEEL
-  type: REM
-  classification: Support Troops
-  mov: 4-4
-  cc: 8
-  bs: 11
-  ph: 10
-  wip: 13
-  arm: 2
-  bts: 3
-  w: 1
-  s: 4
-  ava: 2
-  skills: [ "G: Remote Presence" ]
-  equipments: [ Baggage, Repeater ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: Minesweeper
-    equipments: [ Minesweeper ]
-    swc: 0
-    cost: 8
-  - 
-    code: 2
-    description: EVO
-    equipments: [ EVO Repeater ]
-    swc: 0.5
-    cost: 13
-  - 
-    code: 3
-    description: Rifle
-    skills: [ Total Reaction ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 21
-- 
-  isc: Hussein Al-Djabel
-  longisc: "HUSSEIN AL-DJABEL, Hassassin Fiday"
-  code: 247
-  faction: 4
-  logo: hussein_al_djabel
-  name: AL-DJABEL
-  type: SK
-  classification: Character
-  mov: 4-4
-  cc: 23
-  bs: 12
-  ph: 13
-  wip: 15
-  arm: 1
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  skills: [ Basic Impersonation, Kinematika L1, Martial Arts L4, Multiterrain, Religious Troop ]
-  bsw: [ Rifle + Light Shotgun, Smoke Grenades ]
-  ccw: [ Pistol, Viral CCW, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 35
-- 
-  isc: Saladin, O-12 Liaison Officer
-  longisc: SALADIN, O-12 Liaison Officer
-  code: 248
-  faction: 4
-  logo: saladin_o_12_liaison_officer
-  name: SALADIN
-  type: MI
-  classification: Character
-  mov: 4-2
-  cc: 15
-  bs: 13
-  ph: 12
-  wip: 16
-  arm: 3
-  bts: 3
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Strategos L3, "V: No Wound Incapacitation" ]
-  equipments: [ Repeater ]
-  bsw: [ Combi Rifle, Nanopulser ]
-  ccw: [ Pistol, CCW ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 36
-  - 
-    code: 2
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    swc: 0
-    cost: 36
-- 
-  isc: Hassassin Barids
-  longisc: 
-  code: 249
-  faction: 4
-  logo: hassassin_barids
-  name: BARID
-  type: LI
-  classification: Spec. Trained Troops
-  mov: 4-4
-  cc: 14
-  bs: 12
-  ph: 10
-  wip: 14
-  arm: 1
-  bts: 3
-  w: 1
-  s: 2
-  ava: 2
-  skills: [ Religious Troop ]
-  bsw: [ Rifle + Marker ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Hacking Device ]
-    swc: 0.5
-    cost: 22
-  - 
-    code: 2
-    description: Hacker+FO
-    skills: [ Hacker ]
-    equipments: [ Hacking Device, Forward Observer ]
-    swc: 0.5
-    cost: 23
-  - 
-    code: 3
-    description: FO
-    equipments: [ Forward Observer ]
-    swc: 0
-    cost: 15
-  - 
-    code: 4
-    description: Lt+Hacker
-    skills: [ Hacker, Lieutenant ]
-    equipments: [ Hacking Device ]
-    swc: 1
-    cost: 22
-  - 
-    code: 5
-    description: Lt+FO
-    skills: [ Lieutenant ]
-    equipments: [ Forward Observer ]
-    swc: 0
-    cost: 15
-- 
-  isc: KTS, Kaplan Tactical Services
-  longisc: "KAPLAN TACTICAL SERVICES (KTS)"
-  code: 250
-  faction: 4
-  logo: kts_kaplan_tactical_services
-  name: KAPLAN
-  type: LI
-  classification: Veteran Troops
-  mov: 4-4
-  cc: 13
-  bs: 12
-  ph: 11
-  wip: 14
-  arm: 2
-  bts: 6
-  w: 1
-  s: 2
-  ava: 2
-  skills: [ "CH: Mimetism", "V: Courage" ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: ADHL
-    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
-    swc: 0
-    cost: 23
-  - 
-    code: 2
-    description: Blitzen
-    bsw: [ Combi Rifle, Blitzen ]
-    swc: 0
-    cost: 23
-  - 
-    code: 3
-    description: Sniper
-    bsw: [ MULTI Sniper Rifle ]
-    swc: 1.5
-    cost: 30
-  - 
-    code: 4
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 28
-  - 
-    code: 5
-    description: Eng+ADHL
-    skills: [ Engineer ]
-    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
-    swc: 0
-    cost: 27
-  - 
-    code: 6
-    description: Eng+Blitzen
-    skills: [ Engineer ]
-    bsw: [ Combi Rifle, Blitzen ]
-    swc: 0
-    cost: 27
-  - 
-    code: 7
-    description: Doctor
-    skills: [ Doctor ]
-    equipments: [ MediKit ]
-    bsw: [ Combi Rifle, Blitzen ]
-    swc: 0
-    cost: 27
-- 
-  isc: Asawira Regiment
-  longisc: ASAWIRA Regiment
-  code: 251
-  faction: 4
-  logo: asawira_regiment
-  name: ASAWIRA
-  type: HI
-  classification: Headquarters Troops
-  mov: 4-4
-  cc: 21
-  bs: 14
-  ph: 14
-  wip: 15
-  arm: 3
-  bts: 3
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Martial Arts L2, Regeneration ]
-  bsw: [ Nanopulser ]
-  ccw: [ Pistol ]
-  options:
-  - 
-    code: 1
-    description: 
-    bsw: [ AP Rifle + Light Shotgun ]
-    ccw: [ Shock CCW ]
-    swc: 0
-    cost: 48
-  - 
-    code: 2
-    description: DACCW
-    bsw: [ AP Rifle + Light Shotgun ]
-    ccw: [ DA CCW ]
-    swc: 0
-    cost: 49
-  - 
-    code: 3
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    ccw: [ Shock CCW ]
-    swc: 0
-    cost: 43
-  - 
-    code: 4
-    description: Spitfire
-    bsw: [ Spitfire ]
-    ccw: [ Shock CCW ]
-    swc: 2
-    cost: 50
-  - 
-    code: 5
-    description: Doctor
-    skills: [ Doctor Plus ]
-    equipments: [ MediKit ]
-    bsw: [ AP Rifle + Light Shotgun ]
-    ccw: [ Shock CCW ]
-    swc: 0
-    cost: 52
-  - 
-    code: 6
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ AP Rifle + Light Shotgun ]
-    ccw: [ Shock CCW ]
-    swc: 0
-    cost: 48
-- 
-  isc: Sekban, Naval Special Unit
-  longisc: SEKBAN, Naval Special Unit
-  code: 252
-  faction: 4
-  logo: sekban
-  name: SEKBAN
-  type: MI
-  classification: Elite Troops
-  mov: 4-2
-  cc: 15
-  bs: 12
-  ph: 11
-  wip: 14
-  arm: 3
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  skills: [ Zero-G ]
-  equipments: [ 360° Visor ]
-  options:
-  - 
-    code: 1
-    description: BS
-    bsw: [ Boarding Shotgun, Chain-colt ]
-    ccw: [ Pistol, Stun Pistol, Knife ]
-    swc: 0
-    cost: 21
-  - 
-    code: 2
-    description: APRifle
-    bsw: [ AP Rifle, Chain-colt ]
-    ccw: [ Pistol, Stun Pistol, Knife ]
-    swc: 0
-    cost: 22
-  - 
-    code: 3
-    description: Spitfire
-    bsw: [ Spitfire ]
-    ccw: [ Pistol, Stun Pistol, Knife ]
-    swc: 1.5
-    cost: 28
-  - 
-    code: 4
-    description: HRL
-    bsw: [ Heavy Rocket Launcher, Chain-colt ]
-    ccw: [ Assault Pistol, Knife ]
-    swc: 1.5
-    cost: 24
-  - 
-    code: 5
-    description: Haris
-    skills: [ "Fireteam: Haris L1" ]
-    bsw: [ AP Rifle, Chain-colt ]
-    ccw: [ Pistol, Stun Pistol, Knife ]
-    swc: 0
-    cost: 23
-  - 
-    code: 6
-    description: Doctor
-    skills: [ Doctor Plus ]
-    equipments: [ MediKit ]
-    bsw: [ Boarding Shotgun, Chain-colt ]
-    ccw: [ Pistol, Stun Pistol, Knife ]
-    swc: 0
-    cost: 15
-  - 
-    code: 7
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ AP Rifle, Chain-colt ]
-    ccw: [ Pistol, Stun Pistol, Knife ]
-    swc: 0
-    cost: 22
-- 
-  isc: "Muttawi'ah"
-  longisc: "GHAZI MUTTAWI'AH"
-  code: 253
-  faction: 4
-  logo: muttawi_ah
-  name: "MUTTAWI'AH"
-  type: LI
-  classification: Line Troops
-  mov: 4-4
-  cc: 13
-  bs: 11
-  ph: 12
-  wip: 15
-  arm: 0
-  bts: 0
-  w: 1
-  s: 2
-  ava: 4
-  irregular: I
-  impetuosity: E
-  skills: [ Religious Troop, "V: Dogged" ]
-  bsw: [ E/Marat, Jammer ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Chain
-    bsw: [ Chain Rifle ]
-    swc: 0
-    cost: 5
-  - 
-    code: 2
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    swc: 0
-    cost: 10
-- 
-  isc: Hassassin Husam Yasbir
-  longisc: 
-  code: 254
-  faction: 4
-  logo: hassassin_husam_yasbir
-  name: YASBIR
-  type: LI
-  classification: Character
-  mov: 4-4
-  cc: 22
-  bs: 12
-  ph: 13
-  wip: 14
-  arm: 1
-  bts: 3
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Martial Arts L3, Religious Troop, Specialist Troop ]
-  bsw: [ Rifle + Light Shotgun, Nanopulser ]
-  ccw: [ Pistol, Viral CCW, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    equipments: [ Holoprojector L1 ]
-    swc: 0
-    cost: 27
-  - 
-    code: 2
-    description: Inf
-    skills: [ Infiltration ]
-    equipments: [ Holoprojector L2 ]
-    bsw: [ Smoke Grenades ]
-    swc: 0
-    cost: 34
-- 
-  isc: Halqa Mechanized Infantry
-  longisc: HALQA Mechanized Infantry
-  code: 255
-  faction: 4
-  logo: halqa
-  name: HALQA
-  type: LI
-  classification: Line Troops
-  mov: 4-4
-  cc: 13
-  bs: 11
-  ph: 10
-  wip: 14
-  arm: 1
-  bts: 0
-  w: 1
-  s: 2
-  ava: T
-  skills: [ Mechanized Deployment ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Rifle
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 15
-  - 
-    code: 2
-    description: HMG
-    bsw: [ HMG ]
-    swc: 1
-    cost: 23
-  - 
-    code: 3
-    description: LGL
-    bsw: [ Rifle + Light GL ]
-    swc: 1
-    cost: 16
-  - 
-    code: 4
-    description: ML
-    bsw: [ Missile Launcher ]
-    swc: 1
-    cost: 20
-  - 
-    code: 5
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Hacking Device ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0.5
-    cost: 23
-  - 
-    code: 6
-    description: Doctor
-    skills: [ Doctor Plus ]
-    equipments: [ MediKit ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 19
-  - 
-    code: 7
-    description: FO
-    equipments: [ Forward Observer ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 0
-    cost: 16
-  - 
-    code: 8
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Rifle + Light Shotgun ]
-    swc: 1
-    cost: 15
-- 
-  isc: Ahl Fassed Regiment
-  longisc: AHL FASSED Regiment
-  code: 256
-  faction: 4
-  logo: ahl_fassed
-  name: FASSED
-  type: HI
-  classification: Veteran Troops
-  mov: 4-4
-  cc: 15
-  bs: 13
-  ph: 14
-  wip: 14
-  arm: 4
-  bts: 3
-  w: 2
-  s: 2
-  ava: 2
-  backup: C
-  ccw: [ Pistol, CCW ]
-  options:
-  - 
-    code: 1
-    description: APRifle
-    bsw: [ AP Rifle + Light Flamethrower ]
-    swc: 0
-    cost: 34
-  - 
-    code: 2
-    description: HMG
-    bsw: [ HMG ]
-    swc: 2
-    cost: 41
-  - 
-    code: 3
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    swc: 0
-    cost: 32
-  - 
-    code: 4
-    description: Panzerfaust
-    bsw: [ AP Rifle, Panzerfaust ]
-    swc: 0
-    cost: 36
