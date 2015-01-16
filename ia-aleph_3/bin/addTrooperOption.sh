@@ -13,6 +13,7 @@ done
 for name in  skills equipments bsw ccw; do
 	echo -n "  $name : "
 	read value
+	value="`echo "$value" | sed 's#^ *( *##' | sed 's# *) *$##'`"
 	[ -z "$value" ] || echo "    $name: [ $value ]" >> $t
 done
 for name in swc cost; do
