@@ -7979,3 +7979,383 @@
     description: 
     swc: "-"
     cost: 6
+- 
+  isc: Knights of Santiago
+  longisc: Sacred Military Order of KNIGHTS OF SANTIAGO
+  code: 264
+  faction: 1
+  logo: knights_of_santiago
+  name: KNIGHT OF SANTIAGO
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 14
+  ph: 13
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Religious Troop, Zero-G ]
+  equipments: [ 360° Visor ]
+  bsw: [ E/M Grenades ]
+  options:
+  - 
+    code: 1
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 1.5
+    cost: 45
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 38
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 1
+    cost: 45
+  - 
+    code: 4
+    description: Combi
+    bsw: [ Combi Rifle ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 40
+- 
+  isc: Knights of Montesa
+  longisc: Sacred Military Order of KNIGHTS OF MONTESA
+  code: 265
+  faction: 1
+  logo: knights_of_montesa
+  name: KNIGHT OF MONTESA
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 19
+  bs: 14
+  ph: 13
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Mechanized Deployment, Religious Troop ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 45
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 51
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1.5
+    cost: 49
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 45
+- 
+  isc: Knights of the Holy Sepulchre
+  longisc: Equestrian Order of KNIGHTS OF THE HOLY SEPULCHRE
+  code: 266
+  faction: 1
+  logo: knights_of_the_holy_sepulchre
+  name: KNIGHT OF THE HOLY SEPULCHRE
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 14
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L2, Religious Troop ]
+  equipments: [ Holoprojector L2 ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, D.E.P. ]
+    swc: 0
+    cost: 49
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 54
+  - 
+    code: 3
+    description: Lt+Combi
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, D.E.P. ]
+    swc: 0
+    cost: 49
+  - 
+    code: 4
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 54
+- 
+  isc: Teutonic Knights
+  longisc: Sacred Military Order of TEUTONIC KNIGHTS
+  code: 267
+  faction: 1
+  logo: teutonic_knights
+  name: TEUTONIC KNIGHT
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 21
+  bs: 14
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Berserk, Jungle Terrain, Religious Troop, "V: Courage" ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Panzerfaust ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 34
+  - 
+    code: 2
+    description: EXPCCW
+    bsw: [ Combi Rifle, Panzerfaust ]
+    ccw: [ EXP CCW ]
+    swc: 0
+    cost: 36
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ AP CCW ]
+    swc: 2
+    cost: 37
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Panzerfaust ]
+    ccw: [ AP CCW ]
+    swc: 1
+    cost: 34
+- 
+  isc: Magister Knights
+  longisc: 
+  code: 268
+  faction: 1
+  logo: magister_knights
+  name: MAGISTER KNIGHT
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: E
+  skills: [ Hyper-Dynamic L1, Martial Arts L2, Religious Troop ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Panzerfaust, Light Shotgun ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: EXPCCW
+    bsw: [ Panzerfaust, Light Shotgun ]
+    ccw: [ EXP CCW ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: DACCW
+    bsw: [ Panzerfaust, Light Shotgun ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 24
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    ccw: [ DA CCW ]
+    swc: 2
+    cost: 32
+- 
+  isc: Clausewitz Uhlans
+  longisc: 
+  code: 269
+  faction: 1
+  logo: clausewitz_uhlans
+  name: UHLAN
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 15
+  bs: 15
+  ph: 15
+  wip: 12
+  arm: 6
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: Camouflage", "G: Remote Presence" ]
+  equipments: [ ECM ]
+  bsw: [ HMG, Feuerbach ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 96
+- 
+  isc: Tikbalangs, Armoured Chasseurs of Acontecimento
+  longisc: TIKBALANGS, Armoured Chasseurs of Acontecimento
+  code: 270
+  faction: 1
+  logo: tikbalangs_armoured_chasseurs_of_acontecimento
+  name: TIKBALANG
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 17
+  bs: 14
+  ph: 15
+  wip: 12
+  arm: 6
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: Mimetism", "G: Remote Presence", Jungle Terrain ]
+  equipments: [ ECM ]
+  bsw: [ HMG,Heavy Flamethrower ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 78
+- 
+  isc: Seraphs
+  compositetroop:
+  -
+    code: 271
+    min: 1
+    max: 1
+  -
+    code: 272
+    min: 1
+    max: 1
+  longisc: SERAPHS, Armoured Cavalry of Military Order
+  code: 271
+  faction: 1
+  logo: seraphs
+  name: SERAPH
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 19
+  bs: 14
+  ph: 16
+  wip: 12
+  arm: 7
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "G: Remote Presence", "Religious Troop" ]
+  equipments: [ ECM ]
+  bsw: [ Spitfire ]
+  ccw: [ EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 83
+- 
+  isc: Seraphs
+  longisc: AUXBOT
+  code: 272
+  faction: 1
+  logo: seraphs
+  name: AUXBOT_1
+  type: REM
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized" ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: "-"
+    cost: 4
