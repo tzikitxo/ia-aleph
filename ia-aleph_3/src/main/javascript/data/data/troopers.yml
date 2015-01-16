@@ -8681,3 +8681,84 @@
     ccw: [ AP CCW ]
     swc: 1
     cost: 51
+- 
+  isc: Crusader Brethren
+  longisc: 
+  code: 282
+  faction: 1
+  logo: crusader_brethren
+  name: CRUSADER
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "AD: Combat Jump / Zero-G", Religious Troop ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 34
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 4
+    description: MRifle
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 31
+- 
+  isc: Jotums. Svalarheima Armoured Cuirassiers Regiment
+  longisc: JOTUMS, Svalarheima Armoured Cuirassiers
+  code: 283
+  faction: 1
+  logo: jotums
+  name: JOTUM
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 18
+  wip: 13
+  arm: 10
+  bts: 9
+  w: 3
+  s: 7
+  ava: 2
+  skills: [ "G: Remote Presence", Mountain Terrain ]
+  equipments: [ ECM ]
+  bsw: [ MULTI HMG + Heavy Flamethrower, D.E.P. ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 103
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 3
+    cost: 103
