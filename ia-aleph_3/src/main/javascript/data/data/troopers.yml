@@ -8933,3 +8933,293 @@
     description: 
     swc: 0
     cost: 8
+
+
+
+
+
+
+
+
+# YUJI NEW
+
+
+
+
+
+
+- 
+  isc: Keisotsu
+  longisc: KEISOTSU Butai
+  code: 288
+  faction: 2
+  logo: keisotsu
+  name: KEISOTSU
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 14
+  bs: 10
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  skills: [ "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 9
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 17
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle+ Light Grenade Launcher ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 17
+  - 
+    code: 5
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 14
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 17
+  - 
+    code: 7
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 11
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 2
+    cost: 9
+- 
+  isc: Celestial Guard
+  longisc: 
+  code: 289
+  faction: 2
+  logo: celestial_guard
+  name: CELESTIAL GUARD
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 13
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 12
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 17
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 21
+  - 
+    code: 5
+    description: Controller
+    equipments: [ Kuang Shi Control Device ]
+    bsw: [ Combi Rifle + Light Smoke Grenade Launche ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 21
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 13
+- 
+  isc: Kuang Shi
+  longisc: 
+  code: 290
+  faction: 2
+  logo: kuang_shi
+  name: KUANG SHI
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  impetuosity: E
+  skills: [ Explode L1, "V: Dogged" ]
+  equipments: [ Biolocator ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Chain
+    bsw: [ Chain Rifle ]
+    swc: 0
+    cost: 5
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 11
+- 
+  isc: Kempeitai
+  longisc: 
+  code: 291
+  faction: 2
+  logo: kempeitai
+  name: KEMPEI
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Sixt Sense L1, "V: Courage" ]
+  ccw: [ Pistol, CCW, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 17
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 16
+- 
+  isc: Imperial Agent, Pheasant Rank
+  longisc: IMPERIAL AGENT, Pheasant Rank (Ye Ji)
+  code: 292
+  faction: 2
+  logo: imperial_agent_pheasant_rank
+  name: IMPERIAL AGENT
+  type: LI
+  classification: Elite Troop
+  mov: 4-4
+  cc: 20
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L1 ]
+  ccw: [ Pistol, Monofilament CCW ]
+  options:
+  - 
+    code: 1
+    description: CoC+Combi
+    skills: [ Chain of Command ]
+    equipments: [ X Visor ]
+    bsw: [ Combi Rifle + E/Mitter ]
+    swc: 0
+    cost: 38
+  - 
+    code: 2
+    description: CoC+BS
+    skills: [ Chain of Command ]
+    equipments: [ X Visor ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: Sniper
+    equipments: [ Multispectral Visor L1 ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 37
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 34
