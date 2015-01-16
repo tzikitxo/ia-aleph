@@ -8762,3 +8762,177 @@
     skills: [ Lieutenant ]
     swc: 3
     cost: 103
+- 
+  isc: Lt. Stephen Rao, Bagh-Mari Unit
+  longisc: LIEUTENANT STEPHEN RAO, Bagh-Mari Unit
+  code: 284
+  faction: 1
+  logo: lieutenant_stephen_rao
+  name: LT. STEPHEN RAO
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Aquatic Terrain / Desert Terrain / Jungle Terrain, "CH: Mimetism" ]
+  equipments: [ Multispectral Visor L1 ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Assault Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 23
+- 
+  isc: Fusilier Indigo Bipandra
+  longisc: FUSILIER INDIGO BIPANDRA
+  code: 285
+  faction: 1
+  logo: fusilier_indigo_bipandra
+  name: BIPANDRA
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Doctor, Specialist Troop ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle + Light Shotgun ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0.5
+    cost: 24
+- 
+  isc: Indigo Brother Konstantinos
+  longisc: INDIGO BROTHER KONSTANTINOS
+  code: 286
+  faction: 1
+  logo: indigo_brother_konstantinos
+  name: BROTHER KONSTANTINOS
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Religious Troop, Specialist Troop ]
+  equipments: [ Multispectral Visor L2 ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Assault Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: Inf
+    skills: [ Infiltration, Specialist ]
+    swc: 0
+    cost: 34
+- 
+  isc: Kamau
+  longisc: KAMAU Amphibious Intervention Teams
+  code: 287
+  faction: 1
+  logo: kamau
+  name: KAMAU
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 13
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 6
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Aquatic Terrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 16
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 24
+  - 
+    code: 3
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 4
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 18
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 16
+  - 
+    code: 6
+    description: LGL
+    equipments: [ X Visor ]
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 22
+  - 
+    code: 7
+    description: Sniper
+    equipments: [ X Visor ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 27
