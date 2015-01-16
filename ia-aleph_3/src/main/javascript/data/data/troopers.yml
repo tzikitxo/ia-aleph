@@ -995,6 +995,1318 @@
     ccw: [ DA CCW ]
     swc: -1
     cost: 50
+- 
+  isc: Acontecimento Regulars
+  longisc: Acontecimento REGULARS
+  code: 257
+  faction: 1
+  logo: acontecimento_regulars
+  name: REGULAR
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Jungle Terrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10
+  - 
+    code: 2
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 14
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 16
+  - 
+    code: 4
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 11
+  - 
+    code: 5
+    description: Sniper
+    skills: [ Sapper ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 22
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device, Deployable Repeater ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 19
+  - 
+    code: 7
+    description: Mines
+    skills: [ Minelayer ]
+    equipments: [ Sensor ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 14
+  - 
+    code: 8
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 10
+- 
+  isc: Auxilia
+  compositetroop:
+  -
+    code: 258
+    min: 1
+    max: 1
+  -
+    code: 259
+    min: 1
+    max: 1
+  longisc: 
+  code: 258
+  faction: 1
+  logo: auxilia
+  name: AUXILIA
+  type: LI
+  classification: Garrison Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: FO
+    equipments: [ Forward Observer ]
+    swc: 0
+    cost: 16
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 14
+- 
+  isc: Auxilia
+  longisc: AUXBOT
+  code: 259
+  faction: 1
+  logo: auxilia
+  name: AUXBOT_1
+  type: REM
+  classification: Garrison Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized" ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
+- 
+  isc: Hexas, Strategic Security Division
+  longisc: HEXAS, Strategic Security Division
+  code: 260
+  faction: 1
+  logo: hexas_strategic_security_division
+  name: HEXA
+  type: LI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage" ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 32
+- 
+  isc: Bagh-Mari Unit
+  longisc: BAGH-MARI Unit
+  code: 261
+  faction: 1
+  logo: bagh_mari
+  name: BAGH-MARI
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Aquatic Terrain / Desert Terrain / Jungle Terrain, "CH: Mimetism" ]
+  equipments: [ Multispectral Visor L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 26
+  - 
+    code: 3
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 28
+  - 
+    code: 4
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 1
+    cost: 22
+  - 
+    code: 6
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 17
+  - 
+    code: 7
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
+    swc: 1.5
+    cost: 28
+- 
+  isc: Guarda de Assalto
+  compositetroop:
+  -
+    code: 262
+    min: 1
+    max: 1
+  -
+    code: 263
+    min: 1
+    max: 1
+  longisc: 
+  code: 262
+  faction: 1
+  logo: guarda_de_assalto
+  name: GUARDA DE ASSALTO
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 17
+  bs: 15
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle + Heavy Flamethrower ]
+    swc: 0
+    cost: 49
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire + Heavy Flamethrower ]
+    swc: 2
+    cost: 52
+- 
+  isc: Guarda de Assalto
+  longisc: AUXBOT
+  code: 263
+  faction: 1
+  logo: guarda_de_assalto
+  name: AUXBOT_2
+  type: REM
+  classification: Veteran Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized" ]
+  bsw: [ Light Shotgun + Zero-V Smoke Light Grenade Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: "-"
+    cost: 6
+- 
+  isc: Knights of Santiago
+  longisc: Sacred Military Order of KNIGHTS OF SANTIAGO
+  code: 264
+  faction: 1
+  logo: knights_of_santiago
+  name: KNIGHT OF SANTIAGO
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 14
+  ph: 13
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Religious Troop, Zero-G ]
+  equipments: [ 360° Visor ]
+  bsw: [ E/M Grenades ]
+  options:
+  - 
+    code: 1
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 1.5
+    cost: 45
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 38
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 1
+    cost: 45
+  - 
+    code: 4
+    description: Combi
+    bsw: [ Combi Rifle ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 40
+- 
+  isc: Knights of Montesa
+  longisc: Sacred Military Order of KNIGHTS OF MONTESA
+  code: 265
+  faction: 1
+  logo: knights_of_montesa
+  name: KNIGHT OF MONTESA
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 19
+  bs: 14
+  ph: 13
+  wip: 13
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Mechanized Deployment, Religious Troop ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 45
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 51
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1.5
+    cost: 49
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 45
+- 
+  isc: Knights of the Holy Sepulchre
+  longisc: Equestrian Order of KNIGHTS OF THE HOLY SEPULCHRE
+  code: 266
+  faction: 1
+  logo: knights_of_the_holy_sepulchre
+  name: KNIGHT OF THE HOLY SEPULCHRE
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 20
+  bs: 14
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L2, Religious Troop ]
+  equipments: [ Holoprojector L2 ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, D.E.P. ]
+    swc: 0
+    cost: 49
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 54
+  - 
+    code: 3
+    description: Lt+Combi
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, D.E.P. ]
+    swc: 0
+    cost: 49
+  - 
+    code: 4
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 54
+- 
+  isc: Teutonic Knights
+  longisc: Sacred Military Order of TEUTONIC KNIGHTS
+  code: 267
+  faction: 1
+  logo: teutonic_knights
+  name: TEUTONIC KNIGHT
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 21
+  bs: 14
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Berserk, Jungle Terrain, Religious Troop, "V: Courage" ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Panzerfaust ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 34
+  - 
+    code: 2
+    description: EXPCCW
+    bsw: [ Combi Rifle, Panzerfaust ]
+    ccw: [ EXP CCW ]
+    swc: 0
+    cost: 36
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ AP CCW ]
+    swc: 2
+    cost: 37
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Panzerfaust ]
+    ccw: [ AP CCW ]
+    swc: 1
+    cost: 34
+- 
+  isc: Magister Knights
+  longisc: 
+  code: 268
+  faction: 1
+  logo: magister_knights
+  name: MAGISTER KNIGHT
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: E
+  skills: [ Hyper-Dynamic L1, Martial Arts L2, Religious Troop ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Panzerfaust, Light Shotgun ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: EXPCCW
+    bsw: [ Panzerfaust, Light Shotgun ]
+    ccw: [ EXP CCW ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: DACCW
+    bsw: [ Panzerfaust, Light Shotgun ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 24
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    ccw: [ DA CCW ]
+    swc: 2
+    cost: 32
+- 
+  isc: Clausewitz Uhlans
+  longisc: 
+  code: 269
+  faction: 1
+  logo: clausewitz_uhlans
+  name: UHLAN
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 15
+  bs: 15
+  ph: 15
+  wip: 12
+  arm: 6
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: Camouflage", "G: Remote Presence" ]
+  equipments: [ ECM ]
+  bsw: [ HMG, Feuerbach ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 96
+- 
+  isc: Tikbalangs, Armoured Chasseurs of Acontecimento
+  longisc: TIKBALANGS, Armoured Chasseurs of Acontecimento
+  code: 270
+  faction: 1
+  logo: tikbalangs_armoured_chasseurs_of_acontecimento
+  name: TIKBALANG
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 17
+  bs: 14
+  ph: 15
+  wip: 12
+  arm: 6
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: Mimetism", "G: Remote Presence", Jungle Terrain ]
+  equipments: [ ECM ]
+  bsw: [ HMG,Heavy Flamethrower ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 78
+- 
+  isc: Seraphs
+  compositetroop:
+  -
+    code: 271
+    min: 1
+    max: 1
+  -
+    code: 272
+    min: 1
+    max: 1
+  longisc: SERAPHS, Armoured Cavalry of Military Order
+  code: 271
+  faction: 1
+  logo: seraphs
+  name: SERAPH
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 19
+  bs: 14
+  ph: 16
+  wip: 12
+  arm: 7
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "G: Remote Presence", "Religious Troop" ]
+  equipments: [ ECM ]
+  bsw: [ Spitfire ]
+  ccw: [ EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 83
+- 
+  isc: Seraphs
+  longisc: AUXBOT
+  code: 272
+  faction: 1
+  logo: seraphs
+  name: AUXBOT_1
+  type: REM
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized" ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: "-"
+    cost: 4
+- 
+  isc: "Armbots: Bulleteer"
+  longisc: BULLETEER ARMBOTS
+  code: 273
+  faction: 1
+  logo: armbots_bulleteer
+  name: BULLETEER
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ "ODD: Optical Disruptor Device", Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HS
+    bsw: [ Heavy Shotgun ]
+    swc: 0
+    cost: 19
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 25
+- 
+  isc: "Armbots: Peacemakers"
+  compositetroop:
+  -
+    code: 274
+    min: 1
+    max: 1
+  -
+    code: 275
+    min: 1
+    max: 1
+  longisc: PEACEMAKER ARMBOTS
+  code: 274
+  faction: 1
+  logo: armbots_peacemakers
+  name: PEACEMAKER
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ Mechanized Deployment ]
+  equipments: [ Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: HS
+    bsw: [ Heavy Shotgun ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 29
+- 
+  isc: "Armbots: Peacemakers"
+  longisc: AUXBOT
+  code: 275
+  faction: 1
+  logo: armbots_peacemakers
+  name: AUXBOT_1
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: "-"
+  skills: [ "G: Synchronized", Mechanized Deployment ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: "-"
+    cost: 4
+- 
+  isc: Palbots
+  longisc: 
+  code: 276
+  faction: 1
+  logo: palbots
+  name: PALBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 3
+  skills: [ "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Mulebots
+  longisc: 
+  code: 277
+  faction: 1
+  logo: mulebots
+  name: MULEBOT
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage, Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: EVO
+    equipments: [ EVO Repeater ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 3
+    description: Combi
+    skills: [ Total Reaction ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 21
+- 
+  isc: Kirpal Singh, Akalis Sergeant
+  longisc: KIRPAL SINGH, Akalis Sergeant
+  code: 278
+  faction: 1
+  logo: kirpal_singh_akalis_sergeant
+  name: SINGH
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 16
+  bs: 13
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "AD: Combat Jump", Chain of Command, Martial Arts L2, Religious Troop ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Assault Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 36
+- 
+  isc: Father-Officer Gabriele De Fersen
+  longisc: 
+  code: 279
+  faction: 1
+  logo: father_officer_gabriele_de_fersen
+  name: DE FERSEN
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 14
+  ph: 14
+  wip: 14
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Martial Arts L3, Religious Troop ]
+  bsw: [ Spitfire ]
+  ccw: [ Pistol, Templar CCW (AP + Shock) ]
+  options:
+  - 
+    code: 1
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 2
+    cost: 60
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Hacker, Lieutenant ]
+    equipments: [ Hacking Device ]
+    swc: 2
+    cost: 60
+- 
+  isc: Toni Macayana, Tikbalangs Lieutenant
+  longisc: TONI MACAYANA Tikbalangs Lieutenant
+  code: 280
+  faction: 1
+  logo: toni_macayana_tikbalangs_lieutenant
+  name: MACAYANA
+  type: TAG
+  classification: Character
+  mov: 6-4
+  cc: 17
+  bs: 15
+  ph: 15
+  wip: 13
+  arm: 6
+  bts: 9
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: Mimetism", Climbing Plus, "G: Remote Presence", Multiterrain ]
+  equipments: [ ECM ]
+  bsw: [ HMG, Heavy Flamethrower, Antipersonnel Mines ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 85
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 2
+    cost: 85
+- 
+  isc: "Jeanne d'Arc 2.0 (Mobility Armor)"
+  longisc: "JOAN OF ARC 2.0 (Mobility Armor)"
+  code: 281
+  faction: 1
+  logo: joan_of_arc_2_0_mobility_armor
+  name: JOAN OF ARC
+  type: HI
+  classification: Character
+  mov: 6-2
+  cc: 23
+  bs: 15
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 6
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Inspiring Leadership, Martial Arts L3, Multiterrain, Religious Troop, "V: No Wound Incapacitation", Kinematica L1 ]
+  bsw: [ Spitfire, Nanopulser ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: 
+    ccw: [ AP CCW ]
+    swc: 2
+    cost: 51
+  - 
+    code: 2
+    description: EXPCCW
+    ccw: [ EXP CCW ]
+    swc: 2
+    cost: 53
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    ccw: [ AP CCW ]
+    swc: 1
+    cost: 51
+- 
+  isc: Crusader Brethren
+  longisc: 
+  code: 282
+  faction: 1
+  logo: crusader_brethren
+  name: CRUSADER
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "AD: Combat Jump / Zero-G", Religious Troop ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 34
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 4
+    description: MRifle
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 31
+- 
+  isc: Jotums. Svalarheima Armoured Cuirassiers Regiment
+  longisc: JOTUMS, Svalarheima Armoured Cuirassiers
+  code: 283
+  faction: 1
+  logo: jotums
+  name: JOTUM
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 18
+  wip: 13
+  arm: 10
+  bts: 9
+  w: 3
+  s: 7
+  ava: 2
+  skills: [ "G: Remote Presence", Mountain Terrain ]
+  equipments: [ ECM ]
+  bsw: [ MULTI HMG + Heavy Flamethrower, D.E.P. ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 103
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 3
+    cost: 103
+- 
+  isc: Lt. Stephen Rao, Bagh-Mari Unit
+  longisc: LIEUTENANT STEPHEN RAO, Bagh-Mari Unit
+  code: 284
+  faction: 1
+  logo: lieutenant_stephen_rao
+  name: LT. STEPHEN RAO
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Aquatic Terrain / Desert Terrain / Jungle Terrain, "CH: Mimetism" ]
+  equipments: [ Multispectral Visor L1 ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Assault Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 23
+- 
+  isc: Fusilier Indigo Bipandra
+  longisc: FUSILIER INDIGO BIPANDRA
+  code: 285
+  faction: 1
+  logo: fusilier_indigo_bipandra
+  name: BIPANDRA
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Doctor, Specialist Troop ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle + Light Shotgun ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0.5
+    cost: 24
+- 
+  isc: Indigo Brother Konstantinos
+  longisc: INDIGO BROTHER KONSTANTINOS
+  code: 286
+  faction: 1
+  logo: indigo_brother_konstantinos
+  name: BROTHER KONSTANTINOS
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Religious Troop, Specialist Troop ]
+  equipments: [ Multispectral Visor L2 ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Assault Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: Inf
+    skills: [ Infiltration, Specialist ]
+    swc: 0
+    cost: 34
+- 
+  isc: Kamau
+  longisc: KAMAU Amphibious Intervention Teams
+  code: 287
+  faction: 1
+  logo: kamau
+  name: KAMAU
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 13
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 6
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Aquatic Terrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 16
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 24
+  - 
+    code: 3
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 4
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 18
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 16
+  - 
+    code: 6
+    description: LGL
+    equipments: [ X Visor ]
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 22
+  - 
+    code: 7
+    description: Sniper
+    equipments: [ X Visor ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 27
 
 # YU JING
 
@@ -7621,1318 +8933,3 @@
     description: 
     swc: 0
     cost: 8
-
-# PANO NEW
-
-- 
-  isc: Acontecimento Regulars
-  longisc: Acontecimento REGULARS
-  code: 257
-  faction: 1
-  logo: acontecimento_regulars
-  name: REGULAR
-  type: LI
-  classification: Line Troops
-  mov: 4-4
-  cc: 13
-  bs: 12
-  ph: 10
-  wip: 13
-  arm: 0
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  backup: C
-  skills: [ Jungle Terrain ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Combi
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 10
-  - 
-    code: 2
-    description: LGL
-    bsw: [ Combi Rifle + Light Grenade Launcher ]
-    swc: 1
-    cost: 14
-  - 
-    code: 3
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 16
-  - 
-    code: 4
-    description: FO
-    equipments: [ Forward Observer ]
-    bsw: [ Combi Rifle ]
-    swc: 0.5
-    cost: 11
-  - 
-    code: 5
-    description: Sniper
-    skills: [ Sapper ]
-    bsw: [ MULTI Sniper Rifle ]
-    swc: 1.5
-    cost: 22
-  - 
-    code: 6
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Hacking Device, Deployable Repeater ]
-    bsw: [ Combi Rifle ]
-    swc: 1
-    cost: 19
-  - 
-    code: 7
-    description: Mines
-    skills: [ Minelayer ]
-    equipments: [ Sensor ]
-    bsw: [ Combi Rifle, Antipersonnel Mines ]
-    swc: 0.5
-    cost: 14
-  - 
-    code: 8
-    description: Paramedic
-    skills: [ Paramedic ]
-    equipments: [ MediKit ]
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 12
-  - 
-    code: 9
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Combi Rifle ]
-    swc: 1
-    cost: 10
-- 
-  isc: Auxilia
-  compositetroop:
-  -
-    code: 258
-    min: 1
-    max: 1
-  -
-    code: 259
-    min: 1
-    max: 1
-  longisc: 
-  code: 258
-  faction: 1
-  logo: auxilia
-  name: AUXILIA
-  type: LI
-  classification: Garrison Troops
-  mov: 4-4
-  cc: 13
-  bs: 11
-  ph: 10
-  wip: 12
-  arm: 1
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  backup: C
-  bsw: [ Combi Rifle ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 14
-  - 
-    code: 2
-    description: FO
-    equipments: [ Forward Observer ]
-    swc: 0
-    cost: 16
-  - 
-    code: 3
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    swc: 1
-    cost: 14
-- 
-  isc: Auxilia
-  longisc: AUXBOT
-  code: 259
-  faction: 1
-  logo: auxilia
-  name: AUXBOT_1
-  type: REM
-  classification: Garrison Troops
-  mov: 6-4
-  cc: 8
-  bs: 10
-  ph: 10
-  wip: 11
-  arm: 0
-  bts: 3
-  w: 1
-  s: 1
-  ava: "-"
-  skills: [ "G: Synchronized" ]
-  bsw: [ Heavy Flamethrower ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 4
-- 
-  isc: Hexas, Strategic Security Division
-  longisc: HEXAS, Strategic Security Division
-  code: 260
-  faction: 1
-  logo: hexas_strategic_security_division
-  name: HEXA
-  type: LI
-  classification: Headquarters Troops
-  mov: 4-4
-  cc: 15
-  bs: 12
-  ph: 11
-  wip: 13
-  arm: 1
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ "CH: TO Camouflage" ]
-  ccw: [ Pistol, Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 24
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1.5
-    cost: 30
-  - 
-    code: 3
-    description: Sniper
-    bsw: [ MULTI Sniper Rifle ]
-    swc: 1.5
-    cost: 32
-  - 
-    code: 4
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Hacking Device ]
-    bsw: [ Combi Rifle ]
-    swc: 0.5
-    cost: 32
-- 
-  isc: Bagh-Mari Unit
-  longisc: BAGH-MARI Unit
-  code: 261
-  faction: 1
-  logo: bagh_mari
-  name: BAGH-MARI
-  type: MI
-  classification: Elite Troops
-  mov: 4-2
-  cc: 14
-  bs: 12
-  ph: 11
-  wip: 13
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 2
-  backup: C
-  skills: [ Aquatic Terrain / Desert Terrain / Jungle Terrain, "CH: Mimetism" ]
-  equipments: [ Multispectral Visor L1 ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    bsw: [ Combi Rifle + Light Shotgun ]
-    swc: 0
-    cost: 22
-  - 
-    code: 2
-    description: HMG
-    bsw: [ HMG ]
-    swc: 1.5
-    cost: 26
-  - 
-    code: 3
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Assault Hacking Device ]
-    bsw: [ Combi Rifle + Light Shotgun ]
-    swc: 0.5
-    cost: 28
-  - 
-    code: 4
-    description: Paramedic
-    skills: [ Paramedic ]
-    equipments: [ MediKit ]
-    bsw: [ Combi Rifle + Light Shotgun ]
-    swc: 0
-    cost: 24
-  - 
-    code: 5
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Combi Rifle + Light Shotgun ]
-    swc: 1
-    cost: 22
-  - 
-    code: 6
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    swc: 0
-    cost: 17
-  - 
-    code: 7
-    description: Minelayer
-    skills: [ Minelayer ]
-    bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
-    swc: 1.5
-    cost: 28
-- 
-  isc: Guarda de Assalto
-  compositetroop:
-  -
-    code: 262
-    min: 1
-    max: 1
-  -
-    code: 263
-    min: 1
-    max: 1
-  longisc: 
-  code: 262
-  faction: 1
-  logo: guarda_de_assalto
-  name: GUARDA DE ASSALTO
-  type: HI
-  classification: Veteran Troops
-  mov: 4-4
-  cc: 17
-  bs: 15
-  ph: 14
-  wip: 13
-  arm: 3
-  bts: 3
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: MRifle
-    bsw: [ MULTI Rifle + Heavy Flamethrower ]
-    swc: 0
-    cost: 49
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire + Heavy Flamethrower ]
-    swc: 2
-    cost: 52
-- 
-  isc: Guarda de Assalto
-  longisc: AUXBOT
-  code: 263
-  faction: 1
-  logo: guarda_de_assalto
-  name: AUXBOT_2
-  type: REM
-  classification: Veteran Troops
-  mov: 6-4
-  cc: 8
-  bs: 10
-  ph: 10
-  wip: 11
-  arm: 0
-  bts: 3
-  w: 1
-  s: 1
-  ava: "-"
-  skills: [ "G: Synchronized" ]
-  bsw: [ Light Shotgun + Zero-V Smoke Light Grenade Launcher ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: "-"
-    cost: 6
-- 
-  isc: Knights of Santiago
-  longisc: Sacred Military Order of KNIGHTS OF SANTIAGO
-  code: 264
-  faction: 1
-  logo: knights_of_santiago
-  name: KNIGHT OF SANTIAGO
-  type: HI
-  classification: Elite Troops
-  mov: 4-4
-  cc: 20
-  bs: 14
-  ph: 13
-  wip: 13
-  arm: 4
-  bts: 3
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  impetuosity: F
-  skills: [ Religious Troop, Zero-G ]
-  equipments: [ 360° Visor ]
-  bsw: [ E/M Grenades ]
-  options:
-  - 
-    code: 1
-    description: Spitfire
-    bsw: [ Spitfire ]
-    ccw: [ Pistol, AP CCW ]
-    swc: 1.5
-    cost: 45
-  - 
-    code: 2
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    ccw: [ Pistol, AP CCW ]
-    swc: 0
-    cost: 38
-  - 
-    code: 3
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Spitfire ]
-    ccw: [ Pistol, AP CCW ]
-    swc: 1
-    cost: 45
-  - 
-    code: 4
-    description: Combi
-    bsw: [ Combi Rifle ]
-    ccw: [ Pistol, DA CCW ]
-    swc: 0
-    cost: 40
-- 
-  isc: Knights of Montesa
-  longisc: Sacred Military Order of KNIGHTS OF MONTESA
-  code: 265
-  faction: 1
-  logo: knights_of_montesa
-  name: KNIGHT OF MONTESA
-  type: HI
-  classification: Elite Troops
-  mov: 4-4
-  cc: 19
-  bs: 14
-  ph: 13
-  wip: 13
-  arm: 4
-  bts: 3
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Mechanized Deployment, Religious Troop ]
-  ccw: [ Pistol, AP CCW ]
-  options:
-  - 
-    code: 1
-    description: Combi
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 45
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 2
-    cost: 51
-  - 
-    code: 3
-    description: LGL
-    bsw: [ Combi Rifle + Light Grenade Launcher ]
-    swc: 1.5
-    cost: 49
-  - 
-    code: 4
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Combi Rifle ]
-    swc: 1
-    cost: 45
-- 
-  isc: Knights of the Holy Sepulchre
-  longisc: Equestrian Order of KNIGHTS OF THE HOLY SEPULCHRE
-  code: 266
-  faction: 1
-  logo: knights_of_the_holy_sepulchre
-  name: KNIGHT OF THE HOLY SEPULCHRE
-  type: HI
-  classification: Elite Troops
-  mov: 4-4
-  cc: 20
-  bs: 14
-  ph: 14
-  wip: 14
-  arm: 4
-  bts: 3
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Martial Arts L2, Religious Troop ]
-  equipments: [ Holoprojector L2 ]
-  ccw: [ Pistol, EXP CCW ]
-  options:
-  - 
-    code: 1
-    description: Combi
-    bsw: [ Combi Rifle, D.E.P. ]
-    swc: 0
-    cost: 49
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 2
-    cost: 54
-  - 
-    code: 3
-    description: Lt+Combi
-    skills: [ Lieutenant ]
-    bsw: [ Combi Rifle, D.E.P. ]
-    swc: 0
-    cost: 49
-  - 
-    code: 4
-    description: Lt+Spitfire
-    skills: [ Lieutenant ]
-    bsw: [ Spitfire ]
-    swc: 2
-    cost: 54
-- 
-  isc: Teutonic Knights
-  longisc: Sacred Military Order of TEUTONIC KNIGHTS
-  code: 267
-  faction: 1
-  logo: teutonic_knights
-  name: TEUTONIC KNIGHT
-  type: HI
-  classification: Elite Troops
-  mov: 4-4
-  cc: 21
-  bs: 14
-  ph: 14
-  wip: 13
-  arm: 3
-  bts: 6
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  impetuosity: F
-  skills: [ Berserk, Jungle Terrain, Religious Troop, "V: Courage" ]
-  ccw: [ Pistol ]
-  options:
-  - 
-    code: 1
-    description: Combi
-    bsw: [ Combi Rifle, Panzerfaust ]
-    ccw: [ AP CCW ]
-    swc: 0
-    cost: 34
-  - 
-    code: 2
-    description: EXPCCW
-    bsw: [ Combi Rifle, Panzerfaust ]
-    ccw: [ EXP CCW ]
-    swc: 0
-    cost: 36
-  - 
-    code: 3
-    description: Spitfire
-    bsw: [ Spitfire ]
-    ccw: [ AP CCW ]
-    swc: 2
-    cost: 37
-  - 
-    code: 4
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Combi Rifle, Panzerfaust ]
-    ccw: [ AP CCW ]
-    swc: 1
-    cost: 34
-- 
-  isc: Magister Knights
-  longisc: 
-  code: 268
-  faction: 1
-  logo: magister_knights
-  name: MAGISTER KNIGHT
-  type: HI
-  classification: Elite Troops
-  mov: 4-4
-  cc: 21
-  bs: 12
-  ph: 14
-  wip: 13
-  arm: 3
-  bts: 3
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  impetuosity: E
-  skills: [ Hyper-Dynamic L1, Martial Arts L2, Religious Troop ]
-  ccw: [ Pistol ]
-  options:
-  - 
-    code: 1
-    description: 
-    bsw: [ Panzerfaust, Light Shotgun ]
-    ccw: [ AP CCW ]
-    swc: 0
-    cost: 23
-  - 
-    code: 2
-    description: EXPCCW
-    bsw: [ Panzerfaust, Light Shotgun ]
-    ccw: [ EXP CCW ]
-    swc: 0
-    cost: 25
-  - 
-    code: 3
-    description: DACCW
-    bsw: [ Panzerfaust, Light Shotgun ]
-    ccw: [ DA CCW ]
-    swc: 0
-    cost: 24
-  - 
-    code: 4
-    description: ML
-    bsw: [ Missile Launcher ]
-    ccw: [ DA CCW ]
-    swc: 2
-    cost: 32
-- 
-  isc: Clausewitz Uhlans
-  longisc: 
-  code: 269
-  faction: 1
-  logo: clausewitz_uhlans
-  name: UHLAN
-  type: TAG
-  classification: Mechanized Troops
-  mov: 6-4
-  cc: 15
-  bs: 15
-  ph: 15
-  wip: 12
-  arm: 6
-  bts: 6
-  w: 3
-  s: 6
-  ava: 1
-  skills: [ "CH: Camouflage", "G: Remote Presence" ]
-  equipments: [ ECM ]
-  bsw: [ HMG, Feuerbach ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 2
-    cost: 96
-- 
-  isc: Tikbalangs, Armoured Chasseurs of Acontecimento
-  longisc: TIKBALANGS, Armoured Chasseurs of Acontecimento
-  code: 270
-  faction: 1
-  logo: tikbalangs_armoured_chasseurs_of_acontecimento
-  name: TIKBALANG
-  type: TAG
-  classification: Mechanized Troops
-  mov: 6-4
-  cc: 17
-  bs: 14
-  ph: 15
-  wip: 12
-  arm: 6
-  bts: 6
-  w: 3
-  s: 6
-  ava: 1
-  skills: [ "CH: Mimetism", "G: Remote Presence", Jungle Terrain ]
-  equipments: [ ECM ]
-  bsw: [ HMG,Heavy Flamethrower ]
-  ccw: [ AP CCW ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 2
-    cost: 78
-- 
-  isc: Seraphs
-  compositetroop:
-  -
-    code: 271
-    min: 1
-    max: 1
-  -
-    code: 272
-    min: 1
-    max: 1
-  longisc: SERAPHS, Armoured Cavalry of Military Order
-  code: 271
-  faction: 1
-  logo: seraphs
-  name: SERAPH
-  type: TAG
-  classification: Mechanized Troops
-  mov: 6-4
-  cc: 19
-  bs: 14
-  ph: 16
-  wip: 12
-  arm: 7
-  bts: 6
-  w: 3
-  s: 6
-  ava: 1
-  skills: [ "G: Remote Presence", "Religious Troop" ]
-  equipments: [ ECM ]
-  bsw: [ Spitfire ]
-  ccw: [ EXP CCW ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 2
-    cost: 83
-- 
-  isc: Seraphs
-  longisc: AUXBOT
-  code: 272
-  faction: 1
-  logo: seraphs
-  name: AUXBOT_1
-  type: REM
-  classification: Mechanized Troops
-  mov: 6-4
-  cc: 8
-  bs: 10
-  ph: 10
-  wip: 11
-  arm: 0
-  bts: 3
-  w: 1
-  s: 1
-  ava: "-"
-  skills: [ "G: Synchronized" ]
-  bsw: [ Heavy Flamethrower ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: "-"
-    cost: 4
-- 
-  isc: "Armbots: Bulleteer"
-  longisc: BULLETEER ARMBOTS
-  code: 273
-  faction: 1
-  logo: armbots_bulleteer
-  name: BULLETEER
-  type: REM
-  classification: Support Troops
-  mov: 6-4
-  cc: 8
-  bs: 12
-  ph: 10
-  wip: 13
-  arm: 1
-  bts: 3
-  w: 1
-  s: 4
-  ava: 2
-  skills: [ "G: Remote Presence" ]
-  equipments: [ "ODD: Optical Disruptor Device", Repeater ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: HS
-    bsw: [ Heavy Shotgun ]
-    swc: 0
-    cost: 19
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 25
-- 
-  isc: "Armbots: Peacemakers"
-  compositetroop:
-  -
-    code: 274
-    min: 1
-    max: 1
-  -
-    code: 275
-    min: 1
-    max: 1
-  longisc: PEACEMAKER ARMBOTS
-  code: 274
-  faction: 1
-  logo: armbots_peacemakers
-  name: PEACEMAKER
-  type: REM
-  classification: Support Troops
-  mov: 6-4
-  cc: 8
-  bs: 12
-  ph: 10
-  wip: 13
-  arm: 1
-  bts: 3
-  w: 1
-  s: 4
-  ava: 2
-  skills: [ Mechanized Deployment ]
-  equipments: [ Repeater ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: HS
-    bsw: [ Heavy Shotgun ]
-    swc: 0
-    cost: 23
-  - 
-    code: 2
-    description: Spitfire
-    bsw: [ Spitfire ]
-    swc: 1
-    cost: 29
-- 
-  isc: "Armbots: Peacemakers"
-  longisc: AUXBOT
-  code: 275
-  faction: 1
-  logo: armbots_peacemakers
-  name: AUXBOT_1
-  type: REM
-  classification: Support Troops
-  mov: 6-4
-  cc: 8
-  bs: 10
-  ph: 10
-  wip: 11
-  arm: 0
-  bts: 3
-  w: 1
-  s: 1
-  ava: "-"
-  skills: [ "G: Synchronized", Mechanized Deployment ]
-  bsw: [ Heavy Flamethrower ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: "-"
-    cost: 4
-- 
-  isc: Palbots
-  longisc: 
-  code: 276
-  faction: 1
-  logo: palbots
-  name: PALBOT
-  type: REM
-  classification: Support Troops
-  mov: 6-4
-  cc: 8
-  bs: 8
-  ph: 10
-  wip: 13
-  arm: 0
-  bts: 3
-  w: 1
-  s: 1
-  ava: 3
-  skills: [ "CH: Mimetism", "G: Servant" ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 3
-- 
-  isc: Mulebots
-  longisc: 
-  code: 277
-  faction: 1
-  logo: mulebots
-  name: MULEBOT
-  type: REM
-  classification: Support Troops
-  mov: 4-4
-  cc: 8
-  bs: 11
-  ph: 10
-  wip: 13
-  arm: 2
-  bts: 3
-  w: 1
-  s: 4
-  ava: 2
-  skills: [ "G: Remote Presence" ]
-  equipments: [ Baggage, Repeater ]
-  ccw: [ Electric Pulse ]
-  options:
-  - 
-    code: 1
-    description: Minesweeper
-    equipments: [ Minesweeper ]
-    swc: 0
-    cost: 8
-  - 
-    code: 2
-    description: EVO
-    equipments: [ EVO Repeater ]
-    swc: 0.5
-    cost: 13
-  - 
-    code: 3
-    description: Combi
-    skills: [ Total Reaction ]
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 21
-- 
-  isc: Kirpal Singh, Akalis Sergeant
-  longisc: KIRPAL SINGH, Akalis Sergeant
-  code: 278
-  faction: 1
-  logo: kirpal_singh_akalis_sergeant
-  name: SINGH
-  type: MI
-  classification: Character
-  mov: 4-2
-  cc: 16
-  bs: 13
-  ph: 12
-  wip: 13
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ "AD: Combat Jump", Chain of Command, Martial Arts L2, Religious Troop ]
-  bsw: [ Combi Rifle ]
-  ccw: [ Assault Pistol, CCW ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 36
-- 
-  isc: Father-Officer Gabriele De Fersen
-  longisc: 
-  code: 279
-  faction: 1
-  logo: father_officer_gabriele_de_fersen
-  name: DE FERSEN
-  type: HI
-  classification: Character
-  mov: 4-4
-  cc: 22
-  bs: 14
-  ph: 14
-  wip: 14
-  arm: 4
-  bts: 6
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Martial Arts L3, Religious Troop ]
-  bsw: [ Spitfire ]
-  ccw: [ Pistol, Templar CCW (AP + Shock) ]
-  options:
-  - 
-    code: 1
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Hacking Device ]
-    swc: 2
-    cost: 60
-  - 
-    code: 2
-    description: Lieutenant
-    skills: [ Hacker, Lieutenant ]
-    equipments: [ Hacking Device ]
-    swc: 2
-    cost: 60
-- 
-  isc: Toni Macayana, Tikbalangs Lieutenant
-  longisc: TONI MACAYANA Tikbalangs Lieutenant
-  code: 280
-  faction: 1
-  logo: toni_macayana_tikbalangs_lieutenant
-  name: MACAYANA
-  type: TAG
-  classification: Character
-  mov: 6-4
-  cc: 17
-  bs: 15
-  ph: 15
-  wip: 13
-  arm: 6
-  bts: 9
-  w: 3
-  s: 6
-  ava: 1
-  skills: [ "CH: Mimetism", Climbing Plus, "G: Remote Presence", Multiterrain ]
-  equipments: [ ECM ]
-  bsw: [ HMG, Heavy Flamethrower, Antipersonnel Mines ]
-  ccw: [ AP CCW ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 2
-    cost: 85
-  - 
-    code: 2
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    swc: 2
-    cost: 85
-- 
-  isc: "Jeanne d'Arc 2.0 (Mobility Armor)"
-  longisc: "JOAN OF ARC 2.0 (Mobility Armor)"
-  code: 281
-  faction: 1
-  logo: joan_of_arc_2_0_mobility_armor
-  name: JOAN OF ARC
-  type: HI
-  classification: Character
-  mov: 6-2
-  cc: 23
-  bs: 15
-  ph: 14
-  wip: 15
-  arm: 3
-  bts: 6
-  w: 2
-  s: 2
-  ava: 1
-  backup: C
-  impetuosity: F
-  skills: [ Inspiring Leadership, Martial Arts L3, Multiterrain, Religious Troop, "V: No Wound Incapacitation", Kinematica L1 ]
-  bsw: [ Spitfire, Nanopulser ]
-  ccw: [ Pistol ]
-  options:
-  - 
-    code: 1
-    description: 
-    ccw: [ AP CCW ]
-    swc: 2
-    cost: 51
-  - 
-    code: 2
-    description: EXPCCW
-    ccw: [ EXP CCW ]
-    swc: 2
-    cost: 53
-  - 
-    code: 3
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    ccw: [ AP CCW ]
-    swc: 1
-    cost: 51
-- 
-  isc: Crusader Brethren
-  longisc: 
-  code: 282
-  faction: 1
-  logo: crusader_brethren
-  name: CRUSADER
-  type: MI
-  classification: Veteran Troops
-  mov: 4-2
-  cc: 15
-  bs: 13
-  ph: 11
-  wip: 13
-  arm: 3
-  bts: 3
-  w: 1
-  s: 2
-  ava: 2
-  backup: C
-  skills: [ "AD: Combat Jump / Zero-G", Religious Troop ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: Combi
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 26
-  - 
-    code: 2
-    description: HMG
-    bsw: [ HMG ]
-    swc: 2
-    cost: 34
-  - 
-    code: 3
-    description: BS
-    bsw: [ Boarding Shotgun ]
-    swc: 0
-    cost: 25
-  - 
-    code: 4
-    description: MRifle
-    bsw: [ MULTI Rifle + Light Flamethrower ]
-    swc: 0
-    cost: 31
-- 
-  isc: Jotums. Svalarheima Armoured Cuirassiers Regiment
-  longisc: JOTUMS, Svalarheima Armoured Cuirassiers
-  code: 283
-  faction: 1
-  logo: jotums
-  name: JOTUM
-  type: TAG
-  classification: Mechanized Troops
-  mov: 6-4
-  cc: 18
-  bs: 15
-  ph: 18
-  wip: 13
-  arm: 10
-  bts: 9
-  w: 3
-  s: 7
-  ava: 2
-  skills: [ "G: Remote Presence", Mountain Terrain ]
-  equipments: [ ECM ]
-  bsw: [ MULTI HMG + Heavy Flamethrower, D.E.P. ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 2
-    cost: 103
-  - 
-    code: 2
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    swc: 3
-    cost: 103
-- 
-  isc: Lt. Stephen Rao, Bagh-Mari Unit
-  longisc: LIEUTENANT STEPHEN RAO, Bagh-Mari Unit
-  code: 284
-  faction: 1
-  logo: lieutenant_stephen_rao
-  name: LT. STEPHEN RAO
-  type: MI
-  classification: Character
-  mov: 4-2
-  cc: 15
-  bs: 12
-  ph: 11
-  wip: 14
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Aquatic Terrain / Desert Terrain / Jungle Terrain, "CH: Mimetism" ]
-  equipments: [ Multispectral Visor L1 ]
-  bsw: [ Combi Rifle ]
-  ccw: [ Assault Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 23
-  - 
-    code: 2
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    swc: 0
-    cost: 23
-- 
-  isc: Fusilier Indigo Bipandra
-  longisc: FUSILIER INDIGO BIPANDRA
-  code: 285
-  faction: 1
-  logo: fusilier_indigo_bipandra
-  name: BIPANDRA
-  type: LI
-  classification: Character
-  mov: 4-4
-  cc: 13
-  bs: 12
-  ph: 11
-  wip: 13
-  arm: 2
-  bts: 3
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ Doctor, Specialist Troop ]
-  equipments: [ MediKit ]
-  bsw: [ Combi Rifle + Light Shotgun ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0.5
-    cost: 24
-- 
-  isc: Indigo Brother Konstantinos
-  longisc: INDIGO BROTHER KONSTANTINOS
-  code: 286
-  faction: 1
-  logo: indigo_brother_konstantinos
-  name: BROTHER KONSTANTINOS
-  type: LI
-  classification: Character
-  mov: 4-4
-  cc: 16
-  bs: 12
-  ph: 12
-  wip: 13
-  arm: 2
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  backup: C
-  skills: [ "CH: Mimetism", Religious Troop, Specialist Troop ]
-  equipments: [ Multispectral Visor L2 ]
-  bsw: [ Combi Rifle, D-Charges ]
-  ccw: [ Assault Pistol, CCW ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 29
-  - 
-    code: 2
-    description: Inf
-    skills: [ Infiltration, Specialist ]
-    swc: 0
-    cost: 34
-- 
-  isc: Kamau
-  longisc: KAMAU Amphibious Intervention Teams
-  code: 287
-  faction: 1
-  logo: kamau
-  name: KAMAU
-  type: LI
-  classification: Line Troops
-  mov: 4-4
-  cc: 13
-  bs: 13
-  ph: 10
-  wip: 13
-  arm: 1
-  bts: 6
-  w: 1
-  s: 2
-  ava: 3
-  backup: C
-  skills: [ Aquatic Terrain ]
-  ccw: [ Pistol, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 16
-  - 
-    code: 2
-    description: HMG
-    bsw: [ HMG ]
-    swc: 1
-    cost: 24
-  - 
-    code: 3
-    description: Hacker
-    skills: [ Hacker ]
-    equipments: [ Hacking Device ]
-    bsw: [ Combi Rifle ]
-    swc: 0.5
-    cost: 24
-  - 
-    code: 4
-    description: Paramedic
-    skills: [ Paramedic ]
-    equipments: [ MediKit ]
-    bsw: [ Combi Rifle ]
-    swc: 0
-    cost: 18
-  - 
-    code: 5
-    description: Lieutenant
-    skills: [ Lieutenant ]
-    bsw: [ Combi Rifle ]
-    swc: 1
-    cost: 16
-  - 
-    code: 6
-    description: LGL
-    equipments: [ X Visor ]
-    bsw: [ Combi Rifle + Light Grenade Launcher ]
-    swc: 1
-    cost: 22
-  - 
-    code: 7
-    description: Sniper
-    equipments: [ X Visor ]
-    bsw: [ MULTI Sniper Rifle ]
-    swc: 1.5
-    cost: 27
