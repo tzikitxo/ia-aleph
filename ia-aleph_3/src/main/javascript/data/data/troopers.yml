@@ -11233,3 +11233,176 @@
     ccw: [ Pistol, Knife ]
     swc: 0.5
     cost: 26
+- 
+  isc: Moderators from Bakunin
+  longisc: MODERATORS from Bakunin
+  code: 339
+  faction: 5
+  logo: moderators_from_bakunin
+  name: MODERATOR
+  type: LI
+  classification: Garrison Troops
+  mov: 4-4
+  cc: 13
+  bs: 10
+  ph: 10
+  wip: 12
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: T
+  backup: C
+  skills: [ Shock Immunity ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 9
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 0.5
+    cost: 15
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 17
+  - 
+    code: 5
+    description: Marker
+    bsw: [ Combi Rifle + Marker ]
+    swc: 0.5
+    cost: 11
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 17
+  - 
+    code: 7
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 11
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 2
+    cost: 9
+- 
+  isc: Tomcats
+  longisc: TOMCATS, Emergency and Rescue Special Team
+  code: 340
+  faction: 5
+  logo: tomcats
+  name: TOMCAT
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "AD: Airborne Infiltration/Zero-G", Climbing Plus ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Lft
+    bsw: [ Combi Rifle + Light Flamethrower, D.E.P. ]
+    swc: 0.5
+    cost: 19
+  - 
+    code: 2
+    description: EMitter
+    bsw: [ Combi Rifle + E/Mitter, Antipersonnel Mines ]
+    swc: 0
+    cost: 20
+  - 
+    code: 3
+    description: Rep
+    equipments: [ Deployable Repeater ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0.5
+    cost: 19
+  - 
+    code: 4
+    description: Engineer
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges ]
+    swc: 0
+    cost: 22
+  - 
+    code: 5
+    description: Doctor
+    skills: [ Doctor ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 22
+  - 
+    code: 6
+    description: Eng+Zondcat
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges, Zondcat (1) ]
+    swc: 0
+    cost: 26
+  - 
+    code: 7
+    description: Doc+Zondcat
+    skills: [ Doctor ]
+    bsw: [ Combi Rifle + Light Flamethrower, Zondcat (1) ]
+    swc: 0
+    cost: 26
+- 
+  isc: Zondcats
+  longisc: 
+  code: 341
+  faction: 5
+  logo: zondcats
+  name: ZONDCAT
+  type: REM
+  classification: Spec. Trained Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: '-'
+  skills: [ "AD: Airborne Infiltration/Zero-G", "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
