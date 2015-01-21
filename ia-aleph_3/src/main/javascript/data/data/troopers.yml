@@ -5825,7 +5825,7 @@
   s: 2
   ava: 2
   irregular: I
-  skills: [ AD: Parachutist / Zero-G ]
+  skills: [ "AD: Parachutist / Zero-G" ]
   equipments: [ Holoprojector L2 ]
   ccw: [ Pistol, Knife ]
   options:
