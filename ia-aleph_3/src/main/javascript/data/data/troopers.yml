@@ -9223,3 +9223,87 @@
     bsw: [ Combi Rifle ]
     swc: 0.5
     cost: 34
+- 
+  isc: Aragoto Senkenbutai  
+  iscspecification: MOUNTED
+  otherprofiles: [ 294 ]
+  longisc: ARAGOTO
+  code: 293
+  faction: 2
+  logo: aragoto_senkenbutai
+  name: ARAGOTO
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 8-6
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 4
+  ava: 2
+  backup: C
+  impetuosity: I
+  skills: [ "CH: Mimetism", Kinematika L2, "V: Courage" ]
+  equipments: [ Motorcycle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 26
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 19
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 30
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 24
+- 
+  isc: Aragoto Senkenbutai
+  iscspecification: DISMOUNTED
+  longisc: ARAGOTO
+  code: 294
+  faction: 2
+  logo: aragoto_senkenbutai
+  name: ARAGOTO
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  impetuosity: I
+  skills: [ "CH: Mimetism", "V: Courage" ]
+  options:
