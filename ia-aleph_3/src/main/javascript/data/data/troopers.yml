@@ -9774,3 +9774,435 @@
     bsw: [ D-Charges ]
     swc: 0
     cost: 14
+- 
+  isc: Yáoxiè Rui Shi
+  longisc: Yáoxiè RUI SHI
+  code: 306
+  faction: 2
+  logo: yaoxie_rui_shi
+  name: RUI SHI
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 4
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Multispectral Visor L2, Repeater ]
+  bsw: [ Spitfire ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1
+    cost: 21
+- 
+  isc: Yáoxiè Lù Duan
+  longisc: Yáoxiè LÙ DUAN
+  code: 307
+  faction: 2
+  logo: yaoxie_lu_duan
+  name: LÙ DUAN
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 4
+  ava: 1
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Holoprojector L2, Multispectral Visor L1, Repeater ]
+  bsw: [ Mk12, Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 22
+- 
+  isc: Yáozao
+  longisc: YÁOZAO
+  code: 308
+  faction: 2
+  logo: yaozao
+  name: YÁOZAO
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 2
+  skills: [ "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Yáopú Pangguling
+  longisc: Yáopú PANGGULING
+  code: 309
+  faction: 2
+  logo: yaopu_pangguling
+  name: PANGGULING
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage, Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: EVO Repeater
+    equipments: [ EVO Repeater ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 3
+    description: Combi
+    skills: [ Total Reaction ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 21
+- 
+  isc: Oniwaban Shinobu Kitsune
+  longisc: Oniwaban SHINOBU KITSUNE
+  code: 310
+  faction: 2
+  logo: oniwaban_shinobu_kitsune
+  name: SHINOBU
+  type: SK
+  classification: Character
+  mov: 4-4
+  cc: 25
+  bs: 11
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage", Kinematika L2, Martial Arts L5, Multiterrain, Superior Infiltration ]
+  bsw: [ Combi Rifle, Nanopulser, Smoke Grenades ]
+  ccw: [ Pistol, Monofilament CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0.5
+    cost: 47
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 47
+- 
+  isc: "Domaru Takeshi 'Neko' Oyama"
+  longisc: "Domaru TAKESHI 'NEKO' OYAMA"
+  code: 311
+  faction: 2
+  logo: domaru_takeshi_neko_oyama
+  name: OYAMA
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 24
+  bs: 12
+  ph: 14
+  wip: 14
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Berserk, Dual Wield, Kinematika L2, Martial Arts L3 ]
+  bsw: [ Chain Rifle, E/M Grenades ]
+  ccw: [ Pistol, AP CCW, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 34
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 34
+- 
+  isc: Sun Tze v.2 (Marksman Leader)
+  longisc: SUN TZE v.2 (Marksman Leader)
+  code: 312
+  faction: 2
+  logo: sun_tze_v_2_marksman_leader
+  name: SUN TZE
+  type: MI
+  classification: Character
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 11
+  wip: 17
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Strategos L3, Total Immunity, "V: No Wound Incapacitation" ]
+  equipments: [ X-2 Visor ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 45
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 49
+  - 
+    code: 3
+    description: Lt+MRifle
+    skills: [ Lieutenant, Advanced Command ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 50
+  - 
+    code: 4
+    description: Lt+Sniper
+    skills: [ Lieutenant, Advanced Command ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 54
+- 
+  isc: Bào Troops, Judicial Watch Unit
+  longisc: BÀO TROOPS, Judicial Watch Unit
+  code: 313
+  faction: 2
+  logo: bao_troop
+  name: BÀO TROOP
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 1
+  bts: 6
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "V: Courage" ]
+  equipments: [ Multispectral Visor L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    equipments: [ X Visor ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: BS
+    equipments: [ X Visor ]
+    bsw: [ Boarding Shotgun, Contender ]
+    swc: 0
+    cost: 28
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 30
+- 
+  isc: Raiden Seibutai
+  longisc: 
+  code: 314
+  faction: 2
+  logo: raiden_seibutai
+  name: RAIDEN
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Limited Camouflage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 27
+  - 
+    code: 2
+    description: HRL
+    equipments: [ X Visor ]
+    bsw: [ heavy Rocket Launcher ]
+    swc: 1.5
+    cost: 19
+  - 
+    code: 3
+    description: Spitfire
+    equipments: [ X Visor ]
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 27
+- 
+  isc: Asuka Kisaragi, Aragoto Senkenbutai Jun-i
+  longisc: ASUKA KISARAGI
+  iscspecification: MOUNTED
+  code: 315
+  otherprofiles: [ 316 ]
+  faction: 2
+  logo: asuka_kisaragi
+  name: ASUKA KISARAGI
+  type: LI
+  classification: Character
+  mov: 8-6
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 4
+  ava: 1
+  backup: C
+  impetuosity: I
+  skills: [ "CH: Mimetism", Kinematika L2, "V: Courage" ]
+  equipments: [ Motorcycle ]
+  bsw: [ Combi Rifle + Light Flamethrower ]
+  ccw: [ Assault Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 27
+- 
+  isc: Asuka Kisaragi, Aragoto Senkenbutai Jun-i
+  longisc: ASUKA KISARAGI
+  iscspecification: DISMOUNTED
+  code: 316
+  faction: 2
+  logo: asuka_kisaragi
+  name: ASUKA KISARAGI
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: I
+  skills: [ "CH: Mimetism", "V: Courage" ]
+  options:
+- 
+  isc: Keisotsu Gui Feng Yuriko Oda
+  longisc: KEISOTSU GUI FENG YURIKO ODA
+  code: 317
+  faction: 2
+  logo: keisotsu_gui_feng_yuriko_oda
+  name: YURIKO ODA
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ Engineer, Hyper-Dynamics L1, Minelayer, "V: Courage" ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: EMitter
+    bsw: [ Combi Rifle + E/Mitter, D-Charges, Antipersonnel Mines ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Panzerfaust
+    bsw: [ Combi Rifle, Panzerfaust, D-Charges, Antipersonnel Mines ]
+    swc: 0
+    cost: 24
