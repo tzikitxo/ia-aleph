@@ -106,6 +106,7 @@ var roster = ia.roster = {};
         rosterData.pointCount = 0;
         rosterData.swcCount = 0;
         rosterData.trooperCount = 0;
+        rosterData.orderCount = 0;
         rosterData.warningMessages = [];
 
         var hasHacker = false, ltCount = 0, needHacker = false;
@@ -119,6 +120,10 @@ var roster = ia.roster = {};
             }
             if (trooper.hasSkillOrEquipment('Hacker')) {
                 hasHacker = true;
+            }
+            if (!trooper.hasSkillOrEquipment('G: Servant')
+                    && !trooper.hasSkillOrEquipment('G: Synchronized')) {
+                rosterData.orderCount++;
             }
             if (trooper.hasSkillOrEquipment('Lieutenant')) {
                 ltCount++;
@@ -175,6 +180,7 @@ var roster = ia.roster = {};
                 messages: {
                     swc: "swc",
                     troopers: "troopers",
+                    orders: "orders",
                     points: "points",
                     windowTitle: "roster"
                 },
@@ -183,13 +189,13 @@ var roster = ia.roster = {};
             var rosterContainer = $('#ia-rosterWrapper .ia-rosterContainer');
             rosterContainer.find('.ia-rosterDownButton').on('click', function () {
                 $('.ia-rosterDownButton', rosterContainer).hide();
-                    $('.ia-rosterUpButton', rosterContainer).show();
+                $('.ia-rosterUpButton', rosterContainer).show();
                 $('.ia-rosterBody', rosterContainer).show('fast');
                 return false;
             });
             rosterContainer.find('.ia-rosterUpButton').on('click', function () {
                 $('.ia-rosterUpButton', rosterContainer).hide();
-                    $('.ia-rosterDownButton', rosterContainer).show();
+                $('.ia-rosterDownButton', rosterContainer).show();
                 $('.ia-rosterBody', rosterContainer).hide('fast');
                 return false;
             });

@@ -72,6 +72,7 @@
                     <div class="ia-rosterTitle">{{messages.windowTitle}}</div>
                     <div class="ia-rosterTopBar">
                         {{messages.troopers}}: <b>{{roster.trooperCount}}</b>
+                        {{messages.orders}}: <b>{{roster.orderCount}}</b>
                         <span class="{{#if roster.pointWarning}}ia-warning{{/if}}">{{messages.points}}: <b>{{roster.pointCount}} / {{roster.pointCap}} ( {{roster.pointDiff}} )</b></span>
                         <span class="{{#if roster.swcWarning}}ia-warning{{/if}}">{{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b></span>
                         <div class="ia-warning">{{join roster.warningMessages}}</div>

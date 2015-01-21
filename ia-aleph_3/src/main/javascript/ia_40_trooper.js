@@ -43,11 +43,13 @@
     Handlebars.registerHelper("trooperAvailableAva", function (context) {
         if (context.hasLimitedAva) {
             var availableAva = roster.getAvailableAvaByTrooperCode(context.code);
-            if (availableAva !== context.ava) {
-                return availableAva + ' (' + context.ava + ')';
-            } else {
-                return context.ava;
-            }
+            //TODO 
+//            if (availableAva !== context.ava) {
+//                return availableAva + ' (' + context.ava + ')';
+//                return availableAva + ' (' + context.ava + ')';
+//            } else {
+            return context.ava;
+//            }
         } else {
             return context.ava;
         }
