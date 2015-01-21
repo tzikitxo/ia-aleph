@@ -10781,3 +10781,455 @@
     description: 
     swc: 0
     cost: 12
+- 
+  isc: Dozers, Field Engineers
+  longisc: DOZERS, Field Engineers
+  code: 329
+  faction: 3
+  logo: dozers_field_engineers
+  name: DOZER
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Engineer, "V: Courage" ]
+  ccw: [ pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Rifle, D-Charges ]
+    swc: 0
+    cost: 13
+  - 
+    code: 2
+    description: AK
+    bsw: [ Rifle, Akrylat-Kanone ]
+    swc: 0
+    cost: 14
+  - 
+    code: 3
+    description: TM
+    equipments: [ Traktor Mul Control Device ]
+    bsw: [ Rifle, D-Charges ]
+    swc: 0
+    cost: 14
+- 
+  isc: Traktor Mul, Artillery and Support Regiment
+  longisc: TRAKTOR MUL, Artillery and Support Regiment
+  code: 330
+  faction: 3
+  logo: traktor_mul_artillery_and_support_regiment
+  name: TRAKTOR MUL
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 10
+  ph: 9
+  wip: 12
+  arm: 2
+  bts: 0
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 5
+  - 
+    code: 2
+    description: Katyusha
+    bsw: [ Katyusha MRL ]
+    swc: 1
+    cost: 11
+  - 
+    code: 3
+    description: Uragan
+    skills: [ Total Reaction ]
+    bsw: [ Uragan MRL ]
+    swc: 1
+    cost: 18
+- 
+  isc: Equipe Mirage-5
+  longisc: Lieutenant MARGOT BERTHIER
+  compositetroop:
+  -
+    code: 331
+    min: 1
+    max: 1
+  -
+    code: 332
+    min: 1
+    max: 1
+  code: 331
+  faction: 3
+  logo: equipe_mirage_5
+  name: MARGOT
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 14
+  bs: 14
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "AD: Airborne Infiltration", Multiterrain, Not Hackable, Shock Immunity ]
+  bsw: [ AP Rifle + Light Grenade Launcher ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 37
+- 
+  isc: Equipe Mirage-5
+  longisc: Sergent DUROC
+  code: 332
+  faction: 3
+  logo: equipe_mirage_5
+  name: DUROC
+  type: WB
+  classification: Character
+  mov: 6-4
+  cc: 20
+  bs: 10
+  ph: 16
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 2
+  s: 6
+  ava: 1
+  irregular: I
+  impetuosity: E
+  skills: [ "AD: Airborne Infiltration", Martial Arts L2, Super-Jump, Total Immunity ]
+  bsw: [ Chain Rifle (2), Grenades, Smoke Grenades ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 32
+- 
+  isc: William Wallace
+  longisc: 
+  code: 333
+  faction: 3
+  logo: william_wallace
+  name: WALLACE
+  type: WB
+  classification: Character
+  mov: 6-4
+  cc: 22
+  bs: 13
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Berserk, Inspiring leadership, Kinematika L1, "V: No Wound Incapacitation" ]
+  bsw: [ Combi Rifle + Light Flamethrower, Smoke Grenades ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 35
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 35
+- 
+  isc: "Briscards, Beme Regiment d'infanterie de Montagne"
+  longisc: "BRISCARDS, Beme Regiment d'infanterie de Montagne"
+  code: 334
+  faction: 3
+  logo: briscard
+  name: BRISCARD
+  type: MI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Mountain Terrain, "V: Courage" ]
+  equipments: [ Multispectral Visor L1 ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ Marksman Rifle ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 1
+    cost: 25
+  - 
+    code: 3
+    description: HRL
+    bsw: [ Heavy Rocket Launcher ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1.5
+    cost: 25
+  - 
+    code: 4
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Marksman Rifle ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0
+    cost: 25
+  - 
+    code: 5
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Marksman Rifle ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0
+    cost: 26
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Marksman Rifle ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0
+    cost: 24
+- 
+  isc: The Scot Guards, 6th Caledonian Infantry Regiment
+  longisc: The SCOTS GUARDS, 6th Caledonian infantry Regiment
+  code: 335
+  faction: 3
+  logo: scots
+  name: SCOT
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "V: Courage" ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ AP Marksman Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Smg
+    bsw: [ Submachine Gun (2), D.E.P. ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 18
+  - 
+    code: 3
+    description: Molotok
+    bsw: [ Molotok ]
+    ccw: [ Pistol, Knife ]
+    swc: 1.5
+    cost: 26
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1.5
+    cost: 27
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ AP Marksman Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 23
+  - 
+    code: 6
+    description: Camo+Smg
+    skills: [ "CH: Camouflage" ]
+    bsw: [ "Submachine Gun (2)", D.E.P. ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 22
+  - 
+    code: 7
+    description: Camo+Molotok
+    skills: [ "CH: Camouflage" ]
+    bsw: [ Molotok ]
+    ccw: [ Pistol, Knife ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 8
+    description: Camo+ML
+    skills: [ "CH: Camouflage" ]
+    bsw: [ Missile Launcher ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1.5
+    cost: 31
+- 
+  isc: Brigadier Jacques Bruant, Sous-officier des Métros
+  longisc: BRIGADIER JACQUES BRUANT, Sous-officier des Métros
+  code: 336
+  faction: 3
+  logo: brigadier_jacques_bruant
+  name: BRIGADIER BRUANT
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: Limited Camouflage", Multiterrain ]
+  equipments: [ X Visor ]
+  bsw: [ Molotok, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1
+    cost: 28
+  - 
+    code: 2
+    description: Inf
+    skills: [ Inferior Infiltration ]
+    swc: 1
+    cost: 31
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 28
+- 
+  isc: Uxía McNeill
+  longisc: "UXÍA 'CHERRY' McNEILL, Corporal of 1st Highlanders S.A.S."
+  code: 337
+  faction: 3
+  logo: uxia_mcneill
+  name: UXÍA McNEILL
+  type: SK
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  impetuosity: F
+  skills: [ Kinematika L1, Martial Arts L2, Multiterrain ]
+  options:
+  - 
+    code: 1
+    description: S.A.S. CP
+    skills: [ "CH: Camouflage", Infiltration ]
+    equipments: [ Multispectral Visor L1 ]
+    bsw: [ Boarding Shotgun, Grenades, Smoke Grenades ]
+    ccw: [ Pistol, AP CCW, Knife ]
+    swc: 0
+    cost: 28
+  - 
+    code: 2
+    description: CovAct
+    skills: [ "CH: Limited Camouflage", Superior Infiltration, Specialist Troop ]
+    bsw: [ Boarding Shotgun, D-Charges, Smoke Grenades ]
+    ccw: [ Assault Pistol (2), AP CCW, Knife ]
+    swc: 0
+    cost: 27
+- 
+  isc: Volunteer Intel Isobel McGregor
+  longisc: VOLUNTEER INTEL ISOBEL McGREGOR
+  code: 338
+  faction: 3
+  logo: volunteer_intel_isobel_mcgregor
+  name: ISOBEL McGREGOR
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "V: Courage" ]
+  equipments: [ Defensive Hacking Device ]
+  bsw: [ Flash Pulse, D-Charges, E/Mauler ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0.5
+    cost: 23
+  - 
+    code: 2
+    description: T2Rifle
+    bsw: [ T2 Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0.5
+    cost: 26
