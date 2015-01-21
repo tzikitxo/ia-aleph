@@ -38,11 +38,12 @@
             });
 //                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});
 //                unitSelectorScroller.draggable({cursor: "move", axis: "x"});
+            var scrollAmount = 150;
             $('#ia-unitSelectorScrollButtonLeft').on('click', function () {
-                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() - 50);
+                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() - scrollAmount);
             });
             $('#ia-unitSelectorScrollButtonRight').on('click', function () {
-                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + 50);
+                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + scrollAmount);
             });
             $('#ia-unitSelectorScrollerContainer').on('mousewheel', function (event) {
                 $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + (event.deltaY < 0 ? +1 : -1) * 50);
