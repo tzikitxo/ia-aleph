@@ -10357,3 +10357,427 @@
     bsw: [ Rifle ]
     swc: 2
     cost: 8
+- 
+  isc: Loup-Garous
+  longisc: LOUP-GAROU, Groupe Mobile d'Action Spéciale
+  code: 320
+  faction: 3
+  logo: loup_garous
+  name: LOUP-GAROU
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "V: Courage" ]
+  equipments: [ X Visor ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: VRifle
+    bsw: [ Viral Rifle, Flash Grenades ]
+    swc: 0
+    cost: 21
+  - 
+    code: 2
+    description: ADHL
+    bsw: [ Boarding Shotgun, Adhesive Launcher, Flash Grenades ]
+    swc: 0
+    cost: 18
+  - 
+    code: 3
+    description: FLGL
+    bsw: [ Viral Rifle, Flash Light Grenade Launcher ]
+    swc: 1.5
+    cost: 22
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 21
+- 
+  isc: Highlander Caterans
+  longisc: 
+  code: 321
+  faction: 3
+  logo: highlander_caterans
+  name: CATERAN
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 19
+  bs: 12
+  ph: 13
+  wip: 12
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  irregular: I
+  skills: [ "CH: Limited Camouflage", "CH: Mimetism", Climbing Plus ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: T2Sniper
+    bsw: [ T2 Sniper Rifle ]
+    swc: 1
+    cost: 21
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 20
+- 
+  isc: Zouaves
+  longisc: ZOUAVES, Régiment Spécial d'Intervention
+  code: 322
+  faction: 3
+  logo: zouaves
+  name: ZOUAVE
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Mechanized Deployment, "V: Courage" ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Rifle, D.E.P. ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0.5
+    cost: 20
+  - 
+    code: 2
+    description: EMauler
+    bsw: [ Rifle, D.E.P., E/Mauler ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1
+    cost: 21
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Rifle + Light Grenade Launcher ]
+    ccw: [ Pistol, Knife ]
+    swc: 1
+    cost: 20
+  - 
+    code: 4
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle, D.E.P. ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0.5
+    cost: 21
+  - 
+    code: 5
+    description: HMG
+    skills: [ Sapper ]
+    bsw: [ HMG ]
+    ccw: [ Pistol, Knife ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 6
+    description: Sniper
+    skills: [ Sapper ]
+    bsw: [ Sniper Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0.5
+    cost: 25
+  - 
+    code: 7
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ Medikit ]
+    bsw: [ Rifle, D.E.P. ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 0.5
+    cost: 22
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle, D.E.P. ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1
+    cost: 20
+- 
+  isc: 3rd Highlander Greys
+  longisc: 3rd HIGHLANDER GREY RIFLES
+  code: 323
+  faction: 3
+  logo: 3rd_highlander_greys
+  name: HIGHLANDER GREY
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 16
+  bs: 13
+  ph: 13
+  wip: 12
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  impetuosity: F
+  skills: [ Not Hackable, Shock Immunity, "V: Dogged" ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle, Light Shotgun (2), Grenades, Smoke Grenades ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: T2Rifle
+    bsw: [ T2 Rifle, Light Shotgun (2), Grenades, Smoke Grenades ]
+    swc: 0
+    cost: 33
+  - 
+    code: 3
+    description: APHMG
+    bsw: [ AP HMG, Smoke Grenades ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 4
+    description: T2BS
+    bsw: [ T2 Boarding Shotgun, Grenades, Smoke Grenades ]
+    swc: 0
+    cost: 25
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle, Light Shotgun (2), Grenades, Smoke Grenades ]
+    swc: 0
+    cost: 29
+- 
+  isc: Caledonian Mormaers
+  longisc: 
+  code: 324
+  faction: 3
+  logo: caledonian_mormaers
+  name: CALEDONIAN MORMAER
+  type: HI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 13
+  wip: 13
+  arm: 5
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ Not Hackable, Shock Immunity, "V: Dogged" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: T2Rifle
+    equipments: [ X Visor ]
+    bsw: [ T2 Rifle ]
+    swc: 0
+    cost: 32
+  - 
+    code: 2
+    description: APHMG
+    bsw: [ AP HMG ]
+    swc: 2
+    cost: 42
+  - 
+    code: 3
+    description: Lt+T2Rifle
+    skills: [ Lieutenant ]
+    equipments: [ X Visor ]
+    bsw: [ T2 Rifle ]
+    swc: 0
+    cost: 32
+  - 
+    code: 4
+    description: Lt+APHMG
+    skills: [ Lieutenant ]
+    bsw: [ AP HMG ]
+    swc: 2
+    cost: 42
+- 
+  isc: Chasseurs
+  longisc: 4éme de CHASSEURS
+  code: 325
+  faction: 3
+  logo: chasseurs
+  name: CHASSEUR
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain, Sixth Sense L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Rifle, Light Flamethrower, Antipersonnel Mines ]
+    swc: 0
+    cost: 19
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ AP Sniper Rifle ]
+    swc: 1
+    cost: 26
+  - 
+    code: 3
+    description: ADHL
+    bsw: [ Rifle, Adhesive Launcher, D-Charges ]
+    ccw: [ Pistol, Knife ]
+    swc: 0.5
+    cost: 19
+  - 
+    code: 4
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Rifle, Light Flamethrower, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 20
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Rifle, Light Flamethrower, Antipersonnel Mines ]
+    swc: 0
+    cost: 20
+- 
+  isc: 9th Wulver Grenadiers
+  longisc: 9th WULVER Grenadiers Reg.
+  code: 326
+  faction: 3
+  logo: 9th_wulver_grenadiers
+  name: WULVER
+  type: WB
+  classification: Line Troops
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 2
+  s: 2
+  ava: 2
+  impetuosity: F
+  skills: [ Berserk, Climbing Plus, Kinematika L1, Natural Born Warrior ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: Mk12
+    bsw: [ Mk12, Grenades ]
+    swc: 0
+    cost: 37
+  - 
+    code: 2
+    description: T2Rifle
+    bsw: [ T2 Rifle, Grenades ]
+    swc: 0
+    cost: 33
+  - 
+    code: 3
+    description: HS
+    bsw: [ Heavy Shotgun, Grenades ]
+    swc: 0
+    cost: 32
+- 
+  isc: 2nd Irregular Cameronians Reg.
+  longisc: 2nd Irregular CAMERONIANS Reg
+  code: 327
+  faction: 3
+  logo: 2nd_irregular_cameronians_reg
+  name: CAMERONIAN
+  type: WB
+  classification: Support Troops
+  mov: 6-4
+  cc: 21
+  bs: 10
+  ph: 16
+  wip: 12
+  arm: 3
+  bts: 0
+  w: 2
+  s: 6
+  ava: 2
+  irregular: I
+  impetuosity: E
+  skills: [ Super-Jump, Total Immunity, "V: Courage" ]
+  bsw: [ Chain Rifle (2), Grenades, Smoke Grenades ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 23
+- 
+  isc: 112, Emergency Service
+  longisc: 112, Emergency Service
+  code: 328
+  faction: 3
+  logo: 112_emergency_service
+  name: 112
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ Doctor, "V: Courage" ]
+  equipments: [ MediKit ]
+  bsw: [ Light Shotgun ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 12
