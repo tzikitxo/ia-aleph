@@ -63,6 +63,9 @@ var data = ia.data;
             trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
             trooper.isHackable = (trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI') && !trooper.hasSkillOrEquipment('Not Hackable');
             trooper.hasStr = trooper.hasStr || trooper.type === 'REM' || trooper.type === 'TAG';
+            trooper.getFaction = function () {
+                return factionsByCode[this.faction];
+            };
             var trooperOptionsByCode = {};
             trooper.options = $.map(trooper.options || [], function (option) {
                 option = $.extend({

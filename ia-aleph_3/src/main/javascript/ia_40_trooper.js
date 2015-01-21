@@ -65,6 +65,7 @@
     function buildTrooperSelector(trooper) {
         var trooperSelector = $(trooperSelectorTemplate({
             trooper: trooper,
+            faction: trooper.getFaction(),
             messages: {
                 name: 'Name',
                 bsw: "BS Weapons",
