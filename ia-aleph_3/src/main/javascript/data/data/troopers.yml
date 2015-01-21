@@ -9307,3 +9307,190 @@
   impetuosity: I
   skills: [ "CH: Mimetism", "V: Courage" ]
   options:
+- 
+  isc: Shàng Jí
+  longisc: SHÀNG JÍ INVINCIBLES
+  code: 295
+  faction: 2
+  logo: shang_ji
+  name: SHÀNG JÍ
+  type: HI
+  classification: Line Troops
+  mov: 4-4
+  cc: 18
+  bs: 13
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Kinematika L1 ]
+  ccw: [ Pistol, Shock CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 37
+  - 
+    code: 2
+    description: MULTI
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 40
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 42
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0.5
+    cost: 45
+  - 
+    code: 5
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ Medikit ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 39
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    swc: 0
+    cost: 37
+- 
+  isc: Imperial Agents, Crane Rank
+  longisc: IMPERIAL AGENTS, Crane Rank (Xian Hè)
+  code: 296
+  faction: 2
+  logo: imperial_agents_crane_rank
+  name: IMPERIAL AGENT
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 22
+  bs: 13
+  ph: 13
+  wip: 14
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Kinematika L2, Martial Arts L3 ]
+  bsw: [ Nanopulser (2) ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: MULTI
+    equipments: [ Sensor, X Visor ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 53
+  - 
+    code: 2
+    description: BS
+    equipments: [ Sensor, X Visor ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 48
+  - 
+    code: 3
+    description: Spitfire
+    equipments: [ X Visor ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 55
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 51
+  - 
+    code: 5
+    description: Lt+MULTI
+    skills: [ Lieutenant ]
+    equipments: [ Sensor, X Visor ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 53
+  - 
+    code: 6
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    equipments: [ X Visor ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 55
+- 
+  isc: Domaru Butai
+  longisc: DOMARU Butai
+  code: 297
+  faction: 2
+  logo: domaru_butai
+  name: DOMARU
+  type: HI
+  classification: Line Troops
+  mov: 4-4
+  cc: 23
+  bs: 12
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  impetuosity: F
+  skills: [ Berserk, Kinematika L1, Martial Arts L3 ]
+  bsw: [ E/M Grenades ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: EMCCW
+    bsw: [ Chain Rifle ]
+    ccw: [ E/M CCW ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: DACCW
+    bsw: [ Chain Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 25
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 33
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Chain Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 25
