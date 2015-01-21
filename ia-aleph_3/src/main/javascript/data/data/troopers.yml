@@ -11406,3 +11406,139 @@
     description: 
     swc: 0
     cost: 4
+- 
+  isc: Reverend Custodiers
+  longisc: 
+  code: 342
+  faction: 5
+  logo: reverend_custodiers
+  name: REVEREND CUSTODIER
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  wip: 14
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Religious Troop, Hacker ]
+  equipments: [ "ODD: Optical Disruptor Device", Hacking Device Plus ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0.5
+    cost: 31
+  - 
+    code: 2
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 32
+  - 
+    code: 3
+    description: Marker
+    bsw: [ Combi Rifle + Marker ]
+    swc: 0.5
+    cost: 34
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Marker ]
+    swc: 0.5
+    cost: 34
+- 
+  isc: Prowlers
+  longisc: 
+  code: 343
+  faction: 5
+  logo: prowlers
+  name: PROWLER
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain, Shock Immunity ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower, Adhesive Launcher ]
+    swc: 0.5
+    cost: 32
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire, D-Charges ]
+    swc: 2
+    cost: 36
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Grenades, D-Charges ]
+    swc: 0
+    cost: 31
+- 
+  isc: Sin-Eater Observants
+  longisc: 
+  code: 344
+  faction: 5
+  logo: sin_eater_observants
+  name: SIN-EATER
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Neurocinetics, Religious Troop ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 33
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 33
+  - 
+    code: 3
+    description: Mk12
+    bsw: [ Mk12 ]
+    swc: 0
+    cost: 30
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 31
