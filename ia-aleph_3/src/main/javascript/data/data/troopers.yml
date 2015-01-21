@@ -9546,3 +9546,231 @@
     ccw: [ DA CCW ]
     swc: 1.5
     cost: 33
+- 
+  isc: Karakuri Special Project
+  longisc: KARAKURI Special Project
+  code: 299
+  faction: 2
+  logo: karakuri_special_project
+  name: KARAKURI
+  type: HI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 10
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 2
+  s: 2
+  ava: 2
+  skills: [ Explode L1, Forward Observer, "G: Remote Presence", Total immunity ]
+  bsw: [ Chain Rifle, D.E.P. ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 35
+  - 
+    code: 2
+    description: Mk12
+    bsw: [ Mk12 ]
+    swc: 0
+    cost: 40
+  - 
+    code: 3
+    description: HS
+    bsw: [ Heavy Shotgun ]
+    swc: 0
+    cost: 35
+- 
+  isc: Sù-Jiàn Immediate Action Unit
+  longisc: SÙ-JIAN IMMEDIATE ACTION UNIT
+  iscspecification: HIGH MOBILITY FORM
+  code: 300
+  otherprofiles: [ 301 ]
+  faction: 2
+  logo: su_jian_immediate_action_unit
+  name: SÙ-JIÀN
+  type: HI
+  classification: Spec. Trained Troops
+  mov: 6-6
+  cc: 8
+  bs: 11
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 6
+  w: 2
+  s: 4
+  ava: 1
+  skills: [ Climbing Plus, "G: Remote Presence", Mechanical Transmutation ]
+  bsw: [ Spitfire, Light Flamethrower, Panzerfaust ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 55
+- 
+  isc: Sù-Jiàn Immediate Action Unit
+  longisc: SÙ-JIAN IMMEDIATE ACTION UNIT
+  iscspecification: COMBAT FORM
+  code: 301
+  faction: 2
+  logo: su_jian_immediate_action_unit
+  name: SÙ-JIÀN
+  type: HI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 16
+  bs: 13
+  ph: 14
+  wip: 13
+  arm: 4
+  bts: 6
+  w: 2
+  s: 5
+  ava: "-"
+  skills: [ "G: Remote Presence", Mechanical Transmutation ]
+  options:
+- 
+  isc: O-Yoroi Kidobutai
+  longisc: O-YOROI Kidobutai
+  code: 302
+  otherprofiles: [ 303 ]
+  faction: 2
+  logo: o_yoroi_kidobutai
+  name: O-YOROI
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 19
+  bs: 14
+  ph: 17
+  wip: 13
+  arm: 7
+  bts: 6
+  w: 3
+  s: 7
+  ava: 1
+  backup: C
+  skills: [ "V: Courage", Manned ]
+  equipments: [ ECM ]
+  bsw: [ HMG + Heavy Flamethrower, CrazyKoala (2) ]
+  ccw: [ EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 81
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 3
+    cost: 81
+- 
+  isc: O-Yoroi Kidobutai
+  longisc: O-YOROI PILOT
+  code: 303
+  faction: 2
+  logo: o_yoroi_kidobutai
+  name: O-YOROI PILOT
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 14
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: "-"
+  backup: C
+  skills: [ Pilot ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+- 
+  isc: Oniwaban
+  longisc: 
+  code: 304
+  faction: 2
+  logo: oniwaban
+  name: ONIWABAN
+  type: SK
+  classification: Elite Troops
+  mov: 4-4
+  cc: 24
+  bs: 11
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage", Kinematika L2, Martial Arts L4, Multiterrain, Superior Infiltration ]
+  bsw: [ Boarding Shotgun, Nanopulser ]
+  ccw: [ Pistol, Monofilament CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 41
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 41
+- 
+  isc: Tokusetsu Butai
+  longisc: TOKUSETSU Butai
+  code: 305
+  faction: 2
+  logo: tokusetsu_butai
+  name: TOKUSETSU
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 14
+  bs: 10
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "V: Courage" ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Doctor
+    skills: [ Doctor ]
+    equipments: [ MediKit ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: Engineer
+    skills: [ Engineer ]
+    bsw: [ D-Charges ]
+    swc: 0
+    cost: 14
