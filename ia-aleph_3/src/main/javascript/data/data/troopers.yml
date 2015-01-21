@@ -9494,3 +9494,55 @@
     ccw: [ DA CCW ]
     swc: 0
     cost: 25
+- 
+  isc: Haramaki Zensenbutai
+  longisc: HARAMAKI Zensenbutai
+  code: 298
+  faction: 2
+  logo: haramaki_zensenbutai
+  name: HARAMAKI
+  type: HI
+  classification: Line Troops
+  mov: 4-4
+  cc: 23
+  bs: 13
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  impetuosity: E
+  skills: [ Kinematika L1, Martial Arts L3 ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: APCCW
+    bsw: [ Blitzen, Contender ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: DA CCW
+    bsw: [ Blitzen, Contender ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Combi
+    bsw: [ Blitzen, Combi Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 30
+  - 
+    code: 4
+    description: ML
+    bsw: [ Missile Launcher ]
+    ccw: [ DA CCW ]
+    swc: 1.5
+    cost: 33
