@@ -11542,3 +11542,785 @@
     bsw: [ Spitfire ]
     swc: 1.5
     cost: 31
+- 
+  isc: "'Iguana' Squadron"
+  longisc: "'IGUANA' SQUADRON"
+  code: 345
+  otherprofiles: 346
+  faction: 5
+  logo: iguana_squadron
+  name: IGUANA
+  type: TAG
+  classification: Mechanized Troop
+  mov: 6-4
+  cc: 16
+  bs: 14
+  ph: 16
+  wip: 13
+  arm: 6
+  bts: 6
+  w: 2
+  s: 7
+  ava: 1
+  backup: C
+  skills: [ Manned ]
+  equipments: [ ECM, Repeater, Ejection System ]
+  bsw: [ HMG, Heavy Flamethrower ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 71
+- 
+  isc: "'Iguana' Squadron"
+  longisc: "'IGUANA' OPERATOR"
+  code: 346
+  faction: 5
+  logo: iguana_squadron
+  name: IGUANA OPERATOR
+  type: HI
+  classification: Mechanized Troop
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 2
+  s: 2
+  ava: '-'
+  backup: C
+  bsw: [ HMG ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Szalamandra
+  longisc: "'SZALAMANDRA' SQUADRON"
+  code: 347
+  otherprofiles: 348
+  faction: 5
+  logo: szalamandra
+  name: SZALAMANDRA
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 17
+  bs: 14
+  ph: 17
+  wip: 13
+  arm: 8
+  bts: 9
+  w: 3
+  s: 7
+  ava: 1
+  backup: C
+  skills: [ Manned ]
+  equipments: [ ECM ]
+  bsw: [ Hyper-rapid Magnetic Cannon, Heavy Flamethrower ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 90
+- 
+  isc: Szalamandra
+  longisc: "'SZALAMANDRA' PILOT"
+  code: 348
+  faction: 5
+  logo: szalamandra
+  name: SZALAMANDRA PILOT
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ Pilot ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Moran, Maasai Hunter
+  longisc: MORAN, Maasai Hunter
+  code: 349
+  faction: 5
+  logo: moran_maasai_hunter
+  name: MORAN
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ "CH: Mimetism", Infiltration, Multiterrain, "V: Courage" ]
+  equipments: [ Repeater ]
+  bsw: [ "CrazyKoalas (2)" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 21
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0.5
+    cost: 20
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 22
+- 
+  isc: "Bakunin Überfallkommando"
+  longisc: CHIMERA
+  code: 350
+  compositetroop:
+  -
+    code: 350
+    min: 1
+    max: 1
+  -
+    code: 351
+    min: 0
+    max: 3
+  faction: 5
+  logo: bakunin_uberfallkommando
+  name: CHIMERA
+  type: WB
+  classification: Support Troops
+  mov: 6-4
+  cc: 21
+  bs: 11
+  ph: 13
+  wip: 12
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  impetuosity: E
+  skills: [ Climbing Plus, I-khol L1, Kinematika L1, Natural Born Warrior, Total Immunity ]
+  bsw: [ Combi Rifle, Nanopulser, Zero-V Smoke Grenades ]
+  ccw: [ Viral CCW ]
+  hasStr: true
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 20
+- 
+  isc: "Bakunin Überfallkommando"
+  longisc: PUPNIK
+  code: 351
+  faction: 5
+  logo: bakunin_uberfallkommando
+  name: PUPNIK
+  type: WB
+  classification: Support Troops
+  mov: 6-4
+  cc: 19
+  bs: 4
+  ph: 13
+  wip: 10
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  irregular: I
+  impetuosity: E
+  skills: [ Climbing Plus, "G: Synchronized", Hyper-Dynamics L3, Kinematika L1, Total Immunity ]
+  ccw: [ DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 1
+- 
+  isc: Tsyklon Sputniks
+  longisc: TSYKLON Sputnik
+  code: 352
+  faction: 5
+  logo: tsyklon_sputniks
+  name: TSYKLON
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 3
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ Climbing Plus, "G: Remote Presence" ]
+  equipments: [ Repeater, "360° Visor" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Spitfire
+    bsw: [ Spitfire, Marker ]
+    swc: 1
+    cost: 33
+  - 
+    code: 2
+    description: Feuerbach
+    bsw: [ Feuerbach ]
+    swc: 1
+    cost: 31
+- 
+  isc: Lunokhod Sputniks
+  longisc: LUNOKHOD Sputnik
+  code: 353
+  faction: 5
+  logo: lunokhod_sputniks
+  name: LUNOKHOD
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 3
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 1
+  s: 4
+  ava: 1
+  skills: [ Climbing Plus, "G: Remote Presence" ]
+  equipments: [ Repeater, Minesweeper ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: CK
+    bsw: [ Heavy Shotgun, Heavy Flamethrower, "CrazyKoalas (2)" ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: AK
+    bsw: [ Heavy Shotgun, Akrylat-Kanone, D-Charges ]
+    swc: 0
+    cost: 23
+- 
+  isc: Zondbots
+  longisc: 
+  code: 354
+  faction: 5
+  logo: zondbots
+  name: ZONDBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 4
+  skills: [ "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Salyut Zonds
+  longisc: SALYUT Zonds
+  code: 355
+  faction: 5
+  logo: salyut_zonds
+  name: SALYUT
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage, Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: EVO
+    equipments: [ EVO Repeater ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 3
+    description: Combi
+    skills: [ Total Reaction ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 21
+- 
+  isc: Carlota Kowalsky, Tomcats Sergeant
+  longisc: CARLOTA KOWALSKY, Tomcats Sergeant
+  code: 356
+  faction: 5
+  logo: carlota_kowalsky_tomcats_sergeant
+  name: CARLOTA KOWALSKY
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 14
+  bs: 13
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "AD: Airborne Infiltration / Zero-G", Climbing Plus, Engineer ]
+  bsw: [ Combi Rifle + Light Flamethrower, Adhesive Launcher, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 30
+  - 
+    code: 2
+    description: Moriarty
+    bsw: [ Moriarty (1) ]
+    swc: 0
+    cost: 34
+- 
+  isc: Carlota Kowalsky, Tomcats Sergeant
+  longisc: MORIARTY the Zondcat
+  code: 357
+  faction: 5
+  logo: moriarty
+  name: MORIARTY
+  type: REM
+  classification: Character
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 6
+  w: 1
+  s: 1
+  ava: '-'
+  skills: [ "AD: Airborne Infiltration / Zero-G", "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
+- 
+  isc: Bran do Castro, Triple Zero
+  longisc: "BRAN DO CASTRO (Triple Zero)"
+  code: 358
+  faction: 5
+  logo: bran_do_castro_triple_zero
+  name: BRAN
+  type: SK
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: Camouflage", Martial Arts L3, Meta-Agility, Multiterrain, Superior Infiltration ]
+  bsw: [ Combi Rifle+ E/Mitter ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 35
+- 
+  isc: Reverend Superior Cassandra Kusanagi
+  longisc: Reverend Superior CASSANDRA KUSANAGI
+  code: 359
+  faction: 5
+  logo: reverend_superior_cassandra_kusanagi
+  name: KUSANAGI
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 16
+  bs: 14
+  ph: 13
+  wip: 14
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Multiterrain, Religious Troop, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  bsw: [ MULTI Rifle + Light Flamethrower, E/M Grenades ]
+  ccw: [ Pistol, Shock CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 44
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: "+1"
+    cost: 44
+- 
+  isc: Wildcats, Polyvalent Tactical Unit
+  longisc: WILDCATS, Polyvalent Tactical Unit
+  code: 360
+  faction: 5
+  logo: wildcats_polyvalent_tactical_unit
+  name: WILDCAT
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ Multiterrain, "V: Courage" ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 19
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Flash Grenades, Deployable Repeater ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 18
+  - 
+    code: 3
+    description: HRL
+    bsw: [ Heavy Rocket Launcher ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 2
+    cost: 20
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, Knife ]
+    swc: 1.5
+    cost: 24
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges ]
+    ccw: [ Pistol, Knife ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 6
+    description: Engineer
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 23
+  - 
+    code: 7
+    description: N2
+    skills: [ Number 2 ]
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 20
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Flamethrower, D-Charges ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 19
+- 
+  isc: Riot Grrls
+  longisc: 
+  code: 361
+  faction: 5
+  logo: riot_grrls
+  name: RIOT GRRL
+  type: HI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  impetuosity: F
+  skills: [ Hyper-Dynamics L1 ]
+  equipments: [ Multispectral Visor L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Blitzen, Flash Grenades ]
+    swc: 0
+    cost: 30
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Flash Grenades ]
+    swc: 0
+    cost: 28
+  - 
+    code: 3
+    description: MRifle
+    bsw: [ MULTI Rifle, Flash Grenades ]
+    swc: 0
+    cost: 33
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 35
+- 
+  isc: "'Gecko' Squad"
+  longisc: "'GECKO' SQUADRON"
+  code: 362
+  faction: 5
+  logo: gecko
+  name: GECKO
+  type: TAG
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 15
+  bs: 13
+  ph: 15
+  wip: 13
+  arm: 5
+  bts: 3
+  w: 3
+  s: 6
+  ava: 2
+  backup: C
+  skills: [ Manned, Zero-G ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle (2), Chain-colt, Panzerfaust ]
+    swc: 1
+    cost: 53
+  - 
+    code: 2
+    description: Mk12
+    bsw: [ Mk12, Chain-colt, Blitzen ]
+    swc: 1.5
+    cost: 55
+- 
+  isc: "'Gecko' Squad"
+  longisc: "'GECKO' PILOT"
+  code: 363
+  faction: 5
+  logo: gecko
+  name: GECKO PILOT
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ Pilot, Zero-G ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Alguacil Vortex Lupe Balboa
+  longisc: ALGUACIL VORTEX LUPE BALBOA
+  code: 364
+  faction: 5
+  logo: alguacil_vortex_lupe_balboa
+  name: LUPE BALBOA
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Specialist Troop, "V: Dogged" ]
+  bsw: [ Combi Rifle, Nanopulser, Panzerfaust, Smoke Grenades ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 23
+- 
+  isc: Securitate
+  longisc: 
+  code: 365
+  faction: 5
+  logo: securitate
+  name: SECURITATE
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ Sixth Sense L2 ]
+  equipments: [ Repeater ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1
+    cost: 27
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 27
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0.5
+    cost: 31
+  - 
+    code: 5
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 25
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 23
