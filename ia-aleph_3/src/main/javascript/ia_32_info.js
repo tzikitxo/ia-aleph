@@ -32,7 +32,17 @@
                 });
 
                 $('#ia-hackingDisplayContainer').html(hackingDisplayTemplate({
-                    programs: hackingDevice.getPrograms(),
+                    programs: $.map(hackingDevice.getPrograms(), function (program) {
+                        var attackMod;
+                        if (typeof program.attackMod === 'number') {
+                            attackMod = program.attackMod + ' (' + (trooper.wip + program.attackMod) + ')';
+                        } else {
+                            attackMod = program.attackMod;
+                        }
+                        return $.extend({}, program, {
+                            attackMod: attackMod
+                        });
+                    }),
                     deviceName: hackingDevice.name,
                     messages: {
                         programType: "Program Type",
