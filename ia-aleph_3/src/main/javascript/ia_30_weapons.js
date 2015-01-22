@@ -118,9 +118,9 @@
                 return a - b;
             });
             var trooperProfileForWeapons = trooper;
-            if (trooper.defaultWeaponProfile) {
-                trooperProfileForWeapons = data.findTrooperByCode(trooper.defaultWeaponProfile);
-            }
+//            if (trooper.defaultWeaponProfile) {
+//                trooperProfileForWeapons = data.findTrooperByCode(trooper.defaultWeaponProfile);
+//            }
             $.each(weapons, function (i, weapon) {
                 weapon = $.extend({
                     rangeMods: [],
