@@ -1,0 +1,319 @@
+hackingDevices:
+    -
+        name: Hacking Device
+        programs: [1,2,3,4,7,8,9,10,12,13,14,15,16]
+    -
+        name: "Hacking Device + UPGRADE: Stop!"
+        programs: [1,2,3,4,7,8,9,10,12,13,14,15,16,27]
+    -
+        name: EI Hacking Device
+        programs: [1,2,3,4,7,8,9,10,12,13,14,15,16,26]
+    -
+        name: Hacking Device Plus
+        programs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+    -
+        name: Defensive Hacking Device
+        programs: [8,9,10,11,20,21,12,13,14,15,16]
+    -
+        name: Assault Hacking Device
+        programs: [1,2,3,4,5,6,22,23,24]
+    -
+        name: EI Assault Hacking Device
+        programs: [1,2,3,4,5,6,22,23,24,25]
+hackingPrograms:
+    - 
+      type: CLAW-1
+      code: 1
+      name: Blackout
+      attackMod: 0
+      opponentMod: 0
+      damage: 15
+      burst: 1
+      target: Comms Equipment
+      skillType: "Short Skill/ARO"
+      special: "Hacking Area. State: Disabled"
+    - 
+      type: CLAW-1
+      code: 2
+      name: "Gotcha!"
+      attackMod: 0
+      opponentMod: 0
+      damage: 13
+      burst: 2
+      target: TAG, HI, REM, Hacker
+      skillType: Short Skill/ARO
+      special: "2 Turns. Hacking Area. State: IMM-1"
+    - 
+      type: CLAW-1
+      code: 3
+      name: Overlord
+      attackMod: 0
+      opponentMod: 0
+      damage: 14
+      burst: 1
+      target: TAG
+      skillType: Short Skill/ARO
+      special: "Hacking Area. Breaker Spec. Ammo. State: POS"
+    - 
+      type: CLAW-1
+      code: 4
+      name: Spotlight
+      attackMod: -3
+      opponentMod: 0
+      damage: '-'
+      burst: 1
+      target: '-'
+      skillType: Short Skill
+      special: "Turn. Hacking Area. State: Targeted"
+    - 
+      type: CLAW-2
+      code: 5
+      name: Expel
+      attackMod: 0
+      opponentMod: 0
+      damage: 13
+      burst: 1
+      target: Manned TAG
+      skillType: Short Skill/ARO
+      special: Hacking Area. The TAG expels its Pilot
+    - 
+      type: CLAW-2
+      code: 6
+      name: Oblivion
+      attackMod: 0
+      opponentMod: 0
+      damage: 16
+      burst: 1
+      target: TAG, HI, REM, Hacker
+      skillType: Short Skill/ARO
+      special: "Hacking Area. State: Isolated"
+    - 
+      type: SWORD-1
+      code: 7
+      name: Brain Blast
+      attackMod: 0
+      opponentMod: 0
+      damage: 14
+      burst: 2
+      target: Hacker
+      skillType: Short Skill/ARO
+      special: Hacking Area. Loss of 1 Wounds/STR.
+    - 
+      type: SHIELD-1
+      code: 8
+      name: Exorcism
+      attackMod: 0
+      opponentMod: -3
+      damage: 18
+      burst: 2
+      target: Possessed TAG
+      skillType: Short Skill
+      special: Cancels Possession. DT Spec. Ammo.
+    - 
+      type: SHIELD-1
+      code: 9
+      name: Hack Transport Aircraft
+      attackMod: -6
+      opponentMod: '-'
+      damage: '-'
+      burst: 1
+      target: '-'
+      skillType: ARO
+      special: "Face to Face Roll vs PH of the user of Combat Jump. Apply Dispersion rules."
+    - 
+      type: SHIELD-1
+      code: 10
+      name: U-Turn
+      attackMod: '-'
+      opponentMod: -3
+      damage: '-'
+      burst: 1
+      target: Guided Spec. Ammo
+      skillType: ARO
+      special: Cumulative MOD to Attacks with Guided Spec. Ammo.
+    - 
+      type: SHIELD-2
+      code: 11
+      name: Breakwater
+      attackMod: 0
+      opponentMod: -6
+      damage: '-'
+      burst: 1
+      target: Hacker
+      skillType: Short Skill/ARO
+      special: Nullifies Hacking Attack.
+    - 
+      type: GADGET-1
+      code: 12
+      name: Fairy Dust
+      attackMod: '-'
+      opponentMod: '-'
+      damage: '-'
+      burst: 1
+      target: HI
+      skillType: Entire Order
+      special: 2 Turns. All HIs gain Firewall MODs.
+    - 
+      type: GADGET-1
+      code: 13
+      name: Lockpicker
+      attackMod: 0
+      opponentMod: 0
+      damage: '-'
+      burst: 1
+      target: '-'
+      skillType: Short Skill.
+      special: Base to base contact. Can open/activate Security terrain.
+    - 
+      type: GADGET-1
+      code: 14
+      name: Controlled Jump
+      attackMod: '-'
+      opponentMod: '-'
+      damage: '-'
+      burst: 1
+      skillType: Entire Order
+      special: Turn. +3 PH MOD to all Combat Jumps.
+    - 
+      type: GADGET-2
+      code: 15
+      name: Assisted Fire
+      attackMod: '-'
+      opponentMod: '-'
+      damage: '-'
+      burst: 1
+      target: REM
+      skillType: Entire Order
+      special: 2 Turns. Target gains Marksmanship L2.
+    - 
+      type: GADGET-2
+      code: 16
+      name: Enhanced Reaction
+      attackMod: '-'
+      opponentMod: '-'
+      damage: '-'
+      burst: 1
+      target: REM
+      skillType: Entire Order
+      special: 2 Turns. Target gains B2 in ARO.
+    - 
+      type: UPGRADE
+      code: 17
+      name: Cybermask
+      attackMod: 0
+      opponentMod: 0
+      damage: '-'
+      burst: 1
+      target: '-'
+      skillType: Entire Order
+      special: Replace user with Impersonation-2 Marker.
+    - 
+      type: UPGRADE
+      code: 18
+      name: White Noise
+      attackMod: 0
+      opponentMod: 0
+      damage: '-'
+      burst: 1
+      target: '-'
+      skillType: Short Skill.
+      special: Turn. NFB. Hacking Area. Circular Template that obstructs LoF of Multispectral Visors.
+    - 
+      type: UPGRADE
+      code: 19
+      name: Sucker Punch
+      attackMod: 0
+      opponentMod: -3
+      damage: 16
+      burst: 1
+      target: Hacker
+      skillType: Short Skill/ARO
+      special: Hacking Area. DT Spec. Ammo. Loss of 1 Wounds/STR.
+    - 
+      type: SHIELD-3
+      code: 20
+      name: Counterstrike
+      attackMod: -3
+      opponentMod: -3
+      damage: '-'
+      burst: 1
+      target: Hacker
+      skillType: Short Skill/ARO
+      special: Reflects Hacking Attack back to attacker.
+    - 
+      type: SHIELD-3
+      code: 21
+      name: Zero Pain
+      attackMod: 0
+      opponentMod: 0
+      damage: '-'
+      burst: 2*
+      target: Hacker
+      skillType: Short Skill/ARO
+      special: Nullifies Hacking Attack. B2 in ARO.
+    - 
+      type: CLAW-3
+      code: 22
+      name: Basilisk
+      attackMod: 0
+      opponentMod: 0
+      damage: 13
+      burst: 3
+      target: TAG, HI, REM, Hacker
+      skillType: Short Skill/ARO
+      special: "2 Turns. Hacking Area. State: IMM-1."
+    - 
+      type: CLAW-3
+      code: 23
+      name: Carbonite
+      attackMod: +3
+      opponentMod: 0
+      damage: 13
+      burst: 2
+      target: TAG, HI, REM, Hacker
+      skillType: Short Skill/ARO
+      special: "Hacking Area. DT Spec. Ammo. State: IMM-1."
+    - 
+      type: CLAW-3
+      code: 24
+      name: Total Control
+      attackMod: 0
+      opponentMod: 0
+      damage: 16
+      burst: 1
+      target: TAG
+      skillType: Short Skill/ARO
+      special: "Hacking Area. DT Spec. Ammo. State: POS."
+    - 
+      type: UPGRADE (EI)
+      code: 25
+      name: Stop!
+      attackMod: 0
+      opponentMod: 0
+      damage: 16
+      burst: 2
+      target: TAG, HI, REM, Hacker
+      skillType: Short Skill/ARO
+      special: "2 Turns. Hacking Area. Breaker Spec. Ammo. State: IMM-1."
+    - 
+      type: UPGRADE (EI)
+      code: 26
+      name: Sucker Punch
+      attackMod: 0
+      opponentMod: -3
+      damage: 16
+      burst: 1
+      target: Hacker
+      skillType: Short Skill/ARO
+      special: "Hacking Area. DT Spec. Ammo. Loss of 1 Wounds/STR."
+    - 
+      type: UPGRADE
+      code: 27
+      name: Stop!
+      attackMod: 0
+      opponentMod: 0
+      damage: 16
+      burst: 2
+      target: TAG, HI, REM, Hacker
+      skillType: Short Skill/ARO
+      special: "2 Turns. Hacking Area. Breaker Spec. Ammo. State: IMM-1."

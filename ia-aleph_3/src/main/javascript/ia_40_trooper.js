@@ -112,6 +112,7 @@
                         $('#ia-mainScreenCenter .ia-trooperSelectorContainer .ia-selected').removeClass('ia-selected');
                         $(this).addClass('ia-selected');
                         ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
+                        ui.infoDisplay.updateInfoDisplayForTrooper(trooper);
                     }
                 });
             }
