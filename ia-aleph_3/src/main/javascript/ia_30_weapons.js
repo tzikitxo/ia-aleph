@@ -117,19 +117,23 @@
             ranges.sort(function (a, b) {
                 return a - b;
             });
+            var trooperProfileForWeapons = trooper;
+            if (trooper.defaultWeaponProfile) {
+                trooperProfileForWeapons = data.findTrooperByCode(trooper.defaultWeaponProfile);
+            }
             $.each(weapons, function (i, weapon) {
                 weapon = $.extend({
                     rangeMods: [],
                     rangeSum: 0
                 }, weapon);
                 if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
-                    weapon.damage = eval(weapon.damage.replace(/WIP/, trooper.wip).replace(/PH/, trooper.ph));
+                    weapon.damage = eval(weapon.damage.replace(/WIP/, trooperProfileForWeapons.wip).replace(/PH/, trooperProfileForWeapons.ph));
                 }
-                var basicValue = trooper.bs;
+                var basicValue = trooperProfileForWeapons.bs;
                 if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon || weapon.name === deactivatorWeapon) {
-                    basicValue = trooper.wip;
+                    basicValue = trooperProfileForWeapons.wip;
                 } else if (weapon.hasTrait(trowingWeaponTrait)) {
-                    basicValue = trooper.ph;
+                    basicValue = trooperProfileForWeapons.ph;
                 }
                 var rangeIndex = 0;
                 if (weapon.hasRange) {

@@ -12324,3 +12324,77 @@
     bsw: [ Combi Rifle + Light Shotgun ]
     swc: 0
     cost: 23
+- 
+  isc: Shasvastii Seed-Soldiers
+  longisc: SHASVASTII SEED-SOLDIERS
+  iscspecification: SEED-EMBRYO
+  code: 366
+  otherprofiles: [367]
+  defaultWeaponProfile: 367
+  faction: 6
+  logo: shasvastii_seed_soldiers
+  name: SEED-SOLDIER
+  type: LI
+  classification: Line Troops
+  mov: 0-0
+  cc: 0
+  bs: 0
+  ph: 0
+  wip: 0
+  arm: 2
+  bts: 3
+  w: 1
+  s: 0
+  ava: '-'
+  skills: [ "CH: Limited Camouflage", Seed-Embryo ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 15
+  - 
+    code: 3
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 15
+  - 
+    code: 4
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle + Light Shotgun ]
+    swc: 0
+    cost: 16
+- 
+  isc: Shasvastii Seed-Soldiers
+  iscspecification: DEVELOPED SHAPE
+  longisc: SHASVASTII SEED-SOLDIERS
+  code: 367
+  faction: 6
+  logo: shasvastii_seed_soldiers
+  name: SEED-SOLDIER
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 12
+  bs: 11
+  ph: 9
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Seed-Embryo, Shasvastii ]
