@@ -13634,3 +13634,56 @@
     description: 
     swc: 0
     cost: 25
+- 
+  isc: Shasvastii Corax Hasht
+  longisc: SHASVASTII CORAX HASHT
+  iscspecification: SEED-EMBRYO
+  code: 394
+  otherprofiles: [395]
+  faction: 6
+  logo: shasvastii_corax_hasht
+  name: CORAX HASHT
+  type: MI
+  classification: Character
+  mov: 0-0
+  cc: 0
+  bs: 0
+  ph: 0
+  wip: 0
+  arm: 2
+  bts: 3
+  w: 1
+  s: 0
+  ava: 1
+  skills: [ "CH: Limited Camouflage", Seed-Embryo ]
+- 
+  isc: Shasvastii Corax Hasht
+  longisc: SHASVASTII CORAX HASHT
+  iscspecification: DEVELOPED SHAPE
+  code: 395
+  faction: 6
+  logo: shasvastii_corax_hasht
+  name: CORAX HASHT
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  equipments: [ Nanoscreen ]
+  skills: [ Seed-Embryo, Shasvastii, Specialist Troop, "V: No Wound Capacitation" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 34
