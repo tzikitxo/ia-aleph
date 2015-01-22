@@ -13874,3 +13874,1023 @@
     description: 
     swc: 0
     cost: 4
+- 
+  isc: Asuras
+  longisc: 
+  code: 400
+  faction: 7
+  logo: asuras
+  name: ASURA
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 18
+  bs: 14
+  ph: 14
+  wip: 15
+  arm: 5
+  bts: 6
+  w: 2
+  s: 2
+  ava: 2
+  backup: C2
+  skills: [ "V: No Wound Incapacitation" ]
+  equipments: [ Multispectral Visor L3 ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle, Nanopulser ]
+    swc: 0
+    cost: 68
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire, Nanopulser ]
+    swc: 2
+    cost: 70
+  - 
+    code: 3
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device Plus ]
+    bsw: [ Combi Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 72
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle, Nanopulser ]
+    swc: 0
+    cost: 68
+- 
+  isc: Maruts
+  longisc: 
+  code: 401
+  faction: 7
+  logo: maruts
+  name: MARUT
+  type: TAG
+  classification: Headquarters Troops
+  mov: 6-4
+  cc: 18
+  bs: 15
+  ph: 17
+  wip: 15
+  arm: 8
+  bts: 9
+  w: 3
+  s: 7
+  ava: 1
+  skills: [ "G: Remote Presence", Multiterrain ]
+  equipments: [ ECM, Multispectral Visor L2 ]
+  bsw: [ MULTI HMG, Heavy Flamethrower, Nanopulser ]
+  ccw: [ AP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 3
+    cost: 116
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant, Strategos L3 ]
+    swc: 3
+    cost: 120
+- 
+  isc: Nagas
+  longisc: 
+  code: 402
+  faction: 7
+  logo: nagas
+  name: NAGA
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C2
+  skills: [ "CH: Camouflage", Infiltration, Multiterrain, "V: Dogged" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 27
+  - 
+    code: 2
+    description: Monofilament
+    bsw: [ Combi Rifle, Monofilament Mines ]
+    swc: 0
+    cost: 30
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 4
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Boarding Shotgun, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 32
+- 
+  isc: Myrmidons
+  longisc: 
+  code: 403
+  faction: 7
+  logo: myrmidons
+  name: MYRMIDON
+  type: WB
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 5
+  backup: C2
+  impetuosity: F
+  skills: [ Kinematika L1, Martial Arts L3 ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  bsw: [ Nanopulser, Smoke Grenades ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: APCCW
+    bsw: [ Combi Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: DACCW
+    bsw: [ Combi Rifle ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 26
+  - 
+    code: 3
+    description: Chain
+    bsw: [ Chain Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 16
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 24
+  - 
+    code: 5
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ AP CCW ]
+    swc: 1
+    cost: 31
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    ccw: [ AP CCW ]
+    swc: 0.5
+    cost: 31
+- 
+  isc: Sophotects
+  longisc: 
+  code: 404
+  faction: 7
+  logo: sophotects
+  name: SOPHOTECT
+  type: LI
+  classification: Support Troops
+  mov: 6-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 15
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C2
+  skills: [ Doctor, Engineer, "V: No Wound Incapacitation" ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 31
+- 
+  isc: Zayin Rebots
+  longisc: ZAYIN Rebots
+  code: 405
+  faction: 7
+  logo: zayin_rebots
+  name: ZAYIN
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Climbing Plus, "G: Remote Presence", Total Reaction ]
+  equipments: [ 360° Visor ]
+  bsw: [ HMG ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1
+    cost: 26
+- 
+  isc: Samekh Rebots
+  longisc: SAMEKH Rebots
+  code: 406
+  faction: 7
+  logo: samekh_rebots
+  name: SAMEKH
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  bsw: [ Smart Missile Launcher ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1.5
+    cost: 18
+- 
+  isc: Yudbots
+  longisc: 
+  code: 407
+  faction: 7
+  logo: yudbots
+  name: YUDBOT
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 2
+  skills: [ "CH: Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Netrods
+  longisc: 
+  code: 408
+  faction: 7
+  logo: netrods
+  name: NETROD
+  type: '-'
+  classification: Support Troops
+  mov: 0-0
+  cc: 0
+  bs: 0
+  ph: 12
+  wip: 0
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  skills: [ "AD: Combat Jump" ]
+  equipments: [ AI Beacon ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
+- 
+  isc: Probots
+  longisc: 
+  code: 409
+  faction: 7
+  logo: probots
+  name: PROBOT
+  type: REM
+  classification: Support Troops
+  mov: 4-4
+  cc: 8
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 4
+  ava: 2
+  skills: [ "G: Remote Presence" ]
+  equipments: [ Baggage, Repeater ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: Minesweeper
+    equipments: [ Minesweeper ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: EVO
+    equipments: [ EVO Repeater ]
+    swc: 0.5
+    cost: 13
+  - 
+    code: 3
+    description: Combi
+    skills: [ Total Reaction ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 21
+- 
+  isc: PROXY Mk.1
+  longisc: "POST-HUMANS: PROXY Mk.1"
+  code: 410
+  faction: 7
+  logo: posthumans
+  name: PROXY Mk.1
+  type: LI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 13
+  bs: 13
+  ph: 11
+  wip: 15
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: Mimetism", "G: Jumper L1", "V: No Wound Incapacitation" ]
+  bsw: [ Combi Rifle, Nanopulser ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 0.5
+    cost: 18
+  - 
+    code: 2
+    description: Engineer
+    skills: [ Engineer ]
+    bsw: [ D-Charges ]
+    swc: 0
+    cost: 14
+  - 
+    code: 3
+    description: Doctor
+    skills: [ Doctor ]
+    swc: 0
+    cost: 14
+- 
+  isc: PROXY Mk.2
+  longisc: "POST-HUMANS: PROXY Mk.2"
+  code: 411
+  faction: 7
+  logo: posthumans
+  name: PROXY Mk.2
+  type: SK
+  classification: Elite Troops
+  mov: 4-4
+  cc: 13
+  bs: 13
+  ph: 13
+  wip: 15
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: TO Camouflage", "G: Jumper L1", Infiltration, "V: No Wound Incapacitation" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle, Nanopulser ]
+    swc: 1.5
+    cost: 24
+  - 
+    code: 2
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Boarding Shotgun, Nanopulser ]
+    swc: 0.5
+    cost: 21
+- 
+  isc: PROXY Mk.3
+  longisc: "POST-HUMANS: PROXY Mk.3"
+  code: 412
+  faction: 7
+  logo: posthumans
+  name: PROXY Mk.3
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 13
+  bs: 13
+  ph: 14
+  wip: 15
+  arm: 4
+  bts: 3
+  w: 2
+  s: 2
+  ava: 1
+  skills: [ "G: Jumper L1" ]
+  bsw: [ Spitfire, Nanopulser ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 26
+- 
+  isc: Thorakitai
+  longisc: 
+  code: 413
+  faction: 7
+  logo: thorakitai
+  name: THORAKITES
+  type: MI
+  classification: Line Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  backup: C2
+  impetuosity: F
+  equipments: [ 360° Visor ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Smg
+    bsw: [ Submachine gun, Chain Rifle, Flash Grenades ]
+    swc: 0
+    cost: 12
+  - 
+    code: 2
+    description: Combi
+    bsw: [ Combi Rifle, Nanopulser, Flash Grenades ]
+    swc: 0
+    cost: 16
+  - 
+    code: 3
+    description: LRL
+    bsw: [ Submachine gun, Light Rocket Launcher ]
+    swc: 1
+    cost: 18
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire, Nanopulser ]
+    swc: 1.5
+    cost: 22
+  - 
+    code: 5
+    description: Engineer
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Nanopulser, Flash Grenades, D-Charges ]
+    swc: 0
+    cost: 20
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Submachine gun, Chain Rifle, Flash Grenades ]
+    swc: 0
+    cost: 13
+  - 
+    code: 7
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Submachine gun, Chain Rifle, Flash Grenades ]
+    swc: 0
+    cost: 14
+- 
+  isc: Myrmidon Officer
+  longisc: MYRMIDON Officer
+  code: 414
+  faction: 7
+  logo: myrmidon_officer
+  name: MYRMIDON
+  type: WB
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 22
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ "Fireteam: Enomotarchos", Kinematika L1, Martial Arts L3, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: CoC+BS
+    skills: [ Chain of Command ]
+    bsw: [ Boarding Shotgun, Nanopulser, Zero-V Smoke Grenades ]
+    swc: 1
+    cost: 37
+  - 
+    code: 2
+    description: CoC+Combi
+    skills: [ Chain of Command ]
+    bsw: [ Combi Rifle, Nanopulser, Smoke Grenades ]
+    swc: 1
+    cost: 38
+  - 
+    code: 3
+    description: Lt+BS
+    skills: [ Lieutenant ]
+    bsw: [ Boarding Shotgun, Nanopulser, Zero-V Smoke Grenades ]
+    swc: 0.5
+    cost: 30
+  - 
+    code: 4
+    description: Lt+Combi
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Nanopulser, Smoke Grenades ]
+    swc: 0.5
+    cost: 31
+- 
+  isc: Agêma Marksmen
+  longisc: AGÊMA Marksmen
+  code: 415
+  faction: 7
+  logo: agema_marksman
+  name: AGÊMA
+  type: MI
+  classification: Support Troops
+  mov: 4-2
+  cc: 14
+  bs: 13
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  equipments: [ Multispectral Visor L2 ]
+  skills: [ "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 2
+    description: Mk12
+    equipments: [ X Visor ]
+    bsw: [ Mk12 ]
+    swc: 0.5
+    cost: 29
+  - 
+    code: 3
+    description: ML
+    bsw: [ Missile Launcher ]
+    swc: 1.5
+    cost: 27
+- 
+  isc: Ekdromoi
+  longisc: 
+  code: 416
+  faction: 7
+  logo: ekdromoi
+  name: EKDROMOS
+  type: LI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 18
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C2
+  impetuosity: F
+  skills: [ "AD: Combat Jump", Martial Arts L3, Super-Jump ]
+  options:
+  - 
+    code: 1
+    description: APCCW
+    bsw: [ Combi Rifle, Nanopulser ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 28
+  - 
+    code: 2
+    description: DACCW
+    bsw: [ Combi Rifle, Nanopulser ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 29
+  - 
+    code: 3
+    description: HMG
+    bsw: [ HMG, Nanopulser ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 1.5
+    cost: 37
+  - 
+    code: 4
+    description: Chain
+    bsw: [ Chain Rifle, Nanopulser ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 19
+  - 
+    code: 5
+    description: BS
+    bsw: [ Boarding Shotgun, Nanopulser ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 28
+  - 
+    code: 6
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Chain Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 25
+- 
+  isc: Nesaie Alkê, Thorakitai Warrant Officer
+  longisc: NESAIE ALKÊ, Thorakitai Warrant Officer
+  code: 417
+  faction: 7
+  logo: nesaie_alke
+  name: ALKÊ
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 11
+  wip: 14
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ "Fireteam: Enomotarchos", "V: Courage" ]
+  equipments: [ 360° Visor ]
+  bsw: [ Spitfire, Nanopulser ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1.5
+    cost: 26
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1.5
+    cost: 26
+- 
+  isc: "Atalanta, Agema's NCO"
+  longisc: "ATALANTA, Agema's NCO"
+  code: 418
+  compositetroop:
+  -
+    code: 418
+    min: 1
+    max: 1
+  -
+    code: 419
+    min: 1
+    max: 1
+  faction: 7
+  logo: atalanta
+  name: ATALANTA
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 14
+  bs: 14
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  equipments: [ Multispectral Visor L2 ]
+  bsw: [ Multi Sniper Rifle, Spotbot (1) ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1.5
+    cost: 43
+- 
+  isc: Atalanta, Agema's NCO
+  longisc: SPOTBOT
+  code: 419
+  faction: 7
+  logo: atalanta
+  name: SPOTBOT
+  type: REM
+  classification: Character
+  mov: 4-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 6
+  w: 1
+  s: 1
+  ava: '-'
+  skills: [ "CH: Mimetism", "G: Synchronized" ]
+  equipments: [ Spotter, Multispectral Visor L2 ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 2
+- 
+  isc: Diomedes, Ekdromoi Officer
+  longisc: DIOMEDES, Ekdromoi Officer
+  code: 420
+  faction: 7
+  logo: diomedes
+  name: DIOMEDES
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 20
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ "AD: Combat Jump", Martial Arts L3, Super-Jump, "V: No Wound Incapacitation" ]
+  bsw: [ Mk12, Nanopulser ]
+  ccw: [ Assault Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 43
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 43
+- 
+  isc: Machaon, Myrmidon Doctor-Officer
+  longisc: MACHAON, Myrmidon Doctor-Officer
+  code: 421
+  faction: 7
+  logo: machaon
+  name: MACHAON
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 15
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ Doctor, "Fireteam: Enomotarchos", Kinematika L1, Martial Arts L3, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Distruptor Device", MediKit ]
+  bsw: [ Combi Rifle, Nanopulser, Zero-V Smoke Grenades ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0.5
+    cost: 38
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0.5
+    cost: 38
+- 
+  isc: Phoenix, Veteran Myrmidon Officer
+  longisc: PHOENIX, Veteran Myrmidon Officer
+  code: 422
+  faction: 7
+  logo: phoenix
+  name: PHOENIX
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 13
+  ph: 13
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ "Fireteam: Enomotarchos", Kinematika L1, Martial Arts L3, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Distruptor Device" ]
+  bsw: [ Heavy Rocket Launcher, Nanopulser, Smoke Grenades ]
+  ccw: [ Assault Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 35
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 2
+    cost: 35
+- 
+  isc: Eudoros, Myrmidon Officer
+  longisc: EUDOROS, MYRMIDON Officer
+  code: 423
+  faction: 7
+  logo: eudoros
+  name: EUDOROS
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 13
+  ph: 13
+  wip: 14
+  arm: 3
+  bts: 6
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: I
+  skills: [ "Fireteam: Enomotarchos", Kinematika L1, Martial Arts L4, Number 2, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  bsw: [ Mk12, Nanopulser, Zero-V Smoke Grenades ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 40
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 40
+- 
+  isc: Ajax the Great, Myrmidon Officer
+  longisc: AJAX the Great, MYRMIDON Officer
+  code: 424
+  faction: 7
+  logo: ajax
+  name: AJAX
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 13
+  ph: 16
+  wip: 12
+  arm: 5
+  bts: 6
+  w: 2
+  s: 5
+  ava: 1
+  backup: C2
+  impetuosity: I
+  skills: [ Berserk, "Fireteam: Enomotarchos", Kinematika L2, Natural Born Warrior, "V: No Wound Incapacitation" ]
+  bsw: [ Combi Rifle (2), Nanopulser ]
+  ccw: [ AP Heavy Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 39
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 39
