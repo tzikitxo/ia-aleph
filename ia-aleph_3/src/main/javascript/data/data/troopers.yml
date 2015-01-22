@@ -12330,7 +12330,6 @@
   iscspecification: SEED-EMBRYO
   code: 366
   otherprofiles: [367]
-  defaultWeaponProfile: 367
   faction: 6
   logo: shasvastii_seed_soldiers
   name: SEED-SOLDIER
@@ -12347,6 +12346,28 @@
   s: 0
   ava: '-'
   skills: [ "CH: Limited Camouflage", Seed-Embryo ]
+- 
+  isc: Shasvastii Seed-Soldiers
+  iscspecification: DEVELOPED SHAPE
+  longisc: SHASVASTII SEED-SOLDIERS
+  code: 367
+  faction: 6
+  logo: shasvastii_seed_soldiers
+  name: SEED-SOLDIER
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 12
+  bs: 11
+  ph: 9
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Seed-Embryo, Shasvastii ]
   ccw: [ Pistol, Knife ]
   options:
   - 
@@ -12377,24 +12398,75 @@
     swc: 0
     cost: 16
 - 
-  isc: Shasvastii Seed-Soldiers
-  iscspecification: DEVELOPED SHAPE
-  longisc: SHASVASTII SEED-SOLDIERS
-  code: 367
+  isc: Shasvastii Cadmus
+  longisc: SHASVASTII AIRBONE INFILTRATION GROUP CADMUS
+  iscspecification: SEED-EMBRYO
+  code: 368
+  otherprofiles: [369]
+  defaultWeaponProfile: 369
   faction: 6
-  logo: shasvastii_seed_soldiers
-  name: SEED-SOLDIER
+  logo: shasvastii_cadmus
+  name: CADMUS-SEED
   type: LI
-  classification: Line Troops
+  classification: Spec. Trained Troops
+  mov: 0-0
+  cc: 0
+  bs: 0
+  ph: 11
+  wip: 0
+  arm: 2
+  bts: 3
+  w: 1
+  s: 0
+  ava: 2
+  skills: [ "AD: Combat jump", Seed-Embryo ]
+  bsw: [ Antipersonnel Mines (1) ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Shasvastii Cadmus
+  longisc: SHASVASTII AIRBONE INFILTRATION GROUP CADMUS
+  iscspecification: DEVELOPED SHAPE
+  code: 369
+  faction: 6
+  logo: shasvastii_cadmus
+  name: CADMUS-SOLDIER
+  type: LI
+  classification: Spec. Trained Troops
   mov: 4-4
-  cc: 12
+  cc: 13
   bs: 11
-  ph: 9
-  wip: 13
+  ph: 12
+  wip: 12
   arm: 1
   bts: 0
   w: 1
   s: 2
   ava: 2
   backup: C
-  skills: [ Seed-Embryo, Shasvastii ]
+  skills: [ "S: Morpho-Scan", Shasvastii ]
+  ccw: [ Assault Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 27
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 22

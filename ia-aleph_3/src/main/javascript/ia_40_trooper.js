@@ -116,8 +116,13 @@
                     }
                 });
             }
+            function addTrooper(trooper) {
+                if ((typeof trooper.swc === 'number') && (typeof trooper.cost === 'number')) {
+                    roster.addTrooper(trooper);
+                }
+            }
             addSelectListener(trooperSelector, function (trooper) {
-                roster.addTrooper(trooper);
+                addTrooper(trooper);
                 //TODO update view (ava) after add
             });
             if (!optionCode) {
@@ -132,6 +137,7 @@
                             .appendTo(otherProfile.hasOptions ? '#ia-trooperSelectorWrapper' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
                 });
                 addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
+                    addTrooper(trooper);
                 });
 
             }
