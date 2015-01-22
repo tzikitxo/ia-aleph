@@ -46,8 +46,8 @@ var data = ia.data;
                 isImpetuous: trooper.impetuosity === 'I',
                 isFrenzy: trooper.impetuosity === 'F',
                 isExtremelyImpetuous: trooper.impetuosity === 'E',
-                hasCube: trooper.backup === 'C' || trooper.backup === '2',
-                hasCube2: trooper.backup === '2',
+                hasCube: trooper.backup === 'C' || trooper.backup === 'C2',
+                hasCube2: trooper.backup === 'C2',
                 hasLimitedAva: typeof trooper.ava === 'number',
                 hasSkillOrEquipment: function (name) {
                     if ($.inArray(name, this.skills) !== -1) {
