@@ -62,7 +62,7 @@ var data = ia.data;
             troopers.push(trooper);
             trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
             trooper.isHackable = (trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI') && !trooper.hasSkillOrEquipment('Not Hackable');
-            trooper.hasStr = trooper.hasStr || trooper.type === 'REM' || trooper.type === 'TAG';
+            trooper.hasStr = ( trooper.hasStr !== undefined ) ? trooper.hasStr : ( trooper.type === 'REM' || trooper.type === 'TAG');
             trooper.getFaction = function () {
                 return factionsByCode[this.faction];
             };
