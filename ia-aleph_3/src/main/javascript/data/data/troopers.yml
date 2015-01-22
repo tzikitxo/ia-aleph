@@ -13466,3 +13466,171 @@
     skills: [ Lieutenant ]
     swc: 1
     cost: 39
+- 
+  isc: Suryats, Morat Assault Heavy Infantry
+  longisc: SURYATS (Morat Assault Heavy Infantry)
+  code: 390
+  faction: 6
+  logo: suryats
+  name: SURYAT
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 16
+  bs: 13
+  ph: 13
+  wip: 13
+  arm: 4
+  bts: 6
+  w: 2
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Jungle Terrain, Morat, "V: Courage" ]
+  options:
+  - 
+    code: 1
+    description: Vulkan
+    bsw: [ Vulkan Shotgun ]
+    ccw: [ Pistol, CCW ]
+    swc: 0
+    cost: 39
+  - 
+    code: 2
+    description: Combi
+    bsw: [ Combi Rifle + Light Flamethrower ]
+    ccw: [ Pistol, CCW ]
+    swc: 0
+    cost: 39
+  - 
+    code: 3
+    description: MRifle
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    ccw: [ Pistol, CCW ]
+    swc: 0
+    cost: 43
+  - 
+    code: 4
+    description: HRL
+    bsw: [ Heavy Rocket Launcher ]
+    ccw: [ Assault Pistol, CCW ]
+    swc: 2
+    cost: 41
+  - 
+    code: 5
+    description: HMG
+    bsw: [ HMG ]
+    ccw: [ Pistol, CCW ]
+    swc: 2
+    cost: 46
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    ccw: [ Pistol, CCW ]
+    swc: 1
+    cost: 43
+  - 
+    code: 7
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    ccw: [ Pistol, CCW ]
+    swc: 2
+    cost: 46
+- 
+  isc: Kornak Gazarot, Morat Superior Warrior-Officer
+  longisc: KORNAK Gazarot, Morat Superior Warrior-Officer
+  code: 391
+  faction: 6
+  logo: kornak_gazarot
+  name: KORNAK
+  type: MI
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 14
+  ph: 13
+  wip: 14
+  arm: 3
+  bts: 9
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Berserk, Kinematika L1, Morat, Strategos L1, "V: No Wound Incapacitation" ]
+  bsw: [ Mk12, Light Flamethrower ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 41
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 41
+- 
+  isc: Special Operative Ko Dali
+  longisc: Special Operative KO DALI
+  code: 392
+  faction: 6
+  logo: ko_dali
+  name: KO DALI
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 15
+  bs: 14
+  ph: 13
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "AD: Combat Jump / Multiterrain", "S: Protheion" ]
+  equipments: [ Multispectral Visor L2 ]
+  bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+  ccw: [ Assault pistol (2), Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 37
+- 
+  isc: Treitak Anyat
+  longisc: 
+  code: 393
+  faction: 6
+  logo: treitak_anyat
+  name: ANYAT
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Climbing Plus, Morat, Specialist Troop ]
+  bsw: [ K1 Combi Rifle, Chain-colt, Smoke Grenades, E/M Grenades ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 25
