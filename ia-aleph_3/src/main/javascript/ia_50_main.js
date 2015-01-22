@@ -22,7 +22,8 @@
     $('#ia-mainContainer').html(mainScreenTemplate({
         messages: {
             mainMenu: 'Main Menu',
-            weaponsButtonTitle: 'Weapons'
+            weaponsButtonTitle: 'Weapons',
+            hackingButtonTitle: 'Hacking Programs'
         }
     }));
     $('#ia-mainMenuButton').on('click', function () {

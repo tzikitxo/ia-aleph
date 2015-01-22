@@ -62,7 +62,7 @@ var data = ia.data;
             troopers.push(trooper);
             trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
             trooper.isHackable = (trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI') && !trooper.hasSkillOrEquipment('Not Hackable');
-            trooper.hasStr = ( trooper.hasStr !== undefined ) ? trooper.hasStr : ( trooper.type === 'REM' || trooper.type === 'TAG');
+            trooper.hasStr = (trooper.hasStr !== undefined) ? trooper.hasStr : (trooper.type === 'REM' || trooper.type === 'TAG');
             trooper.getFaction = function () {
                 return factionsByCode[this.faction];
             };
@@ -193,6 +193,25 @@ var data = ia.data;
 
     data.getReferenceTableData = function (name) {
         return data.references[name];
+    };
+
+    var hackingDevicesByName = {}, hackingProgramsByCode = {};
+    $.each(data.hacking.hackingPrograms, function (i, hackingProgram) {
+        hackingProgramsByCode[hackingProgram.code] = hackingProgram;
+    });
+
+    $.each(data.hacking.hackingDevices, function (i, hackingDevice) {
+        hackingDevicesByName[hackingDevice.name] = $.extend({}, hackingDevice, {
+            getPrograms: function () {
+                return $.map(this.programs, function (code) {
+                    return  hackingProgramsByCode[code];
+                });
+            }
+        });
+    });
+
+    data.getHackingDeviceByName = function (name) {
+        return hackingDevicesByName[name];
     };
 
 })();

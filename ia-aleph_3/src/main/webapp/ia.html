@@ -37,10 +37,16 @@
                     <div id="ia-rosterWrapper" ></div>
                     <div id="ia-trooperSelectorWrapper" ></div>
                 </div>                     
-                <div id="ia-weaponsDisplayWrapper">
-                    <div id="ia-weaponsDisplayCenter">
-                        <div id="ia-weaponsDisplayButton">{{messages.weaponsButtonTitle}}</div>                 
-                        <div id="ia-weaponsDisplayContainer"></div>
+                <div id="ia-infoScreenWrapper">
+                    <div id="ia-infoScreenCenter">
+                        <div id="ia-infoScreenButtons">
+                            <div id="ia-weaponsDisplayButton">{{messages.weaponsButtonTitle}}</div>
+                            <div id="ia-hackingDisplayButton">{{messages.hackingButtonTitle}}</div>
+                        </div>
+                        <div id="ia-infoScreenContainer">
+                            <div id="ia-weaponsDisplayContainer" style="display: none"></div>
+                            <div id="ia-hackingDisplayContainer" style="display: none"></div>
+                        </div>
                     </div> 
                 </div>
                 <div id="ia-mainScreenFloatingStuffContainer">
@@ -205,7 +211,7 @@
             <table class="ia-weaponsDisplayTable">
             <thead>
             <tr>
-            <th rowspan="2" class="ia-weaponNameCell"><div class="ia-weaponDownButton" ></div>{{messages.name}}</th>
+            <th rowspan="2" class="ia-weaponNameCell"><div class="ia-infoDownButton" ></div>{{messages.name}}</th>
             <th colspan="{{ranges.length}}">{{messages.range}} <span class="ia-weaponRangeSpec">{{messages.rangeSpec}}</span></th>
             <th rowspan="2">{{messages.damage}}</th>
             <th rowspan="2">{{messages.burst}}</th>
@@ -235,6 +241,43 @@
             {{/each}}
             </tbody>
             </table>
+            </div>
+        </script>
+        <script id="ia-hackingDisplayTemplate" type="text/x-handlebars-template">
+            <div id="ia-hackingDisplay">
+                <table class="ia-hackingDisplayTable">
+                    <thead>
+                        <tr>
+                            <th colspan="9"><div class="ia-infoDownButton" ></div>{{deviceName}}</th>
+                        </tr>
+                        <tr>
+                           <th>{{messages.programType}}</th> 
+                           <th>{{messages.name}}</th> 
+                           <th>{{messages.attackMod}}</th> 
+                           <th>{{messages.opponentMod}}</th> 
+                           <th>{{messages.damage}}</th> 
+                           <th>{{messages.burst}}</th> 
+                           <th>{{messages.target}}</th> 
+                           <th>{{messages.skillType}}</th> 
+                           <th>{{messages.special}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each programs}}
+                        <tr>
+                            <td>{{type}}</td>
+                            <td>{{name}}</td>
+                            <td class="ia-hackingInfo-attackMod">{{attackMod}}</td>
+                            <td class="ia-hackingInfo-opponentMod">{{opponentMod}}</td>
+                            <td class="ia-hackingInfo-damage">{{damage}}</td>
+                            <td class="ia-hackingInfo-burst">{{burst}}</td>
+                            <td class="ia-hackingInfo-target">{{target}}</td>
+                            <td class="ia-hackingInfo-skillType">{{skillType}}</td>
+                            <td>{{special}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </script>
         <script id="ia-referenceTableTemplate-metachemistry" type="text/x-handlebars-template">

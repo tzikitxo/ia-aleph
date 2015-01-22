@@ -170,7 +170,7 @@
                     rangeSpec: "(up to)"
                 }
             }));
-            $('#ia-weaponsDisplayContainer .ia-weaponDownButton').on('click', function () {
+            $('#ia-weaponsDisplayContainer .ia-infoDownButton').on('click', function () {
                 $('#ia-weaponsDisplayContainer').hide('fast');
             });
         }

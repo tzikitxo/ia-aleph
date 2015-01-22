@@ -145,28 +145,32 @@ body{
     background-image: url('../img/theme/scrollButtonRightBg.png');
 }
 
-//WEAPONS
+//INFO
 
-#ia-weaponsDisplayWrapper{    
+#ia-infoScreenWrapper{    
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 10;
 }
-#ia-weaponsDisplayCenter{
+#ia-infoScreenCenter{
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
     position: relative;
 }
-#ia-weaponsDisplayButton{
+#ia-infoScreenButtons{
     position: absolute;
     bottom: 0;
     left: 0;
+}
+#ia-weaponsDisplayButton, #ia-hackingDisplayButton{
     padding: 5px 10px 5px 50px;
     z-index: 8;
     height: 25px;
+    display: inline-block;
+    margin-right: 5px;
 
     cursor: pointer;
     background-image: url('../img/theme/arrowButtonUpBg.png');
@@ -176,13 +180,13 @@ body{
     font-weight: bold;
     line-height: 25px;
 }
-#ia-weaponsDisplayContainer{
+#ia-infoScreenContainer{
     z-index: 10;
     position: relative;
 
     background-color: white;
 }
-.ia-weaponsDisplayTable{
+#ia-infoScreenCenter table{
     width: 100%;
     border-collapse: collapse;
 
@@ -232,7 +236,7 @@ body{
         position: relative;
         min-width: 150px;
     }
-    .ia-weaponDownButton{
+    .ia-infoDownButton{
         position:absolute;
         top:5px;
         left:2px;
@@ -243,6 +247,10 @@ body{
         cursor: pointer;
         background-image: url('../img/theme/arrowButtonDownBg.png');
         background-size: 100% 100%;
+    }
+    
+    .ia-hackingInfo-attackMod, .ia-hackingInfo-opponentMod, .ia-hackingInfo-damage, .ia-hackingInfo-burst, .ia-hackingInfo-target, .ia-hackingInfo-skillType {
+        text-align: center;
     }
 }
 

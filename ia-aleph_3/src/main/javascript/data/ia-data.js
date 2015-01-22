@@ -25,5 +25,7 @@
     data.weapons = anyplacetools.importFile('data/weapons.yml');
     
     data.references = anyplacetools.importFile('data/references.yml');
+    
+    data.hacking = anyplacetools.importFile('data/hacking.yml');
 
 })();
