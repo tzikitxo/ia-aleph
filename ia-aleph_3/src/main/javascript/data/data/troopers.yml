@@ -12470,3 +12470,146 @@
     bsw: [ Boarding Shotgun ]
     swc: 0
     cost: 22
+- 
+  isc: Shasvastii Haiduks
+  longisc: Shasvastii Light Support Unit HAIDUKS
+  code: 370
+  faction: 6
+  logo: shasvastii_haiduks
+  name: HAIDUK
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 12
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Sapper, Shasvastii ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 21
+  - 
+    code: 2
+    description: GSniper
+    bsw: [ Smart MULTI Sniper Rifle ]
+    swc: 2
+    cost: 23
+- 
+  isc: Shasvastii Aswuangs
+  longisc: Shasvastii Expeditionary Unit ASWANGS
+  code: 371
+  faction: 6
+  logo: shasvastii_aswuangs
+  name: ASWANG
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 17
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "CH: Camouflage", "S: Protheion", Shasvastii ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Adhesive Launcher ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Adhesive Launcher ]
+    swc: 0
+    cost: 24
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 30
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Adhesive Launcher ]
+    swc: 1
+    cost: 25
+- 
+  isc: Shasvastii Noctifers
+  longisc: Shasvastii Tactical Dominance Special Wing NOCTIFERS
+  code: 372
+  faction: 6
+  logo: shasvastii_noctifers
+  name: NOCTIFER
+  type: LI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage", Shasvastii, "V: Dogged" ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, Knife ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 3
+    description: ML
+    bsw: [ Missile Launcher ]
+    ccw: [ Assault Pistol, Knife ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0.5
+    cost: 32
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 1
+    cost: 24
