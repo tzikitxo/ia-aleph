@@ -12613,3 +12613,856 @@
     ccw: [ Pistol, Knife ]
     swc: 1
     cost: 24
+- 
+  isc: Kurgat Reg. of Assault Engineers
+  longisc: KURGAT Regiment of Assault Engineers
+  code: 373
+  faction: 6
+  logo: kurgat_reg_of_assault_engineers
+  name: KURGAT
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Engineer, Morat ]
+  bsw: [ D-Charges, Antipersonnel Mines ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: AC
+    bsw: [ Autocannon ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 17
+  - 
+    code: 3
+    description: Mk12
+    bsw: [ Mk12 ]
+    swc: 0
+    cost: 23
+- 
+  isc: Yaogat Strike Infantry
+  longisc: YAOGAT Strike Infantry
+  code: 374
+  faction: 6
+  logo: yaogat_strike_infantry
+  name: YAOGAT
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 16
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Morat ]
+  equipments: [ Multispectral Visor L2 ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Grenades ]
+    swc: 0
+    cost: 28
+  - 
+    code: 2
+    description: Panzerfaust
+    bsw: [ Combi Rifle, Panzerfaust ]
+    swc: 0.5
+    cost: 29
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Grenades ]
+    swc: 0
+    cost: 27
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 34
+  - 
+    code: 5
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 32
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Panzerfaust ]
+    swc: 1
+    cost: 28
+- 
+  isc: Rasyat Diplomatic Division
+  longisc: RASYAT Diplomatic Division
+  code: 375
+  faction: 6
+  logo: rasyat_diplomatic_division
+  name: RASYAT
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 21
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "AD: Combat Jump", Morat ]
+  bsw: [ Zero-V Smoke Grenades ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    skills: [ Martial Arts L3 ]
+    bsw: [ Combi Rifle, D-Charges ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 29
+  - 
+    code: 2
+    description: BS
+    skills: [ Martial Arts L3 ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ DA CCW ]
+    swc: 0
+    cost: 28
+  - 
+    code: 3
+    description: EMitter
+    skills: [ Natural Born Warrior ]
+    bsw: [ Combi Rifle + E/Mitter, D-Charges ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 30
+  - 
+    code: 4
+    description: Spitfire
+    skills: [ Natural Born Warrior ]
+    bsw: [ Spitfire ]
+    ccw: [ AP CCW ]
+    swc: 1.5
+    cost: 34
+- 
+  isc: Shasvastii Gwailos
+  longisc: Shasvastii Armed Imposition Detachment GWAILOS
+  code: 376
+  faction: 6
+  logo: shasvastii_gwailos
+  name: GWAILO
+  type: MI
+  classification: Veteran Troops
+  mov: 4-2
+  cc: 15
+  bs: 13
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Shasvastii ]
+  equipments: [ Nanoscreen ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 21
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 5
+    description: Lt+MRifle
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: 1
+    cost: 25
+  - 
+    code: 6
+    description: Lt+BS
+    skills: [ Lieutenant ]
+    bsw: [ Boarding Shotgun ]
+    swc: 1
+    cost: 21
+  - 
+    code: 7
+    description: HRL
+    equipments: [ X Visor ]
+    bsw: [ Heavy Rocket Launcher ]
+    swc: 1.5
+    cost: 23
+- 
+  isc: Skiávoros
+  longisc: SKIÁVOROS
+  code: 377
+  faction: 6
+  logo: skiavoros
+  name: SKIÁVORO
+  type: MI
+  classification: Headquarters Troops
+  mov: 4-2
+  cc: 17
+  bs: 13
+  ph: 12
+  wip: 16
+  arm: 3
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: Mimetism", "G: Mnemonica", Strategos L2, "V: No Wound Incapacitation" ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0
+    cost: 52
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire, Nanopulser ]
+    swc: 1.5
+    cost: 51
+  - 
+    code: 3
+    description: Sepsitor
+    bsw: [ Sepsitor Plus, Plasma Rifle, Nanopulser ]
+    swc: 0
+    cost: 64
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device Plus ]
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 60
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Plasma Rifle, Nanopulser ]
+    swc: 0
+    cost: 52
+  - 
+    code: 6
+    description: Lt+Sepsitor
+    skills: [ Lieutenant ]
+    bsw: [ Sepsitor Plus, Plasma Rifle, Nanopulser ]
+    swc: 1
+    cost: 64
+- 
+  isc: Sogarat Tempest Regiment
+  longisc: SOGARAT Tempest Regiment
+  code: 378
+  faction: 6
+  logo: sogarat_tempest_regiment
+  name: SOGARAT
+  type: HI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 19
+  bs: 13
+  ph: 15
+  wip: 13
+  arm: 6
+  bts: 3
+  w: 2
+  s: 5
+  ava: 1
+  backup: C
+  skills: [ Morat ]
+  equipments: [ AutoMediKit ]
+  options:
+  - 
+    code: 1
+    description: HMG
+    bsw: [ HMG ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 2
+    cost: 56
+  - 
+    code: 2
+    description: Feuerbach
+    bsw: [ Feuerbach ]
+    ccw: [ Assault Pistol, AP CCW ]
+    swc: 1.5
+    cost: 57
+  - 
+    code: 3
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 2.5
+    cost: 56
+  - 
+    code: 4
+    description: Lt+Feuerbach
+    skills: [ Lieutenant ]
+    bsw: [ Feuerbach ]
+    ccw: [ Assault Pistol, AP CCW ]
+    swc: 2
+    cost: 57
+- 
+  isc: The Anathematics
+  longisc: 
+  code: 379
+  faction: 6
+  logo: the_anathematics
+  name: ANATHEMATIC
+  type: HI
+  classification: Headquarters Troops
+  mov: 4-4
+  cc: 17
+  bs: 13
+  ph: 13
+  wip: 16
+  arm: 5
+  bts: 6
+  w: 2
+  s: 6
+  ava: 1
+  skills: [ "CH: TO Camouflage", "G: Mnemonica", "V: No Wound Incapacitation" ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol ]
+  options:
+  - 
+    code: 1
+    description: Plasma
+    bsw: [ Plasma Rifle ]
+    ccw: [ Monofilament CCW ]
+    swc: 0
+    cost: 82
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Monofilament CCW ]
+    swc: 2
+    cost: 81
+  - 
+    code: 3
+    description: Sepsitor
+    bsw: [ Sepsitor, Plasma Rifle ]
+    ccw: [ Shock CCW ]
+    swc: 2
+    cost: 88
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Hacking Device ]
+    bsw: [ Plasma Rifle ]
+    ccw: [ Shock CCW ]
+    swc: 0.5
+    cost: 88
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Plasma Rifle ]
+    ccw: [ Monofilament CCW ]
+    swc: 0
+    cost: 82
+- 
+  isc: Shasvastii Special Armoured Corp Sphinx
+  longisc: Shasvastii Special Armoured Corp SPHINX
+  code: 380
+  faction: 6
+  logo: shasvastii_special_armoured_corp_sphinx
+  name: SPHINX
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-6
+  cc: 18
+  bs: 14
+  ph: 16
+  wip: 13
+  arm: 6
+  bts: 6
+  w: 3
+  s: 6
+  ava: 1
+  skills: [ "CH: TO Camouflage", Climbing Plus, "G: Remote Presence", Multiterrain ]
+  equipments: [ ECM ]
+  bsw: [ Spitfire,Heavy Flamethrower (2) ]
+  ccw: [ EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 106
+- 
+  isc: Zerat Special Missions Regiment
+  longisc: ZERAT Special Missions Regiment
+  code: 381
+  faction: 6
+  logo: zerat_special_missions_regiment
+  name: ZERAT
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Infiltration, Morat, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Combi Rifle + Light Flamethrower, Antipersonnel Mines ]
+    swc: 0
+    cost: 21
+  - 
+    code: 2
+    description: EMitter
+    bsw: [ Combi Rifle + E/Mitter, Antipersonnel Mines ]
+    swc: 0
+    cost: 22
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Grenades, Antipersonnel Mines ]
+    swc: 0
+    cost: 21
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
+    swc: 1.5
+    cost: 28
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Combi Rifle, D-Charges ]
+    swc: 0.5
+    cost: 25
+- 
+  isc: Slave Drones
+  longisc: 
+  code: 382
+  faction: 6
+  logo: slave_drones
+  name: SLAVE DRONE
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 8
+  bs: 8
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: 2
+  skills: [ "CHL Mimetism", "G: Servant" ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Imetron
+  longisc: 
+  code: 383
+  faction: 6
+  logo: imetron
+  name: IMETRON
+  type: '-'
+  classification: Support Troops
+  mov: 0-0
+  cc: 0
+  bs: 0
+  ph: 12
+  wip: 0
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "AD: Combat Jump" ]
+  equipments: [ AI Beacon ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
+- 
+  isc: Shasvastii Sabotage and Destruction Unit Caliban
+  longisc: SHASVASTII SABOTAGE AND DESTRUCTION UNIT CALIBAN
+  iscspecification: SEED-EMBRYO
+  code: 384
+  otherprofiles: [385]
+  faction: 6
+  logo: shasvastii_caliban
+  name: CALIBAN
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 0-0
+  cc: 0
+  bs: 0
+  ph: 12
+  wip: 0
+  arm: 2
+  bts: 3
+  w: 1
+  s: 0
+  ava: 2
+  skills: [ "CH: Limited Camouflage", "Seed-Embryo" ]
+  equipments: [ AutoMediKit ]
+  options:
+- 
+  isc: Shasvastii Sabotage and Destruction Unit Caliban
+  longisc: SHASVASTII SABOTAGE AND DESTRUCTION UNIT CALIBAN
+  iscspecification: DEVELOPED SHAPE
+  code: 385
+  faction: 6
+  logo: shasvastii_caliban
+  name: CALIBAN
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 13
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ Shasvastii ]
+  equipments: [ AutoMediKit ]
+  ccw: [ Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: Combi+D
+    skills: [ Developed Shape ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ Assault Pistol ]
+    swc: 0
+    cost: 24
+  - 
+    code: 4
+    description: BS+D
+    skills: [ Developed Shape ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ Assault Pistol ]
+    swc: 0
+    cost: 25
+  - 
+    code: 5
+    description: Feuerbach
+    bsw: [ Feuerbach ]
+    ccw: [ Pistol ]
+    swc: 2
+    cost: 28
+  - 
+    code: 6
+    description: Feuerbach+D
+    skills: [ Developed Shape ]
+    bsw: [ Feuerbach ]
+    ccw: [ Pistol ]
+    swc: 2
+    cost: 29
+  - 
+    code: 7
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0.5
+    cost: 30
+  - 
+    code: 8
+    description: Hacker+D
+    skills: [ Hacker, Developed Shape ]
+    equipments: [ EI Assault Hacking Device ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0.5
+    cost: 31
+  - 
+    code: 9
+    description: Engineer
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0
+    cost: 26
+  - 
+    code: 10
+    description: Engineer+D
+    skills: [ Engineer, Developed Shape ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0
+    cost: 27
+  - 
+    code: 11
+    description: Eng+BS
+    skills: [ Engineer ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ Assault Pistol ]
+    swc: 0
+    cost: 28
+  - 
+    code: 12
+    description: Eng+BS+D
+    skills: [ Engineer, Developed Shape ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ Assault Pistol ]
+    swc: 0
+    cost: 29
+  - 
+    code: 13
+    description: Inf
+    skills: [ Inferior Infiltration ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0
+    cost: 24
+  - 
+    code: 14
+    description: Inf+BS
+    skills: [ Inferior Infiltration ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ Assault Pistol ]
+    swc: 0.5
+    cost: 27
+  - 
+    code: 15
+    description: Eng+Inf
+    skills: [ Engineer, Inferior Infiltration ]
+    bsw: [ Combi Rifle, Nanopulser, D-Charges ]
+    ccw: [ Pistol ]
+    swc: 0
+    cost: 28
+  - 
+    code: 16
+    description: Eng+Inf+BS
+    skills: [ Engineer, Inferior Infiltration ]
+    bsw: [ Boarding Shotgun, D-Charges ]
+    ccw: [ Assault Pistol ]
+    swc: [ 0.5 ]
+    cost: 31
+- 
+  isc: Raktorak, Morat Sergeant Major
+  longisc: RAKTORAK, Morat Sergeant Major
+  code: 386
+  faction: 6
+  logo: raktorak
+  name: RAKTORAK
+  type: MI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Jungle Terrain, Morat ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle + heavy Flamethrower ]
+    swc: 0
+    cost: 22
+  - 
+    code: 2
+    description: Vulkan
+    bsw: [ Vulkan Shotgun ]
+    swc: 0
+    cost: 22
+- 
+  isc: Oznat, Morat Hunting Regiment
+  longisc: OZNAT, Morat Hunting Regiment
+  code: 387
+  faction: 6
+  logo: oznat
+  name: OZNAT
+  type: WB
+  classification: Support Troops
+  mov: 4-4
+  cc: 21
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  impetuosity: I
+  skills: [ Kinematika L1, Morat ]
+  equipments: [ Hungries Control Device ]
+  bsw: [ Combi Rifle + Light Smoke Grenade Launcher ]
+  ccw: [ Pistol, Shock CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 20
+- 
+  isc: Ikadron Batroids
+  longisc: IKADRON BATROID
+  code: 388
+  faction: 6
+  logo: ikadron
+  name: IKADRON
+  type: REM
+  classification: Support Troops
+  mov: 6-2
+  cc: 7
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 6
+  w: 1
+  s: 2
+  ava: 2
+  skills: [ "G: Autotool" ]
+  equipments: [ Baggage, Repeater ]
+  bsw: [ Light Flamethrower (2), Flash Pulse ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 9
+- 
+  isc: Cadmus-Naish Agent Sheskiin
+  longisc: Cadmus-Naish Agent SHESKIIN
+  code: 389
+  faction: 6
+  logo: cadmus_naish_agent_sheskiin
+  name: SHESKIIN
+  type: LI
+  classification: Character
+  mov: 6-4
+  cc: 24
+  bs: 15
+  ph: 15
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Kinematika L1, "S: Protheion", Shasvastii, "V: No Wound Incapacitation" ]
+  equipments: [ Nanoscreen ]
+  bsw: [ MULTI Rifle, Nanopulser, D-Charges ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 39
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 1
+    cost: 39
