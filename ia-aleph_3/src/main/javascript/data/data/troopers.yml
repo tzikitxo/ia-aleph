@@ -14606,6 +14606,7 @@
     skills: [ Hacker ]
     equipments: [ Assault Hacking Device ]
     bsw: [ Chain Rifle, Nanopulser ]
+    ccw: [ Pistol, DA CCW ]
     swc: 0.5
     cost: 25
 - 
