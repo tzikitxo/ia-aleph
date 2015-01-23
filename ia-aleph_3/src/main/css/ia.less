@@ -433,9 +433,24 @@ body{
     margin-top: 5px;
     margin-bottom: 5px;
     position: relative;
+    z-index: 2;
 
     background-image: url('../img/theme/trooperSelectorBg1.png');
 
+    .ia-trooperSelectorLogoSelectorOverlay{
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        z-index: 4;
+        width: 180px;
+    }
+    &.ia-trooperLogoSelectionMode .ia-trooperSelectorLogoSelectorOverlay{
+        cursor: pointer;
+    }
+    &.ia-selected .ia-trooperSelectorLogoSelectorOverlay{
+        background-image: url('../img/theme/trooperSelectorSelectedOverlay.png');
+    }
     .ia-trooperType{
         position: relative;
         top: 38px;
@@ -443,6 +458,7 @@ body{
         text-align: center;
         width: 40px;
         display: block;
+        z-index: 6;
 
         color: @trooperTypeFontColor;
         font-weight: bolder;
@@ -498,6 +514,7 @@ body{
     }
     .ia-trooperCube, .ia-trooperTraining, .ia-trooperImpetuosity, .ia-trooperHackable {
         position: absolute;
+        z-index: 6;
     }
     .ia-trooperCube{
         top: 66px;

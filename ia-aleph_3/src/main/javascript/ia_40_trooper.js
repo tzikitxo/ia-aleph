@@ -109,7 +109,7 @@
                     if ($(this).hasClass('ia-selected')) {
                         callback(trooper);
                     } else {
-                        $('#ia-mainScreenCenter .ia-trooperSelectorContainer .ia-selected').removeClass('ia-selected');
+                        $('#ia-mainScreenCenter .ia-trooperSelectorOptionList .ia-selected').removeClass('ia-selected');
                         $(this).addClass('ia-selected');
                         ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
                         ui.infoDisplay.updateInfoDisplayForTrooper(trooper);
@@ -125,11 +125,6 @@
                 addTrooper(trooper);
                 //TODO update view (ava) after add
             });
-            if (!optionCode) {
-                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
-            } else {
-                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow-' + optionCode).trigger('click');
-            }
             if (trooper.otherprofiles) {
                 $.each(trooper.otherprofiles, function (i, otherprofileCode) {
                     var otherProfile = data.findTrooperByCode(otherprofileCode);
@@ -139,8 +134,31 @@
                 addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
                     addTrooper(trooper);
                 });
-
             }
+            if (!optionCode) {
+                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
+            } else {
+                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow-' + optionCode).trigger('click');
+            }
+        },
+        enableTrooperSelectorLogoSelector: function () {
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').addClass('ia-trooperLogoSelectionMode');
+            if ($('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').length === 0) {
+                $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').first().addClass('ia-selected');
+            }
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').off('click').on('click', function () {
+                $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').removeClass('ia-selected');
+                $(this).addClass('ia-selected');
+                ui.weaponsDisplay.updateWeaponsDisplayForTrooper();
+            });
+        },
+        disableTrooperSelectorLogoSelector: function () {
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').removeClass('ia-trooperLogoSelectionMode');
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').removeClass('ia-selected');
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').off('click');
+        },
+        getSelectedTrooperLogo: function () {
+            return data.findTrooperByCode(Number($('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').closest('.ia-trooperSelectorContainer').data('ia-troopercode')));
         }
     };
 
