@@ -15602,3 +15602,441 @@
   s: 2
   ava: 3
   backup: C
+- 
+  isc: Ectros Regiment
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 442
+  otherprofiles: [443]
+  faction: 8
+  logo: ectros_regiment
+  name: ECTROS
+  type: HI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 17
+  bs: 13
+  ph: 14
+  wip: 13
+  arm: 3
+  bts: 6
+  w: 2
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ "Fireteam: Tohaa", Poison ]
+  equipments: [ Symbiont Armor ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: VCombi
+    bsw: [ Viral Combi Rifle ]
+    swc: 0
+    cost: 49
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 2
+    cost: 51
+  - 
+    code: 3
+    description: VS
+    bsw: [ Vulkan Shotgun ]
+    swc: 0
+    cost: 44
+  - 
+    code: 4
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Viral Combi Rifle ]
+    swc: 0
+    cost: 49
+- 
+  isc: Ectros Regiment
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 443
+  faction: 8
+  logo: ectros_regiment
+  name: ECTROS
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 17
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ "Fireteam: Tohaa", Poison ]
+- 
+  isc: Gorgos Squad
+  longisc: 
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 444
+  otherprofiles: [445]
+  compositetroop:
+  -
+    code: 444
+    min: 1
+    max: 1
+  -
+    code: 446
+    min: 1
+    max: 1
+  faction: 8
+  logo: gorgos
+  name: GORGOS
+  type: TAG
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 18
+  bs: 14
+  ph: 16
+  wip: 13
+  arm: 6
+  bts: 9
+  w: 3
+  s: 7
+  ava: 1
+  backup: C
+  equipments: [ Symbiont Armor, ECM ]
+  bsw: [ Spitfire, Flammenspeer (2), Nanopulser, Chaksa Peripheral (1) ]
+  ccw: [ Viral CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 81
+- 
+  isc: Gorgos Squad
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 445
+  faction: 8
+  logo: gorgos
+  name: GORGOS
+  type: LI
+  classification: Mechanized Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  bsw: [ Spitfire, Nanopulser, Chaksa Peripheral (1) ]
+  ccw: [ Viral CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Chaksa Peripheral
+  longisc: 
+  code: 446
+  faction: 8
+  logo: gorgos
+  name: CHAKSA PERIPHERAL
+  type: LI
+  classification: Mechanized Troops
+  mov: 6-4
+  cc: 12
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  skills: [ "CH: Mimetism", "G: Synchronized" ]
+  bsw: [ Light Shotgun, Flash Grenades ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 7
+- 
+  isc: Clipsos Infiltrators
+  longisc: CLIPSOS Infiltrators
+  code: 447
+  faction: 8
+  logo: clipsos_infiltrators
+  name: CLIPSOS
+  type: SK
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "CH: TO Camouflage", Infiltration, Multiterrain ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 24
+  - 
+    code: 2
+    description: Swarm
+    bsw: [ Combi Rifle, Swarm Grenades ]
+    swc: 0.5
+    cost: 26
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Nullifier ]
+    swc: 1
+    cost: 24
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 1
+    cost: 26
+  - 
+    code: 5
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 25
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 25
+- 
+  isc: Makaul Troops
+  longisc: MAKAUL Troops
+  code: 448
+  faction: 8
+  logo: makaul
+  name: MAKAUL
+  type: WB
+  classification: Support Troops
+  cc: 4-422
+  bs: 11
+  ph: 13
+  arm: 131
+  bts: 3
+  w: 1
+  s: 2
+  ava: 6
+  backup: C
+  impetuosity: E
+  skills: [ "Fireteam: Tohaa", I-khol L1, Kinematika L2, Martial Arts L2 ]
+  ccw: [ Pistol, Viral CCW ]
+  options:
+  - 
+    code: 1
+    description: HF
+    bsw: [ Heavy Flamethrower, Zero-V Smoke Grenades ]
+    swc: 0
+    cost: 13
+  - 
+    code: 2
+    description: Swarm
+    bsw: [ Heavy Flamethrower, Swarm Grenades, Zero-V Smoke Grenades ]
+    swc: 0
+    cost: 16
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Zero-V Smoke Grenades ]
+    swc: 0
+    cost: 19
+  - 
+    code: 4
+    description: Combi
+    bsw: [ Combi Rifle, Zero-V Smoke Grenades ]
+    swc: 0
+    cost: 20
+- 
+  isc: Kumotail Bioingeneers
+  longisc: KUMOTAIL Bioengineers
+  code: 449
+  faction: 8
+  logo: kumotail
+  name: KUMOTAIL
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 14
+  arm: 1
+  bts: 0
+  s: 12
+  ava: 2
+  backup: C
+  skills: [ Doctor, Engineer, "Fireteam: Tohaa" ]
+  bsw: [ Combi Rifle, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 22
+- 
+  isc: Chaksa Auxiliars
+  longisc: 
+  code: 450
+  faction: 8
+  logo: chaksa_auxiliars
+  name: CHAKSA AUXILIAR
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 16
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  skills: [ "V: Courage" ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: HF
+    equipments: [ Baggage, Sensor ]
+    bsw: [ Heavy Flamethrower ]
+    swc: 0
+    cost: 10
+  - 
+    code: 2
+    description: HMG
+    skills: [ Neurocinetics ]
+    equipments: [ 360° Visor ]
+    bsw: [ HMG ]
+    swc: 1
+    cost: 25
+  - 
+    code: 3
+    description: SRL
+    bsw: [ Smart Rocket Launcher ]
+    swc: 1
+    cost: 21
+- 
+  isc: Chaksa Servants
+  longisc: CHAKSA SERVANT
+  code: 451
+  faction: 8
+  logo: chaksa_servants
+  name: CHAKSA SERVANT
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 12
+  bs: 10
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  skills: [ "CH: Mimetism", "G: Servant", Hyper-Dynamics L1 ]
+  ccw: [ Hedgehog Weapon ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 3
+- 
+  isc: Neema Saatar, Extros Regiment Officer
+  longisc: NEEMA SAATAR, Extros Regiment Officer
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 452
+  otherprofiles: [453]
+  faction: 8
+  logo: neema
+  name: NEEMA
+  type: HI
+  classification: Character
+  mov: 4-4
+  cc: 21
+  bs: 13
+  ph: 14
+  wip: 15
+  arm: 3
+  bts: 9
+  w: 2
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: I
+  skills: [ "Fireteam: Tohaa", Martial Arts L2, Poison ]
+  equipments: [ Symbiont Armor ]
+  bsw: [ Combi Rifle, Light Rocket Launcher, Nanopulser ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0.5
+    cost: 42
+  - 
+    code: 2
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 42
+- 
+  isc: Neema Saatar, Extros Regiment Officer
+  longisc: NEEMA SAATAR, Extros Regiment Officer
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 453
+  faction: 8
+  logo: neema
+  name: NEEMA
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 18
+  bs: 12
+  ph: 12
+  wip: 15
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  impetuosity: I
+  skills: [ "Fireteam: Tohaa", Martial Arts L2, Poison ]
