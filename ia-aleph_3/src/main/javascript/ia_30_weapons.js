@@ -51,13 +51,16 @@
         'Engineer': [deactivatorWeapon],
         'Forward Observer': ['Forward Observer', 'Flash Pulse']
     };
+    var lastTrooper = null;
     ui.weaponsDisplay = {
         initializeWeaponsDisplay: function () {
             $('#ia-weaponsDisplayButton').on('click', function () {
                 $('#ia-weaponsDisplayContainer').show('fast');
+                ui.trooperSelector.enableTrooperSelectorLogoSelector();
             });
         },
         updateWeaponsDisplayForTrooper: function (trooper) {
+            lastTrooper = trooper = trooper || lastTrooper;
             var weapons = [];
             var allWeapons = [].concat(trooper.allWeapons);
             $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
@@ -117,7 +120,8 @@
             ranges.sort(function (a, b) {
                 return a - b;
             });
-            var trooperProfileForWeapons = trooper;
+
+            var trooperProfileForWeapons = ui.trooperSelector.getSelectedTrooperLogo() || trooper;
 //            if (trooper.defaultWeaponProfile) {
 //                trooperProfileForWeapons = data.findTrooperByCode(trooper.defaultWeaponProfile);
 //            }
@@ -176,7 +180,11 @@
             }));
             $('#ia-weaponsDisplayContainer .ia-infoDownButton').on('click', function () {
                 $('#ia-weaponsDisplayContainer').hide('fast');
+                ui.trooperSelector.disableTrooperSelectorLogoSelector();
             });
+            if ($('#ia-weaponsDisplayContainer').is(':visible')) {
+                ui.trooperSelector.enableTrooperSelectorLogoSelector();
+            }
         }
     }
 
