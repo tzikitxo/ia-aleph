@@ -16391,3 +16391,933 @@
     description: 
     swc: 0
     cost: 4
+- 
+  isc: Yuan Yuan
+  longisc: 
+  code: 464
+  faction: 9
+  logo: yuan_yuan
+  name: YUAN YUAN
+  type: WB
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 19
+  bs: 9
+  ph: 14
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  irregular: I
+  impetuosity: E
+  skills: [ "AD: Inferior Combat Jump", Booty L1 ]
+  options:
+  - 
+    code: 1
+    description: SCCW
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 8
+  - 
+    code: 2
+    description: APCCW
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 8
+  - 
+    code: 3
+    description: DACCW
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 9
+  - 
+    code: 4
+    description: BS
+    bsw: [ Boarding Shotgun, Smoke Grenades ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 16
+  - 
+    code: 5
+    description: Rifle
+    bsw: [ Rifle, Smoke Grenades ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 14
+- 
+  isc: Authorized Bounty Hunters
+  longisc: 
+  code: 465
+  faction: 9
+  logo: authorized_bounty_hunters
+  name: BOUNTY HUNTER
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  irregular: I
+  skills: [ Booty L2, Stealth ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 14
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 13
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    ccw: [ Breaker Pistol (2), Knife ]
+    swc: 0.5
+    cost: 19
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    ccw: [ Pistol, Knife ]
+    swc: 1
+    cost: 20
+- 
+  isc: Wardrivers, Mercenary Hackers
+  longisc: WARDRIVERS, Mercenary Hackers
+  code: 466
+  faction: 9
+  logo: wardrivers_mercenary_hackers
+  name: WARDRIVER
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Sixth Sense L1 ]
+  bsw: [ Boarding Shotgun ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Def
+    skills: [ Hacker ]
+    equipments: [ Defensive Hacking Device ]
+    swc: 0.5
+    cost: 17
+  - 
+    code: 2
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 1
+    cost: 19
+- 
+  isc: CSU, Corporate Security Unit
+  longisc: CSU, Corporate Security Unit
+  code: 467
+  faction: 9
+  logo: csu_corporate_security_unit
+  name: CSU
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 12
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ MetaChemistry, Sixth Sense L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: BRifle
+    bsw: [ Breaker Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 2
+    description: Combi
+    bsw: [ Combi Rifle, Nanopulser ]
+    swc: 0
+    cost: 12
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Nanopulser ]
+    swc: 0
+    cost: 11
+- 
+  isc: Anaconda, Mercenary TAG Squad
+  longisc: ANACONDA, Mercenary TAG Squad
+  code: 468
+  otherprofiles: [469]
+  faction: 9
+  logo: anaconda
+  name: ANACONDA
+  type: TAG
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 16
+  bs: 13
+  ph: 16
+  wip: 13
+  arm: 6
+  bts: 6
+  w: 2
+  s: 7
+  ava: 1
+  backup: C
+  skills: [ Manned, "V: Courage" ]
+  equipments: [ "ED: Escape System", ECM ]
+  bsw: [ Spitfire + Light Flamethrower, Panzerfaust ]
+  ccw: [ CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 2
+    cost: 62
+- 
+  isc: Anaconda, Mercenary TAG Squad
+  longisc: ANACONDA OPERATOR
+  code: 469
+  faction: 9
+  logo: anaconda
+  name: OPERATOR
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ "V: Courage" ]
+  bsw: [ Spitfire ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Saito Togan
+  longisc: SAITO TOGAN, Mercenary Ninja
+  code: 470
+  faction: 9
+  logo: saito_togan
+  name: SAITO TOGAN
+  type: SK
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 24
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: TO Camouflage", Infiltration, Kinematika L1, Martial Arts L4, Multiterrain ]
+  bsw: [ Combi Rifle, Smoke Grenades ]
+  ccw: [ Pistol, EXP CCW, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 39
+- 
+  isc: Miyamoto Mushashi
+  longisc: 
+  code: 471
+  faction: 9
+  logo: miyamoto_mushashi
+  name: MIYAMOTO MUSHASHI
+  type: WB
+  classification: Mercenary Troops
+  mov: 6-4
+  cc: 25
+  bs: 9
+  ph: 14
+  wip: 15
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  skills: [ Dual Wield, Kinematika L2, Martial Arts L5, "V: No Wound Incapacitation" ]
+  bsw: [ Chain Rifle, Flash Pulse ]
+  ccw: [ Pistol, AP CCW, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 24
+- 
+  isc: Druze Shock Teams
+  longisc: 
+  code: 472
+  faction: 9
+  logo: druze_shock_teams
+  name: SHOCK
+  type: MI
+  classification: Mercenary Troops
+  mov: 4-2
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  equipments: [ X Visor ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, D.E.P. ]
+    swc: 0
+    cost: 20
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 25
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1.5
+    cost: 23
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 25
+- 
+  isc: Bashi Bazouks
+  longisc: 
+  code: 473
+  faction: 9
+  logo: bashi_bazouks
+  name: BASHI BAZOUK
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 15
+  bs: 11
+  ph: 10
+  wip: 12
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  irregular: I
+  skills: [ "AD: Parachutist / Zero-G" ]
+  equipments: [ Holoprojector L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Rifle
+    bsw: [ Rifle + Light Shotgun ]
+    swc: 0
+    cost: 15
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 14
+  - 
+    code: 3
+    description: APRifle
+    bsw: [ AP Rifle ]
+    swc: 0
+    cost: 15
+  - 
+    code: 4
+    description: EMauler
+    bsw: [ Combi Rifle, E/Mauler ]
+    swc: 0
+    cost: 16
+- 
+  isc: Highlander Caterans
+  longisc: 
+  code: 474
+  faction: 9
+  logo: highlander_caterans
+  name: CATERAN
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 19
+  bs: 12
+  ph: 13
+  wip: 12
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  irregular: I
+  skills: [ "CH: Limited Camouflage", "CH: Mimetism", Climbing Plus ]
+  ccw: [ Pistol, AP CCW ]
+  options:
+  - 
+    code: 1
+    description: T2Sniper
+    bsw: [ T2 Sniper Rifle ]
+    swc: 1
+    cost: 21
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 0.5
+    cost: 20
+- 
+  isc: Kempeitai
+  longisc: 
+  code: 475
+  faction: 9
+  logo: kempeitai
+  name: KEMPEI
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Basic Impersonation, Sixth Sense L1, "V: Courage" ]
+  ccw: [ Pistol, CCW, Electric Pulse, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, D-Charges ]
+    swc: 0
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, D-Charges ]
+    swc: 0
+    cost: 18
+- 
+  isc: Father Lucien Sforza, Authorized Bounty Hunter
+  longisc: FATHER LUCIEN SFORZA, Authorized Bounty Hunter
+  code: 476
+  faction: 9
+  logo: father_lucien_sforza
+  name: SFORZA
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 14
+  bs: 13
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  equipments: [ Holoprojector L2, X Visor ]
+  bsw: [ Viral Rifle + Adhesive Launcher, Nanopulser ]
+  ccw: [ Pistol, Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 23
+- 
+  isc: Señor Massacre
+  longisc: SEÑOR MASSACRE
+  code: 477
+  faction: 9
+  logo: senor_massacre
+  name: SEÑOR MASSACRE
+  type: WB
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 23
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Dual Wield, Kinematika L2, Natural Born Warrior, Regeneration ]
+  bsw: [ E/M Grenades, Zero-V Smoke Grenades ]
+  ccw: [ Pistol, AP CCW, E/M CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 28
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 27
+- 
+  isc: Valerya Gromoz, Mercenary Hacker
+  longisc: VALERYA GROMOZ, Mercenary Hacker
+  code: 478
+  faction: 9
+  logo: valerya_gromoz_mercenary_hacker
+  name: VALERYA GROMOZ
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  bsw: [ Combi Rifle + Marker ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 0.5
+    cost: 22
+- 
+  isc: Avicenna, Mercenary Doctor
+  longisc: AVICENNA, Mercenary Doctor
+  code: 479
+  faction: 9
+  logo: avicenna
+  name: AVICENNA
+  type: LI
+  classification: Mercenary Troops
+  mov: 6-4
+  cc: 13
+  bs: 11
+  ph: 13
+  wip: 15
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Doctor Plus, "V: No Wound Incapacitation" ]
+  equipments: [ MediKit ]
+  bsw: [ Combi Rifle ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 29
+- 
+  isc: Miranda Ashcroft, Authorized Bounty Hunter
+  longisc: MIRANDA ASHCROFT, Authorized Bounty Hunter
+  code: 480
+  faction: 9
+  logo: miranda_ashcroft_authorized_bounty_hunter
+  name: MIRANDA ASHCROFT
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 18
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  skills: [ I-khol L1, Stealth ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+  ccw: [ Pistol, Monofilament CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Nanopulser ]
+    swc: 0
+    cost: 19
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Nanopulser ]
+    swc: 0
+    cost: 18
+- 
+  isc: Warcors, War Correspondents
+  longisc: 
+  code: 481
+  faction: 9
+  logo: warcors
+  name: WARCOR
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 10
+  bs: 9
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  irregular: I
+  skills: [ Journalist L1 ]
+  bsw: [ Flash Pulse ]
+  ccw: [ Stun Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: SS
+    skills: [ Sixth Sense L1 ]
+    swc: 0
+    cost: 3
+  - 
+    code: 2
+    description: Aerocam
+    equipments: [ Aerocam ]
+    swc: 0
+    cost: 3
+- 
+  isc: KTS, Kaplan Tactical Services
+  longisc: KAPLAN TACTICAL SERVICES (KTS)
+  code: 482
+  faction: 9
+  logo: kts_kaplan_tactical_services
+  name: KAPLAN
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 3
+  skills: [ "CH: Mimetism", "V: Courage" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: ADHL
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Blitzen
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 23
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 28
+  - 
+    code: 5
+    description: Eng+ADHL
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 27
+  - 
+    code: 6
+    description: Eng+Blitzen
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 27
+  - 
+    code: 7
+    description: Doctor
+    skills: [ Doctor ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle, Blitzen ]
+    swc: 0
+    cost: 27
+- 
+  isc: McMurrough, Mercenary Dog-Warrior
+  longisc: McMURROUGH, Mercenary Dog-Warrior
+  code: 483
+  faction: 9
+  logo: mcmurrough
+  name: McMURROUGH
+  type: WB
+  classification: Mercenary Troops
+  mov: 6-4
+  cc: 23
+  bs: 11
+  ph: 16
+  wip: 14
+  arm: 4
+  bts: 3
+  w: 2
+  s: 6
+  ava: 1
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L2, Martial Arts L3, Super-Jump, Total Immunity ]
+  bsw: [ Chain Rifle (2), Grenades, Smoke Grenades ]
+  ccw: [ Templar CCW (AP + DA) ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 31
+- 
+  isc: Yojimbo, Sword for Hire
+  longisc: YOJIMBO
+  iscspecification: MOUNTED
+  code: 484
+  otherprofiles: [485]
+  faction: 9
+  logo: yojimbo
+  name: YOJIMBO
+  type: WB
+  classification: Mercenary Troops
+  mov: 8-6
+  cc: 24
+  bs: 12
+  ph: 14
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 4
+  ava: 1
+  backup: C
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L2, Martial Arts L4, "V: No Wound Incapacitation" ]
+  equipments: [ Motorcycle ]
+  bsw: [ Contender, Nanopulser, Smoke Grenades, Smoke LGL, CrazyKoalas (2) ]
+  ccw: [ Pistol, DA CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 21
+- 
+  isc: Yojimbo, Sword for Hire
+  longisc: YOJIMBO
+  iscspecification: DISMOUNTED
+  code: 485
+  faction: 9
+  logo: yojimbo
+  name: YOJIMBO
+  type: WB
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 24
+  bs: 12
+  ph: 14
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  impetuosity: E
+  skills: [ Kinematika L1, Martial Arts L4, "V: No Wound Incapacitation" ]
+- 
+  isc: Scarface & Cordelia, Mercenary Armored Team
+  longisc: SCARFACE & CORDELIA, MERCENARY ARMORED TEAM
+  code: 486
+  otherprofiles: [487]
+  compositetroop:
+  -
+    code: 486
+    min: 1
+    max: 1
+  -
+    code: 488
+    min: 1
+    max: 1
+  faction: 9
+  logo: scarface
+  name: SCARFACE
+  type: TAG
+  classification: Mercenary Troops
+  mov: 6-4
+  cc: 17
+  bs: 13
+  ph: 15
+  wip: 13
+  arm: 5
+  bts: 6
+  w: 3
+  s: 7
+  ava: 1
+  backup: C
+  impetuosity: F
+  skills: [ Manned, "V: Courage" ]
+  equipments: [ ECM ]
+  bsw: [ Mk12 (2), Panzerfaust ]
+  ccw: [ CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 1.5
+    cost: 47
+- 
+  isc: Scarface & Cordelia, Mercenary Armored Team
+  longisc: SCARFACE TURNER, MERCENARY T.A.G. PILOT
+  code: 487
+  faction: 9
+  logo: scarface
+  name: SCARFACE
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  impetuosity: F
+  skills: [ Pilot, "V: Courage" ]
+  bsw: [ Light Shotgun ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: '-'
+    cost: '-'
+- 
+  isc: Scarface & Cordelia, Mercenary Armored Team
+  longisc: CORDELIA TURNER, MERCENARY ENGINEER
+  code: 489
+  faction: 9
+  logo: cordelia
+  name: CORDELIA
+  type: LI
+  classification: Mercenary Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ "CH: Mimetism", Engineer, "V: Courage" ]
+  bsw: [ Combi Rifle, Chain-colt, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 17
