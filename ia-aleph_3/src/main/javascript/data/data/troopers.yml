@@ -15276,3 +15276,256 @@
     bsw: [ Spitfire ]
     swc: 2.5
     cost: 75
+- 
+  isc: Kamael Light Infantry
+  longisc: KAMAEL Light Infantry
+  code: 435
+  faction: 8
+  logo: kamael_light_infantry
+  name: KAMAEL
+  type: LI
+  classification: Line Troops
+  mov: 4-4
+  cc: 13
+  bs: 11
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: T
+  backup: C
+  skills: [ "Fireteam: Tohaa" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 18
+  - 
+    code: 3
+    description: LGL
+    bsw: [ Combi Rifle + Light Grenade Launcher ]
+    swc: 1
+    cost: 16
+  - 
+    code: 4
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 1
+    cost: 15
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Defensive Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 1
+    cost: 18
+  - 
+    code: 6
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 13
+  - 
+    code: 7
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ Medikit ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 14
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 12
+- 
+  isc: Sakiel Regiment
+  longisc: 
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 436
+  otherprofiles: [437]
+  faction: 8
+  logo: sakiel_regiment
+  name: SAKIEL
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 2
+  bts: 0
+  w: 1
+  s: 2
+  ava: 6
+  backup: C
+  impetuosity: I
+  skills: [ "Fireteam: Tohaa", "V: Courage" ]
+  equipments: [ Symbiont Armor ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Swarm Grenades ]
+    swc: 0
+    cost: 20
+  - 
+    code: 2
+    description: Nullifier
+    bsw: [ Combi Rifle, Nullifier ]
+    swc: 0.5
+    cost: 18
+  - 
+    code: 3
+    description: LRL
+    bsw: [ Combi Rifle, Light Rocket Launcher ]
+    swc: 1
+    cost: 23
+  - 
+    code: 4
+    description: VCombi
+    bsw: [ Viral Combi Rifle, Swarm Grenades ]
+    swc: 0
+    cost: 26
+  - 
+    code: 5
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 23
+  - 
+    code: 6
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle, Swarm Grenades ]
+    swc: 0
+    cost: 22
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Viral Combi Rifle, Swarm Grenades ]
+    swc: 0
+    cost: 26
+- 
+  isc: Sakiel Regiment
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 437
+  faction: 8
+  logo: sakiel_regiment
+  name: SAKIEL
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 6
+  backup: C
+  impetuosity: I
+  skills: [ "Fireteam: Tohaa", "V: Courage" ]
+- 
+  isc: Gao-Rael Unit
+  longisc: 
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 438
+  otherprofiles: [439]
+  faction: 8
+  logo: gao_rael
+  name: GAO-RAEL
+  type: MI
+  classification: Elite Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ "Fireteam: Tohaa" ]
+  equipments: [ Symbiont Armor, Multispectral Visor L2 ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Adhesive Launcher ]
+    swc: 0
+    cost: 31
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Swarm Grenades ]
+    swc: 0
+    cost: 32
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ Sniper Rifle ]
+    swc: 1
+    cost: 33
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 36
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Adhesive Launcher ]
+    swc: 0
+    cost: 31
+- 
+  isc: Gao-Rael Unit
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 439
+  faction: 8
+  logo: gao_rael
+  name: GAO-RAEL
+  type: LI
+  classification: Elite Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ "Fireteam: Tohaa" ]
+  equipments: [ Multispectral Visor L2 ]
+
