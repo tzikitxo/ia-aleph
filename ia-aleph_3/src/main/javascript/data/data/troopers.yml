@@ -16040,3 +16040,354 @@
   backup: C
   impetuosity: I
   skills: [ "Fireteam: Tohaa", Martial Arts L2, Poison ]
+- 
+  isc: Tohaa Diplomatic Delegates
+  longisc: 
+  code: 454
+  faction: 8
+  logo: tohaa_diplomatic_delegates
+  name: DIPLOMATIC DELEGATE
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 12
+  bs: 10
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  irregular: I
+  options:
+  - 
+    code: 1
+    description: Civvie
+    skills: [ Civvie ]
+    swc: 0
+    cost: 0
+  - 
+    code: 2
+    description: Specialist
+    skills: [ iKohl L1, Specialist Troop ]
+    bsw: [ Nanopulser, Flash Pulse ]
+    ccw: [ Pistol, Knife ]
+    swc: 0
+    cost: 5
+- 
+  isc: Hatail Aelis Keesan
+  longisc: 
+  code: 455
+  faction: 8
+  logo: hatail_aelis_keesan
+  name: HATAIL AELIS KEESAN
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 14
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Hacker, "Fireteam: Tohaa", Regeneration, Sensor ]
+  equipments: [ Defensive Hacking Device ]
+  bsw: [ Nanopulser, Flash Pulse, D-Charges ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: VCombi
+    bsw: [ Viral Combi Rifle ]
+    swc: 0.5
+    cost: 33
+  - 
+    code: 2
+    description: K1Combi
+    bsw: [ K1 Combi Rifle ]
+    swc: 0.5
+    cost: 32
+- 
+  isc: Nikoul Ambush Unit
+  longisc: 
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 456
+  otherprofiles: [457]
+  faction: 8
+  logo: nikoul_ambush_unit
+  name: NIKOUL
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  skills: [ Sapper ]
+  equipments: [ Symbiont Armor, Multispectral Visor L1 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    bsw: [ Viral Sniper Rifle ]
+    swc: 1.5
+    cost: 30
+  - 
+    code: 2
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Viral Sniper Rifle, Antipersonnel Mines ]
+    swc: 1.5
+    cost: 32
+- 
+  isc: Nikoul Ambush Unit
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 457
+  faction: 8
+  logo: nikoul_ambush_unit
+  name: NIKOUL
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ Sapper ]
+  equipments: [ Multispectral Visor L1 ]
+  options:
+- 
+  isc: Kotail Mobile Unit
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 458
+  otherprofiles: [459]
+  faction: 8
+  logo: kotail_mobile_unit
+  name: KOTAIL
+  type: LI
+  classification: Veteran Troops
+  mov: 6-4
+  cc: 15
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 2
+  bts: 3
+  w: 1
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ Super-Jump, "V: Courage" ]
+  equipments: [ Symbiont Armour, Holoprojector L2 ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, E/M Grenades ]
+    swc: 0
+    cost: 32
+  - 
+    code: 2
+    description: 2Combi
+    bsw: [ Combi Rifle (2 ]
+    swc: 0.5
+    cost: 32
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, E/M Grenades ]
+    swc: 0
+    cost: 31
+  - 
+    code: 4
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 35
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, E/M Grenades ]
+    swc: 0
+    cost: 33
+- 
+  isc: Kotail Mobile Unit
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 459
+  faction: 8
+  logo: kotail_mobile_unit
+  name: KOTAIL
+  type: LI
+  classification: Veteran Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+  skills: [ "V: Courage" ]
+- 
+  isc: Rasail Boarding Team
+  longisc: 
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 460
+  otherprofiles: [461]
+  compositetroop:
+  -
+    code: 460
+    min: 1
+    max: 1
+  -
+    code: 462
+    min: 1
+    max: 1
+  faction: 8
+  logo: rasail_boarding_team
+  name: RASAIL
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 2
+  s: 2
+  ava: 4
+  backup: C
+  skills: [ "V: Courage" ]
+  equipments: [ Symbiont Armor, Nanoscreen ]
+  bsw: [ Chaksa Peripheral (1) ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Mines ]
+    swc: 0
+    cost: 37
+  - 
+    code: 2
+    description: VCombi
+    bsw: [ Viral Combi Rifle ]
+    swc: 0
+    cost: 42
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, Contender ]
+    swc: 0
+    cost: 38
+  - 
+    code: 4
+    description: 2Cont
+    bsw: [ Contender (2), Light Shotgun ]
+    swc: 0
+    cost: 39
+  - 
+    code: 5
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 42
+  - 
+    code: 6
+    description: Lt+Combi
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Mines ]
+    swc: 0
+    cost: 37
+  - 
+    code: 7
+    description: Lt+VCombi
+    skills: [ Lieutenant ]
+    bsw: [ Viral Combi Rifle ]
+    swc: 0
+    cost: 42
+  - 
+    code: 8
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 2
+    cost: 42
+- 
+  isc: Rasail Boarding Team
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 461
+  faction: 8
+  logo: rasail_boarding_team
+  name: RASAIL
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  backup: C
+- 
+  isc: Rasail Boarding Team
+  longisc: CHAKSA PERIPHERAL
+  code: 463
+  faction: 8
+  logo: rasail_boarding_team
+  name: CHAKSA PERIPHERAL
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 6-4
+  cc: 12
+  bs: 11
+  ph: 12
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: '-'
+  skills: [ "CH: Mimetism", "G: Synchronized" ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4
