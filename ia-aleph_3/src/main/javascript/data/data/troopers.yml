@@ -12403,7 +12403,6 @@
   iscspecification: SEED-EMBRYO
   code: 368
   otherprofiles: [369]
-  defaultWeaponProfile: 369
   faction: 6
   logo: shasvastii_cadmus
   name: CADMUS-SEED
@@ -15605,7 +15604,7 @@
 - 
   isc: Ectros Regiment
   longisc: 
-  iscspecification: INACTIVE SYMBIONT ARMOR
+  iscspecification: ACTIVE SYMBIONT ARMOR
   code: 442
   otherprofiles: [443]
   faction: 8

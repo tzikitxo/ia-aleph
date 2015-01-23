@@ -110,7 +110,7 @@
             </div>
         </script>
         <script id="ia-trooperSelectorTemplate" type="text/x-handlebars-template">
-            <div class="ia-trooperSelectorContainer ia-faction-{{faction.logo}}" data-ia-troopercode="{{trooper.code}}" >
+            <div class="ia-trooperSelectorContainer ia-trooperSelectorContainer-{{trooper.code}} ia-faction-{{faction.logo}}" data-ia-troopercode="{{trooper.code}}" >
             <div class="ia-trooperSelectorHeader">
             <span class="ia-trooperIsc">ISC: {{trooper.isc}}</span>
             <span class="ia-trooperClassification">{{trooper.classification}}</span>
@@ -234,7 +234,7 @@
             <td class="ia-weaponRangeCell"><div class="ia-weaponRangeCellContent" style="background-color: {{weaponColorByRange this}};">{{this}}</div></td>
             {{/each}}
             {{else}}<td class="ia-weaponRangeReplacerCell" colspan="{{rangeLength}}" >-</td>{{/if}}  
-            <td class="ia-weaponDamageCell" >{{damage}}</td>
+            <td class="ia-weaponDamageCell" >{{{damage}}}</td>
             <td class="ia-weaponBurstCell" >{{burst}}</td>
             <td class="ia-weaponAmmunitionsCell" >{{ammunitions}}</td>
             <td>{{join traits}}</td>

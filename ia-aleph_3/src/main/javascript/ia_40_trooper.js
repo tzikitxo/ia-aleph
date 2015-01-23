@@ -142,23 +142,40 @@
             }
         },
         enableTrooperSelectorLogoSelector: function () {
-            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').addClass('ia-trooperLogoSelectionMode');
+            var lastSelected = this.getSelectedTrooperLogo();
+            this.disableTrooperSelectorLogoSelector();
+            var selectedTrooper = this.getSelectedTrooperOption();
+            log('enable logo selector for troop = ', selectedTrooper);
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorContainer').each(function () {
+                var trooper = data.findTrooperByCode(Number($(this).data('ia-troopercode')));
+                if (!trooper.hasOptions || trooper.troopercode === selectedTrooper.troopercode) {
+                    $('.ia-trooperSelectorMain:first', this).addClass('ia-trooperLogoSelectionMode');
+                    if (lastSelected && lastSelected.troopercode === trooper.troopercode) {
+                        $('.ia-trooperSelectorMain:first', this).addClass('ia-selected');
+                    }
+                }
+            });
             if ($('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').length === 0) {
-                $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').first().addClass('ia-selected');
+                $('#ia-trooperSelectorWrapper .ia-trooperSelectorContainer-' + selectedTrooper.troopercode + ' .ia-trooperSelectorMain:first').addClass('ia-selected');
             }
-            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').off('click').on('click', function () {
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-trooperLogoSelectionMode .ia-trooperSelectorLogoSelectorOverlay').on('click', function () {
+                log('selected trooper logo = ', $(this).closest('.ia-trooperSelectorContainer').data('ia-troopercode'));
                 $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').removeClass('ia-selected');
-                $(this).addClass('ia-selected');
+                $(this).closest('.ia-trooperSelectorMain').addClass('ia-selected');
                 ui.weaponsDisplay.updateWeaponsDisplayForTrooper();
             });
         },
         disableTrooperSelectorLogoSelector: function () {
+            log('disable logo selector');
             $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').removeClass('ia-trooperLogoSelectionMode');
             $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').removeClass('ia-selected');
-            $('#ia-trooperSelectorWrapper .ia-trooperSelectorMain').off('click');
+            $('#ia-trooperSelectorWrapper .ia-trooperSelectorLogoSelectorOverlay').off('click');
         },
         getSelectedTrooperLogo: function () {
             return data.findTrooperByCode(Number($('#ia-trooperSelectorWrapper .ia-trooperSelectorMain.ia-selected').closest('.ia-trooperSelectorContainer').data('ia-troopercode')));
+        },
+        getSelectedTrooperOption: function () {
+            return data.findTrooperByCode(Number($('#ia-trooperSelectorWrapper .ia-trooperSelectorOptionRow.ia-selected').closest('.ia-trooperSelectorContainer').data('ia-troopercode')));
         }
     };
 
