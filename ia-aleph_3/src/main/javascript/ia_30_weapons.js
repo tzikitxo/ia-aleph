@@ -60,6 +60,10 @@
             });
         },
         updateWeaponsDisplayForTrooper: function (trooper) {
+//            if ($('#ia-weaponsDisplayContainer').is(':visible') && (lastTrooper === null || (trooper && trooper.troopercode !== lastTrooper.troopercode))) {
+            if ($('#ia-weaponsDisplayContainer').is(':visible')) {
+                ui.trooperSelector.enableTrooperSelectorLogoSelector();
+            }
             lastTrooper = trooper = trooper || lastTrooper;
             var weapons = [];
             var allWeapons = [].concat(trooper.allWeapons);
@@ -131,7 +135,7 @@
                     rangeSum: 0
                 }, weapon);
                 if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
-                    weapon.damage = eval(weapon.damage.replace(/WIP/, trooperProfileForWeapons.wip).replace(/PH/, trooperProfileForWeapons.ph));
+                    weapon.damage = '<i>' + eval(weapon.damage.replace(/WIP/, trooperProfileForWeapons.wip).replace(/PH/, trooperProfileForWeapons.ph)) + '</i>';
                 }
                 var basicValue = trooperProfileForWeapons.bs;
                 if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon || weapon.name === deactivatorWeapon) {
@@ -182,9 +186,6 @@
                 $('#ia-weaponsDisplayContainer').hide('fast');
                 ui.trooperSelector.disableTrooperSelectorLogoSelector();
             });
-            if ($('#ia-weaponsDisplayContainer').is(':visible')) {
-                ui.trooperSelector.enableTrooperSelectorLogoSelector();
-            }
         }
     }
 

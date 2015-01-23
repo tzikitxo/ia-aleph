@@ -37,6 +37,7 @@ var data = ia.data;
         troopers = [];
         $.each(troopersToLoad, function (i, trooper) {
             troopersByCode[trooper.code] = trooper = $.extend({
+                troopercode: trooper.code,
                 bsw: [],
                 ccw: [],
                 skills: [],
@@ -69,7 +70,6 @@ var data = ia.data;
             var trooperOptionsByCode = {};
             trooper.options = $.map(trooper.options || [], function (option) {
                 option = $.extend({
-                    troopercode: trooper.code,
                     optioncode: option.code
                 }, trooper, {
                     swc: '',
