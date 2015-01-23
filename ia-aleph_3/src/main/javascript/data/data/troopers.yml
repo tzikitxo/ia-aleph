@@ -14895,3 +14895,384 @@
     skills: [ Lieutenant ]
     swc: 0
     cost: 39
+- 
+  isc: Penthesilea, Amazon Warrioress
+  longisc: 
+  iscspecification: MOUNTED
+  code: 425
+  otherprofiles: [ 426 ]
+  faction: 7
+  logo: penthesilea
+  name: PENTHESILEA
+  type: WB
+  classification: Character
+  mov: 8-6
+  cc: 22
+  bs: 13
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 4
+  ava: 1
+  backup: C2
+  impetuosity: I
+  skills: [ I-khol L2, Kinematika L2, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Disruptor Device", Motorcycle ]
+  bsw: [ Combi Rifle, Contender, Nanopulser ]
+  ccw: [ Pistol, Monofilament CCW ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 44
+- 
+  isc: Penthesilea, Amazon Warrioress
+  longisc: 
+  iscspecification: DISMOUNTED
+  code: 426
+  faction: 7
+  logo: penthesilea
+  name: PENTHESILEA
+  type: WB
+  classification: Character
+  mov: 4-4
+  cc: 22
+  bs: 13
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: I
+  skills: [ I-khol L2, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Disruptor Device" ]
+- 
+  isc: Thamyris the Aoidos
+  longisc: THAMYRIS the Aoidos
+  code: 427
+  faction: 7
+  logo: thamyris
+  name: THAMYRIS
+  type: LI
+  classification: Character
+  mov: 4-4
+  cc: 17
+  bs: 12
+  ph: 12
+  wip: 14
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  skills: [ Journalist L2, "V: No Wound Incapacitation" ]
+  bsw: [ Marker, Nanopulser ]
+  ccw: [ Assault Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: 
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    swc: 0.5
+    cost: 25
+- 
+  isc: Patroclus, Myrmidon Special Officer
+  longisc: PATROCLUS
+  code: 428
+  faction: 7
+  logo: patroclus
+  name: PATROCLUS
+  type: MI
+  classification: Character
+  mov: 6-4
+  cc: 21
+  bs: 13
+  ph: 13
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  skills: [ "Fireteam: Enomotarchos", Kinematika L1, Martial Arts L3, "V: No Wound Incapacitation" ]
+  equipments: [ "ODD: Optical Disruptor Device", Holoprojector L1 ]
+  bsw: [ Nanopulser, Smoke Grenades ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 52
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 54
+- 
+  isc: Chandra Sergeant Thrasymedes
+  longisc: 
+  code: 429
+  faction: 7
+  logo: chandra_sergeant_thrasymedes
+  name: THRASYMEDES
+  type: MI
+  classification: Character
+  mov: 4-2
+  cc: 19
+  bs: 12
+  ph: 13
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ "Fireteam: Enomotarchos", Specialist Troop ]
+  equipments: [ "ODD: Optical Disruptor Device", 360° Visor ]
+  ccw: [ Pistol, Shock CCW ]
+  options:
+  - 
+    code: 1
+    description: Inf
+    skills: [ Infiltration ]
+    bsw: [ Submachine gun, Nanopulser, Flash Grenades ]
+    swc: 0
+    cost: 26
+  - 
+    code: 2
+    description: Fireteam
+    bsw: [ Submachine gun, Light Rocket Launcher, Nanopulser, Flash Grenades ]
+    swc: 0.5
+    cost: 29
+- 
+  isc: DACTYLS
+  longisc: 
+  code: 430
+  faction: 7
+  logo: dactyls
+  name: DACTYLS
+  type: LI
+  classification: Support Troops
+  mov: 4-4
+  cc: 16
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 1
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C2
+  skills: [ "V: Dogged" ]
+  ccw: [ Breaker Pistol (2), Knife ]
+  options:
+  - 
+    code: 1
+    description: Eng+ADHL
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Adhesive Launcher, D-Charges ]
+    swc: 0
+    cost: 23
+  - 
+    code: 2
+    description: Eng+FS
+    skills: [ Engineer ]
+    bsw: [ Combi Rifle, Flammenspeer, D-Charges ]
+    swc: 0.5
+    cost: 24
+  - 
+    code: 3
+    description: Doctor
+    skills: [ Doctor ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle, Adhesive Launcher, Nimbus Grenades ]
+    swc: 0
+    cost: 23
+- 
+  isc: Dasyus
+  longisc: 
+  code: 431
+  faction: 7
+  logo: dasyus
+  name: DASYU
+  type: SK
+  classification: Elite Troops
+  mov: 4-4
+  cc: 13
+  bs: 12
+  ph: 13
+  wip: 14
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 2
+  backup: C2
+  skills: [ "CH: TO Camouflage", Infiltration, Multiterrain, "V: No Wound Incapacitation" ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, Nanopulser, Antipersonnel Mines ]
+    swc: 0
+    cost: 35
+  - 
+    code: 2
+    description: BS
+    bsw: [ Boarding Shotgun, Nanopulser, Antipersonnel Mines ]
+    swc: 0
+    cost: 34
+  - 
+    code: 3
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle, Nanopulser ]
+    swc: 1.5
+    cost: 42
+  - 
+    code: 4
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Assault Hacking Device ]
+    bsw: [ Combi Rifle, Nanopulser ]
+    swc: 0.5
+    cost: 42
+  - 
+    code: 5
+    description: FO
+    equipments: [ Forward Observer ]
+    bsw: [ Combi Rifle, Nanopulser, Antipersonnel Mines ]
+    swc: 0
+    cost: 36
+  - 
+    code: 6
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Nanopulser, Antipersonnel Mines ]
+    swc: 2
+    cost: 35
+- 
+  isc: Daleth Rebots
+  longisc: DALETH Rebots
+  code: 432
+  faction: 7
+  logo: daleth_rebots
+  name: DALETH
+  type: REM
+  classification: Support Troops
+  mov: 6-4
+  cc: 6
+  bs: 11
+  ph: 10
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ Climbing Plus, Deactivator, Forward observer, "G: Remote Presence", Sat-lock, Sensor ]
+  equipments: [ Repeater ]
+  bsw: [ Combi Rifle, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 17
+- 
+  isc: Lamedh Rebots
+  longisc: LAMEDH Rebots
+  code: 433
+  faction: 7
+  logo: lamedh_rebots
+  name: LAMEDH
+  type: REM
+  classification: Support Troops
+  mov: 6-6
+  cc: 8
+  bs: 8
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 3
+  ava: 2
+  skills: [ "CH: Mimetism", "G: Remote Presence", Multiterrain ]
+  equipments: [ Repeater ]
+  bsw: [ Flash Pulse, Sniffer ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 8
+- 
+  isc: Achilles
+  longisc: 
+  code: 434
+  faction: 7
+  logo: achilles
+  name: ACHILLES
+  type: HI
+  classification: Character
+  mov: 6-4
+  cc: 24
+  bs: 15
+  ph: 15
+  wip: 15
+  arm: 4
+  bts: 6
+  w: 3
+  s: 2
+  ava: 1
+  backup: C2
+  impetuosity: F
+  skills: [ Kinematika L2, Martial Arts L4, Multiterrain ]
+  equipments: [ "ODD: Optical Distruptor Device" ]
+  bsw: [ Nanopulser ]
+  ccw: [ Pistol, EXP CCW ]
+  options:
+  - 
+    code: 1
+    description: MRifle
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 73
+  - 
+    code: 2
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 2.5
+    cost: 75
+  - 
+    code: 3
+    description: Lt+MRifle
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 73
+  - 
+    code: 4
+    description: Lt+Spitfire
+    skills: [ Lieutenant ]
+    bsw: [ Spitfire ]
+    swc: 2.5
+    cost: 75
