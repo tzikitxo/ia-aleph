@@ -15529,3 +15529,76 @@
   skills: [ "Fireteam: Tohaa" ]
   equipments: [ Multispectral Visor L2 ]
 
+- 
+  isc: Gao-Tarsos Unit
+  longisc: 
+  iscspecification: ACTIVE SYMBIONT ARMOR
+  code: 440
+  otherprofiles: [441]
+  faction: 8
+  logo: gao_tarsos
+  name: GAO-TARSOS
+  type: MI
+  classification: Spec. Trained Troops
+  mov: 4-2
+  cc: 15
+  bs: 12
+  ph: 12
+  wip: 13
+  arm: 3
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
+  skills: [ "AD: Combat Jump" ]
+  equipments: [ Symbiont Armor ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle, D-Charges ]
+    swc: 0
+    cost: 31
+  - 
+    code: 2
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 39
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun, D-Charges ]
+    swc: 0
+    cost: 30
+  - 
+    code: 4
+    description: Paramedic
+    skills: [ Paramedic ]
+    equipments: [ MediKit ]
+    bsw: [ Combi Rifle, D-Charges ]
+    swc: 0
+    cost: 33
+- 
+  isc: Gao-Tarsos Unit
+  longisc: 
+  iscspecification: INACTIVE SYMBIONT ARMOR
+  code: 441
+  faction: 8
+  logo: gao_tarsos
+  name: GAO-TARSOS
+  type: LI
+  classification: Spec. Trained Troops
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 11
+  wip: 13
+  arm: 0
+  bts: 0
+  w: 1
+  s: 2
+  ava: 3
+  backup: C
