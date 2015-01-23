@@ -16179,7 +16179,7 @@
 - 
   isc: Kotail Mobile Unit
   longisc: 
-  iscspecification: INACTIVE SYMBIONT ARMOR
+  iscspecification: ACTIVE SYMBIONT ARMOR
   code: 458
   otherprofiles: [459]
   faction: 8
@@ -16211,7 +16211,7 @@
   - 
     code: 2
     description: 2Combi
-    bsw: [ Combi Rifle (2 ]
+    bsw: [ Combi Rifle (2) ]
     swc: 0.5
     cost: 32
   - 
