@@ -448,8 +448,13 @@ body{
     &.ia-trooperLogoSelectionMode .ia-trooperSelectorLogoSelectorOverlay{
         cursor: pointer;
     }
-    &.ia-selected .ia-trooperSelectorLogoSelectorOverlay{
-        background-image: url('../img/theme/trooperSelectorSelectedOverlay.png');
+    &.ia-selected {
+        .ia-trooperSelectorLogoSelectorOverlay{
+            background-image: url('../img/theme/trooperSelectorSelectedOverlay.png');
+        }
+        .ia-trooperType{
+            color: #847442;
+        }
     }
     .ia-trooperType{
         position: relative;
