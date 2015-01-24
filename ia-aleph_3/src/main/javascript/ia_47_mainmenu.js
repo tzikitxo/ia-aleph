@@ -25,14 +25,15 @@
             })).appendTo('body');
             mainMenu.dialog({
                 modal: true,
-                width: 450,
-                height: 250
+                width: 250,
+                height: 460
             });
-            $('#ia-mainMenuContainer .ia-mainMenuFactionButton').on('click', function () {
-                var factionCode = Number($(this).data('ia-factioncode'));
-                data.loadTroopersByFaction(factionCode);
+            $('#ia-mainMenuContainer .ia-mainMenuFactionButton, #ia-mainMenuContainer .ia-mainMenuSectorialButton').on('click', function () {
+                var factionCode = Number($(this).closest('.ia-mainMenu-FactionRow').data('ia-factioncode')),
+                        sectorialCode = $(this).hasClass('ia-mainMenuSectorialButton') ? Number($(this).data('ia-sectorialcode')) : null;
+                data.loadTroopersByFaction(sectorialCode || factionCode);
                 roster.updateRosterData({
-                    factionCode: factionCode,
+                    factionCode: sectorialCode || factionCode,
                     troopers: []
                 });
                 ui.main.updateMainScreen();

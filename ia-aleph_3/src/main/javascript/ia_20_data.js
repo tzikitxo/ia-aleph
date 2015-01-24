@@ -20,19 +20,28 @@ var data = ia.data;
     var factionsByCode = {};
     $.each(data.factions, function (i, faction) {
         factionsByCode[faction.code] = faction;
+        faction.sectorials = [];
     });
 
-    data.findFactionByCode = function (code) {
-        return factionsByCode[code];
+    var sectorialsByCode = {};
+    $.each(data.sectorials, function (i, sectorial) {
+        factionsByCode[sectorial.faction].sectorials.push(sectorial);
+        sectorialsByCode[sectorial.code] = sectorial;
+    });
+
+    data.findFactionOrSectorialByCode = function (code) {
+        return factionsByCode[code] || sectorialsByCode[code];
     };
 
     data.getFactions = function () {
         return data.factions;
     };
 
+
+
     var troopersByCode = {};
     var troopers = [];
-    function loadTroopers(troopersToLoad) {
+    function loadTroopers(troopersToLoad, factionOrSectorial) {
         troopersByCode = {};
         troopers = [];
         $.each(troopersToLoad, function (i, trooper) {
@@ -129,14 +138,49 @@ var data = ia.data;
         return troopersByCode[code];
     };
 
+
+    var troopersDataByCode = {};
+    $.each(data.troopers, function (i, trooper) {
+        troopersDataByCode[trooper.code] = trooper;
+    });
     data.loadTroopersByFaction = function (factionCode) {
         var troopersToLoad = [];
-        $.each(data.troopers, function (i, trooper) {
-            if (trooper.faction === factionCode) {
-                troopersToLoad.push(trooper);
+
+        var sectorial = sectorialsByCode[factionCode];
+        if (sectorial) {
+            function loadTrooper(trooperCode, trooperSpecs) {
+                var trooperData = troopersDataByCode[trooperCode];
+                trooperData = $.extend(true, {}, trooperData);
+                trooperData.ava = trooperSpecs.ava;
+                if (trooperSpecs.link) {
+                    (trooperData.skills = trooperData.skills || []).push("Fireteam");
+                }
+                troopersToLoad.push(trooperData);
+                if (trooperData.otherprofiles) {
+                    $.each(trooperData.otherprofiles, function (i, otherProfile) {
+                        loadTrooper(otherProfile, trooperSpecs);
+                    });
+                }
+                if (trooperData.compositetroop) {
+                    $.each(trooperData.compositetroop, function (i, otherTrooper) {
+                        if (otherTrooper.code !== trooperData.code) {
+                            loadTrooper(otherTrooper.code, trooperSpecs);
+                        }
+                    });
+                }
             }
-        });
-        loadTroopers(troopersToLoad);
+            $.each(sectorial.troopers, function (i, sectorialTrooper) {
+                loadTrooper(sectorialTrooper.code, sectorialTrooper);
+            });
+        } else {
+            $.each(data.troopers, function (i, trooperData) {
+                if (trooperData.faction === factionCode) {
+                    troopersToLoad.push($.extend(true, {}, trooperData));
+                }
+            });
+        }
+
+        loadTroopers(troopersToLoad, sectorial || factionsByCode[factionCode]);
     };
     data.getTroopers = function () {
         return troopers;
