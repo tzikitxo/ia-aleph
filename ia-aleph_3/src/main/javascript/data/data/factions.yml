@@ -30,6 +30,19 @@
   code: 3
   name: Ariadna
   logo: ariadna
+  troopers:
+  -
+    code: 466
+    ava: 1
+  -
+    code: 465
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 480
+    ava: 1
 - 
   code: 4
   name: Haqqislam
