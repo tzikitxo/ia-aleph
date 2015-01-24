@@ -645,7 +645,8 @@
     description: Lieutenant
     skills: [ Lieutenant ]
     swc: 2
-    cost: 93- 
+    cost: 93
+- 
   isc: Dragões, Acontecimento Dragoons
   longisc: DRAGÕES, Acontecimento Dragoons
   code: 110
