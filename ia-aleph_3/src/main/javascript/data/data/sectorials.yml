@@ -76,3 +76,176 @@
   -
     code: 481
     ava: 1
+-
+  name: Military Orders
+  code: 51
+  faction: 1
+  logo: military_orders
+  troopers:
+  -
+    code: 100
+    ava: 3
+    link: true
+  -
+    code: 490
+    ava: T
+    link: true
+  -
+    code: 282
+    ava: 4
+  -
+    code: 105
+    ava: 4
+    link: true
+  -
+    code: 264
+    ava: 4
+    link: true
+  -
+    code: 265
+    ava: 4
+  -
+    code: 266
+    ava: 4
+  -
+    code: 267
+    ava: 4
+    link: true
+  -
+    code: 268
+    ava: 6
+    link: true
+  -
+    code: 106
+    ava: 3
+  -
+    code: 271
+    ava: 2
+  -
+    code: 115
+    ava: 2
+  -
+    code: 116
+    ava: 2
+  -
+    code: 117
+    ava: 1
+  -
+    code: 118
+    ava: 1
+  -
+    code: 273
+    ava: 2
+  -
+    code: 274
+    ava: 2
+  -
+    code: 276
+    ava: 2
+  -
+    code: 277
+    ava: 2
+  -
+    code: 113
+    ava: 1
+  -
+    code: 114
+    ava: 1
+  -
+    code: 279
+    ava: 1
+    link: true
+  -
+    code: 119
+    ava: 1
+    link: true
+  -
+    code: 281
+    ava: 1
+    link: true
+  -
+    code: 285
+    ava: 1
+    link: true
+  -
+    code: 286
+    ava: 1
+    link: true
+  -
+    code: 481
+    ava: 1
+-
+  name: Acontecimento Shock Army
+  code: 52
+  faction: 1
+  logo: acontecimento_shock_army
+  troopers:
+  -
+    code: 257
+    ava: T
+    link: true
+  -
+    code: 101
+    ava: 5
+  -
+    code: 261
+    ava: 4
+    link: true
+  -
+    code: 262
+    ava: 4
+  -
+    code: 265
+    ava: 2
+  -
+    code: 110
+    ava: 1
+  -
+    code: 270
+    ava: 2
+  -
+    code: 402
+    ava: 2
+  -
+    code: 115
+    ava: 1
+  -
+    code: 116
+    ava: 1
+  -
+    code: 117
+    ava: 1
+  -
+    code: 118
+    ava: 2
+  -
+    code: 273
+    ava: 1
+  -
+    code: 274
+    ava: 2
+  -
+    code: 276
+    ava: 4
+  -
+    code: 277
+    ava: 2
+  -
+    code: 113
+    ava: 1
+  -
+    code: 114
+    ava: 2
+  -
+    code: 278
+    ava: 1
+  -
+    code: 280
+    ava: 1
+  -
+    code: 284
+    ava: 1
+    link: true
+  -
+    code: 481
+    ava: 1

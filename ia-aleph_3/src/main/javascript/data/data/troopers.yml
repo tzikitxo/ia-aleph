@@ -17321,3 +17321,112 @@
     description: 
     swc: 0
     cost: 17
+- 
+  isc: Order Sergeants
+  longisc: 
+  code: 490
+  faction: 1
+  logo: order_sergeants
+  name: ORDER SERGEANT
+  type: LI
+  classification: Veteran Troop
+  mov: 4-4
+  cc: 15
+  bs: 12
+  ph: 10
+  wip: 13
+  arm: 1
+  bts: 0
+  w: 1
+  s: 2
+  ava: 1
+  backup: C
+  skills: [ Religious Troop ]
+  ccw: [ Pistol, Knife ]
+  options:
+  - 
+    code: 1
+    description: Combi
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 13
+  - 
+    code: 2
+    description: Sniper
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 21
+  - 
+    code: 3
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 19
+  - 
+    code: 4
+    description: Auxbot
+    bsw: [ Combi Rifle, Auxbot (1) ]
+    swc: 1
+    cost: 17
+    compositetroop:
+    -
+      code: 491
+      min: 1
+      max: 1
+  - 
+    code: 5
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 1.5
+    cost: 21
+  - 
+    code: 6
+    description: MSV
+    equipments: [ Multispectral Visor L2 ]
+    bsw: [ Spitfire ]
+    swc: 2.5
+    cost: 24
+  - 
+    code: 7
+    description: TO
+    skills: [ "CH: TO Camouflage", Infiltration, Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 1
+    cost: 27
+  - 
+    code: 8
+    description: TOSniper
+    skills: [ "CH: TO Camouflage", Infiltration ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 2.5
+    cost: 33
+- 
+  isc: Order Sergeants
+  longisc: AUXBOT
+  code: 491
+  faction: 1
+  logo: order_sergeants
+  name: AUXBOT
+  type: REM
+  classification: Veteran Troops
+  mov: 6-4
+  cc: 8
+  bs: 10
+  ph: 10
+  wip: 11
+  arm: 0
+  bts: 3
+  w: 1
+  s: 1
+  ava: '-'
+  skills: [ "G: Synchronized" ]
+  bsw: [ Heavy Flamethrower ]
+  ccw: [ Electric Pulse ]
+  options:
+  - 
+    code: 1
+    description: 
+    swc: 0
+    cost: 4

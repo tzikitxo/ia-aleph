@@ -35,11 +35,11 @@ while true; do
 		echo -n "  ava: "
 		read ava
 		echo -n "  link [n]: "
-		read link
+#		read link
 		echo "  -" >> $d
 		echo "    code: $trooper" >> $d
 		echo "    ava: $ava" >> $d
-		[ -z "$link" ] || echo "    link: true" >> $d
+#		[ -z "$link" ] || echo "    link: true" >> $d
 	else
 		bin/findUnitCode.sh "$trooper"
 	fi
