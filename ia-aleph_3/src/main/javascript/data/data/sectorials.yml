@@ -1,13 +1,78 @@
 - 
+  name: Neoterran Capitaline Army
   code: 50
   faction: 1
-  name: Neoterran Capitaline Army
   logo: neoterran_capitaline_army
   troopers:
-   - 
+  -
     code: 258
     ava: T
-   -
+  -
     code: 100
     ava: 5
     link: true
+  -
+    code: 103
+    ava: T
+    link: true
+  -
+    code: 260
+    ava: 3
+  -
+    code: 107
+    ava: 3
+  -
+    code: 108
+    ava: 2
+  -
+    code: 109
+    ava: 2
+  -
+    code: 269
+    ava: 2
+  -
+    code: 398
+    ava: 2
+  -
+    code: 397
+    ava: 1
+  -
+    code: 115
+    ava: 2
+  -
+    code: 116
+    ava: 2
+  -
+    code: 117
+    ava: 2
+  -
+    code: 118
+    ava: 3
+  -
+    code: 273
+    ava: 2
+  -
+    code: 274
+    ava: 2
+  -
+    code: 276
+    ava: 2
+  -
+    code: 277
+    ava: 2
+  -
+    code: 113
+    ava: 1
+  -
+    code: 114
+    ava: 1
+  -
+    code: 285
+    ava: 1
+    link: true
+  -
+    code: 467
+    ava: 2
+  -
+    code: 481
+    ava: 1
