@@ -56,7 +56,7 @@
             $('#ia-mainMenuButton').attr('src', 'img/army/' + faction.logo + '_logo.png');
         },
         updateMainScreen: function () {
-            ui.main.updateMainStuffForFaction(data.findFactionByCode(roster.getRosterData().factionCode));
+            ui.main.updateMainStuffForFaction(data.findFactionOrSectorialByCode(roster.getRosterData().factionCode));
             ui.unitSelector.updateUnitSelector();
             ui.trooperSelector.updateTrooperSelector();
             ui.armyRoster.updateArmyRoster();

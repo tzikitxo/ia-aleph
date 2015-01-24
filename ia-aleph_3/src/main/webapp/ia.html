@@ -57,7 +57,12 @@
             <div id="ia-mainMenuContainer">
             <div id="ia-mainMenuFactionChooser">
             {{#each factions}}
-            <img class="ia-mainMenuFactionButton" src="img/army/{{logo}}_logo.png" title="{{name}}" data-ia-factioncode="{{code}}"></img>
+                <div class="ia-mainMenu-FactionRow" data-ia-factioncode="{{code}}">
+                    <img class="ia-mainMenuFactionButton" src="img/army/{{logo}}_logo.png" title="{{name}}" ></img>
+                    {{#each sectorials}}
+                    <img class="ia-mainMenuSectorialButton" src="img/army/{{logo}}_logo.png" title="{{name}}" data-ia-sectorialcode="{{code}}"></img>
+                    {{/each}}
+                </div>
             {{/each}}
             </div>
             </div>

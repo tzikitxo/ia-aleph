@@ -86,6 +86,11 @@ var roster = ia.roster = {};
                 pcap = Number(str.replace(/.*P([0-9]+).*$/, '$1')),
                 swcap = Number(str.replace(/.*S([0-9.]+).*$/, '$1'));
         //TODO check data
+
+        if (!data.findFactionOrSectorialByCode(factionCode)) {
+            throw "faction not found for code = " + factionCode;
+        }
+
         data.loadTroopersByFaction(factionCode);
         updateRosterData({
             pointCap: pcap,

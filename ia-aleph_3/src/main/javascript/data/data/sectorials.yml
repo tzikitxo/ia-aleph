@@ -1,0 +1,13 @@
+- 
+  code: 50
+  faction: 1
+  name: Neoterran Capitaline Army
+  logo: neoterran_capitaline_army
+  troopers:
+   - 
+    code: 258
+    ava: T
+   -
+    code: 100
+    ava: 5
+    link: true

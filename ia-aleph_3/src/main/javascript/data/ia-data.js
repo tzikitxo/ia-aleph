@@ -19,6 +19,8 @@
     var data = ia.data = {};
 
     data.factions = anyplacetools.importFile('data/factions.yml');
+    
+    data.sectorials = anyplacetools.importFile('data/sectorials.yml');
 
     data.troopers = anyplacetools.importFile('data/troopers.yml');
     
