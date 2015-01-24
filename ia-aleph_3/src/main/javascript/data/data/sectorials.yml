@@ -437,3 +437,59 @@
   -
     code: 481
     ava: 1
+-
+  name: Merovingian Rapid Response Force
+  code: 55
+  faction: 3
+  logo: merovingian_rapid_response_force
+  troopers:
+  -
+    code: 319
+    ava: T
+    link: true
+  -
+    code: 192
+    ava: 6
+  -
+    code: 320
+    ava: 5
+    link: true
+  -
+    code: 322
+    ava: 5
+  -
+    code: 334
+    ava: 5
+    link: true
+  -
+    code: 147
+    ava: 5
+    link: true
+  -
+    code: 325
+    ava: 4
+  -
+    code: 330
+    ava: 2
+  -
+    code: 328
+    ava: 3
+  -
+    code: 329
+    ava: 2
+  -
+    code: 189
+    ava: 1
+  -
+    code: 331
+    ava: 1
+  -
+    code: 336
+    ava: 1
+    link: true
+  -
+    code: 481
+    ava: 1
+  -
+    code: 468
+    ava: 1
