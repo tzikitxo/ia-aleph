@@ -146,29 +146,29 @@ var data = ia.data;
     data.loadTroopersByFaction = function (factionCode) {
         var troopersToLoad = [];
 
-        var sectorial = sectorialsByCode[factionCode];
-        if (sectorial) {
-            function loadTrooper(trooperCode, trooperSpecs) {
-                var trooperData = troopersDataByCode[trooperCode];
-                trooperData = $.extend(true, {}, trooperData);
-                trooperData.ava = trooperSpecs.ava;
-                if (trooperSpecs.link) {
-                    (trooperData.skills = trooperData.skills || []).push("Fireteam");
-                }
-                troopersToLoad.push(trooperData);
-                if (trooperData.otherprofiles) {
-                    $.each(trooperData.otherprofiles, function (i, otherProfile) {
-                        loadTrooper(otherProfile, trooperSpecs);
-                    });
-                }
-                if (trooperData.compositetroop) {
-                    $.each(trooperData.compositetroop, function (i, otherTrooper) {
-                        if (otherTrooper.code !== trooperData.code) {
-                            loadTrooper(otherTrooper.code, trooperSpecs);
-                        }
-                    });
-                }
+        var sectorial = sectorialsByCode[factionCode],faction=factionsByCode[factionCode];
+        function loadTrooper(trooperCode, trooperSpecs) {
+            var trooperData = troopersDataByCode[trooperCode];
+            trooperData = $.extend(true, {}, trooperData);
+            trooperData.ava = trooperSpecs.ava;
+            if (trooperSpecs.link) {
+                (trooperData.skills = trooperData.skills || []).push("Fireteam");
             }
+            troopersToLoad.push(trooperData);
+            if (trooperData.otherprofiles) {
+                $.each(trooperData.otherprofiles, function (i, otherProfile) {
+                    loadTrooper(otherProfile, trooperSpecs);
+                });
+            }
+            if (trooperData.compositetroop) {
+                $.each(trooperData.compositetroop, function (i, otherTrooper) {
+                    if (otherTrooper.code !== trooperData.code) {
+                        loadTrooper(otherTrooper.code, trooperSpecs);
+                    }
+                });
+            }
+        }
+        if (sectorial) {
             $.each(sectorial.troopers, function (i, sectorialTrooper) {
                 loadTrooper(sectorialTrooper.code, sectorialTrooper);
             });
@@ -177,6 +177,9 @@ var data = ia.data;
                 if (trooperData.faction === factionCode) {
                     troopersToLoad.push($.extend(true, {}, trooperData));
                 }
+            });
+            $.each(faction.troopers, function (i, factionTrooper) {
+                loadTrooper(factionTrooper.code, factionTrooper);
             });
         }
 

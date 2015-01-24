@@ -2,10 +2,30 @@
   code: 1
   name: Panoceania
   logo: panoceania
+  troopers:
+  -
+    code: 465
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 480
+    ava: 1
 - 
   code: 2
   name: Yu Jing
   logo: yu_jing
+  troopers:
+  -
+    code: 465
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 480
+    ava: 1
 - 
   code: 3
   name: Ariadna
