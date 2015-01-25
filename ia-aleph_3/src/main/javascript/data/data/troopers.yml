@@ -12173,6 +12173,7 @@
   isc: "'Gecko' Squad"
   longisc: "'GECKO' SQUADRON"
   code: 362
+  otherprofiles: [363]
   faction: 5
   logo: gecko
   name: GECKO

@@ -718,3 +718,95 @@
   -
     code: 481
     ava: 1
+-
+  name: Corregidor Jurisdictional Command
+  code: 59
+  faction: 5
+  logo: corregidor_jurisdictional_command
+  troopers:
+  -
+    code: 189
+    ava: T
+    link: true
+  -
+    code: 340
+    ava: 4
+  -
+    code: 360
+    ava: 5
+    link: true
+  -
+    code: 191
+    ava: 5
+  -
+    code: 192
+    ava: 5
+  -
+    code: 195
+    ava: 6
+    link: true
+  -
+    code: 345
+    ava: 1
+  -
+    code: 362
+    ava: 4
+  -
+    code: 198
+    ava: 3
+  -
+    code: 349
+    ava: 2
+  -
+    code: 202
+    ava: 5
+    link: true
+  -
+    code: 204
+    ava: 1
+  -
+    code: 203
+    ava: 1
+  -
+    code: 206
+    ava: 1
+  -
+    code: 207
+    ava: 1
+  -
+    code: 208
+    ava: 1
+  -
+    code: 210
+    ava: 2
+  -
+    code: 352
+    ava: 2
+  -
+    code: 353
+    ava: 2
+  -
+    code: 354
+    ava: 2
+  -
+    code: 355
+    ava: 2
+  -
+    code: 364
+    ava: 1
+    link: true
+  -
+    code: 356
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 477
+    ava: 1
+  -
+    code: 483
+    ava: 1
+  -
+    code: 478
+    ava: 1
