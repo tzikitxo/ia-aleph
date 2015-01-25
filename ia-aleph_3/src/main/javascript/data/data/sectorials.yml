@@ -643,3 +643,78 @@
   -
     code: 481
     ava: 1
+-
+  name: Hassassin Bahram
+  code: 58
+  faction: 4
+  logo: hassassin_bahram
+  troopers:
+  -
+    code: 236
+    ava: 5
+  -
+    code: 162
+    ava: 4
+    link: true
+  -
+    code: 165
+    ava: 5
+    link: true
+  -
+    code: 240
+    ava: 6
+    link: true
+  -
+    code: 249
+    ava: 2
+  -
+    code: 168
+    ava: 4
+  -
+    code: 241
+    ava: 4
+    link: true
+  -
+    code: 251
+    ava: 4
+    link: true
+  -
+    code: 174
+    ava: 2
+  -
+    code: 244
+    ava: 3
+  -
+    code: 253
+    ava: 4
+  -
+    code: 247
+    ava: 1
+  -
+    code: 177
+    ava: 1
+  -
+    code: 178
+    ava: 1
+  -
+    code: 179
+    ava: 1
+  -
+    code: 181
+    ava: 1
+  -
+    code: 180
+    ava: 1
+  -
+    code: 245
+    ava: 2
+  -
+    code: 246
+    ava: 2
+  -
+    code: 254
+    ava: 1
+    link: true
+  -
+    code: 481
+    ava: 1
