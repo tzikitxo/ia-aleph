@@ -61,6 +61,16 @@
   code: 5
   name: Nomads
   logo: nomads
+  troopers:
+  -
+    code: 465
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 480
+    ava: 1
 - 
   code: 6
   name: Combined Army
