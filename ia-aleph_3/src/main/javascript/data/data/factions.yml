@@ -47,6 +47,16 @@
   code: 4
   name: Haqqislam
   logo: haqqislam
+  troopers:
+  -
+    code: 465
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 480
+    ava: 1
 - 
   code: 5
   name: Nomads
