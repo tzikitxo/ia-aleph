@@ -493,3 +493,66 @@
   -
     code: 468
     ava: 1
+-
+  name: Caledonian Highlander Army
+  code: 56
+  faction: 3
+  logo: caledonian_highlander_army
+  troopers:
+  -
+    code: 318
+    ava: T
+    link: true
+  -
+    code: 321
+    ava: 6
+  -
+    code: 335
+    ava: 5
+    link: true
+  -
+    code: 323
+    ava: 5
+  -
+    code: 324
+    ava: 5
+    link: true
+  -
+    code: 151
+    ava: 4
+  -
+    code: 326
+    ava: 4
+    link: true
+  -
+    code: 153
+    ava: T
+  -
+    code: 330
+    ava: 2
+  -
+    code: 328
+    ava: 3
+  -
+    code: 329
+    ava: 2
+  -
+    code: 160
+    ava: 1
+  -
+    code: 337
+    ava: 1
+  -
+    code: 333
+    ava: 1
+    link: true
+  -
+    code: 483
+    ava: 1
+  -
+    code: 338
+    ava: 1
+    link: true
+  -
+    code: 481
+    ava: 1
