@@ -556,3 +556,90 @@
   -
     code: 481
     ava: 1
+-
+  name: Qapu Khalqi
+  code: 57
+  faction: 4
+  logo: qapu_khalqi
+  troopers:
+  -
+    code: 162
+    ava: T
+    link: true
+  -
+    code: 237
+    ava: 5
+    link: true
+  -
+    code: 238
+    ava: 4
+  -
+    code: 239
+    ava: 4
+    link: true
+  -
+    code: 250
+    ava: 5
+    link: true
+  -
+    code: 252
+    ava: 5
+    link: true
+  -
+    code: 167
+    ava: 5
+    link: true
+  -
+    code: 242
+    ava: 3
+    link: true
+  -
+    code: 169
+    ava: 5
+    link: true
+  -
+    code: 243
+    ava: 3
+  -
+    code: 464
+    ava: 3
+  -
+    code: 472
+    ava: 4
+    link: true
+  -
+    code: 486
+    ava: 1
+  -
+    code: 189
+    ava: 4
+  -
+    code: 195
+    ava: 1
+  -
+    code: 345
+    ava: 1
+  -
+    code: 177
+    ava: 1
+  -
+    code: 178
+    ava: 1
+  -
+    code: 179
+    ava: 2
+  -
+    code: 181
+    ava: 1
+  -
+    code: 180
+    ava: 3
+  -
+    code: 245
+    ava: 2
+  -
+    code: 246
+    ava: 2
+  -
+    code: 481
+    ava: 1

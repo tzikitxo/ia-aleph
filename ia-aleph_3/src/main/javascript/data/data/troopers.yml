@@ -11547,7 +11547,7 @@
   isc: "'Iguana' Squadron"
   longisc: "'IGUANA' SQUADRON"
   code: 345
-  otherprofiles: 346
+  otherprofiles: [346]
   faction: 5
   logo: iguana_squadron
   name: IGUANA
@@ -17232,7 +17232,7 @@
     min: 1
     max: 1
   -
-    code: 488
+    code: 489
     min: 1
     max: 1
   faction: 9
