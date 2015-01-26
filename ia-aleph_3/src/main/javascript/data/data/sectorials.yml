@@ -903,3 +903,88 @@
   -
     code: 479
     ava: 1
+-
+  name: Morat Aggression Force
+  code: 61
+  faction: 6
+  logo: morat_aggression_force
+  troopers:
+  -
+    code: 214
+    ava: T
+    link: true
+  -
+    code: 373
+    ava: 3
+  -
+    code: 220
+    ava: 5
+    link: true
+  -
+    code: 374
+    ava: 5
+    link: true
+  -
+    code: 375
+    ava: 3
+  -
+    code: 386
+    ava: 2
+    link: true
+  -
+    code: 390
+    ava: 5
+    link: true
+  -
+    code: 378
+    ava: 3
+    link: true
+  -
+    code: 222
+    ava: 2
+  -
+    code: 381
+    ava: 3
+  -
+    code: 228
+    ava: T
+    link: true
+  -
+    code: 387
+    ava: 2
+    link: true
+  -
+    code: 229
+    ava: 4
+  -
+    code: 230
+    ava: 4
+  -
+    code: 231
+    ava: 1
+  -
+    code: 232
+    ava: 1
+  -
+    code: 233
+    ava: 1
+  -
+    code: 234
+    ava: 1
+  -
+    code: 235
+    ava: 1
+  -
+    code: 382
+    ava: 2
+  -
+    code: 388
+    ava: 2
+  -
+    code: 391
+    ava: 1
+    link: true
+  -
+    code: 393
+    ava: 1
+    link: true

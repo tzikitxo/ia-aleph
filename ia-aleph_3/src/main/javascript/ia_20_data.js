@@ -146,7 +146,7 @@ var data = ia.data;
     data.loadTroopersByFaction = function (factionCode) {
         var troopersToLoad = [];
 
-        var sectorial = sectorialsByCode[factionCode],faction=factionsByCode[factionCode];
+        var sectorial = sectorialsByCode[factionCode], faction = factionsByCode[factionCode];
         function loadTrooper(trooperCode, trooperSpecs) {
             var trooperData = troopersDataByCode[trooperCode];
             trooperData = $.extend(true, {}, trooperData);
@@ -178,7 +178,7 @@ var data = ia.data;
                     troopersToLoad.push($.extend(true, {}, trooperData));
                 }
             });
-            $.each(faction.troopers, function (i, factionTrooper) {
+            $.each(faction.troopers || [], function (i, factionTrooper) {
                 loadTrooper(factionTrooper.code, factionTrooper);
             });
         }
