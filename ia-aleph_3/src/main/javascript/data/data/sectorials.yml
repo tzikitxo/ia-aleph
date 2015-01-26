@@ -810,3 +810,96 @@
   -
     code: 478
     ava: 1
+-
+  name: Bakunin Jurisdictional Command
+  code: 60
+  faction: 5
+  logo: bakunin_jurisdictional_command
+  troopers:
+  -
+    code: 339
+    ava: T
+    link: true
+  -
+    code: 193
+    ava: 4
+    link: true
+  -
+    code: 342
+    ava: 3
+    link: true
+  -
+    code: 194
+    ava: 3
+    link: true
+  -
+    code: 344
+    ava: 3
+  -
+    code: 343
+    ava: 3
+  -
+    code: 361
+    ava: 5
+    link: true
+  -
+    code: 196
+    ava: 1
+  -
+    code: 199
+    ava: 3
+  -
+    code: 201
+    ava: T
+  -
+    code: 350
+    ava: 3
+  -
+    code: 204
+    ava: 2
+  -
+    code: 203
+    ava: 1
+  -
+    code: 206
+    ava: 2
+  -
+    code: 207
+    ava: 1
+  -
+    code: 208
+    ava: 1
+  -
+    code: 209
+    ava: 1
+  -
+    code: 210
+    ava: 2
+  -
+    code: 352
+    ava: 2
+  -
+    code: 353
+    ava: 2
+  -
+    code: 354
+    ava: 4
+  -
+    code: 355
+    ava: 2
+  -
+    code: 359
+    ava: 1
+    link: true
+  -
+    code: 358
+    ava: 1
+  -
+    code: 211
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 479
+    ava: 1
