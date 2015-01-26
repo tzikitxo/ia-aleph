@@ -1,0 +1,30 @@
+.ia-print-main{
+    width: 1000px;
+    margin: 50px auto 50px auto;
+}
+
+.ia-trooperContainer{
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+.ia-trooperTop{
+    width: 100%;
+    height: 220px;
+
+    background-size: 100% 100%;
+    background-image: url('../img/print/trooper_bg_top.png');
+}
+.ia-trooperList{
+    width: 100%;
+
+    background-size: 100% auto;
+    background-image: url('../img/print/trooper_bg_middle.png');
+    background-repeat: repeat-y;
+}
+.ia-trooperBottom{
+    width: 100%;
+    height: 30px;
+
+    background-size: 100% 100%;
+    background-image: url('../img/print/trooper_bg_bottom.png');
+}
