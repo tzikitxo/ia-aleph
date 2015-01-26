@@ -33,8 +33,11 @@ var data = ia.data;
         return factionsByCode[code] || sectorialsByCode[code];
     };
 
+    var actualFactions = $.grep(data.factions, function (faction) {
+        return !faction.isPseudofaction;
+    });
     data.getFactions = function () {
-        return data.factions;
+        return actualFactions;
     };
 
 
