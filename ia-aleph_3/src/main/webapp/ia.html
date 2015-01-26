@@ -88,6 +88,7 @@
                         <span class="{{#if roster.swcWarning}}ia-warning{{/if}}">{{messages.swc}}: <b>{{roster.swcCount}} / {{roster.swcCap}} ( {{roster.swcDiff}} )</b></span>
                         <div class="ia-warning">{{join roster.warningMessages}}</div>
                     </div>
+                    <div class="ia-rosterPrintButton"></div>
                 </div>
                 <div class="ia-rosterMainContainer">
                     <div class="ia-rosterBody">
@@ -298,6 +299,33 @@
             </tbody>
             </table>
             </div>
+        </script>
+        <script id="ia-printTemplate" type="text/x-handlebars-template">
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="{{baseurl}}/css/ia-lib.css"/>
+        <link rel="stylesheet" type="text/css" href="{{baseurl}}/css/ia-print.css"/>
+        <link id="ia-favicon" rel="icon" href="{{baseurl}}/img/army/{{faction.logo}}_logo.png" type="image/png" />
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <div class="ia-print-main">
+            {{#each roster.troopers}}
+            <div class="ia-trooperContainer">
+                <div class="ia-trooperTop">
+                </div>
+                <div class="ia-trooperList">
+                </div>
+                <div class="ia-trooperBottom">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </body>
+</html>
         </script>
         <script type="text/javascript" src="js/ia-lib.js"></script>
         <script type="text/javascript" src="js/ia-data.js"></script>

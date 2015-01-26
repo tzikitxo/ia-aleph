@@ -223,6 +223,9 @@ var roster = ia.roster = {};
                         Number(rosterContainer.find('.ia-rosterTrooperEntry.ia-selected').data('ia-troopercode')),
                         Number(rosterContainer.find('.ia-rosterTrooperEntry.ia-selected').data('ia-optioncode')));
             });
+            rosterContainer.find('.ia-rosterPrintButton').on('click', function () {
+                roster.printRoster();
+            });
         }
     };
 
