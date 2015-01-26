@@ -79,6 +79,16 @@
   code: 7
   name: Aleph
   logo: aleph
+  troopers:
+  -
+    code: 465
+    ava: 1
+  -
+    code: 481
+    ava: 1
+  -
+    code: 480
+    ava: 1
 - 
   code: 8
   name: Tohaa
@@ -87,3 +97,4 @@
   code: 9
   name: Mercenaries
   logo: mercenaries
+  isPseudofaction: true

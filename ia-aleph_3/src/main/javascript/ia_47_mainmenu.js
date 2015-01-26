@@ -26,8 +26,8 @@
             mainMenu.dialog({
                 modal: true,
                 width: 250,
-                height: 460,
-                title: "New LIST"
+                height: 480,
+                title: "New ROSTER"
             });
             $('#ia-mainMenuContainer .ia-mainMenuFactionButton, #ia-mainMenuContainer .ia-mainMenuSectorialButton').on('click', function () {
                 var factionCode = Number($(this).closest('.ia-mainMenu-FactionRow').data('ia-factioncode')),

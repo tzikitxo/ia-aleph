@@ -1059,3 +1059,84 @@
     code: 395
     ava: 1
     link: true
+-
+  name: Steel Phalanx
+  code: 63
+  faction: 7
+  logo: steel_phalanx
+  troopers:
+  -
+    code: 420
+    ava: 4
+  -
+    code: 430
+    ava: 4
+  -
+    code: 413
+    ava: 6
+  -
+    code: 415
+    ava: 2
+  -
+    code: 403
+    ava: T
+  -
+    code: 414
+    ava: 3
+  -
+    code: 432
+    ava: 2
+  -
+    code: 405
+    ava: 1
+  -
+    code: 406
+    ava: 1
+  -
+    code: 433
+    ava: 2
+  -
+    code: 407
+    ava: 4
+  -
+    code: 408
+    ava: 2
+  -
+    code: 409
+    ava: 2
+  -
+    code: 417
+    ava: 1
+  -
+    code: 420
+    ava: 1
+  -
+    code: 421
+    ava: 1
+  -
+    code: 422
+    ava: 1
+  -
+    code: 423
+    ava: 1
+  -
+    code: 424
+    ava: 1
+  -
+    code: 425
+    ava: 1
+  -
+    code: 427
+    ava: 1
+  -
+    code: 434
+    ava: 1
+  -
+    code: 428
+    ava: 1
+  -
+    code: 429
+    ava: 1
+  -
+    code: 481
+    ava: 1
