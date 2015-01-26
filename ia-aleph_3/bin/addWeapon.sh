@@ -43,8 +43,8 @@ read value
 echo "## WEAPON DATA ##"
 cat $t
 echo "## WEAPON DATA ##"
-echo "append data to weapons.yml?"
-read
+#echo "append data to weapons.yml?"
+#read
 cat $t >> ./src/main/javascript/data/data/weapons.yml
 rm $t
 

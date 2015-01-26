@@ -382,7 +382,7 @@
   traits: [ Impact Template (Small Teardrop) ]
 - 
   name: Light Smoke GL
-  names: [ Smoke Light GL, Light Smoke GL, Smoke Light Grenade Launcher, Smoke LGL ]
+  names: [ Smoke Light GL, Light Smoke GL, Smoke Light Grenade Launcher, Light Smoke Grenade Launcher, Smoke LGL ]
   code: 47
   ranges: [ 8,16,24,48 ]
   mods: [ 0,3,-3,-6 ]
@@ -702,3 +702,443 @@
   burst: 1
   ammunitions: DA
   traits: [ Anti-materiel, Silent ]
+- 
+  name: Akrylat-Kanone
+  code: 84
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: '-'
+  burst: 1
+  ammunitions: Adhesive
+  traits: [ Disposable (2), Non-Lethal ]
+- 
+  name: AP Marksman Rifle
+  code: 85
+  ranges: [ 8,24,40,48 ]
+  mods: [ -3,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: AP
+  traits: [ Suppressive Fire ]
+- 
+  name: Assault Pistol
+  code: 86
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: 13
+  burst: 4 (1 in CC)
+  ammunitions: N
+  traits: [ CC ]
+- 
+  name: Blitzen
+  code: 87
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 1
+  ammunitions: E/M2
+  traits: [ Disposable (2) ]
+- 
+  name: Chain-Colt
+  names: [ Chain-colt, Chain colt ]
+  code: 88
+  damage: 13
+  burst: 1
+  ammunitions: N
+  traits: [ Direct Template (Small Teardrop), Intuitive Attack ]
+- 
+  name: Contender
+  code: 89
+  ranges: 8,16,32,48
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel ]
+- 
+  name: D.E.P.
+  code: 90
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 14
+  burst: 1
+  ammunitions: AP + EXP
+  traits: [ Anti-materiel, Disposable (1) ]
+- 
+  name: E/Marat
+  code: 91
+  damage: 13
+  burst: 1
+  ammunitions: E/M
+  traits: [ Direct Template (Large Teardrop), Intuitive Attack ]
+- 
+  name: E/Mitter
+  code: 92
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: E/M
+- 
+  name: Feuerbach
+  code: 93
+  ranges: [ 8,24,32,48 ]
+  mods: [ 0,3,0,-6 ]
+  damage: 14
+  burst: 2
+  ammunitions: AP + DA
+  traits: [ Anti-materiel ]
+- 
+  name: Flammenspeer
+  code: 94
+  mode: Blast Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 1
+  ammunitions: Fire
+  traits: [ Disposable (2), Impact Template (Circular) ]
+- 
+  name: Flammenspeer
+  code: 95
+  mode: Hit Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 1
+  ammunitions: Fire
+  traits: [ Disposable (2) ]
+- 
+  name: Flash Grenades
+  code: 96
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  damage: 13
+  burst: 1
+  ammunitions: Flash
+  traits: [ Impact Template (Circular), Speculative Fire, Throwing Weapon ]
+- 
+  name: Flash Light Grenade Launcher
+  names: [ Flash Light GL, Light Flash GL, Flash Light Grenade Launcher, Flash LGL ]
+  code: 97
+  ranges: [ 8,16,24,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 1
+  ammunitions: Flash
+  traits: [ Impact Template (Circular), Speculative Fire ]
+- 
+  name: Heavy Rocket Launcher
+  code: 98
+  mode: Blast Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: Fire
+  traits: [ Impact Template (Circular) ]
+- 
+  name: Heavy Rocket Launcher
+  code: 99
+  mode: Hit Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: Fire
+- 
+  name: Hedgehog Weapon
+  code: 100
+  damage: PH
+  burst: 1
+  ammunitions: N
+  traits: [ CC ]
+- 
+  name: Jammer
+  code: 101
+  ranges: [ 8 ]
+  mods: [ 0 ]
+  damage: 13
+  burst: 1
+  ammunitions: '-'
+  traits: [ "Intuitive Attack, No LoF, State: Isolated, Technical Weapon" ]
+- 
+  name: Katyusha MRL
+  code: 102
+  mode: Blast Mode
+  ranges: [ 8,16,40,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 14
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, Impact Template (Circular), Non-Lootable, Speculative Fire ]
+- 
+  name: Katyusha MRL
+  code: 103
+  mode: Guided Mode
+  damage: 14
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, Guided, Impact Template (Circular), Non-Lootable ]
+- 
+  name: Light Rocket Launcher
+  code: 104
+  mode: Blast Mode
+  ranges: [ 8,24,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 2
+  ammunitions: Fire
+  traits: [ Impact Template (Circular) ]
+- 
+  name: Light Rocket Launcher
+  code: 105
+  mode: Hit Mode
+  ranges: [ 8,24,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 14
+  burst: 2
+  ammunitions: Fire
+- 
+  name: Marker
+  code: 106
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: '-'
+  burst: 1
+  ammunitions: '-'
+  traits: [ Disposable (2), Indiscriminate, Non-Lethal, Speculative Fire, Targetless ]
+- 
+  name: Marksman Rifle
+  code: 107
+  ranges: [ 8,24,40,48 ]
+  mods: [ -3,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: N
+  traits: [ Suppressive Fire ]
+- 
+  name: Mk12
+  code: 108
+  ranges: [ 8,24,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 15
+  burst: 3
+  ammunitions: N
+  traits: [ Suppressive Fire ]
+- 
+  name: Molotok
+  code: 109
+  ranges: [ 8,24,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 4
+  ammunitions: AP
+  traits: [ Suppressive Fire ]
+- 
+  name: Smart MULTI Sniper Rifle
+  code: 110
+  mode: AP Mode
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: AP
+  traits: [ Medium MULTI ]
+- 
+  name: Smart MULTI Sniper Rifle
+  code: 111
+  mode: Anti-materiel Mode
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: DA
+  traits: [ Anti-materiel, Medium MULTI ]
+- 
+  name: Smart MULTI Sniper Rifle
+  code: 112
+  mode: Guided Mode
+  damage: 13
+  burst: 1
+  ammunitions: DA
+  traits: [ Anti-materiel, Guided, Impact Template (Circular) ]
+- 
+  name: Smart Rocket Launcher
+  code: 113
+  mode: Blast Mode
+  ranges: [ 8,16,32,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: Fire
+  traits: [ Impact Template (Circular) ]
+- 
+  name: Smart Rocket Launcher
+  code: 114
+  mode: Guided Mode
+  damage: 14
+  burst: 1
+  ammunitions: Fire
+  traits: [ Guided, Impact Template (Circular) ]
+- 
+  name: Stun Pistol
+  code: 115
+  ranges: [ 8,16,24 ]
+  mods: [ 3,0,-6 ]
+  damage: 11
+  burst: 2 (1 in CC)
+  ammunitions: Stun
+  traits: [ CC ]
+- 
+  name: Submachine Gun
+  code: 116
+  ranges: [ 8,16,24,32 ]
+  mods: [ 3,0,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: AP
+  traits: [ Suppressive Fire ]
+- 
+  name: Swarm Grenades
+  code: 117
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  damage: 13
+  burst: 1
+  ammunitions: Swarm
+  traits: [ Impact Template (Circular), Speculative Fire, Throwing Weapon ]
+- 
+  name: T2 Boarding Shotgun
+  code: 118
+  mode: Blast Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: N
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: T2 Boarding Shotgun
+  code: 119
+  mode: T2 Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: T2
+  traits: [ Anti-materiel ]
+- 
+  name: T2 Rifle
+  code: 120
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: T2
+  traits: [ Anti-materiel, Suppressive Fire ]
+- 
+  name: T2 Sniper Rifle
+  code: 121
+  ranges: [ 8,16,40,48 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: T2
+  traits: [ Anti-materiel ]
+- 
+  name: Uragan MRL
+  code: 122
+  mode: Blast Mode
+  ranges: [ 8,16,40,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 14
+  burst: 3
+  ammunitions: AP+Shock
+  traits: [ "Burst: Single Target, Impact Template (Circular), Non-Lootable, Speculative Fire" ]
+- 
+  name: Uragan MRL
+  code: 123
+  mode: Guided Mode
+  damage: 14
+  burst: 1
+  ammunitions: AP+Shock
+  traits: [ Guided, Impact Template (Circular), Non-Lootable ]
+- 
+  name: Uragan MRL
+  code: 124
+  mode: Hit Mode
+  ranges: [ 8,16,40,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 15
+  burst: 3
+  ammunitions: AP+Shock
+  traits: [ "Burst: Single Target, Non-Lootable" ]
+- 
+  name: Viral CC Weapon
+  code: 125
+  damage: PH
+  burst: 1
+  ammunitions: Viral
+  traits: [ CC ]
+- 
+  name: Viral Combi Rifle
+  code: 126
+  ranges: [ 16,32,48 ]
+  mods: [ 3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: Viral
+  traits: [ Suppressive Fire ]
+- 
+  name: Viral Mines
+  code: 127
+  damage: 12
+  burst: 1
+  ammunitions: Viral
+  traits: [ Concealed, Deployable, Direct Template (Small Teardrop), Disposable (3), Intuitive Attack ]
+- 
+  name: Viral Rifle
+  code: 128
+  ranges: [ 8,16,32,48 ]
+  mods: [ 0,3,-3,-6 ]
+  damage: 13
+  burst: 3
+  ammunitions: Viral
+  traits: [ Suppressive Fire ]
+- 
+  name: Viral Sniper Rifle
+  code: 129
+  ranges: [ 8,16,48,96 ]
+  mods: [ -3,0,3,-3 ]
+  damage: 15
+  burst: 2
+  ammunitions: Viral
+- 
+  name: Vulkan Shotgun
+  code: 130
+  mode: Blast Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: Fire
+  traits: [ Impact Template (Small Teardrop) ]
+- 
+  name: Vulkan Shotgun
+  code: 131
+  mode: AP Mode
+  ranges: [ 8,16,24 ]
+  mods: [ 6,0,-3 ]
+  damage: 14
+  burst: 2
+  ammunitions: AP
+- 
+  name: Zero-V Smoke Grenades
+  code: 132
+  ranges: [ 8,16 ]
+  mods: [ 3,-3 ]
+  damage: '-'
+  burst: 1
+  ammunitions: Zero-V Smoke
+  traits: [ Impact Template (Circular), Non Lethal, Special Dodge, Speculative Fire, Targetless, Throwing Weapon ]
