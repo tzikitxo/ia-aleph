@@ -7841,7 +7841,7 @@
     min: 1
     max: 1
   -
-    code: 212
+    code: 213
     min: 1
     max: 1
   faction: 5
@@ -11419,6 +11419,7 @@
   mov: 4-2
   cc: 14
   bs: 12
+  ph: 11
   wip: 14
   arm: 3
   bts: 3
