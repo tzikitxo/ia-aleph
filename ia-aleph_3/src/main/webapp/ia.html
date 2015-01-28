@@ -316,6 +316,39 @@
             {{#each roster.troopers}}
             <div class="ia-trooperContainer">
                 <div class="ia-trooperTop">
+                    <div class="ia-trooperLongIsc">{{longisc}}</div>
+                    <div class="ia-trooperIsc">isc: {{longisc}}</div>
+                    <div class="ia-trooperType">{{type}}</div>
+                    <table class="ia-trooperAttributesTable">
+                        <thead >
+                            <tr>
+                                <th>{{messages.mov}}</th>
+                                <th>{{messages.cc}}</th>
+                                <th>{{messages.bs}}</th>
+                                <th>{{messages.ph}}</th>
+                                <th>{{messages.wip}}</th>
+                                <th>{{messages.arm}}</th>
+                                <th>{{messages.bts}}</th>
+                                <th>{{#if hasStr}}{{messages.str}}{{else}}{{messages.wounds}}{{/if}}</th>
+                                <th>{{messages.silhouette}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{mov}}</td>
+                                <td>{{cc}}</td>
+                                <td>{{bs}}</td>
+                                <td>{{ph}}</td>
+                                <td>{{wip}}</td>
+                                <td>{{arm}}</td>
+                                <td>{{bts}}</td>
+                                <td>{{w}}</td>
+                                <td>{{s}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="ia-trooperEquipments">{{join equipments}}</div>
+                    <div class="ia-trooperSkills">{{join skills}}</div>
                 </div>
                 <div class="ia-trooperList">
                 </div>
