@@ -319,18 +319,32 @@
                     <div class="ia-trooperLongIsc">{{longisc}}</div>
                     <div class="ia-trooperIsc">isc: {{longisc}}</div>
                     <div class="ia-trooperType">{{type}}</div>
+            {{#if hasCube}}
+            {{#if hasCube2}}
+            <div class="ia-trooperIcon ia-trooperCube ia-cube2Icon" ></div>
+            {{else}}
+            <div class="ia-trooperIcon ia-trooperCube ia-cubeIcon" ></div>
+            {{/if}}
+            {{/if}}
+            {{#if isRegular}}<div class="ia-trooperIcon ia-trooperTraining ia-regularIcon" ></div>{{/if}}
+            {{#if isIrregular}}<div class="ia-trooperIcon ia-trooperTraining ia-irregularIcon" ></div>{{/if}}
+            {{#if isFrenzy}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-frenzyIcon" ></div>{{/if}}                        
+            {{#if isImpetuous}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-impetuousIcon" ></div>{{/if}}
+            {{#if isExtremelyImpetuous}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-extremelyimpetuousIcon" ></div>{{/if}}
+            {{#if isHackable}}<div class="ia-trooperIcon ia-trooperHackable ia-hackableIcon" ></div>{{/if}}
+            <img class="ia-trooperLogo" src="{{../baseurl}}/img/troop/{{logo}}_logo.png"></img>
                     <table class="ia-trooperAttributesTable">
                         <thead >
                             <tr>
-                                <th>{{messages.mov}}</th>
-                                <th>{{messages.cc}}</th>
-                                <th>{{messages.bs}}</th>
-                                <th>{{messages.ph}}</th>
-                                <th>{{messages.wip}}</th>
-                                <th>{{messages.arm}}</th>
-                                <th>{{messages.bts}}</th>
-                                <th>{{#if hasStr}}{{messages.str}}{{else}}{{messages.wounds}}{{/if}}</th>
-                                <th>{{messages.silhouette}}</th>
+                                <th>{{../messages.mov}}</th>
+                                <th>{{../messages.cc}}</th>
+                                <th>{{../messages.bs}}</th>
+                                <th>{{../messages.ph}}</th>
+                                <th>{{../messages.wip}}</th>
+                                <th>{{../messages.arm}}</th>
+                                <th>{{../messages.bts}}</th>
+                                <th>{{#if hasStr}}{{../../messages.str}}{{else}}{{../../messages.wounds}}{{/if}}</th>
+                                <th>{{../messages.silhouette}}</th>
                             </tr>
                         </thead>
                         <tbody>
