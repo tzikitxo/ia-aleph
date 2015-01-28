@@ -30,7 +30,24 @@
             baseurl: window.location.href.replace(/ia.html/, ''),
             roster: rosterData,
             troopers: troopers,
-            faction: data.findFactionOrSectorialByCode(rosterData.factionCode)
+            faction: data.findFactionOrSectorialByCode(rosterData.factionCode),
+            messages: {
+                name: 'Name',
+                bsw: "BS Weapons",
+                ccw: "CC Weapons",
+                swc: "SWC",
+                cost: "C",
+                mov: 'MOV',
+                cc: 'CC',
+                bs: 'BS',
+                ph: "PH",
+                wip: "WIP",
+                arm: "ARM",
+                bts: "BTS",
+                wounds: "W",
+                str: "STR",
+                silhouette: "S"
+            }
         }));
         window.open(url, '_blank');
     };
