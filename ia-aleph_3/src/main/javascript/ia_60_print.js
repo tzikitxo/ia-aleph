@@ -21,15 +21,33 @@
         if (!rosterData) {
             rosterData = roster.getRosterData();
         }
-        var troopers=[];
-        $.each(rosterData.troopers,function(i,trooper){
-           troopers.push(trooper); //TODO
+        var trooperRecords = [], trooperRecordsByTrooperCode = {};
+        $.each(rosterData.troopers, function (i, trooper) {
+            if (!trooperRecordsByTrooperCode[trooper.troopercode]) {
+                var trooperRecord = {
+                    trooper: data.findTrooperByCode(trooper.troopercode),
+                    options: [],
+                    optionsByOptionCode: {}
+                }
+                trooperRecordsByTrooperCode[trooper.troopercode] = trooperRecord;
+                trooperRecords.push(trooperRecord);
+            }
+            if (trooperRecordsByTrooperCode[trooper.troopercode].optionsByOptionCode[trooper.optioncode]) {
+                trooperRecordsByTrooperCode[trooper.troopercode].optionsByOptionCode[trooper.optioncode].count++;
+            } else {
+                var option = {
+                    trooper: trooper,
+                    count: 1
+                };
+                trooperRecordsByTrooperCode[trooper.troopercode].optionsByOptionCode[trooper.optioncode] = option;
+                trooperRecordsByTrooperCode[trooper.troopercode].options.push(option);
+            }
         });
         var url = 'data:text/html;base64,' + btoa(printTemplate({
             title: 'Aleph Toolbox N3 Roster',
             baseurl: window.location.href.replace(/ia.html/, ''),
             roster: rosterData,
-            troopers: troopers,
+            trooperRecords: trooperRecords,
             faction: data.findFactionOrSectorialByCode(rosterData.factionCode),
             messages: {
                 name: 'Name',
@@ -46,7 +64,8 @@
                 bts: "BTS",
                 wounds: "W",
                 str: "STR",
-                silhouette: "S"
+                silhouette: "S",
+                count:"Count"
             }
         }));
         window.open(url, '_blank');

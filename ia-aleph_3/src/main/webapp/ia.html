@@ -313,26 +313,26 @@
     </head>
     <body>
         <div class="ia-print-main">
-            {{#each roster.troopers}}
+            {{#each trooperRecords}}
             <div class="ia-trooperContainer">
                 <div class="ia-trooperTop">
-                    <div class="ia-trooperLongIsc">{{longisc}}</div>
-                    <div class="ia-trooperIsc">isc: {{longisc}}</div>
-                    <div class="ia-trooperType">{{type}}</div>
-            {{#if hasCube}}
-            {{#if hasCube2}}
+                    <div class="ia-trooperLongIsc">{{trooper.longisc}}</div>
+                    <div class="ia-trooperIsc">isc: {{trooper.longisc}}</div>
+                    <div class="ia-trooperType">{{trooper.type}}</div>
+            {{#if trooper.hasCube}}
+            {{#if trooper.hasCube2}}
             <div class="ia-trooperIcon ia-trooperCube ia-cube2Icon" ></div>
             {{else}}
             <div class="ia-trooperIcon ia-trooperCube ia-cubeIcon" ></div>
             {{/if}}
             {{/if}}
-            {{#if isRegular}}<div class="ia-trooperIcon ia-trooperTraining ia-regularIcon" ></div>{{/if}}
-            {{#if isIrregular}}<div class="ia-trooperIcon ia-trooperTraining ia-irregularIcon" ></div>{{/if}}
-            {{#if isFrenzy}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-frenzyIcon" ></div>{{/if}}                        
-            {{#if isImpetuous}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-impetuousIcon" ></div>{{/if}}
-            {{#if isExtremelyImpetuous}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-extremelyimpetuousIcon" ></div>{{/if}}
-            {{#if isHackable}}<div class="ia-trooperIcon ia-trooperHackable ia-hackableIcon" ></div>{{/if}}
-            <img class="ia-trooperLogo" src="{{../baseurl}}/img/troop/{{logo}}_logo.png"></img>
+            {{#if trooper.isRegular}}<div class="ia-trooperIcon ia-trooperTraining ia-regularIcon" ></div>{{/if}}
+            {{#if trooper.isIrregular}}<div class="ia-trooperIcon ia-trooperTraining ia-irregularIcon" ></div>{{/if}}
+            {{#if trooper.isFrenzy}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-frenzyIcon" ></div>{{/if}}                        
+            {{#if trooper.isImpetuous}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-impetuousIcon" ></div>{{/if}}
+            {{#if trooper.isExtremelyImpetuous}}<div class="ia-trooperIcon ia-trooperImpetuosity ia-extremelyimpetuousIcon" ></div>{{/if}}
+            {{#if trooper.isHackable}}<div class="ia-trooperIcon ia-trooperHackable ia-hackableIcon" ></div>{{/if}}
+            <img class="ia-trooperLogo" src="{{../baseurl}}/img/troop/{{trooper.logo}}_logo.png"></img>
                     <table class="ia-trooperAttributesTable">
                         <thead >
                             <tr>
@@ -343,28 +343,52 @@
                                 <th>{{../messages.wip}}</th>
                                 <th>{{../messages.arm}}</th>
                                 <th>{{../messages.bts}}</th>
-                                <th>{{#if hasStr}}{{../../messages.str}}{{else}}{{../../messages.wounds}}{{/if}}</th>
+                                <th>{{#if trooper.hasStr}}{{../../messages.str}}{{else}}{{../../messages.wounds}}{{/if}}</th>
                                 <th>{{../messages.silhouette}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{mov}}</td>
-                                <td>{{cc}}</td>
-                                <td>{{bs}}</td>
-                                <td>{{ph}}</td>
-                                <td>{{wip}}</td>
-                                <td>{{arm}}</td>
-                                <td>{{bts}}</td>
-                                <td>{{w}}</td>
-                                <td>{{s}}</td>
+                                <td>{{trooper.mov}}</td>
+                                <td>{{trooper.cc}}</td>
+                                <td>{{trooper.bs}}</td>
+                                <td>{{trooper.ph}}</td>
+                                <td>{{trooper.wip}}</td>
+                                <td>{{trooper.arm}}</td>
+                                <td>{{trooper.bts}}</td>
+                                <td>{{trooper.w}}</td>
+                                <td>{{trooper.s}}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <div class="ia-trooperEquipments">{{join equipments}}</div>
-                    <div class="ia-trooperSkills">{{join skills}}</div>
+                    <div class="ia-trooperEquipments">{{join trooper.equipments}}</div>
+                    <div class="ia-trooperSkills">{{join trooper.skills}}</div>
                 </div>
                 <div class="ia-trooperList">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>{{../messages.name}}</th>
+                                <th>{{../messages.bsw}}</th>
+                                <th>{{../messages.ccw}}</th>
+                                <th style="text-align: center">{{../messages.swc}}</th>
+                                <th style="text-align: center">{{../messages.cost}}</th>
+                                <th style="text-align: center">{{../messages.count}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each options}}
+                            <tr>
+                                <td>{{trooper.name}} {{joinForTrooperOption trooper}}</td>
+                                <td>{{join trooper.allBsw}}</td>
+                                <td>{{join trooper.allCcw}}</td>
+                                <td style="text-align: center">{{trooper.swcStr}}</td>
+                                <td style="text-align: center">{{trooper.cost}}</td>
+                                <td style="text-align: center">{{count}}X</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
                 </div>
                 <div class="ia-trooperBottom">
                 </div>

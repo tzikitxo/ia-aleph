@@ -139,6 +139,29 @@ body{
     background-image: url('../img/print/trooper_bg_middle.png');
     background-repeat: repeat-y;
 }
+
+.ia-trooperList table{
+    width: 740px;
+    margin-left: 5px;
+    border-collapse: collapse;
+
+    th, td{
+        padding: 3px 5px;
+    }
+    tbody tr:nth-child(odd){
+        background-color: #dadada;
+    }
+    td:first-child, th:first-child{
+        padding-left: 10px;
+    }
+    td:last-child, th:last-child{
+        padding-right: 10px;
+    }
+    thead th{
+        text-align: left;
+    }
+}
+
 .ia-trooperBottom{
     width: 100%;
     height: 23px;
