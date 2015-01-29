@@ -10,8 +10,27 @@ body{
 
 .ia-print-main{
     width: 750px;
-    margin: 50px auto 50px auto;
+    margin: 20px auto 50px auto;
 }
+
+@media print{ 
+    .ia-printControls{
+        display: none;
+    }
+}
+.ia-printControls{
+    padding: 20px;
+    
+}
+.ia-printButton{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-size: 100% 100%;
+    background-image: url('../img/app/print_icon.png');
+}
+
 
 .ia-trooperContainer{
     width: 100%;
