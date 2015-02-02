@@ -65,7 +65,11 @@
                 wounds: "W",
                 str: "STR",
                 silhouette: "S",
-                count:"Count"
+                count: "Count",
+                costTotal: "Points",
+                swcTotal: "SWC",
+                orderTotal: "Orders",
+                trooperTotal: "Troopers"
             }
         }));
         window.open(url, '_blank');
