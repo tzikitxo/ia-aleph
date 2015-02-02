@@ -35,14 +35,17 @@ body{
 .ia-trooperContainer{
     width: 100%;
     margin: 20px 0 20px 0;
+    page-break-inside: avoid;
 }
 .ia-trooperTop{
     width: 100%;
     height: 165px;
     position: relative;
-
-    background-size: 100% 100%;
-    background-image: url('../img/print/trooper_bg_top.png');
+}
+.ia-trooperTopBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 .ia-trooperLongIsc{
     top: 18px;
@@ -102,31 +105,6 @@ body{
     position: absolute;
     width:32px;
     height:32px;
-    background-size: 100% 100%;
-}
-.ia-cube2Icon{
-    background-image: url('../img/icon/cube2_icon.png');
-}
-.ia-cubeIcon{
-    background-image: url('../img/icon/cube_icon.png');
-}
-.ia-regularIcon{
-    background-image: url('../img/icon/regular_icon.png');
-}
-.ia-irregularIcon{
-    background-image: url('../img/icon/irregular_icon.png');
-}
-.ia-frenzyIcon{
-    background-image: url('../img/icon/frenzy_icon.png');
-}
-.ia-impetuousIcon{
-    background-image: url('../img/icon/impetuous_icon.png');
-}
-.ia-extremelyimpetuousIcon{
-    background-image: url('../img/icon/extremely_impetuous_icon.png');
-}
-.ia-hackableIcon{
-    background-image: url('../img/icon/hackable_icon.png');
 }
 .ia-trooperTraining{
     top: 100px;
@@ -151,12 +129,14 @@ body{
     left: 40px;
 }
 
-.ia-trooperList{
+.ia-trooperList, .ia-trooperListContent{
     width: 100%;
-
-    background-size: 100% auto;
-    background-image: url('../img/print/trooper_bg_middle.png');
-    background-repeat: repeat-y;
+    position: relative;
+}
+.ia-trooperListBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .ia-trooperList table{
@@ -184,7 +164,10 @@ body{
 .ia-trooperBottom{
     width: 100%;
     height: 23px;
-
-    background-size: 100% 100%;
-    background-image: url('../img/print/trooper_bg_bottom.png');
+    position: relative;
+}
+.ia-trooperBottomBg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
