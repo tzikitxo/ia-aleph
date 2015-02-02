@@ -316,6 +316,11 @@
             <div class="ia-printControls">
                 <div class="ia-printButton" onclick="window.print();"></div>
             </div>
+            <div class="ia-rosterInfo">
+                <span class="ia-factionName"><b>{{faction.name}}</b></span>
+                <span style="float: right">{{messages.costTotal}} : <b>{{roster.pointCount}}</b> {{messages.swcTotal}} : <b>{{roster.swcCount}}</b> 
+                {{messages.orderTotal}} : <b>{{roster.orderCount}}</b> {{messages.trooperTotal}} : <b>{{roster.trooperCount}}</b></span>
+            </div>
             {{#each trooperRecords}}
             <div class="ia-trooperContainer">
                 <div class="ia-trooperTop">
