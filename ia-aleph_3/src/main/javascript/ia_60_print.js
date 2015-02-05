@@ -46,6 +46,7 @@
         var url = 'data:text/html;base64,' + btoa(printTemplate({
             title: 'Aleph Toolbox N3 Roster',
             baseurl: window.location.href.replace(/ia.html/, ''),
+            rosterurl: 'http://anyplace.it/ia3/ia.html?roster=' + roster.serializeRosterData(),
             roster: rosterData,
             trooperRecords: trooperRecords,
             faction: data.findFactionOrSectorialByCode(rosterData.factionCode),
