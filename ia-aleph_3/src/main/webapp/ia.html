@@ -300,8 +300,7 @@
             </table>
             </div>
         </script>
-        <script id="ia-printTemplate" type="text/x-handlebars-template">
-<!DOCTYPE html>
+        <script id="ia-printTemplate" type="text/x-handlebars-template"><!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -309,17 +308,35 @@
         <link rel="stylesheet" type="text/css" href="{{baseurl}}/css/ia-lib.css"/>
         <link rel="stylesheet" type="text/css" href="{{baseurl}}/css/ia-print.css"/>
         <link id="ia-favicon" rel="icon" href="{{baseurl}}/img/army/{{faction.logo}}_logo.png" type="image/png" />
+        <script type="text/javascript" src="{{baseurl}}/js/ia-lib.js"></scr{{!}}ipt>
+        <script type="text/javascript" >
+            $(function(){
+                $('#ia-listQrcode').qrcode({text:'{{rosterurl}}'});
+                $('.ia-pdfButton').bind('click',function(){
+                    var html=$('html')[0].outerHTML;
+                    html=html.replace(/chrome-extension:\/\/[a-zA-Z0-9]*/ig,'http://anyplace.it/ia3').replace('http://localhost','http://anyplace.it');
+                    var form=$('<form target="_blank" action="http://ia-aleph.herokuapp.com/print/printFromHtml" method="POST"></form>');
+                    $('<textarea name="html" />').text(html).appendTo(form);
+                    $('<textarea name="filename" />').text("roster.pdf").appendTo(form);
+                    form.submit();
+                });
+            });
+        </scr{{!}}ipt>
         <title>{{title}}</title>
     </head>
     <body>
         <div class="ia-print-main">
             <div class="ia-printControls">
                 <div class="ia-printButton" onclick="window.print();"></div>
+                <div class="ia-pdfButton" ></div>
             </div>
             <div class="ia-rosterInfo">
-                <span class="ia-factionName"><b>{{faction.name}}</b></span>
-                <span style="float: right">{{messages.costTotal}} : <b>{{roster.pointCount}}</b> {{messages.swcTotal}} : <b>{{roster.swcCount}}</b> 
-                {{messages.orderTotal}} : <b>{{roster.orderCount}}</b> {{messages.trooperTotal}} : <b>{{roster.trooperCount}}</b></span>
+                <div id="#ia-listQrcode"></div>
+                <div>
+                    <span class="ia-factionName"><b>{{faction.name}}</b></span>
+                    <span style="float: right">{{messages.costTotal}} : <b>{{roster.pointCount}}</b> {{messages.swcTotal}} : <b>{{roster.swcCount}}</b> 
+                    {{messages.orderTotal}} : <b>{{roster.orderCount}}</b> {{messages.trooperTotal}} : <b>{{roster.trooperCount}}</b></span>
+                </div>
             </div>
             {{#each trooperRecords}}
             <div class="ia-trooperContainer">
@@ -411,8 +428,7 @@
             {{/each}}
         </div>
     </body>
-</html>
-        </script>
+</html></script>
         <script type="text/javascript" src="js/ia-lib.js"></script>
         <script type="text/javascript" src="js/ia-data.js"></script>
         <script type="text/javascript" src="js/ia-lang.js"></script>
