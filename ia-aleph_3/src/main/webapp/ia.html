@@ -315,7 +315,7 @@
                 $('.ia-pdfButton').bind('click',function(){
                     var html=$('html')[0].outerHTML;
                     html=html.replace(/chrome-extension:\/\/[a-zA-Z0-9]*/ig,'http://anyplace.it/ia3').replace('http://localhost','http://anyplace.it');
-                    var form=$('<form target="_blank" action="http://ia-aleph.herokuapp.com/print/printFromHtml" method="POST"></form>');
+                    var form=$('<form target="_blank" action="http://anyplace.it/ia3/ia.php?action=printPdf" method="POST"></form>');
                     $('<textarea name="html" />').text(html).appendTo(form);
                     $('<textarea name="filename" />').text("roster.pdf").appendTo(form);
                     form.submit();
