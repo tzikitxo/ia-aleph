@@ -146,14 +146,15 @@ if ($_REQUEST['action'] == 'checkService') {
 //    )));
  else if ($_REQUEST['action'] == 'printPdf') {
 	$htmlData=$_REQUEST['html'];
+    $filename=$_REQUEST['filename'];
 //    $htmlData = file_get_contents("php://input");
-	$process= proc_open("bin/wkhtmltopdf-amd64 - -",array(0 => array("pipe", "r"),1 => array("pipe", "w")),$pipes);
+	$process= proc_open("bin/wkhtmltopdf-amd64 --print-media-type - -",array(0 => array("pipe", "r"),1 => array("pipe", "w")),$pipes);
 	#$process= proc_open("wkhtmltopdf - -",array(0 => array("pipe", "r"),1 => array("pipe", "w")),$pipes);
 	fwrite($pipes[0],$htmlData);
 	fclose($pipes[0]);
 	$pdfData = stream_get_contents($pipes[1]);
 	header('Content-Type: application/pdf');
-	header('Content-Disposition: attachment; filename='."file.pdf");
+	header('Content-Disposition: attachment; filename='.$filename);
 	echo $pdfData;
 	exit;
 }
