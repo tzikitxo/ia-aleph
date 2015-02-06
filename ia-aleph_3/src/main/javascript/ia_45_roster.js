@@ -17,14 +17,18 @@ var roster = ia.roster = {};
 
 (function () {
 
-    var rosterData = {
-        troopers: [],
-        pointCap: 300,
-        swcCap: 6,
-        trooperCount: 0,
-        factionCode: null
-    };
+    var rosterData;
+    clearRosterData();
 
+    function clearRosterData() {
+        rosterData = {
+            troopers: [],
+            pointCap: 300,
+            swcCap: 6,
+            trooperCount: 0,
+            factionCode: null
+        };
+    }
     function updateRosterData(config) {
         $.extend(rosterData, config);
     }
@@ -33,9 +37,12 @@ var roster = ia.roster = {};
             rosterentrycode: getNextRosterEntryCode()
         }, trooper));
     }
+    function saveRoster(){
+        storage.saveRoster(roster.serializeRosterData());        
+    }
     function validateAndSave() {
         validateRoster();
-        storage.saveRoster(roster.serializeRosterData());
+        saveRoster();
         ui.armyRoster.updateArmyRoster();
     }
 
@@ -81,10 +88,11 @@ var roster = ia.roster = {};
         });
         return str;
     };
-    roster.loadRosterData = function (str) {
+    roster.loadRosterData = function (str,shouldSave) {
+        log('loading roster = ', str);
         var factionCode = Number(str.replace(/.*F([0-9]+).*$/, '$1')),
-                pcap = Number(str.replace(/.*P([0-9]+).*$/, '$1')),
-                swcap = Number(str.replace(/.*S([0-9.]+).*$/, '$1'));
+                pcap = Number(str.replace(/.*P([0-9]+).*$/, '$1')) || 300,
+                swcap = Number(str.replace(/.*S([0-9.]+).*$/, '$1')) || (Math.floor(pcap / 6));
         //TODO check data
 
         if (!data.findFactionOrSectorialByCode(factionCode)) {
@@ -92,6 +100,7 @@ var roster = ia.roster = {};
         }
 
         data.loadTroopersByFaction(factionCode);
+        clearRosterData();
         updateRosterData({
             pointCap: pcap,
             swcCap: swcap,
@@ -105,6 +114,9 @@ var roster = ia.roster = {};
             });
         }
         validateRoster();
+        if(shouldSave){
+            saveRoster();
+        }
         ui.armyRoster.updateArmyRoster();
     };
     function validateRoster() {

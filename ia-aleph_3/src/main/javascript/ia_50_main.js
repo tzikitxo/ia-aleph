@@ -38,15 +38,21 @@
         });
     }
 
-    var lastSavedRoster = storage.getLastSavedRoster();
-    if (lastSavedRoster) {
-        try {
+    try {
+        var lastSavedRoster = storage.getLastSavedRoster();
+        if (window.location.search && window.location.search.match(/roster=.+/)) {
+            roster.loadRosterData(window.location.search.replace(/.*roster=([a-zA-Z0-9]+).*/, '$1'), true);
+            if (window.history && window.history.pushState) {
+                window.history.pushState(null, "", window.location.href.replace(/[?].*/, ''));
+            }
+        } else if (lastSavedRoster) {
             roster.loadRosterData(lastSavedRoster);
-        } catch (e) {
-            log('error loading roster = ', lastSavedRoster, e);
+        } else {
             loadDefaultRoster();
         }
-    } else {
+    } catch (e) {
+        log('error loading roster')
+        log(e);
         loadDefaultRoster();
     }
 
