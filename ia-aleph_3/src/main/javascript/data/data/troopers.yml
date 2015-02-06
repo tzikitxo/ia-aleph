@@ -1280,6 +1280,14 @@
     bsw: [ MULTI Sniper Rifle, Antipersonnel Mines ]
     swc: 1.5
     cost: 28
+  - 
+    code: 9
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 26
+    onlyIn: 52
 - 
   isc: Guarda de Assalto
   compositetroop:
@@ -17375,6 +17383,7 @@
       code: 491
       min: 1
       max: 1
+    notIn: 51
   - 
     code: 5
     description: Hacker
@@ -17383,6 +17392,7 @@
     bsw: [ Combi Rifle ]
     swc: 1.5
     cost: 21
+    notIn: 51
   - 
     code: 6
     description: MSV
@@ -17390,6 +17400,7 @@
     bsw: [ Spitfire ]
     swc: 2.5
     cost: 24
+    notIn: 51
   - 
     code: 7
     description: TO
@@ -17397,6 +17408,7 @@
     bsw: [ Combi Rifle, Antipersonnel Mines ]
     swc: 1
     cost: 27
+    notIn: 51
   - 
     code: 8
     description: TOSniper
@@ -17404,6 +17416,52 @@
     bsw: [ MULTI Sniper Rifle ]
     swc: 2.5
     cost: 33
+    notIn: 51
+  - 
+    code: 9
+    description: Auxbot
+    bsw: [ Combi Rifle, Auxbot (1) ]
+    swc: 0
+    cost: 17
+    compositetroop:
+    -
+      code: 491
+      min: 1
+      max: 1
+    onlyIn: 51
+  - 
+    code: 10
+    description: Hacker
+    skills: [ Hacker ]
+    equipments: [ Hacking Device ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 21
+    onlyIn: 51
+  - 
+    code: 11
+    description: MSV
+    equipments: [ Multispectral Visor L2 ]
+    bsw: [ Spitfire ]
+    swc: 1.5
+    cost: 24
+    onlyIn: 51
+  - 
+    code: 12
+    description: TO
+    skills: [ "CH: TO Camouflage", Infiltration, Forward Observer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0
+    cost: 27
+    onlyIn: 51
+  - 
+    code: 13
+    description: TOSniper
+    skills: [ "CH: TO Camouflage", Infiltration ]
+    bsw: [ MULTI Sniper Rifle ]
+    swc: 1.5
+    cost: 33
+    onlyIn: 51
 - 
   isc: Order Sergeants
   longisc: AUXBOT

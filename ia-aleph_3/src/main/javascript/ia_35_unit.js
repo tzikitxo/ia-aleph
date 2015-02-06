@@ -38,6 +38,11 @@
                     return trooper.type === config.filterByUnitType;
                 };
                 $('#ia-unitSelectorSearchButton').text(config.filterByUnitType).css({'background-position': '5px 0'});
+            }else if(config.filterBySearch){                
+                filterFunction = function (trooper) {
+                    return trooper.isc.toLowerCase().match(config.filterBySearch);
+                };
+                $('#ia-unitSelectorSearchButton').text(config.filterBySearch).css({'background-position': '5px 0'});
             }
             $.each($.grep([].concat(troopers).reverse(), filterFunction), function (i, trooper) {
                 var unitSelector = $('<img class="ia-unitSelector" />')
@@ -46,6 +51,9 @@
                         .prependTo(unitSelectorScroller).on('click', function () {
                     ui.trooperSelector.updateTrooperSelector(trooper.code);
                 });
+                if (trooper.isSlaveOption()) {
+                    unitSelector.addClass('ia-unitSelector-slaveOption');
+                }
             });
 //                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});
 //                unitSelectorScroller.draggable({cursor: "move", axis: "x"});
@@ -66,7 +74,8 @@
                     $('#ia-untiSelectorSearchOptions').html(unitSelectorSearchTemplate({
                         unitTypes: ['LI', 'MI', 'HI', 'WB', 'SK', 'REM', 'TAG', 'ALL'],
                         messages: {
-                            unitTypes: 'Unit Type: '
+                            unitTypes: 'Unit Type: ',
+                            search: 'Search: '
                         }
                     }));
                     $('#ia-untiSelectorSearchOptions .ia-unitSelectorSearchUnitTypeButton').on('click', function () {
@@ -75,6 +84,12 @@
                             filterByUnitType: unitType === "ALL" ? null : unitType
                         });
 //                        $('#ia-untiSelectorSearchOptions').slideUp('fast');
+                    });
+                    $('#ia-unitSelectorSearchField').on('change', function () {
+                        var value = $(this).val();
+                        ui.unitSelector.updateUnitSelector({
+                            filterBySearch: value.toLowerCase()
+                        });
                     });
                     $('#ia-untiSelectorSearchOptions').slideDown('fast');
                 } else {
