@@ -2096,6 +2096,14 @@
     bsw: [ HMG ]
     swc: 2
     cost: 34
+    notIn: 51
+  - 
+    code: 5
+    description: HMG
+    bsw: [ HMG ]
+    swc: 1.5
+    cost: 34
+    onlyIn: 51
   - 
     code: 3
     description: BS
@@ -9178,6 +9186,22 @@
     bsw: [ Boarding Shotgun ]
     swc: 0
     cost: 16
+  - 
+    code: 3
+    description: Combi+CoC
+    skills: [ Chain of Command ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 24
+    onlyIn: 54
+  - 
+    code: 4
+    description: BS+CoC
+    skills: [ Chain of Command ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 23
+    onlyIn: 54
 - 
   isc: Imperial Agent, Pheasant Rank
   longisc: IMPERIAL AGENT, Pheasant Rank (Ye Ji)
@@ -9292,6 +9316,7 @@
     bsw: [ Combi Rifle + Light Shotgun ]
     swc: 0
     cost: 24
+    onlyIn: 54
 - 
   isc: Aragoto Senkenbutai
   iscspecification: DISMOUNTED
@@ -9503,6 +9528,7 @@
     ccw: [ DA CCW ]
     swc: 0
     cost: 25
+    onlyIn: 54
 - 
   isc: Haramaki Zensenbutai
   longisc: HARAMAKI Zensenbutai
@@ -9685,6 +9711,7 @@
     skills: [ Lieutenant ]
     swc: 3
     cost: 81
+    onlyIn: 54
 - 
   isc: O-Yoroi Kidobutai
   longisc: O-YOROI PILOT
@@ -9746,6 +9773,7 @@
     skills: [ Lieutenant ]
     swc: 1
     cost: 41
+    onlyIn: 54
 - 
   isc: Tokusetsu Butai
   longisc: TOKUSETSU Butai
@@ -9945,6 +9973,7 @@
     skills: [ Lieutenant ]
     swc: 1
     cost: 47
+    onlyIn: 54
 - 
   isc: "Domaru Takeshi 'Neko' Oyama"
   longisc: "Domaru TAKESHI 'NEKO' OYAMA"
@@ -9981,6 +10010,7 @@
     skills: [ Lieutenant ]
     swc: 0
     cost: 34
+    onlyIn: 54
 - 
   isc: Sun Tze v.2 (Marksman Leader)
   longisc: SUN TZE v.2 (Marksman Leader)
@@ -10157,6 +10187,7 @@
     skills: [ Lieutenant ]
     swc: 0
     cost: 27
+    onlyIn: 54
 - 
   isc: Asuka Kisaragi, Aragoto Senkenbutai Jun-i
   longisc: ASUKA KISARAGI
@@ -10290,6 +10321,14 @@
     bsw: [ Rifle ]
     swc: 2
     cost: 8
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 8
+    onlyIn: 56
 - 
   isc: Métros
   longisc: TROUPES MÉTROPOLITAINES
@@ -10366,6 +10405,14 @@
     bsw: [ Rifle ]
     swc: 2
     cost: 8
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Rifle ]
+    swc: 0
+    cost: 8
+    onlyIn: 55
 - 
   isc: Loup-Garous
   longisc: LOUP-GAROU, Groupe Mobile d'Action Spéciale
@@ -10976,6 +11023,7 @@
     skills: [ Lieutenant ]
     swc: 0
     cost: 35
+    onlyIn: 56
 - 
   isc: "Briscards, Beme Regiment d'infanterie de Montagne"
   longisc: "BRISCARDS, Beme Regiment d'infanterie de Montagne"
@@ -11318,6 +11366,15 @@
     bsw: [ Combi Rifle ]
     swc: 2
     cost: 9
+    notIn: 60
+  - 
+    code: 9
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 9
+    onlyIn: 60
 - 
   isc: Tomcats
   longisc: TOMCATS, Emergency and Rescue Special Team
