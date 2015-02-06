@@ -311,7 +311,7 @@
         <script type="text/javascript" src="{{baseurl}}/js/ia-lib.js"></scr{{!}}ipt>
         <script type="text/javascript" >
             $(function(){
-                $('#ia-listQrcode').qrcode({text:'{{rosterurl}}'});
+                $('#ia-rosterQrcode').qrcode({size:120,text:'{{rosterurl}}',render:'image'});
                 $('.ia-pdfButton').bind('click',function(){
                     var html=$('html')[0].outerHTML;
                     html=html.replace(/chrome-extension:\/\/[a-zA-Z0-9]*/ig,'http://anyplace.it/ia3').replace('http://localhost','http://anyplace.it');
@@ -331,11 +331,14 @@
                 <div class="ia-pdfButton" ></div>
             </div>
             <div class="ia-rosterInfo">
-                <div id="#ia-listQrcode"></div>
                 <div>
                     <span class="ia-factionName"><b>{{faction.name}}</b></span>
                     <span style="float: right">{{messages.costTotal}} : <b>{{roster.pointCount}}</b> {{messages.swcTotal}} : <b>{{roster.swcCount}}</b> 
                     {{messages.orderTotal}} : <b>{{roster.orderCount}}</b> {{messages.trooperTotal}} : <b>{{roster.trooperCount}}</b></span>
+                </div>
+                <div class="ia-rosterLogos">
+                    <img id="ia-factionLogo" src="{{baseurl}}/img/army/{{faction.logo}}_logo.png"></img>
+                    <div id="ia-rosterQrcode"></div>
                 </div>
             </div>
             {{#each trooperRecords}}
