@@ -64,7 +64,10 @@
             $('#ia-unitSelectorSearchButton').on('click', function () {
                 if (!$('#ia-untiSelectorSearchOptions').is(':visible')) {
                     $('#ia-untiSelectorSearchOptions').html(unitSelectorSearchTemplate({
-                        unitTypes: ['LI', 'MI', 'HI', 'WB', 'SK', 'REM', 'TAG', 'ALL']
+                        unitTypes: ['LI', 'MI', 'HI', 'WB', 'SK', 'REM', 'TAG', 'ALL'],
+                        messages: {
+                            unitTypes: 'Unit Type: '
+                        }
                     }));
                     $('#ia-untiSelectorSearchOptions .ia-unitSelectorSearchUnitTypeButton').on('click', function () {
                         var unitType = $(this).data('ia-unittype');

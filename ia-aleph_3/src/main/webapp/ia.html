@@ -76,11 +76,12 @@
                     </div>
                 <div id="ia-unitSelectorScrollButtonRight"></div>
                 <div id="ia-unitSelectorSearchButton"></div>
-                <div id="ia-untiSelectorSearchOptions" style="display: none">TEST</div>
+                <div id="ia-untiSelectorSearchOptions" style="display: none"></div>
             </div> 
         </script>
         <script id="ia-unitSelectorSearchTemplate" type="text/x-handlebars-template">
             <div id="ia-unitSelectorSearchUnitTypeList">
+            <i>{{messages.unitTypes}}</i> 
             {{#each unitTypes}}
                 <div class="ia-unitSelectorSearchUnitTypeButton" data-ia-unittype="{{this}}" title="{{this}}">{{this}}</div>
             {{/each}}
