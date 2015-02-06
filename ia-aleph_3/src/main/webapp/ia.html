@@ -67,13 +67,24 @@
             </div>
             </div>
         </script>
-        <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">            
-            <div id="ia-unitSelectorScrollButtonLeft"></div>
-            <div id="ia-unitSelectorScrollerContainer">
-            <div id="ia-unitSelectorScroller">
+        <script id="ia-unitSelectorTemplate" type="text/x-handlebars-template">     
+            <div id="ia-unitSelectorContainer">      
+                <div id="ia-unitSelectorScrollButtonLeft"></div>
+                    <div id="ia-unitSelectorScrollerContainer">
+                        <div id="ia-unitSelectorScroller">
+                        </div>
+                    </div>
+                <div id="ia-unitSelectorScrollButtonRight"></div>
+                <div id="ia-unitSelectorSearchButton"></div>
+                <div id="ia-untiSelectorSearchOptions" style="display: none">TEST</div>
+            </div> 
+        </script>
+        <script id="ia-unitSelectorSearchTemplate" type="text/x-handlebars-template">
+            <div>
+            {{#each unitTypes}}
+                <div class="ia-unitSelectorSearchUnitTypeButton" data-ia-unittype="{{this}}" title="{{this}}">{{this}}</div>
+            {{/each}}
             </div>
-            </div>
-            <div id="ia-unitSelectorScrollButtonRight"></div>
         </script>
         <script id="ia-rosterTemplate" type="text/x-handlebars-template">
             <div class="ia-rosterContainer">

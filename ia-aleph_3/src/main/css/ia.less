@@ -98,7 +98,7 @@ body{
 #ia-unitSelectorContainer {
     box-sizing: border-box;
     width: 100%;
-    padding: 0 30px 0 70px;
+    padding: 0 70px 0 70px;
     position: relative;
 }
 #ia-unitSelectorScrollerContainer {
@@ -108,6 +108,7 @@ body{
     overflow: hidden;
 }
 #ia-unitSelectorScroller{
+    min-height: 55px;
     white-space: nowrap;
 
     .ia-unitSelector{
@@ -124,16 +125,16 @@ body{
             background-size: 50px 50px;
         }
         &:first-child{
-            margin-left: 85px;
+            margin-left: 25px;
         }
         &:last-child{
-            margin-right: 45px;            
+            margin-right: 25px;            
         }
     }
 }
 #ia-unitSelectorScrollButtonLeft, #ia-unitSelectorScrollButtonRight{
     display: inline-block;
-    height: 100%;
+    height: 55px;
     width: 50px;
     position: absolute;
     top: 0;
@@ -149,8 +150,36 @@ body{
     background-image: url('../img/theme/scrollButtonLeftBg.png');
 }
 #ia-unitSelectorScrollButtonRight{
-    right:0;
+    right:45px;
     background-image: url('../img/theme/scrollButtonRightBg.png');
+}
+#ia-unitSelectorSearchButton{    
+    right: 0;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    padding: 10px 10px 5px 5px;
+
+    text-align: center;
+    line-height: 75px;
+    font-weight: bold;
+    background-size: 40px 40px;
+    background-position: 5px 5px;
+    background-color: @topBarBgColor;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url('../img/app/search_icon.png');
+}
+#ia-untiSelectorSearchOptions{
+    padding: 0 5px 5px 5px;
+}
+.ia-unitSelectorSearchUnitTypeButton{
+    display: inline-block;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 //INFO
