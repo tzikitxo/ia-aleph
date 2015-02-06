@@ -73,14 +73,43 @@ var data = ia.data;
                 }
             }, trooper);
             troopers.push(trooper);
+        });
+        $.each(troopers, function (i, trooper) {
+            if (trooper.compositetroop) {
+                trooper.isHeadOfCompositeUnit = true;
+                $.each(trooper.compositetroop, function (i, compositeoption) {
+                    compositeoption.troop = troopersByCode[compositeoption.code];
+                    compositeoption.troop.isPartOfCompositeUnit = true;
+                    compositeoption.troop.compositeUnitHead = trooper;
+                });
+            }
+            if (trooper.otherprofiles) {
+                $.each(trooper.otherprofiles, function (i, altp) {
+                    troopersByCode[altp].isAlternateProfile = true;
+                });
+            }
+        });
+        $.each(troopers, function (i, trooper) {
             trooper.longisc = trooper.longisc || trooper.isc.toUpperCase();
             trooper.isHackable = (trooper.type === 'REM' || trooper.type === 'TAG' || trooper.type === 'HI') && !trooper.hasSkillOrEquipment('Not Hackable');
             trooper.hasStr = (trooper.hasStr !== undefined) ? trooper.hasStr : (trooper.type === 'REM' || trooper.type === 'TAG');
             trooper.getFaction = function () {
                 return factionsByCode[this.faction];
             };
+            trooper.isSlaveOption = function () {
+                return (this.isPartOfCompositeUnit && !this.isHeadOfCompositeUnit) || this.isAlternateProfile;
+            };
             var trooperOptionsByCode = {};
-            trooper.options = $.map(trooper.options || [], function (option) {
+            var optionsToLoad = $.grep(trooper.options || [], function (option) {
+                if (option.onlyIn) {
+                    return factionOrSectorial.code === option.onlyIn;
+                } else if (option.notIn) {
+                    return factionOrSectorial.code !== option.notIn;
+                } else {
+                    return true;
+                }
+            });
+            trooper.options = $.map(optionsToLoad, function (option) {
                 option = $.extend({
                     optioncode: option.code
                 }, trooper, {
@@ -122,17 +151,16 @@ var data = ia.data;
             };
         });
 
-        var altps = {};
-        $.each(troopers, function (i, trooper) {
-            if (trooper.otherprofiles) {
-                $.each(trooper.otherprofiles, function (i, altp) {
-                    altps[altp] = true;
-                });
-            }
-        });
-        $.each(altps, function (altp) {
-            troopersByCode[altp].isAlternateProfile = true;
-        });
+//        $.each(troopers, function (i, trooper) {
+//            if (trooper.otherprofiles) {
+//                $.each(trooper.otherprofiles, function (i, altp) {
+//                    troopersByCode[altp].isAlternateProfile = true;
+//                });
+//            }
+//        });
+//        $.each(altps, function (altp) {
+//            troopersByCode[altp].isAlternateProfile = true;
+//        });
     }
 //    var troopersByFaction = {};
 

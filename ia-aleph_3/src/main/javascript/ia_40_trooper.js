@@ -117,7 +117,7 @@
                 });
             }
             function addTrooper(trooper) {
-                if ((typeof trooper.swc === 'number') && (typeof trooper.cost === 'number')) {
+                if (!trooper.isSlaveOption()) {
                     roster.addTrooper(trooper);
                 }
             }

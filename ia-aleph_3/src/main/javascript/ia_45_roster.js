@@ -37,8 +37,8 @@ var roster = ia.roster = {};
             rosterentrycode: getNextRosterEntryCode()
         }, trooper));
     }
-    function saveRoster(){
-        storage.saveRoster(roster.serializeRosterData());        
+    function saveRoster() {
+        storage.saveRoster(roster.serializeRosterData());
     }
     function validateAndSave() {
         validateRoster();
@@ -67,6 +67,15 @@ var roster = ia.roster = {};
     }
     roster.addTrooper = function (trooper) {
         addTrooper(trooper);
+        if (trooper.isHeadOfCompositeUnit) {
+            $.each(trooper.compositetroop, function (i, compositeoption) {
+                if (compositeoption.code !== trooper.troopercode) {
+                    for (var i = 0; i < compositeoption.min; i++) {
+                        addTrooper(compositeoption.troop.options[0]);
+                    }
+                }
+            });
+        }
         validateAndSave();
     };
     roster.removeTrooperByIndex = function (trooperIndex) {
@@ -88,7 +97,7 @@ var roster = ia.roster = {};
         });
         return str;
     };
-    roster.loadRosterData = function (str,shouldSave) {
+    roster.loadRosterData = function (str, shouldSave) {
         log('loading roster = ', str);
         var factionCode = Number(str.replace(/.*F([0-9]+).*$/, '$1')),
                 pcap = Number(str.replace(/.*P([0-9]+).*$/, '$1')) || 300,
@@ -114,7 +123,7 @@ var roster = ia.roster = {};
             });
         }
         validateRoster();
-        if(shouldSave){
+        if (shouldSave) {
             saveRoster();
         }
         ui.armyRoster.updateArmyRoster();
@@ -129,8 +138,10 @@ var roster = ia.roster = {};
         var hasHacker = false, ltCount = 0, needHacker = false;
         rosterData.trooperCountByCode = {};
         $.each(rosterData.troopers, function (i, trooper) {
-            rosterData.pointCount += Number(trooper.cost) || 0;
-            rosterData.swcCount += Number(trooper.swc) || 0;
+            if (!trooper.isSlaveOption()) {
+                rosterData.pointCount += Number(trooper.cost) || 0;
+                rosterData.swcCount += Number(trooper.swc) || 0;
+            }
             rosterData.trooperCount++;
             if (trooper.type === 'REM') {
                 needHacker = true;
@@ -202,6 +213,11 @@ var roster = ia.roster = {};
                     windowTitle: "roster"
                 },
                 roster: roster.getRosterData()
+//                troopers: $.map(roster.getRosterData().troopers, function (trooper) {
+//                    return {
+//                        
+//                    };
+//                })
             }));
             var rosterContainer = $('#ia-rosterWrapper .ia-rosterContainer');
             rosterContainer.find('.ia-rosterDownButton').on('click', function () {
@@ -217,7 +233,7 @@ var roster = ia.roster = {};
                 return false;
             });
             rosterContainer.find('.ia-rosterTrooperEntry').on('click', function () {
-                log('click!', this);
+//                log('click!', this);
 //                if ($(this).hasClass('ia-selected')) {
 //                    roster.removeTrooperByIndex(Number($(this).data('ia-entryindex')));
 //                } else {
