@@ -91,6 +91,12 @@
                             filterBySearch: value.toLowerCase()
                         });
                     });
+                    $('#ia-unitSelectorSearchFieldClearButton').on('click', function () {
+                        $('#ia-unitSelectorSearchField').val('');
+                        ui.unitSelector.updateUnitSelector({
+                            filterBySearch: null
+                        });
+                    });
                     $('#ia-untiSelectorSearchOptions').slideDown('fast');
                 } else {
                     $('#ia-untiSelectorSearchOptions').slideUp('fast');
