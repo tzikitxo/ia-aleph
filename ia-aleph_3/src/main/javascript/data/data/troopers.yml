@@ -8332,6 +8332,15 @@
     bsw: [ Combi Rifle,Light Shotgun (2) ]
     swc: 1
     cost: 26
+    notIn: 61
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle,Light Shotgun (2) ]
+    swc: 0
+    cost: 26
+    onlyIn: 61
 - 
   isc: The Charontids
   longisc: 
@@ -12620,6 +12629,15 @@
     bsw: [ Combi Rifle, Adhesive Launcher ]
     swc: 1
     cost: 25
+    notIn: 62
+  - 
+    code: 5
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Adhesive Launcher ]
+    swc: 0
+    cost: 25
+    onlyIn: 62
 - 
   isc: Shasvastii Noctifers
   longisc: Shasvastii Tactical Dominance Special Wing NOCTIFERS
@@ -12783,6 +12801,15 @@
     bsw: [ Combi Rifle, Panzerfaust ]
     swc: 1
     cost: 28
+    notIn: 61
+  - 
+    code: 7
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle, Panzerfaust ]
+    swc: 0
+    cost: 28
+    onlyIn: 61
 - 
   isc: Rasyat Diplomatic Division
   longisc: RASYAT Diplomatic Division
@@ -12896,6 +12923,7 @@
     bsw: [ MULTI Rifle ]
     swc: 1
     cost: 25
+    notIn: 62
   - 
     code: 6
     description: Lt+BS
@@ -12903,6 +12931,23 @@
     bsw: [ Boarding Shotgun ]
     swc: 1
     cost: 21
+    notIn: 62
+  - 
+    code: 8
+    description: Lt+MRifle
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle ]
+    swc: 0
+    cost: 25
+    onlyIn: 62
+  - 
+    code: 9
+    description: Lt+BS
+    skills: [ Lieutenant ]
+    bsw: [ Boarding Shotgun ]
+    swc: 0
+    cost: 21
+    onlyIn: 62
   - 
     code: 7
     description: HRL
@@ -13533,6 +13578,14 @@
     skills: [ Lieutenant ]
     swc: 1
     cost: 39
+    notIn: 62
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 39
+    onlyIn: 62
 - 
   isc: Suryats, Morat Assault Heavy Infantry
   longisc: SURYATS (Morat Assault Heavy Infantry)
@@ -13598,6 +13651,16 @@
     ccw: [ Pistol, CCW ]
     swc: 1
     cost: 43
+    notIn: 61
+  - 
+    code: 8
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ MULTI Rifle + Light Flamethrower ]
+    ccw: [ Pistol, CCW ]
+    swc: 0
+    cost: 43
+    onlyIn: 61
   - 
     code: 7
     description: Lt+HMG
@@ -13642,6 +13705,14 @@
     skills: [ Lieutenant ]
     swc: 1
     cost: 41
+    notIn: 61
+  - 
+    code: 3
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    swc: 0
+    cost: 41
+    onlyIn: 61
 - 
   isc: Special Operative Ko Dali
   longisc: Special Operative KO DALI
