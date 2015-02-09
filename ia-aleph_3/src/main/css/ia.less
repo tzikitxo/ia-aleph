@@ -463,8 +463,12 @@ body{
 .ia-trooperSelectorHeader{
     padding: 5px;
     position: relative;
+    display: none;
 
     font-size: 18px;
+}
+.ia-trooperSelectorContainer:first-child .ia-trooperSelectorHeader{
+    display: block;
 }
 .ia-trooperClassification{
     position: absolute;
@@ -667,9 +671,6 @@ body{
 
 .ia-trooperSelectorOtherProfile{
     margin-top: 15px;
-    .ia-trooperSelectorHeader{
-        display: none;
-    }
 }
 
 // REFERNECE TABLES

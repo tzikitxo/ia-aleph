@@ -749,7 +749,7 @@
 - 
   name: Contender
   code: 89
-  ranges: 8,16,32,48
+  ranges: [ 8,16,32,48 ]
   mods: [ 0,3,-3,-6 ]
   damage: 13
   burst: 1
