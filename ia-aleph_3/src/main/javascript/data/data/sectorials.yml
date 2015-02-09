@@ -531,6 +531,9 @@
     code: 330
     ava: 2
   -
+    code: 327
+    ava: 3
+  -
     code: 328
     ava: 3
   -
@@ -1066,7 +1069,7 @@
   logo: steel_phalanx
   troopers:
   -
-    code: 420
+    code: 416
     ava: 4
   -
     code: 430
