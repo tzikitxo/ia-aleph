@@ -131,6 +131,12 @@
     bsw: [ Combi Rifle ]
     swc: 0.5
     cost: 28
+  - 
+    code: 5
+    description: EMitter
+    bsw: [ Combi Rifle + E/Mitter ]
+    swc: 0
+    cost: 24
 - 
   isc: Nisses
   longisc: Svalarheima NISSES
@@ -1530,7 +1536,6 @@
   w: 2
   s: 2
   ava: 1
-  backup: C
   impetuosity: F
   skills: [ Berserk, Jungle Terrain, Religious Troop, "V: Courage" ]
   ccw: [ Pistol ]
@@ -2480,6 +2485,14 @@
     bsw: [ HMG ]
     swc: 1
     cost: 30
+  - 
+    code: 8
+    description: Lt+Sensor
+    skills: [ Lieutenant ]
+    equipments: [ Sensor ]
+    bsw: [ Breaker Combi Rifle, Nimbus Grenades ]
+    swc: 0
+    cost: 26
 - 
   isc: Tiger Soldiers
   longisc: 
@@ -3899,7 +3912,7 @@
   - 
     code: 5
     description: Mimetism
-    skills: [ CH: Mimetism ]
+    skills: [ "CH: Mimetism" ]
     bsw: [ Rifle, Light Shotgun ]
     swc: 0
     cost: 23
@@ -3939,6 +3952,20 @@
     bsw: [ HMG ]
     swc: 1
     cost: 29
+  - 
+    code: 11
+    description: APR+Inf
+    skills: [ Infiltration ]
+    bsw: [ AP Rifle, Light Shotgun, D.E.P. ]
+    swc: 0
+    cost: 30
+  - 
+    code: 12
+    description: Sapper
+    skills: [ Sapper ]
+    bsw: [ HMG ]
+    swc: 2
+    cost: 31
 - 
   isc: Veteran Kazaks
   longisc: 
@@ -4008,6 +4035,20 @@
     bsw: [ AP HMG ]
     swc: 1
     cost: 47
+  - 
+    code: 8
+    description: Lt+HMG
+    skills: [ Lieutenant ]
+    bsw: [ AP HMG ]
+    swc: 1
+    cost: 47
+  - 
+    code: 9
+    description: T2
+    equipments: [ X Visor ]
+    bsw: [ T2 Rifle, Light Flamethrower ]
+    swc: 0
+    cost: 38
 - 
   isc: Foxtrot Rangers
   longisc: 7th FOXTROT RANGERS 'Newport'
@@ -5818,7 +5859,7 @@
   - 
     code: 5
     description: Haris
-    skills: [ Fireteam: Haris L1 ]
+    skills: [ "Fireteam: Haris L1" ]
     bsw: [ Rifle + Light Shotgun ]
     swc: 1
     cost: 25
@@ -6546,7 +6587,7 @@
     bsw: [ Boarding Shotgun, Chain-colt ]
     ccw: [ Pistol, Stun Pistol, Knife ]
     swc: 0
-    cost: 15
+    cost: 25
   - 
     code: 7
     description: Lieutenant
@@ -7128,6 +7169,13 @@
     ccw: [ Pistol, Shock CCW ]
     swc: 1
     cost: 30
+  - 
+    code: 8
+    description: EMitter
+    bsw: [ Combi Rifle + E/Mitter ]
+    ccw: [ Pistol, Shock CCW ]
+    swc: 0
+    cost: 28
 - 
   isc: Reverend Healers
   longisc: 
@@ -9103,6 +9151,12 @@
     swc: 1.5
     cost: 21
   - 
+    code: 8
+    description: Spitfire
+    bsw: [ Spitfire ]
+    swc: 1
+    cost: 19
+  - 
     code: 5
     description: Controller
     equipments: [ Kuang Shi Control Device ]
@@ -9249,7 +9303,7 @@
     equipments: [ X Visor ]
     bsw: [ Boarding Shotgun ]
     swc: 0
-    cost: 25
+    cost: 35
   - 
     code: 3
     description: Sniper
