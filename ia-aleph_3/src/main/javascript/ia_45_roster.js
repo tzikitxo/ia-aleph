@@ -143,14 +143,14 @@ var roster = ia.roster = {};
                 rosterData.swcCount += Number(trooper.swc) || 0;
             }
             rosterData.trooperCount++;
-            if (trooper.type === 'REM') {
+            var isServantOrSynchronized = trooper.hasSkillOrEquipment('G: Servant') || trooper.hasSkillOrEquipment('G: Synchronized');
+            if (trooper.type === 'REM' && !isServantOrSynchronized) {
                 needHacker = true;
             }
             if (trooper.hasSkillOrEquipment('Hacker')) {
                 hasHacker = true;
             }
-            if (!trooper.hasSkillOrEquipment('G: Servant')
-                    && !trooper.hasSkillOrEquipment('G: Synchronized')) {
+            if (!isServantOrSynchronized) {
                 rosterData.orderCount++;
             }
             if (trooper.hasSkillOrEquipment('Lieutenant')) {

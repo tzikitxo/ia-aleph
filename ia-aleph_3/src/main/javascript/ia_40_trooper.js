@@ -100,45 +100,91 @@
         updateTrooperSelector: function (trooperCode, optionCode) {
             trooperCode = trooperCode || data.getTroopers()[0].code;
             var trooper = data.findTrooperByCode(trooperCode);
-            var trooperSelector = buildTrooperSelector(trooper);
-            $('#ia-trooperSelectorWrapper').html(trooperSelector);
+            var profilesToRender = [trooper];
 
-            function addSelectListener(context, callback) {
-                context.find('.ia-trooperSelectorOptionRow').on('click', function () {
-                    var trooper = data.findTrooperByCode(Number($(this).closest('.ia-trooperSelectorContainer').data('ia-troopercode'))).findTrooperOptionByCode(Number($(this).data('ia-optioncode')));
-                    if ($(this).hasClass('ia-selected')) {
-                        callback(trooper);
-                    } else {
-                        $('#ia-mainScreenCenter .ia-trooperSelectorOptionList .ia-selected').removeClass('ia-selected');
-                        $(this).addClass('ia-selected');
-                        ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
-                        ui.infoDisplay.updateInfoDisplayForTrooper(trooper);
-                    }
-                });
-            }
-            function addTrooper(trooper) {
-                if (!trooper.isSlaveOption()) {
-                    roster.addTrooper(trooper);
+//            if (trooper.otherprofiles) {
+            $.each(trooper.otherprofiles || [], function (i, otherprofileCode) {
+                var otherProfile = data.findTrooperByCode(otherprofileCode);
+                if (otherProfile.profileorder === 0) {
+                    profilesToRender.unshift(otherProfile);
+                } else {
+                    profilesToRender.push(otherProfile);
                 }
-            }
-            addSelectListener(trooperSelector, function (trooper) {
-                addTrooper(trooper);
-                //TODO update view (ava) after add
+//                    buildTrooperSelector(otherProfile).addClass('ia-trooperSelectorOtherProfile')
+//                            .appendTo(otherProfile.hasOptions ? '#ia-trooperSelectorWrapper' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
             });
-            if (trooper.otherprofiles) {
-                $.each(trooper.otherprofiles, function (i, otherprofileCode) {
-                    var otherProfile = data.findTrooperByCode(otherprofileCode);
-                    buildTrooperSelector(otherProfile).addClass('ia-trooperSelectorOtherProfile')
-                            .appendTo(otherProfile.hasOptions ? '#ia-trooperSelectorWrapper' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
-                });
-                addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
-                    addTrooper(trooper);
-                });
-            }
+//                addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
+//                    addTrooper(trooper);
+//                });
+//            }
+            $('#ia-trooperSelectorWrapper').empty();
+            $.each(profilesToRender, function (i, profile) {
+                var trooperSelector = buildTrooperSelector(profile).addClass(profile.isSlaveOption() ? 'ia-trooperSelectorOtherProfile' : 'ia-trooperSelectorMainProfile');
+                if (!profile.hasOptions && i > 0) {
+                    $('#ia-trooperSelectorWrapper .ia-trooperSelectorContainer:first .ia-trooperSelectorOtherProfilesContainer').append(trooperSelector);
+                } else {
+                    $('#ia-trooperSelectorWrapper').append(trooperSelector);
+                    trooperSelector.find('.ia-trooperSelectorOptionRow').on('click', function () {
+                        var trooper = profile.findTrooperOptionByCode(Number($(this).data('ia-optioncode')));
+                        if ($(this).hasClass('ia-selected')) {
+                            if (!trooper.isSlaveOption()) {
+                                roster.addTrooper(trooper);
+                            }
+                        } else {
+                            $('#ia-mainScreenCenter .ia-trooperSelectorOptionList .ia-selected').removeClass('ia-selected');
+                            $(this).addClass('ia-selected');
+                            ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
+                            ui.infoDisplay.updateInfoDisplayForTrooper(trooper);
+                        }
+                    });
+                }
+//                addSelectListener(trooperSelector, function (trooper) {
+//                if (!trooper.isSlaveOption()) {
+//                    roster.addTrooper(trooper);
+//                }
+////                    addTrooper(trooper);
+//                });
+            });
+//            var trooperSelector = buildTrooperSelector(trooper);
+//            $('#ia-trooperSelectorWrapper').html(trooperSelector);
+
+//            function addSelectListener(context, callback) {
+//                context.find('.ia-trooperSelectorOptionRow').on('click', function () {
+//                    var trooper = data.findTrooperByCode(Number($(this).closest('.ia-trooperSelectorContainer').data('ia-troopercode'))).findTrooperOptionByCode(Number($(this).data('ia-optioncode')));
+//                    if ($(this).hasClass('ia-selected')) {
+//                        callback(trooper);
+//                    } else {
+//                        $('#ia-mainScreenCenter .ia-trooperSelectorOptionList .ia-selected').removeClass('ia-selected');
+//                        $(this).addClass('ia-selected');
+//                        ui.weaponsDisplay.updateWeaponsDisplayForTrooper(trooper);
+//                        ui.infoDisplay.updateInfoDisplayForTrooper(trooper);
+//                    }
+//                });
+//            }
+//            function addTrooper(trooper) {
+//                if (!trooper.isSlaveOption()) {
+//                    roster.addTrooper(trooper);
+//                }
+//            }
+//            addSelectListener(trooperSelector, function (trooper) {
+//                addTrooper(trooper);
+//                //TODO update view (ava) after add
+//            });
+
+//            if (trooper.otherprofiles) {
+//                $.each(trooper.otherprofiles, function (i, otherprofileCode) {
+//                    var otherProfile = data.findTrooperByCode(otherprofileCode);
+//                    buildTrooperSelector(otherProfile).addClass('ia-trooperSelectorOtherProfile')
+//                            .appendTo(otherProfile.hasOptions ? '#ia-trooperSelectorWrapper' : trooperSelector.find('.ia-trooperSelectorOtherProfilesContainer'));
+//                });
+//                addSelectListener($('#ia-mainScreenCenter .ia-trooperSelectorOtherProfile'), function (trooper) {
+//                    addTrooper(trooper);
+//                });
+//            }
             if (!optionCode) {
-                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow').first().trigger('click');
+                $('#ia-mainScreenCenter .ia-trooperSelectorMainProfile .ia-trooperSelectorOptionRow').first().trigger('click');
             } else {
-                $('#ia-mainScreenCenter .ia-trooperSelectorOptionRow-' + optionCode).trigger('click');
+                $('#ia-mainScreenCenter .ia-trooperSelectorMainProfile .ia-trooperSelectorOptionRow-' + optionCode).trigger('click');
             }
         },
         enableTrooperSelectorLogoSelector: function () {

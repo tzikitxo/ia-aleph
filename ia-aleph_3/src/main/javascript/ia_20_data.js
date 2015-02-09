@@ -49,6 +49,7 @@ var data = ia.data;
         troopers = [];
         $.each(troopersToLoad, function (i, trooper) {
             troopersByCode[trooper.code] = trooper = $.extend({
+                profileorder: 10,
                 troopercode: trooper.code,
                 bsw: [],
                 ccw: [],
@@ -97,7 +98,7 @@ var data = ia.data;
                 return factionsByCode[this.faction];
             };
             trooper.isSlaveOption = function () {
-                return (this.isPartOfCompositeUnit && !this.isHeadOfCompositeUnit) || this.isAlternateProfile;
+                return (this.isPartOfCompositeUnit && !this.isHeadOfCompositeUnit) || (this.isAlternateProfile);
             };
             var trooperOptionsByCode = {};
             var optionsToLoad = $.grep(trooper.options || [], function (option) {

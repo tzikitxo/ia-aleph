@@ -10468,6 +10468,7 @@
     bsw: [ Rifle ]
     swc: 2
     cost: 8
+    notIn: 55
   - 
     code: 9
     description: Lieutenant
@@ -11019,7 +11020,7 @@
     code: 1
     description: 
     swc: 0
-    cost: 37
+    cost: 69
 - 
   isc: Equipe Mirage-5
   longisc: Sergent DUROC
@@ -12459,8 +12460,7 @@
   isc: Shasvastii Seed-Soldiers
   longisc: SHASVASTII SEED-SOLDIERS
   iscspecification: SEED-EMBRYO
-  code: 366
-  otherprofiles: [367]
+  code: 367
   faction: 6
   logo: shasvastii_seed_soldiers
   name: SEED-SOLDIER
@@ -12477,11 +12477,13 @@
   s: 0
   ava: '-'
   skills: [ "CH: Limited Camouflage", Seed-Embryo ]
+  profileorder: 0
 - 
   isc: Shasvastii Seed-Soldiers
   iscspecification: DEVELOPED SHAPE
   longisc: SHASVASTII SEED-SOLDIERS
-  code: 367
+  code: 366
+  otherprofiles: [367]
   faction: 6
   logo: shasvastii_seed_soldiers
   name: SEED-SOLDIER
@@ -12532,8 +12534,7 @@
   isc: Shasvastii Cadmus
   longisc: SHASVASTII AIRBONE INFILTRATION GROUP CADMUS
   iscspecification: SEED-EMBRYO
-  code: 368
-  otherprofiles: [369]
+  code: 369
   faction: 6
   logo: shasvastii_cadmus
   name: CADMUS-SEED
@@ -12552,6 +12553,7 @@
   skills: [ "AD: Combat jump", Seed-Embryo ]
   bsw: [ Antipersonnel Mines (1) ]
   ccw: [ Electric Pulse ]
+  profileorder: 0
   options:
   - 
     code: 1
@@ -12562,7 +12564,8 @@
   isc: Shasvastii Cadmus
   longisc: SHASVASTII AIRBONE INFILTRATION GROUP CADMUS
   iscspecification: DEVELOPED SHAPE
-  code: 369
+  code: 368
+  otherprofiles: [369]
   faction: 6
   logo: shasvastii_cadmus
   name: CADMUS-SOLDIER
@@ -13328,8 +13331,7 @@
   isc: Shasvastii Sabotage and Destruction Unit Caliban
   longisc: SHASVASTII SABOTAGE AND DESTRUCTION UNIT CALIBAN
   iscspecification: SEED-EMBRYO
-  code: 384
-  otherprofiles: [385]
+  code: 385
   faction: 6
   logo: shasvastii_caliban
   name: CALIBAN
@@ -13347,12 +13349,14 @@
   ava: 2
   skills: [ "CH: Limited Camouflage", "Seed-Embryo" ]
   equipments: [ AutoMediKit ]
+  profileorder: 0
   options:
 - 
   isc: Shasvastii Sabotage and Destruction Unit Caliban
   longisc: SHASVASTII SABOTAGE AND DESTRUCTION UNIT CALIBAN
   iscspecification: DEVELOPED SHAPE
-  code: 385
+  code: 384
+  otherprofiles: [385]
   faction: 6
   logo: shasvastii_caliban
   name: CALIBAN
@@ -13830,8 +13834,7 @@
   isc: Shasvastii Corax Hasht
   longisc: SHASVASTII CORAX HASHT
   iscspecification: SEED-EMBRYO
-  code: 394
-  otherprofiles: [395]
+  code: 395
   faction: 6
   logo: shasvastii_corax_hasht
   name: CORAX HASHT
@@ -13848,11 +13851,13 @@
   s: 0
   ava: 1
   skills: [ "CH: Limited Camouflage", Seed-Embryo ]
+  profileorder: 0
 - 
   isc: Shasvastii Corax Hasht
   longisc: SHASVASTII CORAX HASHT
   iscspecification: DEVELOPED SHAPE
-  code: 395
+  code: 394
+  otherprofiles: [395]
   faction: 6
   logo: shasvastii_corax_hasht
   name: CORAX HASHT
@@ -16459,7 +16464,7 @@
     min: 1
     max: 1
   -
-    code: 462
+    code: 463
     min: 1
     max: 1
   faction: 8
