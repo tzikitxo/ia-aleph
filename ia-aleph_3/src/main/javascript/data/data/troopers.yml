@@ -4779,7 +4779,7 @@
     swc: 1
     cost: 31
 - 
-  isc: HASSASSIN GOVADS
+  isc: Hassassin Govads
   longisc: HASSASSIN GOVADS
   code: 165
   faction: 4
@@ -5286,21 +5286,37 @@
   s: 2
   ava: 1
   skills: [ Basic Impersonation, Kinematika L1, Martial Arts L3, Multiterrain, Religious Troop ]
-  bsw: [ Rifle + Light Shotgun, Smoke Grenades ]
+  bsw: [ Smoke Grenades ]
   ccw: [ Pistol,Knife ]
   options:
   - 
     code: 1
     description: DACCW
+    bsw: [ Rifle + Light Shotgun ]
     ccw: [ DA CCW ]
     swc: 0
     cost: 31
   - 
     code: 2
     description: APCCW
+    bsw: [ Rifle + Light Shotgun ]
     ccw: [ AP CCW ]
     swc: 0
     cost: 30
+  - 
+    code: 3
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 30
+  - 
+    code: 4
+    description: Mines
+    bsw: [ Rifle + Light Shotgun, Antipersonnel Mines ]
+    ccw: [ AP CCW ]
+    swc: 0
+    cost: 32
 - 
   isc: Kum Motorized Troops
   longisc: KUM MOTORIZED TROOPS
