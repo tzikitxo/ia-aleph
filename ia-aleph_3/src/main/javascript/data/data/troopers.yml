@@ -779,6 +779,13 @@
     bsw: [ Combi Rifle ]
     swc: 2
     cost: 30
+  - 
+    code: 7
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 31
 - 
   isc: Trauma-Docs
   longisc: TRAUMA-DOCS
@@ -3107,6 +3114,13 @@
     bsw: [ Combi Rifle ]
     swc: 2
     cost: 25
+  - 
+    code: 7
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Combi Rifle ]
+    swc: 0.5
+    cost: 26
 - 
   isc: Ninjas
   longisc: 
@@ -7485,6 +7499,13 @@
     bsw: [ Combi Rifle, E/Mauler ]
     swc: 0
     cost: 19
+  - 
+    code: 7
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
+    cost: 19
 - 
   isc: Spektrs
   longisc: 
@@ -8642,6 +8663,13 @@
     equipments: [ Forward Observer ]
     bsw: [ Combi Rifle, Antipersonnel Mines ]
     swc: 0
+    cost: 25
+  - 
+    code: 6
+    description: Minelayer
+    skills: [ Minelayer ]
+    bsw: [ Combi Rifle, Antipersonnel Mines ]
+    swc: 0.5
     cost: 25
 - 
   isc: Malignos
