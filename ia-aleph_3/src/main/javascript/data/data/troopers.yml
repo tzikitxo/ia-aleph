@@ -6855,30 +6855,35 @@
     bsw: [ Combi Rifle ]
     swc: 0
     cost: 10
+    notIn: 55
   - 
     code: 2
     description: HMG
     bsw: [ HMG ]
     swc: 1
     cost: 18
+    notIn: 55
   - 
     code: 3
     description: LGL
     bsw: [ Combi Rifle + Light Grenade Launcher ]
     swc: 1
     cost: 14
+    notIn: 55
   - 
     code: 4
     description: Sniper
     bsw: [ MULTI Sniper Rifle ]
     swc: 1.5
     cost: 18
+    notIn: 55
   - 
     code: 5
     description: ML
     bsw: [ Missile Launcher ]
     swc: 1.5
     cost: 15
+    notIn: 55
   - 
     code: 6
     description: Hacker
@@ -6894,6 +6899,7 @@
     bsw: [ Combi Rifle ]
     swc: 0
     cost: 12
+    notIn: 55
   - 
     code: 8
     description: Paramedic
@@ -6902,6 +6908,7 @@
     bsw: [ Combi Rifle ]
     swc: 0
     cost: 12
+    notIn: 55
   - 
     code: 9
     description: Lieutenant
@@ -6909,6 +6916,7 @@
     bsw: [ Combi Rifle ]
     swc: 1
     cost: 10
+    notIn: 55
 - 
   isc: Grenzers, Grenz Security Team
   longisc: GRENZERS, Grenz Security Team
