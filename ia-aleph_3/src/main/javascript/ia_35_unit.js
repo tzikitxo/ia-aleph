@@ -46,7 +46,7 @@
             }
             $.each($.grep([].concat(troopers).reverse(), filterFunction), function (i, trooper) {
                 var unitSelector = $('<img class="ia-unitSelector" />')
-                        .attr('src', 'img/troop/' + trooper.logo + '_logo.png')
+                        .attr('src', 'img/troop/' + trooper.logo + '_logo_small.png')
                         .attr('title', trooper.isc)
                         .prependTo(unitSelectorScroller).on('click', function () {
                     ui.trooperSelector.updateTrooperSelector(trooper.code);

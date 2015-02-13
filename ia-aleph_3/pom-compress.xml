@@ -43,18 +43,20 @@
             <plugin>
                 <groupId>it.anyplace.web</groupId>
                 <artifactId>a-web-maven-plugin</artifactId>
-                <version>2.1-SNAPSHOT</version>
+                <version>2.3</version>
                 <configuration>
                     <defaultPrefix>ia</defaultPrefix>
                     <validateJson>false</validateJson>
                     <compressJs>true</compressJs>
                     <compressCss>true</compressCss>
+                    <compressImages>img/troop/ 120 img/troop/ 40x40:_small img/army/ 120</compressImages>
                 </configuration>
                 <executions>
                     <execution>
                         <goals>
                             <goal>javascript</goal>
                             <goal>css</goal>
+                            <goal>img</goal>
                         </goals>
                     </execution>
                 </executions>    
