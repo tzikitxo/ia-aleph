@@ -49,7 +49,7 @@
                     <validateJson>false</validateJson>
                     <compressJs>true</compressJs>
                     <compressCss>true</compressCss>
-                    <compressImages>img/troop/ 120 img/troop/ 40x40:_small img/army/ 120</compressImages>
+                    <compressImages>img/troop/ 120 img/troop/ 50x50:_small img/army/ 120</compressImages>
                 </configuration>
                 <executions>
                     <execution>
