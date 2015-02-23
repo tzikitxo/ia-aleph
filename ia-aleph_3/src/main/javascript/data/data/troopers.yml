@@ -2779,6 +2779,18 @@
     bsw: [ Boarding Shotgun ]
     swc: 0
     cost: 31
+  - 
+    code: 7
+    description: EMitter
+    bsw: [ Combi Rifle + E/Mitter ]
+    swc: 0
+    cost: 33
+  - 
+    code: 8
+    description: LRL
+    bsw: [ Combi Rifle, Light Rocket Launcher ]
+    swc: 1
+    cost: 37
 - 
   isc: Dàofei Tactical Section
   longisc: DÀOFEI Tactical Section
@@ -4044,13 +4056,6 @@
     cost: 37
   - 
     code: 7
-    description: Lt+HMG
-    skills: [ Lieutenant ]
-    bsw: [ AP HMG ]
-    swc: 1
-    cost: 47
-  - 
-    code: 8
     description: Lt+HMG
     skills: [ Lieutenant ]
     bsw: [ AP HMG ]
@@ -7978,7 +7983,7 @@
     code: 1
     description: 
     swc: 0
-    cost: 28
+    cost: 47
 - 
   isc: "Zoe & Π-Well, Special Clockmakers Team"
   longisc: Π-WELL
@@ -10930,7 +10935,7 @@
   code: 328
   faction: 3
   logo: 112_emergency_service
-  name: 112
+  name: "112"
   type: LI
   classification: Support Troops
   mov: 4-4
@@ -11787,7 +11792,7 @@
   isc: Szalamandra
   longisc: "'SZALAMANDRA' SQUADRON"
   code: 347
-  otherprofiles: 348
+  otherprofiles: [348]
   faction: 5
   logo: szalamandra
   name: SZALAMANDRA
@@ -12217,7 +12222,7 @@
     code: 2
     description: Lieutenant
     skills: [ Lieutenant ]
-    swc: "+1"
+    swc: -1
     cost: 44
 - 
   isc: Wildcats, Polyvalent Tactical Unit
@@ -16095,7 +16100,8 @@
   cc: 4-422
   bs: 11
   ph: 13
-  arm: 131
+  wip: 13
+  arm: 1
   bts: 3
   w: 1
   s: 2
@@ -17510,7 +17516,7 @@
     code: 1
     description: 
     swc: 1.5
-    cost: 47
+    cost: 64
 - 
   isc: Scarface & Cordelia, Mercenary Armored Team
   longisc: SCARFACE TURNER, MERCENARY T.A.G. PILOT

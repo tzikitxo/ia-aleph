@@ -55,6 +55,8 @@ var data = ia.data;
                 ccw: [],
                 skills: [],
                 equipments: [],
+                name: '',
+                isc: '',
                 isRegular: !trooper.irregular,
                 isIrregular: trooper.irregular,
                 isImpetuous: trooper.impetuosity === 'I',
