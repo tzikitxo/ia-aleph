@@ -60,7 +60,7 @@ body{
     background-color: @topBarBgColor;
 }
 #ia-mainScreenCenter{
-    padding-top: 65px;
+    padding-top: 75px;
     padding-bottom: 45px;
 }
 #ia-mainMenuButton{
@@ -111,18 +111,21 @@ body{
     min-height: 55px;
     white-space: nowrap;
 
+    .ia-unitSelectorLogo{
+        width: 40px;
+        height: 40px;
+    }
     .ia-unitSelector{
         display: inline-block;
-        /*margin-left: 5px;*/
         width: 40px;
         height: 40px;
         padding: 5px;
-        /*padding: 0 5px;*/
 
         cursor: pointer;
         &:hover{
             background-image: url('../img/theme/topBarrHexaBg1.png');
             background-size: 50px 50px;
+            background-repeat: no-repeat;
         }
         &:first-child{
             margin-left: 25px;
@@ -135,10 +138,19 @@ body{
             opacity: .6;
         }
     }
+    .ia-unitSelectorName{
+        text-overflow: ellipsis;
+        font-size: 9px;
+        overflow: hidden;
+        margin: 1px -5px 0 -5px;
+        text-align: center;
+        text-transform: capitalize;
+        heigth: 10px;
+    }
 }
 #ia-unitSelectorScrollButtonLeft, #ia-unitSelectorScrollButtonRight{
     display: inline-block;
-    height: 55px;
+    height: 65px;
     width: 50px;
     position: absolute;
     top: 0;
