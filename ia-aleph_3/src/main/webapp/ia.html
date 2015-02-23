@@ -70,6 +70,12 @@
                 <div id="ia-unitSelectorScrollButtonLeft"></div>
                     <div id="ia-unitSelectorScrollerContainer">
                         <div id="ia-unitSelectorScroller">
+                            {{#each units}}
+                            <div class="ia-unitSelector {{otherclass}}" data-ia-troopercode="{{troopercode}}" title="{{title}}">
+                                <img class="ia-unitSelectorLogo" src="img/troop/{{logo}}_logo_small.png"></img>
+                                <div class="ia-unitSelectorName">{{name}}</div>
+                            </div>
+                            {{/each}}
                         </div>
                     </div>
                 <div id="ia-unitSelectorScrollButtonRight"></div>

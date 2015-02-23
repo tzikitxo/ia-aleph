@@ -22,14 +22,13 @@
     ui.unitSelector = {
         updateUnitSelector: function (config) {
             config = config || {};
-            $('#ia-unitSelectorContainer').replaceWith(unitSelectorTemplate({}));
 //            factionCode = factionCode || 1;
 //            var faction = data.findFactionByCode(factionCode);
             var troopers = $.grep(data.getTroopers(), function (trooper) {
                 return !trooper.isAlternateProfile;
             });
-            var unitSelectorScroller = $('#ia-unitSelectorScroller');
-            unitSelectorScroller.find('.ia-unitSelector').remove();
+//            var unitSelectorScroller = $('#ia-unitSelectorScroller');
+//            unitSelectorScroller.find('.ia-unitSelector').remove();
             var filterFunction = function () {
                 return true;
             };
@@ -38,23 +37,38 @@
                     return trooper.type === config.filterByUnitType;
                 };
                 $('#ia-unitSelectorSearchButton').text(config.filterByUnitType).css({'background-position': '5px 0'});
-            }else if(config.filterBySearch){                
+            } else if (config.filterBySearch) {
                 filterFunction = function (trooper) {
                     return trooper.isc.toLowerCase().match(config.filterBySearch);
                 };
                 $('#ia-unitSelectorSearchButton').text(config.filterBySearch).css({'background-position': '5px 0'});
             }
-            $.each($.grep([].concat(troopers).reverse(), filterFunction), function (i, trooper) {
-                var unitSelector = $('<img class="ia-unitSelector" />')
-                        .attr('src', 'img/troop/' + trooper.logo + '_logo_small.png')
-                        .attr('title', trooper.isc)
-                        .prependTo(unitSelectorScroller).on('click', function () {
-                    ui.trooperSelector.updateTrooperSelector(trooper.code);
-                });
-                if (trooper.isSlaveOption()) {
-                    unitSelector.addClass('ia-unitSelector-slaveOption');
-                }
+            var unitsForButtons = $.map($.grep([].concat(troopers), filterFunction), function (trooper) {
+                return {
+                    logo: trooper.logo,
+                    title: trooper.isc,
+//                    name: trooper.isc.replace(/ .*/,''),
+                    name: trooper.name.toLowerCase(),
+                    otherclass: trooper.isSlaveOption() ? 'ia-unitSelector-slaveOption' : '',
+                    troopercode: trooper.code
+                };
+//                var unitSelector = $('<img class="ia-unitSelector" />')
+//                        .attr('src', 'img/troop/' + trooper.logo + '_logo_small.png')
+//                        .attr('title', trooper.isc)
+//                        .prependTo(unitSelectorScroller).on('click', function () {
+//                    ui.trooperSelector.updateTrooperSelector(trooper.code);
+//                });
+//                if (trooper.isSlaveOption()) {
+//                    unitSelector.addClass('ia-unitSelector-slaveOption');
+//                }
             });
+            $('#ia-unitSelectorContainer').replaceWith(unitSelectorTemplate({
+                units: unitsForButtons
+            }));
+            $('#ia-unitSelectorContainer .ia-unitSelector').on('click', function () {
+                ui.trooperSelector.updateTrooperSelector(Number($(this).data('ia-troopercode')));
+            });
+
 //                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});
 //                unitSelectorScroller.draggable({cursor: "move", axis: "x"});
             var scrollAmount = 150;
