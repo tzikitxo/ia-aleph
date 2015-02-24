@@ -1131,19 +1131,19 @@
     code: 1
     description: 
     swc: 0
-    cost: 14
+    cost: 10
   - 
     code: 2
     description: FO
     equipments: [ Forward Observer ]
     swc: 0
-    cost: 16
+    cost: 12
   - 
     code: 3
     description: Lieutenant
     skills: [ Lieutenant ]
     swc: 1
-    cost: 14
+    cost: 10
 - 
   isc: Auxilia
   longisc: AUXBOT
@@ -1337,13 +1337,13 @@
     description: MRifle
     bsw: [ MULTI Rifle + Heavy Flamethrower ]
     swc: 0
-    cost: 49
+    cost: 43
   - 
     code: 2
     description: Spitfire
     bsw: [ Spitfire + Heavy Flamethrower ]
     swc: 2
-    cost: 52
+    cost: 46
 - 
   isc: Guarda de Assalto
   longisc: AUXBOT
@@ -1722,7 +1722,7 @@
     code: 1
     description: 
     swc: 2
-    cost: 83
+    cost: 79
 - 
   isc: Seraphs
   longisc: AUXBOT
@@ -1823,13 +1823,13 @@
     description: HS
     bsw: [ Heavy Shotgun ]
     swc: 0
-    cost: 23
+    cost: 19
   - 
     code: 2
     description: Spitfire
     bsw: [ Spitfire ]
     swc: 1
-    cost: 29
+    cost: 25
 - 
   isc: "Armbots: Peacemakers"
   longisc: AUXBOT
@@ -7983,7 +7983,7 @@
     code: 1
     description: 
     swc: 0
-    cost: 47
+    cost: 28
 - 
   isc: "Zoe & Π-Well, Special Clockmakers Team"
   longisc: Π-WELL
@@ -11077,7 +11077,7 @@
     code: 1
     description: 
     swc: 2
-    cost: 69
+    cost: 37
 - 
   isc: Equipe Mirage-5
   longisc: Sergent DUROC
@@ -11558,14 +11558,16 @@
     skills: [ Engineer ]
     bsw: [ Combi Rifle + Light Flamethrower, D-Charges, Zondcat (1) ]
     swc: 0
-    cost: 26
+    cost: 22
+    compositetroop: [ 340, 341 ]
   - 
     code: 7
     description: Doc+Zondcat
     skills: [ Doctor ]
     bsw: [ Combi Rifle + Light Flamethrower, Zondcat (1) ]
     swc: 0
-    cost: 26
+    cost: 22
+    compositetroop: [ 340, 341 ]
 - 
   isc: Zondcats
   longisc: 
@@ -12132,7 +12134,8 @@
     description: Moriarty
     bsw: [ Moriarty (1) ]
     swc: 0
-    cost: 34
+    cost: 30
+    compositetroop: [ 356, 357 ]
 - 
   isc: Carlota Kowalsky, Tomcats Sergeant
   longisc: MORIARTY the Zondcat
@@ -14039,7 +14042,6 @@
   isc: Deva Functionaries
   longisc: DEVA Functionaries
   code: 398
-  otherprofiles: [ 399 ]
   faction: 7
   logo: deva_functionaries
   name: DEVA
@@ -14070,7 +14072,16 @@
     description: Devabot
     bsw: [ Combi Rifle, Nanopulser, Devabot (1) ]
     swc: 0
-    cost: 27
+    cost: 23    
+    compositetroop:
+    -
+      code: 398
+      min: 1
+      max: 1
+    -
+      code: 399
+      min: 1
+      max: 1
   - 
     code: 3
     description: Hacker
@@ -14099,7 +14110,16 @@
     skills: [ Lieutenant ]
     bsw: [ Combi Rifle, Nanopulser, Devabot (1) ]
     swc: 0
-    cost: 27
+    cost: 23    
+    compositetroop:
+    -
+      code: 398
+      min: 1
+      max: 1
+    -
+      code: 399
+      min: 1
+      max: 1
 - 
   isc: Deva Functionaries
   longisc: DEVABOT
@@ -14937,7 +14957,7 @@
     code: 1
     description: 
     swc: 1.5
-    cost: 43
+    cost: 41
 - 
   isc: Atalanta, Agema's NCO
   longisc: SPOTBOT
@@ -15969,7 +15989,7 @@
     code: 1
     description: 
     swc: 2
-    cost: 81
+    cost: 64
 - 
   isc: Gorgos Squad
   longisc: 
@@ -16551,52 +16571,52 @@
     description: Combi
     bsw: [ Combi Rifle, Mines ]
     swc: 0
-    cost: 37
+    cost: 33
   - 
     code: 2
     description: VCombi
     bsw: [ Viral Combi Rifle ]
     swc: 0
-    cost: 42
+    cost: 38
   - 
     code: 3
     description: BS
     bsw: [ Boarding Shotgun, Contender ]
     swc: 0
-    cost: 38
+    cost: 34
   - 
     code: 4
     description: 2Cont
     bsw: [ Contender (2), Light Shotgun ]
     swc: 0
-    cost: 39
+    cost: 35
   - 
     code: 5
     description: Spitfire
     bsw: [ Spitfire ]
     swc: 2
-    cost: 42
+    cost: 38
   - 
     code: 6
     description: Lt+Combi
     skills: [ Lieutenant ]
     bsw: [ Combi Rifle, Mines ]
     swc: 0
-    cost: 37
+    cost: 33
   - 
     code: 7
     description: Lt+VCombi
     skills: [ Lieutenant ]
     bsw: [ Viral Combi Rifle ]
     swc: 0
-    cost: 42
+    cost: 38
   - 
     code: 8
     description: Lt+Spitfire
     skills: [ Lieutenant ]
     bsw: [ Spitfire ]
     swc: 2
-    cost: 42
+    cost: 38
 - 
   isc: Rasail Boarding Team
   longisc: 
@@ -17516,7 +17536,7 @@
     code: 1
     description: 
     swc: 1.5
-    cost: 64
+    cost: 47
 - 
   isc: Scarface & Cordelia, Mercenary Armored Team
   longisc: SCARFACE TURNER, MERCENARY T.A.G. PILOT
@@ -17622,8 +17642,12 @@
     description: Auxbot
     bsw: [ Combi Rifle, Auxbot (1) ]
     swc: 1
-    cost: 17
+    cost: 13
     compositetroop:
+    -
+      code: 490
+      min: 1
+      max: 1
     -
       code: 491
       min: 1
@@ -17667,8 +17691,12 @@
     description: Auxbot
     bsw: [ Combi Rifle, Auxbot (1) ]
     swc: 0
-    cost: 17
+    cost: 13
     compositetroop:
+    -
+      code: 490
+      min: 1
+      max: 1
     -
       code: 491
       min: 1

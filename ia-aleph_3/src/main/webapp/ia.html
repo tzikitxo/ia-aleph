@@ -119,8 +119,8 @@
                                 <td><img class="ia-rosterTrooperEntryLogo" src="img/troop/{{logo}}_logo_small.png"></td>
                                 <td class="ia-rosterEntryNameCell">{{name}}</td>
                                 <td>{{description}}</td>
-                                <td class="ia-rosterEntrySwcCell">{{swcStr}}</td>
-                                <td class="ia-rosterEntryCostCell">{{cost}}</td>
+                                <td class="ia-rosterEntrySwcCell">{{swcStr}}{{trooperCompositeSwc this}}</td>
+                                <td class="ia-rosterEntryCostCell">{{cost}}{{trooperCompositeCost this}}</td>
                                 </tr>
                                 {{/each}}
                             </tbody>
@@ -221,8 +221,8 @@
             <td><span class="ia-troopetSelectorOptionName">{{../trooper.name}}</span> {{joinForTrooperOption this}}</td>
             <td>{{join allBsw}}</td>
             <td>{{join allCcw}}</td>
-            <td class="ia-trooperSelectorOptionSwcCell">{{swcStr}}</td>
-            <td class="ia-trooperSelectorOptionCostCell">{{cost}}</td>
+            <td class="ia-trooperSelectorOptionSwcCell">{{swcStr}}{{trooperCompositeSwc this}}</td>
+            <td class="ia-trooperSelectorOptionCostCell">{{cost}}{{trooperCompositeCost this}}</td>
             </tr>
             {{/each}}
             </tbody>

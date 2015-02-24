@@ -54,6 +54,12 @@
             return context.ava;
         }
     });
+    Handlebars.registerHelper("trooperCompositeCost", function (context) {
+        return context.isHeadOfCompositeUnit ? ' (' + context.getCompositeCost() + ')' : '';
+    });
+    Handlebars.registerHelper("trooperCompositeSwc", function (context) {
+        return (context.isHeadOfCompositeUnit && context.getCompositeSwc() !== context.swc) ? ' (' + context.getCompositeSwc() + ')' : '';
+    });
 
     var trooperSelectorTemplate = Handlebars.compile($('#ia-trooperSelectorTemplate').html());
 
@@ -100,6 +106,10 @@
         updateTrooperSelector: function (trooperCode, optionCode) {
             trooperCode = trooperCode || data.getTroopers()[0].code;
             var trooper = data.findTrooperByCode(trooperCode);
+            if (trooper.isPartOfCompositeUnit && !trooper.isHeadOfCompositeUnit) {
+                this.updateTrooperSelector(trooper.compositeUnitHeadTrooperCode);
+                return;
+            }
             var profilesToRender = [trooper];
 
 //            if (trooper.otherprofiles) {

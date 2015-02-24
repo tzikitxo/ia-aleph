@@ -55,6 +55,8 @@ var data = ia.data;
                 ccw: [],
                 skills: [],
                 equipments: [],
+                options: [],
+                otherprofiles: [],
                 name: '',
                 isc: '',
                 isRegular: !trooper.irregular,
@@ -77,15 +79,55 @@ var data = ia.data;
             }, trooper);
             troopers.push(trooper);
         });
-        $.each(troopers, function (i, trooper) {
+        function processCompositeTrooper(trooper, parent) {
             if (trooper.compositetroop) {
-                trooper.isHeadOfCompositeUnit = true;
+                trooper.compositetroop = $.map(trooper.compositetroop, function (item) {
+                    if (typeof item === 'number') {
+                        item = {code: item};
+                    }
+                    item.max = item.max || 1;
+                    item.min = item.min || 1;
+                    return item;
+                });
+                trooper.isHeadOfCompositeUnit = trooper.isPartOfCompositeUnit = true;
+                trooper.getCompositeSwc = function () {
+                    var swc = 0, me = this;
+                    $.each(trooper.compositetroop, function (i, compositeoption) {
+                        swc += Number(compositeoption.code === me.troopercode ? me.swc : troopersByCode[compositeoption.code].options[0].swc) || 0;
+                    });
+                    return swc;
+                };
+                trooper.getCompositeCost = function () {
+                    var cost = 0, me = this;
+                    $.each(trooper.compositetroop, function (i, compositeoption) {
+                        cost += Number(compositeoption.code === me.troopercode ? me.cost : troopersByCode[compositeoption.code].options[0].cost) || 0;
+                    });
+                    return cost;
+                };
+//                var compositeCost = 0, compositeSwc = 0;
                 $.each(trooper.compositetroop, function (i, compositeoption) {
                     compositeoption.troop = troopersByCode[compositeoption.code];
-                    compositeoption.troop.isPartOfCompositeUnit = true;
-                    compositeoption.troop.compositeUnitHead = trooper;
+                    if (compositeoption.troop !== (parent || trooper)) {
+                        compositeoption.troop.isPartOfCompositeUnit = true;
+                        compositeoption.troop.compositeUnitHeadTrooperCode = (parent || trooper).code;
+//                        compositeoption.troop.compositeUnitHeadOptionCode = parent ? trooper.code : null;
+                        if ($.inArray(compositeoption.code, (parent || trooper).otherprofiles) === -1) {
+                            (parent || trooper).otherprofiles.push(compositeoption.code);
+                        }
+                    }
+//                    var option = compositeoption.troop.options[0];
+//                    compositeCost += Number(option.cost) || 0;
+//                    compositeSwc += Number(option.swc) || 0;
                 });
+//                trooper.compositeCost = compositeCost;
+//                trooper.compositeSwc = compositeSwc;
             }
+        }
+        $.each(troopers, function (i, trooper) {
+            processCompositeTrooper(trooper);
+            $.each(trooper.options, function (i, option) {
+                processCompositeTrooper(option, trooper);
+            });
             if (trooper.otherprofiles) {
                 $.each(trooper.otherprofiles, function (i, altp) {
                     troopersByCode[altp].isAlternateProfile = true;
@@ -103,7 +145,7 @@ var data = ia.data;
                 return (this.isPartOfCompositeUnit && !this.isHeadOfCompositeUnit) || (this.isAlternateProfile);
             };
             var trooperOptionsByCode = {};
-            var optionsToLoad = $.grep(trooper.options || [], function (option) {
+            var optionsToLoad = $.grep(trooper.options, function (option) {
                 if (option.onlyIn) {
                     return factionOrSectorial.code === option.onlyIn;
                 } else if (option.notIn) {

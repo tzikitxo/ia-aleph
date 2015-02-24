@@ -70,7 +70,7 @@ var roster = ia.roster = {};
         if (trooper.isHeadOfCompositeUnit) {
             $.each(trooper.compositetroop, function (i, compositeoption) {
                 if (compositeoption.code !== trooper.troopercode) {
-                    for (var i = 0; i < compositeoption.min; i++) {
+                    for (var i = 0; i < compositeoption.max; i++) {
                         addTrooper(compositeoption.troop.options[0]);
                     }
                 }
@@ -138,10 +138,10 @@ var roster = ia.roster = {};
         var hasHacker = false, ltCount = 0, needHacker = false;
         rosterData.trooperCountByCode = {};
         $.each(rosterData.troopers, function (i, trooper) {
-            if (!trooper.isSlaveOption()) {
-                rosterData.pointCount += Number(trooper.cost) || 0;
-                rosterData.swcCount += Number(trooper.swc) || 0;
-            }
+//            if (!trooper.isSlaveOption()) {
+            rosterData.pointCount += Number(trooper.cost) || 0;
+            rosterData.swcCount += Number(trooper.swc) || 0;
+//            }
             rosterData.trooperCount++;
             var isServantOrSynchronized = trooper.hasSkillOrEquipment('G: Servant') || trooper.hasSkillOrEquipment('G: Synchronized');
             if (trooper.type === 'REM' && !isServantOrSynchronized) {
