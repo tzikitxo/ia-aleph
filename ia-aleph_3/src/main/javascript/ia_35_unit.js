@@ -93,7 +93,7 @@
 //                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});
 //            $('#ia-unitSelectorScroller').draggable({cursor: "move", axis: "x", containment: [0 - $('#ia-unitSelectorScroller').width(), 0, 0 + $('#ia-unitSelectorScroller').width(), 0]});
 //            var scrollAmount = 150;
-            $('#ia-unitSelectorScrollButtonLeft').on('click', function () {
+            $('#ia-unitSelectorScrollButtonRight').on('click', function () {
                 var toScroll = Math.min((getLeft() + getContentWidth()) - getContainerWidth(), 150);
 //                if (getLeft() + getContentWidth() > getContainerWidth()) {
                 if (toScroll > 0) {
@@ -105,7 +105,7 @@
                 }
 //                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() - scrollAmount);
             });
-            $('#ia-unitSelectorScrollButtonRight').on('click', function () {
+            $('#ia-unitSelectorScrollButtonLeft').on('click', function () {
                 var toScroll = Math.min(-getLeft(), 150);
                 if (toScroll > 0) {
                     $('#ia-unitSelectorScroller').animate({"left": "+=" + toScroll + "px"}, "fast", function () {
@@ -119,7 +119,7 @@
             $('#ia-unitSelectorScrollerContainer').on('mousewheel', function (event) {
 //                $('#ia-unitSelectorScroller').animate({"left": (event.deltaY < 0 ? '+' : '-') + "=50px"}, "fast");
                 $('#ia-unitSelectorScroller').css({
-                    left: Math.min(0, Math.max(getContainerWidth() - getContentWidth(), getLeft() + ((event.deltaY < 0 ? +1 : -1) * 50))) + 'px'
+                    left: Math.min(0, Math.max(getContainerWidth() - getContentWidth(), getLeft() + ((event.deltaY < 0 ? -1 : +1) * 50))) + 'px'
                 });
 //                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + (event.deltaY < 0 ? +1 : -1) * 50);
                 return false;

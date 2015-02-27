@@ -3871,7 +3871,7 @@
     code: 6
     description: Marksman
     skills: [ Marksmanship L1 ]
-    equipments: [ X-Visor ]
+    equipments: [ X Visor ]
     bsw: [ AP Rifle,Light Flamethrower (2) ]
     swc: 0
     cost: 29
@@ -6053,7 +6053,7 @@
   - 
     code: 5
     description: Spitfire
-    equipments: [ X-Visor ]
+    equipments: [ X Visor ]
     bsw: [ Spitfire, D-Charges ]
     swc: 1
     cost: 30
@@ -6075,7 +6075,7 @@
   - 
     code: 8
     description: HRL
-    equipments: [ X-Visor ]
+    equipments: [ X Visor ]
     bsw: [ Heavy Rocket Launcher, D-Charges ]
     swc: 1
     cost: 22
@@ -6099,7 +6099,7 @@
   s: 2
   ava: 2
   skills: [ "CH: Mimetism", Climbing Plus, Religious Troop ]
-  equipments: [ X-Visor ]
+  equipments: [ X Visor ]
   ccw: [ Pistol, Knife ]
   options:
   - 
@@ -6145,7 +6145,7 @@
   - 
     code: 2
     description: Feuerbach
-    equipments: [ X-Visor ]
+    equipments: [ X Visor ]
     bsw: [ Feuerbach ]
     swc: 2
     cost: 41
@@ -7133,7 +7133,7 @@
   - 
     code: 6
     description: Sniper
-    equipments: [ X-Visor ]
+    equipments: [ X Visor ]
     bsw: [ MULTI Sniper Rifle ]
     swc: 1.5
     cost: 43

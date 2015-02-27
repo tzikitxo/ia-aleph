@@ -40,12 +40,12 @@ body{
 
 // MAIN
 
+@topBarHeight: 65px;
 .ia-mainScreenTopBar{    
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 20;
-
 }
 .ia-mainScreenTopBarButtons{
     margin-left: auto;
@@ -53,6 +53,7 @@ body{
     max-width: 850px;
     padding: 0 5px;
     position: relative;
+    min-height: @topBarHeight;
 
     /*border: 2px solid @topBarBorderColor;*/
     /*border-radius: 0 0 15px 15px;*/
@@ -151,7 +152,7 @@ body{
 }
 #ia-unitSelectorScrollButtonLeft, #ia-unitSelectorScrollButtonRight{
     display: inline-block;
-    height: 65px;
+    height: @topBarHeight;
     width: 50px;
     position: absolute;
     top: 0;
@@ -179,6 +180,7 @@ body{
     height: 40px;
     padding: 10px 10px 5px 5px;
     overflow: hidden;
+    z-index: 27;
 
     text-align: center;
     line-height: 75px;
