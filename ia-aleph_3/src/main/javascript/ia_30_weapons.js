@@ -15,6 +15,8 @@
 
 (function () {
 
+    var weapons = ia.weapons = ia.weapons || {};
+
     var discoverWeapon = 'Discover',
             bareHandsWeapon = 'Bare Hands',
             suppressionFireWeapon = 'Suppressive Fire Mode',
@@ -44,14 +46,169 @@
             return 'black';
         }
     });
+    Handlebars.registerHelper("weaponColorByMod", function (context) {
+        if (typeof context === 'number') {
+            return getColorByRange(context + 12);
+        } else {
+            return 'black';
+        }
+    });
 
+    function getWeaponsForTrooper(trooper) {
+        var weapons = [];
+        var allWeapons = [].concat(trooper.allWeapons);
+        $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
+            if (weaponLikeEquipsAndSkills[name]) {
+                allWeapons.push.apply(allWeapons, weaponLikeEquipsAndSkills[name]);
+            }
+        });
+        allWeapons.push(discoverWeapon);
+        var addBarehands = true;
+        $.each(allWeapons, function (i, weaponName) {
+            if (weaponName.match(/\+/)) {
+                allWeapons.push.apply(allWeapons, weaponName.split(/ *\+ */));
+            }
+        });
+        $.each(allWeapons, function (i, weaponName) {
+            var weaponsByName = data.findWeaponsByName(weaponName);
+            if (weaponsByName) {
+                weapons = weapons.concat(weaponsByName);
+            } else {
+                log('WARNING: weapons not found for name = ', weaponName);
+            }
+        });
+        var addBarehands = true;
+        $.each(weapons, function (i, weapon) {
+            if (weapon.hasTrait(ccTrait)) {
+                addBarehands = false;
+            }
+        });
+        if (addBarehands) {
+            weapons.push(data.findWeaponsByName(bareHandsWeapon)[0]);
+        }
+        $.each(weapons, function (i, weapon) {
+            if (weapons.mode !== suppressionFireWeapon && weapon.hasTrait(suppressiveFireTrait)) {
+                var supFire = data.findWeaponsByName(suppressionFireWeapon)[0];
+                supFire = $.extend({}, supFire, {
+                    damage: weapon.damage,
+                    ammunitions: weapon.ammunitions,
+                    traits: weapon.traits,
+                    name: weapon.name,
+                    mode: supFire.name
+                });
+                weapons.push(supFire);
+            }
+        });
+        if (trooper.hasSkillOrEquipment('X Visor')) {
+            weapons = $.map(weapons, function (weapon) {
+                if (weapon.hasRange) {
+                    return $.extend({}, weapon, {
+                        mods: $.map(weapon.mods, function (mod) {
+                            if (mod === -3) {
+                                return 0;
+                            } else if (mod === -6) {
+                                return -3;
+                            } else {
+                                return mod;
+                            }
+                        }),
+                        mode: (weapon.mode ? (weapon.mode + ' ') : '') + '(X Visor)',
+                        code: -weapon.code
+                    });
+                } else {
+                    return weapon;
+                }
+            });
+        }
+        return weapons;
+    }
 
+    function prepareWeaponsForDisplay(weapons, trooper) {
+        var rangesSet = {}, ranges = [];
+        $.each(weapons, function (i, weapon) {
+            if (weapon.hasRange) {
+                $.each(weapon.ranges, function (i, range) {
+                    if (!rangesSet[range]) {
+                        rangesSet[range] = true;
+                        ranges.push(range);
+                    }
+                });
+            }
+        });
+        ranges.sort(function (a, b) {
+            return a - b;
+        });
+        var weapons2 = [];
+        $.each(weapons, function (i, weapon) {
+            weapon = $.extend({
+                rangeMods: [],
+                rangeSum: 0
+            }, weapon);
+            var basicValue = null;
+            if (trooper) {
+                if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
+                    weapon.damage = '<i>' + eval(weapon.damage.replace(/WIP/, trooper.wip).replace(/PH/, trooper.ph)) + '</i>';
+                }
+                var basicValue = trooper.bs;
+                if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon || weapon.name === deactivatorWeapon) {
+                    basicValue = trooper.wip;
+                } else if (weapon.hasTrait(trowingWeaponTrait)) {
+                    basicValue = trooper.ph;
+                }
+            }
+            var rangeIndex = 0;
+            if (weapon.hasRange) {
+                $.each(weapon.ranges, function (i, range) {
+                    for (; ranges[rangeIndex] <= range; rangeIndex++) {
+                        var value = weapon.mods[i];
+                        if (trooper) {
+                            value += basicValue;
+                        }
+                        weapon.rangeMods.push(value);
+                        weapon.rangeSum += value;
+                    }
+                });
+            } else {
+                weapon.rangeLength = ranges.length;
+            }
+            for (; rangeIndex < ranges.length; rangeIndex++) {
+                weapon.rangeMods.push('-');
+            }
+            if (!weapon.hasTrait(ccTrait)) {
+                weapon.rangeSum += 0.5;
+            }
+            if (typeof weapon.damage === 'number') {
+                weapon.rangeSum += weapon.damage / 100;
+            }
+            weapons2.push(weapon);
+        });
+        weapons2.sort(function (a, b) {
+            return b.rangeSum - a.rangeSum;
+        });
+        weapons2.weaponRanges = ranges;
+        return weapons2;
+    }
     var weaponLikeEquipsAndSkills = {
         'MediKit': ['MediKit'],
         'Engineer': [deactivatorWeapon],
         'Forward Observer': ['Forward Observer', 'Flash Pulse']
     };
     var lastTrooper = null;
+
+    weapons.getDisplayWeaponsForTroopers = function (troopers) {
+        var allWeapons = [], allWeaponsByCode = {};
+        $.each(troopers, function (i, trooper) {
+            var weapons = getWeaponsForTrooper(trooper);
+            $.each(weapons, function (i, weapon) {
+                if (!allWeaponsByCode[weapon.code]) {
+                    allWeapons.push(weapon);
+                    allWeaponsByCode[weapon.code] = true;
+                }
+            });
+        });
+        //TODO
+    };
+
     ui.weaponsDisplay = {
         initializeWeaponsDisplay: function () {
             $('#ia-weaponsDisplayButton').on('click', function () {
@@ -60,142 +217,19 @@
             });
         },
         updateWeaponsDisplayForTrooper: function (trooper) {
-//            if ($('#ia-weaponsDisplayContainer').is(':visible') && (lastTrooper === null || (trooper && trooper.troopercode !== lastTrooper.troopercode))) {
             if ($('#ia-weaponsDisplayContainer').is(':visible')) {
                 ui.trooperSelector.enableTrooperSelectorLogoSelector();
             }
             lastTrooper = trooper = trooper || lastTrooper;
-            var weapons = [];
-//            var weaponSpec = '';
-//            if (trooper.hasSkillOrEquipment('X Visor')) {
-//                weaponSpec = '+xvisor';
-//            }
-            var allWeapons = [].concat(trooper.allWeapons);
-            $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
-                if (weaponLikeEquipsAndSkills[name]) {
-                    allWeapons.push.apply(allWeapons, weaponLikeEquipsAndSkills[name]);
-                }
-            });
-            allWeapons.push(discoverWeapon);
-            var addBarehands = true;
-            $.each(allWeapons, function (i, weaponName) {
-                if (weaponName.match(/\+/)) {
-                    allWeapons.push.apply(allWeapons, weaponName.split(/ *\+ */));
-                }
-            });
-            $.each(allWeapons, function (i, weaponName) {
-                var weaponsByName = data.findWeaponsByName(weaponName);
-                if (weaponsByName) {
-                    weapons = weapons.concat(weaponsByName);
-                } else {
-                    log('WARNING: weapons not found for name = ', weaponName);
-                }
-            });
-            var addBarehands = true;
-            $.each(weapons, function (i, weapon) {
-                if (weapon.hasTrait(ccTrait)) {
-                    addBarehands = false;
-                }
-            });
-            if (addBarehands) {
-                weapons.push(data.findWeaponsByName(bareHandsWeapon)[0]);
-            }
-            $.each(weapons, function (i, weapon) {
-                if (weapons.mode !== suppressionFireWeapon && weapon.hasTrait(suppressiveFireTrait)) {
-                    var supFire = data.findWeaponsByName(suppressionFireWeapon)[0];
-                    supFire = $.extend({}, supFire, {
-                        damage: weapon.damage,
-                        ammunitions: weapon.ammunitions,
-                        traits: weapon.traits,
-                        name: weapon.name,
-                        mode: supFire.name
-                    });
-                    weapons.push(supFire);
-                }
-            });
-            if (trooper.hasSkillOrEquipment('X Visor')) {
-                weapons = $.map(weapons, function (weapon) {
-                    if (weapon.hasRange) {
-                        return $.extend({}, weapon, {
-                            mods: $.map(weapon.mods, function (mod) {
-                                if (mod === -3) {
-                                    return 0;
-                                } else if (mod === -6) {
-                                    return -3;
-                                } else {
-                                    return mod;
-                                }
-                            }),
-                            mode: (weapon.mode ? (weapon.mode + ' ') : '') + '(X Visor)'
-                        });
-                    } else {
-                        return weapon;
-                    }
-                });
-            }
-            var weapons2 = [];
-            var rangesSet = {}, ranges = [];
-            $.each(weapons, function (i, weapon) {
-                if (weapon.hasRange) {
-                    $.each(weapon.ranges, function (i, range) {
-                        if (!rangesSet[range]) {
-                            rangesSet[range] = true;
-                            ranges.push(range);
-                        }
-                    });
-                }
-            });
-            ranges.sort(function (a, b) {
-                return a - b;
-            });
+
+            var weapons = getWeaponsForTrooper(trooper);
 
             var trooperProfileForWeapons = ui.trooperSelector.getSelectedTrooperLogo() || trooper;
-//            if (trooper.defaultWeaponProfile) {
-//                trooperProfileForWeapons = data.findTrooperByCode(trooper.defaultWeaponProfile);
-//            }
-            $.each(weapons, function (i, weapon) {
-                weapon = $.extend({
-                    rangeMods: [],
-                    rangeSum: 0
-                }, weapon);
-                if (typeof weapon.damage === 'string' && weapon.damage.match(/WIP|PH/)) {
-                    weapon.damage = '<i>' + eval(weapon.damage.replace(/WIP/, trooperProfileForWeapons.wip).replace(/PH/, trooperProfileForWeapons.ph)) + '</i>';
-                }
-                var basicValue = trooperProfileForWeapons.bs;
-                if (weapon.hasTrait(technicalWeaponTrait) || weapon.name === discoverWeapon || weapon.name === deactivatorWeapon) {
-                    basicValue = trooperProfileForWeapons.wip;
-                } else if (weapon.hasTrait(trowingWeaponTrait)) {
-                    basicValue = trooperProfileForWeapons.ph;
-                }
-                var rangeIndex = 0;
-                if (weapon.hasRange) {
-                    $.each(weapon.ranges, function (i, range) {
-                        for (; ranges[rangeIndex] <= range; rangeIndex++) {
-                            var value = weapon.mods[i] + basicValue;
-                            weapon.rangeMods.push(value);
-                            weapon.rangeSum += value;
-                        }
-                    });
-                } else {
-                    weapon.rangeLength = ranges.length;
-                }
-                for (; rangeIndex < ranges.length; rangeIndex++) {
-                    weapon.rangeMods.push('-');
-                }
-                if (!weapon.hasTrait(ccTrait)) {
-                    weapon.rangeSum += 0.5;
-                }
-                if (typeof weapon.damage === 'number') {
-                    weapon.rangeSum += weapon.damage / 100;
-                }
-                weapons2.push(weapon);
-            });
-            weapons2.sort(function (a, b) {
-                return b.rangeSum - a.rangeSum;
-            });
+            var weapons2 = prepareWeaponsForDisplay(weapons, trooperProfileForWeapons);
+
             $('#ia-weaponsDisplayContainer').html(weaponsDisplayTemplate({
                 weapons: weapons2,
-                ranges: ranges,
+                ranges: weapons2.weaponRanges,
                 messages: {
                     name: "Name",
                     range: "Range",
