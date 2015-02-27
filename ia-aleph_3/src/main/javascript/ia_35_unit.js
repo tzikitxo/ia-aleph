@@ -68,18 +68,60 @@
             $('#ia-unitSelectorContainer .ia-unitSelector').on('click', function () {
                 ui.trooperSelector.updateTrooperSelector(Number($(this).data('ia-troopercode')));
             });
-
+            function getLeft() {
+                return (Number(($('#ia-unitSelectorScroller').css('left') || '0').replace(/px/, '')) || 0);
+            }
+//            var fixPosition = function () {
+//                if (getLeft() > 0) {
+//                    $('#ia-unitSelectorScroller').animate({"left": "-=" + getLeft() + "px"}, "fast");
+//                }
+//            };
+            function getContentWidth() {
+                return ($('#ia-unitSelectorScroller >*:first').outerWidth() + 5) * $('#ia-unitSelectorScroller >*').length;
+            }
+            function getContainerWidth() {
+                return $('#ia-unitSelectorScrollerContainer').width();
+            }
+//            var len = $('#ia-unitSelectorScroller .ia-unitSelector:first').outerWidth() * unitsForButtons.length, con = $('#ia-unitSelectorScrollerContainer').width();
+            $('#ia-unitSelectorScroller').draggable({cursor: "move", axis: "x", stop: function () {
+                    if (getLeft() > 0) {
+                        $('#ia-unitSelectorScroller').animate({"left": "-=" + getLeft() + "px"}, "fast");
+                    } else if (getLeft() + getContentWidth() < getContainerWidth()) {
+                        $('#ia-unitSelectorScroller').animate({"left": "+=" + (getContainerWidth() - (getLeft() + getContentWidth())) + "px"}, "fast");
+                    }
+                }});
 //                unitSelectorScroller.draggable({cursor: "move",axis: "x", containment: [ x1, y1, x2, y2 ]});
-//                unitSelectorScroller.draggable({cursor: "move", axis: "x"});
-            var scrollAmount = 150;
+//            $('#ia-unitSelectorScroller').draggable({cursor: "move", axis: "x", containment: [0 - $('#ia-unitSelectorScroller').width(), 0, 0 + $('#ia-unitSelectorScroller').width(), 0]});
+//            var scrollAmount = 150;
             $('#ia-unitSelectorScrollButtonLeft').on('click', function () {
-                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() - scrollAmount);
+                var toScroll = Math.min((getLeft() + getContentWidth()) - getContainerWidth(), 150);
+//                if (getLeft() + getContentWidth() > getContainerWidth()) {
+                if (toScroll > 0) {
+                    $('#ia-unitSelectorScroller').animate({"left": "-=" + toScroll + "px"}, "fast", function () {
+//                        if (getLeft() + getContentWidth() < getContainerWidth()) {
+//                            $('#ia-unitSelectorScroller').animate({"left": "+=" + (getContainerWidth() - (getLeft() + getContentWidth())) + "px"}, "fast");
+//                        }
+                    });
+                }
+//                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() - scrollAmount);
             });
             $('#ia-unitSelectorScrollButtonRight').on('click', function () {
-                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + scrollAmount);
+                var toScroll = Math.min(-getLeft(), 150);
+                if (toScroll > 0) {
+                    $('#ia-unitSelectorScroller').animate({"left": "+=" + toScroll + "px"}, "fast", function () {
+//                        if (getLeft() > 0) {
+//                            $('#ia-unitSelectorScroller').animate({"left": "-=" + getLeft() + "px"}, "fast");
+//                        }
+                    });
+                }
+//                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + scrollAmount);
             });
             $('#ia-unitSelectorScrollerContainer').on('mousewheel', function (event) {
-                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + (event.deltaY < 0 ? +1 : -1) * 50);
+//                $('#ia-unitSelectorScroller').animate({"left": (event.deltaY < 0 ? '+' : '-') + "=50px"}, "fast");
+                $('#ia-unitSelectorScroller').css({
+                    left: Math.min(0, Math.max(getContainerWidth() - getContentWidth(), getLeft() + ((event.deltaY < 0 ? +1 : -1) * 50))) + 'px'
+                });
+//                $('#ia-unitSelectorScrollerContainer').scrollLeft($('#ia-unitSelectorScrollerContainer').scrollLeft() + (event.deltaY < 0 ? +1 : -1) * 50);
                 return false;
             });
 
