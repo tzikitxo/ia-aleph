@@ -66,6 +66,10 @@
             }
             lastTrooper = trooper = trooper || lastTrooper;
             var weapons = [];
+//            var weaponSpec = '';
+//            if (trooper.hasSkillOrEquipment('X Visor')) {
+//                weaponSpec = '+xvisor';
+//            }
             var allWeapons = [].concat(trooper.allWeapons);
             $.each([].concat(trooper.allSkills).concat(trooper.allEquipments), function (i, name) {
                 if (weaponLikeEquipsAndSkills[name]) {
@@ -109,6 +113,26 @@
                     weapons.push(supFire);
                 }
             });
+            if (trooper.hasSkillOrEquipment('X Visor')) {
+                weapons = $.map(weapons, function (weapon) {
+                    if (weapon.hasRange) {
+                        return $.extend({}, weapon, {
+                            mods: $.map(weapon.mods, function (mod) {
+                                if (mod === -3) {
+                                    return 0;
+                                } else if (mod === -6) {
+                                    return -3;
+                                } else {
+                                    return mod;
+                                }
+                            }),
+                            mode: (weapon.mode ? (weapon.mode + ' ') : '') + '(X Visor)'
+                        });
+                    } else {
+                        return weapon;
+                    }
+                });
+            }
             var weapons2 = [];
             var rangesSet = {}, ranges = [];
             $.each(weapons, function (i, weapon) {
