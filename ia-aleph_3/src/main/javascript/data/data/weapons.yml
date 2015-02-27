@@ -992,6 +992,7 @@
   traits: [ CC ]
 - 
   name: Submachine Gun
+  names: [ Submachine gun ]
   code: 116
   ranges: [ 8,16,24,32 ]
   mods: [ 3,0,-3,-6 ]
