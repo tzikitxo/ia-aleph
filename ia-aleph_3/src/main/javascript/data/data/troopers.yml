@@ -9217,7 +9217,7 @@
     code: 5
     description: Controller
     equipments: [ Kuang Shi Control Device ]
-    bsw: [ Combi Rifle + Light Smoke Grenade Launche ]
+    bsw: [ Combi Rifle + Light Smoke Grenade Launcher ]
     swc: 0.5
     cost: 13
   - 
