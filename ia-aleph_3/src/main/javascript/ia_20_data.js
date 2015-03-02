@@ -223,26 +223,27 @@ var data = ia.data;
         var troopersToLoad = [];
 
         var sectorial = sectorialsByCode[factionCode], faction = factionsByCode[factionCode];
+        var loadedTroopers = {};
         function loadTrooper(trooperCode, trooperSpecs) {
             var trooperData = troopersDataByCode[trooperCode];
+            loadedTroopers[trooperCode] = true;
             trooperData = $.extend(true, {}, trooperData);
             trooperData.ava = trooperSpecs.ava;
             if (trooperSpecs.link) {
                 (trooperData.skills = trooperData.skills || []).push("Fireteam");
             }
             troopersToLoad.push(trooperData);
-            if (trooperData.otherprofiles) {
-                $.each(trooperData.otherprofiles, function (i, otherProfile) {
-                    loadTrooper(otherProfile, trooperSpecs);
-                });
-            }
-            if (trooperData.compositetroop) {
-                $.each(trooperData.compositetroop, function (i, otherTrooper) {
-                    if (otherTrooper.code !== trooperData.code) {
-                        loadTrooper(otherTrooper.code, trooperSpecs);
+            $.each(trooperData.otherprofiles || [], function (i, otherProfile) {
+                loadTrooper(otherProfile, trooperSpecs);
+            });
+            $.each([trooperData].concat(trooperData.options || []), function (i, data) {
+                $.each(data.compositetroop || [], function (i, otherTrooper) {
+                    var code = otherTrooper.code || otherTrooper;
+                    if (!loadedTroopers[code]) {
+                        loadTrooper(code, trooperSpecs);
                     }
                 });
-            }
+            });
         }
         if (sectorial) {
             $.each(sectorial.troopers, function (i, sectorialTrooper) {
