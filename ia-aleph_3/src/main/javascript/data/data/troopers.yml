@@ -1095,6 +1095,15 @@
     bsw: [ Combi Rifle ]
     swc: 1
     cost: 10
+    notIn: 52
+  - 
+    code: 10
+    description: Lieutenant
+    skills: [ Lieutenant ]
+    bsw: [ Combi Rifle ]
+    swc: 0
+    cost: 10
+    onlyIn: 52
 - 
   isc: Auxilia
   compositetroop:
@@ -4183,24 +4192,26 @@
   s: 2
   ava: 2
   skills: [ "CH: Camouflage", Infiltration, Kinematika L1, Martial Arts L2, Multiterrain ]
-  ccw: [ Pistol, AP CCW, Knife ]
   options:
   - 
     code: 1
     description: Rifle
     bsw: [ Rifle ]
+    ccw: [ Pistol, AP CCW, Knife ]
     swc: 0
     cost: 23
   - 
     code: 2
     description: BS
     bsw: [ Boarding Shotgun ]
+    ccw: [ Pistol, AP CCW, Knife ]
     swc: 0
     cost: 25
   - 
     code: 3
     description: Sniper
     bsw: [ Sniper Rifle ]
+    ccw: [ Pistol, AP CCW, Knife ]
     swc: 0.5
     cost: 30
   - 
@@ -4208,6 +4219,7 @@
     description: FO
     equipments: [ Forward Observer ]
     bsw: [ Rifle ]
+    ccw: [ Pistol, AP CCW, Knife ]
     swc: 0
     cost: 24
   - 
@@ -4215,8 +4227,23 @@
     description: Lieutenant
     skills: [ Lieutenant ]
     bsw: [ Rifle ]
+    ccw: [ Pistol, AP CCW, Knife ]
     swc: 2
     cost: 23
+  - 
+    code: 6
+    description: Chain+LS
+    bsw: [ Chain Rifle, Light Shotgun ]
+    ccw: [ Pistol, AP CCW, Knife ]
+    swc: 0
+    cost: 21
+  - 
+    code: 7
+    description: Chain+AP
+    bsw: [ Chain Rifle, Grenades ]
+    ccw: [ Assault Pistol, AP CCW, Knife ]
+    swc: 0
+    cost: 22
 - 
   isc: Scouts
   longisc: Ariadna SCOUTS
@@ -4517,36 +4544,36 @@
     description: 
     swc: 0
     cost: 13
-- 
-  isc: Uxía McNeill
-  longisc: UXÍA McNEILL, Corporal of 1st Highlanders S.A.S.
-  code: 160
-  faction: 3
-  logo: s_a_s
-  name: UXÍA McNEILL
-  type: SK
-  classification: Character
-  mov: 4-4
-  cc: 21
-  bs: 11
-  ph: 13
-  wip: 13
-  arm: 0
-  bts: 0
-  w: 1
-  s: 2
-  ava: 1
-  impetuosity: F
-  skills: [ "CH: Camouflage", Infiltration, Kinematika L1, Martial Arts L2, Multiterrain ]
-  equipments: [ Multispectral Visor L1 ]
-  bsw: [ Boarding Shotgun, Grenades, Smoke Grenades ]
-  ccw: [ Pistol, AP CCW, Knife ]
-  options:
-  - 
-    code: 1
-    description: 
-    swc: 0
-    cost: 28
+#- 
+#  isc: Uxía McNeill
+#  longisc: UXÍA McNEILL, Corporal of 1st Highlanders S.A.S.
+#  code: 160
+#  faction: 3
+#  logo: s_a_s
+#  name: UXÍA McNEILL
+#  type: SK
+#  classification: Character
+#  mov: 4-4
+#  cc: 21
+#  bs: 11
+#  ph: 13
+#  wip: 13
+#  arm: 0
+#  bts: 0
+#  w: 1
+#  s: 2
+#  ava: 1
+#  impetuosity: F
+#  skills: [ "CH: Camouflage", Infiltration, Kinematika L1, Martial Arts L2, Multiterrain ]
+#  equipments: [ Multispectral Visor L1 ]
+#  bsw: [ Boarding Shotgun, Grenades, Smoke Grenades ]
+#  ccw: [ Pistol, AP CCW, Knife ]
+#  options:
+#  - 
+#    code: 1
+#    description: 
+#    swc: 0
+#    cost: 28
 - 
   isc: Van Zant
   longisc: Roger VAN ZANT, Captain of 6th Airborne Ranger Reg. 'Oklahoma'
@@ -7640,6 +7667,13 @@
     ccw: [ Pistol, AP CCW ]
     swc: 1
     cost: 14
+  - 
+    code: 6
+    description: AP
+    bsw: [ Chain Rifle, Smoke Grenades ]
+    ccw: [ Assault Pistol, AP CCW ]
+    swc: 0
+    cost: 8
 - 
   isc: Corregidor Jaguars
   longisc: 
@@ -13351,7 +13385,7 @@
   w: 1
   s: 1
   ava: 2
-  skills: [ "CHL Mimetism", "G: Servant" ]
+  skills: [ "CH: Mimetism", "G: Servant" ]
   ccw: [ Electric Pulse ]
   options:
   - 
@@ -14921,8 +14955,8 @@
     swc: 1.5
     cost: 26
 - 
-  isc: "Atalanta, Agema's NCO"
-  longisc: "ATALANTA, Agema's NCO"
+  isc: "Atalanta, Agêma's NCO"
+  longisc: "ATALANTA, Agêma's NCO"
   code: 418
   compositetroop:
   -
@@ -14959,7 +14993,7 @@
     swc: 1.5
     cost: 41
 - 
-  isc: Atalanta, Agema's NCO
+  isc: Atalanta, Agêma's NCO
   longisc: SPOTBOT
   code: 419
   faction: 7
@@ -15989,7 +16023,7 @@
     code: 1
     description: 
     swc: 2
-    cost: 64
+    cost: 74
 - 
   isc: Gorgos Squad
   longisc: 
@@ -17763,3 +17797,85 @@
     description: 
     swc: 0
     cost: 4
+- 
+  isc: Igao Unit
+  longisc: IGAO UNIT
+  code: 492
+  faction: 8
+  logo: igao_unit
+  name: IGAO
+  type: SK
+  classification: Unknown
+  mov: 4-4
+  cc: 20
+  bs: 11
+  ph: 13
+  wip: 13
+  arm: 0
+  bts: 3
+  w: 1
+  s: 2
+  ava: 2
+  backup: C
+  impetuosity: F
+  skills: [ Martial Arts L3, "CH: Camouflage", Infiltration, Kinematica L1, Multiterrain ]
+  bsw: [ Flash Grenades ]
+  options:
+  - 
+    code: 1
+    description: BS
+    bsw: [ Boarding Shotgun ]
+    ccw: [ Pistol, AP CCW ]
+    swc: 0
+    cost: 25
+  - 
+    code: 2
+    description: Combi
+    bsw: [ Combi Rifle, Nanopulser ]
+    ccw: [ Pistol, DA CCW ]
+    swc: 0
+    cost: 26
+- 
+  isc: "Teucer, Agêma's Warrant Officer"
+  longisc: "TEUCER, AGÊMA'S WARRANT OFFICER"
+  code: 493
+  faction: 7
+  logo: teucer
+  name: TEUCRO
+  type: MI
+  classification: Unknown
+  mov: 4-2
+  cc: 18
+  bs: 14
+  ph: 11
+  wip: 14
+  arm: 2
+  bts: 6
+  w: 1
+  s: 2
+  ava: 1
+  backup: 2
+  skills: [ Marksmanship LX, "V: No Wound Incapacitation" ]
+  ccw: [ Pistol, CCW ]
+  options:
+  - 
+    code: 1
+    description: FB+XV
+    equipments: [ X Visor ]
+    bsw: [ Feuerbach, Nanopulser ]
+    swc: 1.5
+    cost: 44
+  - 
+    code: 2
+    description: FB+MSV
+    equipments: [ Multispectral Visor L2 ]
+    bsw: [ Feuerbach, Nanopulser ]
+    swc: 2
+    cost: 46
+  - 
+    code: 3
+    description: Sniper
+    equipments: [ Multispectral Visor L2 ]
+    bsw: [ K1 Sniper Rifle, Nanopulser ]
+    swc: 2
+    cost: 47
