@@ -609,6 +609,7 @@
   ammunitions: Plasma
 - 
   name: Portable Autocannon
+  names: [ Autocannon ]
   code: 71
   ranges: [ 8,16,32,48 ]
   mods: [ -3,0,3,-3 ]
